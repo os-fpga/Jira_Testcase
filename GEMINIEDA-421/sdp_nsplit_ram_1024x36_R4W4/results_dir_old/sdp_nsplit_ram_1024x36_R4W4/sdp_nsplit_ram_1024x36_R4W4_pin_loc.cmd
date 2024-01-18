@@ -1,0 +1,1 @@
+/nfs_cadtools/raptor/instl_dir/10_03_2022_08_00_01/bin/pin_c --csv /nfs_cadtools/raptor/instl_dir/10_03_2022_08_00_01/share/raptor/etc/devices/gemini/Gemini_Pin_Table.csv --blif sdp_nsplit_ram_1024x36_R4W4_post_synth.blif --output sdp_nsplit_ram_1024x36_R4W4_pin_loc.place --assign_unconstrained_pins in_define_order

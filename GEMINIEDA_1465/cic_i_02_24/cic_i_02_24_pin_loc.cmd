@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_28_2023_10_25_04/bin/pin_c --csv /nfs_eda_sw/softwares/Raptor/instl_dir/04_28_2023_10_25_04/share/raptor/etc/devices/gemini_compact_82x68/Gemini_Pin_Table.csv --port_info cic_i_02_24_post_synth_ports.json --output cic_i_02_24_pin_loc.place --assign_unconstrained_pins in_define_order

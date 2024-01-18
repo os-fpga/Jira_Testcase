@@ -1,0 +1,16 @@
+create_design ram_inst_tdp_no_split_36_out_reg
+target_device GEMINI
+add_include_path ./rtl
+add_library_path ./rtl
+add_design_file ./rtl/ram_inst_tdp_no_split_36_out_reg.v
+set_top_module ram_inst_tdp_no_split_36_out_reg
+synthesize delay
+pnr_options --gen_post_synthesis_netlist on
+pnr_netlist_lang verilog
+packing
+global_placement
+place
+route
+sta
+power
+bitstream

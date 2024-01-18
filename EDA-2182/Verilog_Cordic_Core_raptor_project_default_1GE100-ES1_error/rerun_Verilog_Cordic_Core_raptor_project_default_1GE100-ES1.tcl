@@ -1,0 +1,6 @@
+create_design Verilog_Cordic_Core_raptor_project_default_1GE100-ES1
+target_device 1GE100-ES1
+add_design_file ./Src/cordic.v
+set_top_module cordic
+add_constraint_file Verilog_Cordic_Core_raptor_project_default_1GE100-ES1/constraints.sdc
+analyze

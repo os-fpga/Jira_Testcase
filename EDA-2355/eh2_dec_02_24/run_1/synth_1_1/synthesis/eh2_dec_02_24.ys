@@ -1,0 +1,31 @@
+ 
+# Yosys/Surelog synthesis script for eh2_dec
+# Read source files
+plugin -i systemverilog
+read_systemverilog -synth  -top eh2_dec -y ../../../../../rtl -I../../../../../rtl -I../../../../ -I/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl +libext+.v+.sv -sv /nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_def.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_lib.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_pkg.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/beh_lib.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_csr.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_decode_ctl.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_gpr_ctl.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_ib_ctl.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_tlu_ctl.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_tlu_top.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec_trigger.sv \
+/nfs_scratch/scratch/CGA/repo/2023-12-12-05-00-48_T7474R108/ArchBench/Testcases/dec/dec_golden/../rtl/eh2_dec.sv \
+/nfs_eda_sw/softwares/Raptor/instl_dir/12_11_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/RS_PRIMITIVES/blackbox_models/cell_sim_blackbox.v
+
+# Technology mapping
+hierarchy -top eh2_dec
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal mixed   -effort high -carry auto -no_iobuf -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v eh2_dec_02_24_post_synth.v
+write_blif -param eh2_dec_02_24_post_synth.eblif
+
+  

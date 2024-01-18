@@ -1,0 +1,13 @@
+create_design ram_simple_dp_dc_512x32
+target_device 1GVTC
+add_design_file ./rtl/ram_simple_dp_dc_512x32.v
+set_top_module ram_simple_dp_dc_512x32
+add_constraint_file constraint.sdc
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream

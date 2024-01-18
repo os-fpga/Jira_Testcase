@@ -1,0 +1,7 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/05_10_2023_09_22_48/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../ /nfs_project/castor/DV/Azfar/Jira_Testcase/RIGELIP-6/. 
+-vlog-libdir 
+-vlog-define 
+-vlog2k /nfs_project/castor/DV/Azfar/Jira_Testcase/RIGELIP-6/./and2.v
+-top and2

@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/tclsh8.6 /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/get_power_data.tcl --netlist=/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/complex_multiplier/run_1/synth_1_1/synthesis/complex_multiplier_post_synth.v 

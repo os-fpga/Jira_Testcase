@@ -1,0 +1,15 @@
+create_design ram_inst_tdp_no_split_36
+target_device GEMINI_COMPACT_10x8
+add_design_file rtl/ram_inst_tdp_no_split_36.v
+set_top_module ram_inst_tdp_no_split_36
+add_constraint_file ram_inst_tdp_no_split_36.sdc
+add_constraint_file pin_constraints.pin
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml
+

@@ -1,0 +1,7 @@
+-sv2009 /cadtools/raptor/instl_dir/02_15_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis2/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../ /home/bbambhania/Documents/raptor_app/and2forpinmaptest/./rtl 
+-vlog-libdir 
+-vlog-define 
+-vlog2k /home/bbambhania/Documents/raptor_app/and2forpinmaptest/./rtl/and2.v
+-top and2

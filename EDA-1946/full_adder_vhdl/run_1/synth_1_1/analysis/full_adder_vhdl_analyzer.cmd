@@ -1,0 +1,5 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/08_22_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir /nfs_project/castor/DV/Azfar/full_adder_vhdl/full_adder_vhdl.srcs/sources_1 
+-vhdl2008 /nfs_project/castor/DV/Azfar/full_adder_vhdl/full_adder_vhdl.srcs/sources_1/full_adder.vhd
+-top full_adder

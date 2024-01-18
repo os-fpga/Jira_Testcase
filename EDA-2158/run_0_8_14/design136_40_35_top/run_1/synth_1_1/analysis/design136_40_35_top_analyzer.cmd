@@ -1,0 +1,1 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/09_06_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v

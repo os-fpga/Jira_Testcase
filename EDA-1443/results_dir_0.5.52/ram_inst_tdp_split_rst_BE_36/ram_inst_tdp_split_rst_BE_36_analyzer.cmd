@@ -1,0 +1,9 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/04_19_2023_09_57_08/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../.././rtl ../.. /nfs_scratch/scratch/CompilerValidation/abdul_hameed/constrain/Compiler_Validation/RTL_testcases/mem_instantiation/ram_inst_tdp_split_rst_BE_36/results_dir/.././rtl 
+-vlog-libdir ../.././rtl 
+-vlog-libext .v
+-vlog-libext .sv
+-vlog-define 
+-vlog2k /nfs_scratch/scratch/CompilerValidation/abdul_hameed/constrain/Compiler_Validation/RTL_testcases/mem_instantiation/ram_inst_tdp_split_rst_BE_36/results_dir/.././rtl/ram_inst_tdp_split_rst_BE_36.v
+-top ram_inst_tdp_split_rst_BE_36

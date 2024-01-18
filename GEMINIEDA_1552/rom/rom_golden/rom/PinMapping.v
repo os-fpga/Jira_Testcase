@@ -1,0 +1,1 @@
+// PinMapping.xml is not generated for rom

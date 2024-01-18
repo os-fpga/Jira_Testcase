@@ -1,0 +1,12 @@
+create_design add_sub_signed
+target_device GEMINI_COMPACT_10x8
+add_design_file add_sub_signed.v
+set_top_module add_sub_signed
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml

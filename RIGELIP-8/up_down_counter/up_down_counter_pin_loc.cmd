@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2023_15_30_00/bin/pin_c --csv /nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2023_15_30_00/share/raptor/etc/devices/gemini_compact_10x8/Gemini_Pin_Table.csv --port_info up_down_counter_post_synth_ports.json --output up_down_counter_pin_loc.place --assign_unconstrained_pins in_define_order

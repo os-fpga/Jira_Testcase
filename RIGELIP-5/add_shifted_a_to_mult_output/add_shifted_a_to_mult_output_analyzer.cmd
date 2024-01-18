@@ -1,0 +1,7 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/05_27_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../ /nfs_project/gemini/DV/usmanqadir/jira_repo/Jira_Testcase/RIGELIP-5/./rtl 
+-vlog-libdir 
+-vlog-define 
+-vlog2k /nfs_project/gemini/DV/usmanqadir/jira_repo/Jira_Testcase/RIGELIP-5/./rtl/add_shifted_a_to_mult_output.v
+-top add_shifted_a_to_mult_output

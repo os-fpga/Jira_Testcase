@@ -1,0 +1,25 @@
+ 
+# Yosys synthesis script for design136_40_35_top
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/11_02_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+plugin -i systemverilog
+read_systemverilog -synth  -top design136_40_35_top -I../../../../ -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/test/ArchBench/Testcases/design136_40_35_top/test/./rtl   /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/test/ArchBench/Testcases/design136_40_35_top/test/./rtl/decoder.v \
+/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/test/ArchBench/Testcases/design136_40_35_top/test/./rtl/mod_n_counter.v \
+/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/test/ArchBench/Testcases/design136_40_35_top/test/./rtl/parity_generator.v \
+/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/test/ArchBench/Testcases/design136_40_35_top/test/./rtl/design136_40_35_top.v \
+
+
+# Technology mapping
+hierarchy -top design136_40_35_top
+
+setattr -set keep 1 w:\clk
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal mixed   -effort high -carry auto -no_iobuf -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v design136_40_35_top_post_synth.v
+write_blif -param design136_40_35_top_post_synth.eblif
+
+  

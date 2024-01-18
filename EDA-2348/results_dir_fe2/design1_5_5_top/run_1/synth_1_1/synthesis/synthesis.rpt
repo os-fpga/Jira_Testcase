@@ -1,0 +1,3031 @@
+/*******************************************************************************
+Copyright (c) 2022 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+
+Portions of Raptor Design Suite are utilized under the following third-party copyright notices:
+
+Parallax Static Timing Analyzer Copyright (c) 2021, Parallax Software, Inc. All rights reserved.
+*********************************************************************************/
+
+Version  : 2023.12
+Build    : 0.9.9
+Hash     : f0b240f
+Date     : Dec 12 2023
+Type     : Engineering
+Log Time   : Tue Dec 12 10:04:24 2023 GMT
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 4e5aedd8e, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `design1_5_5_top.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/RS_PRIMITIVES/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/RS_PRIMITIVES/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Generating RTLIL representation for module `\CARRY'.
+Generating RTLIL representation for module `\CARRY_CHAIN'.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DSP19X2'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\I_DELAY'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_DELAY'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Generating RTLIL representation for module `\PLL'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\RS_DSP'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../../../../.././rtl/invertion.v
+Parsing Verilog input from `../../../../.././rtl/invertion.v' to AST representation.
+Generating RTLIL representation for module `\invertion'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ../../../../.././rtl/large_mux.v
+Parsing Verilog input from `../../../../.././rtl/large_mux.v' to AST representation.
+Generating RTLIL representation for module `\large_mux'.
+Note: Assuming pure combinatorial block at ../../../../.././rtl/large_mux.v:11.1-35.4 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ../../../../.././rtl/encoder.v
+Parsing Verilog input from `../../../../.././rtl/encoder.v' to AST representation.
+Generating RTLIL representation for module `\encoder'.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v' to AST representation.
+Generating RTLIL representation for module `\design1_5_5_top'.
+Generating RTLIL representation for module `\design1_5_5'.
+Successfully finished Verilog frontend.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Used module:     \design1_5_5
+Used module:         \invertion
+Used module:         \large_mux
+Used module:         \encoder
+Parameter \WIDTH = 32
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\design1_5_5'.
+Parameter \WIDTH = 32
+Generating RTLIL representation for module `$paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+
+6.3. Executing AST frontend in derive mode using pre-parsed AST for module `\invertion'.
+Parameter \WIDTH = 32
+Generating RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+
+6.4. Executing AST frontend in derive mode using pre-parsed AST for module `\large_mux'.
+Parameter \WIDTH = 32
+Generating RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Note: Assuming pure combinatorial block at ../../../../.././rtl/large_mux.v:11.1-35.4 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Parameter \WIDTH = 32
+
+6.5. Executing AST frontend in derive mode using pre-parsed AST for module `\encoder'.
+Parameter \WIDTH = 32
+Generating RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+
+6.6. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Used module:     $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000
+Used module:         \invertion
+Used module:         \large_mux
+Used module:         \encoder
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000'.
+Parameter \WIDTH = 32
+Found cached RTLIL representation for module `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000'.
+
+6.7. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Used module:     $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\invertion\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\encoder\WIDTH=s32'00000000000000000000000000100000
+
+6.8. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Used module:     $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\invertion\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\encoder\WIDTH=s32'00000000000000000000000000100000
+Removing unused module `\design1_5_5'.
+Removing unused module `\encoder'.
+Removing unused module `\large_mux'.
+Removing unused module `\invertion'.
+Removed 4 unused modules.
+
+7. Executing synth_rs pass: v0.4.206
+
+7.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+7.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/CARRY.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/CARRY.v' to AST representation.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/CARRY.v:10.1-19.10.
+Generating RTLIL representation for module `\CARRY'.
+Successfully finished Verilog frontend.
+
+7.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+7.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DFFRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DFFRE.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DFFRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFRE'.
+Successfully finished Verilog frontend.
+
+7.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DFFNRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DFFNRE.v' to AST representation.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DFFNRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Successfully finished Verilog frontend.
+
+7.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT1.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT1.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT1.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT1'.
+Successfully finished Verilog frontend.
+
+7.7. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT2.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT2.v' to AST representation.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT2.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT2'.
+Successfully finished Verilog frontend.
+
+7.8. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT3.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT3.v' to AST representation.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT3.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT3'.
+Successfully finished Verilog frontend.
+
+7.9. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT4.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT4.v' to AST representation.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT4.v:11.1-21.10.
+Generating RTLIL representation for module `\LUT4'.
+Successfully finished Verilog frontend.
+
+7.10. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT5.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT5.v' to AST representation.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT5.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT5'.
+Successfully finished Verilog frontend.
+
+7.11. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT6.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT6.v' to AST representation.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/LUT6.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+7.12. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/CLK_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/CLK_BUF.v' to AST representation.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/CLK_BUF.v:10.1-17.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Successfully finished Verilog frontend.
+
+7.13. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/O_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/O_BUF.v' to AST representation.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/O_BUF.v:10.1-22.10.
+Generating RTLIL representation for module `\O_BUF'.
+Successfully finished Verilog frontend.
+
+7.14. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DSP38.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DSP38.v' to AST representation.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DSP38.v:10.1-324.10.
+Generating RTLIL representation for module `\DSP38'.
+/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/sim_models/verilog/DSP38.v:0: Warning: System task `$display' outside initial block is unsupported.
+Successfully finished Verilog frontend.
+
+7.15. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\RS_TDP36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:113.1-641.10.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:642.1-1070.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:1072.1-1481.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:1483.1-1886.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+7.16. Executing HIERARCHY pass (managing design hierarchy).
+
+7.16.1. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Used module:     $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\invertion\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\encoder\WIDTH=s32'00000000000000000000000000100000
+
+7.16.2. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Used module:     $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\invertion\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000
+Used module:         $paramod\encoder\WIDTH=s32'00000000000000000000000000100000
+Removed 0 unused modules.
+
+7.17. Executing PROC pass (convert processes to netlists).
+
+7.17.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.17.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 5 switch rules as full_case in process $proc$../../../../.././rtl/encoder.v:20$35 in module $paramod\encoder\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$../../../../.././rtl/encoder.v:11$34 in module $paramod\encoder\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:24$18 in module design1_5_5_top.
+Marked 1 switch rules as full_case in process $proc$../../../../.././rtl/large_mux.v:11$33 in module $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.
+Marked 1 switch rules as full_case in process $proc$../../../../.././rtl/invertion.v:14$27 in module $paramod\invertion\WIDTH=s32'00000000000000000000000000100000.
+Removed a total of 0 dead cases.
+
+7.17.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 7 assignments to connections.
+
+7.17.4. Executing PROC_INIT pass (extract init attributes).
+
+7.17.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:24$18'.
+
+7.17.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+7.17.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:20$35'.
+     1/5: $5\data_out_wire[31:0]
+     2/5: $4\data_out_wire[31:0]
+     3/5: $3\data_out_wire[31:0]
+     4/5: $2\data_out_wire[31:0]
+     5/5: $1\data_out_wire[31:0]
+Creating decoders for process `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:11$34'.
+     1/1: $0\data_out[31:0]
+Creating decoders for process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+Creating decoders for process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:24$18'.
+     1/1: $0\tmp[159:0]
+Creating decoders for process `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/large_mux.v:11$33'.
+     1/1: $1\data_out[31:0]
+Creating decoders for process `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/invertion.v:14$27'.
+     1/1: $0\data_out_reg[7:0]
+
+7.17.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.\data_out_wire' from process `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:20$35'.
+No latch inferred for signal `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.\data_out' from process `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/large_mux.v:11$33'.
+
+7.17.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.\data_out' using process `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:11$34'.
+  created $dff cell `$procdff$113' with positive edge clock.
+Creating register for signal `\design1_5_5_top.\d_in0' using process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+  created $dff cell `$procdff$114' with positive edge clock.
+Creating register for signal `\design1_5_5_top.\d_in1' using process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+  created $dff cell `$procdff$115' with positive edge clock.
+Creating register for signal `\design1_5_5_top.\d_in2' using process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+  created $dff cell `$procdff$116' with positive edge clock.
+Creating register for signal `\design1_5_5_top.\d_in3' using process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+  created $dff cell `$procdff$117' with positive edge clock.
+Creating register for signal `\design1_5_5_top.\d_in4' using process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+  created $dff cell `$procdff$118' with positive edge clock.
+Creating register for signal `\design1_5_5_top.\tmp' using process `\design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:24$18'.
+  created $adff cell `$procdff$119' with positive edge clock and positive level reset.
+Creating register for signal `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000.\data_out_reg' using process `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/invertion.v:14$27'.
+  created $dff cell `$procdff$120' with positive edge clock.
+
+7.17.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.17.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 5 empty switches in `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:20$35'.
+Removing empty process `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:20$35'.
+Found and cleaned up 1 empty switch in `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:11$34'.
+Removing empty process `$paramod\encoder\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/encoder.v:11$34'.
+Removing empty process `design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:31$19'.
+Removing empty process `design1_5_5_top.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v:24$18'.
+Found and cleaned up 1 empty switch in `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/large_mux.v:11$33'.
+Removing empty process `$paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/large_mux.v:11$33'.
+Found and cleaned up 1 empty switch in `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/invertion.v:14$27'.
+Removing empty process `$paramod\invertion\WIDTH=s32'00000000000000000000000000100000.$proc$../../../../.././rtl/invertion.v:14$27'.
+Cleaned up 8 empty switches.
+
+7.17.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod\encoder\WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~1 debug messages>
+Optimizing module design1_5_5_top.
+Optimizing module $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~4 debug messages>
+Optimizing module $paramod\invertion\WIDTH=s32'00000000000000000000000000100000.
+Optimizing module $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000.
+
+7.18. Executing DEMUXMAP pass.
+
+7.19. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\design1_5_5\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod\encoder\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod\invertion\WIDTH=s32'00000000000000000000000000100000.
+Deleting now unused module $paramod\large_mux\WIDTH=s32'00000000000000000000000000100000.
+<suppressed ~26 debug messages>
+
+7.20. Executing DEMUXMAP pass.
+
+7.21. Executing TRIBUF pass.
+
+7.22. Executing TRIBUF pass.
+
+7.23. Executing DEMINOUT pass (demote inout ports to input or output).
+
+7.24. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 276 unused wires.
+<suppressed ~1 debug messages>
+
+7.26. Executing CHECK pass (checking for obvious problems).
+Checking module design1_5_5_top...
+Found and reported 0 problems.
+
+7.27. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                593
+   Number of wire bits:           9544
+   Number of public wires:         166
+   Number of public wire bits:    3526
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                478
+     $adff                           1
+     $dff                           19
+     $eq                           173
+     $logic_not                     53
+     $mux                          154
+     $not                           15
+     $or                             5
+     $pmux                          44
+     $reduce_xor                     5
+     $xor                            9
+
+7.28. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.29. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.30. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance00.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance03.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance11.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance14.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance20.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance24.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance31.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance41.$procmux$81.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$45.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$48.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$51.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$54.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$60.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$63.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$66.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$72.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$75.
+    dead port 1/2 on $mux $flatten\design1_5_5_inst.\encoder_instance42.$procmux$81.
+Removed 90 multiplexer ports.
+<suppressed ~30 debug messages>
+
+7.31. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.32. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.33. Executing OPT_SHARE pass.
+
+7.34. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=20, #solve=0, #remove=0, time=0.01 sec.]
+
+7.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 90 unused wires.
+<suppressed ~1 debug messages>
+
+7.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.37. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+7.38. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.40. Executing OPT_SHARE pass.
+
+7.41. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=20, #solve=0, #remove=0, time=0.01 sec.]
+
+7.42. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+7.44. Executing FSM pass (extract and optimize FSM).
+
+7.44.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance00.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance03.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance11.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance14.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance20.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance24.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance31.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+Found FSM state register design1_5_5_top.design1_5_5_inst.encoder_instance41.data_out.
+Not marking design1_5_5_top.design1_5_5_inst.encoder_instance42.data_out as FSM state register:
+    Users of register don't seem to benefit from recoding.
+
+7.44.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\design1_5_5_inst.encoder_instance41.data_out' from module `\design1_5_5_top'.
+  found $dff cell for state register: $flatten\design1_5_5_inst.\encoder_instance41.$procdff$113
+  root of input selection tree: $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0]
+  found reset state: 0 (guessed from mux tree)
+  found ctrl input: \rst
+  found ctrl input: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:23$36_Y
+  found ctrl input: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:26$37_Y
+  found ctrl input: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:29$38_Y
+  found ctrl input: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:32$39_Y
+  found ctrl input: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:35$40_Y
+  found state code: 0
+  found state code: 32'11111111111111111111000001011111
+  found state code: 8097783
+  found state code: 32'11111111100000000111000000010111
+  found state code: 32'11111111111111111111101001110000
+  found state code: 1423
+  found ctrl output: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:35$40_Y
+  found ctrl output: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:32$39_Y
+  found ctrl output: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:29$38_Y
+  found ctrl output: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:26$37_Y
+  found ctrl output: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:23$36_Y
+  ctrl inputs: { $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:23$36_Y $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:26$37_Y $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:29$38_Y $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:32$39_Y $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:35$40_Y \rst }
+  ctrl outputs: { $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:23$36_Y $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:26$37_Y $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:29$38_Y $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:32$39_Y $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:35$40_Y $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] }
+  transition:          0 6'000000 ->          0 37'1000000000000000000000000000000000000
+  transition:          0 6'000010 -> 32'11111111111111111111000001011111 37'1000011111111111111111111000001011111
+  transition:          0 6'0001-0 ->    8097783 37'1000000000000011110111000111111110111
+  transition:          0 6'001--0 -> 32'11111111100000000111000000010111 37'1000011111111100000000111000000010111
+  transition:          0 6'01---0 -> 32'11111111111111111111101001110000 37'1000011111111111111111111101001110000
+  transition:          0 6'1----0 ->       1423 37'1000000000000000000000000010110001111
+  transition:          0 6'-----1 ->          0 37'1000000000000000000000000000000000000
+  transition: 32'11111111111111111111101001110000 6'000000 ->          0 37'0000000000000000000000000000000000000
+  transition: 32'11111111111111111111101001110000 6'000010 -> 32'11111111111111111111000001011111 37'0000011111111111111111111000001011111
+  transition: 32'11111111111111111111101001110000 6'0001-0 ->    8097783 37'0000000000000011110111000111111110111
+  transition: 32'11111111111111111111101001110000 6'001--0 -> 32'11111111100000000111000000010111 37'0000011111111100000000111000000010111
+  transition: 32'11111111111111111111101001110000 6'01---0 -> 32'11111111111111111111101001110000 37'0000011111111111111111111101001110000
+  transition: 32'11111111111111111111101001110000 6'1----0 ->       1423 37'0000000000000000000000000010110001111
+  transition: 32'11111111111111111111101001110000 6'-----1 ->          0 37'0000000000000000000000000000000000000
+  transition: 32'11111111100000000111000000010111 6'000000 ->          0 37'0000000000000000000000000000000000000
+  transition: 32'11111111100000000111000000010111 6'000010 -> 32'11111111111111111111000001011111 37'0000011111111111111111111000001011111
+  transition: 32'11111111100000000111000000010111 6'0001-0 ->    8097783 37'0000000000000011110111000111111110111
+  transition: 32'11111111100000000111000000010111 6'001--0 -> 32'11111111100000000111000000010111 37'0000011111111100000000111000000010111
+  transition: 32'11111111100000000111000000010111 6'01---0 -> 32'11111111111111111111101001110000 37'0000011111111111111111111101001110000
+  transition: 32'11111111100000000111000000010111 6'1----0 ->       1423 37'0000000000000000000000000010110001111
+  transition: 32'11111111100000000111000000010111 6'-----1 ->          0 37'0000000000000000000000000000000000000
+  transition:    8097783 6'000000 ->          0 37'0000000000000000000000000000000000000
+  transition:    8097783 6'000010 -> 32'11111111111111111111000001011111 37'0000011111111111111111111000001011111
+  transition:    8097783 6'0001-0 ->    8097783 37'0000000000000011110111000111111110111
+  transition:    8097783 6'001--0 -> 32'11111111100000000111000000010111 37'0000011111111100000000111000000010111
+  transition:    8097783 6'01---0 -> 32'11111111111111111111101001110000 37'0000011111111111111111111101001110000
+  transition:    8097783 6'1----0 ->       1423 37'0000000000000000000000000010110001111
+  transition:    8097783 6'-----1 ->          0 37'0000000000000000000000000000000000000
+  transition:       1423 6'000000 ->          0 37'0000000000000000000000000000000000000
+  transition:       1423 6'000010 -> 32'11111111111111111111000001011111 37'0000011111111111111111111000001011111
+  transition:       1423 6'0001-0 ->    8097783 37'0000000000000011110111000111111110111
+  transition:       1423 6'001--0 -> 32'11111111100000000111000000010111 37'0000011111111100000000111000000010111
+  transition:       1423 6'01---0 -> 32'11111111111111111111101001110000 37'0000011111111111111111111101001110000
+  transition:       1423 6'1----0 ->       1423 37'0000000000000000000000000010110001111
+  transition:       1423 6'-----1 ->          0 37'0000000000000000000000000000000000000
+  transition: 32'11111111111111111111000001011111 6'000000 ->          0 37'0000000000000000000000000000000000000
+  transition: 32'11111111111111111111000001011111 6'000010 -> 32'11111111111111111111000001011111 37'0000011111111111111111111000001011111
+  transition: 32'11111111111111111111000001011111 6'0001-0 ->    8097783 37'0000000000000011110111000111111110111
+  transition: 32'11111111111111111111000001011111 6'001--0 -> 32'11111111100000000111000000010111 37'0000011111111100000000111000000010111
+  transition: 32'11111111111111111111000001011111 6'01---0 -> 32'11111111111111111111101001110000 37'0000011111111111111111111101001110000
+  transition: 32'11111111111111111111000001011111 6'1----0 ->       1423 37'0000000000000000000000000010110001111
+  transition: 32'11111111111111111111000001011111 6'-----1 ->          0 37'0000000000000000000000000000000000000
+
+7.44.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\design1_5_5_inst.encoder_instance41.data_out$121' from module `\design1_5_5_top'.
+
+7.44.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 12 unused cells and 14 unused wires.
+<suppressed ~16 debug messages>
+
+7.44.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\design1_5_5_inst.encoder_instance41.data_out$121' from module `\design1_5_5_top'.
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [0].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [1].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [2].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [3].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [4].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [5].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [6].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [7].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [8].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [9].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [10].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [11].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [12].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [13].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [14].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [15].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [16].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [17].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [18].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [19].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [20].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [21].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [22].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [23].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [24].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [25].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [26].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [27].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [28].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [29].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [30].
+  Removing unused output signal $flatten\design1_5_5_inst.\encoder_instance41.$0\data_out[31:0] [31].
+
+7.44.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\design1_5_5_inst.encoder_instance41.data_out$121' from module `\design1_5_5_top' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00000000000000000000000000000000 -> -----1
+  11111111111111111111101001110000 -> ----1-
+  11111111100000000111000000010111 -> ---1--
+  00000000011110111000111111110111 -> --1---
+  00000000000000000000010110001111 -> -1----
+  11111111111111111111000001011111 -> 1-----
+
+7.44.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\design1_5_5_inst.encoder_instance41.data_out$121' from module `design1_5_5_top':
+-------------------------------------
+
+  Information on FSM $fsm$\design1_5_5_inst.encoder_instance41.data_out$121 (\design1_5_5_inst.encoder_instance41.data_out):
+
+  Number of input signals:    6
+  Number of output signals:   5
+  Number of state bits:       6
+
+  Input signals:
+    0: \rst
+    1: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:35$40_Y
+    2: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:32$39_Y
+    3: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:29$38_Y
+    4: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:26$37_Y
+    5: $flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:23$36_Y
+
+  Output signals:
+    0: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:35$40_Y
+    1: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:32$39_Y
+    2: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:29$38_Y
+    3: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:26$37_Y
+    4: $flatten\design1_5_5_inst.\encoder_instance42.$eq$../../../../.././rtl/encoder.v:23$36_Y
+
+  State encoding:
+    0:   6'-----1  <RESET STATE>
+    1:   6'----1-
+    2:   6'---1--
+    3:   6'--1---
+    4:   6'-1----
+    5:   6'1-----
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 6'000000   ->     0 5'10000
+      1:     0 6'-----1   ->     0 5'10000
+      2:     0 6'01---0   ->     1 5'10000
+      3:     0 6'001--0   ->     2 5'10000
+      4:     0 6'0001-0   ->     3 5'10000
+      5:     0 6'1----0   ->     4 5'10000
+      6:     0 6'000010   ->     5 5'10000
+      7:     1 6'000000   ->     0 5'00000
+      8:     1 6'-----1   ->     0 5'00000
+      9:     1 6'01---0   ->     1 5'00000
+     10:     1 6'001--0   ->     2 5'00000
+     11:     1 6'0001-0   ->     3 5'00000
+     12:     1 6'1----0   ->     4 5'00000
+     13:     1 6'000010   ->     5 5'00000
+     14:     2 6'000000   ->     0 5'00000
+     15:     2 6'-----1   ->     0 5'00000
+     16:     2 6'01---0   ->     1 5'00000
+     17:     2 6'001--0   ->     2 5'00000
+     18:     2 6'0001-0   ->     3 5'00000
+     19:     2 6'1----0   ->     4 5'00000
+     20:     2 6'000010   ->     5 5'00000
+     21:     3 6'000000   ->     0 5'00000
+     22:     3 6'-----1   ->     0 5'00000
+     23:     3 6'01---0   ->     1 5'00000
+     24:     3 6'001--0   ->     2 5'00000
+     25:     3 6'0001-0   ->     3 5'00000
+     26:     3 6'1----0   ->     4 5'00000
+     27:     3 6'000010   ->     5 5'00000
+     28:     4 6'000000   ->     0 5'00000
+     29:     4 6'-----1   ->     0 5'00000
+     30:     4 6'01---0   ->     1 5'00000
+     31:     4 6'001--0   ->     2 5'00000
+     32:     4 6'0001-0   ->     3 5'00000
+     33:     4 6'1----0   ->     4 5'00000
+     34:     4 6'000010   ->     5 5'00000
+     35:     5 6'000000   ->     0 5'00000
+     36:     5 6'-----1   ->     0 5'00000
+     37:     5 6'01---0   ->     1 5'00000
+     38:     5 6'001--0   ->     2 5'00000
+     39:     5 6'0001-0   ->     3 5'00000
+     40:     5 6'1----0   ->     4 5'00000
+     41:     5 6'000010   ->     5 5'00000
+
+-------------------------------------
+
+7.44.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\design1_5_5_inst.encoder_instance41.data_out$121' from module `\design1_5_5_top'.
+
+7.45. Executing WREDUCE pass (reducing word size of cells).
+Removed top 5 bits (of 6) from FF cell design1_5_5_top.$auto$fsm_map.cc:172:map_fsm$129 ($dff).
+Removed top 5 bits (of 6) from port B of cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$133 ($eq).
+Removed top 1 bits (of 3) from port B of cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$138 ($eq).
+Removed cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$138 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$140 ($eq).
+Removed cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$140 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance03.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance03.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance03.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance03.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance11.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance11.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance11.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance11.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance14.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance14.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance14.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance14.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance20.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance20.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance20.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance20.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance24.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance24.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance24.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance24.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance31.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance31.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance31.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance31.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 19 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:35$40 ($eq).
+Removed top 18 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:32$39 ($eq).
+Removed top 22 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:29$38 ($eq).
+Removed top 25 bits (of 32) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance41.$eq$../../../../.././rtl/encoder.v:26$37 ($eq).
+Removed top 4 bits (of 6) from port B of cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$146 ($eq).
+Removed cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$146 ($eq).
+Removed cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$144 ($eq).
+Removed top 3 bits (of 5) from port B of cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$142 ($eq).
+Removed cell design1_5_5_top.$auto$fsm_map.cc:77:implement_pattern_cache$142 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance01.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance04.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance12.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance13.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance21.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance22.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance23.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance30.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance33.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance40.$procmux$101_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$98_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$97_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$96_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$93_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$92_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$91_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$108_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$107_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$106_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$103_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$102_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$101_CMP0 ($eq).
+Removed top 5 bits (of 6) from wire design1_5_5_top.$auto$fsm_map.cc:238:map_fsm$131.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$flatten\design1_5_5_inst.\invertion_instance02.$reduce_xor$../../../../.././rtl/invertion.v:27$31_Y.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$flatten\design1_5_5_inst.\invertion_instance10.$reduce_xor$../../../../.././rtl/invertion.v:27$31_Y.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$flatten\design1_5_5_inst.\invertion_instance32.$reduce_xor$../../../../.././rtl/invertion.v:27$31_Y.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$flatten\design1_5_5_inst.\invertion_instance34.$reduce_xor$../../../../.././rtl/invertion.v:27$31_Y.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$flatten\design1_5_5_inst.\invertion_instance44.$reduce_xor$../../../../.././rtl/invertion.v:27$31_Y.
+
+7.46. Executing PEEPOPT pass (run peephole optimizers).
+
+7.47. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 19 unused wires.
+<suppressed ~1 debug messages>
+
+7.48. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~6 debug messages>
+
+7.49. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.50. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~29 debug messages>
+
+7.51. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.53. Executing OPT_SHARE pass.
+
+7.54. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $flatten\design1_5_5_inst.\invertion_instance44.$procdff$120 ($dff) from module design1_5_5_top (D = $flatten\design1_5_5_inst.\invertion_instance44.$xor$../../../../.././rtl/invertion.v:22$28_Y, Q = \design1_5_5_inst.invertion_instance44.data_out_reg, rval = 8'00000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\invertion_instance34.$procdff$120 ($dff) from module design1_5_5_top (D = $flatten\design1_5_5_inst.\invertion_instance34.$xor$../../../../.././rtl/invertion.v:22$28_Y, Q = \design1_5_5_inst.invertion_instance34.data_out_reg, rval = 8'00000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\invertion_instance32.$procdff$120 ($dff) from module design1_5_5_top (D = $flatten\design1_5_5_inst.\invertion_instance32.$xor$../../../../.././rtl/invertion.v:22$28_Y, Q = \design1_5_5_inst.invertion_instance32.data_out_reg, rval = 8'00000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\invertion_instance10.$procdff$120 ($dff) from module design1_5_5_top (D = $flatten\design1_5_5_inst.\invertion_instance10.$xor$../../../../.././rtl/invertion.v:22$28_Y, Q = \design1_5_5_inst.invertion_instance10.data_out_reg, rval = 8'00000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\invertion_instance02.$procdff$120 ($dff) from module design1_5_5_top (D = $flatten\design1_5_5_inst.\invertion_instance02.$xor$../../../../.././rtl/invertion.v:22$28_Y, Q = \design1_5_5_inst.invertion_instance02.data_out_reg, rval = 8'00000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance42.$procdff$113 ($dff) from module design1_5_5_top (D = \design1_5_5_inst.encoder_instance42.data_out_wire, Q = \design1_5_5_inst.encoder_instance42.data_out, rval = 0).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance31.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance31.data_out_wire [10] \design1_5_5_inst.encoder_instance31.data_out_wire [8:7] \design1_5_5_inst.encoder_instance31.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance31.data_out [10] \design1_5_5_inst.encoder_instance31.data_out [8:7] \design1_5_5_inst.encoder_instance31.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance31.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance31.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance31.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance31.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance31.data_out [31:11] \design1_5_5_inst.encoder_instance31.data_out [9] \design1_5_5_inst.encoder_instance31.data_out [6:4] }, rval = 25'0000000000000000000000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance24.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance24.data_out_wire [10] \design1_5_5_inst.encoder_instance24.data_out_wire [8:7] \design1_5_5_inst.encoder_instance24.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance24.data_out [10] \design1_5_5_inst.encoder_instance24.data_out [8:7] \design1_5_5_inst.encoder_instance24.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance24.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance24.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance24.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance24.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance24.data_out [31:11] \design1_5_5_inst.encoder_instance24.data_out [9] \design1_5_5_inst.encoder_instance24.data_out [6:4] }, rval = 25'0000000000000000000000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance20.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance20.data_out_wire [10] \design1_5_5_inst.encoder_instance20.data_out_wire [8:7] \design1_5_5_inst.encoder_instance20.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance20.data_out [10] \design1_5_5_inst.encoder_instance20.data_out [8:7] \design1_5_5_inst.encoder_instance20.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance20.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance20.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance20.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance20.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance20.data_out [31:11] \design1_5_5_inst.encoder_instance20.data_out [9] \design1_5_5_inst.encoder_instance20.data_out [6:4] }, rval = 25'0000000000000000000000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance14.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance14.data_out_wire [10] \design1_5_5_inst.encoder_instance14.data_out_wire [8:7] \design1_5_5_inst.encoder_instance14.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance14.data_out [10] \design1_5_5_inst.encoder_instance14.data_out [8:7] \design1_5_5_inst.encoder_instance14.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance14.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance14.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance14.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance14.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance14.data_out [31:11] \design1_5_5_inst.encoder_instance14.data_out [9] \design1_5_5_inst.encoder_instance14.data_out [6:4] }, rval = 25'0000000000000000000000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance11.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance11.data_out_wire [10] \design1_5_5_inst.encoder_instance11.data_out_wire [8:7] \design1_5_5_inst.encoder_instance11.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance11.data_out [10] \design1_5_5_inst.encoder_instance11.data_out [8:7] \design1_5_5_inst.encoder_instance11.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance11.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance11.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance11.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance11.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance11.data_out [31:11] \design1_5_5_inst.encoder_instance11.data_out [9] \design1_5_5_inst.encoder_instance11.data_out [6:4] }, rval = 25'0000000000000000000000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance03.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance03.data_out_wire [10] \design1_5_5_inst.encoder_instance03.data_out_wire [8:7] \design1_5_5_inst.encoder_instance03.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance03.data_out [10] \design1_5_5_inst.encoder_instance03.data_out [8:7] \design1_5_5_inst.encoder_instance03.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance03.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance03.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance03.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance03.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance03.data_out [31:11] \design1_5_5_inst.encoder_instance03.data_out [9] \design1_5_5_inst.encoder_instance03.data_out [6:4] }, rval = 25'0000000000000000000000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance00.$procdff$113 ($dff) from module design1_5_5_top (D = { \design1_5_5_inst.encoder_instance00.data_out_wire [10] \design1_5_5_inst.encoder_instance00.data_out_wire [8:7] \design1_5_5_inst.encoder_instance00.data_out_wire [3:0] }, Q = { \design1_5_5_inst.encoder_instance00.data_out [10] \design1_5_5_inst.encoder_instance00.data_out [8:7] \design1_5_5_inst.encoder_instance00.data_out [3:0] }, rval = 7'0000000).
+Adding SRST signal on $flatten\design1_5_5_inst.\encoder_instance00.$procdff$113 ($dff) from module design1_5_5_top (D = { $flatten\design1_5_5_inst.\encoder_instance00.$2\data_out_wire[31:0] [31:11] $flatten\design1_5_5_inst.\encoder_instance00.$2\data_out_wire[31:0] [9] $flatten\design1_5_5_inst.\encoder_instance00.$2\data_out_wire[31:0] [6:4] }, Q = { \design1_5_5_inst.encoder_instance00.data_out [31:11] \design1_5_5_inst.encoder_instance00.data_out [9] \design1_5_5_inst.encoder_instance00.data_out [6:4] }, rval = 25'0000000000000000000000000).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.55. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 13 unused cells and 18 unused wires.
+<suppressed ~14 debug messages>
+
+7.56. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.57. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+7.58. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.59. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.60. Executing OPT_SHARE pass.
+
+7.61. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.62. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.63. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+7.64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.65. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.66. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+7.67. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.69. Executing OPT_SHARE pass.
+
+7.70. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.71. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.72. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.73. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.74. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.75. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+7.76. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.77. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.78. Executing OPT_SHARE pass.
+
+7.79. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.80. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 4 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 5 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 6 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 9 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 11 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 12 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 13 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 14 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 15 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 16 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 17 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 18 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 19 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 20 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 21 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 22 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 23 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 24 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 25 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 26 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 27 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 28 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 29 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 30 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+Setting constant 0-bit at position 31 on $auto$ff.cc:294:slice$158 ($sdff) from module design1_5_5_top.
+[#visit=27, #solve=424, #remove=25, time=0.63 sec.]
+
+7.81. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.82. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~9 debug messages>
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.83. Executing WREDUCE pass (reducing word size of cells).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance03.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance11.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance14.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance20.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance24.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance31.$procmux$84 ($mux).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance42.$procmux$84 ($mux).
+Removed top 1 bits (of 2) from port B of cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$98_CMP0 ($eq).
+Removed top 21 bits (of 32) from mux cell design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$90 ($pmux).
+Removed top 5 bits (of 6) from wire design1_5_5_top.$auto$fsm_map.cc:170:map_fsm$128.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$auto$wreduce.cc:455:run$148.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$auto$wreduce.cc:455:run$149.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$auto$wreduce.cc:455:run$150.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$auto$wreduce.cc:455:run$151.
+Removed top 15 bits (of 16) from wire design1_5_5_top.$auto$wreduce.cc:455:run$152.
+Removed top 21 bits (of 32) from wire design1_5_5_top.$flatten\design1_5_5_inst.\large_mux_instance43.$procmux$90_Y.
+
+7.84. Executing PEEPOPT pass (run peephole optimizers).
+
+7.85. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 16 unused wires.
+<suppressed ~1 debug messages>
+
+7.86. Executing DEMUXMAP pass.
+
+7.87. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                473
+   Number of wire bits:           5878
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                367
+     $adff                           1
+     $dff                            6
+     $eq                           161
+     $logic_not                     52
+     $mux                           41
+     $not                           15
+     $or                             5
+     $pmux                          44
+     $reduce_or                      8
+     $reduce_xor                     5
+     $sdff                          20
+     $xor                            9
+
+7.88. Executing RS_DSP_MULTADD pass.
+
+7.89. Executing WREDUCE pass (reducing word size of cells).
+
+7.90. Executing RS_DSP_MACC pass.
+
+7.91. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.92. Executing TECHMAP pass (map to technology primitives).
+
+7.92.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+7.92.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7.93. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                473
+   Number of wire bits:           5878
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                367
+     $adff                           1
+     $dff                            6
+     $eq                           161
+     $logic_not                     52
+     $mux                           41
+     $not                           15
+     $or                             5
+     $pmux                          44
+     $reduce_or                      8
+     $reduce_xor                     5
+     $sdff                          20
+     $xor                            9
+
+7.94. Executing TECHMAP pass (map to technology primitives).
+
+7.94.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Successfully finished Verilog frontend.
+
+7.94.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+7.95. Executing TECHMAP pass (map to technology primitives).
+
+7.95.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Successfully finished Verilog frontend.
+
+7.95.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+7.96. Executing rs_pack_dsp_regs pass.
+
+7.97. Executing RS_DSP_IO_REGS pass.
+
+7.98. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                473
+   Number of wire bits:           5878
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                367
+     $adff                           1
+     $dff                            6
+     $eq                           161
+     $logic_not                     52
+     $mux                           41
+     $not                           15
+     $or                             5
+     $pmux                          44
+     $reduce_or                      8
+     $reduce_xor                     5
+     $sdff                          20
+     $xor                            9
+
+7.99. Executing TECHMAP pass (map to technology primitives).
+
+7.99.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Successfully finished Verilog frontend.
+
+7.99.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~14 debug messages>
+
+7.100. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                473
+   Number of wire bits:           5878
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                367
+     $adff                           1
+     $dff                            6
+     $eq                           161
+     $logic_not                     52
+     $mux                           41
+     $not                           15
+     $or                             5
+     $pmux                          44
+     $reduce_or                      8
+     $reduce_xor                     5
+     $sdff                          20
+     $xor                            9
+
+7.101. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module design1_5_5_top:
+  created 0 $alu and 0 $macc cells.
+
+7.102. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.103. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.104. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$100.
+    dead port 2/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$100.
+    dead port 3/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$100.
+    dead port 1/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$90.
+    dead port 2/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$90.
+    dead port 3/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$90.
+    dead port 5/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$90.
+    dead port 1/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$95.
+    dead port 2/5 on $pmux $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$95.
+Removed 9 multiplexer ports.
+<suppressed ~31 debug messages>
+
+7.105. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+    New ctrl vector for $pmux cell $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$105: { $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$109_CMP $flatten\design1_5_5_inst.\large_mux_instance43.$procmux$108_CMP $auto$opt_reduce.cc:134:opt_pmux$196 }
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 2 changes.
+
+7.106. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.107. Executing OPT_SHARE pass.
+
+7.108. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.109. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 2 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
+
+7.110. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.111. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~31 debug messages>
+
+7.112. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.113. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.114. Executing OPT_SHARE pass.
+
+7.115. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.116. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.117. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+7.118. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                470
+   Number of wire bits:           5813
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                364
+     $adff                           1
+     $dff                            6
+     $eq                           160
+     $logic_not                     51
+     $mux                           42
+     $not                           15
+     $or                             5
+     $pmux                          41
+     $reduce_or                      9
+     $reduce_xor                     5
+     $sdff                          20
+     $xor                            9
+
+7.119. Executing MEMORY pass.
+
+7.119.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.119.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.119.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.119.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.119.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.119.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.119.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.119.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.119.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.119.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.120. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                470
+   Number of wire bits:           5813
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                364
+     $adff                           1
+     $dff                            6
+     $eq                           160
+     $logic_not                     51
+     $mux                           42
+     $not                           15
+     $or                             5
+     $pmux                          41
+     $reduce_or                      9
+     $reduce_xor                     5
+     $sdff                          20
+     $xor                            9
+
+7.121. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converting design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$procmux$42 ... design1_5_5_top.$flatten\design1_5_5_inst.\encoder_instance00.$procmux$78 to a pmux with 4 cases.
+Converted 4 (p)mux cells into 1 pmux cells.
+<suppressed ~67 debug messages>
+
+7.122. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+7.123. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+7.124. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+7.125. Executing Rs_BRAM_Split pass.
+
+7.126. Executing TECHMAP pass (map to technology primitives).
+
+7.126.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+7.126.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+7.127. Executing TECHMAP pass (map to technology primitives).
+
+7.127.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+7.127.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7.128. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7.129. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.130. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.131. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~43 debug messages>
+
+7.132. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.133. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.134. Executing OPT_SHARE pass.
+
+7.135. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=27, #solve=0, #remove=0, time=0.01 sec.]
+
+7.136. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.137. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.138. Executing PMUXTREE pass.
+
+7.139. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$819 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$821 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$791 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$793 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$777 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$779 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$763 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$765 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$735 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$737 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$721 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$723 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$707 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$709 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$679 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$681 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$665 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$667 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$651 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$653 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$623 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$625 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$609 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$611 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$595 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$597 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$567 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$569 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$553 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$555 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$539 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$541 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$511 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$513 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$497 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$499 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$483 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$485 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$455 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$457 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$441 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$443 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$427 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$429 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$399 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$401 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$385 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$387 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$371 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$373 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$343 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$345 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$329 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$331 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$315 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$317 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$287 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$289 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$273 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$275 to a pmux with 2 cases.
+Converting design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$259 ... design1_5_5_top.$auto$pmuxtree.cc:65:recursive_mux_generator$261 to a pmux with 2 cases.
+Converted 62 (p)mux cells into 31 pmux cells.
+<suppressed ~178 debug messages>
+
+7.140. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7.141. Executing TECHMAP pass (map to technology primitives).
+
+7.141.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.141.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+7.141.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $reduce_xor.
+Using extmapper simplemap for cells of type $and.
+No more expansions possible.
+<suppressed ~1801 debug messages>
+
+7.142. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:               5083
+   Number of wire bits:          29250
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              13473
+     $_AND_                       1984
+     $_DFF_PP0_                    160
+     $_DFF_P_                      432
+     $_MUX_                       5591
+     $_NOT_                        413
+     $_OR_                        3054
+     $_XOR_                       1839
+
+7.143. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~8248 debug messages>
+
+7.144. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+<suppressed ~12330 debug messages>
+Removed a total of 4110 cells.
+
+7.145. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.146. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.147. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.148. Executing OPT_SHARE pass.
+
+7.149. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on design1_5_5_top:design1_5_5_inst.invertion_instance44.data_out_reg[0]_8626 ($_DFF_P_) from module design1_5_5_top.
+[#visit=401, #solve=0, #remove=1, time=0.05 sec.]
+
+7.150. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 144 unused cells and 4241 unused wires.
+<suppressed ~145 debug messages>
+
+7.151. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~780 debug messages>
+
+7.152. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.153. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.154. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+<suppressed ~273 debug messages>
+Removed a total of 91 cells.
+
+7.155. Executing OPT_SHARE pass.
+
+7.156. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on design1_5_5_top:design1_5_5_inst.invertion_instance32.data_out_reg[0]_9213 ($_DFF_P_) from module design1_5_5_top.
+[#visit=388, #solve=0, #remove=1, time=0.03 sec.]
+
+7.157. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 60 unused cells and 158 unused wires.
+<suppressed ~61 debug messages>
+
+7.158. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~43 debug messages>
+
+7.159. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.160. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.161. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.162. Executing OPT_SHARE pass.
+
+7.163. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=387, #solve=0, #remove=0, time=0.03 sec.]
+
+7.164. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 1 unused cells and 6 unused wires.
+<suppressed ~2 debug messages>
+
+7.165. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.166. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.167. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.168. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.169. Executing OPT_SHARE pass.
+
+7.170. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=387, #solve=0, #remove=0, time=0.03 sec.]
+
+7.171. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.172. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 4
+
+7.173. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~467 debug messages>
+
+7.174. Executing TECHMAP pass (map to technology primitives).
+
+7.174.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.174.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+7.175. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:               1097
+   Number of wire bits:          12079
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3710
+     $_AND_                        671
+     $_DFF_PP0_                    160
+     $_DFF_P_                      227
+     $_MUX_                       1295
+     $_NOT_                        332
+     $_OR_                         869
+     $_XOR_                        156
+
+7.176. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.177. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.178. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.179. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.180. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.181. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=387, #solve=0, #remove=0, time=0.03 sec.]
+
+7.182. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+7.183. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.184. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.185. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.186. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.187. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.188. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.189. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=387, #solve=0, #remove=0, time=0.03 sec.]
+
+7.190. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.191. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.192. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.193. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.194. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.195. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.196. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.197. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=387, #solve=0, #remove=0, time=0.03 sec.]
+
+7.198. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=387, #solve=128, #remove=0, time=0.03 sec.]
+
+7.199. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.200. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.201. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:               1096
+   Number of wire bits:          12047
+   Number of public wires:         163
+   Number of public wire bits:    3404
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3710
+     $_AND_                        671
+     $_DFF_PP0_                    160
+     $_DFF_P_                      227
+     $_MUX_                       1295
+     $_NOT_                        332
+     $_OR_                         869
+     $_XOR_                        156
+
+   Number of Generic REGs:          387
+
+ABC-DFF iteration : 1
+
+7.202. Executing ABC pass (technology mapping using ABC).
+
+7.202.1. Summary of detected clock domains:
+  160 cells in clk=\clk, en={ }, arst=\rst, srst={ }
+  3550 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 2
+
+7.202.2. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 3550 gates and 3713 wires to a netlist network with 161 inputs and 255 outputs.
+
+7.202.2.1. Executing ABC.
+
+7.202.3. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \rst
+Extracted 160 gates and 192 wires to a netlist network with 32 inputs and 160 outputs.
+
+7.202.3.1. Executing ABC.
+
+7.203. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.204. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+<suppressed ~48 debug messages>
+Removed a total of 16 cells.
+
+7.205. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.206. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.207. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.208. Executing OPT_SHARE pass.
+
+7.209. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.01 sec.]
+
+7.210. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 2228 unused wires.
+<suppressed ~7 debug messages>
+
+7.211. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 2
+
+7.212. Executing ABC pass (technology mapping using ABC).
+
+7.212.1. Summary of detected clock domains:
+  160 cells in clk=\clk, en={ }, arst=\rst, srst={ }
+  722 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 2
+
+7.212.2. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 722 gates and 883 wires to a netlist network with 161 inputs and 204 outputs.
+
+7.212.2.1. Executing ABC.
+
+7.212.3. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \rst
+Extracted 160 gates and 192 wires to a netlist network with 32 inputs and 160 outputs.
+
+7.212.3.1. Executing ABC.
+
+7.213. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~1 debug messages>
+
+7.214. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.215. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.216. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.217. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.218. Executing OPT_SHARE pass.
+
+7.219. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.01 sec.]
+
+7.220. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 1756 unused wires.
+<suppressed ~1 debug messages>
+
+7.221. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+7.222. Executing ABC pass (technology mapping using ABC).
+
+7.222.1. Summary of detected clock domains:
+  160 cells in clk=\clk, en={ }, arst=\rst, srst={ }
+  715 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 2
+
+7.222.2. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 715 gates and 876 wires to a netlist network with 161 inputs and 204 outputs.
+
+7.222.2.1. Executing ABC.
+
+7.222.3. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \rst
+Extracted 160 gates and 192 wires to a netlist network with 32 inputs and 160 outputs.
+
+7.222.3.1. Executing ABC.
+
+7.223. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.224. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.225. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.226. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.227. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.228. Executing OPT_SHARE pass.
+
+7.229. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.01 sec.]
+
+7.230. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 1749 unused wires.
+<suppressed ~1 debug messages>
+
+7.231. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 4
+
+7.232. Executing ABC pass (technology mapping using ABC).
+
+7.232.1. Summary of detected clock domains:
+  160 cells in clk=\clk, en={ }, arst=\rst, srst={ }
+  711 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 2
+
+7.232.2. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 711 gates and 872 wires to a netlist network with 161 inputs and 204 outputs.
+
+7.232.2.1. Executing ABC.
+
+7.232.3. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \rst
+Extracted 160 gates and 192 wires to a netlist network with 32 inputs and 160 outputs.
+
+7.232.3.1. Executing ABC.
+
+7.233. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.234. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.235. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.236. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.237. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.238. Executing OPT_SHARE pass.
+
+7.239. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.01 sec.]
+
+7.240. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 1745 unused wires.
+<suppressed ~1 debug messages>
+
+7.241. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.242. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 2 inverters.
+
+7.243. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.244. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.245. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.246. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.247. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.248. Executing OPT_SHARE pass.
+
+7.249. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.00 sec.]
+
+7.250. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+7.251. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.252. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.253. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.254. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.255. Executing OPT_SHARE pass.
+
+7.256. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.00 sec.]
+
+7.257. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.258. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+7.259. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.260. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.261. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.262. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.263. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.264. Executing OPT_SHARE pass.
+
+7.265. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.01 sec.]
+
+7.266. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.267. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.268. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.269. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.270. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.271. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.272. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.273. Executing OPT_SHARE pass.
+
+7.274. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.01 sec.]
+
+7.275. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=128, #remove=0, time=0.01 sec.]
+
+7.276. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.277. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.278. Executing BMUXMAP pass.
+
+7.279. Executing DEMUXMAP pass.
+
+7.280. Executing ABC pass (technology mapping using ABC).
+
+7.280.1. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Extracted 505 gates and 688 wires to a netlist network with 183 inputs and 44 outputs.
+
+7.280.1.1. Executing ABC.
+DE:   #PIs = 183  #Luts =   191  Max Lvl =   4  Avg Lvl =   2.73  [   0.09 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 183  #Luts =   173  Max Lvl =   4  Avg Lvl =   2.70  [   0.57 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 183  #Luts =   164  Max Lvl =   4  Avg Lvl =   2.82  [   0.44 sec. at Pass 2]{map}[6]
+DE:   #PIs = 183  #Luts =   155  Max Lvl =   4  Avg Lvl =   2.52  [   0.38 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 183  #Luts =   153  Max Lvl =   4  Avg Lvl =   2.86  [   0.40 sec. at Pass 4]{map}[16]
+DE:   #PIs = 183  #Luts =   150  Max Lvl =   4  Avg Lvl =   2.52  [   0.35 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 183  #Luts =   150  Max Lvl =   4  Avg Lvl =   2.52  [   0.39 sec. at Pass 6]{map}[16]
+DE:   #PIs = 183  #Luts =   149  Max Lvl =   4  Avg Lvl =   2.55  [   0.36 sec. at Pass 7]{postMap}[16]
+DE:   #PIs = 183  #Luts =   149  Max Lvl =   4  Avg Lvl =   2.55  [   0.37 sec. at Pass 8]{map}[16]
+DE:   #PIs = 183  #Luts =   146  Max Lvl =   4  Avg Lvl =   2.57  [   0.33 sec. at Pass 9]{postMap}[16]
+DE:   #PIs = 183  #Luts =   146  Max Lvl =   4  Avg Lvl =   2.57  [   0.42 sec. at Pass 10]{map}[16]
+DE:   #PIs = 183  #Luts =   146  Max Lvl =   4  Avg Lvl =   2.57  [   0.33 sec. at Pass 11]{postMap}[16]
+DE:   #PIs = 183  #Luts =   144  Max Lvl =   4  Avg Lvl =   2.86  [   0.38 sec. at Pass 12]{map}[16]
+DE:   #PIs = 183  #Luts =   144  Max Lvl =   4  Avg Lvl =   2.86  [   0.35 sec. at Pass 13]{postMap}[16]
+DE:   #PIs = 183  #Luts =   144  Max Lvl =   4  Avg Lvl =   2.86  [   0.37 sec. at Pass 14]{map}[16]
+DE:   #PIs = 183  #Luts =   143  Max Lvl =   4  Avg Lvl =   2.55  [   0.33 sec. at Pass 15]{postMap}[16]
+DE:   #PIs = 183  #Luts =   142  Max Lvl =   4  Avg Lvl =   2.61  [   0.36 sec. at Pass 16]{map}[16]
+DE:   #PIs = 183  #Luts =   139  Max Lvl =   4  Avg Lvl =   2.52  [   0.30 sec. at Pass 17]{postMap}[16]
+DE:   #PIs = 183  #Luts =   139  Max Lvl =   4  Avg Lvl =   2.52  [   0.64 sec. at Pass 18]{map}[16]
+DE:   #PIs = 183  #Luts =   139  Max Lvl =   4  Avg Lvl =   2.52  [   0.34 sec. at Pass 19]{postMap}[16]
+DE:   #PIs = 183  #Luts =   139  Max Lvl =   4  Avg Lvl =   2.52  [   0.41 sec. at Pass 20]{map}[16]
+DE:   #PIs = 183  #Luts =   139  Max Lvl =   4  Avg Lvl =   2.52  [   0.00 sec. at Pass 21]{pushMap}[0]
+DE:   #PIs = 183  #Luts =   139  Max Lvl =   4  Avg Lvl =   2.52  [   0.00 sec. at Pass 22]{finalMap}[0]
+
+7.281. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.282. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.283. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.284. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.285. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.286. Executing OPT_SHARE pass.
+
+7.287. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.00 sec.]
+
+7.288. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 688 unused wires.
+<suppressed ~1 debug messages>
+
+7.289. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.290. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+7.291. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.292. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.293. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.294. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.295. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.296. Executing OPT_SHARE pass.
+
+7.297. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.00 sec.]
+
+7.298. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.299. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.300. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.301. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.302. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.303. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.304. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.305. Executing OPT_SHARE pass.
+
+7.306. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=0, #remove=0, time=0.00 sec.]
+
+7.307. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=361, #solve=128, #remove=0, time=0.01 sec.]
+
+7.308. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+
+7.309. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.310. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                293
+   Number of wire bits:           3348
+   Number of public wires:         157
+   Number of public wire bits:    3212
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                500
+     $_DFF_PP0_                    160
+     $_DFF_P_                      201
+     $lut                          139
+
+7.311. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+7.312. Executing RS_DFFSR_CONV pass.
+
+7.313. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                293
+   Number of wire bits:           3348
+   Number of public wires:         157
+   Number of public wire bits:    3212
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                500
+     $_DFF_PP0_                    160
+     $_DFF_P_                      201
+     $lut                          139
+
+7.314. Executing TECHMAP pass (map to technology primitives).
+
+7.314.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.314.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+7.314.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+Using extmapper simplemap for cells of type $logic_not.
+No more expansions possible.
+<suppressed ~780 debug messages>
+
+7.315. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~4168 debug messages>
+
+7.316. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+7.317. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.318. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+<suppressed ~1452 debug messages>
+Removed a total of 484 cells.
+
+7.319. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+7.320. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 1641 unused wires.
+<suppressed ~1 debug messages>
+
+7.321. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+<suppressed ~46 debug messages>
+
+7.322. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+7.323. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.324. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.325. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.326. Executing OPT_SHARE pass.
+
+7.327. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+7.328. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+7.329. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.330. Executing TECHMAP pass (map to technology primitives).
+
+7.330.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.330.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+7.331. Executing ABC pass (technology mapping using ABC).
+
+7.331.1. Extracting gate netlist of module `\design1_5_5_top' to `<abc-temp-dir>/input.blif'..
+Extracted 610 gates and 795 wires to a netlist network with 183 inputs and 45 outputs.
+
+7.331.1.1. Executing ABC.
+DE:   #PIs = 183  #Luts =   145  Max Lvl =   4  Avg Lvl =   2.40  [   0.11 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 183  #Luts =   144  Max Lvl =   4  Avg Lvl =   2.67  [   0.46 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 183  #Luts =   143  Max Lvl =   4  Avg Lvl =   2.67  [   0.35 sec. at Pass 2]{map}[6]
+DE:   #PIs = 183  #Luts =   141  Max Lvl =   4  Avg Lvl =   2.76  [   0.31 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 183  #Luts =   141  Max Lvl =   4  Avg Lvl =   2.76  [   0.35 sec. at Pass 4]{map}[16]
+DE:   #PIs = 183  #Luts =   141  Max Lvl =   4  Avg Lvl =   2.76  [   0.33 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 183  #Luts =   141  Max Lvl =   4  Avg Lvl =   2.76  [   0.36 sec. at Pass 6]{map}[16]
+DE:   #PIs = 183  #Luts =   141  Max Lvl =   4  Avg Lvl =   2.76  [   0.00 sec. at Pass 7]{pushMap}[0]
+DE:   #PIs = 183  #Luts =   141  Max Lvl =   4  Avg Lvl =   2.76  [   0.00 sec. at Pass 8]{finalMap}[0]
+
+7.332. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+7.333. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.334. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \design1_5_5_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.335. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \design1_5_5_top.
+Performed a total of 0 changes.
+
+7.336. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\design1_5_5_top'.
+Removed a total of 0 cells.
+
+7.337. Executing OPT_SHARE pass.
+
+7.338. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+7.339. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 743 unused wires.
+<suppressed ~1 debug messages>
+
+7.340. Executing OPT_EXPR pass (perform const folding).
+Optimizing module design1_5_5_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.341. Executing HIERARCHY pass (managing design hierarchy).
+
+7.341.1. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+
+7.341.2. Analyzing design hierarchy..
+Top module:  \design1_5_5_top
+Removed 0 unused modules.
+
+7.342. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \design1_5_5_top..
+Removed 0 unused cells and 134 unused wires.
+<suppressed ~134 debug messages>
+
+7.343. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                161
+   Number of wire bits:            818
+   Number of public wires:          23
+   Number of public wire bits:     680
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                502
+     $lut                          141
+     DFFRE                         361
+
+7.344. Executing TECHMAP pass (map to technology primitives).
+
+7.344.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+7.344.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~1067 debug messages>
+
+7.345. Printing statistics.
+
+=== design1_5_5_top ===
+
+   Number of wires:                443
+   Number of wire bits:           1608
+   Number of public wires:          23
+   Number of public wire bits:     680
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                502
+     DFFRE                         361
+     LUT1                            1
+     LUT2                           10
+     LUT3                           25
+     LUT4                           25
+     LUT5                           27
+     LUT6                           53
+
+   Number of LUTs:                 141
+   Number of REGs:                 361
+   Number of CARRY ADDERs:           0
+
+8. Executing Verilog backend.
+Dumping module `\design1_5_5_top'.
+
+9. Executing BLIF backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 348f533828, CPU: user 12.03s system 0.23s, MEM: 64.63 MB peak
+Yosys 0.18+10 (git sha1 4e5aedd8e, gcc 11.2.1 -fPIC -Os)
+Time spent: 89% 6x abc (103 sec), 3% 56x opt_expr (3 sec), ...

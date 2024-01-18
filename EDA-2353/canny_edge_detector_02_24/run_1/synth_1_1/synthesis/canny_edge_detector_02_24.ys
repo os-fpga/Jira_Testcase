@@ -1,0 +1,22 @@
+ 
+# Yosys/Ghdl synthesis script for top
+# Read source files
+plugin -i ghdl
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/12_13_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/RS_PRIMITIVES/blackbox_models/cell_sim_blackbox.v
+plugin -i ghdl
+ghdl -frelaxed-rules --no-formal -fsynopsys -fexplicit --PREFIX=/nfs_eda_sw/softwares/Raptor/instl_dir/12_13_2023_09_15_01/bin/HDL_simulator/GHDL/lib/ghdl -P/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl --std=08 /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/ninerowsbuffer.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/krnl2.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/kernel.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/filterV.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/FIFOLineBuffer.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/DoubleLineBuffer.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/CacheSystem3.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/CacheSystem2.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/buffer.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/wrapper.vhd /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/ArchBench/Testcases/canny_edge_detection/./rtl/top.vhd  -e 
+
+
+# Technology mapping
+hierarchy -top top
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal mixed   -effort high -carry auto -no_iobuf -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v canny_edge_detector_02_24_post_synth.v
+write_blif -param canny_edge_detector_02_24_post_synth.eblif
+
+  

@@ -1,0 +1,7 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2023_15_30_00/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../ /nfs_project/castor/DV/Azfar/add_sub_signed 
+-vlog-libdir 
+-vlog-define 
+-vlog2k /nfs_project/castor/DV/Azfar/add_sub_signed/add_sub_signed.v
+-top add_sub_signed

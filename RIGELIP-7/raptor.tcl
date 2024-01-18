@@ -1,0 +1,12 @@
+create_design subtract_mult_output_coeff2_from_shifted_a_comb
+target_device GEMINI_COMPACT_10x8
+add_design_file ./subtract_mult_output_coeff2_from_shifted_a_comb.v
+set_top_module subtract_mult_output_coeff2_from_shifted_a_comb
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml pb_pin_fixup

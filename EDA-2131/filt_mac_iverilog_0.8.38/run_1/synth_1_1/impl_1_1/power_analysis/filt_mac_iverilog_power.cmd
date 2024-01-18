@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/10_07_2023_09_15_01/bin/tclsh8.6 /nfs_eda_sw/softwares/Raptor/instl_dir/10_07_2023_09_15_01/bin/get_power_data.tcl --netlist=/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/iverilog_tests/filt_mac_iverilog/filt_mac_iverilog/run_1/synth_1_1/synthesis/filt_mac_iverilog_post_synth.v 

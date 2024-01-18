@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2023_09_15_01/bin/raptor.exe --cmd "set netlist_file /nfs_project/gemini/DV/usmanqadir/jira_repo/Jira_Testcase/EDA-2299/ring_counter/run_1/synth_1_1/synthesis/ring_counter_post_synth.v;" --batch --script /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2023_09_15_01/bin/get_power_data.tcl 

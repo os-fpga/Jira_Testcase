@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/05_16_2023_10_35_13/bin/pin_c --csv /nfs_eda_sw/softwares/Raptor/instl_dir/05_16_2023_10_35_13/share/raptor/etc/devices/gemini_compact_82x68/Gemini_Pin_Table.csv --port_info axi_ram_per_post_synth_ports.json --output axi_ram_per_pin_loc.place --assign_unconstrained_pins in_define_order

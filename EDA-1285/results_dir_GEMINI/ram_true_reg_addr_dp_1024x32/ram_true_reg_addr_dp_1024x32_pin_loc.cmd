@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/03_08_2023_09_55_16/bin/pin_c --csv /nfs_eda_sw/softwares/Raptor/instl_dir/03_08_2023_09_55_16/share/raptor/etc/devices/gemini/Gemini_Pin_Table.csv --port_info ram_true_reg_addr_dp_1024x32_post_synth_ports.json --output ram_true_reg_addr_dp_1024x32_pin_loc.place --assign_unconstrained_pins in_define_order

@@ -1,0 +1,8 @@
+create_design carry_chain_primitive_inst
+target_device GEMINI_COMPACT_104x68
+add_design_file ./rtl/carry_chain_primitive_inst.v
+set_top_module carry_chain_primitive_inst
+analyze
+synthesize delay
+simulation_options compilation icarus gate
+simulate gate icarus

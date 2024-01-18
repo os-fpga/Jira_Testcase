@@ -1,0 +1,7 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/02_19_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis2/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../. /nfs_project/castor/DV/Hamza/RS/Jira_Testcase/CASTOR-162 
+-vlog-libdir 
+-vlog-define 
+-vlog2k /nfs_project/castor/DV/Hamza/RS/Jira_Testcase/CASTOR-162/bit8_ring_counter.v
+-top bit8_ring_counter

@@ -1,0 +1,7 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/01_09_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis2/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir 
+-vlog-libdir 
+-vlog-define 
+-vhdl2008 /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Compiler_Validation/RTL_testcases/GHDL_testcases/counter/rtl/counter.vhd
+-top counter

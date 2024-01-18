@@ -1,0 +1,13 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/04_28_2023_10_25_04/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir .././rtl ../ /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/bitstream_simulation_new/test/ArchBench/Testcases/cic_integrator/try/./rtl 
+-vlog-libdir .././rtl 
+-vlog-libext .v
+-vlog-libext .sv
+-vlog-define 
+-sv /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/bitstream_simulation_new/test/ArchBench/Testcases/cic_integrator/try/./rtl/cic_package.sv
+-sv /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/bitstream_simulation_new/test/ArchBench/Testcases/cic_integrator/try/./rtl/comb.sv
+-sv /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/bitstream_simulation_new/test/ArchBench/Testcases/cic_integrator/try/./rtl/downsampler.sv
+-sv /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/bitstream_simulation_new/test/ArchBench/Testcases/cic_integrator/try/./rtl/integrator.sv
+-sv /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/bitstream_simulation_new/test/ArchBench/Testcases/cic_integrator/try/./rtl/cic_i.sv
+-top cic_i
