@@ -1,0 +1,9 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/06_23_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir .././rtl ../ /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Compiler_Validation/RTL_testcases/primitive_black_box_inst/soc_fpga_intf_axi_m0/GEMINIEDA_1698/./rtl 
+-vlog-libdir .././rtl 
+-vlog-libext .v
+-vlog-libext .sv
+-vlog-define 
+-vlog2k /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Compiler_Validation/RTL_testcases/primitive_black_box_inst/soc_fpga_intf_axi_m0/GEMINIEDA_1698/./rtl/soc_fpga_intf_axi_m0.v
+-top soc_fpga_intf_axi_m0

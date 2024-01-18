@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/10_26_2023_09_15_01/bin/tclsh8.6 /nfs_eda_sw/softwares/Raptor/instl_dir/10_26_2023_09_15_01/bin/get_power_data.tcl --netlist=/nfs_home/iparapid/fahmad/Downloads/Compiler_validation_26_oct/Compiler_Validation/RTL_testcases/verilator_tests/adder_verilator/results_dir/adder_verilator/run_1/synth_1_1/synthesis/adder_verilator_post_synth.v 

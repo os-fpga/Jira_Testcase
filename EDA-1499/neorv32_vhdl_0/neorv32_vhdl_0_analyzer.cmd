@@ -1,0 +1,63 @@
+-sv2009 /home/users/najeeb.afzal/Desktop/Raptor_april23/Raptor/2023.04/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../ /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/mem /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/processor_templates /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/system_integration /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/test_setups 
+-vlog-libdir 
+-vlog-define 
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_package.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_cp_shifter.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_mtime.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_bus_keeper.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_bus.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_icache.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_cp_bitmanip.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_debug_dm.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_xirq.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_busswitch.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_control.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_top.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_cp_muldiv.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_boot_rom.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_neoled.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_alu.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_bootloader_image.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_imem.entity.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_xip.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_sdi.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_cp_cfu.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cfs.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_uart.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_onewire.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_gpio.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_spi.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_dmem.entity.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_pwm.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_decompressor.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_wdt.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_sysinfo.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_application_image.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_dcache.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_debug_dtm.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_twi.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_dma.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_fifo.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_gptmr.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_cp_fpu.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_cp_cond.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_cpu_regfile.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_trng.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/neorv32_wishbone.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/mem/neorv32_dmem.legacy.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/mem/neorv32_imem.legacy.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/mem/neorv32_imem.default.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/core/mem/neorv32_dmem.default.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/processor_templates/neorv32_ProcessorTop_Minimal.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/processor_templates/neorv32_ProcessorTop_MinimalBoot.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/processor_templates/neorv32_ProcessorTop_UP5KDemo.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/system_integration/neorv32_SystemTop_axi4lite.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/system_integration/neorv32_litex_core_complex.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/system_integration/neorv32_SystemTop_AvalonMM.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/test_setups/neorv32_test_setup_on_chip_debugger.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/test_setups/neorv32_test_setup_bootloader.vhd
+-work neorv32  -vhdl93 /home/users/najeeb.afzal/Desktop/work/RS_work/Raptor_bashing/bashing_0/EDA-JI2/./rtl/test_setups/neorv32_test_setup_approm.vhd
+-top neorv32_top

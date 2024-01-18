@@ -1,0 +1,5 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/07_24_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../../../../ /nfs_project/castor/DV/anas/rigel/new_clones/rigel_jul23/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/complex/gpio_and 
+-sv /nfs_project/castor/DV/anas/rigel/new_clones/rigel_jul23/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/complex/gpio_and/gpio_and.v
+-top gpio_and

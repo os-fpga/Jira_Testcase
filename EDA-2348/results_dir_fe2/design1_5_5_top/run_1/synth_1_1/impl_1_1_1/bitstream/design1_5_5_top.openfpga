@@ -1,0 +1,40 @@
+ 
+vpr /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/etc/devices/gemini_compact_104x68/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/design1_5_5_top/run_1/synth_1_1/synthesis/design1_5_5_top_post_synth.eblif --clock_modeling ideal --device castor104x68_heterogeneous --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/design1_5_5_top/run_1/synth_1_1/impl_1_1_1/packing/design1_5_5_top_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/design1_5_5_top/run_1/synth_1_1/impl_1_1_1/placement/design1_5_5_top_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/design1_5_5_top/run_1/synth_1_1/impl_1_1_1/routing/design1_5_5_top_post_synth.route --route_chan_width 160 --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/design1_5_5_top/run_1/synth_1_1/impl_1_1_1/packing/design1_5_5_top_openfpga.sdc --absorb_buffer_luts off --constant_net_method route --skip_sync_clustering_and_routing_results off --circuit_format eblif --analysis  --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --top design1_5_5_top
+
+# Read OpenFPGA architecture definition
+read_openfpga_arch -f /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/etc/devices/gemini_compact_104x68/gemini_openfpga.xml
+
+# Read OpenFPGA simulation settings
+read_openfpga_simulation_setting -f /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/etc/devices/gemini_compact_104x68/fixed_sim_openfpga.xml
+
+read_openfpga_bitstream_setting -f /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/etc/devices/gemini_compact_104x68/bitstream_setting.xml
+
+# Annotate the OpenFPGA architecture to VPR data base
+# to debug use --verbose options
+link_openfpga_arch --sort_gsb_chan_node_in_edges 
+
+
+
+# Apply fix-up to Look-Up Table truth tables based on packing results
+lut_truth_table_fixup
+
+# Build the module graph
+#  - Enabled compression on routing architecture modules
+#  - Enable pin duplication on grid modules
+build_fabric --frame_view --compress_routing --duplicate_grid_pin 
+
+# Repack the netlist to physical pbs
+# This must be done before bitstream generator and testbench generation
+# Strongly recommend it is done after all the fix-up have been applied
+repack --design_constraints /nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/etc/devices/gemini_compact_104x68/fpga_repack_constraints.xml
+
+build_architecture_bitstream 
+
+build_fabric_bitstream
+write_fabric_bitstream --keep_dont_care_bits  --format plain_text --file fabric_bitstream.bit
+
+write_io_mapping -f PinMapping.xml
+
+# Finish and exit OpenFPGA
+exit
+

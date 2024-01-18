@@ -1,0 +1,1 @@
+/cadtools/raptor/instl_dir/02_15_2023_09_15_01/bin/pin_c --csv /cadtools/raptor/instl_dir/02_15_2023_09_15_01/share/raptor/etc/devices/gemini/Gemini_Pin_Table.csv --pcf and2_gemini_openfpga.pcf --port_info and2_gemini_post_synth_ports.json --output and2_gemini_pin_loc.place --assign_unconstrained_pins in_define_order

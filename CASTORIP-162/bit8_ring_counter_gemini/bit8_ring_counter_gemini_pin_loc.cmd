@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/02_19_2023_09_15_01/bin/pin_c --csv /nfs_eda_sw/softwares/Raptor/instl_dir/02_19_2023_09_15_01/share/raptor/etc/devices/gemini/Gemini_Pin_Table.csv --pcf bit8_ring_counter_gemini_openfpga.pcf --port_info bit8_ring_counter_gemini_post_synth_ports.json --output bit8_ring_counter_gemini_pin_loc.place --assign_unconstrained_pins in_define_order

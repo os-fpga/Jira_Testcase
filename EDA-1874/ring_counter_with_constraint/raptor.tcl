@@ -1,0 +1,13 @@
+create_design ring_counter
+target_device GEMINI_COMPACT_10x8
+add_design_file ring_counter.v
+set_top_module ring_counter
+add_constraint_file ring_counter.pin
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream

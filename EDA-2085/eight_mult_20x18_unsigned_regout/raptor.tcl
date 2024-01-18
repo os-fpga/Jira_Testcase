@@ -1,0 +1,13 @@
+create_design eight_mult_20x18_unsigned_regout
+target_device GEMINI_COMPACT_10x8
+add_design_file ./eight_mult_20x18_unsigned_regout.v
+set_top_module eight_mult_20x18_unsigned_regout
+pin_loc_assign_method free
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml

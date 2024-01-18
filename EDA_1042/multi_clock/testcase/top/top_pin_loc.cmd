@@ -1,0 +1,1 @@
+/cadtools/raptor/instl_dir/11_13_2022_08_00_02/bin/pin_c --csv /cadtools/raptor/instl_dir/11_13_2022_08_00_02/share/raptor/etc/devices/gemini/Gemini_Pin_Table.csv --blif top_post_synth.blif --output top_pin_loc.place --assign_unconstrained_pins in_define_order

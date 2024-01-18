@@ -1,0 +1,6 @@
+create_design ram_true_dp_wf_1024x32
+target_device GEMINI_COMPACT_104x68
+add_design_file ./rtl/ram_true_dp_wf_1024x32.v
+set_top_module ram_true_dp_wf_1024x32
+analyze
+synthesize delay

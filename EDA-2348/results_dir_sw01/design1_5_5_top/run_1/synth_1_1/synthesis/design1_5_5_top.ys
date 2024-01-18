@@ -1,0 +1,20 @@
+ 
+# Yosys/Surelog synthesis script for design1_5_5_top
+# Read source files
+plugin -i systemverilog
+read_systemverilog -synth  -top design1_5_5_top -y ../../../../.././rtl -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl +libext+.v+.sv  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2348/design1_5_5_top/results_dir/.././rtl/design1_5_5_top.v \
+/nfs_eda_sw/softwares/Raptor/instl_dir/12_12_2023_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/RS_PRIMITIVES/blackbox_models/cell_sim_blackbox.v
+
+# Technology mapping
+hierarchy -top design1_5_5_top
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v design1_5_5_top_post_synth.v
+write_blif -param design1_5_5_top_post_synth.eblif
+
+  

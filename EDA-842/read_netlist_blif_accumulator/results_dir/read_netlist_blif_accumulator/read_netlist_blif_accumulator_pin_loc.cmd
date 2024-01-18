@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/12_15_2022_08_00_01/bin/pin_c --csv /nfs_eda_sw/softwares/Raptor/instl_dir/12_15_2022_08_00_01/share/raptor/etc/devices/gemini/Gemini_Pin_Table.csv --blif ../.././rtl/read_netlist_blif_accumulator_post_synth.blif --output read_netlist_blif_accumulator_pin_loc.place --assign_unconstrained_pins in_define_order

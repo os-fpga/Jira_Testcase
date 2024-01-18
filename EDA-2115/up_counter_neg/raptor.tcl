@@ -1,0 +1,12 @@
+create_design up_counter_neg
+target_device GEMINI_COMPACT_62x44
+add_design_file up_counter_neg.v
+set_top_module up_counter_neg
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml

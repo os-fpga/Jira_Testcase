@@ -1,0 +1,7 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/12_24_2022_09_15_02/share/raptor/sim_models/rapidsilicon/genesis2/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir 
+-vlog-libdir 
+-vlog-define 
+-sv2009 /nfs_scratch/scratch/CompilerValidation/abdul_hameed/oneff/dut.v
+-top dut

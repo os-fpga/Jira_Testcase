@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/05_09_2023_10_25_54/bin/openfpga -batch -f subtract_mult_output_coeff2_from_shifted_a_comb.openfpga

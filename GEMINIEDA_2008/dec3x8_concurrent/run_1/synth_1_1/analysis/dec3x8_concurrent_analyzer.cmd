@@ -1,0 +1,5 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/08_30_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../../../../ /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Compiler_Validation/RTL_testcases/GHDL_testcases/dec3x8_concurrent/Jira/rtl 
+-vhdl2k /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Compiler_Validation/RTL_testcases/GHDL_testcases/dec3x8_concurrent/Jira/rtl/dec3x8_concurrent.vhd
+-top dec3x8_concurrent

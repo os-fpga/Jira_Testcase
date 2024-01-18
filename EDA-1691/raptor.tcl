@@ -1,0 +1,15 @@
+create_design fifo_bram_sync
+target_device GEMINI_COMPACT_10x8
+add_design_file rtl/fifo_bram_sync.v
+set_top_module fifo_bram_sync
+add_constraint_file fifo_bram_sync.sdc
+add_constraint_file pin_constraints.pin
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml pb_pin_fixup
+

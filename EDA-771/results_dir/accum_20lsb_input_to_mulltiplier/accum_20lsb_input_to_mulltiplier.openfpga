@@ -1,0 +1,39 @@
+ 
+vpr /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2022_08_00_01/share/raptor/etc/devices/gemini_latest/gemini_vpr.xml accum_20lsb_input_to_mulltiplier_post_synth.v --clock_modeling ideal --device castor82x68_heterogeneous --net_file accum_20lsb_input_to_mulltiplier_post_synth.net --place_file accum_20lsb_input_to_mulltiplier_post_synth.place --route_file accum_20lsb_input_to_mulltiplier_post_synth.route --route_chan_width 192 --sdc_file accum_20lsb_input_to_mulltiplier_openfpga.sdc --absorb_buffer_luts off --constant_net_method route --skip_sync_clustering_and_routing_results on --circuit_format verilog --analysis  --allow_dangling_combinational_nodes on
+
+# Read OpenFPGA architecture definition
+read_openfpga_arch -f /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2022_08_00_01/share/raptor/etc/devices/gemini_latest/gemini_openfpga.xml
+
+# Read OpenFPGA simulation settings
+read_openfpga_simulation_setting -f /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2022_08_00_01/share/raptor/etc/devices/gemini_latest/fixed_sim_openfpga.xml
+
+read_openfpga_bitstream_setting -f /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2022_08_00_01/share/raptor/etc/devices/gemini_latest/bitstream_setting.xml
+
+# Annotate the OpenFPGA architecture to VPR data base
+# to debug use --verbose options
+link_openfpga_arch --sort_gsb_chan_node_in_edges 
+
+pb_pin_fixup
+
+# Apply fix-up to Look-Up Table truth tables based on packing results
+lut_truth_table_fixup
+
+# Build the module graph
+#  - Enabled compression on routing architecture modules
+#  - Enable pin duplication on grid modules
+build_fabric --frame_view --compress_routing --duplicate_grid_pin --load_fabric_key /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2022_08_00_01/share/raptor/etc/devices/gemini_latest/fabric_key.xml
+
+# Repack the netlist to physical pbs
+# This must be done before bitstream generator and testbench generation
+# Strongly recommend it is done after all the fix-up have been applied
+repack --design_constraints /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2022_08_00_01/share/raptor/etc/devices/gemini_latest/fpga_repack_constraints.xml
+
+build_architecture_bitstream
+
+build_fabric_bitstream
+write_fabric_bitstream --format plain_text --file fabric_bitstream.bit
+write_io_mapping -f PinMapping.xml
+
+# Finish and exit OpenFPGA
+exit
+

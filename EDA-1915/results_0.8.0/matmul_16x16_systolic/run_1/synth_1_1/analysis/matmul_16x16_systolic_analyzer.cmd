@@ -1,0 +1,9 @@
+-sv2009 /nfs_eda_sw/softwares/Raptor/instl_dir/08_16_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+-set-warning VERI-1063
+-vlog-incdir ../../../.././rtl/ ../../../../ /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/RC_tpu_16x16_int8/Jira_Testcase/EDA-1915/./rtl 
+-vlog-libdir ../../../.././rtl/ 
+-vlog-libext .v
+-vlog-libext .sv
+-vlog2k /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/RC_tpu_16x16_int8/Jira_Testcase/EDA-1915/./rtl/Dual_port_ram.v
+-vlog2k /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/RC_tpu_16x16_int8/Jira_Testcase/EDA-1915/./rtl/RC_tpu_16x16_int8.v
+-top matmul_16x16_systolic

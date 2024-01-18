@@ -1,0 +1,2136 @@
+/*******************************************************************************
+Copyright (c) 2022 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+
+Portions of Raptor Design Suite are utilized under the following third-party copyright notices:
+
+Parallax Static Timing Analyzer Copyright (c) 2021, Parallax Software, Inc. All rights reserved.
+*********************************************************************************/
+
+Version  : 2023.10
+Build    : 0.8.40
+Hash     : e73d896
+Date     : Oct 12 2023
+Type     : Engineering
+Log Time   : Thu Oct 12 11:50:08 2023 GMT
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 b3f40b448, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `accumulator.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\IO_BUF'.
+Generating RTLIL representation for module `\IO_BUF_DS'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\latch'.
+Generating RTLIL representation for module `\latchn'.
+Generating RTLIL representation for module `\latchr'.
+Generating RTLIL representation for module `\latchnr'.
+Generating RTLIL representation for module `\RS_DSP'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Generating RTLIL representation for module `\$lut'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_GPIO'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\soc_fpga_intf'.
+Generating RTLIL representation for module `\FIFO18K'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\CARRY_CHAIN'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v' to AST representation.
+Generating RTLIL representation for module `\accumulator'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \accumulator
+
+3.2. Analyzing design hierarchy..
+Top module:  \accumulator
+Removed 0 unused modules.
+
+4. Executing synth_rs pass: v0.4.195
+
+4.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+4.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v:11.1-30.10.
+Generating RTLIL representation for module `\DFFRE'.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v:37.1-56.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\ADDER_CARRY'.
+Successfully finished Verilog frontend.
+
+4.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+4.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v' to AST representation.
+Replacing existing blackbox module `\RS_DSP' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:12.1-90.10.
+Generating RTLIL representation for module `\RS_DSP'.
+Replacing existing blackbox module `\RS_DSP_MULT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:93.1-125.10.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Replacing existing blackbox module `\RS_DSP_MULT_REGIN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:128.1-166.10.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Replacing existing blackbox module `\RS_DSP_MULT_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:169.1-207.10.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULT_REGIN_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:210.1-248.10.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTADD' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:251.1-304.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Replacing existing blackbox module `\RS_DSP_MULTADD_REGIN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:308.1-362.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Replacing existing blackbox module `\RS_DSP_MULTADD_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:366.1-418.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTADD_REGIN_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:422.1-477.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTACC' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:480.1-527.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Replacing existing blackbox module `\RS_DSP_MULTACC_REGIN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:530.1-582.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Replacing existing blackbox module `\RS_DSP_MULTACC_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:586.1-638.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTACC_REGIN_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:642.1-695.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_sim_cfg_ports'.
+Successfully finished Verilog frontend.
+
+4.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:7.1-12.10.
+Generating RTLIL representation for module `\LUT1'.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:15.1-20.10.
+Generating RTLIL representation for module `\LUT2'.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:23.1-28.10.
+Generating RTLIL representation for module `\LUT3'.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:31.1-36.10.
+Generating RTLIL representation for module `\LUT4'.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:39.1-44.10.
+Generating RTLIL representation for module `\LUT5'.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:47.1-52.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+4.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\RS_TDP36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:113.1-641.10.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:642.1-1070.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:1072.1-1481.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:1483.1-1886.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+4.7. Executing HIERARCHY pass (managing design hierarchy).
+
+4.7.1. Analyzing design hierarchy..
+Top module:  \accumulator
+
+4.7.2. Analyzing design hierarchy..
+Top module:  \accumulator
+Removed 0 unused modules.
+
+4.8. Executing PROC pass (convert processes to netlists).
+
+4.8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:23$5 in module accumulator.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:15$3 in module accumulator.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:7$1 in module accumulator.
+Removed a total of 0 dead cases.
+
+4.8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 1 assignment to connection.
+
+4.8.4. Executing PROC_INIT pass (extract init attributes).
+
+4.8.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.8.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+4.8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:23$5'.
+     1/1: $1\add_or_sub[37:0]
+Creating decoders for process `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:15$3'.
+     1/1: $0\P[37:0]
+Creating decoders for process `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:7$1'.
+     1/1: $0\i1[19:0]
+
+4.8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\accumulator.\add_or_sub' from process `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:23$5'.
+
+4.8.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\accumulator.\P' using process `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:15$3'.
+  created $dff cell `$procdff$17' with positive edge clock.
+Creating register for signal `\accumulator.\i1' using process `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:7$1'.
+  created $dff cell `$procdff$18' with positive edge clock.
+
+4.8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:23$5'.
+Removing empty process `accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:23$5'.
+Found and cleaned up 1 empty switch in `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:15$3'.
+Removing empty process `accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:15$3'.
+Found and cleaned up 1 empty switch in `\accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:7$1'.
+Removing empty process `accumulator.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:7$1'.
+Cleaned up 3 empty switches.
+
+4.8.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+<suppressed ~2 debug messages>
+
+4.9. Executing DEMUXMAP pass.
+
+4.10. Executing FLATTEN pass (flatten design).
+
+4.11. Executing DEMUXMAP pass.
+
+4.12. Executing TRIBUF pass.
+
+4.13. Executing TRIBUF pass.
+
+4.14. Executing DEMINOUT pass (demote inout ports to input or output).
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~2 debug messages>
+
+4.17. Executing CHECK pass (checking for obvious problems).
+Checking module accumulator...
+Found and reported 0 problems.
+
+4.18. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 11
+   Number of wire bits:            253
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $add                            1
+     $dff                            2
+     $mux                            3
+     $sub                            1
+
+4.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.20. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.21. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+4.22. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.23. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.24. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $procmux$9 in front of them:
+        $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:25$6
+        $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:27$7
+
+4.25. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+4.27. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+<suppressed ~1 debug messages>
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.28. Executing FSM pass (extract and optimize FSM).
+
+4.28.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.28.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.28.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.28.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.28.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.28.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.28.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.29. Executing WREDUCE pass (reducing word size of cells).
+Removed top 18 bits (of 38) from port A of cell accumulator.$auto$opt_share.cc:196:merge_operators$19 ($neg).
+
+4.30. Executing PEEPOPT pass (run peephole optimizers).
+
+4.31. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.34. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+4.35. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.36. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.37. Executing OPT_SHARE pass.
+
+4.38. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$18 ($dff) from module accumulator (D = \A, Q = \i1, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$17 ($dff) from module accumulator (D = \add_or_sub, Q = \P, rval = 38'00000000000000000000000000000000000000).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.39. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+4.40. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.41. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.42. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.43. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.44. Executing OPT_SHARE pass.
+
+4.45. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.48. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.49. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.50. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.51. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.52. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.53. Executing OPT_SHARE pass.
+
+4.54. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.55. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.56. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.57. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.58. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.59. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.60. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.62. Executing OPT_SHARE pass.
+
+4.63. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.64. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=38, #remove=0, time=0.01 sec.]
+
+4.65. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.66. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.67. Executing WREDUCE pass (reducing word size of cells).
+
+4.68. Executing PEEPOPT pass (run peephole optimizers).
+
+4.69. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.70. Executing DEMUXMAP pass.
+
+4.71. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                  9
+   Number of wire bits:            195
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $mux                            1
+     $neg                            1
+     $sdff                           2
+     $sub                            1
+
+4.72. Executing RS_DSP_MULTADD pass.
+
+4.73. Executing WREDUCE pass (reducing word size of cells).
+
+4.74. Executing RS_DSP_MACC pass.
+
+4.75. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.76. Executing TECHMAP pass (map to technology primitives).
+
+4.76.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.76.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.77. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                  9
+   Number of wire bits:            195
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $mux                            1
+     $neg                            1
+     $sdff                           2
+     $sub                            1
+
+4.78. Executing TECHMAP pass (map to technology primitives).
+
+4.78.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Successfully finished Verilog frontend.
+
+4.78.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+4.79. Executing TECHMAP pass (map to technology primitives).
+
+4.79.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Successfully finished Verilog frontend.
+
+4.79.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+4.80. Executing rs_pack_dsp_regs pass.
+
+4.81. Executing RS_DSP_IO_REGS pass.
+
+4.82. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module accumulator:
+  creating $macc model for $auto$opt_share.cc:196:merge_operators$19 ($neg).
+  creating $macc model for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:25$6 ($sub).
+  creating $alu model for $macc $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:25$6.
+  creating $macc cell for $auto$opt_share.cc:196:merge_operators$19: $auto$alumacc.cc:365:replace_macc$26
+  creating $alu cell for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/blif_fifo_tb/Compiler_Validation/RTL_testcases/DSP_Designs/accumulator/Jira_Testcase/EDA-2146/./rtl/accumulator.v:25$6: $auto$alumacc.cc:485:replace_alu$27
+  created 1 $alu and 1 $macc cells.
+
+4.83. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.84. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.85. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.86. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.87. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.88. Executing OPT_SHARE pass.
+
+4.89. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.90. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.91. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.92. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 11
+   Number of wire bits:            271
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $alu                            1
+     $macc                           1
+     $mux                            1
+     $sdff                           2
+
+4.93. Executing MEMORY pass.
+
+4.93.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.93.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.93.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.93.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.93.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.93.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.93.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.93.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.93.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.93.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.94. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 11
+   Number of wire bits:            271
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $alu                            1
+     $macc                           1
+     $mux                            1
+     $sdff                           2
+
+4.95. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~1 debug messages>
+
+4.96. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.97. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.98. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.99. Executing Rs_BRAM_Split pass.
+
+4.100. Executing TECHMAP pass (map to technology primitives).
+
+4.100.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+4.100.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+4.101. Executing TECHMAP pass (map to technology primitives).
+
+4.101.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+4.101.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.102. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+4.103. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.104. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.105. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+4.106. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.107. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.108. Executing OPT_SHARE pass.
+
+4.109. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.110. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.111. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.112. Executing PMUXTREE pass.
+
+4.113. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~3 debug messages>
+
+4.114. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.115. Executing TECHMAP pass (map to technology primitives).
+
+4.115.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.115.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+4.115.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper maccmap for cells of type $macc.
+  sub \i1 (20 bits, signed)
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~520 debug messages>
+
+4.116. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                192
+   Number of wire bits:           2964
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                705
+     $_AND_                        136
+     $_DFF_P_                       58
+     $_MUX_                        174
+     $_NOT_                        114
+     $_OR_                          68
+     $_XOR_                        117
+     ADDER_CARRY                    38
+
+4.117. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+<suppressed ~293 debug messages>
+
+4.118. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+<suppressed ~90 debug messages>
+Removed a total of 30 cells.
+
+4.119. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.120. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.121. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.122. Executing OPT_SHARE pass.
+
+4.123. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.124. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 2 unused cells and 157 unused wires.
+<suppressed ~3 debug messages>
+
+4.125. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+<suppressed ~3 debug messages>
+
+4.126. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.127. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.128. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+<suppressed ~96 debug messages>
+Removed a total of 32 cells.
+
+4.129. Executing OPT_SHARE pass.
+
+4.130. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.131. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.132. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.133. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.134. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.135. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.136. Executing OPT_SHARE pass.
+
+4.137. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.138. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.139. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 3
+
+4.140. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.141. Executing TECHMAP pass (map to technology primitives).
+
+4.141.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.141.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.142. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 33
+   Number of wire bits:            461
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                346
+     $_AND_                         44
+     $_DFF_P_                       58
+     $_MUX_                         88
+     $_NOT_                         49
+     $_XOR_                         69
+     ADDER_CARRY                    38
+
+4.143. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.144. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.145. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.146. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.147. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.148. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.149. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.150. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.151. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.152. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.153. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.154. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.155. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.156. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.157. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.158. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.159. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.160. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.161. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.162. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.163. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.164. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.165. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.166. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.167. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.168. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 33
+   Number of wire bits:            461
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                346
+     $_AND_                         44
+     $_DFF_P_                       58
+     $_MUX_                         88
+     $_NOT_                         49
+     $_XOR_                         69
+     ADDER_CARRY                    38
+
+   Number of Generic REGs:          58
+
+ABC-DFF iteration : 1
+
+4.169. Executing ABC pass (technology mapping using ABC).
+
+4.169.1. Summary of detected clock domains:
+  346 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.169.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 308 gates and 368 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.169.2.1. Executing ABC.
+
+4.170. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.171. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.172. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.173. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.174. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.175. Executing OPT_SHARE pass.
+
+4.176. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.177. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 234 unused wires.
+<suppressed ~1 debug messages>
+
+4.178. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 2
+
+4.179. Executing ABC pass (technology mapping using ABC).
+
+4.179.1. Summary of detected clock domains:
+  258 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.179.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 220 gates and 279 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.179.2.1. Executing ABC.
+
+4.180. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.181. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.182. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.183. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.184. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.185. Executing OPT_SHARE pass.
+
+4.186. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.187. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 337 unused wires.
+<suppressed ~1 debug messages>
+
+4.188. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+4.189. Executing ABC pass (technology mapping using ABC).
+
+4.189.1. Summary of detected clock domains:
+  257 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.189.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 219 gates and 278 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.189.2.1. Executing ABC.
+
+4.190. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.191. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.192. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.193. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.194. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.195. Executing OPT_SHARE pass.
+
+4.196. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.197. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 336 unused wires.
+<suppressed ~1 debug messages>
+
+4.198. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 4
+
+4.199. Executing ABC pass (technology mapping using ABC).
+
+4.199.1. Summary of detected clock domains:
+  257 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.199.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 219 gates and 278 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.199.2.1. Executing ABC.
+
+4.200. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.201. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.202. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.203. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.204. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.205. Executing OPT_SHARE pass.
+
+4.206. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.207. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 336 unused wires.
+<suppressed ~1 debug messages>
+
+4.208. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.209. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+   Number of Generic REGs:          58
+
+ABC-DFF iteration : 1
+
+4.210. Executing ABC pass (technology mapping using ABC).
+
+4.210.1. Summary of detected clock domains:
+  346 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.210.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 308 gates and 368 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.210.2.1. Executing ABC.
+
+4.211. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.212. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.213. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 234 unused wires.
+<suppressed ~1 debug messages>
+
+4.214. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.215. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.216. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.217. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.218. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.219. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.220. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 2
+
+4.221. Executing ABC pass (technology mapping using ABC).
+
+4.221.1. Summary of detected clock domains:
+  258 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.221.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 220 gates and 279 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.221.2.1. Executing ABC.
+
+4.222. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.223. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.224. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 337 unused wires.
+<suppressed ~1 debug messages>
+
+4.225. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.226. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.227. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.228. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.229. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.230. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.231. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 3
+
+4.232. Executing ABC pass (technology mapping using ABC).
+
+4.232.1. Summary of detected clock domains:
+  257 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.232.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 219 gates and 278 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.232.2.1. Executing ABC.
+
+4.233. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.234. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.235. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 336 unused wires.
+<suppressed ~1 debug messages>
+
+4.236. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.237. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.238. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.239. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.240. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.241. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.242. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 4
+
+4.243. Executing ABC pass (technology mapping using ABC).
+
+4.243.1. Summary of detected clock domains:
+  257 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.243.2. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 219 gates and 278 wires to a netlist network with 59 inputs and 94 outputs.
+
+4.243.2.1. Executing ABC.
+
+4.244. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.245. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.246. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 336 unused wires.
+<suppressed ~1 debug messages>
+
+4.247. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.248. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.249. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.250. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.251. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.252. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.253. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+4.254. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+select CE dissolving strategy (tresh=0.920000)
+
+4.255. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.256. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.257. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.258. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.259. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.260. Executing OPT_SHARE pass.
+
+4.261. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.262. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.263. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.264. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.265. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.266. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.267. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.268. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.269. Executing OPT_SHARE pass.
+
+4.270. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.271. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.272. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.273. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.274. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.275. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.276. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.277. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.278. Executing OPT_SHARE pass.
+
+4.279. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.280. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.281. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.282. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.283. Executing BMUXMAP pass.
+
+4.284. Executing DEMUXMAP pass.
+
+4.285. Executing ABC pass (technology mapping using ABC).
+
+4.285.1. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Extracted 161 gates and 278 wires to a netlist network with 117 inputs and 94 outputs.
+
+4.285.1.1. Executing ABC.
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   6  Avg Lvl =   2.33  [   0.07 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 117  #Luts =   107  Max Lvl =   3  Avg Lvl =   1.65  [   0.21 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 117  #Luts =   106  Max Lvl =   3  Avg Lvl =   1.67  [   0.18 sec. at Pass 2]{map}[6]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.19 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.20 sec. at Pass 4]{map}[16]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.17 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.18 sec. at Pass 6]{map}[16]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.00 sec. at Pass 7]{pushMap}[0]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.00 sec. at Pass 8]{finalMap}[0]
+
+4.286. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.287. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.288. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.289. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.290. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.291. Executing OPT_SHARE pass.
+
+4.292. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.293. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 278 unused wires.
+<suppressed ~1 debug messages>
+
+4.294. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.295. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+4.296. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.297. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.298. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.299. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.300. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.301. Executing OPT_SHARE pass.
+
+4.302. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.303. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.304. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.305. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.306. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.307. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.308. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.309. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.310. Executing OPT_SHARE pass.
+
+4.311. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.312. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=58, #solve=0, #remove=0, time=0.00 sec.]
+
+4.313. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.314. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.315. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 78
+   Number of wire bits:            265
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                200
+     $_DFF_P_                       58
+     $lut                          104
+     ADDER_CARRY                    38
+
+4.316. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+4.317. Executing RS_DFFSR_CONV pass.
+
+4.318. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 78
+   Number of wire bits:            265
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                200
+     $_DFF_P_                       58
+     $lut                          104
+     ADDER_CARRY                    38
+
+4.319. Executing TECHMAP pass (map to technology primitives).
+
+4.319.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.319.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+4.319.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+No more expansions possible.
+<suppressed ~282 debug messages>
+
+4.320. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+<suppressed ~823 debug messages>
+
+4.321. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4.322. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.323. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+<suppressed ~534 debug messages>
+Removed a total of 178 cells.
+
+4.324. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.325. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 354 unused wires.
+<suppressed ~1 debug messages>
+
+4.326. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.327. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.328. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.329. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.330. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.331. Executing OPT_SHARE pass.
+
+4.332. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.333. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.334. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.335. Executing TECHMAP pass (map to technology primitives).
+
+4.335.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.335.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.336. Executing ABC pass (technology mapping using ABC).
+
+4.336.1. Extracting gate netlist of module `\accumulator' to `<abc-temp-dir>/input.blif'..
+Extracted 283 gates and 402 wires to a netlist network with 117 inputs and 94 outputs.
+
+4.336.1.1. Executing ABC.
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.07 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.22 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.17 sec. at Pass 2]{map}[6]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.18 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.19 sec. at Pass 4]{map}[16]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.18 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.00 sec. at Pass 6]{pushMap}[0]
+DE:   #PIs = 117  #Luts =   104  Max Lvl =   3  Avg Lvl =   1.65  [   0.00 sec. at Pass 7]{finalMap}[0]
+
+4.337. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+4.338. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.339. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \accumulator..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.340. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \accumulator.
+Performed a total of 0 changes.
+
+4.341. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\accumulator'.
+Removed a total of 0 cells.
+
+4.342. Executing OPT_SHARE pass.
+
+4.343. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.344. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+Removed 0 unused cells and 336 unused wires.
+<suppressed ~1 debug messages>
+
+4.345. Executing OPT_EXPR pass (perform const folding).
+Optimizing module accumulator.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.346. Executing HIERARCHY pass (managing design hierarchy).
+
+4.346.1. Analyzing design hierarchy..
+Top module:  \accumulator
+
+4.346.2. Analyzing design hierarchy..
+Top module:  \accumulator
+Removed 0 unused modules.
+
+4.347. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \accumulator..
+
+4.348. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                 78
+   Number of wire bits:            265
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                200
+     $lut                          104
+     ADDER_CARRY                    38
+     DFFRE                          58
+
+4.349. Executing TECHMAP pass (map to technology primitives).
+
+4.349.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/TECHMAP/lut_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_12_2023_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/TECHMAP/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+4.349.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~458 debug messages>
+
+4.350. Printing statistics.
+
+=== accumulator ===
+
+   Number of wires:                286
+   Number of wire bits:            664
+   Number of public wires:           7
+   Number of public wire bits:     119
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                200
+     ADDER_CARRY                    38
+     DFFRE                          58
+     LUT2                           75
+     LUT3                            2
+     LUT4                            5
+     LUT5                           13
+     LUT6                            9
+
+   Number of LUTs:                 104
+   Number of REGs:                  58
+
+5. Executing Verilog backend.
+Dumping module `\accumulator'.
+
+6. Executing BLIF backend.
+
+End of script. Logfile hash: f83975d91a, CPU: user 1.43s system 0.09s, MEM: 34.32 MB peak
+Yosys 0.18+10 (git sha1 b3f40b448, gcc 11.2.1 -fPIC -Os)
+Time spent: 92% 10x abc (17 sec), 1% 66x opt_expr (0 sec), ...

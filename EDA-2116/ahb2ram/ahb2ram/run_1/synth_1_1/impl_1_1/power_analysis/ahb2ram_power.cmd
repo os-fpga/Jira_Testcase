@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/09_29_2023_09_15_02/bin/tclsh8.6 /nfs_eda_sw/softwares/Raptor/instl_dir/09_29_2023_09_15_02/bin/get_power_data.tcl --netlist=/nfs_project/gemini/DV/usmanqadir/jira_repo/Jira_Testcase/EDA-2116/ahb2ram/ahb2ram/run_1/synth_1_1/synthesis/ahb2ram_post_synth.v 

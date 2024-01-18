@@ -1,0 +1,37 @@
+ 
+vpr /cadtools/raptor/instl_dir/11_13_2022_08_00_02/share/raptor/etc/devices/gemini/gemini_vpr.xml top_post_synth.v --clock_modeling ideal --device 104x75 --net_file top_post_synth.net --place_file top_post_synth.place --route_file top_post_synth.route --route_chan_width 200 --sdc_file top_openfpga.sdc --absorb_buffer_luts off --constant_net_method route --circuit_format verilog --analysis  --gen_post_synthesis_netlist on --allow_dangling_combinational_nodes on
+
+# Read OpenFPGA architecture definition
+read_openfpga_arch -f /cadtools/raptor/instl_dir/11_13_2022_08_00_02/share/raptor/etc/devices/gemini/gemini_openfpga.xml
+
+# Read OpenFPGA simulation settings
+read_openfpga_simulation_setting -f /cadtools/raptor/instl_dir/11_13_2022_08_00_02/share/raptor/etc/devices/gemini/fixed_sim_openfpga.xml
+
+read_openfpga_bitstream_setting -f /cadtools/raptor/instl_dir/11_13_2022_08_00_02/share/raptor/etc/devices/gemini/bitstream_annotation.xml
+
+# Annotate the OpenFPGA architecture to VPR data base
+# to debug use --verbose options
+link_openfpga_arch --sort_gsb_chan_node_in_edges 
+
+# Apply fix-up to Look-Up Table truth tables based on packing results
+lut_truth_table_fixup
+
+# Build the module graph
+#  - Enabled compression on routing architecture modules
+#  - Enable pin duplication on grid modules
+build_fabric --frame_view --compress_routing --duplicate_grid_pin 
+
+# Repack the netlist to physical pbs
+# This must be done before bitstream generator and testbench generation
+# Strongly recommend it is done after all the fix-up have been applied
+repack --design_constraints .././repack.xml
+
+build_architecture_bitstream
+
+build_fabric_bitstream
+write_fabric_bitstream --format plain_text --file fabric_bitstream.bit
+write_io_mapping -f PinMapping.xml
+
+# Finish and exit OpenFPGA
+exit
+

@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/12_06_2023_09_15_01/bin/raptor.exe --cmd "set netlist_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/Memory_Designs/tdp_256x10/EDA-2326/tdp_256x10/run_1/synth_1_1/synthesis/tdp_256x10_post_synth.v;" --batch --script /nfs_eda_sw/softwares/Raptor/instl_dir/12_06_2023_09_15_01/bin/get_power_data.tcl 

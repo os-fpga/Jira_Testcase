@@ -1,0 +1,204 @@
+library (fpga) {
+	comment	:	"All rights reserved by Rapid Silicon.";
+	delay_model	:	table_lookup;
+	simulation	:	false;
+	current_unit	:	1A;
+	leak_power_unit	:	1pW;
+	pulling_resistance_unit	:	1kohm;
+	time_unit	:	1ns;
+	voltage_unit	:	1V;
+	capacitive_load_unit	(1,pf);
+	library_features	(report_delay_calculation);
+	default_cell_leakage_power	:	100;
+	default_fanout_load	:	1.0;
+	default_inout_pin_cap	:	0.0;
+	default_input_pin_cap	:	0.0;
+	default_max_fanout	:	40;
+	default_max_transition	:	2.00;
+	default_output_pin_cap	:	0.0;
+	input_threshold_pct_fall	:	50;
+	input_threshold_pct_rise	:	50;
+	nom_process	:	1.0;
+	nom_temperature	:	125.00;
+	nom_voltage	:	1.62;
+	output_threshold_pct_fall	:	50;
+	output_threshold_pct_rise	:	50;
+	slew_derate_from_library	:	1.0;
+	slew_lower_threshold_pct_fall	:	20;
+	slew_lower_threshold_pct_rise	:	20;
+	slew_upper_threshold_pct_fall	:	80;
+	slew_upper_threshold_pct_rise	:	80;
+	operation_conditions(typical_case)	{
+		process	:	0.819;
+		temperature	:	25.00;
+		tree_type	:	balanced_tree;
+		voltage	:	1.8;
+	}
+	bus_naming_style	:	%s[%d];
+	type(bus4) {
+		base_type	:	array;
+		data_type	:	bit;
+		bit_width	:	4;
+		bit_from	:	0;
+		bit_to	:	3;
+		down_to	:	false;
+	};
+	type(bus5) {
+		base_type	:	array;
+		data_type	:	bit;
+		bit_width	:	5;
+		bit_from	:	0;
+		bit_to	:	4;
+		down_to	:	false;
+	};
+	type(bus6) {
+		base_type	:	array;
+		data_type	:	bit;
+		bit_width	:	6;
+		bit_from	:	0;
+		bit_to	:	5;
+		down_to	:	false;
+	};
+	cell (fpga_interconnect) {
+		pin(dataout) {
+			direction: output;
+			timing() {
+				related_pin: "datain";
+				timing_sense: positive_unate;
+				cell_rise(scalar) {
+					values("0");
+				}
+				cell_fall(scalar) {
+					values("0");
+				}
+				rise_transition(scalar) {
+					values("0");
+				}
+				fall_transition(scalar) {
+					values("0");
+				}
+			}
+		}
+		pin(datain) {
+			direction: input;
+		}
+	}
+	cell (LUT_K) {
+		pin(out) {
+			direction: output;
+			timing() {
+				related_pin: "in";
+				timing_sense: positive_unate;
+				cell_rise(scalar) {
+					values("0");
+				}
+				cell_fall(scalar) {
+					values("0");
+				}
+				rise_transition(scalar) {
+					values("0");
+				}
+				fall_transition(scalar) {
+					values("0");
+				}
+			}
+		}
+		bus(in) {
+			bus_type: bus6;
+			direction: input;
+		}
+	}
+	cell (dffr) {
+		ff ("Q") {
+			clocked_on: C;
+			clear: R;
+		}
+		pin(Q) {
+			direction: output;
+			timing() {
+				related_pin: "C";
+				timing_type: rising_edge;
+				cell_rise(scalar) {
+					values("0");
+				}
+				cell_fall(scalar) {
+					values("0");
+				}
+				rise_transition(scalar) {
+					values("0");
+				}
+				fall_transition(scalar) {
+					values("0");
+				}
+			}
+			timing() {
+				related_pin: "R";
+				timing_type: clear;
+				timing_sense: positive_unate;
+				cell_rise(scalar) {
+					values("0");
+				}
+				cell_fall(scalar) {
+					values("0");
+				}
+				rise_transition(scalar) {
+					values("0");
+				}
+				fall_transition(scalar) {
+					values("0");
+				}
+			}
+		}
+		pin(C) {
+			min_pulse_width_low: 0.600;
+			min_pulse_width_high: 0.600;
+			min_period: 0.500;
+			direction: input;
+			clock: true;
+		}
+		pin(D) {
+			direction: input;
+			timing() {
+				related_pin: "C";
+				timing_type: setup_rising;
+				rise_constraint(scalar) {
+					values("0");
+				}
+				fall_constraint(scalar) {
+					values("0");
+				}
+			}
+			timing() {
+				timing_type: hold_rising;
+				rise_constraint(scalar) {
+					values("0");
+				}
+				fall_constraint(scalar) {
+					values("0");
+				}
+			}
+		}
+		pin(R) {
+			direction: input;
+			timing() {
+				related_pin: "C";
+				timing_type: setup_rising;
+				rise_constraint(scalar) {
+					values("0");
+				}
+				fall_constraint(scalar) {
+					values("0");
+				}
+			}
+			timing() {
+				timing_type: hold_rising;
+				rise_constraint(scalar) {
+					values("0");
+				}
+				fall_constraint(scalar) {
+					values("0");
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/09_19_2023_09_15_01/bin/tclsh8.6 /nfs_eda_sw/softwares/Raptor/instl_dir/09_19_2023_09_15_01/bin/get_power_data.tcl --netlist=/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/Benchmarking_QoR_testcases/mkDelayWorker32B/results_dir/mkDelayWorker32B/run_1/synth_1_1/synthesis/mkDelayWorker32B_post_synth.v 

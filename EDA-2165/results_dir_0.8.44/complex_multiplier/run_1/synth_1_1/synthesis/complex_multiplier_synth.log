@@ -1,0 +1,2279 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 b3f40b448, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `complex_multiplier.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\IO_BUF'.
+Generating RTLIL representation for module `\IO_BUF_DS'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\latch'.
+Generating RTLIL representation for module `\latchn'.
+Generating RTLIL representation for module `\latchr'.
+Generating RTLIL representation for module `\latchnr'.
+Generating RTLIL representation for module `\RS_DSP'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Generating RTLIL representation for module `\$lut'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_GPIO'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\soc_fpga_intf'.
+Generating RTLIL representation for module `\FIFO18K'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\CARRY_CHAIN'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v' to AST representation.
+Generating RTLIL representation for module `\complex_multiplier'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \complex_multiplier
+
+3.2. Analyzing design hierarchy..
+Top module:  \complex_multiplier
+Removed 0 unused modules.
+
+4. Executing synth_rs pass: v0.4.196
+
+4.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+4.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v:11.1-30.10.
+Generating RTLIL representation for module `\DFFRE'.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/cells_sim.v:37.1-56.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\ADDER_CARRY'.
+Successfully finished Verilog frontend.
+
+4.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+4.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v' to AST representation.
+Replacing existing blackbox module `\RS_DSP' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:12.1-90.10.
+Generating RTLIL representation for module `\RS_DSP'.
+Replacing existing blackbox module `\RS_DSP_MULT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:93.1-125.10.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Replacing existing blackbox module `\RS_DSP_MULT_REGIN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:128.1-166.10.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Replacing existing blackbox module `\RS_DSP_MULT_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:169.1-207.10.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULT_REGIN_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:210.1-248.10.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTADD' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:251.1-304.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Replacing existing blackbox module `\RS_DSP_MULTADD_REGIN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:308.1-362.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Replacing existing blackbox module `\RS_DSP_MULTADD_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:366.1-418.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTADD_REGIN_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:422.1-477.10.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTACC' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:480.1-527.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Replacing existing blackbox module `\RS_DSP_MULTACC_REGIN' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:530.1-582.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Replacing existing blackbox module `\RS_DSP_MULTACC_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:586.1-638.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Replacing existing blackbox module `\RS_DSP_MULTACC_REGIN_REGOUT' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_sim.v:642.1-695.10.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_sim_cfg_ports'.
+Successfully finished Verilog frontend.
+
+4.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:7.1-12.10.
+Generating RTLIL representation for module `\LUT1'.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:15.1-20.10.
+Generating RTLIL representation for module `\LUT2'.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:23.1-28.10.
+Generating RTLIL representation for module `\LUT3'.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:31.1-36.10.
+Generating RTLIL representation for module `\LUT4'.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:39.1-44.10.
+Generating RTLIL representation for module `\LUT5'.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/LUT/LUT.v:47.1-52.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+4.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\RS_TDP36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:113.1-641.10.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:642.1-1070.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:1072.1-1481.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:1483.1-1886.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+4.7. Executing HIERARCHY pass (managing design hierarchy).
+
+4.7.1. Analyzing design hierarchy..
+Top module:  \complex_multiplier
+
+4.7.2. Analyzing design hierarchy..
+Top module:  \complex_multiplier
+Removed 0 unused modules.
+
+4.8. Executing PROC pass (convert processes to netlists).
+
+4.8.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.8.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9 in module complex_multiplier.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5 in module complex_multiplier.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2 in module complex_multiplier.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1 in module complex_multiplier.
+Removed a total of 0 dead cases.
+
+4.8.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 25 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.8.4. Executing PROC_INIT pass (extract init attributes).
+
+4.8.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.8.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+4.8.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+     1/6: $0\pi_int[38:0]
+     2/6: $0\commonr2[38:0]
+     3/6: $0\multi[38:0]
+     4/6: $0\addi[18:0]
+     5/6: $0\ai_dddd[19:0]
+     6/6: $0\ai_ddd[19:0]
+Creating decoders for process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+     1/6: $0\pr_int[38:0]
+     2/6: $0\commonr1[38:0]
+     3/6: $0\multr[38:0]
+     4/6: $0\addr[18:0]
+     5/6: $0\ar_dddd[19:0]
+     6/6: $0\ar_ddd[19:0]
+Creating decoders for process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2'.
+     1/3: $0\common[38:0]
+     2/3: $0\mult0[38:0]
+     3/3: $0\addcommon[20:0]
+Creating decoders for process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+     1/10: $0\bi_ddd[17:0]
+     2/10: $0\bi_dd[17:0]
+     3/10: $0\bi_d[17:0]
+     4/10: $0\br_ddd[17:0]
+     5/10: $0\br_dd[17:0]
+     6/10: $0\br_d[17:0]
+     7/10: $0\ai_dd[19:0]
+     8/10: $0\ai_d[19:0]
+     9/10: $0\ar_dd[19:0]
+    10/10: $0\ar_d[19:0]
+
+4.8.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.8.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\complex_multiplier.\ai_ddd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+  created $dff cell `$procdff$88' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ai_dddd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+  created $dff cell `$procdff$89' with positive edge clock.
+Creating register for signal `\complex_multiplier.\addi' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+  created $dff cell `$procdff$90' with positive edge clock.
+Creating register for signal `\complex_multiplier.\multi' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+  created $dff cell `$procdff$91' with positive edge clock.
+Creating register for signal `\complex_multiplier.\pi_int' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+  created $dff cell `$procdff$92' with positive edge clock.
+Creating register for signal `\complex_multiplier.\commonr2' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+  created $dff cell `$procdff$93' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ar_ddd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+  created $dff cell `$procdff$94' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ar_dddd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+  created $dff cell `$procdff$95' with positive edge clock.
+Creating register for signal `\complex_multiplier.\addr' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+  created $dff cell `$procdff$96' with positive edge clock.
+Creating register for signal `\complex_multiplier.\multr' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+  created $dff cell `$procdff$97' with positive edge clock.
+Creating register for signal `\complex_multiplier.\pr_int' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+  created $dff cell `$procdff$98' with positive edge clock.
+Creating register for signal `\complex_multiplier.\commonr1' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+  created $dff cell `$procdff$99' with positive edge clock.
+Creating register for signal `\complex_multiplier.\addcommon' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2'.
+  created $dff cell `$procdff$100' with positive edge clock.
+Creating register for signal `\complex_multiplier.\mult0' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2'.
+  created $dff cell `$procdff$101' with positive edge clock.
+Creating register for signal `\complex_multiplier.\common' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2'.
+  created $dff cell `$procdff$102' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ai_d' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$103' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ai_dd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$104' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ar_d' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$105' with positive edge clock.
+Creating register for signal `\complex_multiplier.\ar_dd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$106' with positive edge clock.
+Creating register for signal `\complex_multiplier.\bi_d' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$107' with positive edge clock.
+Creating register for signal `\complex_multiplier.\bi_dd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$108' with positive edge clock.
+Creating register for signal `\complex_multiplier.\bi_ddd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$109' with positive edge clock.
+Creating register for signal `\complex_multiplier.\br_d' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$110' with positive edge clock.
+Creating register for signal `\complex_multiplier.\br_dd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$111' with positive edge clock.
+Creating register for signal `\complex_multiplier.\br_ddd' using process `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+  created $dff cell `$procdff$112' with positive edge clock.
+
+4.8.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.8.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+Removing empty process `complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:82$9'.
+Found and cleaned up 1 empty switch in `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+Removing empty process `complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:62$5'.
+Found and cleaned up 1 empty switch in `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2'.
+Removing empty process `complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:48$2'.
+Found and cleaned up 1 empty switch in `\complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+Removing empty process `complex_multiplier.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:20$1'.
+Cleaned up 4 empty switches.
+
+4.8.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.9. Executing DEMUXMAP pass.
+
+4.10. Executing FLATTEN pass (flatten design).
+
+4.11. Executing DEMUXMAP pass.
+
+4.12. Executing TRIBUF pass.
+
+4.13. Executing TRIBUF pass.
+
+4.14. Executing DEMINOUT pass (demote inout ports to input or output).
+
+4.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 50 unused wires.
+<suppressed ~1 debug messages>
+
+4.17. Executing CHECK pass (checking for obvious problems).
+Checking module complex_multiplier...
+Found and reported 0 problems.
+
+4.18. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                 66
+   Number of wire bits:           1688
+   Number of public wires:          33
+   Number of public wire bits:     795
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 58
+     $add                            3
+     $dff                           25
+     $mul                            3
+     $mux                           25
+     $sub                            2
+
+4.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.20. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.21. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+4.22. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.23. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+4.24. Executing OPT_SHARE pass.
+
+4.25. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.27. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.28. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+4.29. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.30. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.31. Executing OPT_SHARE pass.
+
+4.32. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.33. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.34. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.35. Executing FSM pass (extract and optimize FSM).
+
+4.35.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.35.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.35.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.35.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.35.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.35.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.35.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.35.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.36. Executing WREDUCE pass (reducing word size of cells).
+
+4.37. Executing PEEPOPT pass (run peephole optimizers).
+
+4.38. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.39. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.40. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.41. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+4.42. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.43. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.44. Executing OPT_SHARE pass.
+
+4.45. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$98 ($dff) from module complex_multiplier (D = $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:77$8_Y, Q = \pr_int, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$97 ($dff) from module complex_multiplier (D = $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:75$7_Y, Q = \multr, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$96 ($dff) from module complex_multiplier (D = $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:74$6_Y, Q = \addr, rval = 19'0000000000000000000).
+Adding SRST signal on $procdff$95 ($dff) from module complex_multiplier (D = \ar_ddd, Q = \ar_dddd, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$94 ($dff) from module complex_multiplier (D = \ar_dd, Q = \ar_ddd, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$93 ($dff) from module complex_multiplier (D = \common, Q = \commonr2, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$92 ($dff) from module complex_multiplier (D = $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:97$12_Y, Q = \pi_int, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$91 ($dff) from module complex_multiplier (D = $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:95$11_Y, Q = \multi, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$90 ($dff) from module complex_multiplier (D = $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:94$10_Y, Q = \addi, rval = 19'0000000000000000000).
+Adding SRST signal on $procdff$89 ($dff) from module complex_multiplier (D = \ai_ddd, Q = \ai_dddd, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$88 ($dff) from module complex_multiplier (D = \ai_dd, Q = \ai_ddd, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$112 ($dff) from module complex_multiplier (D = \br_dd, Q = \br_ddd, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$111 ($dff) from module complex_multiplier (D = \br_d, Q = \br_dd, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$110 ($dff) from module complex_multiplier (D = \br, Q = \br_d, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$109 ($dff) from module complex_multiplier (D = \bi_dd, Q = \bi_ddd, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$108 ($dff) from module complex_multiplier (D = \bi_d, Q = \bi_dd, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$107 ($dff) from module complex_multiplier (D = \bi, Q = \bi_d, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$106 ($dff) from module complex_multiplier (D = \ar_d, Q = \ar_dd, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$105 ($dff) from module complex_multiplier (D = \ar, Q = \ar_d, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$104 ($dff) from module complex_multiplier (D = \ai_d, Q = \ai_dd, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$103 ($dff) from module complex_multiplier (D = \ai, Q = \ai_d, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$102 ($dff) from module complex_multiplier (D = \mult0, Q = \common, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$101 ($dff) from module complex_multiplier (D = $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:56$4_Y, Q = \mult0, rval = 39'000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$100 ($dff) from module complex_multiplier (D = $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:55$3_Y, Q = \addcommon, rval = 21'000000000000000000000).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.46. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 24 unused cells and 24 unused wires.
+<suppressed ~25 debug messages>
+
+4.47. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.48. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.49. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.50. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.51. Executing OPT_SHARE pass.
+
+4.52. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.53. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.54. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.55. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.56. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.57. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.58. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.59. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.60. Executing OPT_SHARE pass.
+
+4.61. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.62. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.63. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.65. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.66. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.67. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.69. Executing OPT_SHARE pass.
+
+4.70. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.71. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=524, #remove=0, time=0.09 sec.]
+
+4.72. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.73. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.74. Executing WREDUCE pass (reducing word size of cells).
+
+4.75. Executing PEEPOPT pass (run peephole optimizers).
+
+4.76. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.77. Executing DEMUXMAP pass.
+
+4.78. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                 41
+   Number of wire bits:           1049
+   Number of public wires:          33
+   Number of public wire bits:     795
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 32
+     $add                            3
+     $mul                            3
+     $sdff                          24
+     $sub                            2
+
+4.79. Executing RS_DSP_MULTADD pass.
+
+4.80. Executing WREDUCE pass (reducing word size of cells).
+
+4.81. Executing RS_DSP_MACC pass.
+
+4.82. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.83. Executing TECHMAP pass (map to technology primitives).
+
+4.83.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.83.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~514 debug messages>
+
+4.84. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                 98
+   Number of wire bits:           8456
+   Number of public wires:          33
+   Number of public wire bits:     795
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 35
+     $__RS_MUL20X18                  3
+     $__soft_mul                     3
+     $add                            6
+     $sdff                          21
+     $sub                            2
+
+4.85. Executing TECHMAP pass (map to technology primitives).
+
+4.85.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Successfully finished Verilog frontend.
+
+4.85.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~60 debug messages>
+
+4.86. Executing TECHMAP pass (map to technology primitives).
+
+4.86.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Successfully finished Verilog frontend.
+
+4.86.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~33 debug messages>
+
+4.87. Executing rs_pack_dsp_regs pass.
+
+4.88. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 3 unused cells and 117 unused wires.
+<suppressed ~184 debug messages>
+
+4.89. Executing RS_DSP_IO_REGS pass.
+
+4.90. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module complex_multiplier:
+  creating $macc model for $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:77$8 ($add).
+  creating $macc model for $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:94$10 ($add).
+  creating $macc model for $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:97$12 ($add).
+  creating $macc model for $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:56$4.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last ($mul).
+  creating $macc model for $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:75$7.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mul_sliceB_last ($mul).
+  creating $macc model for $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:95$11.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mul_sliceB_last ($mul).
+  creating $macc model for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:55$3 ($sub).
+  creating $macc model for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:74$6 ($sub).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:56$4.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:194$139 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:75$7.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:259$144 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:95$11.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:259$144 ($add).
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:95$11.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:259$144 into $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:97$12.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:75$7.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:259$144 into $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:77$8.
+  creating $alu model for $macc $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:56$4.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:194$139.
+  creating $alu model for $macc $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:74$6.
+  creating $alu model for $macc $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:55$3.
+  creating $alu model for $macc $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:94$10.
+  creating $macc cell for $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:75$7.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mul_sliceB_last: $auto$alumacc.cc:365:replace_macc$172
+  creating $macc cell for $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:56$4.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last: $auto$alumacc.cc:365:replace_macc$173
+  creating $macc cell for $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:97$12: $auto$alumacc.cc:365:replace_macc$174
+  creating $macc cell for $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:95$11.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.mul_sliceB_last: $auto$alumacc.cc:365:replace_macc$175
+  creating $macc cell for $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:77$8: $auto$alumacc.cc:365:replace_macc$176
+  creating $alu cell for $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:94$10: $auto$alumacc.cc:485:replace_alu$177
+  creating $alu cell for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:55$3: $auto$alumacc.cc:485:replace_alu$180
+  creating $alu cell for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:74$6: $auto$alumacc.cc:485:replace_alu$183
+  creating $alu cell for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:56$4.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/mul2dsp.v:194$139: $auto$alumacc.cc:485:replace_alu$186
+  created 4 $alu and 5 $macc cells.
+
+4.91. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.92. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.93. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.94. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.95. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.96. Executing OPT_SHARE pass.
+
+4.97. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.98. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 2 unused cells and 8 unused wires.
+<suppressed ~5 debug messages>
+
+4.99. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.100. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.101. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.102. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.103. Executing OPT_SHARE pass.
+
+4.104. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.105. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.106. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.107. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                 53
+   Number of wire bits:           1286
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 36
+     $alu                            4
+     $macc                           5
+     $sdff                          24
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.108. Executing MEMORY pass.
+
+4.108.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.108.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.108.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.108.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.108.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.108.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.108.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.108.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.108.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.108.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.109. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                 53
+   Number of wire bits:           1286
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 36
+     $alu                            4
+     $macc                           5
+     $sdff                          24
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.110. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+
+4.111. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.112. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.113. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.114. Executing Rs_BRAM_Split pass.
+
+4.115. Executing TECHMAP pass (map to technology primitives).
+
+4.115.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+4.115.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+4.116. Executing TECHMAP pass (map to technology primitives).
+
+4.116.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+4.116.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.117. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+4.118. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.119. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.120. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+4.121. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.122. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.123. Executing OPT_SHARE pass.
+
+4.124. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=24, #solve=0, #remove=0, time=0.00 sec.]
+
+4.125. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.126. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.127. Executing PMUXTREE pass.
+
+4.128. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~24 debug messages>
+
+4.129. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.130. Executing TECHMAP pass (map to technology primitives).
+
+4.130.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.130.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+4.130.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper maccmap for cells of type $macc.
+  add { $auto$synth_rapidsilicon.cc:1255:add_out_reg$167 18'000000000000000000 } (39 bits, signed)
+  add \commonr2 (39 bits, signed)
+  add $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:75$7.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[0] (38 bits, signed)
+  add \bi_dd * \addcommon [20] (18x1 bits, signed)
+Using extmapper simplemap for cells of type $dff.
+  add \ai_dddd * \addi [18] (20x1 bits, signed)
+  add { $auto$synth_rapidsilicon.cc:1255:add_out_reg$170 18'000000000000000000 } (39 bits, signed)
+  add \commonr2 (39 bits, signed)
+  add $mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Compiler_Validation/RTL_testcases/DSP_Designs/complex_multiplier/results_dir/.././rtl/complex_multiplier.v:95$11.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[0] (38 bits, signed)
+  add \ar_dddd * \addr [18] (20x1 bits, signed)
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1767 debug messages>
+
+4.131. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                912
+   Number of wire bits:          14888
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3493
+     $_AND_                        833
+     $_DFF_P_                      544
+     $_MUX_                        787
+     $_NOT_                        298
+     $_OR_                         386
+     $_XOR_                        583
+     ADDER_CARRY                    59
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.132. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+<suppressed ~829 debug messages>
+
+4.133. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+4.134. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.135. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.136. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.137. Executing OPT_SHARE pass.
+
+4.138. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=544, #solve=0, #remove=0, time=0.01 sec.]
+
+4.139. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 286 unused cells and 453 unused wires.
+<suppressed ~287 debug messages>
+
+4.140. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.141. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.142. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.143. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.144. Executing OPT_SHARE pass.
+
+4.145. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.146. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.147. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.148. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+<suppressed ~55 debug messages>
+
+4.149. Executing TECHMAP pass (map to technology primitives).
+
+4.149.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.149.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.150. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                459
+   Number of wire bits:           3248
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2365
+     $_AND_                        597
+     $_DFF_P_                      488
+     $_MUX_                        491
+     $_NOT_                         96
+     $_OR_                         201
+     $_XOR_                        430
+     ADDER_CARRY                    59
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.151. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.152. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.153. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.154. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.155. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.156. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.157. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.158. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.159. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.160. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.161. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.162. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.163. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.164. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.165. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.166. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.167. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.168. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.169. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.170. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.171. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.172. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.173. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=61, #remove=0, time=0.03 sec.]
+
+4.174. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.175. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.176. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                459
+   Number of wire bits:           3248
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2365
+     $_AND_                        597
+     $_DFF_P_                      488
+     $_MUX_                        491
+     $_NOT_                         96
+     $_OR_                         201
+     $_XOR_                        430
+     ADDER_CARRY                    59
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+   Number of Generic REGs:          488
+
+ABC-DFF iteration : 1
+
+4.177. Executing ABC pass (technology mapping using ABC).
+
+4.177.1. Summary of detected clock domains:
+  2365 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.177.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2303 gates and 2498 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.177.2.1. Executing ABC.
+
+4.178. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.179. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.180. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.181. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.182. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.183. Executing OPT_SHARE pass.
+
+4.184. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.185. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 1636 unused wires.
+<suppressed ~1 debug messages>
+
+4.186. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 2
+
+4.187. Executing ABC pass (technology mapping using ABC).
+
+4.187.1. Summary of detected clock domains:
+  2196 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.187.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2134 gates and 2328 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.187.2.1. Executing ABC.
+
+4.188. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.189. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.190. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.191. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.192. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.193. Executing OPT_SHARE pass.
+
+4.194. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.195. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2816 unused wires.
+<suppressed ~1 debug messages>
+
+4.196. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+4.197. Executing ABC pass (technology mapping using ABC).
+
+4.197.1. Summary of detected clock domains:
+  2188 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.197.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2126 gates and 2320 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.197.2.1. Executing ABC.
+
+4.198. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.199. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.200. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.201. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.202. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.203. Executing OPT_SHARE pass.
+
+4.204. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.205. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2808 unused wires.
+<suppressed ~1 debug messages>
+
+4.206. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 4
+
+4.207. Executing ABC pass (technology mapping using ABC).
+
+4.207.1. Summary of detected clock domains:
+  2190 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.207.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2128 gates and 2322 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.207.2.1. Executing ABC.
+
+4.208. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.209. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.210. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.211. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.212. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.213. Executing OPT_SHARE pass.
+
+4.214. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.215. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2810 unused wires.
+<suppressed ~1 debug messages>
+
+4.216. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.217. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+   Number of Generic REGs:          488
+
+ABC-DFF iteration : 1
+
+4.218. Executing ABC pass (technology mapping using ABC).
+
+4.218.1. Summary of detected clock domains:
+  2365 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.218.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2303 gates and 2498 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.218.2.1. Executing ABC.
+
+4.219. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.220. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.221. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 1636 unused wires.
+<suppressed ~1 debug messages>
+
+4.222. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.223. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.224. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.225. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.226. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.227. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.228. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 2
+
+4.229. Executing ABC pass (technology mapping using ABC).
+
+4.229.1. Summary of detected clock domains:
+  2196 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.229.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2134 gates and 2328 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.229.2.1. Executing ABC.
+
+4.230. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.231. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.232. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2816 unused wires.
+<suppressed ~1 debug messages>
+
+4.233. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.234. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.235. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.236. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.237. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.238. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.239. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 3
+
+4.240. Executing ABC pass (technology mapping using ABC).
+
+4.240.1. Summary of detected clock domains:
+  2188 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.240.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2126 gates and 2320 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.240.2.1. Executing ABC.
+
+4.241. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.242. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.243. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2808 unused wires.
+<suppressed ~1 debug messages>
+
+4.244. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.245. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.246. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.247. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.248. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.249. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.250. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 4
+
+4.251. Executing ABC pass (technology mapping using ABC).
+
+4.251.1. Summary of detected clock domains:
+  2190 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.251.2. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 2128 gates and 2322 wires to a netlist network with 194 inputs and 544 outputs.
+
+4.251.2.1. Executing ABC.
+
+4.252. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.253. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.254. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2810 unused wires.
+<suppressed ~1 debug messages>
+
+4.255. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.256. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.257. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.258. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.259. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.260. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.261. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+4.262. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+select CE dissolving strategy (tresh=0.920000)
+
+4.263. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.264. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.265. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.266. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.267. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.268. Executing OPT_SHARE pass.
+
+4.269. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.270. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.271. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.272. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.273. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.274. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.275. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.276. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.277. Executing OPT_SHARE pass.
+
+4.278. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.279. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.280. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.281. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.282. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.283. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.284. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.285. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.286. Executing OPT_SHARE pass.
+
+4.287. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.288. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=488, #remove=0, time=0.19 sec.]
+
+4.289. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.290. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.291. Executing BMUXMAP pass.
+
+4.292. Executing DEMUXMAP pass.
+
+4.293. Executing ABC pass (technology mapping using ABC).
+
+4.293.1. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Extracted 1640 gates and 2244 wires to a netlist network with 604 inputs and 544 outputs.
+
+4.293.1.1. Executing ABC.
+DE:   #PIs = 604  #Luts =   777  Max Lvl =  15  Avg Lvl =   2.30  [   0.10 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 604  #Luts =   847  Max Lvl =   5  Avg Lvl =   1.76  [   1.91 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 604  #Luts =   827  Max Lvl =   5  Avg Lvl =   1.81  [   1.01 sec. at Pass 2]{map}[6]
+DE:   #PIs = 604  #Luts =   803  Max Lvl =   5  Avg Lvl =   1.74  [   0.75 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 604  #Luts =   794  Max Lvl =   5  Avg Lvl =   1.78  [   1.15 sec. at Pass 4]{map}[16]
+DE:   #PIs = 604  #Luts =   778  Max Lvl =   5  Avg Lvl =   1.73  [   0.91 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 604  #Luts =   778  Max Lvl =   5  Avg Lvl =   1.73  [   1.07 sec. at Pass 6]{map}[16]
+DE:   #PIs = 604  #Luts =   771  Max Lvl =   5  Avg Lvl =   1.72  [   0.88 sec. at Pass 7]{postMap}[16]
+DE:   #PIs = 604  #Luts =   767  Max Lvl =   5  Avg Lvl =   1.79  [   1.06 sec. at Pass 8]{map}[16]
+DE:   #PIs = 604  #Luts =   767  Max Lvl =   5  Avg Lvl =   1.79  [   0.87 sec. at Pass 9]{postMap}[16]
+DE:   #PIs = 604  #Luts =   767  Max Lvl =   5  Avg Lvl =   1.79  [   1.08 sec. at Pass 10]{map}[16]
+DE:   #PIs = 604  #Luts =   763  Max Lvl =   5  Avg Lvl =   1.73  [   0.69 sec. at Pass 11]{postMap}[16]
+DE:   #PIs = 604  #Luts =   763  Max Lvl =   5  Avg Lvl =   1.73  [   1.04 sec. at Pass 12]{map}[16]
+DE:   #PIs = 604  #Luts =   762  Max Lvl =   5  Avg Lvl =   1.73  [   0.72 sec. at Pass 13]{postMap}[16]
+DE:   #PIs = 604  #Luts =   762  Max Lvl =   5  Avg Lvl =   1.73  [   0.97 sec. at Pass 14]{map}[16]
+DE:   #PIs = 604  #Luts =   756  Max Lvl =   5  Avg Lvl =   1.73  [   0.82 sec. at Pass 15]{postMap}[16]
+DE:   #PIs = 604  #Luts =   756  Max Lvl =   5  Avg Lvl =   1.73  [   1.05 sec. at Pass 16]{map}[16]
+DE:   #PIs = 604  #Luts =   755  Max Lvl =   5  Avg Lvl =   1.74  [   0.77 sec. at Pass 17]{postMap}[16]
+DE:   #PIs = 604  #Luts =   755  Max Lvl =   5  Avg Lvl =   1.74  [   0.86 sec. at Pass 18]{map}[16]
+DE:   #PIs = 604  #Luts =   755  Max Lvl =   5  Avg Lvl =   1.74  [   0.68 sec. at Pass 19]{postMap}[16]
+DE:   #PIs = 604  #Luts =   755  Max Lvl =   5  Avg Lvl =   1.74  [   0.87 sec. at Pass 20]{map}[16]
+DE:   #PIs = 604  #Luts =   755  Max Lvl =   5  Avg Lvl =   1.74  [   0.00 sec. at Pass 21]{pushMap}[0]
+DE:   #PIs = 604  #Luts =   755  Max Lvl =   5  Avg Lvl =   1.74  [   0.00 sec. at Pass 22]{finalMap}[0]
+
+4.294. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.295. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.296. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.297. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.298. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.299. Executing OPT_SHARE pass.
+
+4.300. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.301. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2244 unused wires.
+<suppressed ~1 debug messages>
+
+4.302. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.303. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+4.304. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.305. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.306. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.307. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.308. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.309. Executing OPT_SHARE pass.
+
+4.310. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.311. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.312. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.313. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.314. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.315. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.316. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.317. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.318. Executing OPT_SHARE pass.
+
+4.319. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=0, #remove=0, time=0.01 sec.]
+
+4.320. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=488, #solve=488, #remove=0, time=0.29 sec.]
+
+4.321. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+
+4.322. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.323. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                748
+   Number of wire bits:           1833
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1305
+     $_DFF_P_                      488
+     $lut                          755
+     ADDER_CARRY                    59
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.324. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+4.325. Executing RS_DFFSR_CONV pass.
+
+4.326. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                748
+   Number of wire bits:           1833
+   Number of public wires:          31
+   Number of public wire bits:     717
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1305
+     $_DFF_P_                      488
+     $lut                          755
+     ADDER_CARRY                    59
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.327. Executing TECHMAP pass (map to technology primitives).
+
+4.327.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.327.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+4.327.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+No more expansions possible.
+<suppressed ~1363 debug messages>
+
+4.328. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+<suppressed ~9659 debug messages>
+
+4.329. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4.330. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.331. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+<suppressed ~9114 debug messages>
+Removed a total of 3038 cells.
+
+4.332. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.02 sec.]
+
+4.333. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2928 unused wires.
+<suppressed ~1 debug messages>
+
+4.334. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+<suppressed ~55 debug messages>
+
+4.335. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.336. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.337. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.338. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.339. Executing OPT_SHARE pass.
+
+4.340. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.02 sec.]
+
+4.341. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.342. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.343. Executing TECHMAP pass (map to technology primitives).
+
+4.343.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.343.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.344. Executing ABC pass (technology mapping using ABC).
+
+4.344.1. Extracting gate netlist of module `\complex_multiplier' to `<abc-temp-dir>/input.blif'..
+Extracted 2742 gates and 3348 wires to a netlist network with 604 inputs and 544 outputs.
+
+4.344.1.1. Executing ABC.
+DE:   #PIs = 604  #Luts =   758  Max Lvl =   5  Avg Lvl =   1.74  [   0.11 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 604  #Luts =   758  Max Lvl =   5  Avg Lvl =   1.74  [   2.04 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 604  #Luts =   754  Max Lvl =   5  Avg Lvl =   1.80  [   0.94 sec. at Pass 2]{map}[6]
+DE:   #PIs = 604  #Luts =   754  Max Lvl =   5  Avg Lvl =   1.80  [   0.75 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 604  #Luts =   754  Max Lvl =   5  Avg Lvl =   1.80  [   1.09 sec. at Pass 4]{map}[16]
+DE:   #PIs = 604  #Luts =   754  Max Lvl =   5  Avg Lvl =   1.80  [   0.91 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 604  #Luts =   754  Max Lvl =   5  Avg Lvl =   1.80  [   0.00 sec. at Pass 6]{pushMap}[0]
+DE:   #PIs = 604  #Luts =   754  Max Lvl =   5  Avg Lvl =   1.80  [   0.00 sec. at Pass 7]{finalMap}[0]
+
+4.345. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+4.346. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.347. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \complex_multiplier..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.348. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \complex_multiplier.
+Performed a total of 0 changes.
+
+4.349. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\complex_multiplier'.
+Removed a total of 0 cells.
+
+4.350. Executing OPT_SHARE pass.
+
+4.351. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+4.352. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 2468 unused wires.
+<suppressed ~1 debug messages>
+
+4.353. Executing OPT_EXPR pass (perform const folding).
+Optimizing module complex_multiplier.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.354. Executing HIERARCHY pass (managing design hierarchy).
+
+4.354.1. Analyzing design hierarchy..
+Top module:  \complex_multiplier
+
+4.354.2. Analyzing design hierarchy..
+Top module:  \complex_multiplier
+Removed 0 unused modules.
+
+4.355. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \complex_multiplier..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.356. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:                746
+   Number of wire bits:           1793
+   Number of public wires:          30
+   Number of public wire bits:     678
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1304
+     $lut                          754
+     ADDER_CARRY                    59
+     DFFRE                         488
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+4.357. Executing TECHMAP pass (map to technology primitives).
+
+4.357.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/TECHMAP/lut_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/10_22_2023_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/RS_PRIMITIVES/TECHMAP/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+4.357.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~2720 debug messages>
+
+4.358. Printing statistics.
+
+=== complex_multiplier ===
+
+   Number of wires:               2254
+   Number of wire bits:           5046
+   Number of public wires:          30
+   Number of public wire bits:     678
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1304
+     ADDER_CARRY                    59
+     DFFRE                         488
+     LUT1                           17
+     LUT2                          380
+     LUT3                           69
+     LUT4                           66
+     LUT5                           81
+     LUT6                          141
+     RS_DSP_MULT_REGIN_REGOUT        3
+
+   Number of LUTs:                 754
+   Number of REGs:                 488
+   Number of CARRY ADDERs:          59
+   Number of CARRY CHAINs:           3 (1x21, 2x19)
+
+5. Executing Verilog backend.
+Dumping module `\complex_multiplier'.
+
+6. Executing BLIF backend.
+
+End of script. Logfile hash: 53de34f3b8, CPU: user 8.48s system 0.16s, MEM: 64.16 MB peak
+Yosys 0.18+10 (git sha1 b3f40b448, gcc 11.2.1 -fPIC -Os)
+Time spent: 97% 10x abc (257 sec), 1% 75x opt_expr (2 sec), ...
