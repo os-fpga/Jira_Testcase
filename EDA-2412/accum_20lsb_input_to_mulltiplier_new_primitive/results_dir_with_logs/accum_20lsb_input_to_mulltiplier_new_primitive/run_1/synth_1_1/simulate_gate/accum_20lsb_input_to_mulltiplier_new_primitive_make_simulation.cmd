@@ -1,0 +1,1 @@
+make -j -C obj_dir/ -f Vco_sim_accum_20lsb_input_to_mulltiplier_new_primitive.mk Vco_sim_accum_20lsb_input_to_mulltiplier_new_primitive
