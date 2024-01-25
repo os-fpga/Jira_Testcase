@@ -1,0 +1,14 @@
+create_design ram_true_reg_addr_dp_1024x32_new_tdp
+target_device 1GVTC
+add_design_file ./rtl/ram_true_reg_addr_dp_1024x32_new_tdp.v
+set_top_module ram_true_reg_addr_dp_1024x32_new_tdp
+analyze
+synth_options -new_tdp36k
+synthesize delay
+packing
+global_placement
+place
+route
+sta
+power
+bitstream 
