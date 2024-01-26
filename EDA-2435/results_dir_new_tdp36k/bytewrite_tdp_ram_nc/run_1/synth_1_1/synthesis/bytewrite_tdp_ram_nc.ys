@@ -1,0 +1,23 @@
+ 
+# Yosys synthesis script for bytewrite_tdp_ram_nc
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/Memory_Designs/bytewrite_tdp_ram_nc/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/Memory_Designs/bytewrite_tdp_ram_nc/results_dir/.././rtl/bytewrite_tdp_ram_nc.v 
+
+
+# Technology mapping
+hierarchy -top bytewrite_tdp_ram_nc
+
+setattr -set keep 1 w:\clkA
+setattr -set keep 1 w:\clkB
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf   -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v bytewrite_tdp_ram_nc_post_synth.v
+write_blif -param bytewrite_tdp_ram_nc_post_synth.eblif
+
+  
