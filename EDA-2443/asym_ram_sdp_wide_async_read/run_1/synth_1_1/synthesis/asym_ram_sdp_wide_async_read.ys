@@ -1,0 +1,21 @@
+ 
+# Yosys synthesis script for asym_ram_sdp_wide_async_read
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/01_26_2024_18_30_44/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Validation/RTL_testcases/Memory_Designs/asym_ram_sdp_wide_async_read_notdpflag/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/Validation/RTL_testcases/Memory_Designs/asym_ram_sdp_wide_async_read_notdpflag/results_dir/.././rtl/asym_ram_sdp_wide_async_read.v 
+
+
+# Technology mapping
+hierarchy -top asym_ram_sdp_wide_async_read
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf    -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v asym_ram_sdp_wide_async_read_post_synth.v
+write_blif -param asym_ram_sdp_wide_async_read_post_synth.eblif
+
+  
