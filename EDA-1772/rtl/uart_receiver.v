@@ -195,15 +195,14 @@
 
 // synopsys translate_off
 `include "timescale.v"
-`default_nettype wire
 // synopsys translate_on
-
+`default_nettype wire
 //`include "uart_defines.v"
 
 module uart_receiver (clk, wb_rst_i, lcr, rf_pop, srx_pad_i, enable, 
 	counter_t, rf_count, rf_data_out, rf_error_bit, rf_overrun, rx_reset, lsr_mask, rstate, rf_push_pulse);
 
-input			clk;
+input				clk;
 input				wb_rst_i;
 input	[7:0]	lcr;
 input				rf_pop;
