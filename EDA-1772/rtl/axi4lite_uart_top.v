@@ -132,7 +132,7 @@ axi4lite_slave_dut (
 uart_regs uart_regs_dut (
 .clk (s_axi_aclk ),
 .wb_rst_i (!s_axi_aresetn ),
-.wb_addr_i (addr_in ),
+.wb_addr_i (addr_in[4:0] ),
 .wb_dat_i ( w_data_in),
 .wb_dat_o (r_data_in),
 .wb_we_i (we ),
@@ -165,7 +165,7 @@ uart_regs uart_regs_dut (
 uart_debug_if 
 uart_debug_if_dut 
 (
-.wb_adr_i (addr_in ),
+.wb_adr_i (addr_in[4:0] ),
 .wb_dat32_o (r_data_in_dbg ),
 .ier (ier ),
 .iir (iir ),
