@@ -1,0 +1,20 @@
+ 
+# Yosys/Surelog synthesis script for simple_testcase_with_neg_constant
+# Read source files
+plugin -i systemverilog
+read_systemverilog -synth  -top simple_testcase_with_neg_constant -I../../../../ -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/EDA-2477/simple_testcase/./rtl   /nfs_scratch/scratch/CompilerValidation/abdul_hameed/EDA-2477/simple_testcase/./rtl/simple_testcase_with_neg_constant.v \
+/nfs_eda_sw/softwares/Raptor/instl_dir/02_06_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+
+# Technology mapping
+hierarchy -top simple_testcase_with_neg_constant
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf    -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v simple_testcase_with_neg_constant_post_synth.v
+write_blif -param simple_testcase_with_neg_constant_post_synth.eblif
+
+  
