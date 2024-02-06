@@ -7,7 +7,7 @@ set_top_module test_soc
 add_constraint_file test_soc.sdc
 synth_options -fast
 synth
-packing
+#packing
 #place
 #route
 #sta
