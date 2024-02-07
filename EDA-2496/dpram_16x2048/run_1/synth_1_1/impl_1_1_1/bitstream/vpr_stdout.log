@@ -1,0 +1,1335 @@
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+vpr /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_vpr.xml /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/synthesis/dpram_16x2048_post_synth.eblif --clock_modeling ideal --device castor10x8_heterogeneous --net_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/packing/dpram_16x2048_post_synth.net --place_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/placement/dpram_16x2048_post_synth.place --route_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/routing/dpram_16x2048_post_synth.route --route_chan_width 160 --sdc_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/packing/dpram_16x2048_openfpga.sdc --absorb_buffer_luts off --constant_net_method route --skip_sync_clustering_and_routing_results on --circuit_format eblif --analysis --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --top dpram_16x2048
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_vpr.xml
+Circuit name: dpram_16x2048_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 18.4 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/packing/dpram_16x2048_post_synth.net
+Circuit placement file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/placement/dpram_16x2048_post_synth.place
+Circuit routing file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/routing/dpram_16x2048_post_synth.route
+Circuit SDC file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/packing/dpram_16x2048_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 0
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: 
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 160
+RouterOpts.check_route: FULL
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 50
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: NETLIST
+AnalysisOpts.post_synth_netlist_unconn_input_handling: UNCONNECTED
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 19.2 MiB, delta_rss +0.8 MiB)
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.01 seconds (max_rss 20.3 MiB, delta_rss +1.1 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 1
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 111
+Swept block(s)      : 70
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 20.3 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 20.3 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 20.3 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 169
+    .input   :      61
+    .output  :      32
+    0-LUT    :       3
+    6-LUT    :      38
+    RS_TDP36K:       1
+    dffre    :      34
+  Nets  : 168
+    Avg Fanout:     2.6
+    Max Fanout:    40.0
+    Min Fanout:     1.0
+  Netlist Clocks: 2
+# Build Timing Graph
+  Timing Graph Nodes: 598
+  Timing Graph Edges: 856
+  Timing Graph Levels: 6
+# Build Timing Graph took 0.00 seconds (max_rss 20.3 MiB, delta_rss +0.0 MiB)
+Netlist contains 2 clocks
+  Netlist Clock 'clock1' Fanout: 19 pins (3.2%), 18 blocks (10.7%)
+  Netlist Clock 'clock0' Fanout: 19 pins (3.2%), 18 blocks (10.7%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output 'rq_a[0]'
+Warning 168: set_input_delay command matched but was not applied to primary output 'rq_a[1]'
+Warning 169: set_input_delay command matched but was not applied to primary output 'rq_a[2]'
+Warning 170: set_input_delay command matched but was not applied to primary output 'rq_a[3]'
+Warning 171: set_input_delay command matched but was not applied to primary output 'rq_a[4]'
+Warning 172: set_input_delay command matched but was not applied to primary output 'rq_a[5]'
+Warning 173: set_input_delay command matched but was not applied to primary output 'rq_a[6]'
+Warning 174: set_input_delay command matched but was not applied to primary output 'rq_a[7]'
+Warning 175: set_input_delay command matched but was not applied to primary output 'rq_a[8]'
+Warning 176: set_input_delay command matched but was not applied to primary output 'rq_a[9]'
+Warning 177: set_input_delay command matched but was not applied to primary output 'rq_a[10]'
+Warning 178: set_input_delay command matched but was not applied to primary output 'rq_a[11]'
+Warning 179: set_input_delay command matched but was not applied to primary output 'rq_a[12]'
+Warning 180: set_input_delay command matched but was not applied to primary output 'rq_a[13]'
+Warning 181: set_input_delay command matched but was not applied to primary output 'rq_a[14]'
+Warning 182: set_input_delay command matched but was not applied to primary output 'rq_a[15]'
+Warning 183: set_input_delay command matched but was not applied to primary output 'rq_b[0]'
+Warning 184: set_input_delay command matched but was not applied to primary output 'rq_b[1]'
+Warning 185: set_input_delay command matched but was not applied to primary output 'rq_b[2]'
+Warning 186: set_input_delay command matched but was not applied to primary output 'rq_b[3]'
+Warning 187: set_input_delay command matched but was not applied to primary output 'rq_b[4]'
+Warning 188: set_input_delay command matched but was not applied to primary output 'rq_b[5]'
+Warning 189: set_input_delay command matched but was not applied to primary output 'rq_b[6]'
+Warning 190: set_input_delay command matched but was not applied to primary output 'rq_b[7]'
+Warning 191: set_input_delay command matched but was not applied to primary output 'rq_b[8]'
+Warning 192: set_input_delay command matched but was not applied to primary output 'rq_b[9]'
+Warning 193: set_input_delay command matched but was not applied to primary output 'rq_b[10]'
+Warning 194: set_input_delay command matched but was not applied to primary output 'rq_b[11]'
+Warning 195: set_input_delay command matched but was not applied to primary output 'rq_b[12]'
+Warning 196: set_input_delay command matched but was not applied to primary output 'rq_b[13]'
+Warning 197: set_input_delay command matched but was not applied to primary output 'rq_b[14]'
+Warning 198: set_input_delay command matched but was not applied to primary output 'rq_b[15]'
+Warning 199: set_output_delay command matched but was not applied to primary input 'clock1'
+Warning 200: set_output_delay command matched but was not applied to primary input 'rce_a'
+Warning 201: set_output_delay command matched but was not applied to primary input 'addr_a[0]'
+Warning 202: set_output_delay command matched but was not applied to primary input 'addr_a[1]'
+Warning 203: set_output_delay command matched but was not applied to primary input 'addr_a[2]'
+Warning 204: set_output_delay command matched but was not applied to primary input 'addr_a[3]'
+Warning 205: set_output_delay command matched but was not applied to primary input 'addr_a[4]'
+Warning 206: set_output_delay command matched but was not applied to primary input 'addr_a[5]'
+Warning 207: set_output_delay command matched but was not applied to primary input 'addr_a[6]'
+Warning 208: set_output_delay command matched but was not applied to primary input 'addr_a[7]'
+Warning 209: set_output_delay command matched but was not applied to primary input 'addr_a[8]'
+Warning 210: set_output_delay command matched but was not applied to primary input 'addr_a[9]'
+Warning 211: set_output_delay command matched but was not applied to primary input 'addr_a[10]'
+Warning 212: set_output_delay command matched but was not applied to primary input 'wce_a'
+Warning 213: set_output_delay command matched but was not applied to primary input 'wd_a[0]'
+Warning 214: set_output_delay command matched but was not applied to primary input 'wd_a[1]'
+Warning 215: set_output_delay command matched but was not applied to primary input 'wd_a[2]'
+Warning 216: set_output_delay command matched but was not applied to primary input 'wd_a[3]'
+Warning 217: set_output_delay command matched but was not applied to primary input 'wd_a[4]'
+Warning 218: set_output_delay command matched but was not applied to primary input 'wd_a[5]'
+Warning 219: set_output_delay command matched but was not applied to primary input 'wd_a[6]'
+Warning 220: set_output_delay command matched but was not applied to primary input 'wd_a[7]'
+Warning 221: set_output_delay command matched but was not applied to primary input 'wd_a[8]'
+Warning 222: set_output_delay command matched but was not applied to primary input 'wd_a[9]'
+Warning 223: set_output_delay command matched but was not applied to primary input 'wd_a[10]'
+Warning 224: set_output_delay command matched but was not applied to primary input 'wd_a[11]'
+Warning 225: set_output_delay command matched but was not applied to primary input 'wd_a[12]'
+Warning 226: set_output_delay command matched but was not applied to primary input 'wd_a[13]'
+Warning 227: set_output_delay command matched but was not applied to primary input 'wd_a[14]'
+Warning 228: set_output_delay command matched but was not applied to primary input 'wd_a[15]'
+Warning 229: set_output_delay command matched but was not applied to primary input 'clock0'
+Warning 230: set_output_delay command matched but was not applied to primary input 'rce_b'
+Warning 231: set_output_delay command matched but was not applied to primary input 'addr_b[0]'
+Warning 232: set_output_delay command matched but was not applied to primary input 'addr_b[1]'
+Warning 233: set_output_delay command matched but was not applied to primary input 'addr_b[2]'
+Warning 234: set_output_delay command matched but was not applied to primary input 'addr_b[3]'
+Warning 235: set_output_delay command matched but was not applied to primary input 'addr_b[4]'
+Warning 236: set_output_delay command matched but was not applied to primary input 'addr_b[5]'
+Warning 237: set_output_delay command matched but was not applied to primary input 'addr_b[6]'
+Warning 238: set_output_delay command matched but was not applied to primary input 'addr_b[7]'
+Warning 239: set_output_delay command matched but was not applied to primary input 'addr_b[8]'
+Warning 240: set_output_delay command matched but was not applied to primary input 'addr_b[9]'
+Warning 241: set_output_delay command matched but was not applied to primary input 'addr_b[10]'
+Warning 242: set_output_delay command matched but was not applied to primary input 'wce_b'
+Warning 243: set_output_delay command matched but was not applied to primary input 'wd_b[0]'
+Warning 244: set_output_delay command matched but was not applied to primary input 'wd_b[1]'
+Warning 245: set_output_delay command matched but was not applied to primary input 'wd_b[2]'
+Warning 246: set_output_delay command matched but was not applied to primary input 'wd_b[3]'
+Warning 247: set_output_delay command matched but was not applied to primary input 'wd_b[4]'
+Warning 248: set_output_delay command matched but was not applied to primary input 'wd_b[5]'
+Warning 249: set_output_delay command matched but was not applied to primary input 'wd_b[6]'
+Warning 250: set_output_delay command matched but was not applied to primary input 'wd_b[7]'
+Warning 251: set_output_delay command matched but was not applied to primary input 'wd_b[8]'
+Warning 252: set_output_delay command matched but was not applied to primary input 'wd_b[9]'
+Warning 253: set_output_delay command matched but was not applied to primary input 'wd_b[10]'
+Warning 254: set_output_delay command matched but was not applied to primary input 'wd_b[11]'
+Warning 255: set_output_delay command matched but was not applied to primary input 'wd_b[12]'
+Warning 256: set_output_delay command matched but was not applied to primary input 'wd_b[13]'
+Warning 257: set_output_delay command matched but was not applied to primary input 'wd_b[14]'
+Warning 258: set_output_delay command matched but was not applied to primary input 'wd_b[15]'
+Warning 259: set_output_delay command matched but was not applied to primary input 'id[0]'
+Warning 260: set_input_delay command matched but was not applied to primary output 'rq_a[0]'
+Warning 261: set_input_delay command matched but was not applied to primary output 'rq_a[1]'
+Warning 262: set_input_delay command matched but was not applied to primary output 'rq_a[2]'
+Warning 263: set_input_delay command matched but was not applied to primary output 'rq_a[3]'
+Warning 264: set_input_delay command matched but was not applied to primary output 'rq_a[4]'
+Warning 265: set_input_delay command matched but was not applied to primary output 'rq_a[5]'
+Warning 266: set_input_delay command matched but was not applied to primary output 'rq_a[6]'
+Warning 267: set_input_delay command matched but was not applied to primary output 'rq_a[7]'
+Warning 268: set_input_delay command matched but was not applied to primary output 'rq_a[8]'
+Warning 269: set_input_delay command matched but was not applied to primary output 'rq_a[9]'
+Warning 270: set_input_delay command matched but was not applied to primary output 'rq_a[10]'
+Warning 271: set_input_delay command matched but was not applied to primary output 'rq_a[11]'
+Warning 272: set_input_delay command matched but was not applied to primary output 'rq_a[12]'
+Warning 273: set_input_delay command matched but was not applied to primary output 'rq_a[13]'
+Warning 274: set_input_delay command matched but was not applied to primary output 'rq_a[14]'
+Warning 275: set_input_delay command matched but was not applied to primary output 'rq_a[15]'
+Warning 276: set_input_delay command matched but was not applied to primary output 'rq_b[0]'
+Warning 277: set_input_delay command matched but was not applied to primary output 'rq_b[1]'
+Warning 278: set_input_delay command matched but was not applied to primary output 'rq_b[2]'
+Warning 279: set_input_delay command matched but was not applied to primary output 'rq_b[3]'
+Warning 280: set_input_delay command matched but was not applied to primary output 'rq_b[4]'
+Warning 281: set_input_delay command matched but was not applied to primary output 'rq_b[5]'
+Warning 282: set_input_delay command matched but was not applied to primary output 'rq_b[6]'
+Warning 283: set_input_delay command matched but was not applied to primary output 'rq_b[7]'
+Warning 284: set_input_delay command matched but was not applied to primary output 'rq_b[8]'
+Warning 285: set_input_delay command matched but was not applied to primary output 'rq_b[9]'
+Warning 286: set_input_delay command matched but was not applied to primary output 'rq_b[10]'
+Warning 287: set_input_delay command matched but was not applied to primary output 'rq_b[11]'
+Warning 288: set_input_delay command matched but was not applied to primary output 'rq_b[12]'
+Warning 289: set_input_delay command matched but was not applied to primary output 'rq_b[13]'
+Warning 290: set_input_delay command matched but was not applied to primary output 'rq_b[14]'
+Warning 291: set_input_delay command matched but was not applied to primary output 'rq_b[15]'
+Warning 292: set_output_delay command matched but was not applied to primary input 'clock1'
+Warning 293: set_output_delay command matched but was not applied to primary input 'rce_a'
+Warning 294: set_output_delay command matched but was not applied to primary input 'addr_a[0]'
+Warning 295: set_output_delay command matched but was not applied to primary input 'addr_a[1]'
+Warning 296: set_output_delay command matched but was not applied to primary input 'addr_a[2]'
+Warning 297: set_output_delay command matched but was not applied to primary input 'addr_a[3]'
+Warning 298: set_output_delay command matched but was not applied to primary input 'addr_a[4]'
+Warning 299: set_output_delay command matched but was not applied to primary input 'addr_a[5]'
+Warning 300: set_output_delay command matched but was not applied to primary input 'addr_a[6]'
+Warning 301: set_output_delay command matched but was not applied to primary input 'addr_a[7]'
+Warning 302: set_output_delay command matched but was not applied to primary input 'addr_a[8]'
+Warning 303: set_output_delay command matched but was not applied to primary input 'addr_a[9]'
+Warning 304: set_output_delay command matched but was not applied to primary input 'addr_a[10]'
+Warning 305: set_output_delay command matched but was not applied to primary input 'wce_a'
+Warning 306: set_output_delay command matched but was not applied to primary input 'wd_a[0]'
+Warning 307: set_output_delay command matched but was not applied to primary input 'wd_a[1]'
+Warning 308: set_output_delay command matched but was not applied to primary input 'wd_a[2]'
+Warning 309: set_output_delay command matched but was not applied to primary input 'wd_a[3]'
+Warning 310: set_output_delay command matched but was not applied to primary input 'wd_a[4]'
+Warning 311: set_output_delay command matched but was not applied to primary input 'wd_a[5]'
+Warning 312: set_output_delay command matched but was not applied to primary input 'wd_a[6]'
+Warning 313: set_output_delay command matched but was not applied to primary input 'wd_a[7]'
+Warning 314: set_output_delay command matched but was not applied to primary input 'wd_a[8]'
+Warning 315: set_output_delay command matched but was not applied to primary input 'wd_a[9]'
+Warning 316: set_output_delay command matched but was not applied to primary input 'wd_a[10]'
+Warning 317: set_output_delay command matched but was not applied to primary input 'wd_a[11]'
+Warning 318: set_output_delay command matched but was not applied to primary input 'wd_a[12]'
+Warning 319: set_output_delay command matched but was not applied to primary input 'wd_a[13]'
+Warning 320: set_output_delay command matched but was not applied to primary input 'wd_a[14]'
+Warning 321: set_output_delay command matched but was not applied to primary input 'wd_a[15]'
+Warning 322: set_output_delay command matched but was not applied to primary input 'clock0'
+Warning 323: set_output_delay command matched but was not applied to primary input 'rce_b'
+Warning 324: set_output_delay command matched but was not applied to primary input 'addr_b[0]'
+Warning 325: set_output_delay command matched but was not applied to primary input 'addr_b[1]'
+Warning 326: set_output_delay command matched but was not applied to primary input 'addr_b[2]'
+Warning 327: set_output_delay command matched but was not applied to primary input 'addr_b[3]'
+Warning 328: set_output_delay command matched but was not applied to primary input 'addr_b[4]'
+Warning 329: set_output_delay command matched but was not applied to primary input 'addr_b[5]'
+Warning 330: set_output_delay command matched but was not applied to primary input 'addr_b[6]'
+Warning 331: set_output_delay command matched but was not applied to primary input 'addr_b[7]'
+Warning 332: set_output_delay command matched but was not applied to primary input 'addr_b[8]'
+Warning 333: set_output_delay command matched but was not applied to primary input 'addr_b[9]'
+Warning 334: set_output_delay command matched but was not applied to primary input 'addr_b[10]'
+Warning 335: set_output_delay command matched but was not applied to primary input 'wce_b'
+Warning 336: set_output_delay command matched but was not applied to primary input 'wd_b[0]'
+Warning 337: set_output_delay command matched but was not applied to primary input 'wd_b[1]'
+Warning 338: set_output_delay command matched but was not applied to primary input 'wd_b[2]'
+Warning 339: set_output_delay command matched but was not applied to primary input 'wd_b[3]'
+Warning 340: set_output_delay command matched but was not applied to primary input 'wd_b[4]'
+Warning 341: set_output_delay command matched but was not applied to primary input 'wd_b[5]'
+Warning 342: set_output_delay command matched but was not applied to primary input 'wd_b[6]'
+Warning 343: set_output_delay command matched but was not applied to primary input 'wd_b[7]'
+Warning 344: set_output_delay command matched but was not applied to primary input 'wd_b[8]'
+Warning 345: set_output_delay command matched but was not applied to primary input 'wd_b[9]'
+Warning 346: set_output_delay command matched but was not applied to primary input 'wd_b[10]'
+Warning 347: set_output_delay command matched but was not applied to primary input 'wd_b[11]'
+Warning 348: set_output_delay command matched but was not applied to primary input 'wd_b[12]'
+Warning 349: set_output_delay command matched but was not applied to primary input 'wd_b[13]'
+Warning 350: set_output_delay command matched but was not applied to primary input 'wd_b[14]'
+Warning 351: set_output_delay command matched but was not applied to primary input 'wd_b[15]'
+Warning 352: set_output_delay command matched but was not applied to primary input 'id[0]'
+
+Applied 6 SDC commands from '/nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/packing/dpram_16x2048_openfpga.sdc'
+Timing constraints created 2 clocks
+  Constrained Clock 'clock0' Source: 'clock0.inpad[0]'
+  Constrained Clock 'clock1' Source: 'clock1.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 20.7 MiB, delta_rss +0.4 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/packing/dpram_16x2048_post_synth.net'.
+Detected 3 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.05 seconds).
+# Load packing took 0.07 seconds (max_rss 60.2 MiB, delta_rss +39.4 MiB)
+Warning 353: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io             : 93
+   io_output     : 32
+    outpad       : 32
+   io_input      : 61
+    inpad        : 61
+  clb            : 5
+   clb_lr        : 5
+    fle          : 38
+     ble5        : 75
+      lut5       : 41
+       lut       : 41
+      ff         : 34
+       DFFRE     : 34
+  bram           : 1
+   bram_lr       : 1
+    mem_36K      : 1
+
+# Create Device
+## Build Device Grid
+FPGA sized to 12 x 10: 120 grid tiles (castor10x8_heterogeneous)
+
+Resource usage...
+	Netlist
+		93	blocks of type: io
+	Architecture
+		576	blocks of type: io_top
+		576	blocks of type: io_right
+		576	blocks of type: io_bottom
+		576	blocks of type: io_left
+	Netlist
+		5	blocks of type: clb
+	Architecture
+		36	blocks of type: clb
+	Netlist
+		0	blocks of type: dsp
+	Architecture
+		2	blocks of type: dsp
+	Netlist
+		1	blocks of type: bram
+	Architecture
+		2	blocks of type: bram
+
+Device Utilization: 0.08 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.16 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.16 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.16 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.16 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.14 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.00 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.50 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+Warning 354: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 355: Sized nonsensical R=0 transistor to minimum width
+Warning 356: Sized nonsensical R=0 transistor to minimum width
+Warning 357: Sized nonsensical R=0 transistor to minimum width
+Warning 358: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 0.51 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 113424
+  RR Graph Edges: 231966
+# Create Device took 0.53 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+
+# Load Placement
+Reading /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/placement/dpram_16x2048_post_synth.place.
+
+Successfully read /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/placement/dpram_16x2048_post_synth.place.
+
+# Load Placement took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+
+# Load Routing
+Begin loading FPGA routing file.
+Finished loading route file
+# Load Routing took 0.02 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -140365048
+Circuit successfully routed with a channel width factor of 160.
+Warning 359: Sychronization between packing and routing results is not applied due to users select to skip it
+
+
+Average number of bends per net: 2.48026  Maximum # of bends: 8
+
+Number of global nets: 2
+Number of routed nets (nonglobal): 152
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 1518, average net length: 9.98684
+	Maximum net length: 25
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 609, average wire segments per net: 4.00658
+	Maximum segments used by a net: 10
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)   0 (  0.0%) |
+[      0.9:        1)   0 (  0.0%) |
+[      0.8:      0.9)   0 (  0.0%) |
+[      0.7:      0.8)   0 (  0.0%) |
+[      0.5:      0.6)   0 (  0.0%) |
+[      0.4:      0.5)   0 (  0.0%) |
+[      0.3:      0.4)   2 (  1.0%) |*
+[      0.2:      0.3)   4 (  2.0%) |*
+[      0.1:      0.2)  34 ( 17.2%) |**********
+[        0:      0.1) 158 ( 79.8%) |***********************************************
+Maximum routing channel utilization:      0.32 at (5,5)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       0   0.000      160
+                         1       4   1.500      160
+                         2       3   0.833      160
+                         3       7   4.083      160
+                         4      32  12.250      160
+                         5      51  16.167      160
+                         6      19   8.000      160
+                         7      33  12.917      160
+                         8      31  16.417      160
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       1   0.200      160
+                         1      16   4.900      160
+                         2       8   2.600      160
+                         3       8   2.900      160
+                         4      11   3.700      160
+                         5      45  19.700      160
+                         6      25  11.800      160
+                         7      41  15.700      160
+                         8       8   1.900      160
+                         9       1   0.500      160
+                        10       3   1.300      160
+
+Total tracks in x-direction: 1440, in y-direction: 1760
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 4.13218e+06
+	Total used logic block area: 817470
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 1.24882e+06, per logic tile: 10406.8
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      1   2880
+                                                      Y      1   2816
+                                                      X      4   3744
+                                                      Y      4   3872
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0521
+                                             4      0.0491
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1       0.044
+                                             4       0.039
+
+Segment occupancy by length: Length utilization
+                             ------ -----------
+                             L1          0.0481
+                             L4           0.044
+
+Segment occupancy by type: name type utilization
+                           ---- ---- -----------
+                             L1    0      0.0481
+                             L4    1       0.044
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  3.2e-10:  6.4e-10) 16 (  8.7%) |**************
+[  6.4e-10:  9.6e-10)  3 (  1.6%) |***
+[  9.6e-10:  1.3e-09) 53 ( 28.8%) |************************************************
+[  1.3e-09:  1.6e-09) 34 ( 18.5%) |*******************************
+[  1.6e-09:  1.9e-09) 18 (  9.8%) |****************
+[  1.9e-09:  2.2e-09) 20 ( 10.9%) |******************
+[  2.2e-09:  2.6e-09)  8 (  4.3%) |*******
+[  2.6e-09:  2.9e-09)  3 (  1.6%) |***
+[  2.9e-09:  3.2e-09) 14 (  7.6%) |*************
+[  3.2e-09:  3.5e-09) 15 (  8.2%) |**************
+
+Final intra-domain worst hold slacks per constraint:
+  clock0 to clock0 worst hold slack: 0.319552 ns
+  clock1 to clock1 worst hold slack: 0.387892 ns
+
+Final inter-domain worst hold slacks per constraint:
+  clock0 to clock1 worst hold slack: 1.06866 ns
+  clock1 to clock0 worst hold slack: 3.06852 ns
+
+Final critical path delay (least slack): 4.29434 ns
+Final setup Worst Negative Slack (sWNS): -1.79434 ns
+Final setup Total Negative Slack (sTNS): -50.02 ns
+
+Final setup slack histogram:
+[ -1.8e-09: -1.5e-09) 25 ( 13.6%) |****************
+[ -1.5e-09: -1.2e-09)  7 (  3.8%) |****
+[ -1.2e-09: -8.4e-10)  0 (  0.0%) |
+[ -8.4e-10: -5.2e-10)  0 (  0.0%) |
+[ -5.2e-10:   -2e-10)  0 (  0.0%) |
+[   -2e-10:  1.2e-10)  8 (  4.3%) |*****
+[  1.2e-10:  4.3e-10) 38 ( 20.7%) |************************
+[  4.3e-10:  7.5e-10)  9 (  4.9%) |******
+[  7.5e-10:  1.1e-09) 77 ( 41.8%) |************************************************
+[  1.1e-09:  1.4e-09) 20 ( 10.9%) |************
+
+Final intra-domain critical path delays (CPDs):
+  clock0 to clock0 CPD: 4.29434 ns (232.864 MHz)
+  clock1 to clock1 CPD: 1.76636 ns (566.136 MHz)
+
+Final inter-domain critical path delays (CPDs):
+  clock0 to clock1 CPD: 2.40173 ns (416.367 MHz)
+  clock1 to clock0 CPD: 4.26278 ns (234.589 MHz)
+
+Final intra-domain worst setup slacks per constraint:
+  clock0 to clock0 worst setup slack: -1.79434 ns
+  clock1 to clock1 worst setup slack: 0.73364 ns
+
+Final inter-domain worst setup slacks per constraint:
+  clock0 to clock1 worst setup slack: 0.0982725 ns
+  clock1 to clock0 worst setup slack: -1.76278 ns
+
+Final geomean non-virtual intra-domain period: 2.75415 ns (363.088 MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: 1.24195 ns (805.186 MHz)
+
+Incr Slack updates 1 in 1.4077e-05 sec
+Full Max Req/Worst Slack updates 1 in 1.317e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 2.3199e-05 sec
+Flow timing analysis took 0.00902352 seconds (0.00876227 STA, 0.000261243 slack) (2 full updates: 0 setup, 0 hold, 2 combined).
+VPR suceeded
+The entire flow of VPR took 0.88 seconds (max_rss 60.4 MiB)
+
+Command line to execute: read_openfpga_arch -f /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_openfpga.xml
+
+Confirm selected options when call command 'read_openfpga_arch':
+--file, -f: /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_openfpga.xml
+Reading XML architecture '/nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_openfpga.xml'...
+Read OpenFPGA architecture
+Warning 360: Automatically set circuit model 'RS_LATCH' to be default in its type.
+Warning 361: Automatically set circuit model 'RS_CCFF' to be default in its type.
+Use the default configurable memory model 'RS_LATCH' for circuit model 'frac_lut6' port 'sram')
+Read OpenFPGA architecture took 0.02 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+Check circuit library
+Checking circuit library passed.
+Check circuit library took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+Found 0 errors when checking configurable memory circuit models!
+Found 0 errors when checking configuration protocol!
+Found 0 errors when checking tile annotation!
+
+Command line to execute: read_openfpga_simulation_setting -f /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/fixed_sim_openfpga.xml
+
+Confirm selected options when call command 'read_openfpga_simulation_setting':
+--file, -f: /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/fixed_sim_openfpga.xml
+Reading XML simulation setting '/nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/fixed_sim_openfpga.xml'...
+Read OpenFPGA simulation settings
+Read OpenFPGA simulation settings took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: read_openfpga_bitstream_setting -f /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/bitstream_setting.xml
+
+Confirm selected options when call command 'read_openfpga_bitstream_setting':
+--file, -f: /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/bitstream_setting.xml
+Reading XML bitstream setting '/nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/bitstream_setting.xml'...
+Read OpenFPGA bitstream settings
+Read OpenFPGA bitstream settings took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: link_openfpga_arch --sort_gsb_chan_node_in_edges
+
+Confirm selected options when call command 'link_openfpga_arch':
+--activity_file: off
+--sort_gsb_chan_node_in_edges: on
+--verbose: off
+Link OpenFPGA architecture to VPR architecture
+# Build fast look-up for physical tile pins
+# Build fast look-up for physical tile pins took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+
+Building annotation for physical modes in pb_type...Done
+Check physical mode annotation for pb_types passed.
+
+Building annotation about physical types for pb_type interconnection...Done
+
+Building annotation between operating and physical pb_types...Done
+Check physical pb_type annotation for pb_types passed.
+
+Building annotation between physical pb_types and circuit models...Done
+Check physical pb_type annotation for circuit model passed.
+
+Building annotation between physical pb_types and mode selection bits...Done
+Check pb_type annotation for mode selection bits passed.
+Assigning unique indices for primitive pb_graph nodes...Done
+Binding operating pb_graph nodes/pins to physical pb_graph nodes/pins...Done
+Check pb_graph annotation for physical nodes and pins passed.
+Binded 3 routing resource graph switches to circuit models
+Binded 2 routing segments to circuit models
+Binded 1 direct connections to circuit models
+# Annotating rr_node with routed nets
+# Annotating rr_node with routed nets took 0.00 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+Loaded node-to-net mapping
+Annotating previous nodes for rr_node...Warning 362: Override the previous node 'IPIN:54484 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54488 side: (TOP,) (7,5,0)0)' for node 'SINK:54111  (7,7,0)0)' with in routing context annotation!
+Warning 363: Override the previous node 'IPIN:54488 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54478 side: (TOP,) (7,5,0)0)' for node 'SINK:54111  (7,7,0)0)' with in routing context annotation!
+Warning 364: Override the previous node 'IPIN:54492 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54494 side: (TOP,) (7,5,0)0)' for node 'SINK:54112  (7,7,0)0)' with in routing context annotation!
+Warning 365: Override the previous node 'IPIN:54478 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54483 side: (TOP,) (7,5,0)0)' for node 'SINK:54111  (7,7,0)0)' with in routing context annotation!
+Warning 366: Override the previous node 'IPIN:54483 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54482 side: (TOP,) (7,5,0)0)' for node 'SINK:54111  (7,7,0)0)' with in routing context annotation!
+Warning 367: Override the previous node 'IPIN:54494 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54491 side: (TOP,) (7,5,0)0)' for node 'SINK:54112  (7,7,0)0)' with in routing context annotation!
+Warning 368: Override the previous node 'IPIN:54491 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54495 side: (TOP,) (7,5,0)0)' for node 'SINK:54112  (7,7,0)0)' with in routing context annotation!
+Warning 369: Override the previous node 'IPIN:54495 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54493 side: (TOP,) (7,5,0)0)' for node 'SINK:54112  (7,7,0)0)' with in routing context annotation!
+Warning 370: Override the previous node 'IPIN:54493 side: (TOP,) (7,5,0)0)' by previous node 'IPIN:54496 side: (TOP,) (7,5,0)0)' for node 'SINK:54112  (7,7,0)0)' with in routing context annotation!
+Warning 371: Override the previous node 'IPIN:54505 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54512 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54113  (7,7,0)0)' with in routing context annotation!
+Warning 372: Override the previous node 'IPIN:54512 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54509 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54113  (7,7,0)0)' with in routing context annotation!
+Warning 373: Override the previous node 'IPIN:54509 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54507 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54113  (7,7,0)0)' with in routing context annotation!
+Warning 374: Override the previous node 'IPIN:54507 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54510 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54113  (7,7,0)0)' with in routing context annotation!
+Warning 375: Override the previous node 'IPIN:54510 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54506 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54113  (7,7,0)0)' with in routing context annotation!
+Warning 376: Override the previous node 'IPIN:54506 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54511 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54113  (7,7,0)0)' with in routing context annotation!
+Warning 377: Override the previous node 'IPIN:54531 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54529 side: (RIGHT,) (7,5,0)0)' for node 'SINK:54115  (7,7,0)0)' with in routing context annotation!
+Warning 378: Override the previous node 'IPIN:54529 side: (RIGHT,) (7,5,0)0)' by previous node 'IPIN:54502 side: (TOP,) (7,5,0)0)' for node 'SINK:54115  (7,7,0)0)' with in routing context annotation!
+Warning 379: Override the previous node 'IPIN:54600 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54597 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 380: Override the previous node 'IPIN:54597 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54605 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 381: Override the previous node 'IPIN:54605 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54603 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 382: Override the previous node 'IPIN:54603 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54601 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 383: Override the previous node 'IPIN:54601 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54604 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 384: Override the previous node 'IPIN:54604 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54606 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 385: Override the previous node 'IPIN:54606 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54598 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 386: Override the previous node 'IPIN:54598 side: (TOP,) (7,6,0)0)' by previous node 'IPIN:54607 side: (TOP,) (7,6,0)0)' for node 'SINK:54116  (7,7,0)0)' with in routing context annotation!
+Warning 387: Override the previous node 'IPIN:54623 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54628 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54118  (7,7,0)0)' with in routing context annotation!
+Warning 388: Override the previous node 'IPIN:54628 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54624 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54118  (7,7,0)0)' with in routing context annotation!
+Warning 389: Override the previous node 'IPIN:54624 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54630 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54118  (7,7,0)0)' with in routing context annotation!
+Warning 390: Override the previous node 'IPIN:54630 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54632 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54118  (7,7,0)0)' with in routing context annotation!
+Warning 391: Override the previous node 'IPIN:54632 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54625 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54118  (7,7,0)0)' with in routing context annotation!
+Warning 392: Override the previous node 'IPIN:54639 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54644 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54119  (7,7,0)0)' with in routing context annotation!
+Warning 393: Override the previous node 'IPIN:54644 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54636 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54119  (7,7,0)0)' with in routing context annotation!
+Warning 394: Override the previous node 'IPIN:54636 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54642 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54119  (7,7,0)0)' with in routing context annotation!
+Warning 395: Override the previous node 'IPIN:54642 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54643 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54119  (7,7,0)0)' with in routing context annotation!
+Warning 396: Override the previous node 'IPIN:54643 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54645 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54119  (7,7,0)0)' with in routing context annotation!
+Warning 397: Override the previous node 'IPIN:54645 side: (RIGHT,) (7,6,0)0)' by previous node 'IPIN:54641 side: (RIGHT,) (7,6,0)0)' for node 'SINK:54119  (7,7,0)0)' with in routing context annotation!
+Warning 398: Override the previous node 'IPIN:54785 side: (RIGHT,) (7,7,0)0)' by previous node 'IPIN:54787 side: (RIGHT,) (7,7,0)0)' for node 'SINK:54124  (7,7,0)0)' with in routing context annotation!
+Warning 399: Override the previous node 'IPIN:54671 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54681 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 400: Override the previous node 'IPIN:54681 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54678 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 401: Override the previous node 'IPIN:54777 side: (RIGHT,) (7,7,0)0)' by previous node 'IPIN:54780 side: (RIGHT,) (7,7,0)0)' for node 'SINK:54123  (7,7,0)0)' with in routing context annotation!
+Warning 402: Override the previous node 'IPIN:54678 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54675 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 403: Override the previous node 'IPIN:54675 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54676 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 404: Override the previous node 'IPIN:54676 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54672 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 405: Override the previous node 'IPIN:54672 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54679 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 406: Override the previous node 'IPIN:54679 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54677 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 407: Override the previous node 'IPIN:54677 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54670 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 408: Override the previous node 'IPIN:54670 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54673 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 409: Override the previous node 'IPIN:54673 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54680 side: (TOP,) (7,7,0)0)' for node 'SINK:54121  (7,7,0)0)' with in routing context annotation!
+Warning 410: Override the previous node 'IPIN:54684 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54683 side: (TOP,) (7,7,0)0)' for node 'SINK:54122  (7,7,0)0)' with in routing context annotation!
+Warning 411: Override the previous node 'IPIN:54683 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54693 side: (TOP,) (7,7,0)0)' for node 'SINK:54122  (7,7,0)0)' with in routing context annotation!
+Warning 412: Override the previous node 'IPIN:54693 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54690 side: (TOP,) (7,7,0)0)' for node 'SINK:54122  (7,7,0)0)' with in routing context annotation!
+Warning 413: Override the previous node 'IPIN:54690 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54687 side: (TOP,) (7,7,0)0)' for node 'SINK:54122  (7,7,0)0)' with in routing context annotation!
+Warning 414: Override the previous node 'IPIN:54687 side: (TOP,) (7,7,0)0)' by previous node 'IPIN:54691 side: (TOP,) (7,7,0)0)' for node 'SINK:54122  (7,7,0)0)' with in routing context annotation!
+Warning 415: Override the previous node 'IPIN:54780 side: (RIGHT,) (7,7,0)0)' by previous node 'IPIN:54772 side: (RIGHT,) (7,7,0)0)' for node 'SINK:54123  (7,7,0)0)' with in routing context annotation!
+Warning 416: Override the previous node 'IPIN:54787 side: (RIGHT,) (7,7,0)0)' by previous node 'IPIN:54793 side: (RIGHT,) (7,7,0)0)' for node 'SINK:54124  (7,7,0)0)' with in routing context annotation!
+Warning 417: Override the previous node 'IPIN:54793 side: (RIGHT,) (7,7,0)0)' by previous node 'IPIN:54789 side: (RIGHT,) (7,7,0)0)' for node 'SINK:54124  (7,7,0)0)' with in routing context annotation!
+Warning 418: Override the previous node 'IPIN:53707 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53716 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 419: Override the previous node 'IPIN:53716 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53706 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 420: Override the previous node 'IPIN:53738 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53733 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53645  (5,5,0)0)' with in routing context annotation!
+Warning 421: Override the previous node 'IPIN:53706 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53715 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 422: Override the previous node 'IPIN:46801 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46809 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 423: Override the previous node 'IPIN:53715 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53714 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 424: Override the previous node 'IPIN:53714 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53711 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 425: Override the previous node 'IPIN:53699 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53703 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 426: Override the previous node 'IPIN:53711 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53708 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 427: Override the previous node 'IPIN:53708 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53705 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 428: Override the previous node 'IPIN:53725 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53726 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53644  (5,5,0)0)' with in routing context annotation!
+Warning 429: Override the previous node 'IPIN:61269 side: (RIGHT,) (5,6,0)0)' by previous node 'IPIN:61273 side: (RIGHT,) (5,6,0)0)' for node 'SINK:61191  (5,6,0)0)' with in routing context annotation!
+Warning 430: Override the previous node 'IPIN:53726 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53723 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53644  (5,5,0)0)' with in routing context annotation!
+Warning 431: Override the previous node 'IPIN:67928 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67920 side: (TOP,) (5,7,0)0)' for node 'SINK:67856  (5,7,0)0)' with in routing context annotation!
+Warning 432: Override the previous node 'IPIN:61257 side: (TOP,) (5,6,0)0)' by previous node 'IPIN:61261 side: (TOP,) (5,6,0)0)' for node 'SINK:61190  (5,6,0)0)' with in routing context annotation!
+Warning 433: Override the previous node 'IPIN:67908 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67916 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 434: Override the previous node 'IPIN:61261 side: (TOP,) (5,6,0)0)' by previous node 'IPIN:61253 side: (TOP,) (5,6,0)0)' for node 'SINK:61190  (5,6,0)0)' with in routing context annotation!
+Warning 435: Override the previous node 'IPIN:67938 side: (RIGHT,) (5,7,0)0)' by previous node 'IPIN:67940 side: (RIGHT,) (5,7,0)0)' for node 'SINK:67857  (5,7,0)0)' with in routing context annotation!
+Warning 436: Override the previous node 'IPIN:61253 side: (TOP,) (5,6,0)0)' by previous node 'IPIN:61254 side: (TOP,) (5,6,0)0)' for node 'SINK:61190  (5,6,0)0)' with in routing context annotation!
+Warning 437: Override the previous node 'IPIN:61273 side: (RIGHT,) (5,6,0)0)' by previous node 'IPIN:61274 side: (RIGHT,) (5,6,0)0)' for node 'SINK:61191  (5,6,0)0)' with in routing context annotation!
+Warning 438: Override the previous node 'IPIN:61242 side: (TOP,) (5,6,0)0)' by previous node 'IPIN:61240 side: (TOP,) (5,6,0)0)' for node 'SINK:61189  (5,6,0)0)' with in routing context annotation!
+Warning 439: Override the previous node 'IPIN:61240 side: (TOP,) (5,6,0)0)' by previous node 'IPIN:61251 side: (TOP,) (5,6,0)0)' for node 'SINK:61189  (5,6,0)0)' with in routing context annotation!
+Warning 440: Override the previous node 'IPIN:61274 side: (RIGHT,) (5,6,0)0)' by previous node 'IPIN:61277 side: (RIGHT,) (5,6,0)0)' for node 'SINK:61191  (5,6,0)0)' with in routing context annotation!
+Warning 441: Override the previous node 'IPIN:61277 side: (RIGHT,) (5,6,0)0)' by previous node 'IPIN:61275 side: (RIGHT,) (5,6,0)0)' for node 'SINK:61191  (5,6,0)0)' with in routing context annotation!
+Warning 442: Override the previous node 'IPIN:67940 side: (RIGHT,) (5,7,0)0)' by previous node 'IPIN:67939 side: (RIGHT,) (5,7,0)0)' for node 'SINK:67857  (5,7,0)0)' with in routing context annotation!
+Warning 443: Override the previous node 'IPIN:67920 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67922 side: (TOP,) (5,7,0)0)' for node 'SINK:67856  (5,7,0)0)' with in routing context annotation!
+Warning 444: Override the previous node 'IPIN:53703 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53697 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 445: Override the previous node 'IPIN:61266 side: (TOP,) (5,6,0)0)' by previous node 'IPIN:61294 side: (RIGHT,) (5,6,0)0)' for node 'SINK:61193  (5,6,0)0)' with in routing context annotation!
+Warning 446: Override the previous node 'IPIN:67958 side: (RIGHT,) (5,7,0)0)' by previous node 'IPIN:67960 side: (RIGHT,) (5,7,0)0)' for node 'SINK:67859  (5,7,0)0)' with in routing context annotation!
+Warning 447: Override the previous node 'IPIN:53717 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53745 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53646  (5,5,0)0)' with in routing context annotation!
+Warning 448: Override the previous node 'IPIN:67916 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67911 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 449: Override the previous node 'IPIN:67911 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67917 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 450: Override the previous node 'IPIN:46809 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46811 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 451: Override the previous node 'IPIN:67917 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67906 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 452: Override the previous node 'IPIN:67906 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67914 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 453: Override the previous node 'IPIN:67914 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67913 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 454: Override the previous node 'IPIN:67913 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67909 side: (TOP,) (5,7,0)0)' for node 'SINK:67855  (5,7,0)0)' with in routing context annotation!
+Warning 455: Override the previous node 'IPIN:46811 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46808 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 456: Override the previous node 'IPIN:67922 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67921 side: (TOP,) (5,7,0)0)' for node 'SINK:67856  (5,7,0)0)' with in routing context annotation!
+Warning 457: Override the previous node 'IPIN:67921 side: (TOP,) (5,7,0)0)' by previous node 'IPIN:67918 side: (TOP,) (5,7,0)0)' for node 'SINK:67856  (5,7,0)0)' with in routing context annotation!
+Warning 458: Override the previous node 'IPIN:67939 side: (RIGHT,) (5,7,0)0)' by previous node 'IPIN:67943 side: (RIGHT,) (5,7,0)0)' for node 'SINK:67857  (5,7,0)0)' with in routing context annotation!
+Warning 459: Override the previous node 'IPIN:53697 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53695 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 460: Override the previous node 'IPIN:53695 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53704 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 461: Override the previous node 'IPIN:53704 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53693 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 462: Override the previous node 'IPIN:53693 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53701 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 463: Override the previous node 'IPIN:53701 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53694 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 464: Override the previous node 'IPIN:53694 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53702 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 465: Override the previous node 'IPIN:53702 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53696 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 466: Override the previous node 'IPIN:53696 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53698 side: (TOP,) (5,5,0)0)' for node 'SINK:53642  (5,5,0)0)' with in routing context annotation!
+Warning 467: Override the previous node 'IPIN:53705 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53709 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 468: Override the previous node 'IPIN:53709 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53713 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 469: Override the previous node 'IPIN:53713 side: (TOP,) (5,5,0)0)' by previous node 'IPIN:53710 side: (TOP,) (5,5,0)0)' for node 'SINK:53643  (5,5,0)0)' with in routing context annotation!
+Warning 470: Override the previous node 'IPIN:53723 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53721 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53644  (5,5,0)0)' with in routing context annotation!
+Warning 471: Override the previous node 'IPIN:53721 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53728 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53644  (5,5,0)0)' with in routing context annotation!
+Warning 472: Override the previous node 'IPIN:53728 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53731 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53644  (5,5,0)0)' with in routing context annotation!
+Warning 473: Override the previous node 'IPIN:53731 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53729 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53644  (5,5,0)0)' with in routing context annotation!
+Warning 474: Override the previous node 'IPIN:53733 side: (RIGHT,) (5,5,0)0)' by previous node 'IPIN:53740 side: (RIGHT,) (5,5,0)0)' for node 'SINK:53645  (5,5,0)0)' with in routing context annotation!
+Warning 475: Override the previous node 'IPIN:46816 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46821 side: (TOP,) (6,4,0)0)' for node 'SINK:46751  (6,4,0)0)' with in routing context annotation!
+Warning 476: Override the previous node 'IPIN:46821 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46823 side: (TOP,) (6,4,0)0)' for node 'SINK:46751  (6,4,0)0)' with in routing context annotation!
+Warning 477: Override the previous node 'IPIN:46808 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46806 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 478: Override the previous node 'IPIN:46658 side: (TOP,) (5,4,0)0)' by previous node 'IPIN:46654 side: (TOP,) (5,4,0)0)' for node 'SINK:46599  (5,4,0)0)' with in routing context annotation!
+Warning 479: Override the previous node 'IPIN:46806 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46802 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 480: Override the previous node 'IPIN:46837 side: (RIGHT,) (6,4,0)0)' by previous node 'IPIN:46840 side: (RIGHT,) (6,4,0)0)' for node 'SINK:46752  (6,4,0)0)' with in routing context annotation!
+Warning 481: Override the previous node 'IPIN:46654 side: (TOP,) (5,4,0)0)' by previous node 'IPIN:46650 side: (TOP,) (5,4,0)0)' for node 'SINK:46599  (5,4,0)0)' with in routing context annotation!
+Warning 482: Override the previous node 'IPIN:46650 side: (TOP,) (5,4,0)0)' by previous node 'IPIN:46656 side: (TOP,) (5,4,0)0)' for node 'SINK:46599  (5,4,0)0)' with in routing context annotation!
+Warning 483: Override the previous node 'IPIN:46656 side: (TOP,) (5,4,0)0)' by previous node 'IPIN:46653 side: (TOP,) (5,4,0)0)' for node 'SINK:46599  (5,4,0)0)' with in routing context annotation!
+Warning 484: Override the previous node 'IPIN:46687 side: (RIGHT,) (5,4,0)0)' by previous node 'IPIN:46679 side: (RIGHT,) (5,4,0)0)' for node 'SINK:46601  (5,4,0)0)' with in routing context annotation!
+Warning 485: Override the previous node 'IPIN:46802 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46803 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 486: Override the previous node 'IPIN:46803 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46807 side: (TOP,) (6,4,0)0)' for node 'SINK:46750  (6,4,0)0)' with in routing context annotation!
+Warning 487: Override the previous node 'IPIN:46840 side: (RIGHT,) (6,4,0)0)' by previous node 'IPIN:46835 side: (RIGHT,) (6,4,0)0)' for node 'SINK:46752  (6,4,0)0)' with in routing context annotation!
+Warning 488: Override the previous node 'IPIN:46702 side: (RIGHT,) (5,4,0)0)' by previous node 'IPIN:46703 side: (RIGHT,) (5,4,0)0)' for node 'SINK:46603  (5,4,0)0)' with in routing context annotation!
+Warning 489: Override the previous node 'IPIN:46825 side: (TOP,) (6,4,0)0)' by previous node 'IPIN:46854 side: (RIGHT,) (6,4,0)0)' for node 'SINK:46754  (6,4,0)0)' with in routing context annotation!
+Done with 1203 nodes mapping
+Built 231966 incoming edges for routing resource graph
+# Build General Switch Block(GSB) annotation on top of routing resource graph
+[1%] Backannotated GSB[0][0][2%] Backannotated GSB[0][1][3%] Backannotated GSB[0][2][4%] Backannotated GSB[0][3][5%] Backannotated GSB[0][4][6%] Backannotated GSB[0][5][7%] Backannotated GSB[0][6][8%] Backannotated GSB[0][7][9%] Backannotated GSB[0][8][10%] Backannotated GSB[1][0][11%] Backannotated GSB[1][1][12%] Backannotated GSB[1][2][13%] Backannotated GSB[1][3][14%] Backannotated GSB[1][4][15%] Backannotated GSB[1][5][16%] Backannotated GSB[1][6][17%] Backannotated GSB[1][7][18%] Backannotated GSB[1][8][19%] Backannotated GSB[2][0][20%] Backannotated GSB[2][1][21%] Backannotated GSB[2][2][22%] Backannotated GSB[2][3][23%] Backannotated GSB[2][4][24%] Backannotated GSB[2][5][25%] Backannotated GSB[2][6][26%] Backannotated GSB[2][7][27%] Backannotated GSB[2][8][28%] Backannotated GSB[3][0][29%] Backannotated GSB[3][1][30%] Backannotated GSB[3][2][31%] Backannotated GSB[3][3][32%] Backannotated GSB[3][4][33%] Backannotated GSB[3][5][34%] Backannotated GSB[3][6][35%] Backannotated GSB[3][7][36%] Backannotated GSB[3][8][37%] Backannotated GSB[4][0][38%] Backannotated GSB[4][1][39%] Backannotated GSB[4][2][40%] Backannotated GSB[4][3][41%] Backannotated GSB[4][4][42%] Backannotated GSB[4][5][43%] Backannotated GSB[4][6][44%] Backannotated GSB[4][7][45%] Backannotated GSB[4][8][46%] Backannotated GSB[5][0][47%] Backannotated GSB[5][1][48%] Backannotated GSB[5][2][49%] Backannotated GSB[5][3][50%] Backannotated GSB[5][4][51%] Backannotated GSB[5][5][52%] Backannotated GSB[5][6][53%] Backannotated GSB[5][7][54%] Backannotated GSB[5][8][55%] Backannotated GSB[6][0][56%] Backannotated GSB[6][1][57%] Backannotated GSB[6][2][58%] Backannotated GSB[6][3][59%] Backannotated GSB[6][4][60%] Backannotated GSB[6][5][61%] Backannotated GSB[6][6][62%] Backannotated GSB[6][7][63%] Backannotated GSB[6][8][64%] Backannotated GSB[7][0][65%] Backannotated GSB[7][1][66%] Backannotated GSB[7][2][67%] Backannotated GSB[7][3][68%] Backannotated GSB[7][4][69%] Backannotated GSB[7][5][70%] Backannotated GSB[7][6][71%] Backannotated GSB[7][7][72%] Backannotated GSB[7][8][73%] Backannotated GSB[8][0][74%] Backannotated GSB[8][1][75%] Backannotated GSB[8][2][76%] Backannotated GSB[8][3][77%] Backannotated GSB[8][4][78%] Backannotated GSB[8][5][79%] Backannotated GSB[8][6][80%] Backannotated GSB[8][7][81%] Backannotated GSB[8][8][82%] Backannotated GSB[9][0][83%] Backannotated GSB[9][1][84%] Backannotated GSB[9][2][85%] Backannotated GSB[9][3][86%] Backannotated GSB[9][4][87%] Backannotated GSB[9][5][88%] Backannotated GSB[9][6][89%] Backannotated GSB[9][7][90%] Backannotated GSB[9][8][91%] Backannotated GSB[10][0][92%] Backannotated GSB[10][1][93%] Backannotated GSB[10][2][94%] Backannotated GSB[10][3][95%] Backannotated GSB[10][4][96%] Backannotated GSB[10][5][97%] Backannotated GSB[10][6][98%] Backannotated GSB[10][7][100%] Backannotated GSB[10][8]Backannotated 99 General Switch Blocks (GSBs).
+# Build General Switch Block(GSB) annotation on top of routing resource graph took 0.01 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+# Sort incoming edges for each routing track output node of General Switch Block(GSB)
+[1%] Sorted incoming edges for each routing track output node of GSB[0][0][2%] Sorted incoming edges for each routing track output node of GSB[0][1][3%] Sorted incoming edges for each routing track output node of GSB[0][2][4%] Sorted incoming edges for each routing track output node of GSB[0][3][5%] Sorted incoming edges for each routing track output node of GSB[0][4][6%] Sorted incoming edges for each routing track output node of GSB[0][5][7%] Sorted incoming edges for each routing track output node of GSB[0][6][8%] Sorted incoming edges for each routing track output node of GSB[0][7][9%] Sorted incoming edges for each routing track output node of GSB[0][8][10%] Sorted incoming edges for each routing track output node of GSB[1][0][11%] Sorted incoming edges for each routing track output node of GSB[1][1][12%] Sorted incoming edges for each routing track output node of GSB[1][2][13%] Sorted incoming edges for each routing track output node of GSB[1][3][14%] Sorted incoming edges for each routing track output node of GSB[1][4][15%] Sorted incoming edges for each routing track output node of GSB[1][5][16%] Sorted incoming edges for each routing track output node of GSB[1][6][17%] Sorted incoming edges for each routing track output node of GSB[1][7][18%] Sorted incoming edges for each routing track output node of GSB[1][8][19%] Sorted incoming edges for each routing track output node of GSB[2][0][20%] Sorted incoming edges for each routing track output node of GSB[2][1][21%] Sorted incoming edges for each routing track output node of GSB[2][2][22%] Sorted incoming edges for each routing track output node of GSB[2][3][23%] Sorted incoming edges for each routing track output node of GSB[2][4][24%] Sorted incoming edges for each routing track output node of GSB[2][5][25%] Sorted incoming edges for each routing track output node of GSB[2][6][26%] Sorted incoming edges for each routing track output node of GSB[2][7][27%] Sorted incoming edges for each routing track output node of GSB[2][8][28%] Sorted incoming edges for each routing track output node of GSB[3][0][29%] Sorted incoming edges for each routing track output node of GSB[3][1][30%] Sorted incoming edges for each routing track output node of GSB[3][2][31%] Sorted incoming edges for each routing track output node of GSB[3][3][32%] Sorted incoming edges for each routing track output node of GSB[3][4][33%] Sorted incoming edges for each routing track output node of GSB[3][5][34%] Sorted incoming edges for each routing track output node of GSB[3][6][35%] Sorted incoming edges for each routing track output node of GSB[3][7][36%] Sorted incoming edges for each routing track output node of GSB[3][8][37%] Sorted incoming edges for each routing track output node of GSB[4][0][38%] Sorted incoming edges for each routing track output node of GSB[4][1][39%] Sorted incoming edges for each routing track output node of GSB[4][2][40%] Sorted incoming edges for each routing track output node of GSB[4][3][41%] Sorted incoming edges for each routing track output node of GSB[4][4][42%] Sorted incoming edges for each routing track output node of GSB[4][5][43%] Sorted incoming edges for each routing track output node of GSB[4][6][44%] Sorted incoming edges for each routing track output node of GSB[4][7][45%] Sorted incoming edges for each routing track output node of GSB[4][8][46%] Sorted incoming edges for each routing track output node of GSB[5][0][47%] Sorted incoming edges for each routing track output node of GSB[5][1][48%] Sorted incoming edges for each routing track output node of GSB[5][2][49%] Sorted incoming edges for each routing track output node of GSB[5][3][50%] Sorted incoming edges for each routing track output node of GSB[5][4][51%] Sorted incoming edges for each routing track output node of GSB[5][5][52%] Sorted incoming edges for each routing track output node of GSB[5][6][53%] Sorted incoming edges for each routing track output node of GSB[5][7][54%] Sorted incoming edges for each routing track output node of GSB[5][8][55%] Sorted incoming edges for each routing track output node of GSB[6][0][56%] Sorted incoming edges for each routing track output node of GSB[6][1][57%] Sorted incoming edges for each routing track output node of GSB[6][2][58%] Sorted incoming edges for each routing track output node of GSB[6][3][59%] Sorted incoming edges for each routing track output node of GSB[6][4][60%] Sorted incoming edges for each routing track output node of GSB[6][5][61%] Sorted incoming edges for each routing track output node of GSB[6][6][62%] Sorted incoming edges for each routing track output node of GSB[6][7][63%] Sorted incoming edges for each routing track output node of GSB[6][8][64%] Sorted incoming edges for each routing track output node of GSB[7][0][65%] Sorted incoming edges for each routing track output node of GSB[7][1][66%] Sorted incoming edges for each routing track output node of GSB[7][2][67%] Sorted incoming edges for each routing track output node of GSB[7][3][68%] Sorted incoming edges for each routing track output node of GSB[7][4][69%] Sorted incoming edges for each routing track output node of GSB[7][5][70%] Sorted incoming edges for each routing track output node of GSB[7][6][71%] Sorted incoming edges for each routing track output node of GSB[7][7][72%] Sorted incoming edges for each routing track output node of GSB[7][8][73%] Sorted incoming edges for each routing track output node of GSB[8][0][74%] Sorted incoming edges for each routing track output node of GSB[8][1][75%] Sorted incoming edges for each routing track output node of GSB[8][2][76%] Sorted incoming edges for each routing track output node of GSB[8][3][77%] Sorted incoming edges for each routing track output node of GSB[8][4][78%] Sorted incoming edges for each routing track output node of GSB[8][5][79%] Sorted incoming edges for each routing track output node of GSB[8][6][80%] Sorted incoming edges for each routing track output node of GSB[8][7][81%] Sorted incoming edges for each routing track output node of GSB[8][8][82%] Sorted incoming edges for each routing track output node of GSB[9][0][83%] Sorted incoming edges for each routing track output node of GSB[9][1][84%] Sorted incoming edges for each routing track output node of GSB[9][2][85%] Sorted incoming edges for each routing track output node of GSB[9][3][86%] Sorted incoming edges for each routing track output node of GSB[9][4][87%] Sorted incoming edges for each routing track output node of GSB[9][5][88%] Sorted incoming edges for each routing track output node of GSB[9][6][89%] Sorted incoming edges for each routing track output node of GSB[9][7][90%] Sorted incoming edges for each routing track output node of GSB[9][8][91%] Sorted incoming edges for each routing track output node of GSB[10][0][92%] Sorted incoming edges for each routing track output node of GSB[10][1][93%] Sorted incoming edges for each routing track output node of GSB[10][2][94%] Sorted incoming edges for each routing track output node of GSB[10][3][95%] Sorted incoming edges for each routing track output node of GSB[10][4][96%] Sorted incoming edges for each routing track output node of GSB[10][5][97%] Sorted incoming edges for each routing track output node of GSB[10][6][98%] Sorted incoming edges for each routing track output node of GSB[10][7][100%] Sorted incoming edges for each routing track output node of GSB[10][8]Sorted incoming edges for each routing track output node of 99 General Switch Blocks (GSBs).
+# Sort incoming edges for each routing track output node of General Switch Block(GSB) took 0.33 seconds (max_rss 60.4 MiB, delta_rss +0.0 MiB)
+# Sort incoming edges for each input pin node of General Switch Block(GSB)
+[1%] Sorted incoming edges for each input pin node of GSB[0][0][2%] Sorted incoming edges for each input pin node of GSB[0][1][3%] Sorted incoming edges for each input pin node of GSB[0][2][4%] Sorted incoming edges for each input pin node of GSB[0][3][5%] Sorted incoming edges for each input pin node of GSB[0][4][6%] Sorted incoming edges for each input pin node of GSB[0][5][7%] Sorted incoming edges for each input pin node of GSB[0][6][8%] Sorted incoming edges for each input pin node of GSB[0][7][9%] Sorted incoming edges for each input pin node of GSB[0][8][10%] Sorted incoming edges for each input pin node of GSB[1][0][11%] Sorted incoming edges for each input pin node of GSB[1][1][12%] Sorted incoming edges for each input pin node of GSB[1][2][13%] Sorted incoming edges for each input pin node of GSB[1][3][14%] Sorted incoming edges for each input pin node of GSB[1][4][15%] Sorted incoming edges for each input pin node of GSB[1][5][16%] Sorted incoming edges for each input pin node of GSB[1][6][17%] Sorted incoming edges for each input pin node of GSB[1][7][18%] Sorted incoming edges for each input pin node of GSB[1][8][19%] Sorted incoming edges for each input pin node of GSB[2][0][20%] Sorted incoming edges for each input pin node of GSB[2][1][21%] Sorted incoming edges for each input pin node of GSB[2][2][22%] Sorted incoming edges for each input pin node of GSB[2][3][23%] Sorted incoming edges for each input pin node of GSB[2][4][24%] Sorted incoming edges for each input pin node of GSB[2][5][25%] Sorted incoming edges for each input pin node of GSB[2][6][26%] Sorted incoming edges for each input pin node of GSB[2][7][27%] Sorted incoming edges for each input pin node of GSB[2][8][28%] Sorted incoming edges for each input pin node of GSB[3][0][29%] Sorted incoming edges for each input pin node of GSB[3][1][30%] Sorted incoming edges for each input pin node of GSB[3][2][31%] Sorted incoming edges for each input pin node of GSB[3][3][32%] Sorted incoming edges for each input pin node of GSB[3][4][33%] Sorted incoming edges for each input pin node of GSB[3][5][34%] Sorted incoming edges for each input pin node of GSB[3][6][35%] Sorted incoming edges for each input pin node of GSB[3][7][36%] Sorted incoming edges for each input pin node of GSB[3][8][37%] Sorted incoming edges for each input pin node of GSB[4][0][38%] Sorted incoming edges for each input pin node of GSB[4][1][39%] Sorted incoming edges for each input pin node of GSB[4][2][40%] Sorted incoming edges for each input pin node of GSB[4][3][41%] Sorted incoming edges for each input pin node of GSB[4][4][42%] Sorted incoming edges for each input pin node of GSB[4][5][43%] Sorted incoming edges for each input pin node of GSB[4][6][44%] Sorted incoming edges for each input pin node of GSB[4][7][45%] Sorted incoming edges for each input pin node of GSB[4][8][46%] Sorted incoming edges for each input pin node of GSB[5][0][47%] Sorted incoming edges for each input pin node of GSB[5][1][48%] Sorted incoming edges for each input pin node of GSB[5][2][49%] Sorted incoming edges for each input pin node of GSB[5][3][50%] Sorted incoming edges for each input pin node of GSB[5][4][51%] Sorted incoming edges for each input pin node of GSB[5][5][52%] Sorted incoming edges for each input pin node of GSB[5][6][53%] Sorted incoming edges for each input pin node of GSB[5][7][54%] Sorted incoming edges for each input pin node of GSB[5][8][55%] Sorted incoming edges for each input pin node of GSB[6][0][56%] Sorted incoming edges for each input pin node of GSB[6][1][57%] Sorted incoming edges for each input pin node of GSB[6][2][58%] Sorted incoming edges for each input pin node of GSB[6][3][59%] Sorted incoming edges for each input pin node of GSB[6][4][60%] Sorted incoming edges for each input pin node of GSB[6][5][61%] Sorted incoming edges for each input pin node of GSB[6][6][62%] Sorted incoming edges for each input pin node of GSB[6][7][63%] Sorted incoming edges for each input pin node of GSB[6][8][64%] Sorted incoming edges for each input pin node of GSB[7][0][65%] Sorted incoming edges for each input pin node of GSB[7][1][66%] Sorted incoming edges for each input pin node of GSB[7][2][67%] Sorted incoming edges for each input pin node of GSB[7][3][68%] Sorted incoming edges for each input pin node of GSB[7][4][69%] Sorted incoming edges for each input pin node of GSB[7][5][70%] Sorted incoming edges for each input pin node of GSB[7][6][71%] Sorted incoming edges for each input pin node of GSB[7][7][72%] Sorted incoming edges for each input pin node of GSB[7][8][73%] Sorted incoming edges for each input pin node of GSB[8][0][74%] Sorted incoming edges for each input pin node of GSB[8][1][75%] Sorted incoming edges for each input pin node of GSB[8][2][76%] Sorted incoming edges for each input pin node of GSB[8][3][77%] Sorted incoming edges for each input pin node of GSB[8][4][78%] Sorted incoming edges for each input pin node of GSB[8][5][79%] Sorted incoming edges for each input pin node of GSB[8][6][80%] Sorted incoming edges for each input pin node of GSB[8][7][81%] Sorted incoming edges for each input pin node of GSB[8][8][82%] Sorted incoming edges for each input pin node of GSB[9][0][83%] Sorted incoming edges for each input pin node of GSB[9][1][84%] Sorted incoming edges for each input pin node of GSB[9][2][85%] Sorted incoming edges for each input pin node of GSB[9][3][86%] Sorted incoming edges for each input pin node of GSB[9][4][87%] Sorted incoming edges for each input pin node of GSB[9][5][88%] Sorted incoming edges for each input pin node of GSB[9][6][89%] Sorted incoming edges for each input pin node of GSB[9][7][90%] Sorted incoming edges for each input pin node of GSB[9][8][91%] Sorted incoming edges for each input pin node of GSB[10][0][92%] Sorted incoming edges for each input pin node of GSB[10][1][93%] Sorted incoming edges for each input pin node of GSB[10][2][94%] Sorted incoming edges for each input pin node of GSB[10][3][95%] Sorted incoming edges for each input pin node of GSB[10][4][96%] Sorted incoming edges for each input pin node of GSB[10][5][97%] Sorted incoming edges for each input pin node of GSB[10][6][98%] Sorted incoming edges for each input pin node of GSB[10][7][100%] Sorted incoming edges for each input pin node of GSB[10][8]Sorted incoming edges for each input pin node of 99 General Switch Blocks (GSBs).
+# Sort incoming edges for each input pin node of General Switch Block(GSB) took 0.17 seconds (max_rss 60.9 MiB, delta_rss +0.5 MiB)
+# Build a library of physical multiplexers
+Built a multiplexer library of 31 physical multiplexers.
+Maximum multiplexer size is 64.
+	model 'mux_tree_tapbuf', input_size='18'
+	model 'mux_tree_tapbuf_L1SB', input_size='5'
+	model 'mux_tree_tapbuf_L1SB', input_size='4'
+	model 'mux_tree_tapbuf_L4SB', input_size='3'
+	model 'mux_tree_tapbuf_L4SB', input_size='4'
+	model 'mux_tree_tapbuf_L1SB', input_size='6'
+	model 'mux_tree_tapbuf_L1SB', input_size='12'
+	model 'mux_tree_tapbuf_L1SB', input_size='7'
+	model 'mux_tree_tapbuf_L1SB', input_size='11'
+	model 'mux_tree_tapbuf_L4SB', input_size='11'
+	model 'mux_tree_tapbuf_L4SB', input_size='13'
+	model 'mux_tree_tapbuf_L4SB', input_size='10'
+	model 'mux_tree_tapbuf_L4SB', input_size='12'
+	model 'mux_tree_tapbuf_L4SB', input_size='9'
+	model 'mux_tree_tapbuf_L4SB', input_size='8'
+	model 'mux_tree_tapbuf_L4SB', input_size='7'
+	model 'mux_tree_tapbuf_L4SB', input_size='5'
+	model 'mux_tree_tapbuf_L4SB', input_size='2'
+	model 'mux_tree_tapbuf_L1SB', input_size='9'
+	model 'mux_tree_tapbuf_L1SB', input_size='8'
+	model 'mux_tree_tapbuf_L1SB', input_size='3'
+	model 'mux_tree_tapbuf_L4SB', input_size='6'
+	model 'mux_tree_tapbuf_L1SB', input_size='2'
+	model 'clock_mux', input_size='16'
+	model 'mux_1level_io', input_size='2'
+	model 'mux_tree', input_size='28'
+	model 'mux_tree', input_size='6'
+	model 'mux_tree', input_size='2'
+	model 'mux_tree', input_size='24'
+	model 'mux_tree', input_size='18'
+	model 'frac_lut6', input_size='64'
+# Build a library of physical multiplexers took 0.01 seconds (max_rss 61.2 MiB, delta_rss +0.3 MiB)
+# Build the annotation about direct connection between tiles
+Built 30 tile-to-tile direct connections
+# Build the annotation about direct connection between tiles took 0.00 seconds (max_rss 61.2 MiB, delta_rss +0.0 MiB)
+Building annotation for post-routing and clustering synchornization results...Done
+Building annotation for mapped blocks on grid locations...Done
+Will apply operating clock frequency 500 [MHz] to simulations
+Will apply 10 operating clock cycles to simulations
+Link OpenFPGA architecture to VPR architecture took 0.71 seconds (max_rss 61.2 MiB, delta_rss +0.8 MiB)
+
+Command line to execute: pb_pin_fixup
+
+Confirm selected options when call command 'pb_pin_fixup':
+--verbose: off
+Fix up pb pin mapping results after routing optimization
+Fix up pb pin mapping results after routing optimization took 0.00 seconds (max_rss 61.2 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: lut_truth_table_fixup
+
+Confirm selected options when call command 'lut_truth_table_fixup':
+--verbose: off
+Fix up LUT truth tables after packing optimization
+Fix up LUT truth tables after packing optimization took 0.00 seconds (max_rss 61.2 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: build_fabric --frame_view --compress_routing --duplicate_grid_pin
+
+Confirm selected options when call command 'build_fabric':
+--frame_view: on
+--compress_routing: on
+--duplicate_grid_pin: on
+--name_module_using_index: off
+--load_fabric_key: off
+--write_fabric_key: off
+--group_tile: off
+--group_config_block: off
+--generate_random_fabric_key: off
+--verbose: off
+Identify unique General Switch Blocks (GSBs)
+Detected 15 unique general switch blocks from a total of 99 (compression rate=560.00%)
+Identify unique General Switch Blocks (GSBs) took 2.04 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+
+
+Build fabric module graph
+# Build constant generator modules
+# Build constant generator modules took 0.00 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+# Build user-defined modules
+# Build user-defined modules took 0.00 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+# Build essential (inverter/buffer/logic gate) modules
+# Build essential (inverter/buffer/logic gate) modules took 0.00 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+# Build local encoder (for multiplexers) modules
+# Build local encoder (for multiplexers) modules took 0.00 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+# Building multiplexer modules
+# Building multiplexer modules took 0.00 seconds (max_rss 62.2 MiB, delta_rss +0.8 MiB)
+# Build Look-Up Table (LUT) modules
+# Build Look-Up Table (LUT) modules took 0.00 seconds (max_rss 62.4 MiB, delta_rss +0.3 MiB)
+# Build wire modules
+# Build wire modules took 0.00 seconds (max_rss 62.4 MiB, delta_rss +0.0 MiB)
+# Build memory modules
+# Build memory modules took 0.00 seconds (max_rss 63.2 MiB, delta_rss +0.8 MiB)
+# Build grid modules
+Building logical tiles...Done
+Building physical tiles...Done
+# Build grid modules took 0.20 seconds (max_rss 79.7 MiB, delta_rss +16.5 MiB)
+# Build unique routing modules...
+# Build unique routing modules... took 0.13 seconds (max_rss 91.6 MiB, delta_rss +11.9 MiB)
+# Build FPGA fabric module
+## Add grid instances to top module
+## Add grid instances to top module took 0.01 seconds (max_rss 97.5 MiB, delta_rss +5.9 MiB)
+## Add switch block instances to top module
+## Add switch block instances to top module took 0.00 seconds (max_rss 98.5 MiB, delta_rss +1.0 MiB)
+## Add connection block instances to top module
+## Add connection block instances to top module took 0.00 seconds (max_rss 99.1 MiB, delta_rss +0.5 MiB)
+## Add connection block instances to top module
+## Add connection block instances to top module took 0.00 seconds (max_rss 99.6 MiB, delta_rss +0.5 MiB)
+## Build configurable regions for the top module
+## Build configurable regions for the top module took 0.00 seconds (max_rss 104.2 MiB, delta_rss +0.0 MiB)
+# Build FPGA fabric module took 0.78 seconds (max_rss 104.2 MiB, delta_rss +12.6 MiB)
+Build fabric module graph took 1.12 seconds (max_rss 104.2 MiB, delta_rss +42.8 MiB)
+Create I/O location mapping for top module
+Create I/O location mapping for top module took 0.00 seconds (max_rss 104.5 MiB, delta_rss +0.3 MiB)
+Create global port info for top module
+Create global port info for top module took 0.00 seconds (max_rss 104.5 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: repack --design_constraints /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/placement/dpram_16x2048_repack_constraints.xml
+
+Confirm selected options when call command 'repack':
+--design_constraints: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_16x2048/dpram_16x2048/run_1/synth_1_1/impl_1_1_1/placement/dpram_16x2048_repack_constraints.xml
+--ignore_global_nets_on_pins: off
+--verbose: off
+Read Repack Design Constraints
+Read Repack Design Constraints took 0.00 seconds (max_rss 104.7 MiB, delta_rss +0.3 MiB)
+Build routing resource graph for the physical implementation of logical tile
+Build routing resource graph for the physical implementation of logical tile took 0.01 seconds (max_rss 106.0 MiB, delta_rss +1.3 MiB)
+Repack clustered blocks to physical implementation of logical tile
+Repack clustered block '$abc$6718$auto$memory_libmap.cc:1859:emit_port$6356[0]'...Done
+Repack clustered block 'rq_a[12]'...Done
+Repack clustered block 'rq_a[11]'...Done
+Repack clustered block 'rq_a[1]'...Done
+Repack clustered block 'rq_b[9]'...Done
+Repack clustered block '$auto$memory_libmap.cc:2266:execute$6344[0]'...Done
+Repack clustered block 'out:rq_a[0]'...Done
+Repack clustered block 'out:rq_a[1]'...Done
+Repack clustered block 'out:rq_a[2]'...Done
+Repack clustered block 'out:rq_a[3]'...Done
+Repack clustered block 'out:rq_a[4]'...Done
+Repack clustered block 'out:rq_a[5]'...Done
+Repack clustered block 'out:rq_a[6]'...Done
+Repack clustered block 'out:rq_a[7]'...Done
+Repack clustered block 'out:rq_a[8]'...Done
+Repack clustered block 'out:rq_a[9]'...Done
+Repack clustered block 'out:rq_a[10]'...Done
+Repack clustered block 'out:rq_a[11]'...Done
+Repack clustered block 'out:rq_a[12]'...Done
+Repack clustered block 'out:rq_a[14]'...Done
+Repack clustered block 'out:rq_a[15]'...Done
+Repack clustered block 'out:rq_b[0]'...Done
+Repack clustered block 'out:rq_b[1]'...Done
+Repack clustered block 'out:rq_b[2]'...Done
+Repack clustered block 'out:rq_b[3]'...Done
+Repack clustered block 'out:rq_b[4]'...Done
+Repack clustered block 'out:rq_b[6]'...Done
+Repack clustered block 'out:rq_b[7]'...Done
+Repack clustered block 'out:rq_b[8]'...Done
+Repack clustered block 'out:rq_b[9]'...Done
+Repack clustered block 'out:rq_b[10]'...Done
+Repack clustered block 'out:rq_b[11]'...Done
+Repack clustered block 'out:rq_b[12]'...Done
+Repack clustered block 'out:rq_b[13]'...Done
+Repack clustered block 'out:rq_b[14]'...Done
+Repack clustered block 'out:rq_b[15]'...Done
+Repack clustered block 'out:rq_a[13]'...Done
+Repack clustered block 'out:rq_b[5]'...Done
+Repack clustered block 'clock1'...Done
+Repack clustered block 'rce_a'...Done
+Repack clustered block 'addr_a[0]'...Done
+Repack clustered block 'addr_a[1]'...Done
+Repack clustered block 'addr_a[2]'...Done
+Repack clustered block 'addr_a[3]'...Done
+Repack clustered block 'addr_a[4]'...Done
+Repack clustered block 'addr_a[5]'...Done
+Repack clustered block 'addr_a[6]'...Done
+Repack clustered block 'addr_a[7]'...Done
+Repack clustered block 'addr_a[8]'...Done
+Repack clustered block 'addr_a[9]'...Done
+Repack clustered block 'addr_a[10]'...Done
+Repack clustered block 'wce_a'...Done
+Repack clustered block 'wd_a[0]'...Done
+Repack clustered block 'wd_a[1]'...Done
+Repack clustered block 'wd_a[2]'...Done
+Repack clustered block 'wd_a[3]'...Done
+Repack clustered block 'wd_a[4]'...Done
+Repack clustered block 'wd_a[5]'...Done
+Repack clustered block 'wd_a[6]'...Done
+Repack clustered block 'wd_a[7]'...Done
+Repack clustered block 'wd_a[8]'...Done
+Repack clustered block 'wd_a[9]'...Done
+Repack clustered block 'wd_a[10]'...Done
+Repack clustered block 'wd_a[11]'...Done
+Repack clustered block 'wd_a[12]'...Done
+Repack clustered block 'wd_a[13]'...Done
+Repack clustered block 'wd_a[14]'...Done
+Repack clustered block 'wd_a[15]'...Done
+Repack clustered block 'clock0'...Done
+Repack clustered block 'rce_b'...Done
+Repack clustered block 'addr_b[0]'...Done
+Repack clustered block 'addr_b[1]'...Done
+Repack clustered block 'addr_b[2]'...Done
+Repack clustered block 'addr_b[3]'...Done
+Repack clustered block 'addr_b[4]'...Done
+Repack clustered block 'addr_b[5]'...Done
+Repack clustered block 'addr_b[6]'...Done
+Repack clustered block 'addr_b[7]'...Done
+Repack clustered block 'addr_b[8]'...Done
+Repack clustered block 'addr_b[9]'...Done
+Repack clustered block 'addr_b[10]'...Done
+Repack clustered block 'wce_b'...Done
+Repack clustered block 'wd_b[0]'...Done
+Repack clustered block 'wd_b[1]'...Done
+Repack clustered block 'wd_b[2]'...Done
+Repack clustered block 'wd_b[3]'...Done
+Repack clustered block 'wd_b[4]'...Done
+Repack clustered block 'wd_b[5]'...Done
+Repack clustered block 'wd_b[6]'...Done
+Repack clustered block 'wd_b[7]'...Done
+Repack clustered block 'wd_b[8]'...Done
+Repack clustered block 'wd_b[9]'...Done
+Repack clustered block 'wd_b[10]'...Done
+Repack clustered block 'wd_b[11]'...Done
+Repack clustered block 'wd_b[12]'...Done
+Repack clustered block 'wd_b[13]'...Done
+Repack clustered block 'wd_b[14]'...Done
+Repack clustered block 'wd_b[15]'...Done
+Repack clustered block 'id[0]'...Done
+Repack clustered blocks to physical implementation of logical tile took 0.03 seconds (max_rss 106.3 MiB, delta_rss +0.3 MiB)
+Identify wire LUTs created by repacking
+Identified 0 wire LUTs created by repacker
+Identify wire LUTs created by repacking took 0.00 seconds (max_rss 106.3 MiB, delta_rss +0.0 MiB)
+Build truth tables for physical LUTs
+Build truth tables for physical LUTs took 0.00 seconds (max_rss 106.3 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: build_architecture_bitstream
+
+Confirm selected options when call command 'build_architecture_bitstream':
+--write_file: off
+--read_file: off
+--no_time_stamp: off
+--verbose: off
+
+Build fabric-independent bitstream for implementation 'dpram_16x2048'
+
+Generating bitstream for Switch blocks...Done
+Generating bitstream for X-direction Connection blocks ...Done
+Generating bitstream for Y-direction Connection blocks ...Done
+
+Build fabric-independent bitstream for implementation 'dpram_16x2048'
+ took 0.45 seconds (max_rss 118.7 MiB, delta_rss +12.4 MiB)
+
+Command line to execute: build_fabric_bitstream
+
+Confirm selected options when call command 'build_fabric_bitstream':
+--verbose: off
+
+Build fabric dependent bitstream
+
+
+Build fabric dependent bitstream
+ took 0.11 seconds (max_rss 133.9 MiB, delta_rss +15.2 MiB)
+
+Command line to execute: write_fabric_bitstream --keep_dont_care_bits  --format plain_text --file fabric_bitstream.bit
+
+Confirm selected options when call command 'write_fabric_bitstream':
+--file, -f: fabric_bitstream.bit
+--format: plain_text
+--filter_value: off
+--path_only: off
+--value_only: off
+--trim_path: off
+--fast_configuration: off
+--keep_dont_care_bits: on
+--wl_decremental_order: off
+--no_time_stamp: off
+--verbose: off
+Warning 490: Directory path is empty and nothing will be created.
+Write 115433 fabric bitstream into plain text file 'fabric_bitstream.bit'
+Warning 491: None of global reset and set ports are defined for programming purpose. Fast configuration is not applicable
+Write 115433 fabric bitstream into plain text file 'fabric_bitstream.bit' took 0.02 seconds (max_rss 133.9 MiB, delta_rss +0.1 MiB)
+
+Command line to execute: write_fabric_bitstream --format xml --file fabric_bitstream.xml
+
+Confirm selected options when call command 'write_fabric_bitstream':
+--file, -f: fabric_bitstream.xml
+--format: xml
+--filter_value: off
+--path_only: off
+--value_only: off
+--trim_path: off
+--fast_configuration: off
+--keep_dont_care_bits: off
+--wl_decremental_order: off
+--no_time_stamp: off
+--verbose: off
+Warning 492: Directory path is empty and nothing will be created.
+Write 115433 fabric bitstream into xml file 'fabric_bitstream.xml'
+  Progress: 0%  Progress: 1%  Progress: 2%  Progress: 3%  Progress: 4%  Progress: 5%  Progress: 6%  Progress: 7%  Progress: 8%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 12%  Progress: 13%  Progress: 14%  Progress: 15%  Progress: 16%  Progress: 17%  Progress: 18%  Progress: 19%  Progress: 20%  Progress: 21%  Progress: 22%  Progress: 23%  Progress: 24%  Progress: 25%  Progress: 26%  Progress: 27%  Progress: 28%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 32%  Progress: 33%  Progress: 34%  Progress: 35%  Progress: 36%  Progress: 37%  Progress: 38%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 42%  Progress: 43%  Progress: 44%  Progress: 45%  Progress: 46%  Progress: 47%  Progress: 48%  Progress: 49%  Progress: 50%  Progress: 51%  Progress: 52%  Progress: 53%  Progress: 54%  Progress: 55%  Progress: 56%  Progress: 57%  Progress: 58%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 62%  Progress: 63%  Progress: 64%  Progress: 65%  Progress: 66%  Progress: 67%  Progress: 68%  Progress: 69%  Progress: 70%  Progress: 71%  Progress: 72%  Progress: 73%  Progress: 74%  Progress: 75%  Progress: 76%  Progress: 77%  Progress: 78%  Progress: 79%  Progress: 80%  Progress: 81%  Progress: 82%  Progress: 83%  Progress: 84%  Progress: 85%  Progress: 86%  Progress: 87%  Progress: 88%  Progress: 89%  Progress: 90%  Progress: 91%  Progress: 92%  Progress: 93%  Progress: 94%  Progress: 95%  Progress: 96%  Progress: 97%  Progress: 98%  Progress: 99%Write 115433 fabric bitstream into xml file 'fabric_bitstream.xml' took 0.55 seconds (max_rss 133.9 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: write_io_mapping -f PinMapping.xml
+
+Confirm selected options when call command 'write_io_mapping':
+--file, -f: PinMapping.xml
+--no_time_stamp: off
+--verbose: off
+Warning 493: Directory path is empty and nothing will be created.
+Write I/O mapping into xml file 'PinMapping.xml'
+Write I/O mapping into xml file 'PinMapping.xml' took 0.02 seconds (max_rss 133.9 MiB, delta_rss +0.0 MiB)
+
+Command line to execute: exit
+
+Confirm selected options when call command 'exit':
+
+Finish execution with 0 errors
+
+The entire OpenFPGA flow took 5.72 seconds
+
+Thank you for using OpenFPGA!
+Incr Slack updates 1 in 1.5954e-05 sec
+Full Max Req/Worst Slack updates 1 in 1.3926e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 2.696e-05 sec
