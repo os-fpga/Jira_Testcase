@@ -92,6 +92,7 @@ module co_sim_ram_simple_dp_dc_512x32;
     dout_net[26] ,
     dout_net[27] ,
     dout_net[28] ,
+    dout_net[29] ,
     dout_net[30] ,
     dout_net[31] );
 
