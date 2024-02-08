@@ -1,0 +1,21 @@
+ 
+# Yosys synthesis script for ram_simple_dp_dc_512x32
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/02_08_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../ -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2462/PNR_SIM_0.9.30/ram_simple_dp_dc_512x32/results_dir/ram_simple_dp_dc_512x32/run_1/synth_1_1/impl_1_1_1/routing/Jira_Testcase/EDA-2462/PNR_SIM_0.9.30/EDA-2462/raptor_with_hex/raptor_without_hex/./rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2462/PNR_SIM_0.9.30/ram_simple_dp_dc_512x32/results_dir/ram_simple_dp_dc_512x32/run_1/synth_1_1/impl_1_1_1/routing/Jira_Testcase/EDA-2462/PNR_SIM_0.9.30/EDA-2462/raptor_with_hex/raptor_without_hex/./rtl/ram_simple_dp_dc_512x32.v 
+
+
+# Technology mapping
+hierarchy -top ram_simple_dp_dc_512x32
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf  -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -v PNR_SIM_post_synth.v
+write_blif -param PNR_SIM_post_synth.eblif
+
+  
