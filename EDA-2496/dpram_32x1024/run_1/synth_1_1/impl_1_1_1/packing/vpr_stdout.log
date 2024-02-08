@@ -1,0 +1,758 @@
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_vpr.xml /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/synthesis/dpram_32x1024_post_synth.eblif --sdc_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/packing/dpram_32x1024_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report dpram_32x1024_post_place_timing.rpt --device castor10x8_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top dpram_32x1024 --net_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/packing/dpram_32x1024_post_synth.net --place_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/placement/dpram_32x1024_post_synth.place --route_file /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/routing/dpram_32x1024_post_synth.route --pack
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/01_25_2024_09_15_01/share/raptor/etc/devices/gemini_compact_10x8/gemini_vpr.xml
+Circuit name: dpram_32x1024_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 14.1 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/packing/dpram_32x1024_post_synth.net
+Circuit placement file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/placement/dpram_32x1024_post_synth.place
+Circuit routing file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/routing/dpram_32x1024_post_synth.route
+Circuit SDC file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/packing/dpram_32x1024_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: DISABLED
+Router: DISABLED
+Analysis: DISABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 18.0 MiB, delta_rss +3.9 MiB)
+Circuit file: /nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/synthesis/dpram_32x1024_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.01 seconds (max_rss 19.4 MiB, delta_rss +1.4 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 1
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 75
+Swept block(s)      : 66
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 19.4 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 19.4 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 19.4 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 295
+    .input   :      91
+    .output  :      64
+    0-LUT    :       3
+    6-LUT    :      70
+    RS_TDP36K:       1
+    dffre    :      66
+  Nets  : 294
+    Avg Fanout:     2.3
+    Max Fanout:    68.0
+    Min Fanout:     1.0
+  Netlist Clocks: 2
+# Build Timing Graph
+  Timing Graph Nodes: 980
+  Timing Graph Edges: 1368
+  Timing Graph Levels: 6
+# Build Timing Graph took 0.00 seconds (max_rss 19.6 MiB, delta_rss +0.3 MiB)
+Netlist contains 2 clocks
+  Netlist Clock 'clock1' Fanout: 35 pins (3.6%), 34 blocks (11.5%)
+  Netlist Clock 'clock0' Fanout: 35 pins (3.6%), 34 blocks (11.5%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output 'rq_a[0]'
+Warning 168: set_input_delay command matched but was not applied to primary output 'rq_a[1]'
+Warning 169: set_input_delay command matched but was not applied to primary output 'rq_a[2]'
+Warning 170: set_input_delay command matched but was not applied to primary output 'rq_a[3]'
+Warning 171: set_input_delay command matched but was not applied to primary output 'rq_a[4]'
+Warning 172: set_input_delay command matched but was not applied to primary output 'rq_a[5]'
+Warning 173: set_input_delay command matched but was not applied to primary output 'rq_a[6]'
+Warning 174: set_input_delay command matched but was not applied to primary output 'rq_a[7]'
+Warning 175: set_input_delay command matched but was not applied to primary output 'rq_a[8]'
+Warning 176: set_input_delay command matched but was not applied to primary output 'rq_a[9]'
+Warning 177: set_input_delay command matched but was not applied to primary output 'rq_a[10]'
+Warning 178: set_input_delay command matched but was not applied to primary output 'rq_a[11]'
+Warning 179: set_input_delay command matched but was not applied to primary output 'rq_a[12]'
+Warning 180: set_input_delay command matched but was not applied to primary output 'rq_a[13]'
+Warning 181: set_input_delay command matched but was not applied to primary output 'rq_a[14]'
+Warning 182: set_input_delay command matched but was not applied to primary output 'rq_a[15]'
+Warning 183: set_input_delay command matched but was not applied to primary output 'rq_a[16]'
+Warning 184: set_input_delay command matched but was not applied to primary output 'rq_a[17]'
+Warning 185: set_input_delay command matched but was not applied to primary output 'rq_a[18]'
+Warning 186: set_input_delay command matched but was not applied to primary output 'rq_a[19]'
+Warning 187: set_input_delay command matched but was not applied to primary output 'rq_a[20]'
+Warning 188: set_input_delay command matched but was not applied to primary output 'rq_a[21]'
+Warning 189: set_input_delay command matched but was not applied to primary output 'rq_a[22]'
+Warning 190: set_input_delay command matched but was not applied to primary output 'rq_a[23]'
+Warning 191: set_input_delay command matched but was not applied to primary output 'rq_a[24]'
+Warning 192: set_input_delay command matched but was not applied to primary output 'rq_a[25]'
+Warning 193: set_input_delay command matched but was not applied to primary output 'rq_a[26]'
+Warning 194: set_input_delay command matched but was not applied to primary output 'rq_a[27]'
+Warning 195: set_input_delay command matched but was not applied to primary output 'rq_a[28]'
+Warning 196: set_input_delay command matched but was not applied to primary output 'rq_a[29]'
+Warning 197: set_input_delay command matched but was not applied to primary output 'rq_a[30]'
+Warning 198: set_input_delay command matched but was not applied to primary output 'rq_a[31]'
+Warning 199: set_input_delay command matched but was not applied to primary output 'rq_b[0]'
+Warning 200: set_input_delay command matched but was not applied to primary output 'rq_b[1]'
+Warning 201: set_input_delay command matched but was not applied to primary output 'rq_b[2]'
+Warning 202: set_input_delay command matched but was not applied to primary output 'rq_b[3]'
+Warning 203: set_input_delay command matched but was not applied to primary output 'rq_b[4]'
+Warning 204: set_input_delay command matched but was not applied to primary output 'rq_b[5]'
+Warning 205: set_input_delay command matched but was not applied to primary output 'rq_b[6]'
+Warning 206: set_input_delay command matched but was not applied to primary output 'rq_b[7]'
+Warning 207: set_input_delay command matched but was not applied to primary output 'rq_b[8]'
+Warning 208: set_input_delay command matched but was not applied to primary output 'rq_b[9]'
+Warning 209: set_input_delay command matched but was not applied to primary output 'rq_b[10]'
+Warning 210: set_input_delay command matched but was not applied to primary output 'rq_b[11]'
+Warning 211: set_input_delay command matched but was not applied to primary output 'rq_b[12]'
+Warning 212: set_input_delay command matched but was not applied to primary output 'rq_b[13]'
+Warning 213: set_input_delay command matched but was not applied to primary output 'rq_b[14]'
+Warning 214: set_input_delay command matched but was not applied to primary output 'rq_b[15]'
+Warning 215: set_input_delay command matched but was not applied to primary output 'rq_b[16]'
+Warning 216: set_input_delay command matched but was not applied to primary output 'rq_b[17]'
+Warning 217: set_input_delay command matched but was not applied to primary output 'rq_b[18]'
+Warning 218: set_input_delay command matched but was not applied to primary output 'rq_b[19]'
+Warning 219: set_input_delay command matched but was not applied to primary output 'rq_b[20]'
+Warning 220: set_input_delay command matched but was not applied to primary output 'rq_b[21]'
+Warning 221: set_input_delay command matched but was not applied to primary output 'rq_b[22]'
+Warning 222: set_input_delay command matched but was not applied to primary output 'rq_b[23]'
+Warning 223: set_input_delay command matched but was not applied to primary output 'rq_b[24]'
+Warning 224: set_input_delay command matched but was not applied to primary output 'rq_b[25]'
+Warning 225: set_input_delay command matched but was not applied to primary output 'rq_b[26]'
+Warning 226: set_input_delay command matched but was not applied to primary output 'rq_b[27]'
+Warning 227: set_input_delay command matched but was not applied to primary output 'rq_b[28]'
+Warning 228: set_input_delay command matched but was not applied to primary output 'rq_b[29]'
+Warning 229: set_input_delay command matched but was not applied to primary output 'rq_b[30]'
+Warning 230: set_input_delay command matched but was not applied to primary output 'rq_b[31]'
+Warning 231: set_output_delay command matched but was not applied to primary input 'clock1'
+Warning 232: set_output_delay command matched but was not applied to primary input 'rce_a'
+Warning 233: set_output_delay command matched but was not applied to primary input 'addr_a[0]'
+Warning 234: set_output_delay command matched but was not applied to primary input 'addr_a[1]'
+Warning 235: set_output_delay command matched but was not applied to primary input 'addr_a[2]'
+Warning 236: set_output_delay command matched but was not applied to primary input 'addr_a[3]'
+Warning 237: set_output_delay command matched but was not applied to primary input 'addr_a[4]'
+Warning 238: set_output_delay command matched but was not applied to primary input 'addr_a[5]'
+Warning 239: set_output_delay command matched but was not applied to primary input 'addr_a[6]'
+Warning 240: set_output_delay command matched but was not applied to primary input 'addr_a[7]'
+Warning 241: set_output_delay command matched but was not applied to primary input 'addr_a[8]'
+Warning 242: set_output_delay command matched but was not applied to primary input 'addr_a[9]'
+Warning 243: set_output_delay command matched but was not applied to primary input 'wce_a'
+Warning 244: set_output_delay command matched but was not applied to primary input 'wd_a[0]'
+Warning 245: set_output_delay command matched but was not applied to primary input 'wd_a[1]'
+Warning 246: set_output_delay command matched but was not applied to primary input 'wd_a[2]'
+Warning 247: set_output_delay command matched but was not applied to primary input 'wd_a[3]'
+Warning 248: set_output_delay command matched but was not applied to primary input 'wd_a[4]'
+Warning 249: set_output_delay command matched but was not applied to primary input 'wd_a[5]'
+Warning 250: set_output_delay command matched but was not applied to primary input 'wd_a[6]'
+Warning 251: set_output_delay command matched but was not applied to primary input 'wd_a[7]'
+Warning 252: set_output_delay command matched but was not applied to primary input 'wd_a[8]'
+Warning 253: set_output_delay command matched but was not applied to primary input 'wd_a[9]'
+Warning 254: set_output_delay command matched but was not applied to primary input 'wd_a[10]'
+Warning 255: set_output_delay command matched but was not applied to primary input 'wd_a[11]'
+Warning 256: set_output_delay command matched but was not applied to primary input 'wd_a[12]'
+Warning 257: set_output_delay command matched but was not applied to primary input 'wd_a[13]'
+Warning 258: set_output_delay command matched but was not applied to primary input 'wd_a[14]'
+Warning 259: set_output_delay command matched but was not applied to primary input 'wd_a[15]'
+Warning 260: set_output_delay command matched but was not applied to primary input 'wd_a[16]'
+Warning 261: set_output_delay command matched but was not applied to primary input 'wd_a[17]'
+Warning 262: set_output_delay command matched but was not applied to primary input 'wd_a[18]'
+Warning 263: set_output_delay command matched but was not applied to primary input 'wd_a[19]'
+Warning 264: set_output_delay command matched but was not applied to primary input 'wd_a[20]'
+Warning 265: set_output_delay command matched but was not applied to primary input 'wd_a[21]'
+Warning 266: set_output_delay command matched but was not applied to primary input 'wd_a[22]'
+Warning 267: set_output_delay command matched but was not applied to primary input 'wd_a[23]'
+Warning 268: set_output_delay command matched but was not applied to primary input 'wd_a[24]'
+Warning 269: set_output_delay command matched but was not applied to primary input 'wd_a[25]'
+Warning 270: set_output_delay command matched but was not applied to primary input 'wd_a[26]'
+Warning 271: set_output_delay command matched but was not applied to primary input 'wd_a[27]'
+Warning 272: set_output_delay command matched but was not applied to primary input 'wd_a[28]'
+Warning 273: set_output_delay command matched but was not applied to primary input 'wd_a[29]'
+Warning 274: set_output_delay command matched but was not applied to primary input 'wd_a[30]'
+Warning 275: set_output_delay command matched but was not applied to primary input 'wd_a[31]'
+Warning 276: set_output_delay command matched but was not applied to primary input 'clock0'
+Warning 277: set_output_delay command matched but was not applied to primary input 'rce_b'
+Warning 278: set_output_delay command matched but was not applied to primary input 'addr_b[0]'
+Warning 279: set_output_delay command matched but was not applied to primary input 'addr_b[1]'
+Warning 280: set_output_delay command matched but was not applied to primary input 'addr_b[2]'
+Warning 281: set_output_delay command matched but was not applied to primary input 'addr_b[3]'
+Warning 282: set_output_delay command matched but was not applied to primary input 'addr_b[4]'
+Warning 283: set_output_delay command matched but was not applied to primary input 'addr_b[5]'
+Warning 284: set_output_delay command matched but was not applied to primary input 'addr_b[6]'
+Warning 285: set_output_delay command matched but was not applied to primary input 'addr_b[7]'
+Warning 286: set_output_delay command matched but was not applied to primary input 'addr_b[8]'
+Warning 287: set_output_delay command matched but was not applied to primary input 'addr_b[9]'
+Warning 288: set_output_delay command matched but was not applied to primary input 'wce_b'
+Warning 289: set_output_delay command matched but was not applied to primary input 'wd_b[0]'
+Warning 290: set_output_delay command matched but was not applied to primary input 'wd_b[1]'
+Warning 291: set_output_delay command matched but was not applied to primary input 'wd_b[2]'
+Warning 292: set_output_delay command matched but was not applied to primary input 'wd_b[3]'
+Warning 293: set_output_delay command matched but was not applied to primary input 'wd_b[4]'
+Warning 294: set_output_delay command matched but was not applied to primary input 'wd_b[5]'
+Warning 295: set_output_delay command matched but was not applied to primary input 'wd_b[6]'
+Warning 296: set_output_delay command matched but was not applied to primary input 'wd_b[7]'
+Warning 297: set_output_delay command matched but was not applied to primary input 'wd_b[8]'
+Warning 298: set_output_delay command matched but was not applied to primary input 'wd_b[9]'
+Warning 299: set_output_delay command matched but was not applied to primary input 'wd_b[10]'
+Warning 300: set_output_delay command matched but was not applied to primary input 'wd_b[11]'
+Warning 301: set_output_delay command matched but was not applied to primary input 'wd_b[12]'
+Warning 302: set_output_delay command matched but was not applied to primary input 'wd_b[13]'
+Warning 303: set_output_delay command matched but was not applied to primary input 'wd_b[14]'
+Warning 304: set_output_delay command matched but was not applied to primary input 'wd_b[15]'
+Warning 305: set_output_delay command matched but was not applied to primary input 'wd_b[16]'
+Warning 306: set_output_delay command matched but was not applied to primary input 'wd_b[17]'
+Warning 307: set_output_delay command matched but was not applied to primary input 'wd_b[18]'
+Warning 308: set_output_delay command matched but was not applied to primary input 'wd_b[19]'
+Warning 309: set_output_delay command matched but was not applied to primary input 'wd_b[20]'
+Warning 310: set_output_delay command matched but was not applied to primary input 'wd_b[21]'
+Warning 311: set_output_delay command matched but was not applied to primary input 'wd_b[22]'
+Warning 312: set_output_delay command matched but was not applied to primary input 'wd_b[23]'
+Warning 313: set_output_delay command matched but was not applied to primary input 'wd_b[24]'
+Warning 314: set_output_delay command matched but was not applied to primary input 'wd_b[25]'
+Warning 315: set_output_delay command matched but was not applied to primary input 'wd_b[26]'
+Warning 316: set_output_delay command matched but was not applied to primary input 'wd_b[27]'
+Warning 317: set_output_delay command matched but was not applied to primary input 'wd_b[28]'
+Warning 318: set_output_delay command matched but was not applied to primary input 'wd_b[29]'
+Warning 319: set_output_delay command matched but was not applied to primary input 'wd_b[30]'
+Warning 320: set_output_delay command matched but was not applied to primary input 'wd_b[31]'
+Warning 321: set_output_delay command matched but was not applied to primary input 'id[0]'
+Warning 322: set_input_delay command matched but was not applied to primary output 'rq_a[0]'
+Warning 323: set_input_delay command matched but was not applied to primary output 'rq_a[1]'
+Warning 324: set_input_delay command matched but was not applied to primary output 'rq_a[2]'
+Warning 325: set_input_delay command matched but was not applied to primary output 'rq_a[3]'
+Warning 326: set_input_delay command matched but was not applied to primary output 'rq_a[4]'
+Warning 327: set_input_delay command matched but was not applied to primary output 'rq_a[5]'
+Warning 328: set_input_delay command matched but was not applied to primary output 'rq_a[6]'
+Warning 329: set_input_delay command matched but was not applied to primary output 'rq_a[7]'
+Warning 330: set_input_delay command matched but was not applied to primary output 'rq_a[8]'
+Warning 331: set_input_delay command matched but was not applied to primary output 'rq_a[9]'
+Warning 332: set_input_delay command matched but was not applied to primary output 'rq_a[10]'
+Warning 333: set_input_delay command matched but was not applied to primary output 'rq_a[11]'
+Warning 334: set_input_delay command matched but was not applied to primary output 'rq_a[12]'
+Warning 335: set_input_delay command matched but was not applied to primary output 'rq_a[13]'
+Warning 336: set_input_delay command matched but was not applied to primary output 'rq_a[14]'
+Warning 337: set_input_delay command matched but was not applied to primary output 'rq_a[15]'
+Warning 338: set_input_delay command matched but was not applied to primary output 'rq_a[16]'
+Warning 339: set_input_delay command matched but was not applied to primary output 'rq_a[17]'
+Warning 340: set_input_delay command matched but was not applied to primary output 'rq_a[18]'
+Warning 341: set_input_delay command matched but was not applied to primary output 'rq_a[19]'
+Warning 342: set_input_delay command matched but was not applied to primary output 'rq_a[20]'
+Warning 343: set_input_delay command matched but was not applied to primary output 'rq_a[21]'
+Warning 344: set_input_delay command matched but was not applied to primary output 'rq_a[22]'
+Warning 345: set_input_delay command matched but was not applied to primary output 'rq_a[23]'
+Warning 346: set_input_delay command matched but was not applied to primary output 'rq_a[24]'
+Warning 347: set_input_delay command matched but was not applied to primary output 'rq_a[25]'
+Warning 348: set_input_delay command matched but was not applied to primary output 'rq_a[26]'
+Warning 349: set_input_delay command matched but was not applied to primary output 'rq_a[27]'
+Warning 350: set_input_delay command matched but was not applied to primary output 'rq_a[28]'
+Warning 351: set_input_delay command matched but was not applied to primary output 'rq_a[29]'
+Warning 352: set_input_delay command matched but was not applied to primary output 'rq_a[30]'
+Warning 353: set_input_delay command matched but was not applied to primary output 'rq_a[31]'
+Warning 354: set_input_delay command matched but was not applied to primary output 'rq_b[0]'
+Warning 355: set_input_delay command matched but was not applied to primary output 'rq_b[1]'
+Warning 356: set_input_delay command matched but was not applied to primary output 'rq_b[2]'
+Warning 357: set_input_delay command matched but was not applied to primary output 'rq_b[3]'
+Warning 358: set_input_delay command matched but was not applied to primary output 'rq_b[4]'
+Warning 359: set_input_delay command matched but was not applied to primary output 'rq_b[5]'
+Warning 360: set_input_delay command matched but was not applied to primary output 'rq_b[6]'
+Warning 361: set_input_delay command matched but was not applied to primary output 'rq_b[7]'
+Warning 362: set_input_delay command matched but was not applied to primary output 'rq_b[8]'
+Warning 363: set_input_delay command matched but was not applied to primary output 'rq_b[9]'
+Warning 364: set_input_delay command matched but was not applied to primary output 'rq_b[10]'
+Warning 365: set_input_delay command matched but was not applied to primary output 'rq_b[11]'
+Warning 366: set_input_delay command matched but was not applied to primary output 'rq_b[12]'
+Warning 367: set_input_delay command matched but was not applied to primary output 'rq_b[13]'
+Warning 368: set_input_delay command matched but was not applied to primary output 'rq_b[14]'
+Warning 369: set_input_delay command matched but was not applied to primary output 'rq_b[15]'
+Warning 370: set_input_delay command matched but was not applied to primary output 'rq_b[16]'
+Warning 371: set_input_delay command matched but was not applied to primary output 'rq_b[17]'
+Warning 372: set_input_delay command matched but was not applied to primary output 'rq_b[18]'
+Warning 373: set_input_delay command matched but was not applied to primary output 'rq_b[19]'
+Warning 374: set_input_delay command matched but was not applied to primary output 'rq_b[20]'
+Warning 375: set_input_delay command matched but was not applied to primary output 'rq_b[21]'
+Warning 376: set_input_delay command matched but was not applied to primary output 'rq_b[22]'
+Warning 377: set_input_delay command matched but was not applied to primary output 'rq_b[23]'
+Warning 378: set_input_delay command matched but was not applied to primary output 'rq_b[24]'
+Warning 379: set_input_delay command matched but was not applied to primary output 'rq_b[25]'
+Warning 380: set_input_delay command matched but was not applied to primary output 'rq_b[26]'
+Warning 381: set_input_delay command matched but was not applied to primary output 'rq_b[27]'
+Warning 382: set_input_delay command matched but was not applied to primary output 'rq_b[28]'
+Warning 383: set_input_delay command matched but was not applied to primary output 'rq_b[29]'
+Warning 384: set_input_delay command matched but was not applied to primary output 'rq_b[30]'
+Warning 385: set_input_delay command matched but was not applied to primary output 'rq_b[31]'
+Warning 386: set_output_delay command matched but was not applied to primary input 'clock1'
+Warning 387: set_output_delay command matched but was not applied to primary input 'rce_a'
+Warning 388: set_output_delay command matched but was not applied to primary input 'addr_a[0]'
+Warning 389: set_output_delay command matched but was not applied to primary input 'addr_a[1]'
+Warning 390: set_output_delay command matched but was not applied to primary input 'addr_a[2]'
+Warning 391: set_output_delay command matched but was not applied to primary input 'addr_a[3]'
+Warning 392: set_output_delay command matched but was not applied to primary input 'addr_a[4]'
+Warning 393: set_output_delay command matched but was not applied to primary input 'addr_a[5]'
+Warning 394: set_output_delay command matched but was not applied to primary input 'addr_a[6]'
+Warning 395: set_output_delay command matched but was not applied to primary input 'addr_a[7]'
+Warning 396: set_output_delay command matched but was not applied to primary input 'addr_a[8]'
+Warning 397: set_output_delay command matched but was not applied to primary input 'addr_a[9]'
+Warning 398: set_output_delay command matched but was not applied to primary input 'wce_a'
+Warning 399: set_output_delay command matched but was not applied to primary input 'wd_a[0]'
+Warning 400: set_output_delay command matched but was not applied to primary input 'wd_a[1]'
+Warning 401: set_output_delay command matched but was not applied to primary input 'wd_a[2]'
+Warning 402: set_output_delay command matched but was not applied to primary input 'wd_a[3]'
+Warning 403: set_output_delay command matched but was not applied to primary input 'wd_a[4]'
+Warning 404: set_output_delay command matched but was not applied to primary input 'wd_a[5]'
+Warning 405: set_output_delay command matched but was not applied to primary input 'wd_a[6]'
+Warning 406: set_output_delay command matched but was not applied to primary input 'wd_a[7]'
+Warning 407: set_output_delay command matched but was not applied to primary input 'wd_a[8]'
+Warning 408: set_output_delay command matched but was not applied to primary input 'wd_a[9]'
+Warning 409: set_output_delay command matched but was not applied to primary input 'wd_a[10]'
+Warning 410: set_output_delay command matched but was not applied to primary input 'wd_a[11]'
+Warning 411: set_output_delay command matched but was not applied to primary input 'wd_a[12]'
+Warning 412: set_output_delay command matched but was not applied to primary input 'wd_a[13]'
+Warning 413: set_output_delay command matched but was not applied to primary input 'wd_a[14]'
+Warning 414: set_output_delay command matched but was not applied to primary input 'wd_a[15]'
+Warning 415: set_output_delay command matched but was not applied to primary input 'wd_a[16]'
+Warning 416: set_output_delay command matched but was not applied to primary input 'wd_a[17]'
+Warning 417: set_output_delay command matched but was not applied to primary input 'wd_a[18]'
+Warning 418: set_output_delay command matched but was not applied to primary input 'wd_a[19]'
+Warning 419: set_output_delay command matched but was not applied to primary input 'wd_a[20]'
+Warning 420: set_output_delay command matched but was not applied to primary input 'wd_a[21]'
+Warning 421: set_output_delay command matched but was not applied to primary input 'wd_a[22]'
+Warning 422: set_output_delay command matched but was not applied to primary input 'wd_a[23]'
+Warning 423: set_output_delay command matched but was not applied to primary input 'wd_a[24]'
+Warning 424: set_output_delay command matched but was not applied to primary input 'wd_a[25]'
+Warning 425: set_output_delay command matched but was not applied to primary input 'wd_a[26]'
+Warning 426: set_output_delay command matched but was not applied to primary input 'wd_a[27]'
+Warning 427: set_output_delay command matched but was not applied to primary input 'wd_a[28]'
+Warning 428: set_output_delay command matched but was not applied to primary input 'wd_a[29]'
+Warning 429: set_output_delay command matched but was not applied to primary input 'wd_a[30]'
+Warning 430: set_output_delay command matched but was not applied to primary input 'wd_a[31]'
+Warning 431: set_output_delay command matched but was not applied to primary input 'clock0'
+Warning 432: set_output_delay command matched but was not applied to primary input 'rce_b'
+Warning 433: set_output_delay command matched but was not applied to primary input 'addr_b[0]'
+Warning 434: set_output_delay command matched but was not applied to primary input 'addr_b[1]'
+Warning 435: set_output_delay command matched but was not applied to primary input 'addr_b[2]'
+Warning 436: set_output_delay command matched but was not applied to primary input 'addr_b[3]'
+Warning 437: set_output_delay command matched but was not applied to primary input 'addr_b[4]'
+Warning 438: set_output_delay command matched but was not applied to primary input 'addr_b[5]'
+Warning 439: set_output_delay command matched but was not applied to primary input 'addr_b[6]'
+Warning 440: set_output_delay command matched but was not applied to primary input 'addr_b[7]'
+Warning 441: set_output_delay command matched but was not applied to primary input 'addr_b[8]'
+Warning 442: set_output_delay command matched but was not applied to primary input 'addr_b[9]'
+Warning 443: set_output_delay command matched but was not applied to primary input 'wce_b'
+Warning 444: set_output_delay command matched but was not applied to primary input 'wd_b[0]'
+Warning 445: set_output_delay command matched but was not applied to primary input 'wd_b[1]'
+Warning 446: set_output_delay command matched but was not applied to primary input 'wd_b[2]'
+Warning 447: set_output_delay command matched but was not applied to primary input 'wd_b[3]'
+Warning 448: set_output_delay command matched but was not applied to primary input 'wd_b[4]'
+Warning 449: set_output_delay command matched but was not applied to primary input 'wd_b[5]'
+Warning 450: set_output_delay command matched but was not applied to primary input 'wd_b[6]'
+Warning 451: set_output_delay command matched but was not applied to primary input 'wd_b[7]'
+Warning 452: set_output_delay command matched but was not applied to primary input 'wd_b[8]'
+Warning 453: set_output_delay command matched but was not applied to primary input 'wd_b[9]'
+Warning 454: set_output_delay command matched but was not applied to primary input 'wd_b[10]'
+Warning 455: set_output_delay command matched but was not applied to primary input 'wd_b[11]'
+Warning 456: set_output_delay command matched but was not applied to primary input 'wd_b[12]'
+Warning 457: set_output_delay command matched but was not applied to primary input 'wd_b[13]'
+Warning 458: set_output_delay command matched but was not applied to primary input 'wd_b[14]'
+Warning 459: set_output_delay command matched but was not applied to primary input 'wd_b[15]'
+Warning 460: set_output_delay command matched but was not applied to primary input 'wd_b[16]'
+Warning 461: set_output_delay command matched but was not applied to primary input 'wd_b[17]'
+Warning 462: set_output_delay command matched but was not applied to primary input 'wd_b[18]'
+Warning 463: set_output_delay command matched but was not applied to primary input 'wd_b[19]'
+Warning 464: set_output_delay command matched but was not applied to primary input 'wd_b[20]'
+Warning 465: set_output_delay command matched but was not applied to primary input 'wd_b[21]'
+Warning 466: set_output_delay command matched but was not applied to primary input 'wd_b[22]'
+Warning 467: set_output_delay command matched but was not applied to primary input 'wd_b[23]'
+Warning 468: set_output_delay command matched but was not applied to primary input 'wd_b[24]'
+Warning 469: set_output_delay command matched but was not applied to primary input 'wd_b[25]'
+Warning 470: set_output_delay command matched but was not applied to primary input 'wd_b[26]'
+Warning 471: set_output_delay command matched but was not applied to primary input 'wd_b[27]'
+Warning 472: set_output_delay command matched but was not applied to primary input 'wd_b[28]'
+Warning 473: set_output_delay command matched but was not applied to primary input 'wd_b[29]'
+Warning 474: set_output_delay command matched but was not applied to primary input 'wd_b[30]'
+Warning 475: set_output_delay command matched but was not applied to primary input 'wd_b[31]'
+Warning 476: set_output_delay command matched but was not applied to primary input 'id[0]'
+
+Applied 6 SDC commands from '/nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/packing/dpram_32x1024_openfpga.sdc'
+Timing constraints created 2 clocks
+  Constrained Clock 'clock0' Source: 'clock0.inpad[0]'
+  Constrained Clock 'clock1' Source: 'clock1.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 19.8 MiB, delta_rss +0.2 MiB)
+# Packing
+Begin packing '/nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/synthesis/dpram_32x1024_post_synth.eblif'.
+Warning 477: All 2 clocks will be treated as global.
+
+After removing unused inputs...
+	total blocks: 295, total nets: 294, total inputs: 91, total outputs: 64
+Begin prepacking.
+
+There is one chain in this architecture called "carrychain" with the following starting points:
+	clb[0]/clb_lr[0]/fle[0]/adder[0]/adder_carry[0].cin[0]
+
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 8.9048e-10
+Packing with pin utilization targets: io_top:1,1 io_right:1,1 io_bottom:1,1 io_left:1,1 clb:0.8,1 dsp:1,1 bram:1,1
+Packing with high fanout thresholds: io_top:128 io_right:128 io_bottom:128 io_left:128 clb:32 dsp:128 bram:128
+Starting Clustering - Clustering Progress: 
+-------------------   --------------------------   ---------
+Molecules processed   Number of clusters created   FPGA size
+-------------------   --------------------------   ---------
+    11/295       3%                            2    12 x 10    
+    22/295       7%                            3    12 x 10    
+    33/295      11%                            3    12 x 10    
+    44/295      14%                            4    12 x 10    
+    55/295      18%                            5    12 x 10    
+    66/295      22%                            5    12 x 10    
+    77/295      26%                            6    12 x 10    
+    88/295      29%                            7    12 x 10    
+    99/295      33%                            8    12 x 10    
+   110/295      37%                            8    12 x 10    
+   121/295      41%                            9    12 x 10    
+   132/295      44%                           10    12 x 10    
+   143/295      48%                           12    12 x 10    
+   154/295      52%                           23    12 x 10    
+   165/295      55%                           34    12 x 10    
+   176/295      59%                           45    12 x 10    
+   187/295      63%                           56    12 x 10    
+   198/295      67%                           67    12 x 10    
+   209/295      70%                           78    12 x 10    
+   220/295      74%                           89    12 x 10    
+   231/295      78%                          100    12 x 10    
+   242/295      82%                          111    12 x 10    
+   253/295      85%                          122    12 x 10    
+   264/295      89%                          133    12 x 10    
+   275/295      93%                          144    12 x 10    
+   286/295      96%                          155    12 x 10    
+
+Logic Element (fle) detailed count:
+  Total number of Logic Elements used : 69
+  LEs used for logic and registers    : 0
+  LEs used for logic only             : 69
+  LEs used for registers only         : 0
+
+Incr Slack updates 1 in 1.9685e-05 sec
+Full Max Req/Worst Slack updates 1 in 4.108e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 5.5652e-05 sec
+FPGA sized to 12 x 10 (castor10x8_heterogeneous)
+Device Utilization: 0.12 (target 1.00)
+	Block Utilization: 0.07 Type: io
+	Block Utilization: 0.25 Type: clb
+	Block Utilization: 0.50 Type: bram
+
+Start the iterative improvement process
+the iterative improvement process is done
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io        155                               0.412903                     0.587097   
+       clb          9                                18.1111                      9.77778   
+       dsp          0                                      0                            0   
+      bram          1                                    101                           64   
+Absorbed logical nets 51 out of 294 nets, 243 nets not absorbed.
+
+Netlist conversion complete.
+
+# Packing took 0.22 seconds (max_rss 23.3 MiB, delta_rss +3.4 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_project/castor/DV/anas/rigel/new_clones/rigel_dec1/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/bram/dpram_32x1024/dpram_32x1024/run_1/synth_1_1/impl_1_1_1/packing/dpram_32x1024_post_synth.net'.
+Detected 3 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.07 seconds).
+# Load packing took 0.08 seconds (max_rss 61.4 MiB, delta_rss +38.0 MiB)
+Warning 478: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io             : 155
+   io_output     : 64
+    outpad       : 64
+   io_input      : 91
+    inpad        : 91
+  clb            : 9
+   clb_lr        : 9
+    fle          : 70
+     ble5        : 139
+      lut5       : 73
+       lut       : 73
+      ff         : 66
+       DFFRE     : 66
+  bram           : 1
+   bram_lr       : 1
+    mem_36K      : 1
+
+# Create Device
+## Build Device Grid
+FPGA sized to 12 x 10: 120 grid tiles (castor10x8_heterogeneous)
+
+Resource usage...
+	Netlist
+		155	blocks of type: io
+	Architecture
+		576	blocks of type: io_top
+		576	blocks of type: io_right
+		576	blocks of type: io_bottom
+		576	blocks of type: io_left
+	Netlist
+		9	blocks of type: clb
+	Architecture
+		36	blocks of type: clb
+	Netlist
+		0	blocks of type: dsp
+	Architecture
+		2	blocks of type: dsp
+	Netlist
+		1	blocks of type: bram
+	Architecture
+		2	blocks of type: bram
+
+Device Utilization: 0.12 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.27 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.27 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.27 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.27 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.25 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.00 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.50 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+Warning 479: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 480: Sized nonsensical R=0 transistor to minimum width
+Warning 481: Sized nonsensical R=0 transistor to minimum width
+Warning 482: Sized nonsensical R=0 transistor to minimum width
+Warning 483: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 0.50 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+  RR Graph Nodes: 113424
+  RR Graph Edges: 231966
+# Create Device took 0.52 seconds (max_rss 61.4 MiB, delta_rss +0.0 MiB)
+
+
+Flow timing analysis took 0.00251429 seconds (0.00237968 STA, 0.000134613 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+VPR succeeded
+The entire flow of VPR took 1.04 seconds (max_rss 61.4 MiB)
