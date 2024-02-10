@@ -1,4 +1,4 @@
-`include "../clb_defines.v"
+`include "clb_defines.v"
 `include "/nfs_eda_sw/softwares/Raptor/instl_dir/latest/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v"
 `include "/nfs_eda_sw/softwares/Raptor/instl_dir/latest/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v"
 `include "/nfs_eda_sw/softwares/Raptor/instl_dir/latest/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v"
