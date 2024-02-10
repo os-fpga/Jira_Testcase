@@ -1,0 +1,13 @@
+create_design up_down_counter
+target_device GEMINI_COMPACT_10x8
+add_design_file up_down_counter.v
+set_top_module up_down_counter
+analyze 
+synthesize area
+packing_options -clb_packing dense
+packing
+place
+route
+sta
+power
+bitstream write_xml pb_pin_fixup

@@ -1,0 +1,12 @@
+create_design gray_to_bin
+target_device GEMINI_COMPACT_10x8
+add_design_file gray_to_bin.v
+set_top_module gray_to_bin
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml
