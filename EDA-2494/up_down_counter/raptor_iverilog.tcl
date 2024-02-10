@@ -1,0 +1,13 @@
+create_design UP_DOWN_COUNTER_SIM
+target_device GEMINI_COMPACT_10x8
+add_design_file up_down_counter.v
+set_top_module up_down_counter
+add_simulation_file tb_iverilog.v
+set_top_testbench up_down_counter_tb
+set_top_module up_down_counter
+analyze
+synthesize area
+simulation_options compilation icarus gate
+simulate gate icarus
+
+ 
