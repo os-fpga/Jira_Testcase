@@ -1,0 +1,1 @@
+obj_dir/Vco_sim_ram_true_reg_addr_dp_1024x32_verilator
