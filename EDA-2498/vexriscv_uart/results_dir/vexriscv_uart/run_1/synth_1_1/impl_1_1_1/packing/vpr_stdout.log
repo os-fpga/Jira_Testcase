@@ -1,0 +1,880 @@
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/02_09_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/02_09_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/synthesis/vexriscv_uart_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/packing/vexriscv_uart_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report vexriscv_uart_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top vexriscv_uart --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/packing/vexriscv_uart_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/placement/vexriscv_uart_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/routing/vexriscv_uart_post_synth.route --pack
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/02_09_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: vexriscv_uart_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 24.4 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/packing/vexriscv_uart_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/placement/vexriscv_uart_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/routing/vexriscv_uart_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/packing/vexriscv_uart_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: DISABLED
+Router: DISABLED
+Analysis: DISABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 24.4 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/synthesis/vexriscv_uart_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.25 seconds (max_rss 41.5 MiB, delta_rss +17.1 MiB)
+# Clean circuit
+Inferred    2 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred  674 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 1
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 2178
+Swept block(s)      : 1640
+Constant Pins Marked: 676
+# Clean circuit took 0.01 seconds (max_rss 41.5 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.01 seconds (max_rss 41.5 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 41.5 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 4722
+    .input     :      13
+    .output    :      12
+    0-LUT      :       3
+    6-LUT      :    2816
+    RS_DSP_MULT:       4
+    RS_TDP36K  :      10
+    adder_carry:     225
+    dffnre     :       1
+    dffre      :    1638
+  Nets  : 5244
+    Avg Fanout:     4.0
+    Max Fanout:  2303.0
+    Min Fanout:     1.0
+  Netlist Clocks: 2
+# Build Timing Graph
+  Timing Graph Nodes: 26018
+  Timing Graph Edges: 46957
+  Timing Graph Levels: 78
+# Build Timing Graph took 0.03 seconds (max_rss 41.5 MiB, delta_rss +0.0 MiB)
+Netlist contains 2 clocks
+  Netlist Clock 'sys_clk' Fanout: 1664 pins (6.4%), 1647 blocks (34.9%)
+  Netlist Clock 'main_vexriscv6' Fanout: 2 pins (0.0%), 2 blocks (0.0%)
+# Load Timing Constraints
+
+SDC file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/packing/vexriscv_uart_openfpga.sdc' contained no SDC commands
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on a virtual external clock 'virtual_io_clock'
+   * optimize all netlist and virtual clocks to run as fast as possible
+   * ignore cross netlist clock domain timing paths
+Timing constraints created 3 clocks
+  Constrained Clock 'virtual_io_clock' (Virtual Clock)
+  Constrained Clock 'sys_clk' Source: 'sys_clk.inpad[0]'
+  Constrained Clock 'main_vexriscv6' Source: 'main_vexriscv6.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 41.5 MiB, delta_rss +0.0 MiB)
+# Packing
+Begin packing '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/synthesis/vexriscv_uart_post_synth.eblif'.
+Warning 167: All 4 clocks will be treated as global.
+
+After removing unused inputs...
+	total blocks: 4722, total nets: 5244, total inputs: 13, total outputs: 12
+Begin prepacking.
+
+There is one chain in this architecture called "carrychain" with the following starting points:
+	clb[0]/clb_lr[0]/fle[0]/adder[0]/adder_carry[0].cin[0]
+
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 8.9048e-10
+Packing with pin utilization targets: io_top:1,1 io_right:1,1 io_bottom:1,1 io_left:1,1 clb:0.8,1 dsp:1,1 bram:1,1
+Packing with high fanout thresholds: io_top:128 io_right:128 io_bottom:128 io_left:128 clb:32 dsp:128 bram:128
+Warning 168: 469 timing endpoints were not constrained during timing analysis
+Starting Clustering - Clustering Progress: 
+-------------------   --------------------------   ---------
+Molecules processed   Number of clusters created   FPGA size
+-------------------   --------------------------   ---------
+   148/3721      3%                           27    64 x 46    
+   296/3721      7%                           38    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+   444/3721     11%                           48    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+   592/3721     15%                           56    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+   740/3721     19%                           63    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+   888/3721     23%                           72    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1036/3721     27%                           79    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1184/3721     31%                           86    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1332/3721     35%                           93    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1480/3721     39%                          100    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1628/3721     43%                          107    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1776/3721     47%                          113    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  1924/3721     51%                          119    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2072/3721     55%                          125    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2220/3721     59%                          132    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2368/3721     63%                          138    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2516/3721     67%                          144    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2664/3721     71%                          151    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2812/3721     75%                          158    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  2960/3721     79%                          165    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3108/3721     83%                          171    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3256/3721     87%                          178    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3404/3721     91%                          193    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3552/3721     95%                          201    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3700/3721     99%                          209    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3848/3721    103%                          216    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  3996/3721    107%                          224    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  4144/3721    111%                          232    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  4292/3721    115%                          239    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  4440/3721    119%                          246    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  4588/3721    123%                          253    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  4736/3721    127%                          260    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  4884/3721    131%                          266    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5032/3721    135%                          273    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5180/3721    139%                          280    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5328/3721    143%                          286    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5476/3721    147%                          293    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5624/3721    151%                          299    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5772/3721    155%                          307    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  5920/3721    159%                          314    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  6068/3721    163%                          323    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  6216/3721    167%                          331    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+Failed route at end, repack cluster trying detailed routing at each stage.
+  6364/3721    171%                          339    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+  6512/3721    175%                          349    64 x 46    
+Failed route at end, repack cluster trying detailed routing at each stage.
+  6660/3721    178%                          358    64 x 46    
+
+Logic Element (fle) detailed count:
+  Total number of Logic Elements used : 2440
+  LEs used for logic and registers    : 0
+  LEs used for logic only             : 2440
+  LEs used for registers only         : 0
+
+Incr Slack updates 1 in 0.000461298 sec
+Full Max Req/Worst Slack updates 1 in 0.00013051 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 0.00102795 sec
+FPGA sized to 64 x 46 (castor62x44_heterogeneous)
+Device Utilization: 0.13 (target 1.00)
+	Block Utilization: 0.00 Type: io
+	Block Utilization: 0.15 Type: clb
+	Block Utilization: 0.07 Type: dsp
+	Block Utilization: 0.18 Type: bram
+
+Start the iterative improvement process
+the iterative improvement process is done
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io         25                                   0.48                         0.52   
+       clb        335                                26.3731                      8.30149   
+       dsp          4                                     38                           33   
+      bram         10                                   47.4                         20.8   
+Absorbed logical nets 2110 out of 5244 nets, 3134 nets not absorbed.
+
+Netlist conversion complete.
+
+# Packing took 35.24 seconds (max_rss 70.9 MiB, delta_rss +29.3 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/RTE_FAILURE_9-feb/vexriscv_uart/results_dir/vexriscv_uart/run_1/synth_1_1/impl_1_1_1/packing/vexriscv_uart_post_synth.net'.
+Detected 3 constant generators (to see names run with higher pack verbosity)
+Warning 169: Netlist connects net $undef to both global and non-global pins.
+Warning 170: Netlist connects net $undef to both global and non-global pins.
+Warning 171: Netlist connects net $undef to both global and non-global pins.
+Warning 172: Netlist connects net $undef to both global and non-global pins.
+Warning 173: Netlist connects net $undef to both global and non-global pins.
+Warning 174: Netlist connects net $undef to both global and non-global pins.
+Warning 175: Netlist connects net $undef to both global and non-global pins.
+Warning 176: Netlist connects net $undef to both global and non-global pins.
+Warning 177: Netlist connects net $undef to both global and non-global pins.
+Warning 178: Netlist connects net $undef to both global and non-global pins.
+Warning 179: Netlist connects net $undef to both global and non-global pins.
+Warning 180: Netlist connects net $undef to both global and non-global pins.
+Warning 181: Netlist connects net $undef to both global and non-global pins.
+Warning 182: Netlist connects net $undef to both global and non-global pins.
+Warning 183: Netlist connects net $undef to both global and non-global pins.
+Warning 184: Netlist connects net $undef to both global and non-global pins.
+Warning 185: Netlist connects net $undef to both global and non-global pins.
+Warning 186: Netlist connects net $undef to both global and non-global pins.
+Warning 187: Netlist connects net $undef to both global and non-global pins.
+Warning 188: Netlist connects net $undef to both global and non-global pins.
+Warning 189: Netlist connects net $undef to both global and non-global pins.
+Warning 190: Netlist connects net $undef to both global and non-global pins.
+Warning 191: Netlist connects net $undef to both global and non-global pins.
+Warning 192: Netlist connects net $undef to both global and non-global pins.
+Warning 193: Netlist connects net $undef to both global and non-global pins.
+Warning 194: Netlist connects net $undef to both global and non-global pins.
+Warning 195: Netlist connects net $undef to both global and non-global pins.
+Warning 196: Netlist connects net $undef to both global and non-global pins.
+Warning 197: Netlist connects net $undef to both global and non-global pins.
+Warning 198: Netlist connects net $undef to both global and non-global pins.
+Warning 199: Netlist connects net $undef to both global and non-global pins.
+Warning 200: Netlist connects net $undef to both global and non-global pins.
+Warning 201: Netlist connects net $undef to both global and non-global pins.
+Warning 202: Netlist connects net $undef to both global and non-global pins.
+Warning 203: Netlist connects net $undef to both global and non-global pins.
+Warning 204: Netlist connects net $undef to both global and non-global pins.
+Warning 205: Netlist connects net $undef to both global and non-global pins.
+Warning 206: Netlist connects net $undef to both global and non-global pins.
+Warning 207: Netlist connects net $undef to both global and non-global pins.
+Warning 208: Netlist connects net $undef to both global and non-global pins.
+Warning 209: Netlist connects net $undef to both global and non-global pins.
+Warning 210: Netlist connects net $undef to both global and non-global pins.
+Warning 211: Netlist connects net $undef to both global and non-global pins.
+Warning 212: Netlist connects net $undef to both global and non-global pins.
+Warning 213: Netlist connects net $undef to both global and non-global pins.
+Warning 214: Netlist connects net $undef to both global and non-global pins.
+Warning 215: Netlist connects net $undef to both global and non-global pins.
+Warning 216: Netlist connects net $undef to both global and non-global pins.
+Warning 217: Netlist connects net $undef to both global and non-global pins.
+Warning 218: Netlist connects net $undef to both global and non-global pins.
+Warning 219: Netlist connects net $undef to both global and non-global pins.
+Warning 220: Netlist connects net $undef to both global and non-global pins.
+Warning 221: Netlist connects net $undef to both global and non-global pins.
+Warning 222: Netlist connects net $undef to both global and non-global pins.
+Warning 223: Netlist connects net $undef to both global and non-global pins.
+Warning 224: Netlist connects net $undef to both global and non-global pins.
+Warning 225: Netlist connects net $false to both global and non-global pins.
+Warning 226: Netlist connects net $false to both global and non-global pins.
+Warning 227: Netlist connects net $false to both global and non-global pins.
+Warning 228: Netlist connects net $false to both global and non-global pins.
+Warning 229: Netlist connects net $false to both global and non-global pins.
+Warning 230: Netlist connects net $false to both global and non-global pins.
+Warning 231: Netlist connects net $false to both global and non-global pins.
+Warning 232: Netlist connects net $false to both global and non-global pins.
+Warning 233: Netlist connects net $false to both global and non-global pins.
+Warning 234: Netlist connects net $false to both global and non-global pins.
+Warning 235: Netlist connects net $false to both global and non-global pins.
+Warning 236: Netlist connects net $false to both global and non-global pins.
+Warning 237: Netlist connects net $false to both global and non-global pins.
+Warning 238: Netlist connects net $false to both global and non-global pins.
+Warning 239: Netlist connects net $false to both global and non-global pins.
+Warning 240: Netlist connects net $false to both global and non-global pins.
+Warning 241: Netlist connects net $false to both global and non-global pins.
+Warning 242: Netlist connects net $false to both global and non-global pins.
+Warning 243: Netlist connects net $false to both global and non-global pins.
+Warning 244: Netlist connects net $false to both global and non-global pins.
+Warning 245: Netlist connects net $false to both global and non-global pins.
+Warning 246: Netlist connects net $false to both global and non-global pins.
+Warning 247: Netlist connects net $false to both global and non-global pins.
+Warning 248: Netlist connects net $false to both global and non-global pins.
+Warning 249: Netlist connects net $false to both global and non-global pins.
+Warning 250: Netlist connects net $false to both global and non-global pins.
+Warning 251: Netlist connects net $false to both global and non-global pins.
+Warning 252: Netlist connects net $false to both global and non-global pins.
+Warning 253: Netlist connects net $false to both global and non-global pins.
+Warning 254: Netlist connects net $false to both global and non-global pins.
+Warning 255: Netlist connects net $false to both global and non-global pins.
+Warning 256: Netlist connects net $false to both global and non-global pins.
+Warning 257: Netlist connects net $false to both global and non-global pins.
+Warning 258: Netlist connects net $false to both global and non-global pins.
+Warning 259: Netlist connects net $false to both global and non-global pins.
+Warning 260: Netlist connects net $false to both global and non-global pins.
+Warning 261: Netlist connects net $false to both global and non-global pins.
+Warning 262: Netlist connects net $false to both global and non-global pins.
+Warning 263: Netlist connects net $false to both global and non-global pins.
+Warning 264: Netlist connects net $false to both global and non-global pins.
+Warning 265: Netlist connects net $false to both global and non-global pins.
+Warning 266: Netlist connects net $false to both global and non-global pins.
+Warning 267: Netlist connects net $false to both global and non-global pins.
+Warning 268: Netlist connects net $false to both global and non-global pins.
+Warning 269: Netlist connects net $false to both global and non-global pins.
+Warning 270: Netlist connects net $false to both global and non-global pins.
+Warning 271: Netlist connects net $false to both global and non-global pins.
+Warning 272: Netlist connects net $false to both global and non-global pins.
+Warning 273: Netlist connects net $false to both global and non-global pins.
+Warning 274: Netlist connects net $false to both global and non-global pins.
+Warning 275: Netlist connects net $false to both global and non-global pins.
+Warning 276: Netlist connects net $false to both global and non-global pins.
+Warning 277: Netlist connects net $false to both global and non-global pins.
+Warning 278: Netlist connects net $false to both global and non-global pins.
+Warning 279: Netlist connects net $false to both global and non-global pins.
+Warning 280: Netlist connects net $false to both global and non-global pins.
+Warning 281: Netlist connects net $false to both global and non-global pins.
+Warning 282: Netlist connects net $false to both global and non-global pins.
+Warning 283: Netlist connects net $false to both global and non-global pins.
+Warning 284: Netlist connects net $false to both global and non-global pins.
+Warning 285: Netlist connects net $false to both global and non-global pins.
+Warning 286: Netlist connects net $false to both global and non-global pins.
+Warning 287: Netlist connects net $false to both global and non-global pins.
+Warning 288: Netlist connects net $false to both global and non-global pins.
+Warning 289: Netlist connects net $false to both global and non-global pins.
+Warning 290: Netlist connects net $false to both global and non-global pins.
+Warning 291: Netlist connects net $false to both global and non-global pins.
+Warning 292: Netlist connects net $false to both global and non-global pins.
+Warning 293: Netlist connects net $false to both global and non-global pins.
+Warning 294: Netlist connects net $false to both global and non-global pins.
+Warning 295: Netlist connects net $false to both global and non-global pins.
+Warning 296: Netlist connects net $false to both global and non-global pins.
+Warning 297: Netlist connects net $false to both global and non-global pins.
+Warning 298: Netlist connects net $false to both global and non-global pins.
+Warning 299: Netlist connects net $false to both global and non-global pins.
+Warning 300: Netlist connects net $false to both global and non-global pins.
+Warning 301: Netlist connects net $false to both global and non-global pins.
+Warning 302: Netlist connects net $false to both global and non-global pins.
+Warning 303: Netlist connects net $false to both global and non-global pins.
+Warning 304: Netlist connects net $false to both global and non-global pins.
+Warning 305: Netlist connects net $false to both global and non-global pins.
+Warning 306: Netlist connects net $false to both global and non-global pins.
+Warning 307: Netlist connects net $false to both global and non-global pins.
+Warning 308: Netlist connects net $false to both global and non-global pins.
+Finished loading packed FPGA netlist file (took 0.62 seconds).
+# Load packing took 0.64 seconds (max_rss 106.3 MiB, delta_rss +35.4 MiB)
+Warning 309: Netlist contains 142 global net to non-global architecture pin connections
+Warning 310: Logic block #359 ($undef) has only 1 output pin '$undef.O0[0]'. It may be a constant generator.
+
+Pb types usage...
+  io               : 25
+   io_output       : 12
+    outpad         : 12
+   io_input        : 13
+    inpad          : 13
+  clb              : 335
+   clb_lr          : 335
+    fle            : 2666
+     fast6         : 684
+      lut6         : 684
+       lut         : 684
+     ble6          : 260
+      lut6         : 258
+       lut         : 258
+      ff           : 260
+       DFFRE       : 260
+     ble5          : 2450
+      lut5         : 1707
+       lut         : 1707
+      ff           : 1290
+       DFFNRE      : 1
+       DFFRE       : 1289
+     adder         : 225
+      lut5         : 170
+       lut         : 170
+      adder_carry  : 225
+      ff           : 89
+       DFFRE       : 89
+  dsp              : 4
+   dsp_lr          : 4
+    RS_DSP_MULT    : 4
+  bram             : 10
+   bram_lr         : 10
+    mem_36K        : 10
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		25	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		335	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		4	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		10	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.13 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.15 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.07 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.18 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 106.3 MiB, delta_rss +0.0 MiB)
+Warning 311: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 312: Sized nonsensical R=0 transistor to minimum width
+Warning 313: Sized nonsensical R=0 transistor to minimum width
+Warning 314: Sized nonsensical R=0 transistor to minimum width
+Warning 315: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 13.22 seconds (max_rss 508.4 MiB, delta_rss +402.2 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 13.70 seconds (max_rss 508.4 MiB, delta_rss +402.2 MiB)
+
+
+Flow timing analysis took 0.0132624 seconds (0.011466 STA, 0.00179648 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+VPR succeeded
+The entire flow of VPR took 50.39 seconds (max_rss 508.4 MiB)
