@@ -20,7 +20,7 @@
 // Module
 //------------------------------------------------------------------------------
 
-module FIR_generator #(
+module fir_filter #(
 	parameter IP_TYPE 		= "FIRGEN",
 	parameter IP_VERSION 	= 32'h1, 
 	parameter IP_ID 		= 32'h28ca42a
