@@ -38,7 +38,8 @@ DUT      = axil_interconnect
 MODULE_NAME ?= $(DUT)_wrapper
 TOPLEVEL = $(MODULE_NAME)
 MODULE   = test_$(DUT)
-VERILOG_SOURCES += ../src/*.v
+VERILOG_SOURCES += ../rtl/*.v
+VERILOG_SOURCES += ./*.v
 
 #module parameters
 export PARAM_DATA_WIDTH ?= 32
