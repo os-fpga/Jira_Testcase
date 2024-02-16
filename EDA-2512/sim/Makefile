@@ -22,7 +22,7 @@ TOPLEVEL_LANG = verilog
 
 SIM ?= icarus
 WAVES ?= 1
-
+POST_SYNTH_SIM ?= 0
 OUT_DIR ?= $(PWD)
 
 SIM_BUILD = $(OUT_DIR)
@@ -39,14 +39,16 @@ MODULE_NAME ?= $(DUT)_wrapper
 TOPLEVEL = $(MODULE_NAME)
 MODULE   = test_$(DUT)
 
-# Uncomment the following line for RTL simulation and comment the 49 number line
-VERILOG_SOURCES += ../rtl/*.v
+ifeq ($(POST_SYNTH_SIM), 0)
+	VERILOG_SOURCES += ../rtl/*.v
+endif
 VERILOG_SOURCES += ./LUT*.v
 VERILOG_SOURCES += ./DFFRE.v
 VERILOG_SOURCES += ./CARRY.v
 
-#  Uncomment the following line for post-synth simulation and comment the 43 number line
-# VERILOG_SOURCES += ../axil_interconnect_wrapper/run_1/synth_1_1/synthesis/axil_interconnect_wrapper_post_synth.v
+ifeq ($(POST_SYNTH_SIM), 1)
+	VERILOG_SOURCES += ../axil_interconnect_wrapper/run_1/synth_1_1/synthesis/axil_interconnect_wrapper_post_synth.v
+endif
 
 #module parameters
 export PARAM_DATA_WIDTH ?= 32
