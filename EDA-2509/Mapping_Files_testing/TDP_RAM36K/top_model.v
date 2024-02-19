@@ -20,10 +20,16 @@
 // Module
 //------------------------------------------------------------------------------
 
-module on_chip_memory (
-    input  wire    [7:0] addr_B,
+module model #(
+	parameter INIT           = {32768{1'b0}},
+	parameter INIT_PARITY    = {4096{1'b0}},
+  parameter WRITE_WIDTH_B   = 9,
+	parameter READ_WIDTH_B   = 9
+)
+(
+    input  wire    [9:0] addr_B,
     input  wire          ren_B,
-    output wire   [7:0]  dout_B,
+    output wire   [35:0] dout_B,
     input  wire          clk
 );
 
@@ -33,10 +39,12 @@ module on_chip_memory (
 //------------------------------------------------------------------------------
 
 wire          sys_clk;
-wire    [7:0] addr_B_1;
-wire    [7:0] dout_B_1;
+wire    [9:0] addr_B_1;
+wire    [35:0] dout_B_1;
 wire          ren_B_1;
+wire   [31:0] bram_out_A;
 wire   [31:0] bram_out_B;
+wire    [3:0] rparity_A;
 wire    [3:0] rparity_B;
 
 //------------------------------------------------------------------------------
@@ -47,36 +55,36 @@ assign addr_B_1 = addr_B;
 assign ren_B_1 = ren_B;
 assign dout_B = dout_B_1;
 assign sys_clk = clk;
-assign dout_B_1[7:0] = bram_out_B[7:0];
+assign dout_B_1[35:0] = {rparity_B[3], bram_out_B[31:24], rparity_B[2], bram_out_B[23:16], rparity_B[1], bram_out_B[15:8], rparity_B[0], bram_out_B[7:0]};
 
-
-//------------------------------------------------------------------------------
-// Synchronous Logic
-//------------------------------------------------------------------------------
-
-
-//------------------------------------------------------------------------------
-// Specialized Logic
-//------------------------------------------------------------------------------
-
-TDP_RAM36K #(
-	.INIT({32768'h16bb54b00f2d99416842e6bf0d89a18cdf2855cee9871e9b948ed9691198f8e19e1dc186b95735610ef6034866b53e708a8bbd4b1f74dde8c6b4a61c2e2578ba08ae7a65eaf4566ca94ed58d6d37c8e779e4959162acd3c25c2406490a3a32e0db0b5ede14b8ee4688902a22dc4f816073195d643d7ea7c41744975fec130ccdd2f3ff1021dab6bcf5389d928f40a351a89f3c507f02f94585334d43fbaaefd0cf584c4a39becb6a5bb1fc20ed00d153842fe329b3d63b52a05a6e1b1a2c830975b227ebe28012079a059618c323c7041531d871f1e5a534ccf73f362693fdb7c072a49cafa2d4adf04759fa7dc982ca76abd7fe2b670130c56f6bf27b777c63}),
-	.INIT_PARITY({4096'b0}),
-	.READ_WIDTH_B(9),
-	.WRITE_WIDTH_A(9)
-) SDP_MEM (
-	.ADDR_A(0),
-	.ADDR_B({addr_B_1[7:0], {3{1'd0}}}),
-	.BE_A(0),
-	.CLK_A(0),
-	.CLK_B(sys_clk),
-	.REN_B(ren_B_1),
-	.WDATA_A(0),
-	.WEN_A(0),
-	.WPARITY_A(0),
-	.RDATA_B(bram_out_B[31:0]),
-	.RPARITY_B(rparity_B[3:0])
-);
+TDP_RAM36K_org # (
+    .INIT(INIT),
+    .INIT_PARITY(INIT_PARITY),
+    .WRITE_WIDTH_A(36),
+    .READ_WIDTH_A(36),
+    .WRITE_WIDTH_B(36),
+    .READ_WIDTH_B(READ_WIDTH_B)
+  )
+  TDP_RAM36K_org_inst (
+    .WEN_A(1'b0),
+    .WEN_B(1'b0),
+    .REN_A(1'b0),
+    .REN_B(ren_B_1),
+    .CLK_A(1'b0),
+    .CLK_B(1'b0),
+    .BE_A({4{1'b0}}),
+    .BE_B({4{1'b0}}),
+    .ADDR_A({15{1'b0}}),
+    .ADDR_B({addr_B_1[9:0], {5{1'd0}}}),
+    .WDATA_A({32{1'b0}}),
+    .WPARITY_A({4{1'b0}}),
+    .WDATA_B({32{1'b0}}),
+    .WPARITY_B({4{1'b0}}),
+    .RDATA_A(bram_out_A[31:0]),
+    .RPARITY_A(rparity_A[3:0]),
+    .RDATA_B(bram_out_B[31:0]),
+    .RPARITY_B(rparity_B[3:0])
+  );
 
 endmodule
 
