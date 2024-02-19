@@ -1,0 +1,1 @@
+make -j -C obj_dir/ -f Vco_sim_add_shifted_a_to_mult_output_coeff1_input_registered_new_primitive.mk Vco_sim_add_shifted_a_to_mult_output_coeff1_input_registered_new_primitive

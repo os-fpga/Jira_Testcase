@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/02_17_2024_09_15_01/bin/openfpga -batch -f add_shifted_a_to_mult_output_coeff1_input_registered_new_primitive.openfpga

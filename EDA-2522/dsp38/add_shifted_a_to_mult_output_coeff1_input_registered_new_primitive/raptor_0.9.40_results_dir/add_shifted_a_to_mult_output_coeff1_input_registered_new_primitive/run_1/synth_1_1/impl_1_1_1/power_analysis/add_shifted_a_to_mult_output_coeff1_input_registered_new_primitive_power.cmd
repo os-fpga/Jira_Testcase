@@ -1,0 +1,1 @@
+/nfs_eda_sw/softwares/Raptor/instl_dir/02_17_2024_09_15_01/bin/yosys -s pw_extract.ys -l add_shifted_a_to_mult_output_coeff1_input_registered_new_primitive_power.log
