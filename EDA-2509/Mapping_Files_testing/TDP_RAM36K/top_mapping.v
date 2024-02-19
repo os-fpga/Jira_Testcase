@@ -64,13 +64,13 @@ TDP_RAM36K # (
     .WRITE_WIDTH_B(36),
     .READ_WIDTH_B(READ_WIDTH_B)
   )
-  TDP_RAM36K_org_inst (
+  TDP_RAM36K_inst (
     .WEN_A(1'b0),
     .WEN_B(1'b0),
     .REN_A(1'b0),
     .REN_B(ren_B_1),
     .CLK_A(1'b0),
-    .CLK_B(1'b0),
+    .CLK_B(sys_clk),
     .BE_A({4{1'b0}}),
     .BE_B({4{1'b0}}),
     .ADDR_A({15{1'b0}}),

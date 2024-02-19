@@ -23,7 +23,6 @@
 module model #(
 	parameter INIT           = {32768{1'b0}},
 	parameter INIT_PARITY    = {4096{1'b0}},
-  parameter WRITE_WIDTH_B   = 9,
 	parameter READ_WIDTH_B   = 9
 )
 (
@@ -71,7 +70,7 @@ TDP_RAM36K_org # (
     .REN_A(1'b0),
     .REN_B(ren_B_1),
     .CLK_A(1'b0),
-    .CLK_B(1'b0),
+    .CLK_B(sys_clk),
     .BE_A({4{1'b0}}),
     .BE_B({4{1'b0}}),
     .ADDR_A({15{1'b0}}),
