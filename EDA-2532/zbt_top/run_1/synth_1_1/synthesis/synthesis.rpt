@@ -1,0 +1,3263 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.02
+Build    : 0.9.42
+Hash     : 7d8d5e2
+Date     : Feb 21 2024
+Type     : Engineering
+Log Time   : Wed Feb 21 08:16:24 2024 GMT
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 9ae216287, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `zbt_top.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Generating RTLIL representation for module `\CARRY'.
+Generating RTLIL representation for module `\CARRY_CHAIN'.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DSP19X2'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\I_DELAY'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_DELAY'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Generating RTLIL representation for module `\PLL'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\RS_DSP'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_TDP36K'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+2. Executing GHDL.
+Importing module zbt_top.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \zbt_top
+
+3.2. Analyzing design hierarchy..
+Top module:  \zbt_top
+Removed 0 unused modules.
+
+4. Executing synth_rs pass: v0.4.218
+
+4.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+4.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v' to AST representation.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v:10.1-19.10.
+Generating RTLIL representation for module `\CARRY'.
+Successfully finished Verilog frontend.
+
+4.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+4.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFRE'.
+Successfully finished Verilog frontend.
+
+4.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v' to AST representation.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Successfully finished Verilog frontend.
+
+4.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT1'.
+Successfully finished Verilog frontend.
+
+4.7. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v' to AST representation.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT2'.
+Successfully finished Verilog frontend.
+
+4.8. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v' to AST representation.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT3'.
+Successfully finished Verilog frontend.
+
+4.9. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v' to AST representation.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v:11.1-21.10.
+Generating RTLIL representation for module `\LUT4'.
+Successfully finished Verilog frontend.
+
+4.10. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v' to AST representation.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT5'.
+Successfully finished Verilog frontend.
+
+4.11. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v' to AST representation.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+4.12. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v' to AST representation.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v:10.1-17.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Successfully finished Verilog frontend.
+
+4.13. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v' to AST representation.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v:10.1-22.10.
+Generating RTLIL representation for module `\O_BUF'.
+Successfully finished Verilog frontend.
+
+4.14. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v' to AST representation.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:10.1-324.10.
+Generating RTLIL representation for module `\DSP38'.
+/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:0: Warning: System task `$display' outside initial block is unsupported.
+Successfully finished Verilog frontend.
+
+4.15. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v' to AST representation.
+Replacing existing blackbox module `\TDP_RAM36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:2.1-29.10.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Replacing existing blackbox module `\TDP_RAM18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:33.1-84.10.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Replacing existing blackbox module `\DSP19X2' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:116.1-149.10.
+Generating RTLIL representation for module `\DSP19X2'.
+Successfully finished Verilog frontend.
+
+4.16. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:112.1-540.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:542.1-951.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:953.1-1356.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+4.17. Executing HIERARCHY pass (managing design hierarchy).
+
+4.17.1. Analyzing design hierarchy..
+Top module:  \zbt_top
+
+4.17.2. Analyzing design hierarchy..
+Top module:  \zbt_top
+Removed 0 unused modules.
+
+4.18. Executing PROC pass (convert processes to netlists).
+
+4.18.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.18.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.18.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.18.4. Executing PROC_INIT pass (extract init attributes).
+
+4.18.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.18.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.18.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+4.18.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.18.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+4.18.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.18.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.18.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~13 debug messages>
+
+4.19. Executing DEMUXMAP pass.
+
+4.20. Executing FLATTEN pass (flatten design).
+
+4.21. Executing DEMUXMAP pass.
+
+4.22. Executing TRIBUF pass.
+
+4.23. Executing TRIBUF pass.
+
+4.24. Executing DEMINOUT pass (demote inout ports to input or output).
+
+4.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 4 unused cells and 93 unused wires.
+<suppressed ~5 debug messages>
+
+4.27. Executing CHECK pass (checking for obvious problems).
+Checking module zbt_top...
+Found and reported 0 problems.
+
+4.28. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                284
+   Number of wire bits:           1355
+   Number of public wires:          87
+   Number of public wire bits:     385
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                250
+     $add                            3
+     $adff                          17
+     $and                           38
+     $eq                            58
+     $logic_not                      4
+     $mux                           35
+     $ne                            13
+     $not                            6
+     $or                            29
+     $pmux                          45
+     $reduce_bool                    2
+
+4.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.30. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~246 debug messages>
+Removed a total of 82 cells.
+
+4.31. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell \334: \wb_we_i -> 1'0
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.32. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$303: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$305: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$307: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$309: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$311: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$313: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$315: \sram_oe_b2
+    New ctrl vector for $pmux cell \224: { $auto$ghdl.cc:806:import_module$81 $auto$ghdl.cc:806:import_module$80 $auto$ghdl.cc:806:import_module$75 $auto$ghdl.cc:806:import_module$70 $auto$ghdl.cc:806:import_module$65 $auto$ghdl.cc:806:import_module$59 $auto$ghdl.cc:806:import_module$54 $auto$ghdl.cc:806:import_module$49 $auto$ghdl.cc:806:import_module$44 $auto$ghdl.cc:806:import_module$39 $auto$ghdl.cc:806:import_module$34 $auto$ghdl.cc:806:import_module$27 $auto$ghdl.cc:806:import_module$22 $auto$opt_reduce.cc:134:opt_pmux$328 $auto$ghdl.cc:806:import_module$93 $auto$ghdl.cc:806:import_module$106 $auto$ghdl.cc:806:import_module$92 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$317: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$319: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$321: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$323: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$325: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$255: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$257: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$259: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$261: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$263: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$265: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$267: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$269: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$271: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$273: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$275: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$277: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$279: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$281: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$283: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$285: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$287: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$289: \sram_oe_b2
+    New ctrl vector for $pmux cell \418: { $auto$ghdl.cc:806:import_module$65 $auto$opt_reduce.cc:134:opt_pmux$330 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell \421: { $auto$ghdl.cc:806:import_module$186 $auto$ghdl.cc:806:import_module$65 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell \431: { $auto$opt_reduce.cc:134:opt_pmux$334 $auto$opt_reduce.cc:134:opt_pmux$332 }
+    New ctrl vector for $pmux cell \432: { $auto$opt_reduce.cc:134:opt_pmux$336 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell \433: { $auto$opt_reduce.cc:134:opt_pmux$338 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell \436: { $auto$opt_reduce.cc:134:opt_pmux$340 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell \442: { $auto$opt_reduce.cc:134:opt_pmux$344 $auto$opt_reduce.cc:134:opt_pmux$342 $auto$ghdl.cc:806:import_module$91 }
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$291: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$293: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$295: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$297: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$299: \sram_oe_b2
+    New ctrl vector for $pmux cell $auto$tribuf.cc:202:run$301: \sram_oe_b2
+  Optimizing cells in module \zbt_top.
+Performed a total of 44 changes.
+
+4.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.34. Executing OPT_SHARE pass.
+
+4.35. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on \682 ($adff) from module zbt_top.
+[#visit=17, #solve=0, #remove=1, time=0.00 sec.]
+
+4.36. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 85 unused wires.
+<suppressed ~1 debug messages>
+
+4.37. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.38. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+4.39. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+    New ctrl vector for $pmux cell \224: { $auto$ghdl.cc:806:import_module$101 $auto$ghdl.cc:806:import_module$129 $auto$ghdl.cc:806:import_module$125 $auto$ghdl.cc:806:import_module$123 $auto$ghdl.cc:806:import_module$121 $auto$ghdl.cc:806:import_module$119 $auto$ghdl.cc:806:import_module$117 $auto$ghdl.cc:806:import_module$113 $auto$ghdl.cc:806:import_module$111 $auto$ghdl.cc:806:import_module$109 $auto$opt_reduce.cc:134:opt_pmux$346 $auto$ghdl.cc:806:import_module$161 $auto$opt_reduce.cc:134:opt_pmux$328 $auto$ghdl.cc:806:import_module$158 $auto$ghdl.cc:806:import_module$106 $auto$ghdl.cc:806:import_module$12 $auto$ghdl.cc:806:import_module$154 }
+  Optimizing cells in module \zbt_top.
+Performed a total of 1 changes.
+
+4.40. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.41. Executing OPT_SHARE pass.
+
+4.42. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.43. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.44. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.45. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+4.46. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.47. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.48. Executing OPT_SHARE pass.
+
+4.49. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.51. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 3
+
+4.52. Executing FSM pass (extract and optimize FSM).
+
+4.52.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register zbt_top.state.
+
+4.52.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state' from module `\zbt_top'.
+  found $adff cell for state register: \637
+  root of input selection tree: $auto$ghdl.cc:806:import_module$83
+  found reset state: 0 (from async reset)
+  found ctrl input: $auto$ghdl.cc:806:import_module$154
+  found ctrl input: $auto$ghdl.cc:806:import_module$12
+  found ctrl input: $auto$ghdl.cc:806:import_module$106
+  found ctrl input: $auto$ghdl.cc:806:import_module$158
+  found ctrl input: $auto$opt_reduce.cc:134:opt_pmux$328
+  found ctrl input: $auto$ghdl.cc:806:import_module$161
+  found ctrl input: $auto$opt_reduce.cc:134:opt_pmux$346
+  found ctrl input: $auto$ghdl.cc:806:import_module$109
+  found ctrl input: $auto$ghdl.cc:806:import_module$111
+  found ctrl input: $auto$ghdl.cc:806:import_module$113
+  found ctrl input: $auto$ghdl.cc:806:import_module$117
+  found ctrl input: $auto$ghdl.cc:806:import_module$119
+  found ctrl input: $auto$ghdl.cc:806:import_module$121
+  found ctrl input: $auto$ghdl.cc:806:import_module$123
+  found ctrl input: $auto$ghdl.cc:806:import_module$125
+  found ctrl input: $auto$ghdl.cc:806:import_module$129
+  found ctrl input: $auto$ghdl.cc:806:import_module$101
+  found ctrl input: $auto$ghdl.cc:806:import_module$1
+  found ctrl input: $auto$ghdl.cc:806:import_module$135
+  found ctrl input: \wb_we_i
+  found state code: 5
+  found state code: 14
+  found state code: 1
+  found state code: 2
+  found state code: 3
+  found state code: 4
+  found ctrl input: $auto$ghdl.cc:806:import_module$20
+  found state code: 6
+  found state code: 7
+  found ctrl input: \wb_tga_i
+  found state code: 11
+  found state code: 8
+  found state code: 9
+  found state code: 10
+  found state code: 12
+  found state code: 13
+  found state code: 15
+  found state code: 16
+  found state code: 17
+  found state code: 18
+  found state code: 19
+  found ctrl output: $auto$ghdl.cc:806:import_module$159
+  found ctrl output: $auto$ghdl.cc:806:import_module$161
+  found ctrl output: $auto$ghdl.cc:806:import_module$107
+  found ctrl output: $auto$ghdl.cc:806:import_module$109
+  found ctrl output: $auto$ghdl.cc:806:import_module$111
+  found ctrl output: $auto$ghdl.cc:806:import_module$113
+  found ctrl output: $auto$ghdl.cc:806:import_module$115
+  found ctrl output: $auto$ghdl.cc:806:import_module$117
+  found ctrl output: $auto$ghdl.cc:806:import_module$119
+  found ctrl output: $auto$ghdl.cc:806:import_module$175
+  found ctrl output: $auto$ghdl.cc:806:import_module$121
+  found ctrl output: $auto$ghdl.cc:806:import_module$123
+  found ctrl output: $auto$ghdl.cc:806:import_module$125
+  found ctrl output: $auto$ghdl.cc:806:import_module$129
+  found ctrl output: $auto$ghdl.cc:806:import_module$101
+  found ctrl output: $auto$ghdl.cc:806:import_module$103
+  found ctrl output: $auto$ghdl.cc:806:import_module$154
+  found ctrl output: $auto$ghdl.cc:806:import_module$12
+  found ctrl output: $auto$ghdl.cc:806:import_module$158
+  found ctrl output: $auto$ghdl.cc:806:import_module$106
+  ctrl inputs: { $auto$opt_reduce.cc:134:opt_pmux$328 $auto$ghdl.cc:806:import_module$135 $auto$ghdl.cc:806:import_module$20 $auto$opt_reduce.cc:134:opt_pmux$346 $auto$ghdl.cc:806:import_module$1 \wb_tga_i \wb_we_i }
+  ctrl outputs: { $auto$ghdl.cc:806:import_module$175 $auto$ghdl.cc:806:import_module$161 $auto$ghdl.cc:806:import_module$159 $auto$ghdl.cc:806:import_module$158 $auto$ghdl.cc:806:import_module$154 $auto$ghdl.cc:806:import_module$129 $auto$ghdl.cc:806:import_module$125 $auto$ghdl.cc:806:import_module$123 $auto$ghdl.cc:806:import_module$121 $auto$ghdl.cc:806:import_module$119 $auto$ghdl.cc:806:import_module$117 $auto$ghdl.cc:806:import_module$115 $auto$ghdl.cc:806:import_module$113 $auto$ghdl.cc:806:import_module$111 $auto$ghdl.cc:806:import_module$109 $auto$ghdl.cc:806:import_module$107 $auto$ghdl.cc:806:import_module$106 $auto$ghdl.cc:806:import_module$103 $auto$ghdl.cc:806:import_module$101 $auto$ghdl.cc:806:import_module$83 $auto$ghdl.cc:806:import_module$12 }
+  transition:          0 7'----0-- ->          0 52'0000100000000000000000000000000000000000000000000000
+  transition:          0 7'-0--1-0 ->          5 52'0000100000000000000000000000000000000000000000001010
+  transition:          0 7'-0--1-1 ->         14 52'0000100000000000000000000000000000000000000000011100
+  transition:          0 7'-1--1-- ->          1 52'0000100000000000000000000000000000000000000000000010
+  transition:         16 7'--0---- ->          0 52'0000001000000000000000000000000000000000000000000000
+  transition:         16 7'--1---- ->         17 52'0000001000000000000000000000000000000000000000100010
+  transition:          8 7'--0---- ->          0 52'0000000000000100000000000000000000000000000000000000
+  transition:          8 7'--1---- ->          9 52'0000000000000100000000000000000000000000000000010010
+  transition:          4 7'---0--- ->          0 52'0010000000000000000000000000000000000000000000000000
+  transition:         12 7'--0---- ->          0 52'0000000001000000000000000000000000000000000000000000
+  transition:         12 7'--1---- ->         13 52'0000000001000000000000000000000000000000000000011010
+  transition:          2 7'----0-- ->          0 52'0000000000000000100000000000000000000000000000000000
+  transition:          2 7'----1-- ->          3 52'0000000000000000100000000000000000000000000000000110
+  transition:         18 7'------- ->         19 52'0000000000000000001000000000000000000000000000100110
+  transition:         10 7'--0---- ->          0 52'0000000000010000000000000000000000000000000000000000
+  transition:         10 7'--1---- ->          7 52'0000000000010000000000000000000000000000000000001110
+  transition:          6 7'--0---- ->          0 52'0000000000000001000000000000000000000000000000000000
+  transition:          6 7'--1---- ->          7 52'0000000000000001000000000000000000000000000000001110
+  transition:         14 7'--0---- ->          0 52'0000000010000000000000000000000000000000000000000000
+  transition:         14 7'--1---- ->         15 52'0000000010000000000000000000000000000000000000011110
+  transition:          1 7'----0-- ->          0 52'0000000000000000000000000000000000000000000000000001
+  transition:          1 7'----1-- ->          2 52'0000000000000000000000000000000000000000000000000101
+  transition:         17 7'----0-- ->          0 52'0000010000000000000000000000000000000000000000000000
+  transition:         17 7'----10- ->         18 52'0000010000000000000000000000000000000000000000100100
+  transition:         17 7'----11- ->         14 52'0000010000000000000000000000000000000000000000011100
+  transition:          9 7'--0---- ->          0 52'0000000000001000000000000000000000000000000000000000
+  transition:          9 7'--1---- ->         10 52'0000000000001000000000000000000000000000000000010100
+  transition:          5 7'--0---- ->          0 52'0100000000000000000000000000000000000000000000000000
+  transition:          5 7'--1---- ->          6 52'0100000000000000000000000000000000000000000000001100
+  transition:         13 7'---0--- ->          0 52'1000000000000000000000000000000000000000000000000000
+  transition:          3 7'------- ->          4 52'0001000000000000000000000000000000000000000000001000
+  transition:         19 7'---0--- ->          0 52'0000000000000000010000000000000000000000000000000000
+  transition:         11 7'--0---- ->          0 52'0000000000100000000000000000000000000000000000000000
+  transition:         11 7'--1---- ->         12 52'0000000000100000000000000000000000000000000000011000
+  transition:          7 7'--0---- ->          0 52'0000000000000010000000000000000000000000000000000000
+  transition:          7 7'--1--0- ->         11 52'0000000000000010000000000000000000000000000000010110
+  transition:          7 7'--1--1- ->          8 52'0000000000000010000000000000000000000000000000010000
+  transition:         15 7'--0---- ->          0 52'0000000100000000000000000000000000000000000000000000
+  transition:         15 7'--1---- ->         16 52'0000000100000000000000000000000000000000000000100000
+
+4.52.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$347' from module `\zbt_top'.
+  Removing unused input signal $auto$opt_reduce.cc:134:opt_pmux$328.
+
+4.52.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 41 unused cells and 41 unused wires.
+<suppressed ~42 debug messages>
+
+4.52.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$347' from module `\zbt_top'.
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [0].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [1].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [2].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [3].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [4].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [5].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [6].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [7].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [8].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [9].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [10].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [11].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [12].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [13].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [14].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [15].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [16].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [17].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [18].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [19].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [20].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [21].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [22].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [23].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [24].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [25].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [26].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [27].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [28].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [29].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [30].
+  Removing unused output signal $auto$ghdl.cc:806:import_module$83 [31].
+
+4.52.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state$347' from module `\zbt_top' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00000000000000000000000000000000 -> -------------------1
+  00000000000000000000000000010000 -> ------------------1-
+  00000000000000000000000000001000 -> -----------------1--
+  00000000000000000000000000000100 -> ----------------1---
+  00000000000000000000000000001100 -> ---------------1----
+  00000000000000000000000000000010 -> --------------1-----
+  00000000000000000000000000010010 -> -------------1------
+  00000000000000000000000000001010 -> ------------1-------
+  00000000000000000000000000000110 -> -----------1--------
+  00000000000000000000000000001110 -> ----------1---------
+  00000000000000000000000000000001 -> ---------1----------
+  00000000000000000000000000010001 -> --------1-----------
+  00000000000000000000000000001001 -> -------1------------
+  00000000000000000000000000000101 -> ------1-------------
+  00000000000000000000000000001101 -> -----1--------------
+  00000000000000000000000000000011 -> ----1---------------
+  00000000000000000000000000010011 -> ---1----------------
+  00000000000000000000000000001011 -> --1-----------------
+  00000000000000000000000000000111 -> -1------------------
+  00000000000000000000000000001111 -> 1-------------------
+
+4.52.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state$347' from module `zbt_top':
+-------------------------------------
+
+  Information on FSM $fsm$\state$347 (\state):
+
+  Number of input signals:    6
+  Number of output signals:  20
+  Number of state bits:      20
+
+  Input signals:
+    0: \wb_we_i
+    1: \wb_tga_i
+    2: $auto$ghdl.cc:806:import_module$1
+    3: $auto$opt_reduce.cc:134:opt_pmux$346
+    4: $auto$ghdl.cc:806:import_module$20
+    5: $auto$ghdl.cc:806:import_module$135
+
+  Output signals:
+    0: $auto$ghdl.cc:806:import_module$12
+    1: $auto$ghdl.cc:806:import_module$101
+    2: $auto$ghdl.cc:806:import_module$103
+    3: $auto$ghdl.cc:806:import_module$106
+    4: $auto$ghdl.cc:806:import_module$107
+    5: $auto$ghdl.cc:806:import_module$109
+    6: $auto$ghdl.cc:806:import_module$111
+    7: $auto$ghdl.cc:806:import_module$113
+    8: $auto$ghdl.cc:806:import_module$115
+    9: $auto$ghdl.cc:806:import_module$117
+   10: $auto$ghdl.cc:806:import_module$119
+   11: $auto$ghdl.cc:806:import_module$121
+   12: $auto$ghdl.cc:806:import_module$123
+   13: $auto$ghdl.cc:806:import_module$125
+   14: $auto$ghdl.cc:806:import_module$129
+   15: $auto$ghdl.cc:806:import_module$154
+   16: $auto$ghdl.cc:806:import_module$158
+   17: $auto$ghdl.cc:806:import_module$159
+   18: $auto$ghdl.cc:806:import_module$161
+   19: $auto$ghdl.cc:806:import_module$175
+
+  State encoding:
+    0: 20'-------------------1  <RESET STATE>
+    1: 20'------------------1-
+    2: 20'-----------------1--
+    3: 20'----------------1---
+    4: 20'---------------1----
+    5: 20'--------------1-----
+    6: 20'-------------1------
+    7: 20'------------1-------
+    8: 20'-----------1--------
+    9: 20'----------1---------
+   10: 20'---------1----------
+   11: 20'--------1-----------
+   12: 20'-------1------------
+   13: 20'------1-------------
+   14: 20'-----1--------------
+   15: 20'----1---------------
+   16: 20'---1----------------
+   17: 20'--1-----------------
+   18: 20'-1------------------
+   19: 20'1-------------------
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 6'---0--   ->     0 20'00001000000000000000
+      1:     0 6'0--1-1   ->     9 20'00001000000000000000
+      2:     0 6'1--1--   ->    10 20'00001000000000000000
+      3:     0 6'0--1-0   ->    13 20'00001000000000000000
+      4:     1 6'-0----   ->     0 20'00000010000000000000
+      5:     1 6'-1----   ->    11 20'00000010000000000000
+      6:     2 6'-0----   ->     0 20'00000000000001000000
+      7:     2 6'-1----   ->    12 20'00000000000001000000
+      8:     3 6'--0---   ->     0 20'00100000000000000000
+      9:     4 6'-0----   ->     0 20'00000000010000000000
+     10:     4 6'-1----   ->    14 20'00000000010000000000
+     11:     5 6'---0--   ->     0 20'00000000000000001000
+     12:     5 6'---1--   ->    15 20'00000000000000001000
+     13:     6 6'------   ->    16 20'00000000000000000010
+     14:     7 6'-0----   ->     0 20'00000000000100000000
+     15:     7 6'-1----   ->    18 20'00000000000100000000
+     16:     8 6'-0----   ->     0 20'00000000000000010000
+     17:     8 6'-1----   ->    18 20'00000000000000010000
+     18:     9 6'-0----   ->     0 20'00000000100000000000
+     19:     9 6'-1----   ->    19 20'00000000100000000000
+     20:    10 6'---0--   ->     0 20'00000000000000000001
+     21:    10 6'---1--   ->     5 20'00000000000000000001
+     22:    11 6'---0--   ->     0 20'00000100000000000000
+     23:    11 6'---10-   ->     6 20'00000100000000000000
+     24:    11 6'---11-   ->     9 20'00000100000000000000
+     25:    12 6'-0----   ->     0 20'00000000000010000000
+     26:    12 6'-1----   ->     7 20'00000000000010000000
+     27:    13 6'-0----   ->     0 20'01000000000000000000
+     28:    13 6'-1----   ->     8 20'01000000000000000000
+     29:    14 6'--0---   ->     0 20'10000000000000000000
+     30:    15 6'------   ->     3 20'00010000000000000000
+     31:    16 6'--0---   ->     0 20'00000000000000000100
+     32:    17 6'-0----   ->     0 20'00000000001000000000
+     33:    17 6'-1----   ->     4 20'00000000001000000000
+     34:    18 6'-0----   ->     0 20'00000000000000100000
+     35:    18 6'-1--1-   ->     2 20'00000000000000100000
+     36:    18 6'-1--0-   ->    17 20'00000000000000100000
+     37:    19 6'-0----   ->     0 20'00000001000000000000
+     38:    19 6'-1----   ->     1 20'00000001000000000000
+
+-------------------------------------
+
+4.52.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state$347' from module `\zbt_top'.
+
+4.53. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell zbt_top.$auto$fsm_map.cc:77:implement_pattern_cache$436 ($eq).
+Removed top 1 bits (of 3) from port B of cell zbt_top.$auto$fsm_map.cc:77:implement_pattern_cache$415 ($eq).
+Removed top 1 bits (of 3) from port B of cell zbt_top.\237 ($eq).
+Removed top 15 bits (of 18) from port B of cell zbt_top.\318 ($add).
+Removed top 1 bits (of 3) from port B of cell zbt_top.\322 ($ne).
+Removed top 15 bits (of 18) from port B of cell zbt_top.\383 ($add).
+
+4.54. Executing PEEPOPT pass (run peephole optimizers).
+
+4.55. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 1 unused cells and 24 unused wires.
+<suppressed ~2 debug messages>
+
+4.56. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~13 debug messages>
+
+4.57. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.58. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.59. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.60. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.61. Executing OPT_SHARE pass.
+
+4.62. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on \681 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$130, Q = \wb_ack_o).
+Adding EN signal on \640 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$189, Q = \SRAM_ADV_LD_B).
+Adding EN signal on \639 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$188, Q = \SRAM_FLASH_WE_B).
+Adding EN signal on \638 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$187, Q = \SRAM_CS_B).
+Adding EN signal on \636 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$192, Q = \sram_oe_b2).
+Adding EN signal on \630 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$191, Q = \zbt_addr2).
+Adding EN signal on \629 ($adff) from module zbt_top (D = $auto$ghdl.cc:806:import_module$190, Q = \zbt_addr).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.63. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 11 unused wires.
+<suppressed ~1 debug messages>
+
+4.64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~7 debug messages>
+
+4.65. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.66. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.67. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.68. Executing OPT_SHARE pass.
+
+4.69. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.72. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.73. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.74. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.75. Executing OPT_SHARE pass.
+
+4.76. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 3
+
+4.79. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.80. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.81. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.82. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.83. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.84. Executing OPT_SHARE pass.
+
+4.85. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.86. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.87. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.88. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.89. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.90. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.91. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.92. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.93. Executing OPT_SHARE pass.
+
+4.94. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.95. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=138, #remove=0, time=0.12 sec.]
+
+4.96. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.97. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.98. Executing WREDUCE pass (reducing word size of cells).
+
+4.99. Executing PEEPOPT pass (run peephole optimizers).
+
+4.100. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.101. Executing DEMUXMAP pass.
+
+4.102. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                207
+   Number of wire bits:            648
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $add                            2
+     $adff                           9
+     $adffe                          7
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.103. Executing RS_DSP_MULTADD pass.
+
+4.104. Executing WREDUCE pass (reducing word size of cells).
+
+4.105. Executing RS_DSP_MACC pass.
+
+4.106. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.107. Executing TECHMAP pass (map to technology primitives).
+
+4.107.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.107.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.108. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                207
+   Number of wire bits:            648
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $add                            2
+     $adff                           9
+     $adffe                          7
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.109. Executing TECHMAP pass (map to technology primitives).
+
+4.109.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.109.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.110. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                207
+   Number of wire bits:            648
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $add                            2
+     $adff                           9
+     $adffe                          7
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.111. Executing TECHMAP pass (map to technology primitives).
+
+4.111.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.111.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.112. Executing TECHMAP pass (map to technology primitives).
+
+4.112.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.112.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.113. Executing TECHMAP pass (map to technology primitives).
+
+4.113.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Generating RTLIL representation for module `\$__RS_MUL10X9'.
+Successfully finished Verilog frontend.
+
+4.113.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.114. Executing RS_DSP_SIMD pass.
+
+4.115. Executing TECHMAP pass (map to technology primitives).
+
+4.115.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_10x9x32_cfg_params'.
+Successfully finished Verilog frontend.
+
+4.115.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.116. Executing TECHMAP pass (map to technology primitives).
+
+4.116.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Successfully finished Verilog frontend.
+
+4.116.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+4.117. Executing rs_pack_dsp_regs pass.
+
+4.118. Executing RS_DSP_IO_REGS pass.
+
+4.119. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                207
+   Number of wire bits:            648
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $add                            2
+     $adff                           9
+     $adffe                          7
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.120. Executing TECHMAP pass (map to technology primitives).
+
+4.120.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Successfully finished Verilog frontend.
+
+4.120.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~14 debug messages>
+
+4.121. Executing TECHMAP pass (map to technology primitives).
+
+4.121.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Successfully finished Verilog frontend.
+
+4.121.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+4.122. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                207
+   Number of wire bits:            648
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $add                            2
+     $adff                           9
+     $adffe                          7
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.123. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module zbt_top:
+  creating $macc model for \318 ($add).
+  creating $macc model for \383 ($add).
+  creating $alu model for $macc \383.
+  creating $alu model for $macc \318.
+  creating $alu cell for \318: $auto$alumacc.cc:485:replace_alu$482
+  creating $alu cell for \383: $auto$alumacc.cc:485:replace_alu$485
+  created 2 $alu and 0 $macc cells.
+
+4.124. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.125. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.126. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.127. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.128. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.129. Executing OPT_SHARE pass.
+
+4.130. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.131. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.132. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.133. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                211
+   Number of wire bits:            720
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $adff                           9
+     $adffe                          7
+     $alu                            2
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.134. Executing MEMORY pass.
+
+4.134.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.134.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.134.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.134.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.134.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.134.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.134.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.134.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.134.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.134.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.135. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                211
+   Number of wire bits:            720
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                173
+     $adff                           9
+     $adffe                          7
+     $alu                            2
+     $and                           31
+     $eq                             8
+     $logic_not                      1
+     $mux                           51
+     $ne                             2
+     $not                            7
+     $or                            28
+     $pmux                           8
+     $reduce_bool                    7
+     $reduce_or                     12
+
+4.136. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~52 debug messages>
+
+4.137. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.138. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.139. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.140. Executing Rs_BRAM_Split pass.
+
+4.141. Executing TECHMAP pass (map to technology primitives).
+
+4.141.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new_version.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new_version.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+4.141.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+4.142. Executing TECHMAP pass (map to technology primitives).
+
+4.142.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new_version.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new_version.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+4.142.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.143. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+4.144. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.145. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.146. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~45 debug messages>
+
+4.147. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.148. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.149. Executing OPT_SHARE pass.
+
+4.150. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=16, #solve=0, #remove=0, time=0.00 sec.]
+
+4.151. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.152. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.153. Executing PMUXTREE pass.
+
+4.154. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~59 debug messages>
+
+4.155. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.156. Executing TECHMAP pass (map to technology primitives).
+
+4.156.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.156.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+4.156.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~600 debug messages>
+
+4.157. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                455
+   Number of wire bits:           3814
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                833
+     $_AND_                        151
+     $_DFFE_PP0P_                   38
+     $_DFFE_PP1P_                    3
+     $_DFF_PP0_                    128
+     $_DFF_PP1_                      5
+     $_MUX_                        203
+     $_NOT_                         53
+     $_OR_                         153
+     $_XOR_                         99
+
+4.158. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~239 debug messages>
+
+4.159. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~81 debug messages>
+Removed a total of 27 cells.
+
+4.160. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.161. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.162. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.163. Executing OPT_SHARE pass.
+
+4.164. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.165. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 42 unused cells and 211 unused wires.
+<suppressed ~43 debug messages>
+
+4.166. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.167. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.168. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.169. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.170. Executing OPT_SHARE pass.
+
+4.171. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.172. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.173. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.174. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~77 debug messages>
+
+4.175. Executing TECHMAP pass (map to technology primitives).
+
+4.175.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.175.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.176. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                262
+   Number of wire bits:            784
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                542
+     $_AND_                        153
+     $_DFFE_PP0P_                   36
+     $_DFFE_PP1P_                    3
+     $_DFF_PP0_                    128
+     $_DFF_PP1_                      5
+     $_MUX_                         77
+     $_NOT_                         25
+     $_OR_                          85
+     $_XOR_                         30
+
+4.177. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.178. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.179. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.180. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.181. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.182. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.183. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.184. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.185. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.186. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.187. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.188. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.189. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.190. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.191. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.192. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.193. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.194. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.195. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.196. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.197. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.198. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.199. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=136, #remove=0, time=0.05 sec.]
+
+4.200. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.201. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.202. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                261
+   Number of wire bits:            783
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                542
+     $_AND_                        153
+     $_DFFE_PP0P_                   36
+     $_DFFE_PP1P_                    3
+     $_DFF_PP0_                    128
+     $_DFF_PP1_                      5
+     $_MUX_                         77
+     $_NOT_                         25
+     $_OR_                          85
+     $_XOR_                         30
+
+   Number of Generic REGs:          172
+
+ABC-DFF iteration : 1
+
+4.203. Executing ABC pass (technology mapping using ABC).
+
+4.203.1. Summary of detected clock domains:
+  215 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$477, arst=\reset, srst={ }
+  7 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$462, arst=\reset, srst={ }
+  1 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$474, arst=\reset, srst={ }
+  2 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$468, arst=\reset, srst={ }
+  4 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$471, arst=\reset, srst={ }
+  306 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+  7 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$465, arst=\reset, srst={ }
+
+  #logic partitions = 7
+
+4.203.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 306 gates and 359 wires to a netlist network with 51 inputs and 188 outputs (dfl=1).
+
+4.203.2.1. Executing ABC.
+[Time = 0.11 sec.]
+
+4.203.3. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$477, asynchronously reset by \reset
+Extracted 215 gates and 238 wires to a netlist network with 23 inputs and 35 outputs (dfl=1).
+
+4.203.3.1. Executing ABC.
+[Time = 0.07 sec.]
+
+4.203.4. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$462, asynchronously reset by \reset
+Extracted 7 gates and 16 wires to a netlist network with 9 inputs and 2 outputs (dfl=1).
+
+4.203.4.1. Executing ABC.
+[Time = 0.06 sec.]
+
+4.203.5. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$465, asynchronously reset by \reset
+Extracted 7 gates and 13 wires to a netlist network with 6 inputs and 2 outputs (dfl=1).
+
+4.203.5.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.203.6. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$471, asynchronously reset by \reset
+Extracted 4 gates and 9 wires to a netlist network with 5 inputs and 3 outputs (dfl=1).
+
+4.203.6.1. Executing ABC.
+[Time = 0.06 sec.]
+
+4.203.7. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$468, asynchronously reset by \reset
+Extracted 2 gates and 5 wires to a netlist network with 3 inputs and 2 outputs (dfl=1).
+
+4.203.7.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.203.8. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, asynchronously reset by \reset
+Extracted 1 gates and 2 wires to a netlist network with 1 inputs and 1 outputs (dfl=1).
+
+4.203.8.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.204. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~36 debug messages>
+
+4.205. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.206. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.207. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.208. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.209. Executing OPT_SHARE pass.
+
+4.210. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $abc$2290$auto$blifparse.cc:362:parse_blif$2292 ($_DFFE_PP0P_) from module zbt_top (D = $abc$2290$new_n173_, Q = $abc$2290$lo01).
+Adding EN signal on $abc$2290$auto$blifparse.cc:362:parse_blif$2291 ($_DFFE_PP0P_) from module zbt_top (D = $abc$2290$new_n171_, Q = $abc$2290$lo00).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.211. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 2 unused cells and 758 unused wires.
+<suppressed ~3 debug messages>
+
+4.212. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.213. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.214. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.215. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.216. Executing OPT_SHARE pass.
+
+4.217. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.218. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.219. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+ABC-DFF iteration : 2
+
+4.220. Executing ABC pass (technology mapping using ABC).
+
+4.220.1. Summary of detected clock domains:
+  5 cells in clk=\clk, en=$auto$opt_dff.cc:220:make_patterns_logic$2583, arst=\reset, srst={ }
+  5 cells in clk=\clk, en=$abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, arst=\reset, srst={ }
+  4 cells in clk=\clk, en=$abc$2571$auto$opt_dff.cc:195:make_patterns_logic$468, arst=\reset, srst={ }
+  4 cells in clk=\clk, en=$abc$2564$auto$opt_dff.cc:195:make_patterns_logic$471, arst=\reset, srst={ }
+  8 cells in clk=\clk, en=$abc$2556$auto$opt_dff.cc:195:make_patterns_logic$465, arst=\reset, srst={ }
+  8 cells in clk=\clk, en=$abc$2547$auto$opt_dff.cc:195:make_patterns_logic$462, arst=\reset, srst={ }
+  216 cells in clk=\clk, en=$abc$2290$auto$opt_dff.cc:195:make_patterns_logic$477, arst=\reset, srst={ }
+  280 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+
+  #logic partitions = 8
+
+4.220.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 280 gates and 331 wires to a netlist network with 51 inputs and 193 outputs (dfl=1).
+
+4.220.2.1. Executing ABC.
+[Time = 0.08 sec.]
+
+4.220.3. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2290$auto$opt_dff.cc:195:make_patterns_logic$477, asynchronously reset by \reset
+Extracted 216 gates and 238 wires to a netlist network with 22 inputs and 33 outputs (dfl=1).
+
+4.220.3.1. Executing ABC.
+[Time = 0.07 sec.]
+
+4.220.4. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2556$auto$opt_dff.cc:195:make_patterns_logic$465, asynchronously reset by \reset
+Extracted 8 gates and 16 wires to a netlist network with 8 inputs and 3 outputs (dfl=1).
+
+4.220.4.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.220.5. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2547$auto$opt_dff.cc:195:make_patterns_logic$462, asynchronously reset by \reset
+Extracted 8 gates and 17 wires to a netlist network with 9 inputs and 2 outputs (dfl=1).
+
+4.220.5.1. Executing ABC.
+[Time = 0.06 sec.]
+
+4.220.6. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:220:make_patterns_logic$2583, asynchronously reset by \reset
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 3 outputs (dfl=1).
+
+4.220.6.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.220.7. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, asynchronously reset by \reset
+Extracted 5 gates and 9 wires to a netlist network with 4 inputs and 3 outputs (dfl=1).
+
+4.220.7.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.220.8. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2571$auto$opt_dff.cc:195:make_patterns_logic$468, asynchronously reset by \reset
+Extracted 4 gates and 7 wires to a netlist network with 3 inputs and 3 outputs (dfl=1).
+
+4.220.8.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.220.9. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2564$auto$opt_dff.cc:195:make_patterns_logic$471, asynchronously reset by \reset
+Extracted 4 gates and 7 wires to a netlist network with 3 inputs and 3 outputs (dfl=1).
+
+4.220.9.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.221. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~2 debug messages>
+
+4.222. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.223. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.224. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.225. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.226. Executing OPT_SHARE pass.
+
+4.227. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.228. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 917 unused wires.
+<suppressed ~1 debug messages>
+
+4.229. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+4.230. Executing ABC pass (technology mapping using ABC).
+
+4.230.1. Summary of detected clock domains:
+  4 cells in clk=\clk, en=$abc$2564$auto$opt_dff.cc:195:make_patterns_logic$471, arst=\reset, srst={ }
+  4 cells in clk=\clk, en=$abc$2571$auto$opt_dff.cc:195:make_patterns_logic$468, arst=\reset, srst={ }
+  5 cells in clk=\clk, en=$abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, arst=\reset, srst={ }
+  5 cells in clk=\clk, en=$abc$3387$auto$opt_dff.cc:220:make_patterns_logic$2583, arst=\reset, srst={ }
+  8 cells in clk=\clk, en=$abc$2547$auto$opt_dff.cc:195:make_patterns_logic$462, arst=\reset, srst={ }
+  8 cells in clk=\clk, en=$abc$2556$auto$opt_dff.cc:195:make_patterns_logic$465, arst=\reset, srst={ }
+  216 cells in clk=\clk, en=$abc$2290$auto$opt_dff.cc:195:make_patterns_logic$477, arst=\reset, srst={ }
+  280 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+
+  #logic partitions = 8
+
+4.230.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 280 gates and 331 wires to a netlist network with 51 inputs and 193 outputs (dfl=2).
+
+4.230.2.1. Executing ABC.
+[Time = 0.09 sec.]
+
+4.230.3. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2290$auto$opt_dff.cc:195:make_patterns_logic$477, asynchronously reset by \reset
+Extracted 216 gates and 238 wires to a netlist network with 22 inputs and 33 outputs (dfl=2).
+
+4.230.3.1. Executing ABC.
+[Time = 0.09 sec.]
+
+4.230.4. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2547$auto$opt_dff.cc:195:make_patterns_logic$462, asynchronously reset by \reset
+Extracted 8 gates and 17 wires to a netlist network with 9 inputs and 2 outputs (dfl=2).
+
+4.230.4.1. Executing ABC.
+[Time = 0.06 sec.]
+
+4.230.5. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2556$auto$opt_dff.cc:195:make_patterns_logic$465, asynchronously reset by \reset
+Extracted 8 gates and 16 wires to a netlist network with 8 inputs and 3 outputs (dfl=2).
+
+4.230.5.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.230.6. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, asynchronously reset by \reset
+Extracted 5 gates and 9 wires to a netlist network with 4 inputs and 3 outputs (dfl=2).
+
+4.230.6.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.230.7. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$3387$auto$opt_dff.cc:220:make_patterns_logic$2583, asynchronously reset by \reset
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 3 outputs (dfl=2).
+
+4.230.7.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.230.8. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2564$auto$opt_dff.cc:195:make_patterns_logic$471, asynchronously reset by \reset
+Extracted 4 gates and 7 wires to a netlist network with 3 inputs and 3 outputs (dfl=2).
+
+4.230.8.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.230.9. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2571$auto$opt_dff.cc:195:make_patterns_logic$468, asynchronously reset by \reset
+Extracted 4 gates and 7 wires to a netlist network with 3 inputs and 3 outputs (dfl=2).
+
+4.230.9.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.231. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~2 debug messages>
+
+4.232. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.233. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.234. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.235. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.236. Executing OPT_SHARE pass.
+
+4.237. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.238. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 1 unused cells and 920 unused wires.
+<suppressed ~2 debug messages>
+
+4.239. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.240. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.241. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.242. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.243. Executing OPT_SHARE pass.
+
+4.244. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.245. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.246. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+ABC-DFF iteration : 4
+
+4.247. Executing ABC pass (technology mapping using ABC).
+
+4.247.1. Summary of detected clock domains:
+  5 cells in clk=\clk, en=$abc$2571$auto$opt_dff.cc:195:make_patterns_logic$468, arst=\reset, srst={ }
+  9 cells in clk=\clk, en=$abc$2564$auto$opt_dff.cc:195:make_patterns_logic$471, arst=\reset, srst={ }
+  5 cells in clk=\clk, en=$abc$3387$auto$opt_dff.cc:220:make_patterns_logic$2583, arst=\reset, srst={ }
+  4 cells in clk=\clk, en=$abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, arst=\reset, srst={ }
+  9 cells in clk=\clk, en=$abc$2556$auto$opt_dff.cc:195:make_patterns_logic$465, arst=\reset, srst={ }
+  17 cells in clk=\clk, en=$abc$2547$auto$opt_dff.cc:195:make_patterns_logic$462, arst=\reset, srst={ }
+  200 cells in clk=\clk, en=$abc$2290$auto$opt_dff.cc:195:make_patterns_logic$477, arst=\reset, srst={ }
+  262 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+
+  #logic partitions = 8
+
+4.247.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 262 gates and 328 wires to a netlist network with 66 inputs and 210 outputs (dfl=2).
+
+4.247.2.1. Executing ABC.
+[Time = 0.08 sec.]
+
+4.247.3. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2290$auto$opt_dff.cc:195:make_patterns_logic$477, asynchronously reset by \reset
+Extracted 200 gates and 237 wires to a netlist network with 37 inputs and 47 outputs (dfl=2).
+
+4.247.3.1. Executing ABC.
+[Time = 0.08 sec.]
+
+4.247.4. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2547$auto$opt_dff.cc:195:make_patterns_logic$462, asynchronously reset by \reset
+Extracted 17 gates and 29 wires to a netlist network with 12 inputs and 3 outputs (dfl=2).
+
+4.247.4.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.247.5. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2564$auto$opt_dff.cc:195:make_patterns_logic$471, asynchronously reset by \reset
+Extracted 9 gates and 16 wires to a netlist network with 7 inputs and 4 outputs (dfl=2).
+
+4.247.5.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.247.6. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2556$auto$opt_dff.cc:195:make_patterns_logic$465, asynchronously reset by \reset
+Extracted 9 gates and 17 wires to a netlist network with 8 inputs and 3 outputs (dfl=2).
+
+4.247.6.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.247.7. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$2571$auto$opt_dff.cc:195:make_patterns_logic$468, asynchronously reset by \reset
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 4 outputs (dfl=2).
+
+4.247.7.1. Executing ABC.
+[Time = 0.06 sec.]
+
+4.247.8. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$3387$auto$opt_dff.cc:220:make_patterns_logic$2583, asynchronously reset by \reset
+Extracted 5 gates and 10 wires to a netlist network with 5 inputs and 3 outputs (dfl=2).
+
+4.247.8.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.247.9. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$1768$auto$opt_dff.cc:195:make_patterns_logic$474, asynchronously reset by \reset
+Extracted 4 gates and 7 wires to a netlist network with 3 inputs and 3 outputs (dfl=2).
+
+4.247.9.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.248. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.249. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.250. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.251. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.252. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.253. Executing OPT_SHARE pass.
+
+4.254. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.255. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 937 unused wires.
+<suppressed ~1 debug messages>
+
+4.256. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+select with DFL2 synthesis (thresh-logic=0.920000, thresh_dff=0.980000)
+
+4.257. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 1 inverters.
+   Number of Generic REGs:          172
+
+ABC-DFF iteration : 1
+
+4.258. Executing ABC pass (technology mapping using ABC).
+
+4.258.1. Summary of detected clock domains:
+  215 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$477, arst=\reset, srst={ }
+  7 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$462, arst=\reset, srst={ }
+  1 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$474, arst=\reset, srst={ }
+  2 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$468, arst=\reset, srst={ }
+  4 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$471, arst=\reset, srst={ }
+  306 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+  7 cells in clk=\clk, en=$auto$opt_dff.cc:195:make_patterns_logic$465, arst=\reset, srst={ }
+
+  #logic partitions = 7
+
+4.258.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 306 gates and 359 wires to a netlist network with 51 inputs and 188 outputs (dfl=1).
+
+4.258.2.1. Executing ABC.
+[Time = 0.09 sec.]
+
+4.258.3. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$477, asynchronously reset by \reset
+Extracted 215 gates and 238 wires to a netlist network with 23 inputs and 35 outputs (dfl=1).
+
+4.258.3.1. Executing ABC.
+[Time = 0.07 sec.]
+
+4.258.4. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$462, asynchronously reset by \reset
+Extracted 7 gates and 16 wires to a netlist network with 9 inputs and 2 outputs (dfl=1).
+
+4.258.4.1. Executing ABC.
+[Time = 0.06 sec.]
+
+4.258.5. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$465, asynchronously reset by \reset
+Extracted 7 gates and 13 wires to a netlist network with 6 inputs and 2 outputs (dfl=1).
+
+4.258.5.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.258.6. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$471, asynchronously reset by \reset
+Extracted 4 gates and 9 wires to a netlist network with 5 inputs and 3 outputs (dfl=1).
+
+4.258.6.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.258.7. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $auto$opt_dff.cc:195:make_patterns_logic$468, asynchronously reset by \reset
+Extracted 2 gates and 5 wires to a netlist network with 3 inputs and 2 outputs (dfl=1).
+
+4.258.7.1. Executing ABC.
+[Time = 0.05 sec.]
+
+4.258.8. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, enabled by $abc$5021$auto$opt_dff.cc:195:make_patterns_logic$474, asynchronously reset by \reset
+Extracted 1 gates and 2 wires to a netlist network with 1 inputs and 1 outputs (dfl=1).
+
+4.258.8.1. Executing ABC.
+[Time = 0.04 sec.]
+
+4.259. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.260. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~36 debug messages>
+
+4.261. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 754 unused wires.
+<suppressed ~1 debug messages>
+
+4.262. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.263. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.264. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.265. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $abc$5543$auto$blifparse.cc:362:parse_blif$5545 ($_DFFE_PP0P_) from module zbt_top (D = $abc$5543$new_n173_, Q = \SRAM_FLASH_A2).
+Adding EN signal on $abc$5543$auto$blifparse.cc:362:parse_blif$5544 ($_DFFE_PP0P_) from module zbt_top (D = $abc$5543$new_n171_, Q = \SRAM_FLASH_A1).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.266. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.267. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 2 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
+
+4.268. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 2
+
+4.269. Executing ABC pass (technology mapping using ABC).
+
+4.269.1. Summary of detected clock domains:
+  572 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+
+  #logic partitions = 1
+
+4.269.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 572 gates and 639 wires to a netlist network with 67 inputs and 216 outputs (dfl=1).
+
+4.269.2.1. Executing ABC.
+[Time = 0.09 sec.]
+
+4.270. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.271. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~21 debug messages>
+
+4.272. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 921 unused wires.
+<suppressed ~1 debug messages>
+
+4.273. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.274. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.275. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.276. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5964 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1124_, Q = \zbt_addr2 [2]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5963 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1119_, Q = \zbt_addr2 [3]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5962 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1112_, Q = \zbt_addr2 [4]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5961 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1105_, Q = \zbt_addr2 [5]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5960 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1096_, Q = \zbt_addr2 [6]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5959 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1089_, Q = \zbt_addr2 [7]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5958 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1078_, Q = \zbt_addr2 [8]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5957 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1071_, Q = \zbt_addr2 [9]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5956 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1062_, Q = \zbt_addr2 [10]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5955 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1055_, Q = \zbt_addr2 [11]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5954 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1044_, Q = \zbt_addr2 [12]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5953 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1037_, Q = \zbt_addr2 [13]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5952 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1028_, Q = \zbt_addr2 [14]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5951 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1021_, Q = \zbt_addr2 [15]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5950 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1008_, Q = \zbt_addr2 [16]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5949 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n1001_, Q = \zbt_addr2 [17]).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5948 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n966_, Q = \SRAM_FLASH_A3).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5947 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n963_, Q = \SRAM_FLASH_A4).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5946 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n960_, Q = \SRAM_FLASH_A5).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5945 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n957_, Q = \SRAM_FLASH_A6).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5944 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n954_, Q = \SRAM_FLASH_A7).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5943 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n951_, Q = \SRAM_FLASH_A8).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5942 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n948_, Q = \SRAM_FLASH_A9).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5941 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n945_, Q = \SRAM_FLASH_A10).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5940 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n942_, Q = \SRAM_FLASH_A11).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5939 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n939_, Q = \SRAM_FLASH_A12).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5938 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n936_, Q = \SRAM_FLASH_A13).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5937 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n933_, Q = \SRAM_FLASH_A14).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5936 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n930_, Q = \SRAM_FLASH_A15).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5935 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n927_, Q = \SRAM_FLASH_A16).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5934 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n924_, Q = \SRAM_FLASH_A17).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5933 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n921_, Q = \SRAM_FLASH_A18).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5932 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n917_, Q = \wb_ack_o).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5931 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n884_, Q = \SRAM_ADV_LD_B).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5930 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n878_, Q = $abc$5817$lo0).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5927 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n848_, Q = \SRAM_FLASH_A1).
+Adding EN signal on $abc$5925$auto$blifparse.cc:362:parse_blif$5926 ($_DFF_PP0_) from module zbt_top (D = $abc$5925$new_n846_, Q = \SRAM_FLASH_A2).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.277. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.278. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 37 unused cells and 37 unused wires.
+<suppressed ~38 debug messages>
+
+4.279. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 3
+
+4.280. Executing ABC pass (technology mapping using ABC).
+
+4.280.1. Summary of detected clock domains:
+  555 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+
+  #logic partitions = 1
+
+4.280.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 555 gates and 622 wires to a netlist network with 67 inputs and 216 outputs (dfl=2).
+
+4.280.2.1. Executing ABC.
+[Time = 0.14 sec.]
+
+4.281. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.282. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.283. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 904 unused wires.
+<suppressed ~1 debug messages>
+
+4.284. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.285. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.286. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.287. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6909 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1111_, Q = \SRAM_FLASH_A10).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6908 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1107_, Q = \SRAM_FLASH_A11).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6907 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1103_, Q = \SRAM_FLASH_A12).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6906 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1099_, Q = \SRAM_FLASH_A13).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6905 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1095_, Q = \SRAM_FLASH_A14).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6904 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1091_, Q = \SRAM_FLASH_A15).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6903 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1087_, Q = \SRAM_FLASH_A16).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6902 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1083_, Q = \SRAM_FLASH_A17).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6901 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1081_, Q = \SRAM_FLASH_A18).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6897 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1069_, Q = \SRAM_FLASH_A4).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6896 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1066_, Q = \SRAM_FLASH_A5).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6895 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1062_, Q = \SRAM_FLASH_A6).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6894 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1058_, Q = \SRAM_FLASH_A7).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6893 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1054_, Q = \SRAM_FLASH_A8).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6892 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1050_, Q = \SRAM_FLASH_A9).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6891 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1046_, Q = \wb_ack_o).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6890 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1012_, Q = \zbt_addr2 [10]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6889 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n1004_, Q = \zbt_addr2 [11]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6888 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n996_, Q = \zbt_addr2 [12]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6887 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n988_, Q = \zbt_addr2 [13]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6886 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n980_, Q = \zbt_addr2 [14]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6885 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n972_, Q = \zbt_addr2 [15]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6884 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n964_, Q = \zbt_addr2 [16]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6883 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n956_, Q = \zbt_addr2 [17]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6881 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n922_, Q = \zbt_addr2 [3]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6880 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n914_, Q = \zbt_addr2 [4]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6879 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n906_, Q = \zbt_addr2 [5]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6878 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n898_, Q = \zbt_addr2 [6]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6877 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n890_, Q = \zbt_addr2 [7]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6876 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n882_, Q = \zbt_addr2 [8]).
+Adding EN signal on $abc$6874$auto$blifparse.cc:362:parse_blif$6875 ($_DFF_PP0_) from module zbt_top (D = $abc$6874$new_n874_, Q = \zbt_addr2 [9]).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.288. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.289. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 31 unused cells and 31 unused wires.
+<suppressed ~32 debug messages>
+
+4.290. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+ABC-DFF iteration : 4
+
+4.291. Executing ABC pass (technology mapping using ABC).
+
+4.291.1. Summary of detected clock domains:
+  546 cells in clk=\clk, en={ }, arst=\reset, srst={ }
+
+  #logic partitions = 1
+
+4.291.2. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk, asynchronously reset by \reset
+Extracted 546 gates and 613 wires to a netlist network with 67 inputs and 216 outputs (dfl=2).
+
+4.291.2.1. Executing ABC.
+[Time = 0.13 sec.]
+
+4.292. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.293. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.294. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 895 unused wires.
+<suppressed ~1 debug messages>
+
+4.295. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.296. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.297. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.298. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7827 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1094_, Q = \SRAM_FLASH_A10).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7826 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1090_, Q = \SRAM_FLASH_A11).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7825 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1086_, Q = \SRAM_FLASH_A12).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7824 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1082_, Q = \SRAM_FLASH_A13).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7823 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1078_, Q = \SRAM_FLASH_A14).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7822 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1074_, Q = \SRAM_FLASH_A15).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7821 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1070_, Q = \SRAM_FLASH_A16).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7820 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1066_, Q = \SRAM_FLASH_A17).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7819 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1064_, Q = \SRAM_FLASH_A18).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7818 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1062_, Q = \SRAM_FLASH_A4).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7817 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1059_, Q = \SRAM_FLASH_A5).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7816 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1055_, Q = \SRAM_FLASH_A6).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7815 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1051_, Q = \SRAM_FLASH_A7).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7814 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1047_, Q = \SRAM_FLASH_A8).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7813 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1043_, Q = \SRAM_FLASH_A9).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7812 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1039_, Q = \wb_ack_o).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7811 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n1006_, Q = \zbt_addr2 [10]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7810 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n998_, Q = \zbt_addr2 [11]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7809 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n990_, Q = \zbt_addr2 [12]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7808 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n982_, Q = \zbt_addr2 [13]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7807 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n974_, Q = \zbt_addr2 [14]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7806 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n966_, Q = \zbt_addr2 [15]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7805 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n958_, Q = \zbt_addr2 [16]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7804 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n950_, Q = \zbt_addr2 [17]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7803 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n922_, Q = \zbt_addr2 [3]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7802 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n914_, Q = \zbt_addr2 [4]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7801 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n906_, Q = \zbt_addr2 [5]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7800 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n898_, Q = \zbt_addr2 [6]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7799 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n890_, Q = \zbt_addr2 [7]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7798 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n882_, Q = \zbt_addr2 [8]).
+Adding EN signal on $abc$7796$auto$blifparse.cc:362:parse_blif$7797 ($_DFF_PP0_) from module zbt_top (D = $abc$7796$new_n875_, Q = \zbt_addr2 [9]).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.299. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.300. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 31 unused cells and 31 unused wires.
+<suppressed ~32 debug messages>
+
+4.301. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+select with DFL2 synthesis (thresh-logic=0.920000, thresh_dff=0.980000)
+
+4.302. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+select CE keep strategy (thresh_logic=0.920000, thresh_dff=0.980000, dfl=2)
+
+4.303. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.304. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.305. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.306. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.307. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.308. Executing OPT_SHARE pass.
+
+4.309. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.310. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+4.311. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.312. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.313. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.314. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.315. Executing OPT_SHARE pass.
+
+4.316. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.317. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.318. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.319. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.320. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.321. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.322. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.323. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.324. Executing OPT_SHARE pass.
+
+4.325. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.326. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.327. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.328. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.329. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.330. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.331. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.332. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.333. Executing OPT_SHARE pass.
+
+4.334. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.335. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=136, #remove=0, time=0.02 sec.]
+
+4.336. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.337. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.338. Executing BMUXMAP pass.
+
+4.339. Executing DEMUXMAP pass.
+
+4.340. Executing ABC pass (technology mapping using ABC).
+
+4.340.1. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Extracted 338 gates and 449 wires to a netlist network with 111 inputs and 112 outputs (dfl=1).
+
+4.340.1.1. Executing ABC.
+DE:   Version : 7.5
+DE:   #PIs = 111  #Luts =   152  Max Lvl =   5  Avg Lvl =   1.54  [   0.08 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 111  #Luts =   154  Max Lvl =   3  Avg Lvl =   1.43  [   0.20 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 111  #Luts =   152  Max Lvl =   3  Avg Lvl =   1.87  [   0.23 sec. at Pass 2]{map}[6]
+DE:   #PIs = 111  #Luts =   152  Max Lvl =   3  Avg Lvl =   1.87  [   0.24 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 111  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.74  [   0.28 sec. at Pass 4]{map}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.29 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.24 sec. at Pass 6]{map}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.28 sec. at Pass 7]{postMap}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.25 sec. at Pass 8]{map}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.27 sec. at Pass 9]{pushMap}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.25 sec. at Pass 10]{pushMap}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.25 sec. at Pass 10]{pushMap}[16]
+DE:   #PIs = 111  #Luts =   149  Max Lvl =   3  Avg Lvl =   1.43  [   0.21 sec. at Pass 11]{finalMap}[16]
+DE:   
+DE:   total time =    3.09 sec.
+[Time = 5.16 sec.]
+
+4.341. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.342. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.343. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.344. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.345. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.346. Executing OPT_SHARE pass.
+
+4.347. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.348. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 450 unused wires.
+<suppressed ~1 debug messages>
+
+4.349. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.350. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 6 inverters.
+
+4.351. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.352. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.353. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.354. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.355. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.356. Executing OPT_SHARE pass.
+
+4.357. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.358. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.359. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.360. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.361. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.362. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.363. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.364. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.365. Executing OPT_SHARE pass.
+
+4.366. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=0, #remove=0, time=0.00 sec.]
+
+4.367. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=172, #solve=136, #remove=0, time=0.05 sec.]
+
+4.368. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+
+4.369. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.370. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                200
+   Number of wire bits:            486
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                314
+     $_DFFE_PP0P_                   36
+     $_DFFE_PP1P_                    3
+     $_DFF_PP0_                    129
+     $_DFF_PP1_                      4
+     $lut                          142
+
+4.371. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+4.372. Executing RS_DFFSR_CONV pass.
+
+4.373. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                200
+   Number of wire bits:            486
+   Number of public wires:          87
+   Number of public wire bits:     373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                314
+     $_DFFE_PP0P_                   36
+     $_DFFE_PP1P_                    3
+     $_DFF_PP0_                    129
+     $_DFF_PP1_                      4
+     $lut                          142
+
+4.374. Executing TECHMAP pass (map to technology primitives).
+
+4.374.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.374.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+4.374.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+Using extmapper simplemap for cells of type $logic_not.
+No more expansions possible.
+<suppressed ~620 debug messages>
+
+4.375. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~3375 debug messages>
+
+4.376. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4.377. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.378. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+<suppressed ~1458 debug messages>
+Removed a total of 486 cells.
+
+4.379. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+4.380. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 1230 unused wires.
+<suppressed ~1 debug messages>
+
+4.381. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+<suppressed ~40 debug messages>
+
+4.382. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.383. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.384. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.385. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.386. Executing OPT_SHARE pass.
+
+4.387. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.388. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+4.389. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.390. Executing TECHMAP pass (map to technology primitives).
+
+4.390.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.390.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.391. Executing ABC pass (technology mapping using ABC).
+
+4.391.1. Extracting gate netlist of module `\zbt_top' to `<abc-temp-dir>/input.blif'..
+Extracted 457 gates and 571 wires to a netlist network with 112 inputs and 113 outputs (dfl=1).
+
+4.391.1.1. Executing ABC.
+DE:   Version : 7.5
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.08 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.20 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.19 sec. at Pass 2]{map}[6]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.24 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.23 sec. at Pass 4]{map}[16]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.27 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.25 sec. at Pass 6]{pushMap}[16]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.26 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.25 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 112  #Luts =   150  Max Lvl =   3  Avg Lvl =   1.42  [   0.22 sec. at Pass 8]{finalMap}[16]
+DE:   
+DE:   total time =    2.23 sec.
+[Time = 4.32 sec.]
+
+4.392. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+4.393. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.394. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \zbt_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.395. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \zbt_top.
+Performed a total of 0 changes.
+
+4.396. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\zbt_top'.
+Removed a total of 0 cells.
+
+4.397. Executing OPT_SHARE pass.
+
+4.398. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.399. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 515 unused wires.
+<suppressed ~1 debug messages>
+
+4.400. Executing OPT_EXPR pass (perform const folding).
+Optimizing module zbt_top.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.401. Executing HIERARCHY pass (managing design hierarchy).
+
+4.401.1. Analyzing design hierarchy..
+Top module:  \zbt_top
+
+4.401.2. Analyzing design hierarchy..
+Top module:  \zbt_top
+Removed 0 unused modules.
+
+4.402. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \zbt_top..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.403. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                207
+   Number of wire bits:            458
+   Number of public wires:          86
+   Number of public wire bits:     337
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                322
+     $lut                          150
+     DFFRE                         172
+
+4.404. Executing TECHMAP pass (map to technology primitives).
+
+4.404.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/02_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+4.404.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~855 debug messages>
+
+4.405. Printing statistics.
+
+=== zbt_top ===
+
+   Number of wires:                507
+   Number of wire bits:           1204
+   Number of public wires:          86
+   Number of public wire bits:     337
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                322
+     DFFRE                         172
+     LUT1                            9
+     LUT2                           44
+     LUT3                            8
+     LUT4                           12
+     LUT5                           35
+     LUT6                           42
+
+   Number of LUTs:                 150
+   Number of REGs:                 172
+   Number of CARRY ADDERs:           0
+
+5. Executing Verilog backend.
+Dumping module `\zbt_top'.
+
+6. Executing BLIF backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 8f523cb6a9, CPU: user 3.26s system 0.17s, MEM: 43.21 MB peak
+Yosys 0.18+10 (git sha1 9ae216287, gcc 11.2.1 -fPIC -Os)
+Time spent: 95% 10x abc (61 sec), 1% 71x opt_expr (0 sec), ...
