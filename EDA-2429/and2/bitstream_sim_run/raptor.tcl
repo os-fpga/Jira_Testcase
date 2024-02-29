@@ -14,37 +14,38 @@ route
 sta
 bitstream enable_simulation
 
-set line_to_add "   `include \"[pwd]/bitstream_testbench.v\";"
-set file_path "and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/and2_formal_random_top_tb.v"
+set tb_path "bitstream_testbench.v"
+set openfpga_tb_path "and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/and2_formal_random_top_tb.v"
 set search_line "// ----- Can be changed by the user for his/her need -------"
 
-set temp_file_path "temporary_file.txt"
+set source_file [open $tb_path r]
+set destination_file [open $openfpga_tb_path r+]
+set search_string $search_line
 
-set infile [open $file_path r]
+set content [read $source_file]
+close $source_file
+set destination_lines [split [read $destination_file] "\n"]
 
-set outfile [open $temp_file_path w]
-
-set found 0
-while {[gets $infile line] != -1} {
-    puts $outfile $line
-    if {[string equal $line $search_line]} {
-        puts $outfile $line_to_add
-        set found 1
+set line_number_to_insert_after -1
+foreach line $destination_lines {
+    if {[string first $search_string $line] != -1} {
+        set line_number_to_insert_after [expr {[lsearch $destination_lines $line] + 1}]
+        break
     }
 }
-
-close $infile
-close $outfile
-
-if {!$found} {
-    puts "Line to search for not found."
+if {$line_number_to_insert_after > 0} {
+    set destination_lines [linsert $destination_lines $line_number_to_insert_after $content]
 } else {
-    file rename -force $temp_file_path $file_path
-    puts "Line added successfully."
+    puts "Search string not found in the destination file."
 }
+seek $destination_file 0
+puts -nonewline $destination_file [join $destination_lines "\n"]
+
+close $destination_file
+
 
 # Bitstream Simulation
 clear_simulation_files
 # add_simulation_file testbench.sv
-add_library_path ../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
+add_library_path ../../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
 simulate "bitstream_bd" "icarus" 
