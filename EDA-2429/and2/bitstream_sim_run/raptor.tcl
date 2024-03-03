@@ -15,7 +15,7 @@ sta
 bitstream enable_simulation
 
 set tb_path "bitstream_testbench.v"
-set openfpga_tb_path "and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/and2_formal_random_top_tb.v"
+set openfpga_tb_path "and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and2_formal_random_top_tb.v"
 set search_line "// ----- Can be changed by the user for his/her need -------"
 
 set source_file [open $tb_path r]
@@ -48,4 +48,11 @@ close $destination_file
 clear_simulation_files
 # add_simulation_file testbench.sv
 add_library_path ../../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
+
+# path to ./user_cells.v
+add_library_path .
+
+# Create a path to ./SRC/sc_verilog/dti_tm16ffc_90c_7p5t_stdcells_rev1p0p0.v
+add_include_path .
+
 simulate "bitstream_bd" "icarus" 
