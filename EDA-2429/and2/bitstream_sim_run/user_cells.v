@@ -244,44 +244,89 @@ output [0:2] scan_o;
 
 // ----- Internal logic should end here -----
 endmodule
-   
-module QL_IOFF(global_resetn,
-               SE,
-               D,
-               SI,
-               CK,
-               MODE_SEL,
-               SO,
-               Q);
-//----- GLOBAL PORTS -----
-input [0:0] global_resetn;
-//----- GLOBAL PORTS -----
-input [0:0] SE;
-//----- INPUT PORTS -----
-input [0:0] D;
-//----- INPUT PORTS -----
-input [0:0] SI;
-//----- INPUT PORTS -----
-input [0:0] CK;
-//----- INPUT PORTS -----
-input [0:0] MODE_SEL;
-//----- OUTPUT PORTS -----
-output [0:0] SO;
-//----- OUTPUT PORTS -----
-output [0:0] Q;
 
-//----- BEGIN wire-connection ports -----
-//----- END wire-connection ports -----
+module QL_IOFF_dti (
+  D,
+  SI,
+  SO,
+  SE,
+  CK,
+  MODE_SEL,
+  Q,
+  global_resetn
+);
+  input D;
+  input SI;
+  output SO;
+  input SE;
+  input CK;
+  input MODE_SEL;
+  input global_resetn;
+  output Q;
+
+  wire clk;
+  //wire resetn_w;
+
+  //dti_16f_7p5t_90c_and2x1 GLOBAL_RESET(.Z(resetn_w), .A(R), .B(global_resetn));
+
+  dti_16f_7p5t_90c_xnor2optax1 XNOR2_CLKINV (
+          .A(MODE_SEL),        // MODE_SEL=1, clk = CK
+          .B(CK),              // MODE_SEL=0, clk = ~CK
+          .Z(clk)
+      );
+
+  dti_16f_7p5t_90c_soffqbcka10fox1 DFF(
+		.D(D),
+		.SD(SI),
+		.SO(SO),
+		.SE(SE),
+		.SN(global_resetn),
+		.CK(clk),
+		.Q(Q)
+	);
+
+endmodule
+
+module QL_IOFF (
+  D,
+  SI,
+  SO,
+  SE,
+  CK,
+  MODE_SEL,
+  Q,
+  global_resetn
+);
+  input D;
+  input SI;
+  output SO;
+  input SE;
+  input CK;
+  input MODE_SEL;
+  input global_resetn;
+  output Q;
+
+  `ifdef TSMC
+  QL_IOFF_tsmc  QL_IOFF_tsmc(.D			(D			),
+				            .SI			(SI			),
+				            .SE			(SE			),
+                            .global_resetn(global_resetn),
+				            .CK			(CK			),
+				            .MODE_SEL	(MODE_SEL	),
+				            .Q			(Q			));
+  `else
+  QL_IOFF_dti   QL_IOFF_dti(.D			(D			),
+				            .SI			(SI			),
+				            .SO			(SO			),
+				            .SE			(SE			),
+                            .global_resetn(global_resetn),
+				            .CK			(CK			),
+				            .MODE_SEL	(MODE_SEL	),
+				            .Q			(Q			));
+  `endif			
+endmodule
 
 
-//----- BEGIN Registered ports -----
-//----- END Registered ports -----
-
-// ----- Internal logic should start here -----
-
-
-// ----- Internal logic should end here -----
-endmodule   
 
 module QL_XOR_MUX2_dti (
   P,
@@ -311,32 +356,69 @@ output CO;
 endmodule
 
 
-module dti_lvt_16f_7p5t_90c_ckmux21x2(D0,
-                                      D1,
-                                      S,
-                                      Z);
-//----- INPUT PORTS -----
-input [0:0] D0;
-//----- INPUT PORTS -----
-input [0:0] D1;
-//----- INPUT PORTS -----
-input [0:0] S;
-//----- OUTPUT PORTS -----
-output [0:0] Z;
+module dti_lvt_mux21 (Z, D0, D1, S);
+output Z;
+input  D0;
+input  D1;
+input  S;
 
-//----- BEGIN wire-connection ports -----
-//----- END wire-connection ports -----
-
-
-//----- BEGIN Registered ports -----
-//----- END Registered ports -----
-
-// ----- Internal logic should start here -----
-
-
-// ----- Internal logic should end here -----
+assign Z = S ? D1 : D0;
 endmodule
 
+
+module dti_lvt_ckmux21 (Z, D0, D1, S);
+output Z;
+input  D0, D1, S;
+ 
+  dti_lvt_mux21 xmux21 (Z, D0, D1, S);
+ 
+endmodule  
+
+
+`celldefine
+module dti_lvt_16f_7p5t_90c_ckmux21x1 (Z, D0, D1, S);
+output Z;
+input  D0, D1, S;
+
+`ifdef NEGDEL
+  `ifdef RECREM
+  dti_lvt_ckmux21 xdti_lvt_16f_7p5t_90c_ckmux21 (Z, D0, D1, S);
+  `else
+    dti_lvt_ckmux21 xdti_lvt_16f_7p5t_90c_ckmux21 (Z, D0, D1, S);
+  `endif
+`else
+  dti_lvt_ckmux21 xdti_lvt_16f_7p5t_90c_ckmux21 (Z, D0, D1, S);
+`endif
+
+specify 
+
+endspecify 
+
+endmodule
+`endcelldefine
+
+
+`celldefine
+module dti_lvt_16f_7p5t_90c_ckmux21x2 (Z, D0, D1, S);
+output Z;
+input  D0, D1, S;
+
+`ifdef NEGDEL
+  `ifdef RECREM
+  dti_lvt_ckmux21 xdti_lvt_16f_7p5t_90c_ckmux21 (Z, D0, D1, S);
+  `else
+    dti_lvt_ckmux21 xdti_lvt_16f_7p5t_90c_ckmux21 (Z, D0, D1, S);
+  `endif
+`else
+  dti_lvt_ckmux21 xdti_lvt_16f_7p5t_90c_ckmux21 (Z, D0, D1, S);
+`endif
+
+specify 
+
+endspecify 
+
+endmodule
+`endcelldefine
 
 `celldefine
 module dti_lvt_16f_7p5t_90c_ckxor2x4 (Z, A, B);
