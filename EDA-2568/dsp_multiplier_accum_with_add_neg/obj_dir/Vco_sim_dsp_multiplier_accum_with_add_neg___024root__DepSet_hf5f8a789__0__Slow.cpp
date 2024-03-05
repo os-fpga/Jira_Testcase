@@ -1,0 +1,2917 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Design implementation internals
+// See Vco_sim_dsp_multiplier_accum_with_add_neg.h for the primary calling header
+
+#include "Vco_sim_dsp_multiplier_accum_with_add_neg__pch.h"
+#include "Vco_sim_dsp_multiplier_accum_with_add_neg___024root.h"
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_static__TOP(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_static(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_static\n"); );
+    // Body
+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_static__TOP(vlSelf);
+    vlSelf->__Vm_traceActivity[0x10U] = 1U;
+    vlSelf->__Vm_traceActivity[0xfU] = 1U;
+    vlSelf->__Vm_traceActivity[0xeU] = 1U;
+    vlSelf->__Vm_traceActivity[0xdU] = 1U;
+    vlSelf->__Vm_traceActivity[0xcU] = 1U;
+    vlSelf->__Vm_traceActivity[0xbU] = 1U;
+    vlSelf->__Vm_traceActivity[0xaU] = 1U;
+    vlSelf->__Vm_traceActivity[9U] = 1U;
+    vlSelf->__Vm_traceActivity[8U] = 1U;
+    vlSelf->__Vm_traceActivity[7U] = 1U;
+    vlSelf->__Vm_traceActivity[6U] = 1U;
+    vlSelf->__Vm_traceActivity[5U] = 1U;
+    vlSelf->__Vm_traceActivity[4U] = 1U;
+    vlSelf->__Vm_traceActivity[3U] = 1U;
+    vlSelf->__Vm_traceActivity[2U] = 1U;
+    vlSelf->__Vm_traceActivity[1U] = 1U;
+    vlSelf->__Vm_traceActivity[0U] = 1U;
+}
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_static__TOP(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_static__TOP\n"); );
+    // Body
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__mismatch = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241010__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241011__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241012__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241013__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241014__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241015__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241016__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241017__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241018__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241019__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241020__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241021__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241022__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241023__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241024__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241025__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241026__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241027__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241028__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241029__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241030__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241031__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241032__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241033__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241034__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241035__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241036__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241037__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241038__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241039__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241040__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241041__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241042__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241043__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241044__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241045__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241046__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241047__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241048__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241049__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241050__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241051__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241052__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241053__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241054__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241055__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241056__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241057__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241058__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241059__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241060__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241061__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241062__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241063__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241064__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241065__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241066__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241067__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241068__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241069__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241070__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241071__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241072__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241073__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241074__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241075__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241076__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241077__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241078__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241079__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241080__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241081__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241082__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241083__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241084__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241085__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241086__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241087__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241089__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241090__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241091__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241092__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241093__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241094__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241095__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241096__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241097__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241098__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241099__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241100__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241101__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241102__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241103__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241104__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241009__Q = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap46__05c__024mul__Vhsh9CKKBbYb0BWMEz4YAkFLUJYhG8fiZ9OUTHwQ368t = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__subtract_reg = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_reg = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_reg = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_reg1 = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_reg2 = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_reg1 = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_reg2 = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_reg1 = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_reg2 = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__load_acc_reg = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_reg = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_reg = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_reg = 1U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_reg = 1U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__subtract_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__load_acc_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_int = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int = 1U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_int = 1U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__accumulator = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_out = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_out = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__pre_shift = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out_reg = 0ULL;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a = 0U;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b = 0U;
+}
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_final(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_final\n"); );
+}
+
+#ifdef VL_DEBUG
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__stl(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+#endif  // VL_DEBUG
+VL_ATTR_COLD bool Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_phase__stl(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_settle(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_settle\n"); );
+    // Init
+    IData/*31:0*/ __VstlIterCount;
+    CData/*0:0*/ __VstlContinue;
+    // Body
+    __VstlIterCount = 0U;
+    vlSelf->__VstlFirstIteration = 1U;
+    __VstlContinue = 1U;
+    while (__VstlContinue) {
+        if (VL_UNLIKELY((0x64U < __VstlIterCount))) {
+#ifdef VL_DEBUG
+            Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__stl(vlSelf);
+#endif
+            VL_FATAL_MT("/nfs_scratch/scratch/CompilerValidation/abdul_hameed/5th-march/dsp_multiplier_accum_with_add_neg/results_dir/.././sim/co_sim_tb/co_sim_dsp_multiplier_accum_with_add_neg.v", 1, "", "Settle region did not converge.");
+        }
+        __VstlIterCount = ((IData)(1U) + __VstlIterCount);
+        __VstlContinue = 0U;
+        if (Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_phase__stl(vlSelf)) {
+            __VstlContinue = 1U;
+        }
+        vlSelf->__VstlFirstIteration = 0U;
+    }
+}
+
+#ifdef VL_DEBUG
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__stl(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__stl\n"); );
+    // Body
+    if ((1U & (~ vlSelf->__VstlTriggered.any()))) {
+        VL_DBG_MSGF("         No triggers active\n");
+    }
+    if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 0 is active: Internal 'stl' trigger - first iteration\n");
+    }
+    if ((2ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 1 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.C or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.add or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((4ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 2 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.C or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((8ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 3 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.add)\n");
+    }
+    if ((0x10ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 4 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((0x20ULL & vlSelf->__VstlTriggered.word(0U))) {
+        VL_DBG_MSGF("         'stl' region trigger index 5 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$47.C)\n");
+    }
+}
+#endif  // VL_DEBUG
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_sequent__TOP__0(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_sequent__TOP__0\n"); );
+    // Body
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__load_acc_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__LOAD_ACC;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__add 
+        = (VL_EXTENDS_II(32,16, (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i1)) 
+           + VL_EXTENDS_II(32,16, (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i4)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__mul 
+        = VL_MULS_III(32, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__add, 
+                      VL_EXTENDS_II(32,16, (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i2)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__SATURATE;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__SHIFT_RIGHT;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__ROUND;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__subtract_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__SUBTRACT;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__ACC_FIR;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244375__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241028__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244369__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241025__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244395__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241038__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244393__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241037__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244373__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241027__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244346__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241077__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241013__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244371__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241026__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244340__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241074__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241010__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244348__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241078__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241014__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244398__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241024__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244356__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241082__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241018__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244358__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241083__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241019__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244360__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241084__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241020__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244362__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241085__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241021__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244364__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241086__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241022__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244366__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241087__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241023__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244338__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241073__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241009__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244377__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241029__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244389__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241035__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244381__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241031__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244383__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241032__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244354__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241081__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241017__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244387__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241034__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244385__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241033__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244391__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241036__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244379__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241030__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244352__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241080__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241016__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244350__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241079__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241015__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244344__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241076__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241012__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244342__A 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+            << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241075__Q) 
+                       << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241011__Q)));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__B 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241072__Q) 
+            << 0x11U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241072__Q) 
+                          << 0x10U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241072__Q) 
+                                        << 0xfU) | 
+                                       (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241071__Q) 
+                                         << 0xeU) | 
+                                        (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241070__Q) 
+                                          << 0xdU) 
+                                         | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241069__Q) 
+                                             << 0xcU) 
+                                            | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241068__Q) 
+                                                << 0xbU) 
+                                               | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241067__Q) 
+                                                   << 0xaU) 
+                                                  | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241066__Q) 
+                                                      << 9U) 
+                                                     | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241065__Q) 
+                                                         << 8U) 
+                                                        | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241064__Q) 
+                                                            << 7U) 
+                                                           | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241063__Q) 
+                                                               << 6U) 
+                                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241062__Q) 
+                                                                  << 5U) 
+                                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241061__Q) 
+                                                                     << 4U) 
+                                                                    | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241060__Q) 
+                                                                        << 3U) 
+                                                                       | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241059__Q) 
+                                                                           << 2U) 
+                                                                          | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241058__Q) 
+                                                                              << 1U) 
+                                                                             | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241057__Q))))))))))))))))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__add2 
+        = ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p)
+            ? (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__mul 
+               + VL_EXTENDS_II(32,16, (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i3)))
+            : (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__P 
+               + vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__mul));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eA 
+        = ((0xc0000000U & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eA) 
+           | ((0x20000000U & (((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244395__A))
+                                ? ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244395__A) 
+                                   >> 1U) : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244395__A)) 
+                              << 0x1dU)) | ((0x10000000U 
+                                             & (((4U 
+                                                  & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244393__A))
+                                                  ? 
+                                                 ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244393__A) 
+                                                  >> 1U)
+                                                  : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244393__A)) 
+                                                << 0x1cU)) 
+                                            | ((0x8000000U 
+                                                & (((4U 
+                                                     & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244391__A))
+                                                     ? 
+                                                    ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244391__A) 
+                                                     >> 1U)
+                                                     : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244391__A)) 
+                                                   << 0x1bU)) 
+                                               | ((0x4000000U 
+                                                   & (((4U 
+                                                        & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244389__A))
+                                                        ? 
+                                                       ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244389__A) 
+                                                        >> 1U)
+                                                        : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244389__A)) 
+                                                      << 0x1aU)) 
+                                                  | ((0x2000000U 
+                                                      & (((4U 
+                                                           & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244387__A))
+                                                           ? 
+                                                          ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244387__A) 
+                                                           >> 1U)
+                                                           : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244387__A)) 
+                                                         << 0x19U)) 
+                                                     | ((0x1000000U 
+                                                         & (((4U 
+                                                              & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244385__A))
+                                                              ? 
+                                                             ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244385__A) 
+                                                              >> 1U)
+                                                              : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244385__A)) 
+                                                            << 0x18U)) 
+                                                        | ((0x800000U 
+                                                            & (((4U 
+                                                                 & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244383__A))
+                                                                 ? 
+                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244383__A) 
+                                                                 >> 1U)
+                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244383__A)) 
+                                                               << 0x17U)) 
+                                                           | ((0x400000U 
+                                                               & (((4U 
+                                                                    & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244381__A))
+                                                                    ? 
+                                                                   ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244381__A) 
+                                                                    >> 1U)
+                                                                    : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244381__A)) 
+                                                                  << 0x16U)) 
+                                                              | ((0x200000U 
+                                                                  & (((4U 
+                                                                       & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244379__A))
+                                                                       ? 
+                                                                      ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244379__A) 
+                                                                       >> 1U)
+                                                                       : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244379__A)) 
+                                                                     << 0x15U)) 
+                                                                 | ((0x100000U 
+                                                                     & (((4U 
+                                                                          & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244377__A))
+                                                                          ? 
+                                                                         ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244377__A) 
+                                                                          >> 1U)
+                                                                          : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244377__A)) 
+                                                                        << 0x14U)) 
+                                                                    | ((0x80000U 
+                                                                        & (((4U 
+                                                                             & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244375__A))
+                                                                             ? 
+                                                                            ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244375__A) 
+                                                                             >> 1U)
+                                                                             : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244375__A)) 
+                                                                           << 0x13U)) 
+                                                                       | ((0x40000U 
+                                                                           & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244373__A))
+                                                                                ? 
+                                                                               ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244373__A) 
+                                                                                >> 1U)
+                                                                                : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244373__A)) 
+                                                                              << 0x12U)) 
+                                                                          | ((0x20000U 
+                                                                              & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244371__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244371__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244371__A)) 
+                                                                                << 0x11U)) 
+                                                                             | ((0x10000U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244369__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244369__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244369__A)) 
+                                                                                << 0x10U)) 
+                                                                                | ((0x8000U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244398__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244398__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244398__A)) 
+                                                                                << 0xfU)) 
+                                                                                | ((0x4000U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244366__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244366__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244366__A)) 
+                                                                                << 0xeU)) 
+                                                                                | ((0x2000U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244364__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244364__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244364__A)) 
+                                                                                << 0xdU)) 
+                                                                                | ((0x1000U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244362__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244362__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244362__A)) 
+                                                                                << 0xcU)) 
+                                                                                | ((0x800U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244360__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244360__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244360__A)) 
+                                                                                << 0xbU)) 
+                                                                                | ((0x400U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244358__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244358__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244358__A)) 
+                                                                                << 0xaU)) 
+                                                                                | ((0x200U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244356__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244356__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244356__A)) 
+                                                                                << 9U)) 
+                                                                                | ((0x100U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244354__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244354__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244354__A)) 
+                                                                                << 8U)) 
+                                                                                | ((0x80U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244352__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244352__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244352__A)) 
+                                                                                << 7U)) 
+                                                                                | ((0x40U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244350__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244350__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244350__A)) 
+                                                                                << 6U)) 
+                                                                                | ((0x20U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244348__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244348__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244348__A)) 
+                                                                                << 5U)) 
+                                                                                | ((0x10U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244346__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244346__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244346__A)) 
+                                                                                << 4U)) 
+                                                                                | ((8U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244344__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244344__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244344__A)) 
+                                                                                << 3U)) 
+                                                                                | ((4U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244342__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244342__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244342__A)) 
+                                                                                << 2U)) 
+                                                                                | ((2U 
+                                                                                & (((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244340__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244340__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244340__A)) 
+                                                                                << 1U)) 
+                                                                                | (1U 
+                                                                                & ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244338__A))
+                                                                                 ? 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244338__A) 
+                                                                                >> 1U)
+                                                                                 : (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244338__A)))))))))))))))))))))))))))))))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__B;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b 
+        = ((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+            ? vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_int
+            : ((2U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+                ? ((1U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+                    ? vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_int
+                    : 0U) : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_int));
+}
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_sequent__TOP__1(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_sequent__TOP__1\n"); );
+    // Body
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__A 
+        = ((0x80000U & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add 
+                        >> 0xcU)) | ((0x40000U & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add 
+                                                  >> 0xdU)) 
+                                     | ((0x20000U & 
+                                         (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add 
+                                          >> 0xeU)) 
+                                        | ((0x10000U 
+                                            & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add 
+                                               >> 0xfU)) 
+                                           | (0xffffU 
+                                              & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add)))));
+}
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_comb__TOP__3(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_comb__TOP__3\n"); );
+    // Body
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__A;
+    if ((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))) {
+        vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in 
+            = ((2U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+                ? ((1U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+                    ? ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+                        ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int)) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))
+                        : ((((- (QData)((IData)((1U 
+                                                 & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+                                                    >> 0x13U))))) 
+                             << 0x14U) | (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int))) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int)))
+                    : ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+                        ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int)) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))
+                        : ((((- (QData)((IData)((1U 
+                                                 & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+                                                    >> 0x13U))))) 
+                             << 0x14U) | (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int))) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))))
+                : ((1U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+                    ? ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+                        ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int)) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))
+                        : ((((- (QData)((IData)((1U 
+                                                 & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+                                                    >> 0x13U))))) 
+                             << 0x14U) | (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int))) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int)))
+                    : ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+                        ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int)) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))
+                        : ((((- (QData)((IData)((1U 
+                                                 & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+                                                    >> 0x13U))))) 
+                             << 0x14U) | (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int))) 
+                           << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int)))));
+        vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a = 0U;
+    } else if ((2U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))) {
+        if ((1U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))) {
+            vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in 
+                = ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+                    ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int)) 
+                       << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))
+                    : ((((- (QData)((IData)((1U & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+                                                   >> 0x13U))))) 
+                         << 0x14U) | (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int))) 
+                       << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int)));
+            vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a 
+                = (0xfffffU & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__accumulator));
+        } else {
+            vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in 
+                = ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+                    ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int)) 
+                       << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int))
+                    : ((((- (QData)((IData)((1U & (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int 
+                                                   >> 0x13U))))) 
+                         << 0x14U) | (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int))) 
+                       << (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int)));
+            vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a 
+                = (0xfffffU & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int);
+        }
+    } else {
+        vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in 
+            = ((1U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int))
+                ? 0ULL : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__accumulator);
+        vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a 
+            = (0xfffffU & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int);
+    }
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_out 
+        = ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int)
+            ? ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_int)
+                ? ((QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a)) 
+                   * (QData)((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b)))
+                : VL_MULS_QQQ(64, VL_EXTENDS_QI(64,21, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a), 
+                              VL_EXTENDS_QI(64,18, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b)))
+            : ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_int)
+                ? VL_MULS_QQQ(64, VL_EXTENDS_QI(64,20, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a), 
+                              VL_EXTENDS_QI(64,19, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b))
+                : VL_MULS_QQQ(64, VL_EXTENDS_QI(64,20, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a), 
+                              VL_EXTENDS_QI(64,18, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_out 
+        = ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__subtract_int)
+            ? (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in 
+               - vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_out)
+            : (vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in 
+               + vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_out));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+        = (0x3fffffffffULL & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_out);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__pre_shift 
+        = vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_out;
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right 
+        = VL_SHIFTRS_QQI(64,64,6, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__pre_shift, (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_int));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round 
+        = (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_int) 
+            & (0U < (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_int)))
+            ? ((1U & (IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__pre_shift 
+                              >> (0x3fU & ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_int) 
+                                           - (IData)(1U))))))
+                ? (1ULL + vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right)
+                : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right)
+            : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate 
+        = (0x3fffffffffULL & ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_int)
+                               ? (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int) 
+                                   & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_int))
+                                   ? (VL_GTS_IQQ(64, 0ULL, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round)
+                                       ? 0ULL : ((0x3fffffffffULL 
+                                                  < vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round)
+                                                  ? 0x3fffffffffULL
+                                                  : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round))
+                                   : (VL_LTS_IQQ(64, 0x1fffffffffULL, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round)
+                                       ? 0x1fffffffffULL
+                                       : (VL_GTS_IQQ(64, 0xffffffe000000000ULL, vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round)
+                                           ? 0x2000000000ULL
+                                           : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round)))
+                               : vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap44__05c__024mul__VhshMZ5DLQDpsnGuRDcE2CUo9QVuRXAJODXCdN7cBSGq 
+        = ((0xffffffffULL & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap44__05c__024mul__VhshMZ5DLQDpsnGuRDcE2CUo9QVuRXAJODXCdN7cBSGq) 
+           | ((QData)((IData)((0x3fU & (IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                                                >> 0x20U))))) 
+              << 0x20U));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 8U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241017__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241081__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x19U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241034__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x1aU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241035__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x1dU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241038__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x11U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241026__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x12U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241027__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 6U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241015__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241079__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x10U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241025__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A 
+        = ((8U & ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out) 
+                  << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                              << 2U) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241009__Q) 
+                                         << 1U) | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241073__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 9U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241018__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241082__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0xaU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                 << 2U) 
+                                                | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241019__Q) 
+                                                    << 1U) 
+                                                   | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241083__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0xbU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                 << 2U) 
+                                                | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241020__Q) 
+                                                    << 1U) 
+                                                   | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241084__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0xcU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                 << 2U) 
+                                                | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241021__Q) 
+                                                    << 1U) 
+                                                   | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241085__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0xdU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                 << 2U) 
+                                                | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241022__Q) 
+                                                    << 1U) 
+                                                   | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241086__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0xeU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                 << 2U) 
+                                                | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241023__Q) 
+                                                    << 1U) 
+                                                   | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241087__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0xfU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                 << 2U) 
+                                                | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241024__Q) 
+                                                    << 1U) 
+                                                   | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 7U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241016__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241080__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x13U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241028__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x16U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241031__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x1bU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241036__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x18U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241033__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x15U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241030__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x17U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241032__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x1cU)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241037__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 0x14U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                                  << 2U) 
+                                                 | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241029__Q) 
+                                                     << 1U) 
+                                                    | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 5U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241014__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241078__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 4U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241013__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241077__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 3U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241012__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241076__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 2U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241011__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241075__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A 
+        = ((8U & ((IData)((vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out 
+                           >> 1U)) << 3U)) | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p) 
+                                               << 2U) 
+                                              | (((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241010__Q) 
+                                                  << 1U) 
+                                                 | (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241074__Q))));
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eS 
+        = ((0xc0000000U & vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eS) 
+           | ((0x20000000U & (((8U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A))
+                                ? ((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A))
+                                    ? (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A))
+                                    : (~ ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A) 
+                                          >> 1U))) : 
+                               ((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A))
+                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A)
+                                 : ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A) 
+                                    >> 1U))) << 0x1dU)) 
+              | ((0x10000000U & (((8U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A))
+                                   ? ((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A))
+                                       ? (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A))
+                                       : (~ ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A) 
+                                             >> 1U)))
+                                   : ((4U & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A))
+                                       ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A)
+                                       : ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A) 
+                                          >> 1U))) 
+                                 << 0x1cU)) | ((0x8000000U 
+                                                & (((8U 
+                                                     & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A))
+                                                     ? 
+                                                    ((4U 
+                                                      & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A))
+                                                      ? 
+                                                     (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A))
+                                                      : 
+                                                     (~ 
+                                                      ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A) 
+                                                       >> 1U)))
+                                                     : 
+                                                    ((4U 
+                                                      & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A))
+                                                      ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A)
+                                                      : 
+                                                     ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A) 
+                                                      >> 1U))) 
+                                                   << 0x1bU)) 
+                                               | ((0x4000000U 
+                                                   & (((8U 
+                                                        & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A))
+                                                        ? 
+                                                       ((4U 
+                                                         & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A))
+                                                         ? 
+                                                        (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A))
+                                                         : 
+                                                        (~ 
+                                                         ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A) 
+                                                          >> 1U)))
+                                                        : 
+                                                       ((4U 
+                                                         & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A))
+                                                         ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A)
+                                                         : 
+                                                        ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A) 
+                                                         >> 1U))) 
+                                                      << 0x1aU)) 
+                                                  | ((0x2000000U 
+                                                      & (((8U 
+                                                           & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A))
+                                                           ? 
+                                                          ((4U 
+                                                            & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A))
+                                                            ? 
+                                                           (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A))
+                                                            : 
+                                                           (~ 
+                                                            ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A) 
+                                                             >> 1U)))
+                                                           : 
+                                                          ((4U 
+                                                            & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A))
+                                                            ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A)
+                                                            : 
+                                                           ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A) 
+                                                            >> 1U))) 
+                                                         << 0x19U)) 
+                                                     | ((0x1000000U 
+                                                         & (((8U 
+                                                              & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A))
+                                                              ? 
+                                                             ((4U 
+                                                               & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A))
+                                                               ? 
+                                                              (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A))
+                                                               : 
+                                                              (~ 
+                                                               ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A) 
+                                                                >> 1U)))
+                                                              : 
+                                                             ((4U 
+                                                               & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A))
+                                                               ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A)
+                                                               : 
+                                                              ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A) 
+                                                               >> 1U))) 
+                                                            << 0x18U)) 
+                                                        | ((0x800000U 
+                                                            & (((8U 
+                                                                 & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A))
+                                                                 ? 
+                                                                ((4U 
+                                                                  & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A))
+                                                                  ? 
+                                                                 (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A))
+                                                                  : 
+                                                                 (~ 
+                                                                  ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A) 
+                                                                   >> 1U)))
+                                                                 : 
+                                                                ((4U 
+                                                                  & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A))
+                                                                  ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A)
+                                                                  : 
+                                                                 ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A) 
+                                                                  >> 1U))) 
+                                                               << 0x17U)) 
+                                                           | ((0x400000U 
+                                                               & (((8U 
+                                                                    & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A))
+                                                                    ? 
+                                                                   ((4U 
+                                                                     & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A))
+                                                                     ? 
+                                                                    (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A))
+                                                                     : 
+                                                                    (~ 
+                                                                     ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A) 
+                                                                      >> 1U)))
+                                                                    : 
+                                                                   ((4U 
+                                                                     & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A))
+                                                                     ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A)
+                                                                     : 
+                                                                    ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A) 
+                                                                     >> 1U))) 
+                                                                  << 0x16U)) 
+                                                              | ((0x200000U 
+                                                                  & (((8U 
+                                                                       & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A))
+                                                                       ? 
+                                                                      ((4U 
+                                                                        & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A))
+                                                                        ? 
+                                                                       (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A))
+                                                                        : 
+                                                                       (~ 
+                                                                        ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A) 
+                                                                         >> 1U)))
+                                                                       : 
+                                                                      ((4U 
+                                                                        & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A))
+                                                                        ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A)
+                                                                        : 
+                                                                       ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A) 
+                                                                        >> 1U))) 
+                                                                     << 0x15U)) 
+                                                                 | ((0x100000U 
+                                                                     & (((8U 
+                                                                          & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A))
+                                                                          ? 
+                                                                         ((4U 
+                                                                           & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A))
+                                                                           ? 
+                                                                          (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A))
+                                                                           : 
+                                                                          (~ 
+                                                                           ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A) 
+                                                                            >> 1U)))
+                                                                          : 
+                                                                         ((4U 
+                                                                           & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A))
+                                                                           ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A)
+                                                                           : 
+                                                                          ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A) 
+                                                                           >> 1U))) 
+                                                                        << 0x14U)) 
+                                                                    | ((0x80000U 
+                                                                        & (((8U 
+                                                                             & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A))
+                                                                             ? 
+                                                                            ((4U 
+                                                                              & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A))
+                                                                              ? 
+                                                                             (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A))
+                                                                              : 
+                                                                             (~ 
+                                                                              ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A) 
+                                                                               >> 1U)))
+                                                                             : 
+                                                                            ((4U 
+                                                                              & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A))
+                                                                              ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A)
+                                                                              : 
+                                                                             ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A) 
+                                                                              >> 1U))) 
+                                                                           << 0x13U)) 
+                                                                       | ((0x40000U 
+                                                                           & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A))
+                                                                                ? 
+                                                                               ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A) 
+                                                                                >> 1U)))
+                                                                                : 
+                                                                               ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A) 
+                                                                                >> 1U))) 
+                                                                              << 0x12U)) 
+                                                                          | ((0x20000U 
+                                                                              & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A) 
+                                                                                >> 1U))) 
+                                                                                << 0x11U)) 
+                                                                             | ((0x10000U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A) 
+                                                                                >> 1U))) 
+                                                                                << 0x10U)) 
+                                                                                | ((0x8000U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A) 
+                                                                                >> 1U))) 
+                                                                                << 0xfU)) 
+                                                                                | ((0x4000U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A) 
+                                                                                >> 1U))) 
+                                                                                << 0xeU)) 
+                                                                                | ((0x2000U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A) 
+                                                                                >> 1U))) 
+                                                                                << 0xdU)) 
+                                                                                | ((0x1000U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A) 
+                                                                                >> 1U))) 
+                                                                                << 0xcU)) 
+                                                                                | ((0x800U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A) 
+                                                                                >> 1U))) 
+                                                                                << 0xbU)) 
+                                                                                | ((0x400U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A) 
+                                                                                >> 1U))) 
+                                                                                << 0xaU)) 
+                                                                                | ((0x200U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A) 
+                                                                                >> 1U))) 
+                                                                                << 9U)) 
+                                                                                | ((0x100U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A) 
+                                                                                >> 1U))) 
+                                                                                << 8U)) 
+                                                                                | ((0x80U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A) 
+                                                                                >> 1U))) 
+                                                                                << 7U)) 
+                                                                                | ((0x40U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A) 
+                                                                                >> 1U))) 
+                                                                                << 6U)) 
+                                                                                | ((0x20U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A) 
+                                                                                >> 1U))) 
+                                                                                << 5U)) 
+                                                                                | ((0x10U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A) 
+                                                                                >> 1U))) 
+                                                                                << 4U)) 
+                                                                                | ((8U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A) 
+                                                                                >> 1U))) 
+                                                                                << 3U)) 
+                                                                                | ((4U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A) 
+                                                                                >> 1U))) 
+                                                                                << 2U)) 
+                                                                                | ((2U 
+                                                                                & (((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A) 
+                                                                                >> 1U))) 
+                                                                                << 1U)) 
+                                                                                | (1U 
+                                                                                & ((8U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A))
+                                                                                 ? 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A))
+                                                                                 ? 
+                                                                                (~ (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A))
+                                                                                 : 
+                                                                                (~ 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A) 
+                                                                                >> 1U)))
+                                                                                 : 
+                                                                                ((4U 
+                                                                                & (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A))
+                                                                                 ? (IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A)
+                                                                                 : 
+                                                                                ((IData)(vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A) 
+                                                                                >> 1U))))))))))))))))))))))))))))))))));
+}
+
+void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_sequent__TOP__0(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_sequent__TOP__2(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_sequent__TOP__3(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_comb__TOP__1(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_stl(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_stl\n"); );
+    // Body
+    if ((1ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_sequent__TOP__0(vlSelf);
+        vlSelf->__Vm_traceActivity[0x10U] = 1U;
+        vlSelf->__Vm_traceActivity[0xfU] = 1U;
+        vlSelf->__Vm_traceActivity[0xeU] = 1U;
+        vlSelf->__Vm_traceActivity[0xdU] = 1U;
+        vlSelf->__Vm_traceActivity[0xcU] = 1U;
+        vlSelf->__Vm_traceActivity[0xbU] = 1U;
+        vlSelf->__Vm_traceActivity[0xaU] = 1U;
+        vlSelf->__Vm_traceActivity[9U] = 1U;
+        vlSelf->__Vm_traceActivity[8U] = 1U;
+        vlSelf->__Vm_traceActivity[7U] = 1U;
+        vlSelf->__Vm_traceActivity[6U] = 1U;
+        vlSelf->__Vm_traceActivity[5U] = 1U;
+        vlSelf->__Vm_traceActivity[4U] = 1U;
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
+    }
+    if ((3ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_sequent__TOP__0(vlSelf);
+    }
+    if ((5ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_sequent__TOP__2(vlSelf);
+        vlSelf->__Vm_traceActivity[0x10U] = 1U;
+        vlSelf->__Vm_traceActivity[0xfU] = 1U;
+        vlSelf->__Vm_traceActivity[0xeU] = 1U;
+        vlSelf->__Vm_traceActivity[0xdU] = 1U;
+        vlSelf->__Vm_traceActivity[0xcU] = 1U;
+        vlSelf->__Vm_traceActivity[0xbU] = 1U;
+        vlSelf->__Vm_traceActivity[0xaU] = 1U;
+        vlSelf->__Vm_traceActivity[9U] = 1U;
+        vlSelf->__Vm_traceActivity[8U] = 1U;
+        vlSelf->__Vm_traceActivity[7U] = 1U;
+        vlSelf->__Vm_traceActivity[6U] = 1U;
+        vlSelf->__Vm_traceActivity[5U] = 1U;
+        vlSelf->__Vm_traceActivity[4U] = 1U;
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
+    }
+    if ((0x11ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_sequent__TOP__3(vlSelf);
+        vlSelf->__Vm_traceActivity[0x10U] = 1U;
+        vlSelf->__Vm_traceActivity[0xfU] = 1U;
+        vlSelf->__Vm_traceActivity[0xeU] = 1U;
+        vlSelf->__Vm_traceActivity[0xdU] = 1U;
+        vlSelf->__Vm_traceActivity[0xcU] = 1U;
+        vlSelf->__Vm_traceActivity[0xbU] = 1U;
+        vlSelf->__Vm_traceActivity[0xaU] = 1U;
+        vlSelf->__Vm_traceActivity[9U] = 1U;
+        vlSelf->__Vm_traceActivity[8U] = 1U;
+        vlSelf->__Vm_traceActivity[7U] = 1U;
+        vlSelf->__Vm_traceActivity[6U] = 1U;
+        vlSelf->__Vm_traceActivity[5U] = 1U;
+        vlSelf->__Vm_traceActivity[4U] = 1U;
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
+    }
+    if ((8ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_sequent__TOP__1(vlSelf);
+    }
+    if ((9ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___stl_comb__TOP__3(vlSelf);
+        vlSelf->__Vm_traceActivity[0x10U] = 1U;
+        vlSelf->__Vm_traceActivity[0xfU] = 1U;
+        vlSelf->__Vm_traceActivity[0xeU] = 1U;
+        vlSelf->__Vm_traceActivity[0xdU] = 1U;
+        vlSelf->__Vm_traceActivity[0xcU] = 1U;
+        vlSelf->__Vm_traceActivity[0xbU] = 1U;
+        vlSelf->__Vm_traceActivity[0xaU] = 1U;
+        vlSelf->__Vm_traceActivity[9U] = 1U;
+        vlSelf->__Vm_traceActivity[8U] = 1U;
+        vlSelf->__Vm_traceActivity[7U] = 1U;
+        vlSelf->__Vm_traceActivity[6U] = 1U;
+        vlSelf->__Vm_traceActivity[5U] = 1U;
+        vlSelf->__Vm_traceActivity[4U] = 1U;
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
+    }
+    if ((0x29ULL & vlSelf->__VstlTriggered.word(0U))) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___act_comb__TOP__1(vlSelf);
+        vlSelf->__Vm_traceActivity[0x10U] = 1U;
+        vlSelf->__Vm_traceActivity[0xfU] = 1U;
+        vlSelf->__Vm_traceActivity[0xeU] = 1U;
+        vlSelf->__Vm_traceActivity[0xdU] = 1U;
+        vlSelf->__Vm_traceActivity[0xcU] = 1U;
+        vlSelf->__Vm_traceActivity[0xbU] = 1U;
+        vlSelf->__Vm_traceActivity[0xaU] = 1U;
+        vlSelf->__Vm_traceActivity[9U] = 1U;
+        vlSelf->__Vm_traceActivity[8U] = 1U;
+        vlSelf->__Vm_traceActivity[7U] = 1U;
+        vlSelf->__Vm_traceActivity[6U] = 1U;
+        vlSelf->__Vm_traceActivity[5U] = 1U;
+        vlSelf->__Vm_traceActivity[4U] = 1U;
+        vlSelf->__Vm_traceActivity[3U] = 1U;
+        vlSelf->__Vm_traceActivity[2U] = 1U;
+        vlSelf->__Vm_traceActivity[1U] = 1U;
+        vlSelf->__Vm_traceActivity[0U] = 1U;
+    }
+}
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_triggers__stl(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf);
+
+VL_ATTR_COLD bool Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_phase__stl(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_phase__stl\n"); );
+    // Init
+    CData/*0:0*/ __VstlExecute;
+    // Body
+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_triggers__stl(vlSelf);
+    __VstlExecute = vlSelf->__VstlTriggered.any();
+    if (__VstlExecute) {
+        Vco_sim_dsp_multiplier_accum_with_add_neg___024root___eval_stl(vlSelf);
+    }
+    return (__VstlExecute);
+}
+
+#ifdef VL_DEBUG
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__act(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__act\n"); );
+    // Body
+    if ((1U & (~ vlSelf->__VactTriggered.any()))) {
+        VL_DBG_MSGF("         No triggers active\n");
+    }
+    if ((1ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 0 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.C or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.add or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((2ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 1 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.C or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((4ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 2 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.add)\n");
+    }
+    if ((8ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 3 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((0x10ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 4 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$47.C)\n");
+    }
+    if ((0x20ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 5 is active: @(negedge co_sim_dsp_multiplier_accum_with_add_neg.clk)\n");
+    }
+    if ((0x40ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 6 is active: @(posedge co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$mul\$/nfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey.CLK or posedge co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$mul\$/nfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey.RESET)\n");
+    }
+    if ((0x80ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 7 is active: @([changed] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$mul\$/nfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey.ACC_FIR)\n");
+    }
+    if ((0x100ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 8 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+    }
+    if ((0x200ULL & vlSelf->__VactTriggered.word(0U))) {
+        VL_DBG_MSGF("         'act' region trigger index 9 is active: @(posedge co_sim_dsp_multiplier_accum_with_add_neg.clk)\n");
+    }
+}
+#endif  // VL_DEBUG
+
+#ifdef VL_DEBUG
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__nba(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___dump_triggers__nba\n"); );
+    // Body
+    if ((1U & (~ vlSelf->__VnbaTriggered.any()))) {
+        VL_DBG_MSGF("         No triggers active\n");
+    }
+    if ((1ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 0 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.C or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.add or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((2ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 1 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.C or [hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((4ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 2 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.add)\n");
+    }
+    if ((8ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 3 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$50.S)\n");
+    }
+    if ((0x10ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 4 is active: @([hybrid] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$auto\$alumacc.cc:485:replace_alu\$47.C)\n");
+    }
+    if ((0x20ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 5 is active: @(negedge co_sim_dsp_multiplier_accum_with_add_neg.clk)\n");
+    }
+    if ((0x40ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 6 is active: @(posedge co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$mul\$/nfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey.CLK or posedge co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$mul\$/nfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey.RESET)\n");
+    }
+    if ((0x80ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 7 is active: @([changed] co_sim_dsp_multiplier_accum_with_add_neg.netlist.\$mul\$/nfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey.ACC_FIR)\n");
+    }
+    if ((0x100ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 8 is active: @([true] __VdlySched.awaitingCurrentTime())\n");
+    }
+    if ((0x200ULL & vlSelf->__VnbaTriggered.word(0U))) {
+        VL_DBG_MSGF("         'nba' region trigger index 9 is active: @(posedge co_sim_dsp_multiplier_accum_with_add_neg.clk)\n");
+    }
+}
+#endif  // VL_DEBUG
+
+VL_ATTR_COLD void Vco_sim_dsp_multiplier_accum_with_add_neg___024root___ctor_var_reset(Vco_sim_dsp_multiplier_accum_with_add_neg___024root* vlSelf) {
+    (void)vlSelf;  // Prevent unused variable warning
+    Vco_sim_dsp_multiplier_accum_with_add_neg__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vco_sim_dsp_multiplier_accum_with_add_neg___024root___ctor_var_reset\n"); );
+    // Body
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__A = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__B = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__C = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__D = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__clk = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__reset = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__sel_c_or_p = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__P = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__mismatch = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i1 = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i2 = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i3 = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__i4 = VL_RAND_RESET_I(16);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__mul = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__add = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__golden__DOT__add2 = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4588__05c__024a__VhshXUKevW3PtCgIgJ6tHdBMKG3XkFoQt0hAbUyE5BwI = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4588__05c__024a__VhsheFI9ZAJevsrqPPACTlKKQigFoWw8AkvM9c1BcHaB = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4587__05c__024a__Vhshz2zLNqzv37TCtV9KkQC0tSDNwVA0G9AI8t5kKFJk = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4587__05c__024a__VhshsRyj9f5PNLj9fdhhINrFeOWAHHgLiZG3b6Gj6rpr = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4586__05c__024a__VhshhZK5ryfBwigAk8T6MHKshS6tEStGPRmEo4PYsth7 = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4586__05c__024a__VhshI640g5mOOGrBhssU2arHZCG2Rz2sA3QRmjHAsX3A = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4585__05c__024a__VhshjWZflD9r99HZHjiwTDfB7ZFZWSWGvvhpLB4fQjab = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4585__05c__024a__VhshvQuZBALFCpX9igH38GtiBKZlZw9P6gZPNwcVa5l2 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4584__05c__024a__Vhsh3WTkcDJDXRFjiTguWEQFDIoaPMAIXQ4ubOpUlJ49 = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4584__05c__024a__VhshoHSzLwuMzpBPOLNoBBMHsXSnnk848JGzSqgmW2cm = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4583__05c__024a__Vhsh81WQJYlABAWG12aIPHEGEkpo0zpeq2yCmPLCS9Gx = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4583__05c__024a__VhshxTR0lHccLqfTgZbUAQMLFgNVkiHpgpNHunjCsP0q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4582__05c__024a__VhshLoYL6Oyc8YsfKAJEmAlpGd9qc0BPWuqpjEDnkR1I = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4582__05c__024a__Vhsh4WwO9tbI40q8o9ARU6qGBy0QCSwRVQauSOYwN1SV = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4581__05c__024a__VhshFehpFsrPNvxrSX71WJJ7zey96OtF9ISJYtG6r8Eo = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4581__05c__024a__VhshirItWRS6L9ns03l0OmJD5YAgFAFezH2T2BCJX3kN = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4580__05c__024a__Vhsh81fqOgXwBSQkkc6CU30NZnoyPgMsDMxTZcAoGdRw = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4580__05c__024a__VhshvB3v0nCOxiAHBPUBK3bj7ne7Jd6pNg401mkJ5ybT = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4579__05c__024a__Vhshp47TCKnIozD25i0YS9cmk8pCdjZdZlwCyAFBzRA6 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4579__05c__024a__VhshbxVJpZUugUsOOFiHaPmLruSLRuhkqA8XUzSIwYCg = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4578__05c__024a__VhshDLtWAxzKm2Ndwt8imeBBBE34BVFmQP9ZocprGprj = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4578__05c__024a__VhshzniycIHUUg3jkaImrreokx4IoHV5YZ1H1VNvTnuB = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4577__05c__024a__VhshaT3AhcZ6gM6r2fRIfqO63VYvYpRtjW3CFxAxn6yQ = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4577__05c__024a__VhshDA3a9Wg9WqWmPEFXsRNldVDPH5rdXwf4eBaScqDe = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4576__05c__024a__VhshY86jKjKC5HfpH4BonU6gKhuZab38njmu8ycho7UH = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4576__05c__024a__VhshFfhBntYH69DRws9yeOZ9dnG4nL85Z7JAkfei4wBA = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4575__05c__024a__Vhsh3LKpABoTDWuA0xQDIO0mQnEI3McuZA6phyBE4I2j = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4575__05c__024a__VhshiiDNmrky33B3CVxH9YBfSu0wUWBYZvE6OOHVHd4i = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4574__05c__024a__VhshVaxkNu3v3uY6zYmr1BSB8oFmzf57i0VP8DCjBpfG = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4574__05c__024a__VhshBDYGKAzdL9UdZIZQ4StnAB8XOwrhnYOu9kS48syQ = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4573__05c__024a__VhshHzLPXpWcPirQHEM6li554Kh7lHhavnj83ZHFSj2v = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4573__05c__024a__VhshRegeZlZjpKvuJIA6jRxony975ZYCK2n3M66KIzkD = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4572__05c__024a__VhshGUB0h4EMiOIgYl4PbIFHLrnhfj2YOJdy0Ehm2ZHT = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4572__05c__024a__VhshZFFhmCbkGQoT4KBzlbAjNiquQi2BunotdvBOJwss = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4571__05c__024a__Vhsh43Fu1HUtxBnrjwdagqoqVibAY0xnh9IlUII97JgT = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4571__05c__024a__Vhsh1JfOKfYiSLennSrKmwI1MbDfZO6NXsN0nXlMBDlx = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4570__05c__024a__VhshC3tlrnHlwB8QqtRGVMYSC2iVCh68WbVfojrkvP1c = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4570__05c__024a__VhshIG0zKj7LEPP13lYAVSOgUZEcLvJGsZAwR1JE47T0 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4569__05c__024a__VhshSGdlQYIMBbHtpS4WyS0bTpLgK8uqEpsSAnZiqrXR = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4569__05c__024a__Vhsh612EgORFBwkfGLutOZMrhtxCVQoGesvFXFglTwKa = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4568__05c__024a__Vhsho3sAA7pXAJhwBlGdrvqAyZYPX9RoxJhPLgcIry48 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4568__05c__024a__VhshqlN8twOviEaWrAtox2HzAHmhZjVzjwdz5XYk7RUu = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4567__05c__024a__Vhsh3wW9JyrwzHj4lg7njzDDIG7yBEtrAvThokXb2p9j = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4567__05c__024a__VhshlhyDbQEtipE65GOptBFnTuwprXhuw9GWzAER5ekd = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4566__05c__024a__Vhshk5nnGQfl10wAeJ2eFAy0XWhwKdgMi3LUHCoah0sA = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4566__05c__024a__VhshTSeHs0mq3zyQnyNbAa81lYDLNTEm3XUJro6m5PNe = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4565__05c__024a__Vhsh4zKyo2ypYT6O2gYusQrEypboH1ntM4AekGEMQu3F = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4565__05c__024a__VhsheBGsNIBVcjkbFeb8RAxp0TnBQIFTC9CeedZm0qnF = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4564__05c__024a__VhshaHYsB6MkApqxiAMfj6UwgAiyptBdQ63Ds4cz1wMi = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4564__05c__024a__Vhshq9kIRIt7SxUbMWtStHHPkCB00XFghvSEmfFyKrpR = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4563__05c__024a__Vhshx2u1FX1HRBxLqvv77ZaaA7zsoVNiC2CpfFYNAykL = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4563__05c__024a__VhshgZyE1Ogpc5XtzxULO2V23AKqdA4hZumb8AZ2tw8q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4562__05c__024a__VhshaqvlBTROiBndN2wOg8SVMmIZJm27VZyBmlCcEnFQ = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4562__05c__024a__VhshCyIs8XkI9lC26WNQNludUJi5KAnUQ3QIpHjktS5j = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4561__05c__024a__VhshtThF9duyT5FcE5B5rrYaiRRQLlEQH3mb5YXQx6O2 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4561__05c__024a__VhshRAhD0fiACm3E1a8abRFmFKsK9vLdSCUIA57x4VdI = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4560__05c__024a__VhshWVKdCC4jbXXvt1DnS5K0YVMkzrpBZs0Oz3MVHoR6 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4560__05c__024a__VhshiyHzG4o8RLUvAiFotoS1hY6MBAcRHfR1l4GW4df9 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4559__05c__024a__VhshShncD3bpNXaBdp0Gf9J3MPIHtwvSN5zRRwxoBk0D = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4559__05c__024a__VhshqAcsuaYeAPtyoF1qfjQyL98JkJIcz53mbxNHmS9O = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4558__05c__024a__Vhsh6AZQBpPBc0jvoBubOrUUtGBl7tGiM5FBBzythU9B = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4558__05c__024a__Vhsh7lL9MCq6I4hLI8ezazbAMaO8OVq9HAEP0q1cKkvP = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4557__05c__024a__VhshlkAuh6WpEVNfG0MBMB3XyuMkWAc4kIuNakp391NI = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4557__05c__024a__Vhsh7mQdlNXbzkeGDW02S9iOGdolm7gm37dQ85yEe7ew = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4556__05c__024a__VhshKfo4zke4PT1O8fN55vyf4iKh2PSwjG8uVhN4BNJw = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4556__05c__024a__VhshoTQUZB2Kuz3LHESn2QIIFww1nBShfNKoXWoyLOAS = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4555__05c__024a__VhshkMyZc5FGw8NE1xCNUoXc4ca1zTSAJjrmwvop1oBh = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4555__05c__024a__Vhsh6CSWgwAP2eWPivMx6YTO37ib23KyYilYXHGuVmuu = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4554__05c__024a__VhshST8AaI6EG88IXduNRj7MADELJgJqUcAPJp90lVzC = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4554__05c__024a__VhshLJ8ryKToz7Mg1rvoojSpsUuNpOT0zHaZA1TnxIOj = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4553__05c__024a__VhshB60ja3vGgp2A3kFc0LSgXSsfFeCnGjyOUAKOgMLe = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4553__05c__024a__Vhsh3gLiPmdViRY9ZNnkKbYtjmvXGVycHo9RW8VrqI8d = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4552__05c__024a__VhshKfq72ZMBrAAQQD3bnQGO1E4d7OwADBBaBK4RkowB = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4552__05c__024a__VhshIG4wzoOxUeHvklBaI0RBPbxKNNO5jqJiFQLVuFeN = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4551__05c__024a__VhshjKyzK73CIMA1DKiRTHei5TBdCSGuIEuIIlADEXcZ = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4551__05c__024a__VhshUOhtcFRd66AtFMfGS9IaA8xutYlYRPSldHKGnCT5 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4550__05c__024a__VhshS35ym15I8xmnrtAxuD5PrQD5WSNi28ckmw36v0bP = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4550__05c__024a__VhshArI9DOb58fOvCkcpSf4g1jeul3TvsdV2egU6wMGZ = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4549__05c__024a__VhshBAIexpYgHGt9yFAbSaJghWbLJ6GyHXZSfwxqvOzT = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4549__05c__024a__VhshB4MjpcfmHxAzLyxAKmL0rfl2JGycpEUIF3vIvBId = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4548__05c__024a__Vhsh96iLcGDtVlMqNmN8fxur9M7NOjR0dlifgmk5Gwui = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4548__05c__024a__VhshhxLVc6V6o8CeyF6rAMdFnQwJYsvLwB4iBHVdqNQW = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4547__05c__024a__VhshIG3MopB9HK3dMzFrahIBqDF4JBp4gnJkjXhAE3t1 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4547__05c__024a__VhshBN3Ax70Dgds8wdrgy7EZ7npF6fV0Q6P8XJTTBvI9 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4546__05c__024a__VhshJpae9xkBzWVohu1LbmKEU971Q5Jz0wMCePYMOMAw = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4546__05c__024a__VhshjX4uHlMJtNhB5gmRMwZfGaFOA0LbEAJZhJ7js9rr = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4545__05c__024a__Vhsh2YzBd2HIglxXcXq8loODHoM9cW6EHHATt0j07HF2 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4545__05c__024a__VhshNIy9dy0fhKAGXC2ZDS74n3dHHeRPuuzAb9XA9QY7 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4544__05c__024a__VhshXyOyTjb3cM7afPm8chYKM8Gm63tkJXMpQuiCUFAk = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4544__05c__024a__VhshmeRPlC0RBPdpDQjmEr6WVPfTTIYSbEkp8xxxpfKa = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4543__05c__024a__Vhshw4mEHRvW5ZmtmTfy3FzyVQMSAaDnzI8SmhXA2YWx = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4543__05c__024a__VhshffJgtDMcfrm54X7qsHj5n7upe8C8AJvipjcyARg9 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4542__05c__024a__VhshjodaRDDYrFxy4yMfqsHk51ZOYBjFkCBIqFDTHD94 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4542__05c__024a__VhshUKXnQpA5d7hEp8WMrgByInCCbovuR6EBxNPtlbkb = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4541__05c__024a__VhshozBXf9J8HuaNUYdJ5lpIwvfcS572ukAUkaQDneNl = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4541__05c__024a__VhshxtjkBLEF6xPAvtv5Zyted1kBSVguYCwNxZnN1AFD = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4540__05c__024a__VhshSLr1f3txwCEigggoBKpPxRzxMDWuxBRsBjSAMFxS = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4540__05c__024a__VhsheZjce7lHkz0yYsLIKrps9MYkf1IoglRqya5W0xXu = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4539__05c__024a__Vhsh9cjPflAmJCUK1GzUBQ7Wr54y7IWqA0ET0Y4YOURo = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4539__05c__024a__Vhsh7LJU13MTBIZS3jed13AmSojBdW6zDAqCLdCc9iPq = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4538__05c__024a__VhshyzfP3HO0xqDs9qoGcE6EzCF6T7tvSgRmf5U0XrIP = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4538__05c__024a__Vhsh4dACIGg3K1gf2brAiNfNsiF4z1W6ENmk2xZ8YvJb = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4537__05c__024a__VhshYU9WgC5AHEDBrT3MqXq4gpJVkqHeJ4xnQauRs7CO = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4537__05c__024a__VhshbgQaxWH57EWUTv74FPUaEVKRJQzFFTeVXd1z2iTG = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4536__05c__024a__VhshWSUY4tYyf9wI9lZTm0GPwLWH7SFNS7BrRoIssL2D = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4536__05c__024a__VhshrOuFBAfF4AM53vThU8GjDVQgBlIvSY0OBp5B5CEq = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4535__05c__024a__VhshO7BwtEJtDZB6lliM8HXOWMoycycZEaoCYIlOI1w9 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4535__05c__024a__VhshOZi9MZ6tIJMaqvQ2Wai7XGltAQTOkdxAbxK6s54k = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4534__05c__024a__VhshA1xhCc46u8llKeUsWta6BCgehZqJi6rbORIsUSBI = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4534__05c__024a__Vhsh6CpjISN91K0S3W6eVlCHt2tjHvV2AAFdaUGpxFBo = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4533__05c__024a__VhshgRlv4Kl8cySmCBxW2pxLfUFlZ7sOunb6gTSZmdaW = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4533__05c__024a__VhshlYWCnpAPbrKewp9xBg3V3hIVSweQ9l3YyxODjKPc = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4532__05c__024a__VhshxSQGJqr7nEDdAN8NJKKpSyrkB7nUJAy4PLXulwtk = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4532__05c__024a__Vhsh3D8xm1HvHxrfkbRYV4eagsmUuXTNSOPqtEfUXTcX = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4531__05c__024a__VhshCzDnyuLeTvVxLqAUvGOoVpr68UjtjakdL0BBBGIS = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4531__05c__024a__Vhsh55xv9H26AQSAr9tXbRkgo2WgBE1ZbqATPJrYtiIP = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4530__05c__024a__VhshK5bW5oKNIQzsNCacIZA6CQAQ1OEzUdfVj1MZjuzw = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4530__05c__024a__VhshSqOEK3aLznOlwiCqpKPBEwFfqYafvKBOSKAJATD4 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4529__05c__024a__VhshIAxGgTSTsPcy4t0D8iv9OpF8k6uzKXcmSkpRCNpJ = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4529__05c__024a__VhshPYaAx9RVig9XjpOzuR29FwSh1i2UzjSN2L09qnkb = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4528__05c__024a__VhshQkwb2CqkoYbNBzKlMkqBNTgzV7eW7ODlBvRYVh2Y = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4528__05c__024a__Vhsh32peOKlVBJ8LAJrjwv3Ca318FbEr4itn0DTonu7c = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4527__05c__024a__Vhshf5gXE7x2zGDKgLQoFaAPfi1AN4nmGBzwBZ3sfX2L = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4527__05c__024a__VhshflZXsR0BlAErJsbH7QyauGGiEbxX9YZTBVdObsb0 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4526__05c__024a__VhshBBtVDqacMaDiCmNnTAn9DXwAcSarV6AO9iYNcAOq = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4526__05c__024a__VhshHDBpHcu9Bq1Fm3VbEY0tg2SBS6WQjVFvpyflaSRv = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4525__05c__024a__VhshBH0q8jd0Cos5b4gKrGAPMP9AmfC7y6uXxYgH38sS = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4525__05c__024a__Vhsh5BAIwe7q0ixiC8DT5REBEyN5xE3DC4ABQFtady65 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4524__05c__024a__Vhsh3pHoi4OG5XorAiWyYbOAb1L9BwOXWIfQ3C4XAzVj = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4524__05c__024a__VhshqCOOVkq1MlwKAijCegMu1srJUrJ4DOlIw3jfkZ2o = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4523__05c__024a__VhshsryjeCNzBgNWlhq28TN28YCVhFv02XORtAbQB8co = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4523__05c__024a__Vhsh0oY8AjrCvDehSR2sT8qH32HKfu9BBpoQCADUfhhO = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4522__05c__024a__VhshfOuDF9X0ieARAx2fXKYtd37G8Dr5l3HEwmehUjk3 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4522__05c__024a__Vhsh7SOESFytZyxANfIUwfFCz2VljBXVZJJKaQ05eade = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4521__05c__024a__VhshsG6QshvnNNXAljIBAQy3ZQOsAaCtIUcWLV9gmmTk = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4521__05c__024a__Vhshzzyjb20gaEBAwPrX3IgHJXujIWcizuOJ2mmcNiSm = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4520__05c__024a__VhshN26Mfprn9YJEPhpxWam2JTdLGFg6QvZwyrm5AS8E = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4520__05c__024a__Vhsh2rlWzL6c80ejgHDhPAwuIBquC7e9qOmwq3bmbwAy = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4519__05c__024a__VhshTtASAxOoViabAnqBzQFsSALMgVHr8YUY8yDyairZ = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4519__05c__024a__VhshHWUm9l5FTBC0TuEn0PnAZnwyY9ymhGPS41QMTwxs = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4518__05c__024a__VhshSHCl4I1llZ1hn06LtBSfPMouJSXHgpv1XgornrN3 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4518__05c__024a__VhshRlLQCmBDnx920RX4jaTB2s1fBHGAOooyh4knOp8b = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4517__05c__024a__Vhsho2m8mMDAj0rtDBQRsunSA0IKApPXJSAayF4zBHRi = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4517__05c__024a__Vhshb2xf5qox64vZaXZs27dUkBieBwk8x4zVdLKhWcJz = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4516__05c__024a__VhshLt2EAAgJLy3IZXVBHlyvtHfe4gVVo0ggjL2VbsrG = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4516__05c__024a__Vhsh3uBHDb1AIydlF2vmEiiqDt6gs1jzjFtg0cfjtvjq = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4515__05c__024a__VhshBxafpAzAYZuyGxsI720Ufl7mbCR1glxKLQzYH1wJ = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4515__05c__024a__Vhshv4OGNhvnhdYczGPqpAB19iRwinnNLR0hcfIqorFm = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4514__05c__024a__VhshDdbDYZTXApqd0YhRsajuOMKC8MM6rXilouR1mMjy = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4514__05c__024a__VhshhNjXgzLBBc24xOR2KA6R2TgfBMiGUFDVK2IdwQYi = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4513__05c__024a__VhshsQzmDzfn0IlhSLXJOsdl09zAuqguGtbnDQ43IyXA = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4513__05c__024a__Vhshw3OUE600DiyV4Xyp2q7Ah9kw8EdN95ScOZFjq4Um = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4512__05c__024a__Vhsh6xPSXSSq1OHgz5yCmcog1OccELp7kYh9iTl7Hffv = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4512__05c__024a__Vhshdzhf1UvAblmfjtDrM5cZUdRJH8ubUMgQ6COAZtB9 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4511__05c__024a__Vhsh6Fd3wi5rTe6llr5a8syKZwPpYQj68Clz0EW0AnE8 = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4511__05c__024a__VhshwSxmdAgED2MfwMAfrbsdgzN9JU0XAAyUajOtBsTE = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4510__05c__024a__Vhshc1gkdR0fgTq4t7PXMMO4ZbjzC3HdOc8ZXwX9uVgh = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4510__05c__024a__Vhsh2nTp3kK9rE3M35wy1hlAq0LWDlqMB7s1gOFA7CsM = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4509__05c__024a__Vhsh45jWpAIRlAjA14tyZzw3F9BKlZUXSAN3sDjAjVvM = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4509__05c__024a__VhshkMJdBcmQn1ISj1eLX0BFdzwxLXBPo1Zy1iBWZgLH = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4508__05c__024a__VhshuI0eDkXYxpRwcPvaijnyscnWyZB7Ka9Xu1cIaPXv = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4508__05c__024a__VhshIwHg12jXDJk1DFfMP683jj6cAPB2xe3AuKBaOyur = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4507__05c__024a__VhshCBPytkySBdD89t0T8oYvUuTldKg3I2cvDmzDtg0t = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4507__05c__024a__VhshNqIvAL7iMroN71luYNUF7iX22kxot4wJQcQWqyj7 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4506__05c__024a__VhshqBBDVS8m37tgC1NqQw47r0BxBpMBsKe1Bn7A2JkE = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4506__05c__024a__Vhshu0SMmxLklvtQ0XPxjWfOjBEHkvwI7ZPCB9GwDijp = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4505__05c__024a__VhshfPxbAkRdnpAegB7Vok6eSwq7gTMYBuDIL8jKEGL5 = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4505__05c__024a__VhshpP7k2R4aeieQkjy9qcb7ZMn8mezMPV6Esiv1vS30 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4504__05c__024a__Vhshm21Abcmq2GKbpSstyJ38x5IHHvDDMFAnw7vrASru = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4504__05c__024a__VhshBBBI31gRQRTQuMdWA47nqoYlkD9lZEvAkHUGMAg3 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4503__05c__024a__VhshclOl2DBFPTmG9C8SHOggNV75ZrAWmOrRXiQmp2bh = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4503__05c__024a__VhshYlWoVvPglKMjTQEmvVPSZZM6c626YuGTgASNljhZ = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4502__05c__024a__VhshYrqjBx2BleX8i2fYHScK6lJJl30nJlwJb2t5VDjM = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4502__05c__024a__VhshYirjDSSIdYiKCiBbrd3btvtFFB7X9XwjVqn338F8 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4501__05c__024a__Vhsh2BA5MefHJzSXSMLiSxIpC6wg69Fx8s59Srzs2zrl = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4501__05c__024a__VhshA05gruOIghyjld8XinsH8bEWx13vMNBspAXtcU2l = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4500__05c__024a__VhshDur983HrOCxaql01z4rzKsjTLNcrhRhoioII1KN3 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4500__05c__024a__VhshBsbZ3k53aaCjzaQ9z8PTayRKeX36IAo9ktveaA7O = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4499__05c__024a__VhshKJrP6Op4AgUzuPPNiC3a6f5dflaOC2MAtaNzzrFy = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4499__05c__024a__VhshnOJfhULFfUUioFbKFaAvolmXgk9QHncjH0AJBJG1 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4498__05c__024a__Vhsh7WG9dTOQ0XEo6o3yoJcThgqEAdtZk0JVmrcy7BXA = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4498__05c__024a__VhshzrmfGRE0KvHAyKKlUWFXhyBZEC9kwyY9SSdSOVkV = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4497__05c__024a__VhshRTz0BGzGVHs6yEbmQRO9rniaQihajOpoR0w31LlM = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4497__05c__024a__VhshEmouK6BUzb6d89p8ka9yOndxG9dRXXpwE1MwLJOQ = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4496__05c__024a__VhshrA2qxydSkdmpGpBp6NcMksEHt7MgiT2pxyOGBeDu = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4496__05c__024a__VhshBvCaDvYzBIws85txMxLhhfSCP4nvrURxDSAypLdO = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4495__05c__024a__Vhshyvb3AdHo9H8zjOaooblkfXH3Iongd5dEAv6hzamu = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4495__05c__024a__Vhsh4RZb6WNVhuBq8A0Go6Bz6dxk9SGWbLACEx4eahv7 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4494__05c__024a__VhshKJSptRebXSPzA1B3RifQGDEzmOVTodGHwvBNKc9i = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4494__05c__024a__VhshnRcokQnO91lQoWkmPANPV9ic7ufPbCcX8OAkOceK = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4493__05c__024a__Vhsha6gyoyjK3EKugkxN4isDXEWzxgNMbBP093Cg31XD = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4493__05c__024a__VhshUssa63eOZc0GtuVwNlxTv0Tmc2mX3fq2QuHWilBb = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4492__05c__024a__Vhsh5Cc2vcxezlHnkkW0W9bS7JuUWWl4PEzGFDgDqFtp = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4492__05c__024a__Vhsh2YDXEhXyAoBXiCwTQAOKQxQspRX89cpIQAtKmWgU = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4491__05c__024a__VhshqVc936dTinXnZsZid1KmAYkglnEInnM9jHaVXieq = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4491__05c__024a__VhshB9ex30snmTYkfgFKUWUV5D4GAXOikbeL4z6RL5h6 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4490__05c__024a__VhshIRf9uaLpXHhAchoDBqLngHkw5fG9VsdFOByh9W41 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4490__05c__024a__Vhshz3UGGMy8oMCZqbnqpXAxO8sf2z5tRfT5Lu1rDeco = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4489__05c__024a__Vhsh1QjOzzL45Zke0KKY1BSyhSIXhBkszIHAbCvaUPWa = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4489__05c__024a__Vhsh2KF8AM0KjS6gFBDWqrp3G7PAEBpTKgpKHB47MGsW = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4488__05c__024a__Vhsh78eTTcsE0B4uDrtUtzzkDf1XGEs8KXtFDO6QW9eF = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4488__05c__024a__VhshPihlPSw19aWHq6F3EthQxCA1DhLStn8FLnCOEWn8 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4487__05c__024a__VhshLWelDo4BmMrdDXPv4AGFiuX2hhAqw4BrVTFBZbm6 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4487__05c__024a__VhshEwZX1KpimqGZo97HIDYaIVGfO4HIPJw0VVDFkZSL = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4486__05c__024a__VhshLXMizsT3CsF2AzUYTrZ7b5WDE9eLw37BefNA3gRE = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4486__05c__024a__Vhshukit6JCuqLUd5GGgBSLSCBUsKu8XMYjaugZx6pBM = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4485__05c__024a__Vhshcm3xyjNkFAgcWZ3ZNUmju4eeHHMCvkt3MNI9j63C = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4485__05c__024a__VhshNhAhen2yr6b5d0gDLpsyqP4aMn4Sau1Aa6uL2T9h = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4484__05c__024a__VhshpccLt162HNVxfK6T4eGGcAFG9OipwsBqM7IBxfVc = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4484__05c__024a__VhshNeeT8Cib4IhYy2TiAMQJ0wJQyllphhssOwbns9MN = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4483__05c__024a__VhshBN8uIWLAP2jvkVhDXzBlToP2LzOakKccL4kcWrO3 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4483__05c__024a__Vhsht1WTkD7Yp6aWffLGLDyciGDxWKM8fOloHRL2UGsQ = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4482__05c__024a__VhshEwKJ9KxkXfAXh9fBpj1lpIbdcKlcc2on8TzGre4m = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4482__05c__024a__VhshOELniGwgIz5xBh75AS8CceGwpkoPeZnytCVJAsI2 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4481__05c__024a__Vhshkse2LxLJT08PuuFDS5b6uo4AohhZJ2t0356bnuZX = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4481__05c__024a__Vhshh69qMW3A7Z5KLzAf2Vc4krnSGGd9UVHAA6cMt0pa = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4480__05c__024a__VhshEBTIBPaGJlkyWOnjiaXvGVv4Po2xTNB2GjAobH9k = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4480__05c__024a__VhshdKKdAh0htcUq3tDwQZyHuqWchvgcgczyNy6oXfcm = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4479__05c__024a__VhshwRyTa38lYY02QkeAY7LbDCLs84RYOzxIETHrp14s = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4479__05c__024a__Vhshh1oLez9omTDlUQMw8NgQjiWZhSH1vjKDcAjuBZIA = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4478__05c__024a__VhshrVo9nDr3BdmL4B6NZt2vkoogDSz1TW1wODDWyezV = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4478__05c__024a__VhshpaLB8wHRWkWQh3Mp1oVKLsuma5Mm4QTMJGTB9KU2 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4477__05c__024a__VhshRA6uM9UUJiQzw0WLlWWyxcjOa4veJIAF8sFh4joZ = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4477__05c__024a__VhshoQi4QzQTRmys8OSCN2MWePeiFQLtayYJISHsIdOy = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4476__05c__024a__VhshoimPbrBoP6Ouds8gdIqLQ47VkdeLms2J30BbUYM3 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4476__05c__024a__Vhsho60GNrAkwREjNJBbq4hKuqQzsuryfmnQL90AAzKd = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4475__05c__024a__VhshQCMrADR0sgf1Tnkf33HSeLORO6OhgYwkyQkE5NGt = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4475__05c__024a__VhshpQ0C6alQqg5h2hpqxPCyxx7cZZbHpd961CAwq8Zg = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4474__05c__024a__Vhsh8Arspai0PI1aJbOjPXXpD4vtE9pQpLGIE1uTIGF6 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4474__05c__024a__Vhsh6MEYo7lzNXNVZpxkAi0C5Y5VYKxKiwcwKzQmhjRJ = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4473__05c__024a__VhsharobYAqzCVvrehVqYBI4TxuWPSV357w4QbZlIFEn = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4473__05c__024a__VhshFzkSLL4yEvtUUnNCaIp83vccvBfK7vhoMAJQjpFG = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4472__05c__024a__Vhsh4hxpVuUfUMF7hl6sd2TK2sb6avWtXlIHBOrEEmq6 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4472__05c__024a__VhshpC7ygqFGCV5x6M7IYiw0Np8VN550pqZRrEyS1NMs = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4471__05c__024a__VhshMXKxPP9PrzWezBrB2atzrgATMDrSMGs9ibXV4uYS = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4471__05c__024a__Vhsh5JMXG0dkqhcrKn10U4VHGNVY9XOtFmd2pG5FxzlP = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4470__05c__024a__Vhsh3hYUxS6EyQlQkspHsOuupiIAYjeW4FFe7DoGPuPo = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4470__05c__024a__VhshgKceYvBYlJktoNK3OUhjYRFUI3E6wj1xZxBEnkYq = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4469__05c__024a__Vhsh3qJILJNbk5LGTUz89CMLRDCcASCGYXNb454zaBoG = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4469__05c__024a__VhshfhVYaTkII85wAfIABjSJHM8NxG1IYrSsrZZQnEAy = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4468__05c__024a__Vhshd0xhEisr8Ez5zBDAyQM3vKIyVB8yRClrubBeOtHB = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4468__05c__024a__VhshHCIqMpao2LF5AyEL1vKA0scGg3vekMQu0y4ozKA7 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4467__05c__024a__VhshnbBP4QxNPfIB67lykP88xB1YlRTF03TQHtRTUvux = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4467__05c__024a__VhshL0BpGf8iHdbeUdRBmoHvTrakkeImCfuDGOnzQEfp = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4466__05c__024a__VhshqBTvhjAsB09HgtGrNqeEK1PYS1GPTCOKSgUpMer4 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4466__05c__024a__VhshTg0bzwKBFPPtlPuqx6rjGlTxWXlGnE9o9dHUiyln = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4465__05c__024a__Vhshkajq40feRoAAc1qmByTorn9Z3T4Wy5BlO2UPKoNl = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4465__05c__024a__VhshYoOPm71tO9lYnAvjimwkZgmgx85fqRfRkEqTYEbL = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4464__05c__024a__VhshJb5pLx6AO5iAKRr3ihARqCxtB6fjabYeAWAKgcuO = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4464__05c__024a__Vhsh7Bd72DaAW3vtSrFYusU3WjbFfv8BqjWBEN9CBgx4 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4463__05c__024a__VhshwRqsw9WyvqNmG3AUDaAB5BNrROabylM6a1jXsA29 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4463__05c__024a__VhshKXJhHrTzODk14pNoHGPoln2XIaXgOcpsadlGoLll = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4462__05c__024a__Vhsh1PdEyHZdNz8x69P1LyjndhMlGHk7vG5R1ufatc0c = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4462__05c__024a__VhshBO8mrIOrFO5B6UB49mj72SCJeITmoTADtwodd6S6 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4461__05c__024a__VhshPA7EY8fffDBTL12wL6Ms1YnpvWSz85Bs2qZgiBUx = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4461__05c__024a__Vhshqjfywj5RrBJAbAQ7oBm7dXcxkqtYWdAfXbcJx9hu = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4460__05c__024a__VhshXIIas1kPY4FHWXKwCKy6uH5HcxP9Lojh2GMqwNqr = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4460__05c__024a__VhshCbLe01y4hzzO15nfc5WGqA9GSOSU3n3IM0lzGaum = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4459__05c__024a__VhshicErsg67oyHAkYOLwxgH01Fdn1kauCDxDBGPJ9pS = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4459__05c__024a__Vhsh5Rp13R05ezqbsIRpNYkqHTUmWhdAMWDr72kxt5Ys = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4458__05c__024a__VhshE8cK1ER1PCYvMWVK5rlGzZwOJllWyszG60xyR1gB = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4458__05c__024a__VhshemzUYocmdBR6mhwT4VjGonQ4OGo5BZShAzUn4IZM = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4457__05c__024a__Vhshr5lnbCUg4W53SOA7537SFsaL1Cs7qLZzUwdeBx8N = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4457__05c__024a__VhshAWa651Htkpo36g0Pnm8HSw0AqM3gAyQINH0BrPDG = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4456__05c__024a__Vhsh9Z3RAvwiVwbKpBUyrSl3Qm9mkEih7ZB6Fxeuo04m = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4456__05c__024a__VhshiyLVQimxbkBlMo7eMGiELbd3UPIZAJ8AS3LzWloY = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4455__05c__024a__VhshpF2vHtBpZheAqAwDDtbYVQmMWAVCjvBwUUdRA45O = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4455__05c__024a__VhshCYaymtPWMJ1Dy0TgR58NWXsA4ctSRNwefXkx6DB9 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4454__05c__024a__VhshV0USdBj0TxvQUAB2jyx70pETquvI67zY8QkpKLHT = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4454__05c__024a__Vhshh96C3eNN5QdZKHOdUOZs65xHjy45P6A3ZlBHk6ES = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4453__05c__024a__Vhshd3QY7oG6UaxFz2FeAuQ1atV8b7L7TsPCOiytm2Z4 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4453__05c__024a__VhshIUJTJUiV0DBNBrBDHSW3Mja8YM98Wtu1cLSdVhZo = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4452__05c__024a__VhshAN5y8va3PAdXkL8QtusTCUvtK3FKrdMSPfxLo7eu = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4452__05c__024a__VhshNH3WxeeGhFHz1NNbpWtxpRcAlWXoObnHuq02lrYw = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4451__05c__024a__Vhsh9O8Ol3yWLVh21E7gQrvKXrZkWYjYs8XkorYanJAB = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4451__05c__024a__Vhsh96kql1vdHKdOlBDsbRoUeiFDnB1slaFmnQcrFkBi = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4450__05c__024a__VhshcAXHuaUmaI5OcAezIzSAcvo9pMMf93q2UMfjS87w = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4450__05c__024a__VhshEBcYSEix6Abzp9AaeRi8KjwERVGOePcnJSpdP7Q3 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4449__05c__024a__VhsheWsRyR9NQkjAAI9p6NWKmlNsciRBZK5OqrMMwv9v = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4449__05c__024a__VhshKe1mCQG3HiQzCaJwobutGR5gHfjSSeB9BoNUCOkL = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4448__05c__024a__VhshQnGP4h1PgugS9SDuazZk3pjTn6sRapMrrtPr5NCL = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4448__05c__024a__Vhshn15FSggOBVPFp6aTU7PpkMsxEy00jyMdmEYmQkEH = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4447__05c__024a__Vhshg2I9GQdJqGeJ52idrjNvz48osg8Y1ACSABedtAMA = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4447__05c__024a__VhshU2SFUzhbCWhbgA44ZmLk4q6fGCAcScjNRWdHBu2r = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4446__05c__024a__VhshTyCYEgpBBHtfFhmpnGgur46ofPPdKFj6EuBNvntU = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4446__05c__024a__Vhsh52BUEOEp20QzSzeVcUtyXDBHnhIcBSvkatTXhh5w = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4445__05c__024a__Vhshd5WBLBG9RvaPRiuI590bxP7IZxOHHslMOC6PwBs2 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4445__05c__024a__VhshtmL0DyjDE61H5BBS2DFRVjvhm80RrmxHrN96VysR = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4444__05c__024a__VhshXjPtk0cGBp4qCqrw9EciVplWNAYsVj74fb9UiVp0 = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4444__05c__024a__VhshUnpspyz4ebUG6XNjKtjXJAAym1PQG52jXXU8ShfA = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4443__05c__024a__VhshpGV7rE2rDfPIompMy8Beq3vrBG7dAA84jGYWCGcW = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4443__05c__024a__VhshRHd3K2G7LLABqwel4Bzu8RZFbNZhGqZ7adyp5z4h = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4442__05c__024a__VhshKKzt47VgcY8g1AaqKiImGKPnhx54kYUAgxjPGkjM = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4442__05c__024a__VhshnL1wgfan6XS72uOyffQVWIko4IYpOBGIrn3WJ29V = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4441__05c__024a__VhshfD9C0EhwdxF6E2ME3DFaFlv0wKWK580unTp6hbrR = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4441__05c__024a__VhshhFmjz81mDBsfA0yOToC693dyfEnB7Ap4ILa41qm4 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4440__05c__024a__VhshkBEyBIm46Vd1z28dn2KguiIwV2BjRArPws2y2eEi = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4440__05c__024a__VhshLluFF68WWHE79837BhlV6gJodbUW4w8LqcRqAhAq = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4439__05c__024a__VhshxxBBPgvKxIA2utX3AlGPLQaG3xJxzIHbd81oLlYP = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4439__05c__024a__Vhshtn39MPJupRIhpxBe9nRdyTRwAPRDVPQ5sqDuqPx8 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4438__05c__024a__VhsheAODapAGJNeXNK3utAXecUr5nv5JhYXK2W0QRw5o = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4438__05c__024a__Vhshxl3VAsAOl5T9Atgf3WLALMld2EXGqLaSNfJqgBk8 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4437__05c__024a__VhshfEoWZLSngnmCdymuIfP1g3w1BdOiMfLJIATppLXq = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4437__05c__024a__Vhsh7d9r1QHBewE3SOGBFSJicfpctrgYFOPHQSpkv02g = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4436__05c__024a__VhshVu9IF5HWPw7Z2uMHLB8SPLHJdW2OSvBL35jIwBK4 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4436__05c__024a__VhshNAd3fT01AcIbOv3MpMW6lvJnhrkV2Ho8xjdHtr32 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4435__05c__024a__VhshnAXD6NNK5JQnQgVlKEW2XlmvWWpy0bbOBcKtHsG3 = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4435__05c__024a__Vhsh0aQ44st353C121svfs661B4PawhKnXbhuBGGmNiX = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4434__05c__024a__VhshBGpjtevIBZwSwi5sqgQQIF3IsOggiu6CBCA8SIhX = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4434__05c__024a__VhshJ3zN9bpmTFSLPpUAWmL63IT7jmeldvK7tzGnzloB = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4433__05c__024a__Vhshuuib08zOeg3P9Er379xANWWzSyXOxFsLuOazF96V = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4433__05c__024a__VhshcbURVl0hBxM2dLJuTj6TrvNDCBva3aiSfiGkmMad = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4432__05c__024a__Vhshtnkoz4I7VBOLp2BoXnTOKvn8W5XIO15s0rAFjlsR = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4432__05c__024a__Vhsh7Q30OKOSHnaUcS8fy7BegDFeW1mDKjT1SaFOBS8A = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4431__05c__024a__VhshxSjavhsP9ill1WhJWDr6bsCKERVFNDes0y7A95KL = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4431__05c__024a__Vhsh2TG3gure8ShA3HH0DOtUB5a000BlqOSJH5VPsfNC = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4430__05c__024a__Vhsh4zv8KhuFlqgAgMBhUFg9MoSlWfxNw4d8BKBZWhF2 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4430__05c__024a__VhshFJXuxVxD6Qf5Mze0lIcmRB7UhkGLkhqL7EnHqd2A = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4429__05c__024a__Vhsh2ComR2SFmna3SBflJNDeum65VPX4BxA0zWP1nwDP = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4429__05c__024a__VhshF1HlB3FZtqvud0eBjECywW4VN7W7M66FEsVnBDiR = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4428__05c__024a__VhsheRVbmFlskfClcjA9mGO5Deedr4W9oalRvoimd5go = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4428__05c__024a__Vhshjb9p43C05j0mFlgQUoDeP6BJcD8Cl7v7sgaoAKRY = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4427__05c__024a__VhshQBWs3ccYRUNStP2yS8DdWLfiyAEgHbWdO8CWBoRo = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4427__05c__024a__VhshDFLGik9Wyzlu2EV3q1hK9L5soSgTTn19dbE728rb = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4426__05c__024a__VhshcoIP9tmTPgwOHKhHOsNvALegwrzCjeBL4CguhnwQ = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4426__05c__024a__VhshHArvAnfK0VBoSeET6h2jbaQGqBlWXcNm4cziZ6tq = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4425__05c__024a__Vhsh7hEKGPfVObsnxI9VYz6JmKsaUBFxtgzLSJpcNbtd = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4425__05c__024a__VhshewwGpOEKrFKyitMAn8u1FWdoLWbjGIq5RzzfW43D = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4424__05c__024a__Vhsh5jLAXzkbMPLE4kaXOjXT0tdgEz5PAH5EiSNNuAdY = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4424__05c__024a__VhshJJtgP83oiWtqGVGI6MyxDzzmXdgurLSItEYQBGOs = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4423__05c__024a__VhshAYZpyjP100ltrhv8Aph5czMWPV4shUsHvW66s158 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4423__05c__024a__Vhsh4iuCCRIBBW2EcK26Fm06Detfid5W0UwkCvB2dBsf = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4422__05c__024a__Vhsh4JRBMf0gGgKch6kAxpzRuSzCwLWZA0fItATxz2C2 = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4422__05c__024a__VhshIIztzK41cBJQao6JyUHSYgm5A09zIvLKp2BbwBLe = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4421__05c__024a__Vhsh9DLwsbl5hMMwZBB8cuynvWo5xsxm3TN5OxKSOqJU = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4421__05c__024a__VhshbJt6AUbj4WQ10EmFz5PbVZLhcq8cWFv468GzEzOz = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4420__05c__024a__VhshRYgfjB8r7dvtVijpv6zZGkA2ejk9WIairwvPoWbz = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4420__05c__024a__VhshGrdAPLhXrybHNb7NwyA35UIm45kBB1GpdsllCxSA = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4419__05c__024a__VhshF7G15UTeRU2kQVYAY9iO4JWto6mxXtBxvjX5ZrBO = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4419__05c__024a__Vhsh67XBim5LqnfjPV9KO4AcZMbiWfhEYAXoMnbfcCBw = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4418__05c__024a__VhshRhJGAFHbYAnx7GQADvyeQMfncMoCPZHsyPkHU6mo = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4418__05c__024a__VhshOrjF9Vu4BfSTto7wb24IybzAH3Xsqzsa6td9QDsC = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4417__05c__024a__VhshO9WB6jY2eB4uBYEBzvufLffUg4gglp2I7efZU5HS = VL_RAND_RESET_I(5);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4417__05c__024a__VhshJEbzCLyOJYzMK3eTTB9tU0A9MAl3jBOggjEM8JvW = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4416__05c__024a__Vhsh7pK2WmBf0H5lBvWaYaLaXHAO3kfVACikTnjAYHfP = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4416__05c__024a__VhshXnBOQw61KFBOZr3VWOVZuimiTBu9Lzy8D5FApldY = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4415__05c__024a__VhshhE2XKLQsBB3mHTTvJS8QLGKBDI00QhLzs9BwUU3E = VL_RAND_RESET_I(2);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap4415__05c__024a__VhshBXdHCtxbqBTejhGL3DBiw6EXFUCAEiRA0Mu0DQfm = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eA = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eC = VL_RAND_RESET_Q(33);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eS = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eC = VL_RAND_RESET_I(18);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eS = VL_RAND_RESET_I(17);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap44__05c__024mul__VhshMZ5DLQDpsnGuRDcE2CUo9QVuRXAJODXCdN7cBSGq = VL_RAND_RESET_Q(38);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024techmap46__05c__024mul__Vhsh9CKKBbYb0BWMEz4YAkFLUJYhG8fiZ9OUTHwQ368t = VL_RAND_RESET_I(18);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add2 = VL_RAND_RESET_I(32);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244355__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241010__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241011__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241012__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241013__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241014__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241015__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241016__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241017__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241018__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241019__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241020__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241021__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241022__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241023__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241024__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241025__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241026__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241027__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241028__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241029__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241030__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241031__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241032__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241033__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241034__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241035__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241036__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241037__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241038__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241039__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241040__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241041__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241042__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241043__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241044__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241045__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241046__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241047__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241048__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241049__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241050__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241051__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241052__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241053__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241054__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241055__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241056__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241057__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241058__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241059__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241060__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241061__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241062__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241063__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241064__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241065__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241066__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241067__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241068__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241069__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241070__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241071__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241072__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241073__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241074__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241075__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241076__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241077__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241078__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241079__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241080__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241081__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241082__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241083__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241084__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241085__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241086__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241087__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241088__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241089__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241090__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241091__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241092__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241093__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241094__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241095__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241096__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241097__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241098__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241099__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241100__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241101__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241102__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241103__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241104__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244375__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244307__A = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244369__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244388__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244395__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244390__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244396__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellout____05c__024abc__05c__0241008__05c__024auto__05c__024blifparse__02ecc__03a362__03aparse_blif__05c__0241009__Q = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244393__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244372__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244373__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244374__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244351__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244346__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244371__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244370__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244339__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244340__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244348__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244398__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244356__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244357__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244358__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244359__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244360__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244361__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244362__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244363__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244364__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244365__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244366__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244367__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244368__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244353__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244338__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244376__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244377__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244389__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244381__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244382__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244383__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244392__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244386__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244354__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244387__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244380__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244306__A = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244385__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244391__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244384__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244379__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244394__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244378__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244352__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244350__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244349__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244347__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244345__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244344__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244343__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244342__A = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244341__A = VL_RAND_RESET_I(4);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__B = VL_RAND_RESET_I(18);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____Vcellinp____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__A = VL_RAND_RESET_I(20);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244241__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244241__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244241__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244241__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244245__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244245__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244245__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244245__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244314__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244314__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244314__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244314__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244330__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244330__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244330__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244330__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244242__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244242__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244242__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244242__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244247__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244247__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244247__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244247__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244336__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244336__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244336__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244336__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244269__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244269__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244269__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244269__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244252__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244252__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244252__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244252__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244253__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244253__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244253__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244253__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244254__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244254__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244254__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244254__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244255__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244255__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244255__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244255__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244256__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244256__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244256__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244256__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244273__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244273__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244273__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244273__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244295__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244295__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244295__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244295__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244320__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244320__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244320__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244320__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244262__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244262__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244262__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244262__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244270__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244270__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244270__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244270__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244287__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244287__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244287__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244287__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244265__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244265__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244265__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244265__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244243__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244243__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244243__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244243__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244264__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244264__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244264__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244264__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244322__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244322__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244322__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244322__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244260__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244260__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244260__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244260__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244272__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244272__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244272__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244272__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244274__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244274__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244274__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244274__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244275__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244275__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244275__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244275__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244276__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244276__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244276__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244276__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244277__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244277__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244277__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244277__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244279__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244279__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244279__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244279__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244298__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244298__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244298__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244298__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244281__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244281__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244281__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244281__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244258__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244258__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244258__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244258__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244282__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244282__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244282__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244282__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244283__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244283__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244283__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244283__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244284__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244284__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244284__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244284__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244285__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244285__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244285__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244285__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244286__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244286__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244286__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244286__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244288__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244288__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244288__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244288__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244289__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244289__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244289__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244289__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244290__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244290__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244290__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244290__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244308__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244308__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244308__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244308__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244291__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244291__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244291__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244291__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244292__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244292__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244292__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244292__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244294__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244294__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244294__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244294__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244280__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244280__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244280__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244280__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244296__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244296__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244296__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244296__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244251__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244251__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244251__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244251__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244297__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244297__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244297__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244297__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244299__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244299__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244299__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244299__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244259__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244259__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244259__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244259__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244301__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244301__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244301__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244301__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244302__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244302__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244302__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244302__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244303__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244303__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244303__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244303__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244304__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244304__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244304__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244304__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244268__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244268__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244268__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244268__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244309__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244309__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244309__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244309__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244305__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244261__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244261__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244261__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244261__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244267__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244267__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244267__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244267__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244300__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244300__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244300__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244300__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244312__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244312__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244312__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244312__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244310__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244310__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244310__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244310__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244325__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244325__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244325__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244325__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244316__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244316__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244316__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244316__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244318__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244318__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244318__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244318__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244321__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244321__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244321__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244321__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244278__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244278__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244278__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244278__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244323__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244323__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244323__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244323__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244293__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244293__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244293__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244293__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244257__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244257__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244257__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244257__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244244__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244244__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244244__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244244__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244326__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244326__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244326__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244326__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244327__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244327__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244327__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244327__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244250__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244250__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244250__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244250__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244249__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244249__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244249__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244249__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244329__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244329__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244329__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244329__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244246__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244246__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244246__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244246__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244331__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244331__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244331__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244331__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244333__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244333__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244333__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244333__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244334__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244334__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244334__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244334__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244335__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244335__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244335__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244335__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244337__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244337__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244337__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244337__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244414__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244412__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244412__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244412__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244412__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244410__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244410__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244410__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244410__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244408__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244408__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244408__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244408__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244406__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244406__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244406__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244406__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244313__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244313__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244313__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244313__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244404__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244404__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244404__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244404__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244402__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244402__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244402__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244402__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244332__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244332__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244332__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244332__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244400__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244400__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244400__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244400__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244324__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244324__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244324__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244324__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244271__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244271__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244271__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244271__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244328__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244328__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244328__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244328__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244315__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244315__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244315__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244315__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244317__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244317__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244317__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244317__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244319__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244319__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244319__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244319__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244413__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244413__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244413__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244413__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244266__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244266__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244266__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244266__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244311__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244311__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244311__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244311__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244248__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244248__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244248__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244248__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244263__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244263__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244263__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244263__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244397__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244399__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244399__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244399__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244399__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244401__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244401__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244401__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244401__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244403__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244403__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244403__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244403__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244405__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244405__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244405__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244405__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244407__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244407__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244407__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244407__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244409__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244409__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244409__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244409__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244411__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244411__DOT__mux__DOT__muxlogic__DOT__bm0__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244411__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm0_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024abc__05c__0244240__05c__024auto__05c__024blifparse__02ecc__03a515__03aparse_blif__05c__0244411__DOT__mux__DOT__muxlogic__DOT__bm1__DOT__bm1_out = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eintermediate_adder__DOT__CIN = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eintermediate_adder__DOT__CIN = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__ACC_FIR = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__CLK = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__RESET = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__LOAD_ACC = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__SATURATE = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__SHIFT_RIGHT = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__ROUND = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__SUBTRACT = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__subtract_reg = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_reg = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_reg = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_reg1 = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_reg2 = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_reg1 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_reg2 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_reg1 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_reg2 = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__load_acc_reg = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_reg = VL_RAND_RESET_I(20);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_reg = VL_RAND_RESET_I(18);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_reg = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_reg = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__subtract_int = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__acc_fir_int = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__feedback_int = VL_RAND_RESET_I(3);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right_int = VL_RAND_RESET_I(6);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round_int = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate_int = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__load_acc_int = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__a_int = VL_RAND_RESET_I(20);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__b_int = VL_RAND_RESET_I(18);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_a_int = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__unsigned_b_int = VL_RAND_RESET_I(1);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__accumulator = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_in = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_out = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__add_sub_out = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__pre_shift = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__shift_right = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__round = VL_RAND_RESET_Q(64);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__saturate = VL_RAND_RESET_Q(38);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out = VL_RAND_RESET_Q(38);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__z_out_reg = VL_RAND_RESET_Q(38);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_a = VL_RAND_RESET_I(20);
+    vlSelf->co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__mult_b = VL_RAND_RESET_I(18);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eC__0 = VL_RAND_RESET_I(18);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add__0 = VL_RAND_RESET_I(32);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eS__0 = VL_RAND_RESET_I(17);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eC__0 = VL_RAND_RESET_Q(33);
+    vlSelf->__VstlDidInit = 0;
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eC__1 = VL_RAND_RESET_I(18);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT__add__1 = VL_RAND_RESET_I(32);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02450__02eS__1 = VL_RAND_RESET_I(17);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024auto__05c__024alumacc__02ecc__03a485__03areplace_alu__05c__02447__02eC__1 = VL_RAND_RESET_Q(33);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__clk__0 = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__CLK__0 = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__RESET__0 = VL_RAND_RESET_I(1);
+    vlSelf->__Vtrigprevexpr___TOP__co_sim_dsp_multiplier_accum_with_add_neg__DOT__netlist__DOT____05c__024mul__05c__024__02fnfs___VhshgHsEgeOk9URBmOUzMpBmWKcBZPsYfHs4RnzQ1Cey__DOT__ACC_FIR__0 = VL_RAND_RESET_I(6);
+    vlSelf->__VactDidInit = 0;
+    for (int __Vi0 = 0; __Vi0 < 17; ++__Vi0) {
+        vlSelf->__Vm_traceActivity[__Vi0] = 0;
+    }
+}
