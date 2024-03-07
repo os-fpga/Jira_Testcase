@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for dsp_multiplier_accum_with_add_neg
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/03_05_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/5th-march/dsp_multiplier_accum_with_add_neg/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/5th-march/dsp_multiplier_accum_with_add_neg/results_dir/.././rtl/dsp_multiplier_accum_with_add_neg.v 
+
+
+# Technology mapping
+hierarchy -top dsp_multiplier_accum_with_add_neg
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf  -new_dsp19x2 -new_tdp36k -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v dsp_multiplier_accum_with_add_neg_post_synth.v
+write_blif -param dsp_multiplier_accum_with_add_neg_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_dsp_multiplier_accum_with_add_neg.sdc -json config.json -w wrapper_dsp_multiplier_accum_with_add_neg_post_synth.v wrapper_dsp_multiplier_accum_with_add_neg_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_dsp_multiplier_accum_with_add_neg_post_synth.v
+write_blif -param fabric_dsp_multiplier_accum_with_add_neg_post_synth.eblif
+
+  
