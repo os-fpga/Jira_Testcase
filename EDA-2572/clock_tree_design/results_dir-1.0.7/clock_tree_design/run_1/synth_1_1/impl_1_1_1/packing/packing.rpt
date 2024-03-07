@@ -1,0 +1,873 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.03
+Build    : 1.0.7
+Hash     : 5a7470e
+Date     : Mar  7 2024
+Type     : Engineering
+Log Time   : Thu Mar  7 10:05:48 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/03_07_2024_11_49_49/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/03_07_2024_11_49_49/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/synthesis/fabric_clock_tree_design_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/packing/fabric_clock_tree_design_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report clock_tree_design_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top clock_tree_design --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/packing/fabric_clock_tree_design_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/placement/fabric_clock_tree_design_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/routing/fabric_clock_tree_design_post_synth.route --pack
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/03_07_2024_11_49_49/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: fabric_clock_tree_design_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 17.0 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/packing/fabric_clock_tree_design_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/placement/fabric_clock_tree_design_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/routing/fabric_clock_tree_design_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/packing/fabric_clock_tree_design_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: DISABLED
+Router: DISABLED
+Analysis: DISABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 18.0 MiB, delta_rss +1.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/synthesis/fabric_clock_tree_design_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.00 seconds (max_rss 18.7 MiB, delta_rss +0.7 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 76
+Swept block(s)      : 76
+Constant Pins Marked: 0
+# Clean circuit took 0.00 seconds (max_rss 18.7 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 18.7 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 18.7 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 63
+    .input :      10
+    .output:      20
+    0-LUT  :       1
+    6-LUT  :      26
+    dffre  :       6
+  Nets  : 43
+    Avg Fanout:     2.3
+    Max Fanout:    10.0
+    Min Fanout:     1.0
+  Netlist Clocks: 6
+# Build Timing Graph
+  Timing Graph Nodes: 144
+  Timing Graph Edges: 182
+  Timing Graph Levels: 8
+# Build Timing Graph took 0.00 seconds (max_rss 18.7 MiB, delta_rss +0.0 MiB)
+Netlist contains 6 clocks
+  Netlist Clock '$iopadmap$clk6' Fanout: 1 pins (0.7%), 1 blocks (1.6%)
+  Netlist Clock '$iopadmap$clk5' Fanout: 1 pins (0.7%), 1 blocks (1.6%)
+  Netlist Clock '$iopadmap$clk4' Fanout: 1 pins (0.7%), 1 blocks (1.6%)
+  Netlist Clock '$iopadmap$clk3' Fanout: 1 pins (0.7%), 1 blocks (1.6%)
+  Netlist Clock '$iopadmap$clk2' Fanout: 1 pins (0.7%), 1 blocks (1.6%)
+  Netlist Clock '$iopadmap$clk1' Fanout: 1 pins (0.7%), 1 blocks (1.6%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[0]'
+Warning 168: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[1]'
+Warning 169: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[2]'
+Warning 170: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[3]'
+Warning 171: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[4]'
+Warning 172: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[5]'
+Warning 173: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[6]'
+Warning 174: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[7]'
+Warning 175: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[8]'
+Warning 176: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[9]'
+Warning 177: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[10]'
+Warning 178: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[11]'
+Warning 179: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[12]'
+Warning 180: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[13]'
+Warning 181: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[14]'
+Warning 182: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[15]'
+Warning 183: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[16]'
+Warning 184: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[17]'
+Warning 185: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[18]'
+Warning 186: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[19]'
+Warning 187: set_output_delay command matched but was not applied to primary input '$iopadmap$clk6'
+Warning 188: set_output_delay command matched but was not applied to primary input '$iopadmap$t'
+Warning 189: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[0]'
+Warning 190: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[1]'
+Warning 191: set_output_delay command matched but was not applied to primary input '$iopadmap$clr_n'
+Warning 192: set_output_delay command matched but was not applied to primary input '$iopadmap$clk5'
+Warning 193: set_output_delay command matched but was not applied to primary input '$iopadmap$clk4'
+Warning 194: set_output_delay command matched but was not applied to primary input '$iopadmap$clk3'
+Warning 195: set_output_delay command matched but was not applied to primary input '$iopadmap$clk2'
+Warning 196: set_output_delay command matched but was not applied to primary input '$iopadmap$clk1'
+Warning 197: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[0]'
+Warning 198: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[1]'
+Warning 199: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[2]'
+Warning 200: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[3]'
+Warning 201: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[4]'
+Warning 202: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[5]'
+Warning 203: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[6]'
+Warning 204: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[7]'
+Warning 205: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[8]'
+Warning 206: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[9]'
+Warning 207: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[10]'
+Warning 208: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[11]'
+Warning 209: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[12]'
+Warning 210: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[13]'
+Warning 211: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[14]'
+Warning 212: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[15]'
+Warning 213: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[16]'
+Warning 214: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[17]'
+Warning 215: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[18]'
+Warning 216: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[19]'
+Warning 217: set_output_delay command matched but was not applied to primary input '$iopadmap$clk6'
+Warning 218: set_output_delay command matched but was not applied to primary input '$iopadmap$t'
+Warning 219: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[0]'
+Warning 220: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[1]'
+Warning 221: set_output_delay command matched but was not applied to primary input '$iopadmap$clr_n'
+Warning 222: set_output_delay command matched but was not applied to primary input '$iopadmap$clk5'
+Warning 223: set_output_delay command matched but was not applied to primary input '$iopadmap$clk4'
+Warning 224: set_output_delay command matched but was not applied to primary input '$iopadmap$clk3'
+Warning 225: set_output_delay command matched but was not applied to primary input '$iopadmap$clk2'
+Warning 226: set_output_delay command matched but was not applied to primary input '$iopadmap$clk1'
+Warning 227: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[0]'
+Warning 228: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[1]'
+Warning 229: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[2]'
+Warning 230: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[3]'
+Warning 231: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[4]'
+Warning 232: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[5]'
+Warning 233: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[6]'
+Warning 234: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[7]'
+Warning 235: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[8]'
+Warning 236: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[9]'
+Warning 237: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[10]'
+Warning 238: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[11]'
+Warning 239: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[12]'
+Warning 240: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[13]'
+Warning 241: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[14]'
+Warning 242: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[15]'
+Warning 243: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[16]'
+Warning 244: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[17]'
+Warning 245: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[18]'
+Warning 246: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[19]'
+Warning 247: set_output_delay command matched but was not applied to primary input '$iopadmap$clk6'
+Warning 248: set_output_delay command matched but was not applied to primary input '$iopadmap$t'
+Warning 249: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[0]'
+Warning 250: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[1]'
+Warning 251: set_output_delay command matched but was not applied to primary input '$iopadmap$clr_n'
+Warning 252: set_output_delay command matched but was not applied to primary input '$iopadmap$clk5'
+Warning 253: set_output_delay command matched but was not applied to primary input '$iopadmap$clk4'
+Warning 254: set_output_delay command matched but was not applied to primary input '$iopadmap$clk3'
+Warning 255: set_output_delay command matched but was not applied to primary input '$iopadmap$clk2'
+Warning 256: set_output_delay command matched but was not applied to primary input '$iopadmap$clk1'
+Warning 257: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[0]'
+Warning 258: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[1]'
+Warning 259: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[2]'
+Warning 260: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[3]'
+Warning 261: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[4]'
+Warning 262: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[5]'
+Warning 263: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[6]'
+Warning 264: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[7]'
+Warning 265: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[8]'
+Warning 266: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[9]'
+Warning 267: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[10]'
+Warning 268: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[11]'
+Warning 269: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[12]'
+Warning 270: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[13]'
+Warning 271: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[14]'
+Warning 272: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[15]'
+Warning 273: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[16]'
+Warning 274: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[17]'
+Warning 275: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[18]'
+Warning 276: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[19]'
+Warning 277: set_output_delay command matched but was not applied to primary input '$iopadmap$clk6'
+Warning 278: set_output_delay command matched but was not applied to primary input '$iopadmap$t'
+Warning 279: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[0]'
+Warning 280: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[1]'
+Warning 281: set_output_delay command matched but was not applied to primary input '$iopadmap$clr_n'
+Warning 282: set_output_delay command matched but was not applied to primary input '$iopadmap$clk5'
+Warning 283: set_output_delay command matched but was not applied to primary input '$iopadmap$clk4'
+Warning 284: set_output_delay command matched but was not applied to primary input '$iopadmap$clk3'
+Warning 285: set_output_delay command matched but was not applied to primary input '$iopadmap$clk2'
+Warning 286: set_output_delay command matched but was not applied to primary input '$iopadmap$clk1'
+Warning 287: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[0]'
+Warning 288: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[1]'
+Warning 289: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[2]'
+Warning 290: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[3]'
+Warning 291: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[4]'
+Warning 292: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[5]'
+Warning 293: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[6]'
+Warning 294: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[7]'
+Warning 295: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[8]'
+Warning 296: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[9]'
+Warning 297: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[10]'
+Warning 298: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[11]'
+Warning 299: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[12]'
+Warning 300: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[13]'
+Warning 301: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[14]'
+Warning 302: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[15]'
+Warning 303: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[16]'
+Warning 304: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[17]'
+Warning 305: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[18]'
+Warning 306: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[19]'
+Warning 307: set_output_delay command matched but was not applied to primary input '$iopadmap$clk6'
+Warning 308: set_output_delay command matched but was not applied to primary input '$iopadmap$t'
+Warning 309: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[0]'
+Warning 310: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[1]'
+Warning 311: set_output_delay command matched but was not applied to primary input '$iopadmap$clr_n'
+Warning 312: set_output_delay command matched but was not applied to primary input '$iopadmap$clk5'
+Warning 313: set_output_delay command matched but was not applied to primary input '$iopadmap$clk4'
+Warning 314: set_output_delay command matched but was not applied to primary input '$iopadmap$clk3'
+Warning 315: set_output_delay command matched but was not applied to primary input '$iopadmap$clk2'
+Warning 316: set_output_delay command matched but was not applied to primary input '$iopadmap$clk1'
+Warning 317: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[0]'
+Warning 318: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[1]'
+Warning 319: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[2]'
+Warning 320: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[3]'
+Warning 321: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[4]'
+Warning 322: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[5]'
+Warning 323: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[6]'
+Warning 324: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[7]'
+Warning 325: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[8]'
+Warning 326: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[9]'
+Warning 327: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[10]'
+Warning 328: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[11]'
+Warning 329: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[12]'
+Warning 330: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[13]'
+Warning 331: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[14]'
+Warning 332: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[15]'
+Warning 333: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[16]'
+Warning 334: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[17]'
+Warning 335: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[18]'
+Warning 336: set_input_delay command matched but was not applied to primary output '$iopadmap$mux_out[19]'
+Warning 337: set_output_delay command matched but was not applied to primary input '$iopadmap$clk6'
+Warning 338: set_output_delay command matched but was not applied to primary input '$iopadmap$t'
+Warning 339: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[0]'
+Warning 340: set_output_delay command matched but was not applied to primary input '$iopadmap$sel[1]'
+Warning 341: set_output_delay command matched but was not applied to primary input '$iopadmap$clr_n'
+Warning 342: set_output_delay command matched but was not applied to primary input '$iopadmap$clk5'
+Warning 343: set_output_delay command matched but was not applied to primary input '$iopadmap$clk4'
+Warning 344: set_output_delay command matched but was not applied to primary input '$iopadmap$clk3'
+Warning 345: set_output_delay command matched but was not applied to primary input '$iopadmap$clk2'
+Warning 346: set_output_delay command matched but was not applied to primary input '$iopadmap$clk1'
+Warning 347: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 348: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 349: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 350: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 351: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 352: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 353: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 354: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 355: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 356: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 357: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 358: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 359: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 360: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 361: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 362: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 363: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 364: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 365: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 366: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 367: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 368: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 369: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 370: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 371: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 372: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 373: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 374: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 375: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 376: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 377: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 378: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 379: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 380: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 381: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 382: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 383: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 384: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 385: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 386: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 387: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 388: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 389: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 390: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 391: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 392: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 393: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 394: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 395: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 396: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 397: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 398: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 399: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 400: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 401: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 402: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 403: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 404: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 405: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 406: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 407: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 408: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 409: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 410: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 411: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 412: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 413: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 414: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 415: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 416: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 417: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 418: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 419: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 420: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 421: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 422: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 423: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 424: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 425: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 426: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 427: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 428: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 429: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 430: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 431: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 432: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 433: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 434: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 435: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 436: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 437: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 438: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 439: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 440: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 441: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 442: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 443: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 444: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 445: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 446: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 447: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 448: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 449: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 450: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 451: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 452: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 453: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 454: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 455: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 456: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 457: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 458: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 459: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 460: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 461: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 462: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 463: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 464: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 465: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 466: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 467: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 468: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 469: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 470: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 471: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 472: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 473: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 474: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 475: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 476: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 477: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 478: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 479: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 480: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 481: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 482: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 483: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 484: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 485: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 486: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 487: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 488: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 489: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 490: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 491: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 492: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 493: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 494: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 495: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 496: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 497: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 498: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 499: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 500: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 501: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 502: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 503: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 504: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 505: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 506: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 507: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 508: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 509: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 510: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 511: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 512: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 513: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 514: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 515: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 516: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 517: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 518: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 519: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 520: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 521: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 522: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 523: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 524: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 525: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 526: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 527: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 528: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 529: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 530: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 531: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 532: get_clocks target name or pattern '$iopadmap$clk6' matched no clocks
+Warning 533: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 534: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 535: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 536: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 537: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 538: get_clocks target name or pattern '$iopadmap$clk1' matched no clocks
+Warning 539: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 540: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 541: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 542: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 543: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 544: get_clocks target name or pattern '$iopadmap$clk2' matched no clocks
+Warning 545: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 546: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 547: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 548: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 549: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 550: get_clocks target name or pattern '$iopadmap$clk3' matched no clocks
+Warning 551: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 552: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 553: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 554: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 555: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 556: get_clocks target name or pattern '$iopadmap$clk4' matched no clocks
+Warning 557: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 558: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 559: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 560: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 561: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+Warning 562: get_clocks target name or pattern '$iopadmap$clk5' matched no clocks
+
+Applied 19 SDC commands from '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/packing/fabric_clock_tree_design_openfpga.sdc'
+Timing constraints created 6 clocks
+  Constrained Clock '$iopadmap$clk1' Source: '$iopadmap$clk1.inpad[0]'
+  Constrained Clock '$iopadmap$clk2' Source: '$iopadmap$clk2.inpad[0]'
+  Constrained Clock '$iopadmap$clk3' Source: '$iopadmap$clk3.inpad[0]'
+  Constrained Clock '$iopadmap$clk4' Source: '$iopadmap$clk4.inpad[0]'
+  Constrained Clock '$iopadmap$clk5' Source: '$iopadmap$clk5.inpad[0]'
+  Constrained Clock '$iopadmap$clk6' Source: '$iopadmap$clk6.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 19.1 MiB, delta_rss +0.4 MiB)
+# Packing
+Begin packing '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/synthesis/fabric_clock_tree_design_post_synth.eblif'.
+Warning 563: All 6 clocks will be treated as global.
+
+After removing unused inputs...
+	total blocks: 63, total nets: 43, total inputs: 10, total outputs: 20
+Begin prepacking.
+
+There is one chain in this architecture called "carrychain" with the following starting points:
+	clb[0]/clb_lr[0]/fle[0]/adder[0]/adder_carry[0].cin[0]
+
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 8.9048e-10
+Packing with pin utilization targets: io_top:1,1 io_right:1,1 io_bottom:1,1 io_left:1,1 clb:0.8,1 dsp:1,1 bram:1,1
+Packing with high fanout thresholds: io_top:128 io_right:128 io_bottom:128 io_left:128 clb:32 dsp:128 bram:128
+Starting Clustering - Clustering Progress: 
+-------------------   --------------------------   ---------
+Molecules processed   Number of clusters created   FPGA size
+-------------------   --------------------------   ---------
+     2/57        3%                            1    64 x 46    
+     4/57        7%                            1    64 x 46    
+     6/57       10%                            1    64 x 46    
+     8/57       14%                            1    64 x 46    
+    10/57       17%                            1    64 x 46    
+    12/57       21%                            1    64 x 46    
+    14/57       24%                            1    64 x 46    
+    16/57       28%                            1    64 x 46    
+    18/57       31%                            2    64 x 46    
+    20/57       35%                            2    64 x 46    
+    22/57       38%                            2    64 x 46    
+    24/57       42%                            2    64 x 46    
+    26/57       45%                            4    64 x 46    
+    28/57       49%                            6    64 x 46    
+    30/57       52%                            8    64 x 46    
+    32/57       56%                           10    64 x 46    
+    34/57       59%                           12    64 x 46    
+    36/57       63%                           14    64 x 46    
+    38/57       66%                           16    64 x 46    
+    40/57       70%                           18    64 x 46    
+    42/57       73%                           20    64 x 46    
+    44/57       77%                           22    64 x 46    
+    46/57       80%                           24    64 x 46    
+    48/57       84%                           26    64 x 46    
+    50/57       87%                           28    64 x 46    
+    52/57       91%                           30    64 x 46    
+    54/57       94%                           32    64 x 46    
+    56/57       98%                           34    64 x 46    
+
+Logic Element (fle) detailed count:
+  Total number of Logic Elements used : 16
+  LEs used for logic and registers    : 0
+  LEs used for logic only             : 16
+  LEs used for registers only         : 0
+
+Incr Slack updates 1 in 5.242e-06 sec
+Full Max Req/Worst Slack updates 1 in 1.7134e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 1.9883e-05 sec
+FPGA sized to 64 x 46 (castor62x44_heterogeneous)
+Device Utilization: 0.00 (target 1.00)
+	Block Utilization: 0.00 Type: io
+	Block Utilization: 0.00 Type: clb
+
+Start the iterative improvement process
+the iterative improvement process is done
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io         30                               0.666667                     0.333333   
+       clb          6                                6.16667                          4.5   
+       dsp          0                                      0                            0   
+      bram          0                                      0                            0   
+Absorbed logical nets 6 out of 43 nets, 37 nets not absorbed.
+
+Netlist conversion complete.
+
+# Packing took 0.05 seconds (max_rss 20.9 MiB, delta_rss +1.6 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/clock_tree_design/run_1/synth_1_1/impl_1_1_1/packing/fabric_clock_tree_design_post_synth.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.04 seconds).
+# Load packing took 0.05 seconds (max_rss 59.1 MiB, delta_rss +38.2 MiB)
+Warning 564: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io             : 30
+   io_output     : 20
+    outpad       : 20
+   io_input      : 10
+    inpad        : 10
+  clb            : 6
+   clb_lr        : 6
+    fle          : 16
+     ble5        : 27
+      lut5       : 27
+       lut       : 27
+      ff         : 6
+       DFFRE     : 6
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		30	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		6	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		0	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		0	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.00 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.00 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.00 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.00 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 59.1 MiB, delta_rss +0.0 MiB)
+Warning 565: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 566: Sized nonsensical R=0 transistor to minimum width
+Warning 567: Sized nonsensical R=0 transistor to minimum width
+Warning 568: Sized nonsensical R=0 transistor to minimum width
+Warning 569: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 13.30 seconds (max_rss 477.5 MiB, delta_rss +418.4 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 13.86 seconds (max_rss 477.5 MiB, delta_rss +418.4 MiB)
+
+
+Flow timing analysis took 0.0020497 seconds (0.00199672 STA, 5.2982e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+VPR succeeded
+The entire flow of VPR took 14.39 seconds (max_rss 477.5 MiB)
