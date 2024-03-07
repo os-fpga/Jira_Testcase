@@ -1,0 +1,32 @@
+ 
+# Yosys synthesis script for clock_tree_design
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/03_05_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/7march/clock_tree_design/results_dir/.././rtl/clock_tree_design.v 
+
+
+# Technology mapping
+hierarchy -top clock_tree_design
+
+setattr -set keep 1 w:\clk1
+setattr -set keep 1 w:\clk2
+setattr -set keep 1 w:\clk3
+setattr -set keep 1 w:\clk4
+setattr -set keep 1 w:\clk5
+setattr -set keep 1 w:\clk6
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto -no_iobuf  -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v clock_tree_design_post_synth.v
+write_blif -param clock_tree_design_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_clock_tree_design.sdc -json config.json -w wrapper_clock_tree_design_post_synth.v wrapper_clock_tree_design_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_clock_tree_design_post_synth.v
+write_blif -param fabric_clock_tree_design_post_synth.eblif
+
+  
