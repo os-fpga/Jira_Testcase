@@ -1,0 +1,13 @@
+create_design i_buf_o_buf
+add_design_file i_buf_o_buf.v
+set_top_module i_buf_o_buf
+add_constraint_file pin_constraints.pin
+target_device 1VG28
+
+analyze
+synthesize
+packing
+place
+route
+sta
+bitstream
