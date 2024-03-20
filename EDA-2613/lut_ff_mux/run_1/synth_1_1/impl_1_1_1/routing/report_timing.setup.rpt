@@ -1,0 +1,115 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.03
+Build    : 1.0.17
+Hash     : 7566e6a
+Date     : Mar 20 2024
+Type     : Engineering
+Log Time   : Wed Mar 20 07:15:37 2024 GMT
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 3
+# Timing Graph Levels: 4
+
+#Path 1
+Startpoint: $iopadmap$Q.Q[0] (dffre at (5,5) clocked by $auto$clkbufmap.cc:294:execute$638)
+Endpoint  : out:$iopadmap$Q.outpad[0] (.output at (2,8) clocked by $auto$clkbufmap.cc:294:execute$638)
+Path Type : setup
+
+Point                                                                                Incr      Path
+---------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                                0.000     0.000
+clock source latency                                                                0.000     0.000
+$auto$clkbufmap.cc:294:execute$638.inpad[0] (.input at (2,1))                       0.000     0.000
+| (intra 'io' routing)                                                              0.894     0.894
+| (inter-block routing:global net)                                                  0.000     0.894
+| (intra 'clb' routing)                                                             0.000     0.894
+$iopadmap$Q.C[0] (dffre at (5,5))                                                   0.000     0.894
+| (primitive 'dffre' Tcq_max)                                                       0.154     1.048
+$iopadmap$Q.Q[0] (dffre at (5,5)) [clock-to-output]                                 0.000     1.048
+| (intra 'clb' routing)                                                             0.000     1.048
+| (OPIN:53688 side: (RIGHT,) (5,5,0)0))                                             0.000     1.048
+| (CHANY:110180 L4 length:4 (5,5,0)-> (5,8,0))                                      0.119     1.167
+| (CHANX:104013 L4 length:4 (5,5,0)-> (2,5,0))                                      0.119     1.286
+| (CHANY:107818 L4 length:3 (1,6,0)-> (1,8,0))                                      0.119     1.405
+| (CHANX:106208 L4 length:4 (2,8,0)-> (5,8,0))                                      0.119     1.524
+| (IPIN:75808 side: (TOP,) (2,8,0)0))                                               0.101     1.625
+| (intra 'io' routing)                                                              0.733     2.357
+out:$iopadmap$Q.outpad[0] (.output at (2,8))                                        0.000     2.357
+data arrival time                                                                             2.357
+
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                                5.000     5.000
+clock source latency                                                                0.000     5.000
+clock uncertainty                                                                   0.000     5.000
+output external delay                                                              -1.000     4.000
+data required time                                                                            4.000
+---------------------------------------------------------------------------------------------------
+data required time                                                                            4.000
+data arrival time                                                                            -2.357
+---------------------------------------------------------------------------------------------------
+slack (MET)                                                                                   1.643
+
+
+#Path 2
+Startpoint: $iopadmap$in[1].inpad[0] (.input at (4,8) clocked by $auto$clkbufmap.cc:294:execute$638)
+Endpoint  : $iopadmap$Q.D[0] (dffre at (5,5) clocked by $auto$clkbufmap.cc:294:execute$638)
+Path Type : setup
+
+Point                                                                                Incr      Path
+---------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                                0.000     0.000
+clock source latency                                                                0.000     0.000
+input external delay                                                                1.000     1.000
+$iopadmap$in[1].inpad[0] (.input at (4,8))                                          0.000     1.000
+| (intra 'io' routing)                                                              0.894     1.894
+| (OPIN:81410 side: (TOP,) (4,8,0)0))                                               0.000     1.894
+| (CHANX:106293 L1 length:1 (4,8,0)-> (4,8,0))                                      0.061     1.955
+| (CHANY:108975 L4 length:4 (3,8,0)-> (3,5,0))                                      0.119     2.074
+| (CHANX:103344 L1 length:1 (4,4,0)-> (4,4,0))                                      0.061     2.135
+| (CHANY:109520 L1 length:1 (4,5,0)-> (4,5,0))                                      0.061     2.196
+| (CHANX:104204 L4 length:4 (5,5,0)-> (8,5,0))                                      0.119     2.315
+| (IPIN:53709 side: (TOP,) (5,5,0)0))                                               0.101     2.416
+| (intra 'clb' routing)                                                             0.085     2.501
+$abc$317$li0_li0.in[1] (.names at (5,5))                                            0.000     2.501
+| (primitive '.names' combinational delay)                                          0.152     2.653
+$abc$317$li0_li0.out[0] (.names at (5,5))                                           0.000     2.653
+| (intra 'clb' routing)                                                             0.000     2.653
+$iopadmap$Q.D[0] (dffre at (5,5))                                                   0.000     2.653
+data arrival time                                                                             2.653
+
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                                5.000     5.000
+clock source latency                                                                0.000     5.000
+$auto$clkbufmap.cc:294:execute$638.inpad[0] (.input at (2,1))                       0.000     5.000
+| (intra 'io' routing)                                                              0.894     5.894
+| (inter-block routing:global net)                                                  0.000     5.894
+| (intra 'clb' routing)                                                             0.000     5.894
+$iopadmap$Q.C[0] (dffre at (5,5))                                                   0.000     5.894
+clock uncertainty                                                                   0.000     5.894
+cell setup time                                                                    -0.032     5.863
+data required time                                                                            5.863
+---------------------------------------------------------------------------------------------------
+data required time                                                                            5.863
+data arrival time                                                                            -2.653
+---------------------------------------------------------------------------------------------------
+slack (MET)                                                                                   3.210
+
+
+#End of timing report
