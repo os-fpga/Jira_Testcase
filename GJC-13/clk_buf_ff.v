@@ -1,3 +1,10 @@
+//***********************************************************
+// Functionality: Flip FLop design with clk pin constrained 
+//                to CCRIO pad 
+// Author:        Azfar 
+//***********************************************************
+
+
 module clk_buf_ff(
     input  wire data_i,
     input wire clk,
