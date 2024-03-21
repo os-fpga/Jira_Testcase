@@ -1,14 +1,14 @@
-create_design and2_bitstream_sim
-add_design_file -V_2001 ./rtl/and2.v
-set_top_module and2
-add_simulation_file testbench.sv
-set_top_testbench tb_and2
-add_constraint_file pin_mapping.pin
+create_design and8
+add_design_file ./rtl/and8.v
+set_top_module and8
+# add_simulation_file testbench.sv
+# set_top_testbench tb_and8
+# add_constraint_file pin_mapping.pin
 target_device GEMINI_COMPACT_10x8
 analyze
-simulate "rtl" "icarus" dump.fst
+# simulate "rtl" "icarus" dump.fst
 synthesize delay
-simulate "gate" "icarus" dump.fst
+# simulate "gate" "icarus" dump.fst
 packing
 place
 route
@@ -16,7 +16,7 @@ sta
 bitstream enable_simulation
 
 set tb_path "bitstream_testbench.v"
-set openfpga_tb_path "and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and2_formal_random_top_tb.v"
+set openfpga_tb_path "and8/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and8_formal_random_top_tb.v"
 set search_line "// ----- Can be changed by the user for his/her need -------"
 
 set source_file [open $tb_path r]
@@ -44,15 +44,15 @@ puts -nonewline $destination_file [join $destination_lines "\n"]
 
 close $destination_file
 
-exec python3 bt_tb_io_update.py and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and2_formal_random_top_tb.v and2
-exec python3 bt_tb_io_update.py and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and2_top_formal_verification.v and2
-exec python3 bt_tb_io_update.py and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_netlists.v and2
+exec python3 bt_tb_io_update.py and8/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and8_formal_random_top_tb.v and8
+exec python3 bt_tb_io_update.py and8/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and8_top_formal_verification.v and8
+exec python3 bt_tb_io_update.py and8/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_netlists.v and8
 
-file mkdir and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
-if {[file exists and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/CustomModules]} {
+file mkdir and8/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
+if {[file exists and8/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/CustomModules]} {
     puts "Destination directory already exists. Skipping the copy operation."
 } else {
-    file copy -force ../../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/ and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
+    file copy -force ../../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/ and8/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
 }
 
 
