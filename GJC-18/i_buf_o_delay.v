@@ -20,6 +20,7 @@ module i_buf_o_delay (
 
     reg test_data;
     wire dly_adj_inv, dly_incdec_inv, dly_ld_inv;
+    wire data_o_delayed_buf;
     wire [5:0] dly_tap_val;
 
     always @(clk_i) begin
@@ -32,11 +33,12 @@ module i_buf_o_delay (
     assign dly_ld_inv       = ~dly_ld;
     assign dly_tap_val_inv  = ~dly_tap_val;
 
+    O_BUF data_buf (data_o_delayed_buf,data_o_delayed);
     O_DELAY data_o_delay (  .I(test_data), 
                             .DLY_LOAD(dly_ld_inv), 
                             .DLY_ADJ(dly_adj_inv), 
                             .DLY_INCDEC(dly_incdec_inv), 
                             .CLK_IN(clk_i), 
                             .DLY_TAP_VALUE(dly_tap_val),
-                            .O(data_o_delayed));
+                            .O(data_o_delayed_buf));
 endmodule
