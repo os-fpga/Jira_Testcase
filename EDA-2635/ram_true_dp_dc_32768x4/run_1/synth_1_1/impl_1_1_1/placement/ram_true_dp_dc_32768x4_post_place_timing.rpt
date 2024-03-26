@@ -1,0 +1,386 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.03
+Build    : 1.0.20
+Hash     : 3b67354
+Date     : Mar 26 2024
+Type     : Engineering
+Log Time   : Tue Mar 26 08:56:35 2024 GMT
+#Timing report of worst 8 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 0
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: $techmap126\ram.0.3.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (28,35) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$78[3].D[0] (dffre at (33,30) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap126\ram.0.3.C1DATA_TOTAL[32].CLK_B1[0] (RS_TDP36K at (28,35))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.345     1.240
+$techmap126\ram.0.3.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (28,35)) [clock-to-output]     0.000     1.240
+| (intra 'bram' routing)                                                                      0.000     1.240
+| (inter-block routing)                                                                       0.576     1.816
+| (intra 'clb' routing)                                                                       0.085     1.901
+$iopadmap$doutA[3].in[1] (.names at (33,30))                                                  0.000     1.901
+| (primitive '.names' combinational delay)                                                    0.218     2.119
+$iopadmap$doutA[3].out[0] (.names at (33,30))                                                 0.000     2.119
+| (intra 'clb' routing)                                                                       0.000     2.119
+| (inter-block routing)                                                                       0.162     2.281
+| (intra 'clb' routing)                                                                       0.221     2.502
+$auto$memory_libmap.cc:2298:execute$78[3].D[0] (dffre at (33,30))                             0.000     2.502
+data arrival time                                                                                       2.502
+
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$78[3].C[0] (dffre at (33,30))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.502
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             0.861
+
+
+#Path 2
+Startpoint: $techmap124\ram.0.1.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (28,32) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$71[1].D[0] (dffre at (33,29) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap124\ram.0.1.C1DATA_TOTAL[32].CLK_A1[0] (RS_TDP36K at (28,32))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.293     1.187
+$techmap124\ram.0.1.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (28,32)) [clock-to-output]     0.000     1.187
+| (intra 'bram' routing)                                                                      0.000     1.187
+| (inter-block routing)                                                                       0.457     1.644
+| (intra 'clb' routing)                                                                       0.085     1.730
+$iopadmap$doutB[1].in[1] (.names at (33,30))                                                  0.000     1.730
+| (primitive '.names' combinational delay)                                                    0.197     1.926
+$iopadmap$doutB[1].out[0] (.names at (33,30))                                                 0.000     1.926
+| (intra 'clb' routing)                                                                       0.000     1.926
+| (inter-block routing)                                                                       0.284     2.210
+| (intra 'clb' routing)                                                                       0.233     2.443
+$auto$memory_libmap.cc:2298:execute$71[1].D[0] (dffre at (33,29))                             0.000     2.443
+data arrival time                                                                                       2.443
+
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$71[1].C[0] (dffre at (33,29))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.443
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             0.920
+
+
+#Path 3
+Startpoint: $techmap126\ram.0.3.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (28,35) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$71[3].D[0] (dffre at (33,29) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap126\ram.0.3.C1DATA_TOTAL[32].CLK_A1[0] (RS_TDP36K at (28,35))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.293     1.187
+$techmap126\ram.0.3.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (28,35)) [clock-to-output]     0.000     1.187
+| (intra 'bram' routing)                                                                      0.000     1.187
+| (inter-block routing)                                                                       0.576     1.763
+| (intra 'clb' routing)                                                                       0.085     1.848
+$iopadmap$doutB[3].in[2] (.names at (33,30))                                                  0.000     1.848
+| (primitive '.names' combinational delay)                                                    0.099     1.948
+$iopadmap$doutB[3].out[0] (.names at (33,30))                                                 0.000     1.948
+| (intra 'clb' routing)                                                                       0.000     1.948
+| (inter-block routing)                                                                       0.284     2.231
+| (intra 'clb' routing)                                                                       0.184     2.416
+$auto$memory_libmap.cc:2298:execute$71[3].D[0] (dffre at (33,29))                            -0.000     2.416
+data arrival time                                                                                       2.416
+
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$71[3].C[0] (dffre at (33,29))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.416
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             0.947
+
+
+#Path 4
+Startpoint: $techmap125\ram.0.2.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (40,32) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$71[2].D[0] (dffre at (33,29) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap125\ram.0.2.C1DATA_TOTAL[32].CLK_A1[0] (RS_TDP36K at (40,32))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.293     1.187
+$techmap125\ram.0.2.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (40,32)) [clock-to-output]     0.000     1.187
+| (intra 'bram' routing)                                                                      0.000     1.187
+| (inter-block routing)                                                                       0.399     1.586
+| (intra 'clb' routing)                                                                       0.085     1.672
+$iopadmap$doutB[2].in[1] (.names at (33,30))                                                  0.000     1.672
+| (primitive '.names' combinational delay)                                                    0.135     1.807
+$iopadmap$doutB[2].out[0] (.names at (33,30))                                                 0.000     1.807
+| (intra 'clb' routing)                                                                       0.000     1.807
+| (inter-block routing)                                                                       0.284     2.091
+| (intra 'clb' routing)                                                                       0.303     2.394
+$auto$memory_libmap.cc:2298:execute$71[2].D[0] (dffre at (33,29))                            -0.000     2.394
+data arrival time                                                                                       2.394
+
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$71[2].C[0] (dffre at (33,29))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.394
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             0.969
+
+
+#Path 5
+Startpoint: $techmap123\ram.0.0.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (40,29) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$71[0].D[0] (dffre at (33,29) clocked by $auto$clkbufmap.cc:294:execute$1101)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap123\ram.0.0.C1DATA_TOTAL[32].CLK_A1[0] (RS_TDP36K at (40,29))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.293     1.187
+$techmap123\ram.0.0.C1DATA_TOTAL[32].RDATA_A1[0] (RS_TDP36K at (40,29)) [clock-to-output]     0.000     1.187
+| (intra 'bram' routing)                                                                      0.000     1.187
+| (inter-block routing)                                                                       0.399     1.586
+| (intra 'clb' routing)                                                                       0.085     1.672
+$iopadmap$doutB[0].in[1] (.names at (33,30))                                                  0.000     1.672
+| (primitive '.names' combinational delay)                                                    0.218     1.890
+$iopadmap$doutB[0].out[0] (.names at (33,30))                                                 0.000     1.890
+| (intra 'clb' routing)                                                                       0.000     1.890
+| (inter-block routing)                                                                       0.284     2.173
+| (intra 'clb' routing)                                                                       0.184     2.358
+$auto$memory_libmap.cc:2298:execute$71[0].D[0] (dffre at (33,29))                             0.000     2.358
+data arrival time                                                                                       2.358
+
+clock $auto$clkbufmap.cc:294:execute$1101 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1101.inpad[0] (.input at (4,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$71[0].C[0] (dffre at (33,29))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.358
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             1.005
+
+
+#Path 6
+Startpoint: $techmap124\ram.0.1.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (28,32) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$78[1].D[0] (dffre at (33,30) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap124\ram.0.1.C1DATA_TOTAL[32].CLK_B1[0] (RS_TDP36K at (28,32))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.345     1.240
+$techmap124\ram.0.1.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (28,32)) [clock-to-output]     0.000     1.240
+| (intra 'bram' routing)                                                                      0.000     1.240
+| (inter-block routing)                                                                       0.457     1.697
+| (intra 'clb' routing)                                                                       0.085     1.782
+$iopadmap$doutA[1].in[1] (.names at (33,30))                                                  0.000     1.782
+| (primitive '.names' combinational delay)                                                    0.136     1.918
+$iopadmap$doutA[1].out[0] (.names at (33,30))                                                 0.000     1.918
+| (intra 'clb' routing)                                                                       0.303     2.221
+$auto$memory_libmap.cc:2298:execute$78[1].D[0] (dffre at (33,30))                             0.000     2.221
+data arrival time                                                                                       2.221
+
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$78[1].C[0] (dffre at (33,30))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.221
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             1.142
+
+
+#Path 7
+Startpoint: $techmap123\ram.0.0.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (40,29) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$78[0].D[0] (dffre at (33,30) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap123\ram.0.0.C1DATA_TOTAL[32].CLK_B1[0] (RS_TDP36K at (40,29))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.345     1.240
+$techmap123\ram.0.0.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (40,29)) [clock-to-output]     0.000     1.240
+| (intra 'bram' routing)                                                                      0.000     1.240
+| (inter-block routing)                                                                       0.399     1.639
+| (intra 'clb' routing)                                                                       0.085     1.724
+$iopadmap$doutA[0].in[2] (.names at (33,30))                                                  0.000     1.724
+| (primitive '.names' combinational delay)                                                    0.135     1.860
+$iopadmap$doutA[0].out[0] (.names at (33,30))                                                 0.000     1.860
+| (intra 'clb' routing)                                                                       0.282     2.142
+$auto$memory_libmap.cc:2298:execute$78[0].D[0] (dffre at (33,30))                             0.000     2.142
+data arrival time                                                                                       2.142
+
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$78[0].C[0] (dffre at (33,30))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.142
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             1.221
+
+
+#Path 8
+Startpoint: $techmap125\ram.0.2.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (40,32) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Endpoint  : $auto$memory_libmap.cc:2298:execute$78[2].D[0] (dffre at (33,30) clocked by $auto$clkbufmap.cc:294:execute$1098)
+Path Type : setup
+
+Point                                                                                          Incr      Path
+-------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         0.000     0.000
+clock source latency                                                                          0.000     0.000
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     0.000
+| (intra 'io' routing)                                                                        0.894     0.894
+| (inter-block routing)                                                                       0.000     0.894
+| (intra 'bram' routing)                                                                      0.000     0.894
+$techmap125\ram.0.2.C1DATA_TOTAL[32].CLK_B1[0] (RS_TDP36K at (40,32))                         0.000     0.894
+| (primitive 'RS_TDP36K' Tcq_max)                                                             0.345     1.240
+$techmap125\ram.0.2.C1DATA_TOTAL[32].RDATA_B1[0] (RS_TDP36K at (40,32)) [clock-to-output]     0.000     1.240
+| (intra 'bram' routing)                                                                      0.000     1.240
+| (inter-block routing)                                                                       0.399     1.639
+| (intra 'clb' routing)                                                                       0.085     1.724
+$iopadmap$doutA[2].in[1] (.names at (33,30))                                                  0.000     1.724
+| (primitive '.names' combinational delay)                                                    0.135     1.860
+$iopadmap$doutA[2].out[0] (.names at (33,30))                                                 0.000     1.860
+| (intra 'clb' routing)                                                                       0.184     2.044
+$auto$memory_libmap.cc:2298:execute$78[2].D[0] (dffre at (33,30))                             0.000     2.044
+data arrival time                                                                                       2.044
+
+clock $auto$clkbufmap.cc:294:execute$1098 (rise edge)                                         2.500     2.500
+clock source latency                                                                          0.000     2.500
+$auto$clkbufmap.cc:294:execute$1098.inpad[0] (.input at (2,1))                                0.000     2.500
+| (intra 'io' routing)                                                                        0.894     3.394
+| (inter-block routing)                                                                       0.000     3.394
+| (intra 'clb' routing)                                                                       0.000     3.394
+$auto$memory_libmap.cc:2298:execute$78[2].C[0] (dffre at (33,30))                             0.000     3.394
+clock uncertainty                                                                             0.000     3.394
+cell setup time                                                                              -0.032     3.363
+data required time                                                                                      3.363
+-------------------------------------------------------------------------------------------------------------
+data required time                                                                                      3.363
+data arrival time                                                                                      -2.044
+-------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                             1.319
+
+
+#End of timing report
