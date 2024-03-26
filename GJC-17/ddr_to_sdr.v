@@ -1,7 +1,8 @@
 //***********************************************************
-// Functionality: Recieves 2-bit parallel SDR data on posedge  
-//                of clock, store it in flops for one cycle and
-//                then transmit it in DDR mode
+// Functionality: Recieves 2-bit DDR format data on posedge  
+//                and negedge of clock, store it in flops for
+//                one cycle and then transmit it in SDR mode
+//                on two output lanes
 // Author:        Azfar  
 //***********************************************************
 
