@@ -13,5 +13,4 @@ set_property mode Mode_BP_SDR_A_RX HR_2_0_0P
 set_pin_loc clk HR_2_0_0P
 
 set_property mode Mode_BP_SDR_A_TX HR_5_0_0P
-set_pin_loc dout  HR_5_0_0P
-
+set_pin_loc dout HR_5_0_0P
