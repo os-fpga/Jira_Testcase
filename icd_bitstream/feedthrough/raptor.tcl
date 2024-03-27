@@ -1,7 +1,7 @@
-create_design ft
-target_device 1GVTC
-add_design_file ft.v
-add_constraint_file ft.sdc
+create_design feedthrough
+target_device GEMINI_COMPACT_10x8
+add_design_file feedthrough.v
+add_constraint_file feedthrough.sdc
 ipgenerate
 analyze
 synth
@@ -9,4 +9,3 @@ packing
 place
 route
 sta
-
