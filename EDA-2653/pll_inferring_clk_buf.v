@@ -11,7 +11,7 @@ module pll_inferring_clk_buf (
     wire clk_ibuf, clk_buf, pll_clk, clk_out_div2, clk_out_div3, clk_out_div4, serdes_fast_clk, lock, reset_ibuf;
     reg out1, out2, out3, out4, out5;
 
-    I_BUF # (.WEAK_KEEPER("NONE")) clk_IBUF   (.I(clk), .EN(1'b1), .O(clk_ibuf)); // Input Buffer
+    I_BUF # (.WEAK_KEEPER("NONE")) clk_IBUF   (.I(clk_in), .EN(1'b1), .O(clk_ibuf)); // Input Buffer
     I_BUF # (.WEAK_KEEPER("NONE")) reset_IBUF (.I(reset), .EN(1'b1), .O(reset_ibuf)); // Input Buffer
 
     CLK_BUF clk_BUF (.I(clk_ibuf), .O(clk_buf));    // Clock Buffer
