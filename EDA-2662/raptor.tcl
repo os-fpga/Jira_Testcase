@@ -1,0 +1,6 @@
+create_design on_chip_memory
+target_device GEMINI_COMPACT_104x68
+add_design_file ./rtl/on_chip_memory_v1_0.v
+set_top_module on_chip_memory
+analyze
+synthesize
