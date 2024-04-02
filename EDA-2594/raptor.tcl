@@ -1,57 +1,29 @@
-
 create_design axi_dmac
+target_device GEMINI_COMPACT_104x68
 add_include_path ./rtl
 add_library_path ./rtl
 add_library_ext .v .sv
-add_design_file rtl/sync_data.v
-add_design_file rtl/sync_event.v
-add_design_file rtl/ad_mem_asym.v
-add_design_file rtl/up_axi.v
-add_design_file rtl/2d_transfer.v
-add_design_file rtl/ad_mem.v
-add_design_file rtl/address_generator.v
-add_design_file rtl/axi_dmac_burst_memory.v
-add_design_file rtl/axi_dmac_regmap.v
-add_design_file rtl/axi_dmac_regmap_request.v
-add_design_file rtl/axi_dmac_reset_manager.v
-add_design_file rtl/axi_dmac_resize_dest.v
-add_design_file rtl/axi_dmac_resize_src.v
-add_design_file rtl/axi_dmac_response_manager.v
-add_design_file rtl/axi_dmac_transfer.v
-add_design_file rtl/axi_register_slice.v
-add_design_file rtl/data_mover.v
-add_design_file rtl/dest_axi_mm.v
-add_design_file rtl/dest_axi_stream.v
-add_design_file rtl/dest_fifo_inf.v
-add_design_file rtl/request_arb.v
-add_design_file rtl/request_generator.v
-add_design_file rtl/resp.vh
-add_design_file rtl/response_generator.v
-add_design_file rtl/response_handler.v
-add_design_file rtl/splitter.v
-add_design_file rtl/src_axi_mm.v
-add_design_file rtl/src_axi_stream.v
-add_design_file rtl/src_fifo_inf.v
-add_design_file rtl/sync_bits.v
-add_design_file rtl/sync_gray.v
-add_design_file rtl/util_axis_fifo.v
-add_design_file rtl/util_axis_fifo_address_generator.v
-add_design_file rtl/axi_dmac.v
-
-
+add_design_file ./rtl/axi_dmac.v
 set_top_module axi_dmac
-
-target_device GEMINI_COMPACT_104x68
-
-# add_constraint_file constraint.sdc
-pin_loc_assign_method free
 analyze
 synthesize delay
-packing
-place
-route
-
-sta 
-
-bitstream
+exec python3 /nfs_project/cxl/DV/bilal_malik/temp_work/Validation/RTL_testcases/opensource_with_testbench/axi_dmac/../../../scripts/tb_generator.py axi_dmac /nfs_project/cxl/DV/bilal_malik/temp_work/Validation/RTL_testcases/opensource_with_testbench/axi_dmac
+add_simulation_file ./sim/co_sim_tb/co_sim_axi_dmac.v ./rtl/axi_dmac.v
+set_top_testbench co_sim_axi_dmac
+# Open the input file in read mode
+set input_file [open "axi_dmac/run_1/synth_1_1/synthesis/axi_dmac\_post_synth.v" r]
+# Read the file content
+set file_content [read $input_file]
+# Close the input file after reading
+close $input_file
+set modified_content [string map {"axi_dmac(" "axi_dmac_post_synth("} $file_content]
+# Open the file again, this time in write mode to overwrite the old content
+set output_file [open "axi_dmac/run_1/synth_1_1/synthesis/axi_dmac\_post_synth.v" w]
+# Write the modified content back to the file
+puts $output_file $modified_content
+# Close the file
+close $output_file
+puts "Modification completed."
+simulation_options compilation icarus gate
+simulate gate icarus
 
