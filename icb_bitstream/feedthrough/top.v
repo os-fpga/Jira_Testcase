@@ -24,11 +24,10 @@
   Testing (Simulation/Emulator):
 
     Not Yet
-  
-  Source:
-    
-    GJC-9
 
+  Source:
+
+    GJC-9
 */
 
 module top(

@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-//  Functionality: Tri state differential output buffer with 
+//  Functionality: Tri state differential output buffer with
 //                 inverted input data and control signals
 //                 -- O_BUFT_DS
 //  Author:        Azfar
@@ -28,9 +28,9 @@
   Testing (Simulation/Emulator):
 
     Not Yet
-  
+
   Source:
-    
+
     GJC-15
 */
 
@@ -57,8 +57,8 @@ module top(
   assign data_i_buft = ~data_i_buf;
   assign ctrl_T_buft = ~ctrl_T_buf;
   O_BUFT_DS buft_o(
-    .I(data_i_buft), 
-    .T(ctrl_T_buft), 
+    .I(data_i_buft),
+    .T(ctrl_T_buft),
     .O_P(data_o_P),
     .O_N(data_o_P)
   );

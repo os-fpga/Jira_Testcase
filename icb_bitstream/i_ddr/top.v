@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-//  Functionality: Recieves 2-bit DDR format data on posedge  
+//  Functionality: Recieves 2-bit DDR format data on posedge
 //                 and negedge of clock, store it in flops for
 //                 one cycle and then transmit it in SDR mode
 //                 on two output lanes
@@ -35,9 +35,9 @@
   Testing (Simulation/Emulator):
 
     Not Yet
-  
+
   Source:
-    
+
     GJC-17
 */
 
@@ -48,7 +48,6 @@ module top(
   input wire clk_i,
   output reg [1:0] data_o
 );
-
   wire [1:0] data_reg;
   wire data_i_buf;
   I_BUF i_buf(
@@ -57,14 +56,14 @@ module top(
     .O(data_i_buf)
   );
   I_DDR i_ddr(
-    .D(data_i_buf), 
+    .D(data_i_buf),
     .R(reset_n),
-    .E(enable), 
-    .C(clk_i), 
+    .E(enable),
+    .C(clk_i),
     .Q(data_reg)
   );
   always @(posedge clk_i or negedge reset_n) begin
-    if (!reset_n) 
+    if (!reset_n)
       data_o <= 0;
     else if (enable) begin
       data_o[0] <= data_reg[0];

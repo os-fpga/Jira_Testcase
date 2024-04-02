@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-//  Functionality: Recieves 2-bit parallel SDR data on posedge  
+//  Functionality: Recieves 2-bit parallel SDR data on posedge
 //                 of clock, store it in flops for one cycle and
 //                 then transmit it in DDR mode
 //                 -- O_DDR
@@ -33,9 +33,9 @@
   Testing (Simulation/Emulator):
 
     Not Yet
-  
+
   Source:
-    
+
     GJC-16
 */
 
@@ -50,7 +50,7 @@ module top(
   reg [1:0] data_reg;
   wire data_o_buf;
   always @(posedge clk_i or negedge reset_n) begin
-    if (!reset_n) 
+    if (!reset_n)
       data_reg <= 0;
     else if (enable) begin
       data_reg[0] <= data_i[0];
@@ -58,14 +58,14 @@ module top(
     end
   end
   O_DDR o_ddr(
-    data_reg, 
+    data_reg,
     reset_n,
     enable,
     clk_i,
     data_o_buf
   );
   O_BUF o_buf(
-    data_o_buf, 
+    data_o_buf,
     data_o
   );
 endmodule

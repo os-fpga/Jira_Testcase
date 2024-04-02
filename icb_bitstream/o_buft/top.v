@@ -26,9 +26,9 @@
   Testing (Simulation/Emulator):
 
     Not Yet
-  
+
   Source:
-    
+
     GJC-14
 */
 
@@ -54,8 +54,8 @@ module top(
   assign data_i_buft = ~data_i_buf;
   assign ctrl_T_buft = ~ctrl_T_buf;
   O_BUFT buft_o(
-    .I(data_i_buft), 
-    .T(ctrl_T_buft), 
+    .I(data_i_buft),
+    .T(ctrl_T_buft),
     .O(data_o)
   );
 
