@@ -1,0 +1,60 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    IN: \\clock_input (offset: 0, width: 1)",
+    "      Connected \\clock_input to \\I_BUF ($iopadmap$clk_buf_primitive_inst.clock_input)",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    OUT: \\clock_output (offset: 0, width: 1)",
+    "      Connected \\clock_output to \\O_BUF ($iopadmap$clk_buf_primitive_inst.clock_output)",
+    "  Trace Clock Buffer",
+    "    IN Port: \\clock_input",
+    "      Connected \\clk_buf_inst",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$clk_buf_primitive_inst.clock_input",
+      "linked_object" : "clock_input",
+      "location" : "",
+      "connectivity" : {
+        "I" : "clock_input",
+        "O" : "$iopadmap$clock_input"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "properties" : {
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf_inst",
+      "linked_object" : "clock_input",
+      "location" : "",
+      "connectivity" : {
+        "I" : "$iopadmap$clock_input",
+        "O" : "$iopadmap$clock_output"
+      },
+      "parameters" : {
+      },
+      "properties" : {
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$clk_buf_primitive_inst.clock_output",
+      "linked_object" : "clock_output",
+      "location" : "",
+      "connectivity" : {
+        "I" : "$iopadmap$clock_output",
+        "O" : "clock_output"
+      },
+      "parameters" : {
+      },
+      "properties" : {
+      }
+    }
+  ]
+}

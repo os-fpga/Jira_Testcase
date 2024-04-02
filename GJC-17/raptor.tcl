@@ -1,0 +1,14 @@
+create_design ddr_to_sdr
+add_design_file ddr_to_sdr.v
+set_top_module ddr_to_sdr
+add_constraint_file constraints.sdc
+add_constraint_file pin_constraints.pin
+target_device 1VG28
+
+analyze
+synthesize
+packing
+place
+route
+sta
+bitstream

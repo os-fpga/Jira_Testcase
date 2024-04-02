@@ -1,0 +1,1061 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.03
+Build    : 1.0.17
+Hash     : 7566e6a
+Date     : Mar 20 2024
+Type     : Engineering
+Log Time   : Wed Mar 20 06:03:13 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/03_20_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/03_20_2024_09_15_01/share/raptor/etc/devices/gemini_compact_104x68/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/synthesis/fabric_filt_ppd_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/packing/fabric_filt_ppd_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report filt_ppd_post_place_timing.rpt --device castor104x68_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top filt_ppd --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/packing/fabric_filt_ppd_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/placement/fabric_filt_ppd_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/routing/fabric_filt_ppd_post_synth.route --analysis
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/03_20_2024_09_15_01/share/raptor/etc/devices/gemini_compact_104x68/gemini_vpr.xml
+Circuit name: fabric_filt_ppd_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.09 seconds (max_rss 21.4 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/packing/fabric_filt_ppd_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/placement/fabric_filt_ppd_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/routing/fabric_filt_ppd_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/packing/fabric_filt_ppd_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: filt_ppd_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 160
+RouterOpts.check_route: FULL
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 1500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: false
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: DETAILED_ROUTING
+AnalysisOpts.post_synth_netlist_unconn_input_handling: GND
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 21.4 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/synthesis/fabric_filt_ppd_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.34 seconds (max_rss 55.0 MiB, delta_rss +33.6 MiB)
+# Clean circuit
+Inferred   17 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred 2321 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 3845
+Swept block(s)      : 3265
+Constant Pins Marked: 2338
+# Clean circuit took 0.00 seconds (max_rss 55.0 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.02 seconds (max_rss 55.0 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 55.0 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 3530
+    .input     :      41
+    .output    :      60
+    0-LUT      :       3
+    6-LUT      :    2836
+    RS_DSP_MULT:      54
+    dffre      :     536
+  Nets  : 4900
+    Avg Fanout:     3.7
+    Max Fanout:  1060.0
+    Min Fanout:     1.0
+  Netlist Clocks: 33
+# Build Timing Graph
+  Timing Graph Nodes: 22917
+  Timing Graph Edges: 90044
+  Timing Graph Levels: 32
+# Build Timing Graph took 0.05 seconds (max_rss 55.0 MiB, delta_rss +0.0 MiB)
+Netlist contains 33 clocks
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 9 pins (0.0%), 9 blocks (0.3%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk' Fanout: 8 pins (0.0%), 8 blocks (0.2%)
+  Netlist Clock 'ppd_commutator.r_done' Fanout: 318 pins (1.4%), 318 blocks (9.0%)
+  Netlist Clock '$auto$clkbufmap.cc:294:execute$236094' Fanout: 32 pins (0.1%), 32 blocks (0.9%)
+# Load Timing Constraints
+
+SDC file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/packing/fabric_filt_ppd_openfpga.sdc' contained no SDC commands
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on a virtual external clock 'virtual_io_clock'
+   * optimize all netlist and virtual clocks to run as fast as possible
+   * ignore cross netlist clock domain timing paths
+Timing constraints created 34 clocks
+  Constrained Clock 'virtual_io_clock' (Virtual Clock)
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk' Source: 'ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk.inpad[0]'
+  Constrained Clock 'ppd_commutator.r_done' Source: 'ppd_commutator.r_done.inpad[0]'
+  Constrained Clock '$auto$clkbufmap.cc:294:execute$236094' Source: '$auto$clkbufmap.cc:294:execute$236094.inpad[0]'
+
+# Load Timing Constraints took 0.01 seconds (max_rss 55.0 MiB, delta_rss +0.0 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/packing/fabric_filt_ppd_post_synth.net'.
+Detected 3 constant generators (to see names run with higher pack verbosity)
+Warning 167: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 168: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 169: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 170: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 171: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 172: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 173: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 174: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 175: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 176: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 177: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 178: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 179: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 180: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 181: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 182: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 183: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 184: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 185: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 186: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 187: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 188: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 189: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 190: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 191: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 192: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 193: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 194: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 195: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 196: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 197: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 198: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 199: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 200: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 201: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 202: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 203: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 204: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 205: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 206: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 207: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 208: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 209: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 210: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 211: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 212: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 213: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 214: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 215: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 216: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 217: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 218: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 219: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 220: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 221: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 222: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 223: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 224: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 225: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Warning 226: Netlist connects net ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk to both global and non-global pins.
+Finished loading packed FPGA netlist file (took 0.65 seconds).
+# Load packing took 0.68 seconds (max_rss 102.9 MiB, delta_rss +47.9 MiB)
+Warning 227: Netlist contains 60 global net to non-global architecture pin connections
+Cluster level netlist and block usage statistics
+Netlist num_nets: 4319
+Netlist num_blocks: 539
+Netlist EMPTY blocks: 0.
+Netlist io blocks: 101.
+Netlist clb blocks: 384.
+Netlist dsp blocks: 54.
+Netlist bram blocks: 0.
+Netlist inputs pins: 41
+Netlist output pins: 60
+
+Pb types usage...
+  io               : 101
+   io_output       : 60
+    outpad         : 60
+   io_input        : 41
+    inpad          : 41
+  clb              : 384
+   clb_lr          : 384
+    fle            : 2444
+     fast6         : 1145
+      lut6         : 1145
+       lut         : 1145
+     ble5          : 2229
+      lut5         : 1694
+       lut         : 1694
+      ff           : 536
+       DFFRE       : 536
+  dsp              : 54
+   dsp_lr          : 54
+    RS_DSP_MULT    : 54
+
+# Create Device
+## Build Device Grid
+FPGA sized to 106 x 70: 7420 grid tiles (castor104x68_heterogeneous)
+
+Resource usage...
+	Netlist
+		101	blocks of type: io
+	Architecture
+		7344	blocks of type: io_top
+		4896	blocks of type: io_right
+		7344	blocks of type: io_bottom
+		4896	blocks of type: io_left
+	Netlist
+		384	blocks of type: clb
+	Architecture
+		5676	blocks of type: clb
+	Netlist
+		54	blocks of type: dsp
+	Architecture
+		176	blocks of type: dsp
+	Netlist
+		0	blocks of type: bram
+	Architecture
+		176	blocks of type: bram
+
+Device Utilization: 0.07 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.02 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.02 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.07 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.31 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.00 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 110.0 MiB, delta_rss +0.0 MiB)
+Warning 228: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 229: Sized nonsensical R=0 transistor to minimum width
+Warning 230: Sized nonsensical R=0 transistor to minimum width
+Warning 231: Sized nonsensical R=0 transistor to minimum width
+Warning 232: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 33.98 seconds (max_rss 1123.9 MiB, delta_rss +1013.9 MiB)
+  RR Graph Nodes: 2990612
+  RR Graph Edges: 15228438
+# Create Device took 35.50 seconds (max_rss 1123.9 MiB, delta_rss +1013.9 MiB)
+
+# Load Placement
+Reading /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/placement/fabric_filt_ppd_post_synth.place.
+
+Successfully read /nfs_scratch/scratch/CompilerValidation/abdul_hameed/19-march/Validation/RTL_testcases/DSP_new_designs/filt_ppd/results_dir/filt_ppd/run_1/synth_1_1/impl_1_1_1/placement/fabric_filt_ppd_post_synth.place.
+
+# Load Placement took 0.39 seconds (max_rss 1123.9 MiB, delta_rss +0.0 MiB)
+
+# Load Routing
+Begin loading FPGA routing file.
+Finished loading route file
+Warning 233: 186 timing endpoints were not constrained during timing analysis
+# Load Routing took 0.87 seconds (max_rss 1123.9 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.10 seconds (max_rss 1123.9 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: 631043534
+Circuit successfully routed with a channel width factor of 160.
+# Synchronize the packed netlist to routing optimization
+OK: before pb_pin_fixup: pb_route connectivity is consistent in all 539 blocks
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.01 seconds (max_rss 1123.9 MiB, delta_rss +0.0 MiB)
+Found 13475 mismatches between routing and packing results.
+Fixed 9339 routing traces due to mismatch between routing and packing results.
+OK: after pb_pin_fixup: pb_route connectivity is consistent in all 539 blocks
+# Synchronize the packed netlist to routing optimization took 0.16 seconds (max_rss 1123.9 MiB, delta_rss +0.0 MiB)
+Warning 234: All 33 clocks will be treated as global.
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io        101                               0.594059                     0.405941   
+       clb        384                                23.3385                      7.27604   
+       dsp         54                                27.7222                      27.4815   
+      bram          0                                      0                            0   
+Absorbed logical nets 581 out of 4900 nets, 4319 nets not absorbed.
+
+
+Average number of bends per net: 5.60196  Maximum # of bends: 272
+
+Number of global nets: 33
+Number of routed nets (nonglobal): 4286
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 101363, average net length: 23.6498
+	Maximum net length: 1411
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 36451, average wire segments per net: 8.50467
+	Maximum segments used by a net: 527
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)     0 (  0.0%) |
+[      0.9:        1)     0 (  0.0%) |
+[      0.8:      0.9)     0 (  0.0%) |
+[      0.7:      0.8)   334 (  2.3%) |*
+[      0.5:      0.6)   214 (  1.5%) |*
+[      0.4:      0.5)   160 (  1.1%) |*
+[      0.3:      0.4)   146 (  1.0%) |*
+[      0.2:      0.3)   208 (  1.4%) |*
+[      0.1:      0.2)   464 (  3.2%) |**
+[        0:      0.1) 12964 ( 89.5%) |*********************************************
+Maximum routing channel utilization:       0.8 at (52,30)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       3   0.217      160
+                         1      22   2.066      160
+                         2      16   1.198      160
+                         3       4   0.368      160
+                         4      12   0.736      160
+                         5      11   0.953      160
+                         6      11   0.755      160
+                         7      14   0.557      160
+                         8      11   0.698      160
+                         9       9   0.604      160
+                        10       5   0.472      160
+                        11       4   0.330      160
+                        12      13   0.906      160
+                        13       8   0.717      160
+                        14      26   1.802      160
+                        15      15   1.425      160
+                        16      14   1.594      160
+                        17      28   2.745      160
+                        18      24   2.349      160
+                        19      31   3.623      160
+                        20      42   6.292      160
+                        21      59   9.085      160
+                        22      81  11.642      160
+                        23     100  17.151      160
+                        24     108  17.632      160
+                        25     119  18.283      160
+                        26     119  21.377      160
+                        27     126  22.302      160
+                        28     126  24.330      160
+                        29     126  26.217      160
+                        30     128  27.302      160
+                        31     128  27.858      160
+                        32     123  27.000      160
+                        33     119  24.132      160
+                        34     123  24.255      160
+                        35     118  25.274      160
+                        36     110  22.689      160
+                        37     109  22.670      160
+                        38     104  20.934      160
+                        39     100  17.755      160
+                        40      86  14.858      160
+                        41      91  10.264      160
+                        42      65   7.358      160
+                        43      51   6.066      160
+                        44      32   4.868      160
+                        45      21   3.217      160
+                        46      19   2.670      160
+                        47      33   3.538      160
+                        48      21   1.981      160
+                        49      17   1.623      160
+                        50      22   1.642      160
+                        51      12   1.142      160
+                        52       8   0.425      160
+                        53      19   0.321      160
+                        54      10   0.358      160
+                        55       6   0.113      160
+                        56       0   0.000      160
+                        57       0   0.000      160
+                        58       0   0.000      160
+                        59       0   0.000      160
+                        60       0   0.000      160
+                        61       0   0.000      160
+                        62       0   0.000      160
+                        63       0   0.000      160
+                        64       0   0.000      160
+                        65       0   0.000      160
+                        66       0   0.000      160
+                        67       0   0.000      160
+                        68       0   0.000      160
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       0   0.000      160
+                         1       0   0.000      160
+                         2       0   0.000      160
+                         3       0   0.000      160
+                         4       0   0.000      160
+                         5       0   0.000      160
+                         6       0   0.000      160
+                         7       0   0.000      160
+                         8       0   0.000      160
+                         9       0   0.000      160
+                        10       0   0.000      160
+                        11       0   0.000      160
+                        12       0   0.000      160
+                        13       0   0.000      160
+                        14       0   0.000      160
+                        15       0   0.000      160
+                        16       0   0.000      160
+                        17       0   0.000      160
+                        18       0   0.000      160
+                        19       0   0.000      160
+                        20       0   0.000      160
+                        21       0   0.000      160
+                        22       0   0.000      160
+                        23       0   0.000      160
+                        24       0   0.000      160
+                        25       0   0.000      160
+                        26       0   0.000      160
+                        27       2   0.071      160
+                        28      12   0.657      160
+                        29       0   0.000      160
+                        30       5   0.229      160
+                        31      11   0.471      160
+                        32       2   0.129      160
+                        33       1   0.014      160
+                        34      10   0.600      160
+                        35       3   0.171      160
+                        36       6   0.429      160
+                        37      17   3.571      160
+                        38      42  10.400      160
+                        39      25   3.886      160
+                        40      42   8.271      160
+                        41      89  19.129      160
+                        42      54  10.071      160
+                        43      81  17.843      160
+                        44      97  25.271      160
+                        45     104  29.786      160
+                        46      91  31.629      160
+                        47     115  30.486      160
+                        48     125  29.843      160
+                        49     117  32.529      160
+                        50      93  21.729      160
+                        51     115  26.143      160
+                        52     116  30.057      160
+                        53     113  31.771      160
+                        54     108  30.643      160
+                        55      93  27.071      160
+                        56     117  36.286      160
+                        57     123  36.329      160
+                        58     121  35.871      160
+                        59      92  28.586      160
+                        60      93  25.771      160
+                        61      85  18.057      160
+                        62      75  13.857      160
+                        63      58  15.400      160
+                        64      76  15.086      160
+                        65      56   9.900      160
+                        66      57  13.114      160
+                        67      35   9.429      160
+                        68       8   0.729      160
+                        69      29   2.086      160
+                        70      17   1.600      160
+                        71      20   0.957      160
+                        72      11   0.857      160
+                        73      20   2.171      160
+                        74       6   0.543      160
+                        75       3   0.143      160
+                        76       7   0.786      160
+                        77      22   2.286      160
+                        78       2   0.071      160
+                        79       0   0.000      160
+                        80       0   0.000      160
+                        81       0   0.000      160
+                        82       0   0.000      160
+                        83       0   0.000      160
+                        84       0   0.000      160
+                        85       0   0.000      160
+                        86       0   0.000      160
+                        87       0   0.000      160
+                        88       0   0.000      160
+                        89       0   0.000      160
+                        90       0   0.000      160
+                        91       0   0.000      160
+                        92       0   0.000      160
+                        93       0   0.000      160
+                        94       0   0.000      160
+                        95       0   0.000      160
+                        96       0   0.000      160
+                        97       0   0.000      160
+                        98       0   0.000      160
+                        99       0   0.000      160
+                       100       0   0.000      160
+                       101       0   0.000      160
+                       102       0   0.000      160
+                       103       0   0.000      160
+                       104       0   0.000      160
+
+Total tracks in x-direction: 11040, in y-direction: 16800
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 4.98776e+08
+	Total used logic block area: 5.02879e+07
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 9.40852e+07, per logic tile: 12679.9
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      1 229632
+                                                      Y      1 228480
+                                                      X      4 236256
+                                                      Y      4 238560
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0355
+                                             4      0.0473
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0291
+                                             4      0.0439
+
+Segment occupancy by length: Length utilization
+                             ------ -----------
+                             L1          0.0323
+                             L4          0.0456
+
+Segment occupancy by type: name type utilization
+                           ---- ---- -----------
+                             L1    0      0.0323
+                             L4    1      0.0456
+Warning 235: 186 timing endpoints were not constrained during timing analysis
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  1.9e-10:  7.5e-10) 185 ( 12.8%) |*****************
+[  7.5e-10:  1.3e-09) 229 ( 15.8%) |*********************
+[  1.3e-09:  1.9e-09) 519 ( 35.8%) |***********************************************
+[  1.9e-09:  2.4e-09) 489 ( 33.7%) |********************************************
+[  2.4e-09:    3e-09)   0 (  0.0%) |
+[    3e-09:  3.5e-09)   0 (  0.0%) |
+[  3.5e-09:  4.1e-09)   0 (  0.0%) |
+[  4.1e-09:  4.6e-09)   0 (  0.0%) |
+[  4.6e-09:  5.2e-09)   6 (  0.4%) |*
+[  5.2e-09:  5.8e-09)  22 (  1.5%) |**
+
+Final intra-domain worst hold slacks per constraint:
+  ppd_commutator.r_done to ppd_commutator.r_done worst hold slack: 0.188392 ns
+
+Final inter-domain worst hold slacks per constraint:
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.5153 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03064 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03366 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.853798 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03064 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.853798 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.15256 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.21352 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.734898 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.5672 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.24555 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03366 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.853798 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03366 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.07173 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.772969 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.39338 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.3333 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.3294 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.27234 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03366 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.433118 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.494079 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.03366 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.673939 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.39338 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 1.18968 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.555039 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.436139 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.914759 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk worst hold slack: 0.615999 ns
+  virtual_io_clock to ppd_commutator.r_done worst hold slack: 1.15256 ns
+  virtual_io_clock to $auto$clkbufmap.cc:294:execute$236094 worst hold slack: 0.436139 ns
+  ppd_commutator.r_done to virtual_io_clock worst hold slack: 4.84768 ns
+  $auto$clkbufmap.cc:294:execute$236094 to virtual_io_clock worst hold slack: 1.54347 ns
+
+Final critical path delay (least slack): 16.4787 ns
+Final setup Worst Negative Slack (sWNS): -16.4787 ns
+Final setup Total Negative Slack (sTNS): -2599.79 ns
+
+Final setup slack histogram:
+[ -1.6e-08: -1.5e-08)    8 (  0.6%) |
+[ -1.5e-08: -1.3e-08)   11 (  0.8%) |
+[ -1.3e-08: -1.2e-08)    5 (  0.3%) |
+[ -1.2e-08:   -1e-08)    3 (  0.2%) |
+[   -1e-08: -8.4e-09)    1 (  0.1%) |
+[ -8.4e-09: -6.8e-09)    0 (  0.0%) |
+[ -6.8e-09: -5.2e-09)    0 (  0.0%) |
+[ -5.2e-09: -3.6e-09)    0 (  0.0%) |
+[ -3.6e-09:   -2e-09)  332 ( 22.9%) |**************
+[   -2e-09: -3.7e-10) 1090 ( 75.2%) |**********************************************
+
+Final intra-domain critical path delays (CPDs):
+  ppd_commutator.r_done to ppd_commutator.r_done CPD: 1.76915 ns (565.242 MHz)
+
+Final inter-domain critical path delays (CPDs):
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.03002 ns (492.607 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk CPD: 1.63355 ns (612.165 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.08796 ns (478.937 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.3727 ns (421.461 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.14892 ns (465.351 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.34394 ns (426.633 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk CPD: 1.74944 ns (571.612 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.20988 ns (452.514 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.1459 ns (466.006 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.20944 ns (452.604 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.08796 ns (478.937 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.1671 ns (461.447 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.32878 ns (429.41 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.04819 ns (488.237 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.17012 ns (460.805 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk CPD: 1.66986 ns (598.854 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.32532 ns (430.049 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.22805 ns (448.823 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.29204 ns (436.293 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.02958 ns (492.713 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.03886 ns (490.471 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk CPD: 0.950418 ns (1052.17 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk CPD: 0.828497 ns (1207 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk CPD: 2.14244 ns (466.758 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk CPD: 0.953878 ns (1048.35 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk CPD: 1.86834 ns (535.235 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk CPD: 1.9293 ns (518.323 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk CPD: 0.950418 ns (1052.17 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk CPD: 0.889458 ns (1124.28 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk CPD: 1.91996 ns (520.845 MHz)
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk CPD: 0.889458 ns (1124.28 MHz)
+  virtual_io_clock to ppd_commutator.r_done CPD: 2.31174 ns (432.575 MHz)
+  virtual_io_clock to $auto$clkbufmap.cc:294:execute$236094 CPD: 1.25861 ns (794.529 MHz)
+  $auto$clkbufmap.cc:294:execute$236094 to virtual_io_clock CPD: 2.36045 ns (423.648 MHz)
+  ppd_commutator.r_done to virtual_io_clock CPD: 16.4787 ns (60.6842 MHz)
+
+Final intra-domain worst setup slacks per constraint:
+  ppd_commutator.r_done to ppd_commutator.r_done worst setup slack: -1.76915 ns
+
+Final inter-domain worst setup slacks per constraint:
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[0].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.03002 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[10].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -1.63355 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[11].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.08796 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[12].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.3727 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[13].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.14892 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[14].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.34394 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[15].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -1.74944 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[16].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.20988 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[17].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.1459 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[18].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.20944 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[19].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.08796 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[1].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.1671 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[20].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.32878 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[21].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.04819 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[22].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.17012 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[23].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -1.66986 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[24].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.32532 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[25].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.22805 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[26].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.29204 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[27].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.02958 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[28].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.03886 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[29].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -0.950418 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[2].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -0.828497 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[30].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -2.14244 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[3].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -0.953878 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[4].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -1.86834 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[5].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -1.9293 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[6].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -0.950418 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[7].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -0.889458 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[8].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -1.91996 ns
+  virtual_io_clock to ppd_commutator.g_commutator_ccw.g_reg_comm_inp[9].REG_COMMUTATOR_INP_DATA.i_clk worst setup slack: -0.889458 ns
+  virtual_io_clock to ppd_commutator.r_done worst setup slack: -2.31174 ns
+  virtual_io_clock to $auto$clkbufmap.cc:294:execute$236094 worst setup slack: -1.25861 ns
+  $auto$clkbufmap.cc:294:execute$236094 to virtual_io_clock worst setup slack: -2.36045 ns
+  ppd_commutator.r_done to virtual_io_clock worst setup slack: -16.4787 ns
+
+Final geomean non-virtual intra-domain period: 1.76915 ns (565.242 MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: 1.76915 ns (565.242 MHz)
+
+Incr Slack updates 1 in 0.000851259 sec
+Full Max Req/Worst Slack updates 1 in 0.000132742 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 0.00285948 sec
+Flow timing analysis took 0.36028 seconds (0.347258 STA, 0.0130216 slack) (2 full updates: 0 setup, 0 hold, 2 combined).
+VPR succeeded
+The entire flow of VPR took 40.03 seconds (max_rss 1123.9 MiB)
+Incr Slack updates 1 in 0.0010299 sec
+Full Max Req/Worst Slack updates 1 in 0.000236417 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 0.00347373 sec

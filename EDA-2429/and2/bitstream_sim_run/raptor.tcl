@@ -3,6 +3,7 @@ add_design_file -V_2001 ./rtl/and2.v
 set_top_module and2
 add_simulation_file testbench.sv
 set_top_testbench tb_and2
+add_constraint_file pin_mapping.pin
 target_device GEMINI_COMPACT_10x8
 analyze
 simulate "rtl" "icarus" dump.fst
@@ -43,6 +44,17 @@ puts -nonewline $destination_file [join $destination_lines "\n"]
 
 close $destination_file
 
+exec python3 bt_tb_io_update.py and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and2_formal_random_top_tb.v and2
+exec python3 bt_tb_io_update.py and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_and2_top_formal_verification.v and2
+exec python3 bt_tb_io_update.py and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_netlists.v and2
+
+file mkdir and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
+if {[file exists and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/CustomModules]} {
+    puts "Destination directory already exists. Skipping the copy operation."
+} else {
+    file copy -force ../../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/ and2_bitstream_sim/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
+}
+
 
 # Bitstream Simulation
 clear_simulation_files
@@ -50,9 +62,9 @@ clear_simulation_files
 add_library_path ../../openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
 
 # path to ./user_cells.v
-add_library_path .
+# add_library_path .
 
 # Create a path to ./SRC/sc_verilog/dti_tm16ffc_90c_7p5t_stdcells_rev1p0p0.v
-add_include_path .
+# add_include_path .
 
 simulate "bitstream_bd" "icarus" 

@@ -1,5 +1,5 @@
 create_design accum_output_shifted_rounded
-target_device GEMINI_COMPACT_104x68
+target_device 1VG28
 add_include_path ./rtl
 add_library_path ./rtl
 add_library_ext .v .sv
@@ -29,14 +29,14 @@ packing
 place
 route
 # Open the input file in read mode
-set input_file [open "accum_output_shifted_rounded/run_1/synth_1_1/synthesis/wrapper_accum_output_shifted_rounded\_post_synth.v" r]
+set input_file [open "accum_output_shifted_rounded/run_1/synth_1_1/synthesis/post_pnr_wrapper_accum_output_shifted_rounded\_post_synth.v" r]
 # Read the file content
 set file_content [read $input_file]
 # Close the input file after reading
 close $input_file
 set modified_content [string map {"module accum_output_shifted_rounded(" "module accum_output_shifted_rounded_post_route ("} $file_content]
 # Open the file again, this time in write mode to overwrite the old content
-set output_file [open "accum_output_shifted_rounded/run_1/synth_1_1/synthesis/wrapper_accum_output_shifted_rounded\_post_synth.v" w]
+set output_file [open "accum_output_shifted_rounded/run_1/synth_1_1/synthesis/post_pnr_wrapper_accum_output_shifted_rounded\_post_synth.v" w]
 # Write the modified content back to the file
 puts $output_file $modified_content
 # Close the file

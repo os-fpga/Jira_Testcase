@@ -1,0 +1,89 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.03
+Build    : 1.0.17
+Hash     : 7566e6a
+Date     : Mar 20 2024
+Type     : Engineering
+Log Time   : Wed Mar 20 07:57:08 2024 GMT
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 0
+# Timing Graph Levels: 4
+
+#Path 1
+Startpoint: $iopadmap$Q.Q[0] (dffre clocked by $auto$clkbufmap.cc:294:execute$638)
+Endpoint  : out:$iopadmap$Q.outpad[0] (.output clocked by $auto$clkbufmap.cc:294:execute$638)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                       0.000     0.000
+clock source latency                                                       0.000     0.000
+$auto$clkbufmap.cc:294:execute$638.inpad[0] (.input)                       0.000     0.000
+$iopadmap$Q.C[0] (dffre)                                                   0.890     0.890
+$iopadmap$Q.Q[0] (dffre) [clock-to-output]                                 0.154     1.044
+out:$iopadmap$Q.outpad[0] (.output)                                        0.890     1.935
+data arrival time                                                                    1.935
+
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                       5.000     5.000
+clock source latency                                                       0.000     5.000
+clock uncertainty                                                          0.000     5.000
+output external delay                                                     -1.000     4.000
+data required time                                                                   4.000
+------------------------------------------------------------------------------------------
+data required time                                                                   4.000
+data arrival time                                                                   -1.935
+------------------------------------------------------------------------------------------
+slack (MET)                                                                          2.065
+
+
+#Path 2
+Startpoint: $iopadmap$mux_sel.inpad[0] (.input clocked by $auto$clkbufmap.cc:294:execute$638)
+Endpoint  : $iopadmap$Q.D[0] (dffre clocked by $auto$clkbufmap.cc:294:execute$638)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                       0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       1.000     1.000
+$iopadmap$mux_sel.inpad[0] (.input)                                        0.000     1.000
+$abc$317$li0_li0.in[0] (.names)                                            0.890     1.890
+$abc$317$li0_li0.out[0] (.names)                                           0.173     2.063
+$iopadmap$Q.D[0] (dffre)                                                   0.890     2.953
+data arrival time                                                                    2.953
+
+clock $auto$clkbufmap.cc:294:execute$638 (rise edge)                       5.000     5.000
+clock source latency                                                       0.000     5.000
+$auto$clkbufmap.cc:294:execute$638.inpad[0] (.input)                       0.000     5.000
+$iopadmap$Q.C[0] (dffre)                                                   0.890     5.890
+clock uncertainty                                                          0.000     5.890
+cell setup time                                                           -0.032     5.859
+data required time                                                                   5.859
+------------------------------------------------------------------------------------------
+data required time                                                                   5.859
+data arrival time                                                                   -2.953
+------------------------------------------------------------------------------------------
+slack (MET)                                                                          2.905
+
+
+#End of timing report
