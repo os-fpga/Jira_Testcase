@@ -7,21 +7,26 @@
 
 
 
-module sdr_to_ddr (
+module o_ddr_o_buf_ds (
     input   wire [1:0] data_i,
     input   wire reset_n,
     input   wire enable,
     input   wire clk_i,
-    output  wire data_o
+    output  wire data_o_p
+    output  wire data_o_n
 );
 
     reg [1:0] data_reg;
     wire data_o_buf;
+    wire clk_buf_i;
 
-    O_BUF ddr_buf (data_o_buf,data_o);
-    O_DDR data_o_ddr (data_reg,reset_n,enable,clk_i,data_o_buf);
+    CLK_BUF clock_buffer (clk_i, clk_buf_i);
 
-    always @(posedge clk_i or negedge reset_n) begin
+    O_BUF_DS ddr_buf (.I(data_o_buf), .O_P(data_o_p), .O_N(data_o_n));
+    
+    O_DDR data_o_ddr (data_reg,reset_n,enable,clk_buf_i,data_o_buf);
+
+    always @(posedge clk_buf_i or negedge reset_n) begin
         if(!reset_n) data_reg <= 0;
         else if(enable) begin
             data_reg[0] <= data_i[0];

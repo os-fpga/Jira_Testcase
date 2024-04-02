@@ -1,4 +1,4 @@
-set_top_module sdr_to_ddr
+set_top_module o_ddr_o_buft
 
 create_clock -period 10 clk_i
 

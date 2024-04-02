@@ -1,6 +1,6 @@
-create_design ddr_to_sdr
-add_design_file ddr_to_sdr.v
-set_top_module ddr_to_sdr
+create_design o_ddr_o_buft_ds
+add_design_file o_ddr_o_buft_ds.v
+set_top_module o_ddr_o_buft_ds
 add_constraint_file constraints.sdc
 add_constraint_file pin_constraints.pin
 target_device 1VG28
