@@ -28,7 +28,9 @@
 
   SW Readiness:
 
-    Not Yet
+    SYN:: Yes
+    PPDB:: Yes
+    BitGen:: No
 
   Testing (Simulation/Emulator):
 
@@ -58,14 +60,14 @@ module top(
     end
   end
   O_DDR o_ddr(
-    data_reg,
-    reset_n,
-    enable,
-    clk_i,
-    data_o_buf
+    .D(data_reg),
+    .R(reset_n),
+    .E(enable),
+    .C(clk_i),
+    .Q(data_o_buf)
   );
   O_BUF o_buf(
-    data_o_buf,
-    data_o
+    .I(data_o_buf),
+    .O(data_o)
   );
 endmodule

@@ -24,10 +24,14 @@
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
     "    Get important connection of cell \\I_BUF \\i_buf",
     "      Cell port \\I is connected to input port \\data_i",
-    "  Trace Clock Buffer",
+    "  Trace \\CLK_BUF",
     "    Try \\I_BUF $iopadmap$top.clk_i out connection: $iopadmap$clk_i",
     "      Connected $auto$clkbufmap.cc:265:execute$482",
     "        Additional Connection: $auto$clkbufmap.cc:266:execute$483",
+    "  Trace \\I_DDR",
+    "    Try \\I_BUF \\i_buf out connection: \\data_i_buf",
+    "      Connected \\i_ddr",
+    "  Trace \\O_DDR",
     "End of IO Analysis"
   ],
   "instances" : [
@@ -174,6 +178,23 @@
       "connectivity" : {
         "I" : "data_i",
         "O" : "data_i_buf"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "i_ddr",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "D" : "data_i_buf"
       },
       "parameters" : {
       }
