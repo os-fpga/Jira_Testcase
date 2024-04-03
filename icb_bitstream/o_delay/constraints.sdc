@@ -1,7 +1,7 @@
 # -name is used for creating virtual clock and for actual clock -name option will not be used
 set_clock_pin -device_clock clk[0] -design_clock clk_i
 
-set_property mode Mode_BP_DIR_A_RX HR_1_0_0P
+set_property mode Mode_BP_DIR_A_RX HP_1_CC_10_5P
 set_pin_loc clk_i HP_1_CC_10_5P
 
 set_property mode Mode_BP_DIR_A_RX HR_1_2_1P
