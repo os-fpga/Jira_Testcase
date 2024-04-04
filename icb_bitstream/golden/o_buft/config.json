@@ -6,14 +6,40 @@
     "    Detect input port \\data_i (index=0, width=1, offset=0)",
     "    Detect output port \\data_o (index=0, width=1, offset=0)",
     "  Get Port Primitives",
+    "    Get important connection of cell \\O_BUFT \\buft_o",
+    "      Cell port \\O is connected to output port \\data_o",
     "    Get important connection of cell \\I_BUF \\ctrl_buf",
     "      Cell port \\I is connected to input port \\ctrl_T",
     "    Get important connection of cell \\I_BUF \\data_buf",
     "      Cell port \\I is connected to input port \\data_i",
-    "  Trace Clock Buffer",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_DDR",
     "End of IO Analysis"
   ],
   "instances" : [
+    {
+      "module" : "O_BUFT",
+      "name" : "buft_o",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_i_buft",
+        "O" : "data_o"
+      },
+      "parameters" : {
+      }
+    },
     {
       "module" : "I_BUF",
       "name" : "ctrl_buf",

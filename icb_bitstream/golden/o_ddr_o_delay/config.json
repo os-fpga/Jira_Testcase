@@ -6,44 +6,50 @@
     "    Detect input port \\data_i (index=0, width=2, offset=0)",
     "    Detect input port \\data_i (index=1, width=2, offset=0)",
     "    Detect output port \\data_o (index=0, width=1, offset=0)",
+    "    Detect input port \\dly_inc_pulse_inv (index=0, width=1, offset=0)",
     "    Detect input port \\enable (index=0, width=1, offset=0)",
     "    Detect input port \\reset_n (index=0, width=1, offset=0)",
     "  Get Port Primitives",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.clk_i",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_delay_o_buf.clk_i",
     "      Cell port \\I is connected to input port \\clk_i",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.data_i",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_delay_o_buf.data_i",
     "      Cell port \\I is connected to input port \\data_i[0]",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.data_i_1",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_delay_o_buf.data_i_1",
     "      Cell port \\I is connected to input port \\data_i[1]",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.enable",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_delay_o_buf.dly_inc_pulse_inv",
+    "      Cell port \\I is connected to input port \\dly_inc_pulse_inv",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_delay_o_buf.enable",
     "      Cell port \\I is connected to input port \\enable",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.reset_n",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_delay_o_buf.reset_n",
     "      Cell port \\I is connected to input port \\reset_n",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\O_BUF \\o_buf",
+    "    Get important connection of cell \\O_BUF \\ddr_buf",
     "      Cell port \\O is connected to output port \\data_o",
     "  Trace \\I_BUF --> \\CLK_BUF",
-    "    Try \\I_BUF $iopadmap$top.clk_i out connection: $iopadmap$clk_i",
-    "      Connected $auto$clkbufmap.cc:265:execute$482",
-    "        Additional Connection: $auto$clkbufmap.cc:266:execute$483",
+    "    Try \\I_BUF $iopadmap$i_delay_o_buf.clk_i out connection: $iopadmap$clk_i",
+    "      Connected $auto$clkbufmap.cc:265:execute$595",
+    "        Additional Connection: $auto$clkbufmap.cc:266:execute$596",
     "  Trace \\I_BUF --> \\I_DELAY",
     "  Trace \\I_DELAY --> \\I_DDR",
     "  Trace \\I_BUF --> \\I_DDR",
     "  Trace \\O_BUF --> \\O_DELAY",
+    "    Try \\O_BUF \\ddr_buf out connection: \\data_o_buf",
+    "      Connected \\data_o_delay",
     "  Trace \\O_DELAY --> \\O_DDR",
+    "    Try \\O_DELAY \\data_o_delay out connection: \\data_o_delayed",
+    "      Connected \\data_o_ddr",
     "  Trace \\O_BUF --> \\O_DDR",
-    "    Try \\O_BUF \\o_buf out connection: \\data_o_buf",
-    "      Connected \\o_ddr",
     "End of IO Analysis"
   ],
   "instances" : [
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.clk_i",
+      "name" : "$iopadmap$i_delay_o_buf.clk_i",
       "linked_object" : "clk_i",
       "linked_objects" : {
         "clk_i" : {
@@ -73,14 +79,14 @@
       },
       "connectivity" : {
         "I" : "$iopadmap$clk_i",
-        "O" : "$auto$clkbufmap.cc:266:execute$483"
+        "O" : "$auto$clkbufmap.cc:266:execute$596"
       },
       "parameters" : {
       }
     },
     {
       "module" : "CLK_BUF",
-      "name" : "$auto$clkbufmap.cc:265:execute$482",
+      "name" : "$auto$clkbufmap.cc:265:execute$595",
       "linked_object" : "clk_i",
       "linked_objects" : {
         "clk_i" : {
@@ -90,15 +96,15 @@
         }
       },
       "connectivity" : {
-        "I" : "$auto$clkbufmap.cc:266:execute$483",
-        "O" : "$auto$clkbufmap.cc:298:execute$484"
+        "I" : "$auto$clkbufmap.cc:266:execute$596",
+        "O" : "$auto$clkbufmap.cc:298:execute$597"
       },
       "parameters" : {
       }
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.data_i",
+      "name" : "$iopadmap$i_delay_o_buf.data_i",
       "linked_object" : "data_i[0]",
       "linked_objects" : {
         "data_i[0]" : {
@@ -117,7 +123,7 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.data_i_1",
+      "name" : "$iopadmap$i_delay_o_buf.data_i_1",
       "linked_object" : "data_i[1]",
       "linked_objects" : {
         "data_i[1]" : {
@@ -136,7 +142,26 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.enable",
+      "name" : "$iopadmap$i_delay_o_buf.dly_inc_pulse_inv",
+      "linked_object" : "dly_inc_pulse_inv",
+      "linked_objects" : {
+        "dly_inc_pulse_inv" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "dly_inc_pulse_inv",
+        "O" : "$iopadmap$dly_inc_pulse_inv"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$i_delay_o_buf.enable",
       "linked_object" : "enable",
       "linked_objects" : {
         "enable" : {
@@ -155,7 +180,7 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.reset_n",
+      "name" : "$iopadmap$i_delay_o_buf.reset_n",
       "linked_object" : "reset_n",
       "linked_objects" : {
         "reset_n" : {
@@ -174,7 +199,7 @@
     },
     {
       "module" : "O_DDR",
-      "name" : "o_ddr",
+      "name" : "data_o_ddr",
       "linked_object" : "data_o",
       "linked_objects" : {
         "data_o" : {
@@ -184,14 +209,32 @@
         }
       },
       "connectivity" : {
-        "Q" : "data_o_buf"
+        "Q" : "data_o_delayed"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_DELAY",
+      "name" : "data_o_delay",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_o_delayed",
+        "O" : "data_o_buf"
       },
       "parameters" : {
       }
     },
     {
       "module" : "O_BUF",
-      "name" : "o_buf",
+      "name" : "ddr_buf",
       "linked_object" : "data_o",
       "linked_objects" : {
         "data_o" : {

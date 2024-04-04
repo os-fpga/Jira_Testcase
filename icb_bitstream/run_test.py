@@ -3,6 +3,8 @@ import argparse
 import glob
 import threading
 
+MAX_THREADS = 32
+
 class ProjectThread(threading.Thread):
   def __init__(self, tool, project):
     threading.Thread.__init__(self)
@@ -59,9 +61,9 @@ def get_thread_count(threads):
     if threads <= 0:
       print("Warning: Set threads count to 1")
       threads_count = 1
-    elif threads > 8:
-      print("Warning: Reduce/set threads count to 8")
-      threads_count = 8
+    elif threads > MAX_THREADS:
+      print("Warning: Reduce/set threads count to {max_thread:d}".format(max_thread=MAX_THREADS))
+      threads_count = MAX_THREADS
     else:
       threads_count = threads
   else:

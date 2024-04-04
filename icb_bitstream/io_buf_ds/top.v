@@ -17,7 +17,9 @@
 
   SW Readiness:
 
-    Not yet
+    SYN:: No
+    PPDB:: No
+    BitGen:: No
 
   Testing (Simulation/Emulator):
 

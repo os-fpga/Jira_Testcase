@@ -23,7 +23,9 @@
 
   SW Readiness:
 
-    Not Yet
+    SYN:: No
+    PPDB:: No
+    BitGen:: No
 
   Testing (Simulation/Emulator):
 
@@ -60,7 +62,7 @@ module top(
     .I(data_i_buft),
     .T(ctrl_T_buft),
     .O_P(data_o_P),
-    .O_N(data_o_P)
+    .O_N(data_o_N)
   );
 
 endmodule

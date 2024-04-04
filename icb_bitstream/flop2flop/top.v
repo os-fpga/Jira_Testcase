@@ -20,7 +20,11 @@
 
   SW Readiness:
 
-    Yes. However Pin Table and RIC model need to be updated to support
+    SYN:: Yes
+    PPDB:: Yes
+    BitGen:: Yes
+
+    However Pin Table and RIC model need to be updated to support
       Clock-Capble IO
 
   Testing (Simulation/Emulator):
