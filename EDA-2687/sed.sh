@@ -1,0 +1,8 @@
+# sed -i "s|clk_fm\[0\] = clock0\[0\]|clk_fm\[0\] = 1'b0|" $(find . -type f -name "fabric_sp_ram_formal_verification.v")
+# sed -i "s|clk_fm\[14\] = 1'b0|clk_fm\[14\] = clock1|" $(find . -type f -name "fabric_sp_ram_formal_verification.v")
+# sed -i "s|clk_fm\[15\] = 1'b0|clk_fm\[15\] = clock0|" $(find . -type f -name "fabric_sp_ram_formal_verification.v")
+# sed -i "s|global_resetn_fm\[0\] = 1'b0|global_resetn_fm\[0\] = 1'b1|g" $(find . -type f -name "fabric_sp_ram_formal_verification.v")
+sed -i "s|// reg \[0:0\] addr\[0\]|reg [31:0] memory[1023:0]|g" $(find . -type f -name "fabric_sp_ram_formal_random_top_tb.v")
+sed -i "s|// reg \[0:0\] addr\[1\]|bit [31:0] wdata|g" $(find . -type f -name "fabric_sp_ram_formal_random_top_tb.v")
+sed -i "s|// reg \[0:0\] addr\[2\]|reg [31:0] rd_data|g" $(find . -type f -name "fabric_sp_ram_formal_random_top_tb.v")
+sed -i "s|// reg \[0:0\] addr\[3\]|bit [9:0] address|g" $(find . -type f -name "fabric_sp_ram_formal_random_top_tb.v")
