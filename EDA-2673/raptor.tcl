@@ -1,5 +1,5 @@
 create_design carry_primitive_inst
-target_device GEMINI_COMPACT_104x68
+target_device GEMINI_COMPACT_62x44
 add_include_path ./rtl
 add_library_path ./rtl
 add_library_ext .v .sv
