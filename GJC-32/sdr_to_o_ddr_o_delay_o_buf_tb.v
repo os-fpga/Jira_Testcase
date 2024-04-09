@@ -1,26 +1,27 @@
 `timescale 1ns/1ns
 
-module sdr_to_ddr_tb;
+module sdr_to_o_ddr_o_delay_o_buf_tb;
 
     reg [1:0] data_i;
     reg reset_n;
     reg enable;
     reg clk_i;
     reg data_o;
+    reg dly_inc_pulse_inv;
 
     integer test,check;
     reg [9:0] test_data_0;
     reg [9:0] test_data_1;
 
 
-    o_ddr_o_buf dut (data_i,reset_n,enable,clk_i,data_o);
+    sdr_to_o_ddr_o_delay_o_buf dut (data_i,reset_n,enable,dly_inc_pulse_inv,clk_i,data_o);
 
     initial begin
         forever begin
             clk_i = 0;
-            #10;
+            #500;
             clk_i = 1;
-            #10;
+            #500;
         end
     end
 
@@ -31,10 +32,11 @@ module sdr_to_ddr_tb;
         enable  = 0;
         data_i  = 0;
         reset_n = 1;
+        dly_inc_pulse_inv = 1;
         #85;
         // apply reset 
         reset_n = 0;
-        @(negedge clk_i);
+        repeat(2)@(negedge clk_i);
         reset_n = 1;
         enable = 1;
         for(test = 0; test < 10; test = test + 1)begin
@@ -50,11 +52,16 @@ module sdr_to_ddr_tb;
         #1;
         for(check = 0; check < 10; check = check + 1)begin
             @(negedge clk_i);
-            #1;
+            #50;
             if(data_o !== test_data_1[check])$display("ERROR: Mismatch at output port at test cycle %0d (detected %0d but expected %0d)",check,data_o,test_data_1[check]);
             @(posedge clk_i);
-            #1;
+            #50;
             if(data_o !== test_data_0[check])$display("ERROR: Mismatch at output port at test cycle %0d (detected %0d but expected %0d)",check,data_o,test_data_0[check]);
         end
+    end
+
+    initial begin
+        $dumpfile("wave.vcd");
+        $dumpvars(0,sdr_to_o_ddr_o_delay_o_buf_tb);
     end
 endmodule

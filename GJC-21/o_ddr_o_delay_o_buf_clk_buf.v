@@ -7,12 +7,12 @@
 
 
 
-module sdr_to_o_ddr_o_delay_o_buf (
-    input   wire [1:0] data_i,
-    input   wire reset_n,
-    input   wire enable,
-    input   wire dly_inc_pulse_inv,
-    input   wire clk_i,
+module o_ddr_o_delay_o_buf_clk_buf (
+    input   wire [1:0] data_i_buf,
+    input   wire reset_n_buf,
+    input   wire enable_buf,
+    input   wire clk_i_buf,
+    input   wire dly_inc_pulse_inv_buf,
     output  wire data_o
 );
 
@@ -20,6 +20,23 @@ module sdr_to_o_ddr_o_delay_o_buf (
     wire data_o_buf, data_o_delayed;
     reg dly_ld;
     wire dly_adj, dly_incdec;
+    wire reset_n;
+    wire enable;
+    wire clk_i,clk_buf_i;
+    wire dly_inc_pulse_inv;
+    wire  [1:0] data_i;
+    wire const1;
+
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf0_ (reset_n_buf,const1,reset_n);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf1_ (enable_buf,const1,enable);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf2_ (clk_i_buf,const1,clk_buf_i);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_ (dly_inc_pulse_inv_buf,const1,dly_inc_pulse_inv);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf4_ (data_i_buf[0],const1,data_i[0]);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf5_ (data_i_buf[1],const1,data_i[1]);
+
+    assign const1 = 1;
+
+    CLK_BUF clock_buffer (clk_buf_i,clk_i);
 
     assign dly_adj    = ~dly_inc_pulse_inv;
     assign dly_incdec = ~dly_inc_pulse_inv;

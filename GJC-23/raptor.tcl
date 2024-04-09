@@ -1,6 +1,6 @@
-create_design i_buf_i_delay_i_ddr_clk_buf
-add_design_file i_buf_i_delay_i_ddr_clk_buf.v
-set_top_module i_buf_i_delay_i_ddr_clk_buf
+create_design o_ddr_o_buft
+add_design_file o_ddr_o_buft.v
+set_top_module o_ddr_o_buft
 add_constraint_file constraints.sdc
 add_constraint_file pin_constraints.pin
 target_device 1VG28
