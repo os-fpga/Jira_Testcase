@@ -7,16 +7,12 @@
     "    Detect output port \\out_N (index=0, width=1, offset=0)",
     "    Detect output port \\out_P (index=0, width=1, offset=0)",
     "  Get Port Primitives",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.in_N",
-    "      Cell port \\I is connected to input port \\in_N",
-    "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.in_P",
-    "      Cell port \\I is connected to input port \\in_P",
-    "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\O_BUF $iopadmap$top.out_N",
-    "      Cell port \\O is connected to output port \\out_N",
-    "    Get important connection of cell \\O_BUF $iopadmap$top.out_P",
-    "      Cell port \\O is connected to output port \\out_P",
+    "    Get important connection of cell \\I_BUF_DS \\DATA_INPUT_BUFFER",
+    "      Cell port \\I_N is connected to input port \\in_N",
+    "      Cell port \\I_P is connected to input port \\in_P",
+    "    Get important connection of cell \\O_BUF_DS \\DATA_OUT_BUFFER",
+    "      Cell port \\O_N is connected to output port \\out_N",
+    "      Cell port \\O_P is connected to output port \\out_P",
     "  Trace \\I_BUF --> \\CLK_BUF",
     "  Trace \\I_BUF --> \\I_DELAY",
     "  Trace \\I_DELAY --> \\I_DDR",
@@ -28,29 +24,15 @@
   ],
   "instances" : [
     {
-      "module" : "I_BUF",
-      "name" : "$iopadmap$top.in_N",
-      "linked_object" : "in_N",
+      "module" : "I_BUF_DS",
+      "name" : "DATA_INPUT_BUFFER",
+      "linked_object" : "in_N+in_P",
       "linked_objects" : {
         "in_N" : {
           "location" : "",
           "properties" : {
           }
-        }
-      },
-      "connectivity" : {
-        "I" : "in_N",
-        "O" : "$iopadmap$in_N"
-      },
-      "parameters" : {
-        "WEAK_KEEPER" : "NONE"
-      }
-    },
-    {
-      "module" : "I_BUF",
-      "name" : "$iopadmap$top.in_P",
-      "linked_object" : "in_P",
-      "linked_objects" : {
+        },
         "in_P" : {
           "location" : "",
           "properties" : {
@@ -58,36 +40,23 @@
         }
       },
       "connectivity" : {
-        "I" : "in_P",
-        "O" : "$iopadmap$in_P"
+        "I_N" : "in_N",
+        "I_P" : "in_P",
+        "O" : "interconnect_in"
       },
       "parameters" : {
-        "WEAK_KEEPER" : "NONE"
       }
     },
     {
-      "module" : "O_BUF",
-      "name" : "$iopadmap$top.out_N",
-      "linked_object" : "out_N",
+      "module" : "O_BUF_DS",
+      "name" : "DATA_OUT_BUFFER",
+      "linked_object" : "out_N+out_P",
       "linked_objects" : {
         "out_N" : {
           "location" : "",
           "properties" : {
           }
-        }
-      },
-      "connectivity" : {
-        "I" : "$iopadmap$out_N",
-        "O" : "out_N"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "O_BUF",
-      "name" : "$iopadmap$top.out_P",
-      "linked_object" : "out_P",
-      "linked_objects" : {
+        },
         "out_P" : {
           "location" : "",
           "properties" : {
@@ -95,8 +64,9 @@
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$out_P",
-        "O" : "out_P"
+        "I" : "interconnect_out",
+        "O_N" : "out_N",
+        "O_P" : "out_P"
       },
       "parameters" : {
       }
