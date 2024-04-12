@@ -2,10 +2,10 @@
   "instances" : [
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.din",
-      "linked_object" : "din",
+      "name" : "$iopadmap$top.clk",
+      "linked_object" : "clk",
       "linked_objects" : {
-        "din" : {
+        "clk" : {
           "location" : "",
           "properties" : {
           },
@@ -14,19 +14,42 @@
         }
       },
       "connectivity" : {
-        "I" : "din",
-        "O" : "$iopadmap$din"
+        "I" : "clk",
+        "O" : "$iopadmap$clk"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "PLL",
+      "name" : "pll",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "$iopadmap$clk",
+        "CLK_OUT_DIV4" : "pll_clk"
+      },
+      "parameters" : {
+        "PLL_DIV" : "1",
+        "PLL_MULT" : "16",
+        "PLL_POST_DIV" : "2"
       }
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.out_tristate",
-      "linked_object" : "out_tristate",
+      "name" : "$iopadmap$top.data_i",
+      "linked_object" : "data_i",
       "linked_objects" : {
-        "out_tristate" : {
+        "data_i" : {
           "location" : "",
           "properties" : {
           },
@@ -35,26 +58,19 @@
         }
       },
       "connectivity" : {
-        "I" : "out_tristate",
-        "O" : "$iopadmap$out_tristate"
+        "I" : "data_i",
+        "O" : "$iopadmap$data_i"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
       }
     },
     {
-      "module" : "O_BUFT_DS",
-      "name" : "o_buft_ds",
-      "linked_object" : "dout_n+dout_p",
+      "module" : "O_BUF",
+      "name" : "$iopadmap$top.data_o",
+      "linked_object" : "data_o",
       "linked_objects" : {
-        "dout_n" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        },
-        "dout_p" : {
+        "data_o" : {
           "location" : "",
           "properties" : {
           },
@@ -63,9 +79,8 @@
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$din",
-        "O_N" : "dout_n",
-        "O_P" : "dout_p"
+        "I" : "$iopadmap$data_o",
+        "O" : "data_o"
       },
       "parameters" : {
       }

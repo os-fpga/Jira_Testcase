@@ -2,109 +2,6 @@
   "instances" : [
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.clk_i",
-      "linked_object" : "clk_i",
-      "linked_objects" : {
-        "clk_i" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "clk_i",
-        "O" : "$iopadmap$clk_i"
-      },
-      "parameters" : {
-        "WEAK_KEEPER" : "NONE"
-      }
-    },
-    {
-      "module" : "WIRE",
-      "name" : "AUTO_CLK_BUF_clk_i_#0",
-      "linked_object" : "clk_i",
-      "linked_objects" : {
-        "clk_i" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "$iopadmap$clk_i",
-        "O" : "$auto$clkbufmap.cc:266:execute$483"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "CLK_BUF",
-      "name" : "$auto$clkbufmap.cc:265:execute$482",
-      "linked_object" : "clk_i",
-      "linked_objects" : {
-        "clk_i" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "$auto$clkbufmap.cc:266:execute$483",
-        "O" : "$auto$clkbufmap.cc:298:execute$484"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "I_BUF",
-      "name" : "$iopadmap$top.data_i",
-      "linked_object" : "data_i[0]",
-      "linked_objects" : {
-        "data_i[0]" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "data_i[0]",
-        "O" : "$iopadmap$data_i[0]"
-      },
-      "parameters" : {
-        "WEAK_KEEPER" : "NONE"
-      }
-    },
-    {
-      "module" : "I_BUF",
-      "name" : "$iopadmap$top.data_i_1",
-      "linked_object" : "data_i[1]",
-      "linked_objects" : {
-        "data_i[1]" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "data_i[1]",
-        "O" : "$iopadmap$data_i[1]"
-      },
-      "parameters" : {
-        "WEAK_KEEPER" : "NONE"
-      }
-    },
-    {
-      "module" : "I_BUF",
       "name" : "$iopadmap$top.enable",
       "linked_object" : "enable",
       "linked_objects" : {
@@ -126,10 +23,10 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.reset_n",
-      "linked_object" : "reset_n",
+      "name" : "$iopadmap$top.reset",
+      "linked_object" : "reset",
       "linked_objects" : {
-        "reset_n" : {
+        "reset" : {
           "location" : "",
           "properties" : {
           },
@@ -138,19 +35,19 @@
         }
       },
       "connectivity" : {
-        "I" : "reset_n",
-        "O" : "$iopadmap$reset_n"
+        "I" : "reset",
+        "O" : "$iopadmap$reset"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
       }
     },
     {
-      "module" : "O_DDR",
-      "name" : "o_ddr",
-      "linked_object" : "data_o",
+      "module" : "I_BUF",
+      "name" : "clk_i_buf",
+      "linked_object" : "clk",
       "linked_objects" : {
-        "data_o" : {
+        "clk" : {
           "location" : "",
           "properties" : {
           },
@@ -159,7 +56,86 @@
         }
       },
       "connectivity" : {
-        "Q" : "data_o_buf"
+        "I" : "clk",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_buf_i",
+        "O" : "clk_clk_buf"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "i_buf",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "i_ddr_d"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "i_ddr",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "D" : "i_ddr_d"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_DDR",
+      "name" : "o_ddr",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "Q" : "o_buf_i"
       },
       "parameters" : {
       }
@@ -167,9 +143,9 @@
     {
       "module" : "O_BUF",
       "name" : "o_buf",
-      "linked_object" : "data_o",
+      "linked_object" : "dout",
       "linked_objects" : {
-        "data_o" : {
+        "dout" : {
           "location" : "",
           "properties" : {
           },
@@ -178,8 +154,8 @@
         }
       },
       "connectivity" : {
-        "I" : "data_o_buf",
-        "O" : "data_o"
+        "I" : "o_buf_i",
+        "O" : "dout"
       },
       "parameters" : {
       }

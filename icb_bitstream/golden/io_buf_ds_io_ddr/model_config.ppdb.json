@@ -2,107 +2,6 @@
   "instances" : [
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.clk_i",
-      "linked_object" : "clk_i",
-      "linked_objects" : {
-        "clk_i" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "clk_i",
-        "O" : "$iopadmap$clk_i"
-      },
-      "parameters" : {
-        "WEAK_KEEPER" : "NONE"
-      }
-    },
-    {
-      "module" : "WIRE",
-      "name" : "AUTO_CLK_BUF_clk_i_#0",
-      "linked_object" : "clk_i",
-      "linked_objects" : {
-        "clk_i" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "$iopadmap$clk_i",
-        "O" : "$auto$clkbufmap.cc:266:execute$483"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "CLK_BUF",
-      "name" : "$auto$clkbufmap.cc:265:execute$482",
-      "linked_object" : "clk_i",
-      "linked_objects" : {
-        "clk_i" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "$auto$clkbufmap.cc:266:execute$483",
-        "O" : "$auto$clkbufmap.cc:298:execute$484"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "O_BUF",
-      "name" : "$iopadmap$top.data_o",
-      "linked_object" : "data_o[0]",
-      "linked_objects" : {
-        "data_o[0]" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "$iopadmap$data_o[0]",
-        "O" : "data_o[0]"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "O_BUF",
-      "name" : "$iopadmap$top.data_o_1",
-      "linked_object" : "data_o[1]",
-      "linked_objects" : {
-        "data_o[1]" : {
-          "location" : "",
-          "properties" : {
-          },
-          "config_attributes" : [
-          ]
-        }
-      },
-      "connectivity" : {
-        "I" : "$iopadmap$data_o[1]",
-        "O" : "data_o[1]"
-      },
-      "parameters" : {
-      }
-    },
-    {
-      "module" : "I_BUF",
       "name" : "$iopadmap$top.enable",
       "linked_object" : "enable",
       "linked_objects" : {
@@ -124,10 +23,10 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.reset_n",
-      "linked_object" : "reset_n",
+      "name" : "$iopadmap$top.reset",
+      "linked_object" : "reset",
       "linked_objects" : {
-        "reset_n" : {
+        "reset" : {
           "location" : "",
           "properties" : {
           },
@@ -136,8 +35,8 @@
         }
       },
       "connectivity" : {
-        "I" : "reset_n",
-        "O" : "$iopadmap$reset_n"
+        "I" : "reset",
+        "O" : "$iopadmap$reset"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
@@ -145,10 +44,10 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "i_buf",
-      "linked_object" : "data_i",
+      "name" : "clk_i_buf",
+      "linked_object" : "clk",
       "linked_objects" : {
-        "data_i" : {
+        "clk" : {
           "location" : "",
           "properties" : {
           },
@@ -157,8 +56,56 @@
         }
       },
       "connectivity" : {
-        "I" : "data_i",
-        "O" : "data_i_buf"
+        "I" : "clk",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_buf_i",
+        "O" : "clk_clk_buf"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_BUF_DS",
+      "name" : "i_buf_ds",
+      "linked_object" : "din_n+din_p",
+      "linked_objects" : {
+        "din_n" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        },
+        "din_p" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I_N" : "din_n",
+        "I_P" : "din_p",
+        "O" : "i_ddr_d"
       },
       "parameters" : {
       }
@@ -166,9 +113,16 @@
     {
       "module" : "I_DDR",
       "name" : "i_ddr",
-      "linked_object" : "data_i",
+      "linked_object" : "din_n+din_p",
       "linked_objects" : {
-        "data_i" : {
+        "din_n" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        },
+        "din_p" : {
           "location" : "",
           "properties" : {
           },
@@ -177,7 +131,61 @@
         }
       },
       "connectivity" : {
-        "D" : "data_i_buf"
+        "D" : "i_ddr_d"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_DDR",
+      "name" : "o_ddr",
+      "linked_object" : "dout_n+dout_p",
+      "linked_objects" : {
+        "dout_n" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        },
+        "dout_p" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "Q" : "o_buf_ds_i"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_BUF_DS",
+      "name" : "o_buf_ds",
+      "linked_object" : "dout_n+dout_p",
+      "linked_objects" : {
+        "dout_n" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        },
+        "dout_p" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "o_buf_ds_i",
+        "O_N" : "dout_n",
+        "O_P" : "dout_p"
       },
       "parameters" : {
       }

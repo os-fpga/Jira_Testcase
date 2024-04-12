@@ -1,4 +1,5 @@
 import os
+import sys
 import argparse
 import glob
 import threading
@@ -242,6 +243,7 @@ def main():
           results.append(threads[0])
           threads.pop(0)
         print("*******************************")
+        sys.stdout.flush()
         os.system("rm -rf auto_run_results/summary")
         os.mkdir("auto_run_results/summary")
         summary_files = [

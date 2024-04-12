@@ -3,21 +3,24 @@
     "Start of IO Analysis",
     "  Get Ports",
     "    Detect input port \\clk (index=0, width=1, offset=0)",
-    "    Detect input port \\din (index=0, width=1, offset=0)",
-    "    Detect output port \\dout (index=0, width=1, offset=0)",
+    "    Detect input port \\data_i (index=0, width=1, offset=0)",
+    "    Detect output port \\data_o (index=0, width=1, offset=0)",
     "  Get Port Primitives",
     "    Get important connection of cell \\I_BUF $iopadmap$top.clk",
     "      Cell port \\I is connected to input port \\clk",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.din",
-    "      Cell port \\I is connected to input port \\din",
+    "    Get important connection of cell \\I_BUF $iopadmap$top.data_i",
+    "      Cell port \\I is connected to input port \\data_i",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\O_BUF $iopadmap$top.dout",
-    "      Cell port \\O is connected to output port \\dout",
+    "    Get important connection of cell \\O_BUF $iopadmap$top.data_o",
+    "      Cell port \\O is connected to output port \\data_o",
     "  Trace \\I_BUF --> \\CLK_BUF",
-    "    Try \\I_BUF $iopadmap$top.clk out connection: $iopadmap$clk",
-    "      Connected $auto$clkbufmap.cc:265:execute$428",
     "  Trace \\I_BUF --> \\PLL",
+    "    Try \\I_BUF $iopadmap$top.clk out connection: $iopadmap$clk",
+    "      Connected \\pll",
+    "        Parameter \\PLL_DIV: 1",
+    "        Parameter \\PLL_MULT: 16",
+    "        Parameter \\PLL_POST_DIV: 2",
     "  Trace \\I_BUF --> \\I_DELAY",
     "  Trace \\I_BUF --> \\I_DDR",
     "  Trace \\I_BUF_DS --> \\I_DELAY",
@@ -55,8 +58,8 @@
       }
     },
     {
-      "module" : "CLK_BUF",
-      "name" : "$auto$clkbufmap.cc:265:execute$428",
+      "module" : "PLL",
+      "name" : "pll",
       "linked_object" : "clk",
       "linked_objects" : {
         "clk" : {
@@ -66,26 +69,29 @@
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$clk",
-        "O" : "$auto$clkbufmap.cc:298:execute$430"
+        "CLK_IN" : "$iopadmap$clk",
+        "CLK_OUT_DIV4" : "pll_clk"
       },
       "parameters" : {
+        "PLL_DIV" : "1",
+        "PLL_MULT" : "16",
+        "PLL_POST_DIV" : "2"
       }
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.din",
-      "linked_object" : "din",
+      "name" : "$iopadmap$top.data_i",
+      "linked_object" : "data_i",
       "linked_objects" : {
-        "din" : {
+        "data_i" : {
           "location" : "",
           "properties" : {
           }
         }
       },
       "connectivity" : {
-        "I" : "din",
-        "O" : "$iopadmap$din"
+        "I" : "data_i",
+        "O" : "$iopadmap$data_i"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
@@ -93,18 +99,18 @@
     },
     {
       "module" : "O_BUF",
-      "name" : "$iopadmap$top.dout",
-      "linked_object" : "dout",
+      "name" : "$iopadmap$top.data_o",
+      "linked_object" : "data_o",
       "linked_objects" : {
-        "dout" : {
+        "data_o" : {
           "location" : "",
           "properties" : {
           }
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$dout",
-        "O" : "dout"
+        "I" : "$iopadmap$data_o",
+        "O" : "data_o"
       },
       "parameters" : {
       }
