@@ -1,4 +1,4 @@
-set_top_module i_buf_i_ddr
+set_top_module i_buf_ds_i_ddr
 
 create_clock -period 10 clk_i_buf
 

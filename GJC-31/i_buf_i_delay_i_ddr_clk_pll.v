@@ -8,19 +8,42 @@
 
 
 
-module i_buf_i_delay_i_ddr_to_sdr (
+module i_buf_i_delay_i_ddr_clk_pll (
     input   wire data_i,
-    input   wire reset_n,
-    input   wire enable,
-    input   wire clk_i,
-    input   wire dly_inc_pulse_inv,
-    output  reg  [1:0] data_o
+    input   wire reset_n_buf,
+    input   wire enable_buf,
+    input   wire clk_i_buf,
+    input   wire dly_inc_pulse_inv_buf,
+    output  wire [1:0] data_o_buf
 );
 
     wire [1:0] data_reg;
     wire data_i_buf, data_i_buf_delayed;
     reg dly_ld;
     wire dly_adj, dly_incdec;
+    wire reset_n;
+    wire enable;
+    wire clk_i,clk_buf_i,clk_pll;
+    wire dly_inc_pulse_inv;
+    reg  [1:0] data_o;
+    wire const1;
+
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf0_ (reset_n_buf,const1,reset_n);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf1_ (enable_buf,const1,enable);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf2_ (clk_i_buf,const1,clk_buf_i);
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_ (dly_inc_pulse_inv_buf,const1,dly_inc_pulse_inv);
+    O_BUF obuf0_ (data_o[0], data_o_buf[0]);
+    O_BUF obuf1_ (data_o[1], data_o_buf[1]);
+
+    assign const1 = 1;
+
+    CLK_BUF clock_buffer (clk_buf_i,clk_pll);
+
+    PLL #(.PLL_MULT(16), .PLL_DIV(1), .PLL_POST_DIV(2)) clk_pll_gen (
+        .PLL_EN(const1), // PLL Enable
+        .CLK_IN(clk_pll), // Clock input
+        .CLK_OUT_DIV4(clk_i)
+        );
 
     assign dly_adj    = ~dly_inc_pulse_inv;
     assign dly_incdec = ~dly_inc_pulse_inv;

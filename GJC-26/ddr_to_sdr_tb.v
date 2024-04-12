@@ -1,19 +1,19 @@
 `timescale 1ns/1ns
 
-module sdr_to_ddr_tb;
+module ddr_to_sdr_tb;
 
-    reg [1:0] data_i;
+    reg data_i;
     reg reset_n;
     reg enable;
     reg clk_i;
-    reg data_o;
+    reg [1:0] data_o;
 
     integer test,check;
     reg [9:0] test_data_0;
     reg [9:0] test_data_1;
 
 
-    o_ddr_o_buf dut (data_i,reset_n,enable,clk_i,data_o);
+    ddr_to_sdr dut (data_i,reset_n,enable,clk_i,data_o);
 
     initial begin
         forever begin
@@ -38,7 +38,11 @@ module sdr_to_ddr_tb;
         reset_n = 1;
         enable = 1;
         for(test = 0; test < 10; test = test + 1)begin
-            data_i = {test_data_1[test],test_data_0[test]};
+            #1;
+            data_i = test_data_0[test];
+            @(posedge clk_i);
+            #1;
+            data_i = test_data_1[test];
             @(negedge clk_i);
         end
         #100;
@@ -47,14 +51,13 @@ module sdr_to_ddr_tb;
 
     initial begin
         wait(enable == 1);
-        #1;
+        repeat(2)@(posedge clk_i);
         for(check = 0; check < 10; check = check + 1)begin
-            @(negedge clk_i);
             #1;
-            if(data_o !== test_data_1[check])$display("ERROR: Mismatch at output port at test cycle %0d (detected %0d but expected %0d)",check,data_o,test_data_1[check]);
+            if(data_o[1] !== test_data_1[check])$display("ERROR: Mismatch at output port at test cycle %0d (detected %0d but expected %0d)",check,data_o,test_data_1[check]);
+            if(data_o[0] !== test_data_0[check])$display("ERROR: Mismatch at output port at test cycle %0d (detected %0d but expected %0d)",check,data_o,test_data_0[check]);
             @(posedge clk_i);
-            #1;
-            if(data_o !== test_data_0[check])$display("ERROR: Mismatch at output port at test cycle %0d (detected %0d but expected %0d)",check,data_o,test_data_0[check]);
         end
     end
+
 endmodule
