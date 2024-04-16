@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for add_shifted_input_to_the_mul_output
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v 
+
+
+# Technology mapping
+hierarchy -top add_shifted_input_to_the_mul_output
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto   -new_dsp19x2 -new_tdp36k -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v add_shifted_input_to_the_mul_output_post_synth.v
+write_blif -param add_shifted_input_to_the_mul_output_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_add_shifted_input_to_the_mul_output.sdc -json config.json -w wrapper_add_shifted_input_to_the_mul_output_post_synth.v wrapper_add_shifted_input_to_the_mul_output_post_synth.eblif -pr post_pnr_wrapper_add_shifted_input_to_the_mul_output_post_synth.v post_pnr_wrapper_add_shifted_input_to_the_mul_output_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_add_shifted_input_to_the_mul_output_post_synth.v
+write_blif -param fabric_add_shifted_input_to_the_mul_output_post_synth.eblif
+
+  
