@@ -1,0 +1,1 @@
+make -j -C obj_dir/ -f Vco_sim_b_registered_input_to_output_new_primitive.mk Vco_sim_b_registered_input_to_output_new_primitive
