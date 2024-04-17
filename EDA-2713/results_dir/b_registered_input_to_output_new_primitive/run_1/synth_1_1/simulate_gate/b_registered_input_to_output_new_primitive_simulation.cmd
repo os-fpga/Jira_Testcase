@@ -1,0 +1,1 @@
+obj_dir/Vco_sim_b_registered_input_to_output_new_primitive

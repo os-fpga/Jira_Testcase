@@ -1,0 +1,27 @@
+ 
+# Yosys synthesis script for FIFO36K_synch_primitive_inst
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/04_17_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../.././rtl -I../../../../ -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2719/FIFO36K_synch_primitive_inst/./rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Jira_Testcase/EDA-2719/FIFO36K_synch_primitive_inst/./rtl/FIFO36K_synch_primitive_inst.v 
+
+
+# Technology mapping
+hierarchy -top FIFO36K_synch_primitive_inst
+
+setattr -set keep 1 w:\clk
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto   -new_dsp19x2 -new_tdp36k -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v FIFO36K_synch_primitive_inst_post_synth.v
+write_blif -param FIFO36K_synch_primitive_inst_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_FIFO36K_synch_primitive_inst.sdc -json config.json -w wrapper_FIFO36K_synch_primitive_inst_post_synth.v wrapper_FIFO36K_synch_primitive_inst_post_synth.eblif -pr post_pnr_wrapper_FIFO36K_synch_primitive_inst_post_synth.v post_pnr_wrapper_FIFO36K_synch_primitive_inst_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_FIFO36K_synch_primitive_inst_post_synth.v
+write_blif -param fabric_FIFO36K_synch_primitive_inst_post_synth.eblif
+
+  

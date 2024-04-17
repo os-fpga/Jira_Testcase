@@ -1,0 +1,2772 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.04
+Build    : 1.0.32
+Hash     : c509234
+Date     : Apr 12 2024
+Type     : Engineering
+Log Time   : Tue Apr 16 06:42:45 2024 GMT
+
+INFO: Created design: add_shifted_input_to_the_mul_output. Project type: rtl
+INFO: Target device: GEMINI_COMPACT_104x68
+INFO: Device version: v1.6.244
+INFO: Adding VERILOG_2001 /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v
+INFO: Adding SV_2012 /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././sim/co_sim_tb/co_sim_add_shifted_input_to_the_mul_output.v
+INFO: ANL: ##################################################
+INFO: ANL: Analysis for design: add_shifted_input_to_the_mul_output
+INFO: ANL: ##################################################
+INFO: ANL: Analyze command: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/yosys -s /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/analysis/add_shifted_input_to_the_mul_output_analyzer.cmd
+Command: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/yosys -s /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/analysis/add_shifted_input_to_the_mul_output_analyzer.cmd
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 2be6af90e, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/analysis/add_shifted_input_to_the_mul_output_analyzer.cmd' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Generating RTLIL representation for module `\CARRY'.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DSP19X2'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\I_DELAY'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_DELAY'.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\PLL'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v' to AST representation.
+Generating RTLIL representation for module `\add_shifted_input_to_the_mul_output'.
+Successfully finished Verilog frontend.
+
+-- Running command `hierarchy -top add_shifted_input_to_the_mul_output' --
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+
+3.2. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+Removed 0 unused modules.
+
+Dumping file hier_info.json ...
+Dumping file port_info.json ...
+
+End of script. Logfile hash: 6c57d790b2, CPU: user 0.03s system 0.01s, MEM: 20.16 MB peak
+Yosys 0.18+10 (git sha1 2be6af90e, gcc 11.2.1 -fPIC -Os)
+Time spent: 93% 4x read_verilog (0 sec), 5% 1x analyze (0 sec), ...
+INFO: ANL: Design add_shifted_input_to_the_mul_output is analyzed
+INFO: ANL: Top Modules: add_shifted_input_to_the_mul_output
+
+INFO: SYN: ##################################################
+INFO: SYN: Synthesis for design: add_shifted_input_to_the_mul_output
+INFO: SYN: ##################################################
+INFO: SYN: RS Synthesis
+INFO: SYN: Synthesis command: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/yosys -s add_shifted_input_to_the_mul_output.ys -l add_shifted_input_to_the_mul_output_synth.log
+Command: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/yosys -s add_shifted_input_to_the_mul_output.ys -l add_shifted_input_to_the_mul_output_synth.log
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 2be6af90e, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `add_shifted_input_to_the_mul_output.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Generating RTLIL representation for module `\CARRY'.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DSP19X2'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\I_DELAY'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_DELAY'.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\PLL'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v' to AST representation.
+Generating RTLIL representation for module `\add_shifted_input_to_the_mul_output'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+
+3.2. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+Removed 0 unused modules.
+
+4. Executing synth_rs pass: v0.4.218
+
+4.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+4.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v' to AST representation.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v:10.1-19.10.
+Generating RTLIL representation for module `\CARRY'.
+Successfully finished Verilog frontend.
+
+4.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+4.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFRE'.
+Successfully finished Verilog frontend.
+
+4.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v' to AST representation.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Successfully finished Verilog frontend.
+
+4.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT1'.
+Successfully finished Verilog frontend.
+
+4.7. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v' to AST representation.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v:10.1-21.10.
+Generating RTLIL representation for module `\LUT2'.
+Successfully finished Verilog frontend.
+
+4.8. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v' to AST representation.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v:10.1-22.10.
+Generating RTLIL representation for module `\LUT3'.
+Successfully finished Verilog frontend.
+
+4.9. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v' to AST representation.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v:11.1-25.10.
+Generating RTLIL representation for module `\LUT4'.
+Successfully finished Verilog frontend.
+
+4.10. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v' to AST representation.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v:10.1-24.10.
+Generating RTLIL representation for module `\LUT5'.
+Successfully finished Verilog frontend.
+
+4.11. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v' to AST representation.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v:10.1-25.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+4.12. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v' to AST representation.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v:10.1-17.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Successfully finished Verilog frontend.
+
+4.13. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v' to AST representation.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v:10.1-22.10.
+Generating RTLIL representation for module `\O_BUF'.
+Successfully finished Verilog frontend.
+
+4.14. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v' to AST representation.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:10.1-324.10.
+Generating RTLIL representation for module `\DSP38'.
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:0: Warning: System task `$display' outside initial block is unsupported.
+Successfully finished Verilog frontend.
+
+4.15. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v' to AST representation.
+Replacing existing blackbox module `\TDP_RAM36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:2.1-29.10.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Replacing existing blackbox module `\TDP_RAM18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:33.1-84.10.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Replacing existing blackbox module `\DSP19X2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:116.1-149.10.
+Generating RTLIL representation for module `\DSP19X2'.
+Successfully finished Verilog frontend.
+
+4.16. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:112.1-540.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:542.1-951.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:953.1-1356.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+4.17. Executing HIERARCHY pass (managing design hierarchy).
+
+4.17.1. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+
+4.17.2. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+Removed 0 unused modules.
+
+4.18. Executing PROC pass (convert processes to netlists).
+
+4.18.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.18.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:35$8 in module add_shifted_input_to_the_mul_output.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:24$3 in module add_shifted_input_to_the_mul_output.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1 in module add_shifted_input_to_the_mul_output.
+Removed a total of 0 dead cases.
+
+4.18.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 2 assignments to connections.
+
+4.18.4. Executing PROC_INIT pass (extract init attributes).
+
+4.18.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.18.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+4.18.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:35$8'.
+     1/1: $1\add_or_sub[37:0]
+Creating decoders for process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:31$5'.
+Creating decoders for process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:24$3'.
+     1/1: $0\P[37:0]
+Creating decoders for process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1'.
+     1/3: $0\acc_fir_reg[3:0]
+     2/3: $0\i2[17:0]
+     3/3: $0\i1[19:0]
+
+4.18.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\add_shifted_input_to_the_mul_output.\add_or_sub' from process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:35$8'.
+No latch inferred for signal `\add_shifted_input_to_the_mul_output.\mul' from process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:31$5'.
+
+4.18.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\add_shifted_input_to_the_mul_output.\P' using process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:24$3'.
+  created $dff cell `$procdff$26' with positive edge clock.
+Creating register for signal `\add_shifted_input_to_the_mul_output.\i1' using process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1'.
+  created $dff cell `$procdff$27' with positive edge clock.
+Creating register for signal `\add_shifted_input_to_the_mul_output.\i2' using process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1'.
+  created $dff cell `$procdff$28' with positive edge clock.
+Creating register for signal `\add_shifted_input_to_the_mul_output.\acc_fir_reg' using process `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1'.
+  created $dff cell `$procdff$29' with positive edge clock.
+
+4.18.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.18.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:35$8'.
+Removing empty process `add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:35$8'.
+Removing empty process `add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:31$5'.
+Found and cleaned up 1 empty switch in `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:24$3'.
+Removing empty process `add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:24$3'.
+Found and cleaned up 1 empty switch in `\add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1'.
+Removing empty process `add_shifted_input_to_the_mul_output.$proc$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:12$1'.
+Cleaned up 3 empty switches.
+
+4.18.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~2 debug messages>
+
+4.19. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+4.20. Executing DEMUXMAP pass.
+
+4.21. Executing FLATTEN pass (flatten design).
+
+4.22. Executing DEMUXMAP pass.
+
+4.23. Executing TRIBUF pass.
+
+4.24. Executing TRIBUF pass.
+
+4.25. Executing DEMINOUT pass (demote inout ports to input or output).
+
+4.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 17 unused wires.
+<suppressed ~1 debug messages>
+
+4.28. Executing CHECK pass (checking for obvious problems).
+Checking module add_shifted_input_to_the_mul_output...
+Found and reported 0 problems.
+
+4.29. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 19
+   Number of wire bits:            395
+   Number of public wires:          13
+   Number of public wire bits:     239
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 13
+     $add                            1
+     $dff                            4
+     $mul                            1
+     $mux                            5
+     $shl                            1
+     $sub                            1
+
+4.30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.31. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.32. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.33. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.34. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.35. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $mux $procmux$12 in front of them:
+        $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:37$9
+        $add$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:39$10
+
+4.36. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=4, #solve=0, #remove=0, time=0.00 sec.]
+
+4.37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+4.38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~1 debug messages>
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.39. Executing FSM pass (extract and optimize FSM).
+
+4.39.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+4.39.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.39.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.39.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.39.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.39.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.39.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.40. Executing WREDUCE pass (reducing word size of cells).
+
+4.41. Executing PEEPOPT pass (run peephole optimizers).
+
+4.42. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.45. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~5 debug messages>
+
+4.46. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.47. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.48. Executing OPT_SHARE pass.
+
+4.49. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$29 ($dff) from module add_shifted_input_to_the_mul_output (D = \acc_fir, Q = \acc_fir_reg, rval = 4'0000).
+Adding SRST signal on $procdff$28 ($dff) from module add_shifted_input_to_the_mul_output (D = \B, Q = \i2, rval = 18'000000000000000000).
+Adding SRST signal on $procdff$27 ($dff) from module add_shifted_input_to_the_mul_output (D = \A, Q = \i1, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$26 ($dff) from module add_shifted_input_to_the_mul_output (D = \add_or_sub, Q = \P, rval = 38'00000000000000000000000000000000000000).
+[#visit=4, #solve=0, #remove=0, time=0.00 sec.]
+
+4.50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+4.51. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.52. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.53. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.54. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.55. Executing OPT_SHARE pass.
+
+4.56. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=4, #solve=0, #remove=0, time=0.00 sec.]
+
+4.57. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.58. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.59. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.60. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.61. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.62. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.63. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.64. Executing OPT_SHARE pass.
+
+4.65. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=4, #solve=0, #remove=0, time=0.00 sec.]
+
+4.66. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.67. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.68. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.69. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.70. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.71. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.72. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.73. Executing OPT_SHARE pass.
+
+4.74. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=4, #solve=0, #remove=0, time=0.00 sec.]
+
+4.75. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=4, #solve=38, #remove=0, time=0.17 sec.]
+
+4.76. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.77. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.78. Executing WREDUCE pass (reducing word size of cells).
+
+4.79. Executing PEEPOPT pass (run peephole optimizers).
+
+4.80. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.81. Executing DEMUXMAP pass.
+
+4.82. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+4.83. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 15
+   Number of wire bits:            315
+   Number of public wires:          13
+   Number of public wire bits:     239
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $mul                            1
+     $mux                            1
+     $neg                            1
+     $sdff                           4
+     $shl                            1
+     $sub                            1
+
+4.84. Executing RS_DSP_MULTADD pass.
+
+4.85. Executing WREDUCE pass (reducing word size of cells).
+
+4.86. Executing RS_DSP_MACC pass.
+
+4.87. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.88. Executing TECHMAP pass (map to technology primitives).
+
+4.88.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.88.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~58 debug messages>
+
+4.89. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 18
+   Number of wire bits:            391
+   Number of public wires:          13
+   Number of public wire bits:     239
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $__soft_mul                     1
+     $mux                            1
+     $neg                            1
+     $sdff                           4
+     $shl                            1
+     $sub                            1
+
+4.90. Executing TECHMAP pass (map to technology primitives).
+
+4.90.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.90.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~93 debug messages>
+
+4.91. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 24
+   Number of wire bits:           1529
+   Number of public wires:          13
+   Number of public wire bits:     239
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $__RS_MUL20X18                  1
+     $mux                            1
+     $neg                            1
+     $sdff                           4
+     $shl                            1
+     $sub                            1
+
+4.92. Executing TECHMAP pass (map to technology primitives).
+
+4.92.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.92.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.93. Executing TECHMAP pass (map to technology primitives).
+
+4.93.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+4.93.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.94. Executing TECHMAP pass (map to technology primitives).
+
+4.94.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Generating RTLIL representation for module `\$__RS_MUL10X9'.
+Successfully finished Verilog frontend.
+
+4.94.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~32 debug messages>
+
+4.95. Executing RS_DSP_SIMD pass.
+
+4.96. Executing TECHMAP pass (map to technology primitives).
+
+4.96.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_10x9x32_cfg_params'.
+Successfully finished Verilog frontend.
+
+4.96.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~32 debug messages>
+
+4.97. Executing TECHMAP pass (map to technology primitives).
+
+4.97.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Successfully finished Verilog frontend.
+
+4.97.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+4.98. Executing rs_pack_dsp_regs pass.
+
+4.99. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 2 unused cells and 31 unused wires.
+<suppressed ~48 debug messages>
+
+4.100. Executing RS_DSP_IO_REGS pass.
+
+4.101. Executing TECHMAP pass (map to technology primitives).
+
+4.101.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Successfully finished Verilog frontend.
+
+4.101.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~26 debug messages>
+
+4.102. Executing TECHMAP pass (map to technology primitives).
+
+4.102.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Successfully finished Verilog frontend.
+
+4.102.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+4.103. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 23
+   Number of wire bits:            396
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $mux                            1
+     $neg                            1
+     $sdff                           2
+     $shl                            1
+     $sub                            1
+     DSP38                           1
+
+4.104. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module add_shifted_input_to_the_mul_output:
+  creating $macc model for $auto$opt_share.cc:196:merge_operators$30 ($neg).
+  creating $macc model for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:37$9 ($sub).
+  creating $alu model for $macc $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:37$9.
+  creating $alu model for $macc $auto$opt_share.cc:196:merge_operators$30.
+  creating $alu cell for $auto$opt_share.cc:196:merge_operators$30: $auto$alumacc.cc:485:replace_alu$44
+  creating $alu cell for $sub$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:37$9: $auto$alumacc.cc:485:replace_alu$47
+  created 2 $alu and 0 $macc cells.
+
+4.105. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.106. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.107. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+4.108. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.109. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.110. Executing OPT_SHARE pass.
+
+4.111. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.112. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+4.113. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.114. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 18
+   Number of wire bits:            447
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $alu                            2
+     $mux                            1
+     $sdff                           2
+     $shl                            1
+     DSP38                           1
+
+4.115. Executing MEMORY pass.
+
+4.115.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.115.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.115.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.115.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.115.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.115.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.115.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.115.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.115.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.115.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.116. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 18
+   Number of wire bits:            447
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $alu                            2
+     $mux                            1
+     $sdff                           2
+     $shl                            1
+     DSP38                           1
+
+4.117. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~1 debug messages>
+
+4.118. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.119. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.120. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+4.121. Executing Rs_BRAM_Split pass.
+
+4.122. Executing TECHMAP pass (map to technology primitives).
+
+4.122.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new_version.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new_version.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+4.122.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+4.123. Executing TECHMAP pass (map to technology primitives).
+
+4.123.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new_version.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new_version.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+4.123.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+4.124. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+4.125. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.126. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.127. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+4.128. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.129. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.130. Executing OPT_SHARE pass.
+
+4.131. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=2, #solve=0, #remove=0, time=0.00 sec.]
+
+4.132. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.133. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.134. Executing PMUXTREE pass.
+
+4.135. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~3 debug messages>
+
+4.136. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.137. Executing TECHMAP pass (map to technology primitives).
+
+4.137.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.137.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+4.137.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~487 debug messages>
+
+4.138. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 72
+   Number of wire bits:           3757
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                537
+     $_DFF_P_                       42
+     $_MUX_                        262
+     $_NOT_                         76
+     $_XOR_                         80
+     CARRY                          76
+     DSP38                           1
+
+4.139. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~116 debug messages>
+
+4.140. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.141. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.142. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.143. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.144. Executing OPT_SHARE pass.
+
+4.145. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.146. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 2 unused cells and 46 unused wires.
+<suppressed ~3 debug messages>
+
+4.147. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.148. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.149. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.150. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.151. Executing OPT_SHARE pass.
+
+4.152. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.153. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.154. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 2
+
+4.155. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.156. Executing TECHMAP pass (map to technology primitives).
+
+4.156.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.156.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.157. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 26
+   Number of wire bits:            645
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                421
+     $_DFF_P_                       42
+     $_MUX_                        184
+     $_NOT_                         76
+     $_XOR_                         42
+     CARRY                          76
+     DSP38                           1
+
+4.158. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.159. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.160. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.161. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.162. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.163. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.164. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.165. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.166. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.167. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.168. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.169. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.170. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.171. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.172. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.173. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.174. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.175. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.176. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.177. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.178. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.179. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.180. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.181. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.182. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.183. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 26
+   Number of wire bits:            645
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                421
+     $_DFF_P_                       42
+     $_MUX_                        184
+     $_NOT_                         76
+     $_XOR_                         42
+     CARRY                          76
+     DSP38                           1
+
+   Number of Generic REGs:          42
+
+ABC-DFF iteration : 1
+
+4.184. Executing ABC pass (technology mapping using ABC).
+
+4.184.1. Summary of detected clock domains:
+  421 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.184.2. Extracting gate netlist of module `\add_shifted_input_to_the_mul_output' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 344 gates and 483 wires to a netlist network with 138 inputs and 148 outputs (dfl=1).
+
+4.184.2.1. Executing ABC.
+[Time = 0.08 sec.]
+
+4.185. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.186. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.187. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.188. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.189. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.190. Executing OPT_SHARE pass.
+
+4.191. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.192. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 335 unused wires.
+<suppressed ~1 debug messages>
+
+4.193. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 2
+
+4.194. Executing ABC pass (technology mapping using ABC).
+
+4.194.1. Summary of detected clock domains:
+  384 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.194.2. Extracting gate netlist of module `\add_shifted_input_to_the_mul_output' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 307 gates and 445 wires to a netlist network with 138 inputs and 148 outputs (dfl=1).
+
+4.194.2.1. Executing ABC.
+[Time = 0.07 sec.]
+
+4.195. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~20 debug messages>
+
+4.196. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.197. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.198. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.199. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.200. Executing OPT_SHARE pass.
+
+4.201. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.202. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 487 unused wires.
+<suppressed ~1 debug messages>
+
+4.203. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+4.204. Executing ABC pass (technology mapping using ABC).
+
+4.204.1. Summary of detected clock domains:
+  386 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.204.2. Extracting gate netlist of module `\add_shifted_input_to_the_mul_output' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 309 gates and 447 wires to a netlist network with 138 inputs and 148 outputs (dfl=2).
+
+4.204.2.1. Executing ABC.
+[Time = 0.14 sec.]
+
+4.205. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.206. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.207. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.208. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.209. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.210. Executing OPT_SHARE pass.
+
+4.211. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.212. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 489 unused wires.
+<suppressed ~1 debug messages>
+
+4.213. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 4
+
+4.214. Executing ABC pass (technology mapping using ABC).
+
+4.214.1. Summary of detected clock domains:
+  393 cells in clk=\clk, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+4.214.2. Extracting gate netlist of module `\add_shifted_input_to_the_mul_output' to `<abc-temp-dir>/input.blif'..
+Found matching posedge clock domain: \clk
+Extracted 316 gates and 454 wires to a netlist network with 138 inputs and 148 outputs (dfl=2).
+
+4.214.2.1. Executing ABC.
+[Time = 0.15 sec.]
+
+4.215. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~20 debug messages>
+
+4.216. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.217. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.218. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.219. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.220. Executing OPT_SHARE pass.
+
+4.221. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.222. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 496 unused wires.
+<suppressed ~1 debug messages>
+
+4.223. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+select with DFL1 synthesis (thresh_logic=0.920000, thresh_dff=0.980000)
+
+4.224. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+4.225. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.226. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.227. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.228. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.229. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.230. Executing OPT_SHARE pass.
+
+4.231. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.232. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.233. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.234. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.235. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.236. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.237. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.238. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.239. Executing OPT_SHARE pass.
+
+4.240. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.241. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.242. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.243. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.244. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.245. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.246. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.247. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.248. Executing OPT_SHARE pass.
+
+4.249. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.250. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.251. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.252. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.253. Executing BMUXMAP pass.
+
+4.254. Executing DEMUXMAP pass.
+
+4.255. Executing ABC pass (technology mapping using ABC).
+
+4.255.1. Extracting gate netlist of module `\add_shifted_input_to_the_mul_output' to `<abc-temp-dir>/input.blif'..
+Extracted 267 gates and 409 wires to a netlist network with 142 inputs and 148 outputs (dfl=1).
+
+4.255.1.1. Executing ABC.
+DE:   Version : 7.6
+DE:   #PIs = 142  #Luts =   172  Max Lvl =   3  Avg Lvl =   1.39  [   0.09 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 142  #Luts =   172  Max Lvl =   3  Avg Lvl =   1.39  [   0.21 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.22 sec. at Pass 2]{map}[6]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.27 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.27 sec. at Pass 4]{map}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.26 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.23 sec. at Pass 6]{pushMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.22 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.21 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.45  [   0.17 sec. at Pass 8]{finalMap}[16]
+DE:   
+DE:   total time =    2.25 sec.
+[Time = 4.31 sec.]
+
+4.256. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.257. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.258. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.259. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.260. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.261. Executing OPT_SHARE pass.
+
+4.262. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.263. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 409 unused wires.
+<suppressed ~1 debug messages>
+
+4.264. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.265. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+4.266. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.267. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.268. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.269. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.270. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.271. Executing OPT_SHARE pass.
+
+4.272. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.273. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.274. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.275. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.276. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.277. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.278. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.279. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.280. Executing OPT_SHARE pass.
+
+4.281. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.282. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=42, #solve=0, #remove=0, time=0.00 sec.]
+
+4.283. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.284. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.285. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 84
+   Number of wire bits:            478
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                290
+     $_DFF_P_                       42
+     $lut                          171
+     CARRY                          76
+     DSP38                           1
+
+4.286. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+4.287. Executing RS_DFFSR_CONV pass.
+
+4.288. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 84
+   Number of wire bits:            478
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                290
+     $_DFF_P_                       42
+     $lut                          171
+     CARRY                          76
+     DSP38                           1
+
+4.289. Executing TECHMAP pass (map to technology primitives).
+
+4.289.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.289.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+4.289.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+No more expansions possible.
+<suppressed ~333 debug messages>
+
+4.290. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~2578 debug messages>
+
+4.291. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4.292. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.293. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+<suppressed ~741 debug messages>
+Removed a total of 247 cells.
+
+4.294. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.295. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 533 unused wires.
+<suppressed ~1 debug messages>
+
+4.296. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+<suppressed ~58 debug messages>
+
+4.297. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.298. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.299. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.300. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.301. Executing OPT_SHARE pass.
+
+4.302. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.303. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+4.304. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.305. Executing TECHMAP pass (map to technology primitives).
+
+4.305.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.305.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+4.306. Executing ABC pass (technology mapping using ABC).
+
+4.306.1. Extracting gate netlist of module `\add_shifted_input_to_the_mul_output' to `<abc-temp-dir>/input.blif'..
+Extracted 387 gates and 531 wires to a netlist network with 142 inputs and 148 outputs (dfl=1).
+
+4.306.1.1. Executing ABC.
+DE:   Version : 7.6
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.07 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.23 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.22 sec. at Pass 2]{map}[6]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.27 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.30 sec. at Pass 4]{map}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.27 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.23 sec. at Pass 6]{pushMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.23 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.22 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 142  #Luts =   171  Max Lvl =   3  Avg Lvl =   1.40  [   0.15 sec. at Pass 8]{finalMap}[16]
+DE:   
+DE:   total time =    2.29 sec.
+[Time = 4.36 sec.]
+
+4.307. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+4.308. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.309. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \add_shifted_input_to_the_mul_output..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.310. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \add_shifted_input_to_the_mul_output.
+Performed a total of 0 changes.
+
+4.311. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\add_shifted_input_to_the_mul_output'.
+Removed a total of 0 cells.
+
+4.312. Executing OPT_SHARE pass.
+
+4.313. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+4.314. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 459 unused wires.
+<suppressed ~1 debug messages>
+
+4.315. Executing OPT_EXPR pass (perform const folding).
+Optimizing module add_shifted_input_to_the_mul_output.
+
+RUN-OPT ITERATIONS DONE : 1
+
+4.316. Executing HIERARCHY pass (managing design hierarchy).
+
+4.316.1. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+
+4.316.2. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+Removed 0 unused modules.
+
+4.317. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+
+4.318. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cells_map1.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cells_map1.v' to AST representation.
+Generating RTLIL representation for module `\rs__CLK_BUF'.
+Generating RTLIL representation for module `\rs__I_BUF'.
+Generating RTLIL representation for module `\rs__O_BUF'.
+Generating RTLIL representation for module `\rs__IO_BUF'.
+Generating RTLIL representation for module `\rs__O_BUFT'.
+Successfully finished Verilog frontend.
+
+4.319. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Replacing existing blackbox module `\BOOT_CLOCK' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:9.1-14.10.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:24.1-31.10.
+Generating RTLIL representation for module `\CARRY'.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:41.1-46.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:56.1-64.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:74.1-82.10.
+Generating RTLIL representation for module `\DFFRE'.
+Replacing existing blackbox module `\DSP19X2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:92.1-126.10.
+Generating RTLIL representation for module `\DSP19X2'.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:136.1-162.10.
+Generating RTLIL representation for module `\DSP38'.
+Replacing existing blackbox module `\FIFO18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:172.1-219.10.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Replacing existing blackbox module `\FIFO36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:229.1-254.10.
+Generating RTLIL representation for module `\FIFO36K'.
+Replacing existing blackbox module `\I_BUF_DS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:264.1-278.10.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Replacing existing blackbox module `\I_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:288.1-299.10.
+Generating RTLIL representation for module `\I_BUF'.
+Replacing existing blackbox module `\I_DDR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:309.1-316.10.
+Generating RTLIL representation for module `\I_DDR'.
+Replacing existing blackbox module `\I_DELAY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:326.1-337.10.
+Generating RTLIL representation for module `\I_DELAY'.
+Replacing existing blackbox module `\I_SERDES' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:347.1-365.10.
+Generating RTLIL representation for module `\I_SERDES'.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:375.1-381.10.
+Generating RTLIL representation for module `\LUT1'.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:391.1-397.10.
+Generating RTLIL representation for module `\LUT2'.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:407.1-413.10.
+Generating RTLIL representation for module `\LUT3'.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:423.1-429.10.
+Generating RTLIL representation for module `\LUT4'.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:439.1-445.10.
+Generating RTLIL representation for module `\LUT5'.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:455.1-461.10.
+Generating RTLIL representation for module `\LUT6'.
+Replacing existing blackbox module `\O_BUF_DS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:471.1-485.10.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Replacing existing blackbox module `\O_BUFT_DS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:495.1-509.10.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Replacing existing blackbox module `\O_BUFT' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:519.1-532.10.
+Generating RTLIL representation for module `\O_BUFT'.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:542.1-555.10.
+Generating RTLIL representation for module `\O_BUF'.
+Replacing existing blackbox module `\O_DDR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:565.1-572.10.
+Generating RTLIL representation for module `\O_DDR'.
+Replacing existing blackbox module `\O_DELAY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:582.1-593.10.
+Generating RTLIL representation for module `\O_DELAY'.
+Replacing existing blackbox module `\O_SERDES_CLK' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:603.1-612.10.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Replacing existing blackbox module `\O_SERDES' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:622.1-638.10.
+Generating RTLIL representation for module `\O_SERDES'.
+Replacing existing blackbox module `\PLL' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:648.1-663.10.
+Generating RTLIL representation for module `\PLL'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AHB_M' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:673.1-687.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AHB_S' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:697.1-714.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AXI_M0' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:724.1-763.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AXI_M1' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:773.1-812.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_DMA' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:822.1-828.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_IRQ' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:838.1-844.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_JTAG' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:854.1-862.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Replacing existing blackbox module `\SOC_FPGA_TEMPERATURE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:872.1-880.10.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Replacing existing blackbox module `\TDP_RAM18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:890.1-943.10.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Replacing existing blackbox module `\TDP_RAM36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:953.1-982.10.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:999.1-1004.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1012.1-1017.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1026.1-1032.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1040.1-1046.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1055.1-1061.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1070.1-1076.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1081.1-1131.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1136.1-1170.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1175.1-1221.12.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+4.320. Executing CLKBUFMAP pass (inserting clock buffers).
+Inserting rs__CLK_BUF on add_shifted_input_to_the_mul_output.clk[0].
+
+4.321. Executing TECHMAP pass (map to technology primitives).
+
+4.321.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v' to AST representation.
+Generating RTLIL representation for module `\rs__CLK_BUF'.
+Generating RTLIL representation for module `\rs__I_BUF'.
+Generating RTLIL representation for module `\rs__O_BUF'.
+Generating RTLIL representation for module `\rs__O_BUFT'.
+Successfully finished Verilog frontend.
+
+4.321.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~7 debug messages>
+
+4.322. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+4.323. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port add_shifted_input_to_the_mul_output.A using rs__I_BUF.
+Mapping port add_shifted_input_to_the_mul_output.B using rs__I_BUF.
+Mapping port add_shifted_input_to_the_mul_output.P using rs__O_BUF.
+Mapping port add_shifted_input_to_the_mul_output.acc_fir using rs__I_BUF.
+Mapping port add_shifted_input_to_the_mul_output.clk using rs__I_BUF.
+Mapping port add_shifted_input_to_the_mul_output.reset using rs__I_BUF.
+Mapping port add_shifted_input_to_the_mul_output.subtract_i using rs__I_BUF.
+
+4.324. Executing TECHMAP pass (map to technology primitives).
+
+4.324.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v' to AST representation.
+Generating RTLIL representation for module `\rs__CLK_BUF'.
+Generating RTLIL representation for module `\rs__I_BUF'.
+Generating RTLIL representation for module `\rs__O_BUF'.
+Generating RTLIL representation for module `\rs__O_BUFT'.
+Successfully finished Verilog frontend.
+
+4.324.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~89 debug messages>
+
+4.325. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                341
+   Number of wire bits:            811
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                374
+     $lut                          171
+     CARRY                          76
+     CLK_BUF                         1
+     DFFRE                          42
+     DSP38                           1
+     I_BUF                          45
+     O_BUF                          38
+
+4.326. Executing TECHMAP pass (map to technology primitives).
+
+4.326.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+4.326.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~525 debug messages>
+
+4.327. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \add_shifted_input_to_the_mul_output..
+Removed 0 unused cells and 591 unused wires.
+<suppressed ~1 debug messages>
+
+4.328. Printing statistics.
+
+=== add_shifted_input_to_the_mul_output ===
+
+   Number of wires:                 92
+   Number of wire bits:            562
+   Number of public wires:          11
+   Number of public wire bits:     201
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                374
+     CARRY                          76
+     CLK_BUF                         1
+     DFFRE                          42
+     DSP38                           1
+     I_BUF                          45
+     LUT1                           36
+     LUT2                           41
+     LUT3                            3
+     LUT4                           43
+     LUT5                           11
+     LUT6                           37
+     O_BUF                          38
+
+   Number of LUTs:                 171
+   Number of REGs:                  42
+   Number of CARRY ADDERs:          76
+   Number of CARRY CHAINs:           2 (2x38)
+
+4.329. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+4.330. Executing HIERARCHY pass (managing design hierarchy).
+
+4.330.1. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+
+4.330.2. Analyzing design hierarchy..
+Top module:  \add_shifted_input_to_the_mul_output
+Removed 0 unused modules.
+
+Dumping port properties into 'port_info.json' file.
+
+5. Executing Verilog backend.
+Dumping module `\add_shifted_input_to_the_mul_output'.
+
+6. Executing BLIF backend.
+After Adding wire
+
+7. Executing FLATTEN pass (flatten design).
+Deleting now unused module interface_add_shifted_input_to_the_mul_output.
+<suppressed ~1 debug messages>
+
+8. Executing Verilog backend.
+Dumping module `\add_shifted_input_to_the_mul_output'.
+
+9. Executing BLIF backend.
+Run Script
+
+10. Executing Verilog backend.
+Dumping module `\add_shifted_input_to_the_mul_output'.
+
+11. Executing BLIF backend.
+
+12. Executing Verilog backend.
+Dumping module `\fabric_add_shifted_input_to_the_mul_output'.
+
+13. Executing BLIF backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 694d2dac01, CPU: user 1.88s system 0.07s, MEM: 27.84 MB peak
+Yosys 0.18+10 (git sha1 2be6af90e, gcc 11.2.1 -fPIC -Os)
+Time spent: 96% 6x abc (45 sec), 0% 54x opt_expr (0 sec), ...
+INFO: SYN: Design add_shifted_input_to_the_mul_output is synthesized
+INFO: PAC: ##################################################
+INFO: PAC: Packing for design: add_shifted_input_to_the_mul_output
+INFO: PAC: ##################################################
+Command: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/etc/devices/gemini_compact_104x68/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/synthesis/fabric_add_shifted_input_to_the_mul_output_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report add_shifted_input_to_the_mul_output_post_place_timing.rpt --device castor104x68_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top add_shifted_input_to_the_mul_output --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/placement/fabric_add_shifted_input_to_the_mul_output_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/routing/fabric_add_shifted_input_to_the_mul_output_post_synth.route --pack
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/etc/devices/gemini_compact_104x68/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/synthesis/fabric_add_shifted_input_to_the_mul_output_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report add_shifted_input_to_the_mul_output_post_place_timing.rpt --device castor104x68_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top add_shifted_input_to_the_mul_output --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/placement/fabric_add_shifted_input_to_the_mul_output_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/routing/fabric_add_shifted_input_to_the_mul_output_post_synth.route --pack
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/04_12_2024_09_15_01/share/raptor/etc/devices/gemini_compact_104x68/gemini_vpr.xml
+Circuit name: fabric_add_shifted_input_to_the_mul_output_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/placement/fabric_add_shifted_input_to_the_mul_output_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/routing/fabric_add_shifted_input_to_the_mul_output_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: DISABLED
+Router: DISABLED
+Analysis: DISABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.03 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/synthesis/fabric_add_shifted_input_to_the_mul_output_post_synth.eblif
+# Load circuit
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[2] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[2] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[12] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[12] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[0] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[0] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[16] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[16] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[4] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[4] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[1] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[1] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[6] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[6] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[3] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[3] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[13] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[13] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[7] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[7] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[8] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[8] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[9] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[9] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[10] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[10] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[5] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[5] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[11] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[11] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[14] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[14] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[15] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[15] in primitive RS_DSP_MULT_REGIN Ignored
+CRITICAL WARNING: PRIM_RECONSTRUCT attempt to connect non existant port DLY_B[17] to $techmap43$mul$/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/.././rtl/add_shifted_input_to_the_mul_output.v:32$6.dly_b[17] in primitive RS_DSP_MULT_REGIN Ignored
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.02 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+# Clean circuit
+Inferred    3 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred   47 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 24
+Swept block(s)      : 4
+Constant Pins Marked: 50
+# Clean circuit took 0.00 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 445
+    .input           :      25
+    .output          :      83
+    0-LUT            :       2
+    6-LUT            :     216
+    RS_DSP_MULT_REGIN:       1
+    adder_carry      :      76
+    dffre            :      42
+  Nets  : 471
+    Avg Fanout:     2.2
+    Max Fanout:   131.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 1493
+  Timing Graph Edges: 2137
+  Timing Graph Levels: 88
+# Build Timing Graph took 0.00 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock '$auto$clkbufmap.cc:298:execute$6790' Fanout: 43 pins (2.9%), 43 blocks (9.7%)
+# Load Timing Constraints
+
+SDC file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/impl_1_1_1/packing/fabric_add_shifted_input_to_the_mul_output_openfpga.sdc' contained no SDC commands
+Setting default timing constraints:
+   * constrain all primay inputs and primary outputs on netlist clock '$auto$clkbufmap.cc:298:execute$6790'
+   * optimize netlist clock to run as fast as possible
+Timing constraints created 1 clocks
+  Constrained Clock '$auto$clkbufmap.cc:298:execute$6790' Source: '$auto$clkbufmap.cc:298:execute$6790.inpad[0]'
+
+# Load Timing Constraints took 0.00 seconds (max_rss 21.3 MiB, delta_rss +0.0 MiB)
+/nfs_eda_sw/softwares/Raptor/orgnl/Raptor/Backend/OpenFPGA/vtr-verilog-to-routing/vpr/src/timing/PreClusterDelayCalculator.h:146 find_pb_graph_pin: Assertion 'gpin' failed# Packing
+Begin packing '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/15Apr/EDA-2709/add_shifted_input_to_the_mul_output/results_dir/add_shifted_input_to_the_mul_output/run_1/synth_1_1/synthesis/fabric_add_shifted_input_to_the_mul_output_post_synth.eblif'.
+
+After removing unused inputs...
+	total blocks: 445, total nets: 471, total inputs: 25, total outputs: 83
+Begin prepacking.
+
+There is one chain in this architecture called "carrychain" with the following starting points:
+	clb[0]/clb_lr[0]/fle[0]/adder[0]/adder_carry[0].cin[0]
+
+0 attraction groups were created during prepacking.
+Finish prepacking.
+Using inter-cluster delay: 8.9048e-10
+Packing with pin utilization targets: io_top:1,1 io_right:1,1 io_bottom:1,1 io_left:1,1 clb:0.8,1 dsp:1,1 bram:1,1
+Packing with high fanout thresholds: io_top:128 io_right:128 io_bottom:128 io_left:128 clb:32 dsp:128 bram:128
+.
+ERROR: PAC: Design add_shifted_input_to_the_mul_output packing failed
+Design add_shifted_input_to_the_mul_output packing failed
+    while executing
+"packing"
+    (file "../raptor_tcl.tcl" line 12)
