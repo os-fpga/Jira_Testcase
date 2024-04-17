@@ -1,0 +1,179 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clock (index=0, width=1, offset=0)",
+    "    Detect input port \\data_input (index=0, width=1, offset=0)",
+    "    Detect input port \\enable (index=0, width=1, offset=0)",
+    "    Detect output port \\output_data (index=0, width=2, offset=0)",
+    "    Detect output port \\output_data (index=1, width=2, offset=0)",
+    "    Detect input port \\reset (index=0, width=1, offset=0)",
+    "  Get Port Primitives",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_ddr_primitive_inst.clock",
+    "      Cell port \\I is connected to input port \\clock",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_ddr_primitive_inst.data_input",
+    "      Cell port \\I is connected to input port \\data_input",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_ddr_primitive_inst.enable",
+    "      Cell port \\I is connected to input port \\enable",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\O_BUF $iopadmap$i_ddr_primitive_inst.output_data",
+    "      Cell port \\O is connected to output port \\output_data[0]",
+    "    Get important connection of cell \\O_BUF $iopadmap$i_ddr_primitive_inst.output_data_1",
+    "      Cell port \\O is connected to output port \\output_data[1]",
+    "    Get important connection of cell \\I_BUF $iopadmap$i_ddr_primitive_inst.reset",
+    "      Cell port \\I is connected to input port \\reset",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "  Trace \\I_BUF --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "    Try \\I_BUF $iopadmap$i_ddr_primitive_inst.data_input out connection: $iopadmap$data_input",
+    "      Connected \\i_ddr_inst",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$i_ddr_primitive_inst.clock",
+      "linked_object" : "clock",
+      "linked_objects" : {
+        "clock" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clock",
+        "O" : "$iopadmap$clock"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$i_ddr_primitive_inst.data_input",
+      "linked_object" : "data_input",
+      "linked_objects" : {
+        "data_input" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_input",
+        "O" : "$iopadmap$data_input"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "i_ddr_inst",
+      "linked_object" : "data_input",
+      "linked_objects" : {
+        "data_input" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "D" : "$iopadmap$data_input"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$i_ddr_primitive_inst.enable",
+      "linked_object" : "enable",
+      "linked_objects" : {
+        "enable" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "enable",
+        "O" : "$iopadmap$enable"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$i_ddr_primitive_inst.output_data",
+      "linked_object" : "output_data[0]",
+      "linked_objects" : {
+        "output_data[0]" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$output_data[0]",
+        "O" : "output_data[0]"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$i_ddr_primitive_inst.output_data_1",
+      "linked_object" : "output_data[1]",
+      "linked_objects" : {
+        "output_data[1]" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "1'0",
+        "O" : "output_data[1]"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$i_ddr_primitive_inst.reset",
+      "linked_object" : "reset",
+      "linked_objects" : {
+        "reset" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "reset",
+        "O" : "$iopadmap$reset"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    }
+  ]
+}
