@@ -1,0 +1,14 @@
+create_design boot_clk_pll
+add_design_file boot_clk_pll.v
+set_top_module boot_clk_pll
+add_constraint_file constraints.sdc
+add_constraint_file pin_constraints.pin
+target_device 1VG28
+
+analyze
+synthesize
+packing
+place
+route
+sta
+bitstream
