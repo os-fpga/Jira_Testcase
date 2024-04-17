@@ -1,0 +1,134 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect output port \\O_BOOT_CLOCK (index=0, width=1, offset=0)",
+    "    Detect input port \\async_signal (index=0, width=1, offset=0)",
+    "    Detect input port \\clk1 (index=0, width=1, offset=0)",
+    "    Detect output port \\sync_signal (index=0, width=1, offset=0)",
+    "  Get Port Primitives",
+    "    Get important connection of cell \\O_BUF $iopadmap$BOOT_CLOCK_primitive_inst.O_BOOT_CLOCK",
+    "      Cell port \\O is connected to output port \\O_BOOT_CLOCK",
+    "    Get important connection of cell \\I_BUF $iopadmap$BOOT_CLOCK_primitive_inst.async_signal",
+    "      Cell port \\I is connected to input port \\async_signal",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\I_BUF $iopadmap$BOOT_CLOCK_primitive_inst.clk1",
+    "      Cell port \\I is connected to input port \\clk1",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\O_BUF $iopadmap$BOOT_CLOCK_primitive_inst.sync_signal",
+    "      Cell port \\O is connected to output port \\sync_signal",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF $iopadmap$BOOT_CLOCK_primitive_inst.clk1 out connection: $iopadmap$clk1",
+    "      Connected $auto$clkbufmap.cc:265:execute$447",
+    "  Trace \\I_BUF --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$BOOT_CLOCK_primitive_inst.O_BOOT_CLOCK",
+      "linked_object" : "O_BOOT_CLOCK",
+      "linked_objects" : {
+        "O_BOOT_CLOCK" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$O_BOOT_CLOCK",
+        "O" : "O_BOOT_CLOCK"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$BOOT_CLOCK_primitive_inst.async_signal",
+      "linked_object" : "async_signal",
+      "linked_objects" : {
+        "async_signal" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "async_signal",
+        "O" : "$iopadmap$async_signal"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$BOOT_CLOCK_primitive_inst.clk1",
+      "linked_object" : "clk1",
+      "linked_objects" : {
+        "clk1" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk1",
+        "O" : "$iopadmap$clk1"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "$auto$clkbufmap.cc:265:execute$447",
+      "linked_object" : "clk1",
+      "linked_objects" : {
+        "clk1" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$clk1",
+        "O" : "$auto$clkbufmap.cc:298:execute$449"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$BOOT_CLOCK_primitive_inst.sync_signal",
+      "linked_object" : "sync_signal",
+      "linked_objects" : {
+        "sync_signal" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$sync_signal",
+        "O" : "sync_signal"
+      },
+      "parameters" : {
+      }
+    }
+  ]
+}
