@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for DSP19X2_primitive_inst
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/04_17_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../.././rtl -I../../../../ -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/16apr/Validation/RTL_testcases/RS_FPGA_PRIMITIVES_new/DSP19x2_primitive_inst/EDA-2727/./rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/16apr/Validation/RTL_testcases/RS_FPGA_PRIMITIVES_new/DSP19x2_primitive_inst/EDA-2727/./rtl/DSP19X2_primitive_inst.v 
+
+
+# Technology mapping
+hierarchy -top DSP19X2_primitive_inst
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto   -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v DSP19X2_primitive_inst_post_synth.v
+write_blif -param DSP19X2_primitive_inst_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_DSP19X2_primitive_inst.sdc -json config.json -w wrapper_DSP19X2_primitive_inst_post_synth.v wrapper_DSP19X2_primitive_inst_post_synth.eblif -pr post_pnr_wrapper_DSP19X2_primitive_inst_post_synth.v post_pnr_wrapper_DSP19X2_primitive_inst_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_DSP19X2_primitive_inst_post_synth.v
+write_blif -param fabric_DSP19X2_primitive_inst_post_synth.eblif
+
+  
