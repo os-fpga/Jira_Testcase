@@ -1,0 +1,209 @@
+{
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$top.enable",
+      "linked_object" : "enable",
+      "linked_objects" : {
+        "enable" : {
+          "location" : "HP_1_3_1N",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "enable",
+        "O" : "$iopadmap$enable"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$top.reset",
+      "linked_object" : "reset",
+      "linked_objects" : {
+        "reset" : {
+          "location" : "HP_1_2_1P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "reset",
+        "O" : "$iopadmap$reset"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "clk_i_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==DEFAULT"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_buf_i",
+        "O" : "clk_clk_buf"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__clock_pin_is_valid__,__check_fabric_clock_resource__,__update_fabric_clock_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "i_buf",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==DEFAULT"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "i_ddr_d"
+      },
+      "parameters" : {
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "i_ddr",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "D" : "i_ddr_d"
+      },
+      "parameters" : {
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : ""
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "o_buf",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "O_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "o_buf_i",
+        "O" : "dout"
+      },
+      "parameters" : {
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "O_DDR",
+      "name" : "o_ddr",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "Q" : "o_buf_i"
+      },
+      "parameters" : {
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : ""
+    }
+  ]
+}

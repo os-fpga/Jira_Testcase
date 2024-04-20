@@ -1,0 +1,200 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clk (index=0, width=1, offset=0)",
+    "    Detect input port \\din (index=0, width=1, offset=0)",
+    "    Detect output port \\dout (index=0, width=1, offset=0)",
+    "    Detect input port \\enable (index=0, width=1, offset=0)",
+    "    Detect input port \\reset (index=0, width=1, offset=0)",
+    "  Get Port Primitives",
+    "    Get important connection of cell \\I_BUF $iopadmap$top.enable",
+    "      Cell port \\I is connected to input port \\enable",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\I_BUF $iopadmap$top.reset",
+    "      Cell port \\I is connected to input port \\reset",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\I_BUF \\clk_i_buf",
+    "      Cell port \\I is connected to input port \\clk",
+    "    Get important connection of cell \\I_BUF \\i_buf",
+    "      Cell port \\I is connected to input port \\din",
+    "    Get important connection of cell \\O_BUF \\o_buf",
+    "      Cell port \\O is connected to output port \\dout",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF \\clk_i_buf out connection: \\clk_buf_i",
+    "      Connected \\clk_buf",
+    "  Trace \\I_BUF --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "    Try \\I_BUF \\i_buf out connection: \\i_ddr_d",
+    "      Connected \\i_ddr",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "    Try \\O_BUF \\o_buf out connection: \\o_buf_i",
+    "      Connected \\o_ddr",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Assign location HP_1_CC_10_5P (and properties) to Port clk",
+    "  Assign location HP_1_1_0N (and properties) to Port dout",
+    "  Assign location HP_1_2_1P (and properties) to Port reset",
+    "  Assign location HP_1_0_0P (and properties) to Port din",
+    "  Assign location HP_1_3_1N (and properties) to Port enable",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$top.enable",
+      "linked_object" : "enable",
+      "linked_objects" : {
+        "enable" : {
+          "location" : "HP_1_3_1N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "enable",
+        "O" : "$iopadmap$enable"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$top.reset",
+      "linked_object" : "reset",
+      "linked_objects" : {
+        "reset" : {
+          "location" : "HP_1_2_1P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "reset",
+        "O" : "$iopadmap$reset"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "clk_i_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_buf_i",
+        "O" : "clk_clk_buf"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "i_buf",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "i_ddr_d"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "i_ddr",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "D" : "i_ddr_d"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "o_buf",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "o_buf_i",
+        "O" : "dout"
+      },
+      "parameters" : {
+      }
+    },
+    {
+      "module" : "O_DDR",
+      "name" : "o_ddr",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "Q" : "o_buf_i"
+      },
+      "parameters" : {
+      }
+    }
+  ]
+}

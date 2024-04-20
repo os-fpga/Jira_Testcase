@@ -1,8 +1,5 @@
 /////////////////////////////////////////
-//  Functionality: Tri state differential output buffer with
-//                 inverted input data and control signals
-//                 -- O_BUFT_DS
-//  Author:        Azfar
+//  Author: Chung Shien
 ////////////////////////////////////////
 // `timescale 1ns / 1ps
 
@@ -11,20 +8,20 @@
 
           |------------------------------------|
           |                                    |
- data_i --|--> I_BUF                           |
+    din --|--> I_BUF                           |
           |                                    |
- ctrl_T --|--> I_BUF                           |
+ enable --|--> I_BUF                           |
           |                                    |
-          |                     |-----------|--|--> data_o_P
+          |                     |-----------|--|--> dout_p
           |                     | O_BUFT_DS |  |
-          |                     |-----------|--|--> data_o_N
+          |                     |-----------|--|--> dout_n
           |                                    |
           |------------------------------------|
 
   SW Readiness:
 
-    SYN:: No
-    PPDB:: No
+    SYN:: Yes
+    PPDB:: Yes
     BitGen:: No
 
   Testing (Simulation/Emulator):
@@ -37,32 +34,15 @@
 */
 
 module top(
-  input wire data_i,
-  input wire ctrl_T,
-  output wire data_o_P,
-  output wire data_o_N
+  input wire din,
+  input wire enable,
+  output wire dout_p,
+  output wire dout_n
 );
-
-  wire data_i_buf, ctrl_T_buf;
-  wire data_i_buft, ctrl_T_buft;
-
-  I_BUF data_buf(
-    .I(data_i),
-    .EN(1'b1),
-    .O(data_i_buf)
+  O_BUFT_DS o_buft_ds(
+    .I(din),
+    .T(enable),
+    .O_P(dout_p),
+    .O_N(dout_n)
   );
-  I_BUF ctrl_buf(
-    .I(ctrl_T),
-    .EN(1'b1),
-    .O(ctrl_T_buf)
-  );
-  assign data_i_buft = ~data_i_buf;
-  assign ctrl_T_buft = ~ctrl_T_buf;
-  O_BUFT_DS buft_o(
-    .I(data_i_buft),
-    .T(ctrl_T_buft),
-    .O_P(data_o_P),
-    .O_N(data_o_N)
-  );
-
 endmodule
