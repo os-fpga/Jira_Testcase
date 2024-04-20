@@ -161,6 +161,7 @@ def update_golden(project):
     os.system("cp -rf {file:s} golden/{proj:s}/.".format(file=file, proj=project))
     
 def compare_golden(project):
+  status = True
   files = glob.glob("golden/{proj:s}/*".format(proj=project))
   for file in files:
     filename = os.path.basename(file)
@@ -173,12 +174,13 @@ def compare_golden(project):
       glist = [l for l in g]
       rlist = [l for l in r]
       if len(glist) == len(rlist):
-        status = True
+        current_status = True
         for gl, rl in zip(glist, rlist):
           if gl != rl:
-            status = False
+            current_status = False
             break
-        if status:
+        status = status and current_status
+        if current_status:
           print("    Compare golden {file:s} pass".format(file=filename))
         else:
           print(
@@ -196,6 +198,7 @@ def compare_golden(project):
           file=result_file
         )
       )
+  return status
 
 def main():
   parser = argparse.ArgumentParser(
@@ -252,6 +255,7 @@ def main():
           "run_1/synth_1_1/impl_1_1_1/bitstream/io_bitstream.detail.txt",
         ]
         print("Result/Status:")
+        status = True
         for result in results:
           print(
             "  Project {proj:s} raptor status: {status:s}".format(
@@ -259,6 +263,7 @@ def main():
               status="TRUE" if result.status else "FALSE",
             )
           )
+          status = status and result.status
           if result.status:
             os.mkdir(
               "auto_run_results/summary/{proj:s}".format(
@@ -274,7 +279,8 @@ def main():
             if args.update :
               update_golden(result.project)
             else :
-              compare_golden(result.project)
+              status = compare_golden(result.project) and status
+        print("\nOverall result: {status:s}\n".format(status="True" if status else "False"))
 
     else:
       if isinstance(args.raptor_tool, str):

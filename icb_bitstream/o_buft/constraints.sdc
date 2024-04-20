@@ -1,8 +1,9 @@
-set_property mode Mode_BP_DIR_A_RX HR_2_6_3P
-set_pin_loc data_i HR_2_6_3P
+# pin locations
+set_property mode Mode_BP_SDR_A_RX HP_1_0_0P
+set_pin_loc din HP_1_0_0P
 
-set_property mode Mode_BP_DIR_A_RX HR_1_6_3P
-set_pin_loc ctrl_T HR_1_6_3P
+set_property mode Mode_BP_SDR_B_TX HP_1_1_0N
+set_pin_loc dout HP_1_1_0N
 
-set_property mode Mode_BP_DIR_A_TX HR_5_12_6P
-set_pin_loc data_o HR_5_12_6P
+set_property mode Mode_BP_SDR_B_RX HP_1_3_1N
+set_pin_loc enable HP_1_3_1N

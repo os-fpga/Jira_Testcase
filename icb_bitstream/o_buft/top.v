@@ -6,15 +6,15 @@
 /*
   Primitive Description:
 
-                |------------------------------------|
-                |                                    |
-          din --|--> I_BUF                           |
-                |                                    |
- out_tristate --|--> I_BUF                           |
-                |                                    |
-                |                           O_BUFT --|--> dout
-                |                                    |
-                |------------------------------------|
+          |------------------------------------|
+          |                                    |
+    din --|--> I_BUF                           |
+          |                                    |
+ enable --|--> I_BUF                           |
+          |                                    |
+          |                           O_BUFT --|--> dout
+          |                                    |
+          |------------------------------------|
 
   SW Readiness:
 
@@ -33,12 +33,12 @@
 
 module top(
   input wire din,
-  input wire out_tristate,
+  input wire enable,
   output wire dout
 );
   O_BUFT o_buft(
     .I(din),
-    .T(out_tristate),
+    .T(enable),
     .O(dout)
   );
 endmodule

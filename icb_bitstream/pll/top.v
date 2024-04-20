@@ -6,18 +6,18 @@
 /*
   Primitive Description:
 
-                      |---------------------------------------------|
-                      |                                             |
-                      |              |-----| -->                    |
-                clk --|--> I_BUF --> | PLL | -->                    |
-                      |              |     | -->                    |
-                      |              |-----| -->                    |
-                      |                                             |
-             data_i --|--> I_BUF                                    |
-                      |                                             |
-                      |                                     O_BUF --|--> data_o
-                      |                                             |
-                      |---------------------------------------------|
+       |---------------------------------------------|
+       |                                             |
+       |              |-----| -->                    |
+ clk --|--> I_BUF --> | PLL | -->                    |
+       |              |     | -->                    |
+       |              |-----| -->                    |
+       |                                             |
+ din --|--> I_BUF                                    |
+       |                                             |
+       |                                     O_BUF --|--> dout
+       |                                             |
+       |---------------------------------------------|
 
   SW Readiness:
 
@@ -36,8 +36,8 @@
 
 module top (
   input wire clk,
-  input wire data_i,
-  output reg data_o
+  input wire din,
+  output reg dout
 );
   wire pll_clk;
   PLL #(
@@ -53,7 +53,7 @@ module top (
     .CLK_OUT_DIV4(pll_clk)
   );
   always @ (posedge pll_clk) begin
-    data_o <= data_i;
+    dout <= din;
   end
 
 endmodule

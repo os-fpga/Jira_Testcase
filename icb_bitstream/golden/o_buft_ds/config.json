@@ -5,13 +5,13 @@
     "    Detect input port \\din (index=0, width=1, offset=0)",
     "    Detect output port \\dout_n (index=0, width=1, offset=0)",
     "    Detect output port \\dout_p (index=0, width=1, offset=0)",
-    "    Detect input port \\out_tristate (index=0, width=1, offset=0)",
+    "    Detect input port \\enable (index=0, width=1, offset=0)",
     "  Get Port Primitives",
     "    Get important connection of cell \\I_BUF $iopadmap$top.din",
     "      Cell port \\I is connected to input port \\din",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
-    "    Get important connection of cell \\I_BUF $iopadmap$top.out_tristate",
-    "      Cell port \\I is connected to input port \\out_tristate",
+    "    Get important connection of cell \\I_BUF $iopadmap$top.enable",
+    "      Cell port \\I is connected to input port \\enable",
     "        Parameter \\WEAK_KEEPER: \"NONE\"",
     "    Get important connection of cell \\O_BUFT_DS \\o_buft_ds",
     "      Cell port \\O_N is connected to output port \\dout_n",
@@ -32,6 +32,10 @@
     "  Trace \\O_BUFT_DS --> \\O_DELAY",
     "  Trace \\O_BUFT_DS --> \\O_DDR",
     "  Trace \\O_DELAY --> \\O_DDR",
+    "  Assign location HP_1_0_0P (and properties) to Port din",
+    "  Assign location HP_1_3_1N (and properties) to Port enable",
+    "  Assign location HP_1_6_3P (and properties) to Port dout_p",
+    "  Assign location HP_1_7_3N (and properties) to Port dout_n",
     "End of IO Analysis"
   ],
   "instances" : [
@@ -41,7 +45,7 @@
       "linked_object" : "din",
       "linked_objects" : {
         "din" : {
-          "location" : "",
+          "location" : "HP_1_0_0P",
           "properties" : {
           }
         }
@@ -56,18 +60,18 @@
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.out_tristate",
-      "linked_object" : "out_tristate",
+      "name" : "$iopadmap$top.enable",
+      "linked_object" : "enable",
       "linked_objects" : {
-        "out_tristate" : {
-          "location" : "",
+        "enable" : {
+          "location" : "HP_1_3_1N",
           "properties" : {
           }
         }
       },
       "connectivity" : {
-        "I" : "out_tristate",
-        "O" : "$iopadmap$out_tristate"
+        "I" : "enable",
+        "O" : "$iopadmap$enable"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
@@ -79,12 +83,12 @@
       "linked_object" : "dout_n+dout_p",
       "linked_objects" : {
         "dout_n" : {
-          "location" : "",
+          "location" : "HP_1_7_3N",
           "properties" : {
           }
         },
         "dout_p" : {
-          "location" : "",
+          "location" : "HP_1_6_3P",
           "properties" : {
           }
         }

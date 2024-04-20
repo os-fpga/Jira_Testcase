@@ -21,11 +21,11 @@
   delay_incdec --|--> I_BUF                                                                       |
                  |                                                                                |
                  |                          |-------|-->                                          |
-        data_i --|--> I_BUF --> I_DELAY --> | I_DDR |                                             |
+           din --|--> I_BUF --> I_DELAY --> | I_DDR |                                             |
                  |                          |-------|-->                                          |
                  |                                                                                |
                  |                                           -->|-------|                         |
-                 |                                              | O_DDR | --> O_DELAY --> O_BUF --|--> data_o
+                 |                                              | O_DDR | --> O_DELAY --> O_BUF --|--> dout
                  |                                           -->|-------|                         |
                  |                                                                                |
                  |                                                                        O_BUF --|--> i_delay_value
