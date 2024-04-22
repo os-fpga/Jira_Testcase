@@ -1,0 +1,868 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.04
+Build    : 1.0.39
+Hash     : ed54fc0
+Date     : Apr 21 2024
+Type     : Engineering
+Log Time   : Mon Apr 22 12:00:08 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/synthesis/fabric_fixed_point_arithmetic_parameterized_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/packing/fabric_fixed_point_arithmetic_parameterized_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report fixed_point_arithmetic_parameterized_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top qmult --net_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/packing/fabric_fixed_point_arithmetic_parameterized_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/placement/fabric_fixed_point_arithmetic_parameterized_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/routing/fabric_fixed_point_arithmetic_parameterized_post_synth.route --route
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: fabric_fixed_point_arithmetic_parameterized_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.05 seconds (max_rss 18.5 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/packing/fabric_fixed_point_arithmetic_parameterized_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/placement/fabric_fixed_point_arithmetic_parameterized_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/routing/fabric_fixed_point_arithmetic_parameterized_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/packing/fabric_fixed_point_arithmetic_parameterized_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: fixed_point_arithmetic_parameterized_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 160
+RouterOpts.check_route: FULL
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 1500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: true
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: DETAILED_ROUTING
+AnalysisOpts.post_synth_netlist_unconn_input_handling: GND
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.03 seconds (max_rss 18.5 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/synthesis/fabric_fixed_point_arithmetic_parameterized_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.04 seconds (max_rss 23.8 MiB, delta_rss +5.3 MiB)
+# Clean circuit
+Inferred   45 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred  777 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 28 (28 dangling, 0 constant)
+Swept net(s)        : 517
+Swept block(s)      : 298
+Constant Pins Marked: 822
+# Clean circuit took 0.00 seconds (max_rss 23.8 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 23.8 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 23.8 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 404
+    .output    :      99
+    0-LUT      :       2
+    6-LUT      :     297
+    RS_DSP_MULT:       6
+  Nets  : 400
+    Avg Fanout:     3.1
+    Max Fanout:    76.0
+    Min Fanout:     1.0
+  Netlist Clocks: 0
+# Build Timing Graph
+  Timing Graph Nodes: 1650
+  Timing Graph Edges: 5871
+  Timing Graph Levels: 26
+# Build Timing Graph took 0.00 seconds (max_rss 23.8 MiB, delta_rss +0.0 MiB)
+Netlist contains 0 clocks
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21750'
+Warning 168: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21751'
+Warning 169: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21752'
+Warning 170: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21753'
+Warning 171: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21754'
+Warning 172: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21755'
+Warning 173: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21756'
+Warning 174: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21757'
+Warning 175: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21746'
+Warning 176: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21747'
+Warning 177: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21748'
+Warning 178: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21749'
+Warning 179: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21758'
+Warning 180: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21759'
+Warning 181: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21760'
+Warning 182: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21761'
+Warning 183: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21762'
+Warning 184: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21763'
+Warning 185: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21764'
+Warning 186: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21765'
+Warning 187: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21766'
+Warning 188: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21767'
+Warning 189: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21768'
+Warning 190: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21769'
+Warning 191: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21770'
+Warning 192: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21771'
+Warning 193: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21772'
+Warning 194: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21773'
+Warning 195: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21774'
+Warning 196: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21775'
+Warning 197: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21776'
+Warning 198: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21777'
+Warning 199: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21778'
+Warning 200: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21779'
+Warning 201: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21780'
+Warning 202: set_input_delay command matched but was not applied to primary output 'comp_r.a[0]'
+Warning 203: set_input_delay command matched but was not applied to primary output 'comp_r.a[1]'
+Warning 204: set_input_delay command matched but was not applied to primary output 'comp_r.a[2]'
+Warning 205: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21781'
+Warning 206: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21782'
+Warning 207: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21783'
+Warning 208: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21784'
+Warning 209: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21785'
+Warning 210: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21786'
+Warning 211: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21787'
+Warning 212: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21788'
+Warning 213: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21789'
+Warning 214: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21790'
+Warning 215: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21791'
+Warning 216: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21792'
+Warning 217: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21793'
+Warning 218: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21794'
+Warning 219: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21795'
+Warning 220: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21796'
+Warning 221: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21797'
+Warning 222: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21798'
+Warning 223: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21799'
+Warning 224: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21800'
+Warning 225: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21801'
+Warning 226: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21802'
+Warning 227: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21803'
+Warning 228: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21804'
+Warning 229: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21805'
+Warning 230: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21806'
+Warning 231: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21807'
+Warning 232: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21808'
+Warning 233: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:568:execute$21809'
+Warning 234: set_input_delay command matched but was not applied to primary output '$iopadmap$c[0]'
+Warning 235: set_input_delay command matched but was not applied to primary output '$iopadmap$c[1]'
+Warning 236: set_input_delay command matched but was not applied to primary output '$iopadmap$c[2]'
+Warning 237: set_input_delay command matched but was not applied to primary output '$iopadmap$c[3]'
+Warning 238: set_input_delay command matched but was not applied to primary output '$iopadmap$c[4]'
+Warning 239: set_input_delay command matched but was not applied to primary output '$iopadmap$c[5]'
+Warning 240: set_input_delay command matched but was not applied to primary output '$iopadmap$c[6]'
+Warning 241: set_input_delay command matched but was not applied to primary output '$iopadmap$c[7]'
+Warning 242: set_input_delay command matched but was not applied to primary output '$iopadmap$c[8]'
+Warning 243: set_input_delay command matched but was not applied to primary output '$iopadmap$c[9]'
+Warning 244: set_input_delay command matched but was not applied to primary output '$iopadmap$c[10]'
+Warning 245: set_input_delay command matched but was not applied to primary output '$iopadmap$c[11]'
+Warning 246: set_input_delay command matched but was not applied to primary output '$iopadmap$c[12]'
+Warning 247: set_input_delay command matched but was not applied to primary output '$iopadmap$c[13]'
+Warning 248: set_input_delay command matched but was not applied to primary output '$iopadmap$c[14]'
+Warning 249: set_input_delay command matched but was not applied to primary output '$iopadmap$c[15]'
+Warning 250: set_input_delay command matched but was not applied to primary output '$iopadmap$c[16]'
+Warning 251: set_input_delay command matched but was not applied to primary output '$iopadmap$c[17]'
+Warning 252: set_input_delay command matched but was not applied to primary output '$iopadmap$c[18]'
+Warning 253: set_input_delay command matched but was not applied to primary output '$iopadmap$c[19]'
+Warning 254: set_input_delay command matched but was not applied to primary output '$iopadmap$c[20]'
+Warning 255: set_input_delay command matched but was not applied to primary output '$iopadmap$c[21]'
+Warning 256: set_input_delay command matched but was not applied to primary output '$iopadmap$c[22]'
+Warning 257: set_input_delay command matched but was not applied to primary output '$iopadmap$c[23]'
+Warning 258: set_input_delay command matched but was not applied to primary output '$iopadmap$c[24]'
+Warning 259: set_input_delay command matched but was not applied to primary output '$iopadmap$c[25]'
+Warning 260: set_input_delay command matched but was not applied to primary output '$iopadmap$c[26]'
+Warning 261: set_input_delay command matched but was not applied to primary output '$iopadmap$c[27]'
+Warning 262: set_input_delay command matched but was not applied to primary output '$iopadmap$c[28]'
+Warning 263: set_input_delay command matched but was not applied to primary output '$iopadmap$c[29]'
+Warning 264: set_input_delay command matched but was not applied to primary output '$iopadmap$c[30]'
+Warning 265: set_input_delay command matched but was not applied to primary output '$iopadmap$c[31]'
+
+Applied 3 SDC commands from '/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/packing/fabric_fixed_point_arithmetic_parameterized_openfpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'clk' (Virtual Clock)
+
+# Load Timing Constraints took 0.00 seconds (max_rss 23.8 MiB, delta_rss +0.0 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/packing/fabric_fixed_point_arithmetic_parameterized_post_synth.net'.
+Detected 19 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.06 seconds).
+# Load packing took 0.07 seconds (max_rss 63.3 MiB, delta_rss +39.3 MiB)
+Warning 266: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io               : 99
+   io_output       : 99
+    outpad         : 99
+  clb              : 26
+   clb_lr          : 26
+    fle            : 206
+     fast6         : 73
+      lut6         : 73
+       lut         : 73
+     ble5          : 226
+      lut5         : 226
+       lut         : 226
+  dsp              : 6
+   dsp_lr          : 6
+    RS_DSP_MULT    : 6
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		99	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		26	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		6	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		0	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.02 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.02 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.03 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.02 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.03 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.01 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.11 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.00 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 63.5 MiB, delta_rss +0.0 MiB)
+Warning 267: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 268: Sized nonsensical R=0 transistor to minimum width
+Warning 269: Sized nonsensical R=0 transistor to minimum width
+Warning 270: Sized nonsensical R=0 transistor to minimum width
+Warning 271: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 12.80 seconds (max_rss 479.4 MiB, delta_rss +416.0 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 13.43 seconds (max_rss 479.4 MiB, delta_rss +416.0 MiB)
+
+# Load Placement
+Reading /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/placement/fabric_fixed_point_arithmetic_parameterized_post_synth.place.
+
+Successfully read /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/fixed_point_arithmetic_parameterized/run_1/synth_1_1/impl_1_1_1/placement/fabric_fixed_point_arithmetic_parameterized_post_synth.place.
+
+# Load Placement took 0.04 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 28.06 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+Warning 272: Found no more sample locations for SOURCE in io_top
+Warning 273: Found no more sample locations for OPIN in io_top
+Warning 274: Found no more sample locations for SOURCE in io_right
+Warning 275: Found no more sample locations for OPIN in io_right
+Warning 276: Found no more sample locations for SOURCE in io_bottom
+Warning 277: Found no more sample locations for OPIN in io_bottom
+Warning 278: Found no more sample locations for SOURCE in io_left
+Warning 279: Found no more sample locations for OPIN in io_left
+Warning 280: Found no more sample locations for SOURCE in clb
+Warning 281: Found no more sample locations for OPIN in clb
+Warning 282: Found no more sample locations for SOURCE in dsp
+Warning 283: Found no more sample locations for SOURCE in bram
+## Computing src/opin lookahead took 0.10 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 28.16 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+Confirming router algorithm: TIMING_DRIVEN.
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 701 (100.0%) |***********************************************
+[      0.1:      0.2)   0 (  0.0%) |
+[      0.2:      0.3)   0 (  0.0%) |
+[      0.3:      0.4)   0 (  0.0%) |
+[      0.4:      0.5)   0 (  0.0%) |
+[      0.5:      0.6)   0 (  0.0%) |
+[      0.6:      0.7)   0 (  0.0%) |
+[      0.7:      0.8)   0 (  0.0%) |
+[      0.8:      0.9)   0 (  0.0%) |
+[      0.9:        1)   0 (  0.0%) |
+## Initializing router criticalities took 0.01 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1    0.1     0.0    0  409904     360     701     371 ( 0.027%)   10142 ( 1.1%)      nan      0.000      0.000      0.000      0.000      N/A
+   2    0.1     0.5    3  331448     195     485     106 ( 0.008%)   10183 ( 1.1%)      nan      0.000      0.000      0.000      0.000      N/A
+   3    0.1     0.6    1  204916     119     315      60 ( 0.004%)   10210 ( 1.1%)      nan      0.000      0.000      0.000      0.000      N/A
+   4    0.1     0.8    1  201945      89     253      37 ( 0.003%)   10220 ( 1.1%)      nan      0.000      0.000      0.000      0.000      N/A
+   5    0.1     1.1    1  146845      45     141      20 ( 0.001%)   10240 ( 1.2%)      nan      0.000      0.000      0.000      0.000      N/A
+   6    0.0     1.4    0   97099      31      83      10 ( 0.001%)   10229 ( 1.1%)      nan      0.000      0.000      0.000      0.000      N/A
+   7    0.0     1.9    1   51474      13      53       4 ( 0.000%)   10237 ( 1.2%)      nan      0.000      0.000      0.000      0.000      N/A
+   8    0.0     2.4    0   45935       6      25       2 ( 0.000%)   10246 ( 1.2%)      nan      0.000      0.000      0.000      0.000      N/A
+   9    0.0     3.1    0    3702       3      17       1 ( 0.000%)   10248 ( 1.2%)      nan      0.000      0.000      0.000      0.000      N/A
+  10    0.0     4.1    0   30350       2      16       0 ( 0.000%)   10254 ( 1.2%)      nan      0.000      0.000      0.000      0.000        9
+Restoring best routing
+Critical path: nan ns
+Successfully routed after 10 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 701 (100.0%) |***********************************************
+[      0.1:      0.2)   0 (  0.0%) |
+[      0.2:      0.3)   0 (  0.0%) |
+[      0.3:      0.4)   0 (  0.0%) |
+[      0.4:      0.5)   0 (  0.0%) |
+[      0.5:      0.6)   0 (  0.0%) |
+[      0.6:      0.7)   0 (  0.0%) |
+[      0.7:      0.8)   0 (  0.0%) |
+[      0.8:      0.9)   0 (  0.0%) |
+[      0.9:        1)   0 (  0.0%) |
+Router Stats: total_nets_routed: 863 total_connections_routed: 2089 total_heap_pushes: 1523618 total_heap_pops: 387605 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 1523618 total_external_heap_pops: 387605 total_external_SOURCE_pushes: 2089 total_external_SOURCE_pops: 1095 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 2089 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 2089 total_external_SINK_pushes: 21828 total_external_SINK_pops: 20166 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 54288 total_external_IPIN_pops: 51612 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 2096 total_external_OPIN_pops: 1214 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 1231 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 1231 total_external_CHANX_pushes: 688670 total_external_CHANX_pops: 171279 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 7464 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 7464 total_external_CHANY_pushes: 754647 total_external_CHANY_pops: 142239 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 6793 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 6793 total_number_of_adding_all_rt: 24379 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+# Routing took 0.61 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.03 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: 785902642
+Circuit successfully routed with a channel width factor of 160.
+# Synchronize the packed netlist to routing optimization
+OK: before pb_pin_fixup: pb_route connectivity is consistent in all 131 blocks
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+Found 869 mismatches between routing and packing results.
+Fixed 549 routing traces due to mismatch between routing and packing results.
+OK: after pb_pin_fixup: pb_route connectivity is consistent in all 131 blocks
+# Synchronize the packed netlist to routing optimization took 0.01 seconds (max_rss 479.4 MiB, delta_rss +0.0 MiB)
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io         99                                      1                            0   
+       clb         26                                15.0769                      9.96154   
+       dsp          6                                     35                      16.8333   
+      bram          0                                      0                            0   
+Absorbed logical nets 40 out of 400 nets, 360 nets not absorbed.
+
+
+Average number of bends per net: 7.91111  Maximum # of bends: 54
+
+Number of global nets: 0
+Number of routed nets (nonglobal): 360
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 10254, average net length: 28.4833
+	Maximum net length: 182
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 3803, average wire segments per net: 10.5639
+	Maximum segments used by a net: 71
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)    0 (  0.0%) |
+[      0.9:        1)    0 (  0.0%) |
+[      0.8:      0.9)    0 (  0.0%) |
+[      0.7:      0.8)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.3:      0.4)    0 (  0.0%) |
+[      0.2:      0.3)   22 (  0.4%) |
+[      0.1:      0.2)  118 (  2.1%) |*
+[        0:      0.1) 5530 ( 97.5%) |**********************************************
+Maximum routing channel utilization:      0.29 at (34,19)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       4   0.281      160
+                         1      15   2.906      160
+                         2      19   1.672      160
+                         3      10   1.578      160
+                         4       7   1.547      160
+                         5      10   1.719      160
+                         6       5   0.953      160
+                         7       6   1.312      160
+                         8      25   3.641      160
+                         9      15   2.188      160
+                        10      12   1.906      160
+                        11      29   3.734      160
+                        12      21   3.047      160
+                        13      22   2.547      160
+                        14      13   2.500      160
+                        15      27   4.250      160
+                        16      34   3.312      160
+                        17      46   4.797      160
+                        18      35   6.469      160
+                        19      47   6.469      160
+                        20      25   3.656      160
+                        21      32   2.609      160
+                        22       7   0.781      160
+                        23      20   1.859      160
+                        24      12   1.797      160
+                        25      30   3.469      160
+                        26       4   0.781      160
+                        27       6   0.812      160
+                        28      12   1.094      160
+                        29      18   1.094      160
+                        30       3   0.203      160
+                        31       7   0.375      160
+                        32       4   0.312      160
+                        33       3   0.234      160
+                        34       9   0.422      160
+                        35       6   0.406      160
+                        36       7   0.672      160
+                        37       3   0.375      160
+                        38       3   0.297      160
+                        39       4   0.312      160
+                        40       9   0.891      160
+                        41       2   0.328      160
+                        42       4   0.453      160
+                        43       8   0.688      160
+                        44       6   0.734      160
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       1   0.087      160
+                         1       3   0.217      160
+                         2       0   0.000      160
+                         3       1   0.022      160
+                         4       1   0.022      160
+                         5       1   0.043      160
+                         6       0   0.000      160
+                         7       1   0.022      160
+                         8       3   0.130      160
+                         9       6   0.348      160
+                        10      14   0.717      160
+                        11       9   0.891      160
+                        12       3   0.217      160
+                        13       3   0.239      160
+                        14       4   0.413      160
+                        15       2   0.326      160
+                        16       1   0.261      160
+                        17       3   0.304      160
+                        18       5   0.370      160
+                        19       2   0.239      160
+                        20       2   0.326      160
+                        21       7   1.000      160
+                        22       9   1.739      160
+                        23      31   2.674      160
+                        24       5   0.783      160
+                        25      11   2.043      160
+                        26      12   1.435      160
+                        27       5   0.957      160
+                        28       5   0.935      160
+                        29       5   1.370      160
+                        30       5   1.283      160
+                        31      29   3.696      160
+                        32      39   7.065      160
+                        33      36   7.391      160
+                        34      38   9.522      160
+                        35      43   8.500      160
+                        36      33   6.587      160
+                        37      18   1.717      160
+                        38       7   1.565      160
+                        39      16   4.261      160
+                        40       7   2.304      160
+                        41       8   2.196      160
+                        42      20   3.587      160
+                        43      31   6.717      160
+                        44       8   3.587      160
+                        45      10   3.348      160
+                        46      10   3.696      160
+                        47      27   5.087      160
+                        48       5   1.674      160
+                        49      16   1.413      160
+                        50       5   0.609      160
+                        51      13   0.783      160
+                        52       1   0.022      160
+                        53       3   0.109      160
+                        54       2   0.283      160
+                        55       6   0.674      160
+                        56       5   0.717      160
+                        57       9   1.196      160
+                        58       4   0.630      160
+                        59       3   0.609      160
+                        60       4   0.565      160
+                        61       0   0.000      160
+                        62       1   0.022      160
+
+Total tracks in x-direction: 7200, in y-direction: 10080
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 1.7908e+08
+	Total used logic block area: 4.68924e+06
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 3.68034e+07, per logic tile: 12501.2
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      1  89280
+                                                      Y      1  88704
+                                                      X      4  93600
+                                                      Y      4  94752
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1     0.00997
+                                             4      0.0116
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1     0.00825
+                                             4      0.0116
+
+Segment occupancy by length: Length utilization
+                             ------ -----------
+                             L1         0.00911
+                             L4          0.0116
+
+Segment occupancy by type: name type utilization
+                           ---- ---- -----------
+                             L1    0     0.00911
+                             L4    1      0.0116
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+
+Final critical path delay (least slack): nan ns
+Final setup Worst Negative Slack (sWNS): 0 ns
+Final setup Total Negative Slack (sTNS): 0 ns
+
+Final setup slack histogram:
+
+Final geomean non-virtual intra-domain period: nan ns (nan MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: nan ns (nan MHz)
+
+Writing Implementation Netlist: fabric_qmult_post_synthesis.v
+Writing Implementation Netlist: fabric_qmult_post_synthesis.blif
+Writing Implementation SDF    : fabric_qmult_post_synthesis.sdf
+Incr Slack updates 1 in 2.9097e-05 sec
+Full Max Req/Worst Slack updates 1 in 5.235e-06 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 4.0726e-05 sec
+Flow timing analysis took 0.0496569 seconds (0.0476688 STA, 0.0019881 slack) (12 full updates: 0 setup, 0 hold, 12 combined).
+VPR succeeded
+The entire flow of VPR took 43.05 seconds (max_rss 479.4 MiB)
+Incr Slack updates 11 in 0.000283283 sec
+Full Max Req/Worst Slack updates 11 in 6.4642e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 11 in 0.000380036 sec
