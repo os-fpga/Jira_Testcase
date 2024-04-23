@@ -1,0 +1,114 @@
+{
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$top.clk",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk",
+        "O" : "$iopadmap$clk"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "PLL",
+      "name" : "pll",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+            "OUT3_ROUTE_TO_FABRIC_CLK" : "0"
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "$iopadmap$clk",
+        "CLK_OUT_DIV4" : "pll_clk"
+      },
+      "parameters" : {
+        "OUT3_ROUTE_TO_FABRIC_CLK" : "0",
+        "PLL_DIV" : "1",
+        "PLL_MULT" : "16",
+        "PLL_POST_DIV" : "2"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pll_clock_pin_is_valid__,__check_fabric_clock_resource__,__check_pll_clock_pin_resource__,__allocate_pll_clock_pin_resource__,__update_fabric_clock_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$top.din",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "$iopadmap$din"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$top.dout",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "O_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$dout",
+        "O" : "dout"
+      },
+      "parameters" : {
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    }
+  ]
+}

@@ -17,13 +17,24 @@
     "  Trace \\I_BUF --> \\CLK_BUF",
     "    Try \\I_BUF $iopadmap$top.clk out connection: $iopadmap$clk",
     "      Connected $auto$clkbufmap.cc:265:execute$428",
-    "        Additional Connection: $auto$clkbufmap.cc:266:execute$429",
+    "  Trace \\I_BUF --> \\PLL",
     "  Trace \\I_BUF --> \\I_DELAY",
-    "  Trace \\I_DELAY --> \\I_DDR",
     "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_DDR",
     "  Trace \\O_BUF --> \\O_DELAY",
-    "  Trace \\O_DELAY --> \\O_DDR",
     "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Assign location HP_1_CC_10_5P (and properties) to Port clk",
+    "  Assign location HP_1_0_0P (and properties) to Port din",
+    "  Assign location HP_1_1_0N (and properties) to Port dout",
     "End of IO Analysis"
   ],
   "instances" : [
@@ -33,7 +44,7 @@
       "linked_object" : "clk",
       "linked_objects" : {
         "clk" : {
-          "location" : "",
+          "location" : "HP_1_CC_10_5P",
           "properties" : {
           }
         }
@@ -47,39 +58,23 @@
       }
     },
     {
-      "module" : "WIRE",
-      "name" : "AUTO_CLK_BUF_clk_#0",
-      "linked_object" : "clk",
-      "linked_objects" : {
-        "clk" : {
-          "location" : "",
-          "properties" : {
-          }
-        }
-      },
-      "connectivity" : {
-        "I" : "$iopadmap$clk",
-        "O" : "$auto$clkbufmap.cc:266:execute$429"
-      },
-      "parameters" : {
-      }
-    },
-    {
       "module" : "CLK_BUF",
       "name" : "$auto$clkbufmap.cc:265:execute$428",
       "linked_object" : "clk",
       "linked_objects" : {
         "clk" : {
-          "location" : "",
+          "location" : "HP_1_CC_10_5P",
           "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
           }
         }
       },
       "connectivity" : {
-        "I" : "$auto$clkbufmap.cc:266:execute$429",
+        "I" : "$iopadmap$clk",
         "O" : "$auto$clkbufmap.cc:298:execute$430"
       },
       "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
       }
     },
     {
@@ -88,7 +83,7 @@
       "linked_object" : "din",
       "linked_objects" : {
         "din" : {
-          "location" : "",
+          "location" : "HP_1_0_0P",
           "properties" : {
           }
         }
@@ -107,7 +102,7 @@
       "linked_object" : "dout",
       "linked_objects" : {
         "dout" : {
-          "location" : "",
+          "location" : "HP_1_1_0N",
           "properties" : {
           }
         }

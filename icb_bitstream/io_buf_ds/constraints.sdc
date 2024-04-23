@@ -1,11 +1,12 @@
-set_property mode Mode_BP_SDR_A_RX HR_1_2_1P
-set_pin_loc in_P HR_1_2_1P
+# pin locations
+set_property mode MODE_RATE_3_A_RX HP_1_4_2P
+set_pin_loc din_p HP_1_4_2P
 
-set_property mode Mode_BP_SDR_A_RX HR_1_2_1P
-set_pin_loc in_N HR_1_3_1N
+set_property mode MODE_RATE_3_B_RX HP_1_5_2N
+set_pin_loc din_n HP_1_5_2N
 
-set_property mode Mode_BP_SDR_A_TX HR_1_14_7P
-set_pin_loc out_P HR_1_14_7P
+set_property mode MODE_RATE_3_A_TX HP_1_6_3P
+set_pin_loc dout_p HP_1_6_3P
 
-set_property mode Mode_BP_SDR_A_TX HR_1_14_7P
-set_pin_loc out_N HR_1_15_7P
+set_property mode MODE_RATE_3_B_TX HP_1_7_3N
+set_pin_loc dout_n HP_1_7_3N

@@ -1,0 +1,2450 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.04
+Build    : 1.0.39
+Hash     : ed54fc0
+Date     : Apr 21 2024
+Type     : Engineering
+Log Time   : Mon Apr 22 11:57:51 2024 GMT
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.18+10 (git sha1 2be6af90e, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `fixed_point_arithmetic_parameterized.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Generating RTLIL representation for module `\CARRY'.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DSP19X2'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\I_DELAY'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_DELAY'.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\PLL'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qadd.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qadd.v' to AST representation.
+Generating RTLIL representation for module `\qadd'.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qadd.v:36.1-72.4 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v' to AST representation.
+Lexer warning: The SystemVerilog keyword `bit' (at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v:39) is not recognized unless read_verilog is called with -sv!
+Lexer warning: The SystemVerilog keyword `bit' (at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v:52) is not recognized unless read_verilog is called with -sv!
+Lexer warning: The SystemVerilog keyword `bit' (at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v:72) is not recognized unless read_verilog is called with -sv!
+Lexer warning: The SystemVerilog keyword `bit' (at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v:79) is not recognized unless read_verilog is called with -sv!
+Lexer warning: The SystemVerilog keyword `bit' (at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v:83) is not recognized unless read_verilog is called with -sv!
+Lexer warning: The SystemVerilog keyword `bit' (at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qdiv.v:83) is not recognized unless read_verilog is called with -sv!
+Generating RTLIL representation for module `\qdiv'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v' to AST representation.
+Generating RTLIL representation for module `\qmult'.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48.2-59.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:61.2-64.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:66.2-77.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+5. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v' to AST representation.
+Generating RTLIL representation for module `\qtwosComp'.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:35.2-38.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:40.2-43.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:45.2-48.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Successfully finished Verilog frontend.
+
+6. Executing HIERARCHY pass (managing design hierarchy).
+
+6.1. Analyzing design hierarchy..
+Top module:  \qmult
+Used module:     \qtwosComp
+Parameter 1 (\Q) = 15
+Parameter 2 (\N) = 32
+
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\qtwosComp'.
+Parameter 1 (\Q) = 15
+Parameter 2 (\N) = 32
+Generating RTLIL representation for module `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp'.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:35.2-38.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:40.2-43.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Note: Assuming pure combinatorial block at /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:45.2-48.5 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Parameter 1 (\Q) = 15
+Parameter 2 (\N) = 32
+Found cached RTLIL representation for module `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp'.
+Parameter 1 (\Q) = 15
+Parameter 2 (\N) = 32
+Found cached RTLIL representation for module `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp'.
+
+6.3. Analyzing design hierarchy..
+Top module:  \qmult
+Used module:     $paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp
+
+6.4. Analyzing design hierarchy..
+Top module:  \qmult
+Used module:     $paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp
+Removing unused module `\qtwosComp'.
+Removing unused module `\qdiv'.
+Removing unused module `\qadd'.
+Removed 3 unused modules.
+Mapping positional arguments of cell qmult.comp_r ($paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp).
+Mapping positional arguments of cell qmult.comp_b ($paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp).
+Mapping positional arguments of cell qmult.comp_a ($paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp).
+
+7. Executing synth_rs pass: v0.4.218
+
+7.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+7.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v' to AST representation.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v:10.1-19.10.
+Generating RTLIL representation for module `\CARRY'.
+Successfully finished Verilog frontend.
+
+7.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+7.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFRE'.
+Successfully finished Verilog frontend.
+
+7.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v' to AST representation.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Successfully finished Verilog frontend.
+
+7.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT1'.
+Successfully finished Verilog frontend.
+
+7.7. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v' to AST representation.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v:10.1-21.10.
+Generating RTLIL representation for module `\LUT2'.
+Successfully finished Verilog frontend.
+
+7.8. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v' to AST representation.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v:10.1-22.10.
+Generating RTLIL representation for module `\LUT3'.
+Successfully finished Verilog frontend.
+
+7.9. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v' to AST representation.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v:11.1-25.10.
+Generating RTLIL representation for module `\LUT4'.
+Successfully finished Verilog frontend.
+
+7.10. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v' to AST representation.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v:10.1-24.10.
+Generating RTLIL representation for module `\LUT5'.
+Successfully finished Verilog frontend.
+
+7.11. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v' to AST representation.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v:10.1-25.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+7.12. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v' to AST representation.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v:10.1-17.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Successfully finished Verilog frontend.
+
+7.13. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v' to AST representation.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v:10.1-22.10.
+Generating RTLIL representation for module `\O_BUF'.
+Successfully finished Verilog frontend.
+
+7.14. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v' to AST representation.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:10.1-324.10.
+Generating RTLIL representation for module `\DSP38'.
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:0: Warning: System task `$display' outside initial block is unsupported.
+Successfully finished Verilog frontend.
+
+7.15. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v' to AST representation.
+Replacing existing blackbox module `\TDP_RAM36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:2.1-29.10.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Replacing existing blackbox module `\TDP_RAM18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:33.1-84.10.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Replacing existing blackbox module `\DSP19X2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:116.1-149.10.
+Generating RTLIL representation for module `\DSP19X2'.
+Successfully finished Verilog frontend.
+
+7.16. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:112.1-540.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:542.1-951.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:953.1-1356.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+7.17. Executing HIERARCHY pass (managing design hierarchy).
+
+7.17.1. Analyzing design hierarchy..
+Top module:  \qmult
+Used module:     $paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp
+
+7.17.2. Analyzing design hierarchy..
+Top module:  \qmult
+Used module:     $paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp
+Removed 0 unused modules.
+
+7.18. Executing PROC pass (convert processes to netlists).
+
+7.18.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.18.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:66$68 in module qmult.
+Marked 2 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48$63 in module qmult.
+Removed a total of 0 dead cases.
+
+7.18.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 3 redundant assignments.
+Promoted 4 assignments to connections.
+
+7.18.4. Executing PROC_INIT pass (extract init attributes).
+
+7.18.5. Executing PROC_ARST pass (detect async resets in processes).
+
+7.18.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~3 debug messages>
+
+7.18.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:45$86'.
+Creating decoders for process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:40$83'.
+Creating decoders for process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:35$82'.
+Creating decoders for process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:66$68'.
+     1/2: $0\retVal[31:0] [30:0]
+     2/2: $0\retVal[31:0] [31]
+Creating decoders for process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:61$66'.
+Creating decoders for process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48$63'.
+     1/2: $0\b_mult[63:0]
+     2/2: $0\a_mult[63:0]
+
+7.18.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.\out' from process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:45$86'.
+No latch inferred for signal `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.\flip' from process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:40$83'.
+No latch inferred for signal `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.\data' from process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:35$82'.
+No latch inferred for signal `\qmult.\retVal' from process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:66$68'.
+No latch inferred for signal `\qmult.\result' from process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:61$66'.
+No latch inferred for signal `\qmult.\a_mult' from process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48$63'.
+No latch inferred for signal `\qmult.\b_mult' from process `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48$63'.
+
+7.18.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+7.18.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.18.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:45$86'.
+Removing empty process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:40$83'.
+Removing empty process `$paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:35$82'.
+Found and cleaned up 1 empty switch in `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:66$68'.
+Removing empty process `qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:66$68'.
+Removing empty process `qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:61$66'.
+Found and cleaned up 2 empty switches in `\qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48$63'.
+Removing empty process `qmult.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:48$63'.
+Cleaned up 3 empty switches.
+
+7.18.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.
+Optimizing module qmult.
+<suppressed ~6 debug messages>
+
+7.19. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+7.20. Executing DEMUXMAP pass.
+
+7.21. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$efc152f96583443a2c4631e66c89f4ef0fe8c2c9\qtwosComp.
+<suppressed ~3 debug messages>
+
+7.22. Executing DEMUXMAP pass.
+
+7.23. Executing TRIBUF pass.
+
+7.24. Executing TRIBUF pass.
+
+7.25. Executing DEMINOUT pass (demote inout ports to input or output).
+
+7.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.27. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 35 unused wires.
+<suppressed ~4 debug messages>
+
+7.28. Executing CHECK pass (checking for obvious problems).
+Checking module qmult...
+Found and reported 0 problems.
+
+7.29. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                 30
+   Number of wire bits:           1378
+   Number of public wires:          25
+   Number of public wire bits:    1373
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $add                            3
+     $logic_and                      2
+     $logic_or                       1
+     $mul                            1
+     $mux                            4
+     $not                            5
+
+7.30. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.31. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.32. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $procmux$95: { 32'00000000000000000000000000000000 \b } -> { 33'000000000000000000000000000000000 \b [30:0] }
+      Replacing known input bits on port A of cell $procmux$98: { 32'00000000000000000000000000000000 \a } -> { 33'000000000000000000000000000000000 \a [30:0] }
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.33. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.34. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.35. Executing OPT_SHARE pass.
+
+7.36. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.37. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.39. Executing FSM pass (extract and optimize FSM).
+
+7.39.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+7.39.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+7.39.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+7.39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.39.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+7.39.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+7.39.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+7.39.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+7.40. Executing WREDUCE pass (reducing word size of cells).
+Removed top 18 bits (of 64) from port Y of cell qmult.$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67 ($mul).
+Removed top 33 bits (of 64) from port A of cell qmult.$flatten\comp_a.$not$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:42$85 ($not).
+Removed top 31 bits (of 32) from port B of cell qmult.$flatten\comp_a.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+Removed top 33 bits (of 64) from port A of cell qmult.$flatten\comp_b.$not$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:42$85 ($not).
+Removed top 31 bits (of 32) from port B of cell qmult.$flatten\comp_b.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+Removed top 33 bits (of 64) from port A of cell qmult.$flatten\comp_r.$not$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:42$85 ($not).
+Removed top 31 bits (of 32) from port B of cell qmult.$flatten\comp_r.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+Removed top 33 bits (of 64) from port Y of cell qmult.$flatten\comp_r.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+Removed top 33 bits (of 64) from port A of cell qmult.$flatten\comp_r.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+Removed top 33 bits (of 64) from port Y of cell qmult.$flatten\comp_r.$not$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:42$85 ($not).
+Removed top 33 bits (of 64) from wire qmult.r_ext.
+Removed top 18 bits (of 64) from wire qmult.result.
+
+7.41. Executing PEEPOPT pass (run peephole optimizers).
+
+7.42. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+7.43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.44. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.45. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.46. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.47. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.48. Executing OPT_SHARE pass.
+
+7.49. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.50. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.51. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.52. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.53. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.54. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.55. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.56. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.57. Executing OPT_SHARE pass.
+
+7.58. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.59. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.60. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.61. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.62. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.63. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.64. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.65. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.66. Executing OPT_SHARE pass.
+
+7.67. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.68. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.69. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.70. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.71. Executing WREDUCE pass (reducing word size of cells).
+
+7.72. Executing PEEPOPT pass (run peephole optimizers).
+
+7.73. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.74. Executing DEMUXMAP pass.
+
+7.75. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+7.76. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                 30
+   Number of wire bits:           1327
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $add                            3
+     $logic_and                      2
+     $logic_or                       1
+     $mul                            1
+     $mux                            4
+     $not                            5
+
+7.77. Executing RS_DSP_MULTADD pass.
+
+7.78. Executing WREDUCE pass (reducing word size of cells).
+
+7.79. Executing RS_DSP_MACC pass.
+
+7.80. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.81. Executing TECHMAP pass (map to technology primitives).
+
+7.81.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+7.81.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~58 debug messages>
+
+7.82. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                 33
+   Number of wire bits:           1501
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $__soft_mul                     1
+     $add                            3
+     $logic_and                      2
+     $logic_or                       1
+     $mux                            4
+     $not                            5
+
+7.83. Executing TECHMAP pass (map to technology primitives).
+
+7.83.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp_check_maxwidth.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+7.83.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~58 debug messages>
+
+7.84. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                 36
+   Number of wire bits:           1675
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $__soft_mul                     1
+     $add                            3
+     $logic_and                      2
+     $logic_or                       1
+     $mux                            4
+     $not                            5
+
+7.85. Executing TECHMAP pass (map to technology primitives).
+
+7.85.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+7.85.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~446 debug messages>
+
+7.86. Executing TECHMAP pass (map to technology primitives).
+
+7.86.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+7.86.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7.87. Executing TECHMAP pass (map to technology primitives).
+
+7.87.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_MUL20X18'.
+Generating RTLIL representation for module `\$__RS_MUL10X9'.
+Successfully finished Verilog frontend.
+
+7.87.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~70 debug messages>
+
+7.88. Executing RS_DSP_SIMD pass.
+
+7.89. Executing TECHMAP pass (map to technology primitives).
+
+7.89.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp_final_map.v' to AST representation.
+Generating RTLIL representation for module `\dsp_t1_20x18x64_cfg_ports'.
+Generating RTLIL representation for module `\dsp_t1_10x9x32_cfg_params'.
+Successfully finished Verilog frontend.
+
+7.89.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~43 debug messages>
+
+7.90. Executing TECHMAP pass (map to technology primitives).
+
+7.90.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Successfully finished Verilog frontend.
+
+7.90.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+7.91. Executing rs_pack_dsp_regs pass.
+<suppressed ~24 debug messages>
+
+7.92. Executing RS_DSP_IO_REGS pass.
+
+7.93. Executing TECHMAP pass (map to technology primitives).
+
+7.93.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp38_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSP_MULTACC'.
+Generating RTLIL representation for module `\RS_DSP_MULT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP_MULTACC_REGIN_REGOUT'.
+Successfully finished Verilog frontend.
+
+7.93.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~37 debug messages>
+
+7.94. Executing TECHMAP pass (map to technology primitives).
+
+7.94.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/dsp19x2_map.v' to AST representation.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULT_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTADD_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGOUT'.
+Generating RTLIL representation for module `\RS_DSPX2_MULTACC_REGIN_REGOUT'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Successfully finished Verilog frontend.
+
+7.94.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~15 debug messages>
+
+7.95. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                496
+   Number of wire bits:          25937
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 40
+     $add                           15
+     $logic_and                      2
+     $logic_or                       1
+     $mul                            1
+     $mux                            4
+     $not                            5
+     DSP38                          12
+
+7.96. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module qmult:
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$114 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$114 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$114 ($add).
+  creating $macc model for $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last ($mul).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:194$110 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$108 ($add).
+  creating $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$106 ($add).
+  creating $macc model for $flatten\comp_a.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+  creating $macc model for $flatten\comp_b.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+  creating $macc model for $flatten\comp_r.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87 ($add).
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$106.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$106.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$114 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$106.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$106 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$108.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$114 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$114 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116.
+  merging $macc model for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:241$116 into $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118.
+  creating $alu model for $macc $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:194$110.
+  creating $alu model for $macc $flatten\comp_a.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87.
+  creating $alu model for $macc $flatten\comp_b.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87.
+  creating $alu model for $macc $flatten\comp_r.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87.
+  creating $macc cell for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118: $auto$alumacc.cc:365:replace_macc$167
+  creating $macc cell for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:176$108: $auto$alumacc.cc:365:replace_macc$168
+  creating $macc cell for $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last: $auto$alumacc.cc:365:replace_macc$169
+  creating $macc cell for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:259$118: $auto$alumacc.cc:365:replace_macc$170
+  creating $alu cell for $flatten\comp_r.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87: $auto$alumacc.cc:485:replace_alu$171
+  creating $alu cell for $flatten\comp_b.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87: $auto$alumacc.cc:485:replace_alu$174
+  creating $alu cell for $flatten\comp_a.$add$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qtwosComp.v:47$87: $auto$alumacc.cc:485:replace_alu$177
+  creating $alu cell for $techmap$mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.$add$/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/mul2dsp.v:194$110: $auto$alumacc.cc:485:replace_alu$180
+  created 4 $alu and 4 $macc cells.
+
+7.97. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+<suppressed ~1 debug messages>
+
+7.98. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.99. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.100. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.101. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.102. Executing OPT_SHARE pass.
+
+7.103. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.104. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 10 unused cells and 443 unused wires.
+<suppressed ~12 debug messages>
+
+7.105. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.106. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.107. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.108. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.109. Executing OPT_SHARE pass.
+
+7.110. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.111. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.112. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 2
+
+7.113. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                 61
+   Number of wire bits:           2559
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 29
+     $alu                            4
+     $logic_and                      2
+     $logic_or                       1
+     $macc                           4
+     $mux                            4
+     $not                            5
+     DSP38                           9
+
+7.114. Executing MEMORY pass.
+
+7.114.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+7.114.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+7.114.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+7.114.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+7.114.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+7.114.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.114.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+7.114.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+7.114.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.114.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+7.115. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                 61
+   Number of wire bits:           2559
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 29
+     $alu                            4
+     $logic_and                      2
+     $logic_or                       1
+     $macc                           4
+     $mux                            4
+     $not                            5
+     DSP38                           9
+
+7.116. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~4 debug messages>
+
+7.117. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.118. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+7.119. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+7.120. Executing Rs_BRAM_Split pass.
+
+7.121. Executing TECHMAP pass (map to technology primitives).
+
+7.121.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new_version.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_map_new_version.v' to AST representation.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_TDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM18_SDP'.
+Generating RTLIL representation for module `\$__RS_FACTOR_BRAM36_SDP'.
+Successfully finished Verilog frontend.
+
+7.121.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+7.122. Executing TECHMAP pass (map to technology primitives).
+
+7.122.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new_version.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/brams_final_map_new_version.v' to AST representation.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Successfully finished Verilog frontend.
+
+7.122.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+7.123. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+7.124. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.125. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.126. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+7.127. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.128. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.129. Executing OPT_SHARE pass.
+
+7.130. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.131. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.132. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.133. Executing PMUXTREE pass.
+
+7.134. Executing MUXPACK pass ($mux cell cascades to $pmux).
+Converted 0 (p)mux cells into 0 pmux cells.
+<suppressed ~4 debug messages>
+
+7.135. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+7.136. Executing TECHMAP pass (map to technology primitives).
+
+7.136.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.136.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_rs_alu'.
+Successfully finished Verilog frontend.
+
+7.136.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper maccmap for cells of type $macc.
+  add \b_mult * \a_mult [63:60] (64x4 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[2] [9:0] 36'000000000000000000000000000000000000 } (46 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[1] [27:0] 18'000000000000000000 } (46 bits, unsigned)
+  add $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[2].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[0] (38 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[2] [9:0] 36'000000000000000000000000000000000000 } (46 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[1] [27:0] 18'000000000000000000 } (46 bits, unsigned)
+  add $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[1].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[0] (38 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[2] [5:0] 40'0000000000000000000000000000000000000000 } (46 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[1] [25:0] 20'00000000000000000000 } (46 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[2] [9:0] 36'000000000000000000000000000000000000 } (46 bits, unsigned)
+  add { $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[1] [27:0] 18'000000000000000000 } (46 bits, unsigned)
+  add $mul$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/fixed_point_arithmetic_parameterized/results_dir/.././rtl/qmult.v:63$67.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.blk.partial[0] (38 bits, unsigned)
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~3318 debug messages>
+
+7.137. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:               1901
+   Number of wire bits:          26568
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6345
+     $_AND_                       2514
+     $_MUX_                        593
+     $_NOT_                        594
+     $_OR_                        1121
+     $_XOR_                       1514
+     DSP38                           9
+
+7.138. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+<suppressed ~3287 debug messages>
+
+7.139. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+<suppressed ~2367 debug messages>
+Removed a total of 789 cells.
+
+7.140. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.141. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.142. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.143. Executing OPT_SHARE pass.
+
+7.144. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.02 sec.]
+
+7.145. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 1446 unused cells and 1740 unused wires.
+<suppressed ~1447 debug messages>
+
+7.146. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.147. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.148. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.149. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.150. Executing OPT_SHARE pass.
+
+7.151. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.152. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.153. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 2
+
+7.154. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+<suppressed ~28 debug messages>
+
+7.155. Executing TECHMAP pass (map to technology primitives).
+
+7.155.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.155.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+7.156. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                230
+   Number of wire bits:           3021
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                892
+     $_AND_                        363
+     $_MUX_                         90
+     $_NOT_                         99
+     $_OR_                          83
+     $_XOR_                        251
+     DSP38                           6
+
+7.157. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.158. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.159. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.160. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.161. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.162. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.163. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.164. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.165. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.166. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.167. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.168. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.169. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.170. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.171. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.172. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.173. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.174. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.175. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.176. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.177. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.178. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.179. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.180. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.181. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.182. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                230
+   Number of wire bits:           3021
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                892
+     $_AND_                        363
+     $_MUX_                         90
+     $_NOT_                         99
+     $_OR_                          83
+     $_XOR_                        251
+     DSP38                           6
+
+   Number of Generic REGs:          0
+
+ABC-DFF iteration : 1
+
+7.183. Executing ABC pass (technology mapping using ABC).
+
+7.183.1. Summary of detected clock domains:
+  892 cells in clk={ }, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+7.183.2. Extracting gate netlist of module `\qmult' to `<abc-temp-dir>/input.blif'..
+No matching clock domain found. Not extracting any FF cells.
+Extracted 886 gates and 1051 wires to a netlist network with 165 inputs and 95 outputs (dfl=1).
+
+7.183.2.1. Executing ABC.
+[Time = 0.11 sec.]
+
+7.184. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.185. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+7.186. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.187. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.188. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.189. Executing OPT_SHARE pass.
+
+7.190. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.191. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 449 unused wires.
+<suppressed ~1 debug messages>
+
+7.192. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 2
+
+7.193. Executing ABC pass (technology mapping using ABC).
+
+7.193.1. Summary of detected clock domains:
+  805 cells in clk={ }, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+7.193.2. Extracting gate netlist of module `\qmult' to `<abc-temp-dir>/input.blif'..
+No matching clock domain found. Not extracting any FF cells.
+Extracted 799 gates and 964 wires to a netlist network with 165 inputs and 93 outputs (dfl=1).
+
+7.193.2.1. Executing ABC.
+[Time = 0.11 sec.]
+
+7.194. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.195. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.196. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.197. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.198. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.199. Executing OPT_SHARE pass.
+
+7.200. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.201. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 964 unused wires.
+<suppressed ~1 debug messages>
+
+7.202. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 3
+
+7.203. Executing ABC pass (technology mapping using ABC).
+
+7.203.1. Summary of detected clock domains:
+  806 cells in clk={ }, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+7.203.2. Extracting gate netlist of module `\qmult' to `<abc-temp-dir>/input.blif'..
+No matching clock domain found. Not extracting any FF cells.
+Extracted 800 gates and 965 wires to a netlist network with 165 inputs and 93 outputs (dfl=2).
+
+7.203.2.1. Executing ABC.
+[Time = 0.23 sec.]
+
+7.204. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.205. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.206. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.207. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.208. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.209. Executing OPT_SHARE pass.
+
+7.210. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.211. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 965 unused wires.
+<suppressed ~1 debug messages>
+
+7.212. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+ABC-DFF iteration : 4
+
+7.213. Executing ABC pass (technology mapping using ABC).
+
+7.213.1. Summary of detected clock domains:
+  654 cells in clk={ }, en={ }, arst={ }, srst={ }
+
+  #logic partitions = 1
+
+7.213.2. Extracting gate netlist of module `\qmult' to `<abc-temp-dir>/input.blif'..
+No matching clock domain found. Not extracting any FF cells.
+Extracted 648 gates and 813 wires to a netlist network with 165 inputs and 93 outputs (dfl=2).
+
+7.213.2.1. Executing ABC.
+[Time = 0.21 sec.]
+
+7.214. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.215. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.216. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.217. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.218. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.219. Executing OPT_SHARE pass.
+
+7.220. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.221. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 813 unused wires.
+<suppressed ~1 debug messages>
+
+7.222. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+select with DFL2 synthesis (thresh-logic=0.920000, thresh_dff=0.980000)
+
+7.223. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+7.224. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.225. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.226. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.227. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.228. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.229. Executing OPT_SHARE pass.
+
+7.230. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.231. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.232. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.233. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.234. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.235. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.236. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.237. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.238. Executing OPT_SHARE pass.
+
+7.239. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.240. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.241. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.242. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.243. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.244. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.245. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.246. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.247. Executing OPT_SHARE pass.
+
+7.248. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.249. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.250. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.251. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.252. Executing BMUXMAP pass.
+
+7.253. Executing DEMUXMAP pass.
+
+7.254. Executing ABC pass (technology mapping using ABC).
+
+7.254.1. Extracting gate netlist of module `\qmult' to `<abc-temp-dir>/input.blif'..
+Extracted 648 gates and 813 wires to a netlist network with 165 inputs and 93 outputs (dfl=1).
+
+7.254.1.1. Executing ABC.
+DE:   Version : 7.7
+DE:   #PIs = 165  #Luts =   250  Max Lvl =  12  Avg Lvl =   4.60  [   0.06 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 165  #Luts =   273  Max Lvl =   7  Avg Lvl =   3.96  [   0.66 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 165  #Luts =   255  Max Lvl =   7  Avg Lvl =   4.06  [   1.15 sec. at Pass 2]{map}[6]
+DE:   #PIs = 165  #Luts =   249  Max Lvl =   7  Avg Lvl =   4.27  [   1.11 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 165  #Luts =   255  Max Lvl =   6  Avg Lvl =   3.88  [   1.39 sec. at Pass 4]{map}[16]
+DE:   #PIs = 165  #Luts =   249  Max Lvl =   6  Avg Lvl =   3.97  [   1.33 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 165  #Luts =   247  Max Lvl =   6  Avg Lvl =   3.94  [   1.34 sec. at Pass 6]{map}[16]
+DE:   #PIs = 165  #Luts =   247  Max Lvl =   6  Avg Lvl =   3.94  [   1.33 sec. at Pass 7]{postMap}[16]
+DE:   #PIs = 165  #Luts =   245  Max Lvl =   6  Avg Lvl =   3.97  [   1.40 sec. at Pass 8]{map}[16]
+DE:   #PIs = 165  #Luts =   241  Max Lvl =   6  Avg Lvl =   3.53  [   1.28 sec. at Pass 9]{postMap}[16]
+DE:   #PIs = 165  #Luts =   241  Max Lvl =   6  Avg Lvl =   3.53  [   1.32 sec. at Pass 10]{map}[16]
+DE:   #PIs = 165  #Luts =   239  Max Lvl =   6  Avg Lvl =   3.54  [   1.41 sec. at Pass 11]{postMap}[16]
+DE:   #PIs = 165  #Luts =   239  Max Lvl =   6  Avg Lvl =   3.54  [   1.35 sec. at Pass 12]{map}[16]
+DE:   #PIs = 165  #Luts =   239  Max Lvl =   6  Avg Lvl =   3.54  [   1.27 sec. at Pass 13]{postMap}[16]
+DE:   #PIs = 165  #Luts =   238  Max Lvl =   6  Avg Lvl =   3.58  [   1.37 sec. at Pass 14]{map}[16]
+DE:   #PIs = 165  #Luts =   237  Max Lvl =   6  Avg Lvl =   3.34  [   1.19 sec. at Pass 15]{postMap}[16]
+DE:   #PIs = 165  #Luts =   237  Max Lvl =   6  Avg Lvl =   3.34  [   1.29 sec. at Pass 16]{map}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.17 sec. at Pass 17]{postMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.30 sec. at Pass 18]{map}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.19 sec. at Pass 19]{postMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.43 sec. at Pass 20]{map}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   0.90 sec. at Pass 21]{pushMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   0.90 sec. at Pass 22]{pushMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.00 sec. at Pass 22]{pushMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   0.50 sec. at Pass 23]{finalMap}[16]
+DE:   
+DE:   total time =   28.84 sec.
+[Time = 30.90 sec.]
+
+7.255. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.256. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.257. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.258. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.259. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.260. Executing OPT_SHARE pass.
+
+7.261. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.262. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 813 unused wires.
+<suppressed ~1 debug messages>
+
+7.263. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.264. Executing OPT_FFINV pass (push inverters through FFs).
+Discovering LUTs.
+Pushed 0 inverters.
+
+7.265. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.266. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.267. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.268. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.269. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.270. Executing OPT_SHARE pass.
+
+7.271. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.272. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.273. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.274. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.275. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.276. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.277. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.278. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.279. Executing OPT_SHARE pass.
+
+7.280. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.281. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.282. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.283. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.284. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                180
+   Number of wire bits:           2005
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                238
+     $lut                          232
+     DSP38                           6
+
+7.285. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+7.286. Executing RS_DFFSR_CONV pass.
+
+7.287. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                180
+   Number of wire bits:           2005
+   Number of public wires:          25
+   Number of public wire bits:    1322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                238
+     $lut                          232
+     DSP38                           6
+
+7.288. Executing TECHMAP pass (map to technology primitives).
+
+7.288.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.288.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PN0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_PN1_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PN0P_'.
+Generating RTLIL representation for module `\$_DFFE_PN0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PN1P_'.
+Generating RTLIL representation for module `\$_DFFE_PN1N_'.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NN0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_NN1_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NN0P_'.
+Generating RTLIL representation for module `\$_DFFE_NN0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_NN1P_'.
+Generating RTLIL representation for module `\$_DFFE_NN1N_'.
+Generating RTLIL representation for module `\$__SHREG_DFF_P_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PN0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NN0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_PN1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_NN1_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_PP0_'.
+Generating RTLIL representation for module `\$_DLATCH_PN0_'.
+Generating RTLIL representation for module `\$_DLATCH_NP0_'.
+Generating RTLIL representation for module `\$_DLATCH_NN0_'.
+Generating RTLIL representation for module `\$_DLATCH_PP1_'.
+Generating RTLIL representation for module `\$_DLATCH_PN1_'.
+Generating RTLIL representation for module `\$_DLATCH_NP1_'.
+Generating RTLIL representation for module `\$_DLATCH_NN1_'.
+Successfully finished Verilog frontend.
+
+7.288.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $lut.
+No more expansions possible.
+<suppressed ~352 debug messages>
+
+7.289. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+<suppressed ~5446 debug messages>
+
+7.290. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+7.291. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.292. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+<suppressed ~4524 debug messages>
+Removed a total of 1508 cells.
+
+7.293. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+7.294. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 435 unused wires.
+<suppressed ~1 debug messages>
+
+7.295. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+<suppressed ~57 debug messages>
+
+7.296. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.297. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.298. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.299. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.300. Executing OPT_SHARE pass.
+
+7.301. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.01 sec.]
+
+7.302. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+7.303. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.304. Executing TECHMAP pass (map to technology primitives).
+
+7.304.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+7.304.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~71 debug messages>
+
+7.305. Executing ABC pass (technology mapping using ABC).
+
+7.305.1. Extracting gate netlist of module `\qmult' to `<abc-temp-dir>/input.blif'..
+Extracted 1601 gates and 1768 wires to a netlist network with 165 inputs and 93 outputs (dfl=1).
+
+7.305.1.1. Executing ABC.
+DE:   Version : 7.7
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   0.10 sec. at Pass 0]{firstMap}[1]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   0.82 sec. at Pass 1]{initMapFlow}[2]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.27 sec. at Pass 2]{map}[6]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.22 sec. at Pass 3]{postMap}[12]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.42 sec. at Pass 4]{map}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.32 sec. at Pass 5]{postMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.09 sec. at Pass 6]{pushMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.13 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   1.04 sec. at Pass 7]{pushMap}[16]
+DE:   #PIs = 165  #Luts =   232  Max Lvl =   6  Avg Lvl =   3.75  [   0.56 sec. at Pass 8]{finalMap}[16]
+DE:   
+DE:   total time =   10.02 sec.
+[Time = 12.10 sec.]
+
+7.306. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+7.307. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.308. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \qmult..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+7.309. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \qmult.
+Performed a total of 0 changes.
+
+7.310. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\qmult'.
+Removed a total of 0 cells.
+
+7.311. Executing OPT_SHARE pass.
+
+7.312. Executing OPT_DFF pass (perform DFF optimizations).
+[#visit=0, #solve=0, #remove=0, time=0.00 sec.]
+
+7.313. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 1078 unused wires.
+<suppressed ~1 debug messages>
+
+7.314. Executing OPT_EXPR pass (perform const folding).
+Optimizing module qmult.
+
+RUN-OPT ITERATIONS DONE : 1
+
+7.315. Executing HIERARCHY pass (managing design hierarchy).
+
+7.315.1. Analyzing design hierarchy..
+Top module:  \qmult
+
+7.315.2. Analyzing design hierarchy..
+Top module:  \qmult
+Removed 0 unused modules.
+
+7.316. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~18 debug messages>
+
+7.317. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cells_map1.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cells_map1.v' to AST representation.
+Generating RTLIL representation for module `\rs__CLK_BUF'.
+Generating RTLIL representation for module `\rs__I_BUF'.
+Generating RTLIL representation for module `\rs__O_BUF'.
+Generating RTLIL representation for module `\rs__IO_BUF'.
+Generating RTLIL representation for module `\rs__O_BUFT'.
+Successfully finished Verilog frontend.
+
+7.318. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Replacing existing blackbox module `\BOOT_CLOCK' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:9.1-14.10.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:24.1-31.10.
+Generating RTLIL representation for module `\CARRY'.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:41.1-46.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:56.1-64.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:74.1-82.10.
+Generating RTLIL representation for module `\DFFRE'.
+Replacing existing blackbox module `\DSP19X2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:92.1-126.10.
+Generating RTLIL representation for module `\DSP19X2'.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:136.1-162.10.
+Generating RTLIL representation for module `\DSP38'.
+Replacing existing blackbox module `\FIFO18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:172.1-219.10.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Replacing existing blackbox module `\FIFO36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:229.1-254.10.
+Generating RTLIL representation for module `\FIFO36K'.
+Replacing existing blackbox module `\I_BUF_DS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:264.1-278.10.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Replacing existing blackbox module `\I_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:288.1-299.10.
+Generating RTLIL representation for module `\I_BUF'.
+Replacing existing blackbox module `\I_DDR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:309.1-317.10.
+Generating RTLIL representation for module `\I_DDR'.
+Replacing existing blackbox module `\I_DELAY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:327.1-339.10.
+Generating RTLIL representation for module `\I_DELAY'.
+Replacing existing blackbox module `\I_SERDES' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:349.1-368.10.
+Generating RTLIL representation for module `\I_SERDES'.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:378.1-384.10.
+Generating RTLIL representation for module `\LUT1'.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:394.1-400.10.
+Generating RTLIL representation for module `\LUT2'.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:410.1-416.10.
+Generating RTLIL representation for module `\LUT3'.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:426.1-432.10.
+Generating RTLIL representation for module `\LUT4'.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:442.1-448.10.
+Generating RTLIL representation for module `\LUT5'.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:458.1-464.10.
+Generating RTLIL representation for module `\LUT6'.
+Replacing existing blackbox module `\O_BUF_DS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:474.1-488.10.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Replacing existing blackbox module `\O_BUFT_DS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:498.1-512.10.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Replacing existing blackbox module `\O_BUFT' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:522.1-535.10.
+Generating RTLIL representation for module `\O_BUFT'.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:545.1-558.10.
+Generating RTLIL representation for module `\O_BUF'.
+Replacing existing blackbox module `\O_DDR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:568.1-576.10.
+Generating RTLIL representation for module `\O_DDR'.
+Replacing existing blackbox module `\O_DELAY' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:586.1-598.10.
+Generating RTLIL representation for module `\O_DELAY'.
+Replacing existing blackbox module `\O_SERDES_CLK' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:608.1-617.10.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Replacing existing blackbox module `\O_SERDES' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:627.1-644.10.
+Generating RTLIL representation for module `\O_SERDES'.
+Replacing existing blackbox module `\PLL' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:654.1-669.10.
+Generating RTLIL representation for module `\PLL'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AHB_M' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:679.1-693.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AHB_S' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:703.1-720.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AXI_M0' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:730.1-769.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_AXI_M1' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:779.1-818.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_DMA' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:828.1-834.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_IRQ' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:844.1-850.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Replacing existing blackbox module `\SOC_FPGA_INTF_JTAG' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:860.1-868.10.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Replacing existing blackbox module `\SOC_FPGA_TEMPERATURE' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:878.1-886.10.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Replacing existing blackbox module `\TDP_RAM18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:896.1-949.10.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Replacing existing blackbox module `\TDP_RAM36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:959.1-988.10.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1005.1-1010.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1018.1-1023.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1032.1-1038.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1046.1-1052.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1061.1-1067.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1076.1-1082.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1087.1-1137.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1142.1-1176.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v:1181.1-1227.12.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+7.319. Executing CLKBUFMAP pass (inserting clock buffers).
+
+7.320. Executing TECHMAP pass (map to technology primitives).
+
+7.320.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v' to AST representation.
+Generating RTLIL representation for module `\rs__CLK_BUF'.
+Generating RTLIL representation for module `\rs__I_BUF'.
+Generating RTLIL representation for module `\rs__O_BUF'.
+Generating RTLIL representation for module `\rs__O_BUFT'.
+Successfully finished Verilog frontend.
+
+7.320.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+7.321. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+
+7.322. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port qmult.a using rs__I_BUF.
+Mapping port qmult.b using rs__I_BUF.
+Mapping port qmult.c using rs__O_BUF.
+
+7.323. Executing TECHMAP pass (map to technology primitives).
+
+7.323.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/io_cell_final_map.v' to AST representation.
+Generating RTLIL representation for module `\rs__CLK_BUF'.
+Generating RTLIL representation for module `\rs__I_BUF'.
+Generating RTLIL representation for module `\rs__O_BUF'.
+Generating RTLIL representation for module `\rs__O_BUFT'.
+Successfully finished Verilog frontend.
+
+7.323.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~102 debug messages>
+
+7.324. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                453
+   Number of wire bits:           1368
+   Number of public wires:           7
+   Number of public wire bits:     301
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                334
+     $lut                          232
+     DSP38                           6
+     I_BUF                          64
+     O_BUF                          32
+
+7.325. Executing TECHMAP pass (map to technology primitives).
+
+7.325.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/04_21_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/lut_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+7.325.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~1860 debug messages>
+
+7.326. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \qmult..
+Removed 0 unused cells and 752 unused wires.
+<suppressed ~1 debug messages>
+
+7.327. Printing statistics.
+
+=== qmult ===
+
+   Number of wires:                165
+   Number of wire bits:           1080
+   Number of public wires:           7
+   Number of public wire bits:     301
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                334
+     DSP38                           6
+     I_BUF                          64
+     LUT2                            9
+     LUT3                           32
+     LUT4                           36
+     LUT5                           58
+     LUT6                           97
+     O_BUF                          32
+
+   Number of LUTs:                 232
+   Number of REGs:                   0
+   Number of CARRY ADDERs:           0
+
+7.328. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+7.329. Executing HIERARCHY pass (managing design hierarchy).
+
+7.329.1. Analyzing design hierarchy..
+Top module:  \qmult
+
+7.329.2. Analyzing design hierarchy..
+Top module:  \qmult
+Removed 0 unused modules.
+
+Dumping port properties into 'port_info.json' file.
+
+8. Executing Verilog backend.
+Dumping module `\qmult'.
+
+9. Executing BLIF backend.
+After Adding wire
+
+10. Executing FLATTEN pass (flatten design).
+Deleting now unused module interface_qmult.
+<suppressed ~1 debug messages>
+
+11. Executing Verilog backend.
+Dumping module `\qmult'.
+
+12. Executing BLIF backend.
+
+13. Executing Verilog backend.
+Dumping module `\qmult'.
+
+14. Executing BLIF backend.
+
+15. Executing Verilog backend.
+Dumping module `\fabric_qmult'.
+
+16. Executing BLIF backend.
+
+Warnings: 1 unique messages, 1 total
+End of script. Logfile hash: 3c09935119, CPU: user 4.45s system 0.11s, MEM: 56.80 MB peak
+Yosys 0.18+10 (git sha1 2be6af90e, gcc 11.2.1 -fPIC -Os)
+Time spent: 99% 6x abc (462 sec), 0% 63x opt_expr (1 sec), ...

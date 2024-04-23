@@ -1,7 +1,5 @@
 /////////////////////////////////////////
-//  Functionality: flop to flop path
-//                 - CLK_BUF
-//  Author:        George Chen
+//  Author: Chung Shien
 ////////////////////////////////////////
 // `timescale 1ns / 1ps
 
