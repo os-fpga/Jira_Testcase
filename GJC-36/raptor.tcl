@@ -1,0 +1,14 @@
+create_design pll_8_clocks_negedge
+add_design_file pll_8_clocks_negedge.v
+set_top_module pll_8_clocks_negedge
+# add_constraint_file constraints.sdc
+add_constraint_file pin_constraints.pin
+target_device 1VG28
+
+analyze
+synthesize
+packing
+place
+route
+sta
+bitstream
