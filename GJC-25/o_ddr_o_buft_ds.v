@@ -12,7 +12,7 @@ module o_ddr_o_buft_ds (
     input   wire reset_n,
     input   wire enable,
     input   wire clk_i,
-    output  wire data_o_p
+    output  wire data_o_p,
     output  wire data_o_n
 );
 

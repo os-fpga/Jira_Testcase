@@ -7,7 +7,7 @@
 
 
 
-module o_ddr_o_buf (
+module o_ddr_o_buft (
     input   wire [1:0] data_i,
     input   wire reset_n,
     input   wire enable,
