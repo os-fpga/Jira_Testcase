@@ -8,21 +8,9 @@
 
                  |------------------------------------------------|
                  |                                                |
-           clk --|--> I_BUF --> CLK_BUF                           |
+           din --|--> I_BUF                                       |
                  |                                                |
-    delay_load --|--> I_BUF                                       |
-                 |                                                |
-     delay_adj --|--> I_BUF                                       |
-                 |                                                |
-  delay_incdec --|--> I_BUF                                       |
-                 |                                                |
-           din --|--> I_BUF --> I_DELAY                           |
-                 |                                                |
-                 |                            O_DELAY --> O_BUF --|--> dout
-                 |                                                |
-                 |                                        O_BUF --|--> i_delay_value
-                 |                                                |
-                 |                                        O_BUF --|--> o_delay_value
+                 |                                        O_BUF --|--> dout
                  |                                                |
                  |------------------------------------------------|
 
