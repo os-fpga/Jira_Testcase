@@ -1,0 +1,1372 @@
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_30_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/04_30_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/synthesis/fabric_i2c_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/packing/fabric_i2c_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report i2c_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top i2c --net_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/packing/fabric_i2c_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/placement/fabric_i2c_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/routing/fabric_i2c_post_synth.route --place --fix_clusters i2c_pin_loc.place
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/04_30_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: fabric_i2c_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 17.5 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/packing/fabric_i2c_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/placement/fabric_i2c_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/routing/fabric_i2c_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/packing/fabric_i2c_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: DISABLED
+Analysis: DISABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: Using constraints file 'i2c_pin_loc.place'
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: i2c_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.03 seconds (max_rss 18.2 MiB, delta_rss +0.7 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/synthesis/fabric_i2c_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.02 seconds (max_rss 20.0 MiB, delta_rss +1.8 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred  148 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 2
+Swept block(s)      : 2
+Constant Pins Marked: 148
+# Clean circuit took 0.00 seconds (max_rss 20.0 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 20.0 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 20.0 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 773
+    .input :     136
+    .output:     275
+    0-LUT  :       1
+    6-LUT  :     361
+  Nets  : 498
+    Avg Fanout:     2.9
+    Max Fanout:   148.0
+    Min Fanout:     1.0
+  Netlist Clocks: 0
+# Build Timing Graph
+  Timing Graph Nodes: 1964
+  Timing Graph Edges: 2657
+  Timing Graph Levels: 8
+# Build Timing Graph took 0.00 seconds (max_rss 20.0 MiB, delta_rss +0.0 MiB)
+Netlist contains 0 clocks
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$iopadmap$po141'
+Warning 168: set_input_delay command matched but was not applied to primary output '$iopadmap$po140'
+Warning 169: set_input_delay command matched but was not applied to primary output '$iopadmap$po139'
+Warning 170: set_input_delay command matched but was not applied to primary output '$iopadmap$po138'
+Warning 171: set_input_delay command matched but was not applied to primary output '$iopadmap$po137'
+Warning 172: set_input_delay command matched but was not applied to primary output '$iopadmap$po136'
+Warning 173: set_input_delay command matched but was not applied to primary output '$iopadmap$po135'
+Warning 174: set_input_delay command matched but was not applied to primary output '$iopadmap$po134'
+Warning 175: set_input_delay command matched but was not applied to primary output '$iopadmap$po133'
+Warning 176: set_input_delay command matched but was not applied to primary output '$iopadmap$po132'
+Warning 177: set_input_delay command matched but was not applied to primary output '$iopadmap$po131'
+Warning 178: set_input_delay command matched but was not applied to primary output '$iopadmap$po130'
+Warning 179: set_input_delay command matched but was not applied to primary output '$iopadmap$po129'
+Warning 180: set_input_delay command matched but was not applied to primary output '$iopadmap$po128'
+Warning 181: set_input_delay command matched but was not applied to primary output '$iopadmap$po127'
+Warning 182: set_input_delay command matched but was not applied to primary output '$iopadmap$po126'
+Warning 183: set_input_delay command matched but was not applied to primary output '$iopadmap$po125'
+Warning 184: set_input_delay command matched but was not applied to primary output '$iopadmap$po124'
+Warning 185: set_input_delay command matched but was not applied to primary output '$iopadmap$po123'
+Warning 186: set_input_delay command matched but was not applied to primary output '$iopadmap$po122'
+Warning 187: set_input_delay command matched but was not applied to primary output '$iopadmap$po121'
+Warning 188: set_input_delay command matched but was not applied to primary output '$iopadmap$po120'
+Warning 189: set_input_delay command matched but was not applied to primary output '$iopadmap$po119'
+Warning 190: set_input_delay command matched but was not applied to primary output '$iopadmap$po118'
+Warning 191: set_input_delay command matched but was not applied to primary output '$iopadmap$po117'
+Warning 192: set_input_delay command matched but was not applied to primary output '$iopadmap$po116'
+Warning 193: set_input_delay command matched but was not applied to primary output '$iopadmap$po115'
+Warning 194: set_input_delay command matched but was not applied to primary output '$iopadmap$po114'
+Warning 195: set_input_delay command matched but was not applied to primary output '$iopadmap$po113'
+Warning 196: set_input_delay command matched but was not applied to primary output '$iopadmap$po112'
+Warning 197: set_input_delay command matched but was not applied to primary output '$iopadmap$po111'
+Warning 198: set_input_delay command matched but was not applied to primary output '$iopadmap$po110'
+Warning 199: set_input_delay command matched but was not applied to primary output '$iopadmap$po109'
+Warning 200: set_input_delay command matched but was not applied to primary output '$iopadmap$po108'
+Warning 201: set_input_delay command matched but was not applied to primary output '$iopadmap$po107'
+Warning 202: set_input_delay command matched but was not applied to primary output '$iopadmap$po106'
+Warning 203: set_input_delay command matched but was not applied to primary output '$iopadmap$po105'
+Warning 204: set_input_delay command matched but was not applied to primary output '$iopadmap$po104'
+Warning 205: set_input_delay command matched but was not applied to primary output '$iopadmap$po103'
+Warning 206: set_input_delay command matched but was not applied to primary output '$iopadmap$po102'
+Warning 207: set_input_delay command matched but was not applied to primary output '$iopadmap$po101'
+Warning 208: set_input_delay command matched but was not applied to primary output '$iopadmap$po100'
+Warning 209: set_input_delay command matched but was not applied to primary output '$iopadmap$po099'
+Warning 210: set_input_delay command matched but was not applied to primary output '$iopadmap$po098'
+Warning 211: set_input_delay command matched but was not applied to primary output '$iopadmap$po097'
+Warning 212: set_input_delay command matched but was not applied to primary output '$iopadmap$po096'
+Warning 213: set_input_delay command matched but was not applied to primary output '$iopadmap$po095'
+Warning 214: set_input_delay command matched but was not applied to primary output '$iopadmap$po094'
+Warning 215: set_input_delay command matched but was not applied to primary output '$iopadmap$po093'
+Warning 216: set_input_delay command matched but was not applied to primary output '$iopadmap$po092'
+Warning 217: set_input_delay command matched but was not applied to primary output '$iopadmap$po091'
+Warning 218: set_input_delay command matched but was not applied to primary output '$iopadmap$po090'
+Warning 219: set_input_delay command matched but was not applied to primary output '$iopadmap$po089'
+Warning 220: set_input_delay command matched but was not applied to primary output '$iopadmap$po088'
+Warning 221: set_input_delay command matched but was not applied to primary output '$iopadmap$po087'
+Warning 222: set_input_delay command matched but was not applied to primary output '$iopadmap$po086'
+Warning 223: set_input_delay command matched but was not applied to primary output '$iopadmap$po084'
+Warning 224: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19488'
+Warning 225: set_input_delay command matched but was not applied to primary output '$iopadmap$po083'
+Warning 226: set_input_delay command matched but was not applied to primary output '$iopadmap$po082'
+Warning 227: set_input_delay command matched but was not applied to primary output '$iopadmap$po081'
+Warning 228: set_input_delay command matched but was not applied to primary output '$iopadmap$po079'
+Warning 229: set_input_delay command matched but was not applied to primary output '$iopadmap$po078'
+Warning 230: set_input_delay command matched but was not applied to primary output '$iopadmap$po077'
+Warning 231: set_input_delay command matched but was not applied to primary output '$iopadmap$po076'
+Warning 232: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19533'
+Warning 233: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19448'
+Warning 234: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19510'
+Warning 235: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19426'
+Warning 236: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19414'
+Warning 237: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19396'
+Warning 238: set_input_delay command matched but was not applied to primary output '$iopadmap$po068'
+Warning 239: set_input_delay command matched but was not applied to primary output '$iopadmap$po069'
+Warning 240: set_input_delay command matched but was not applied to primary output '$iopadmap$po070'
+Warning 241: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19476'
+Warning 242: set_input_delay command matched but was not applied to primary output '$iopadmap$po071'
+Warning 243: set_input_delay command matched but was not applied to primary output '$iopadmap$po073'
+Warning 244: set_input_delay command matched but was not applied to primary output '$iopadmap$po074'
+Warning 245: set_input_delay command matched but was not applied to primary output '$iopadmap$po085'
+Warning 246: set_input_delay command matched but was not applied to primary output '$iopadmap$po080'
+Warning 247: set_input_delay command matched but was not applied to primary output '$iopadmap$po075'
+Warning 248: set_input_delay command matched but was not applied to primary output '$iopadmap$po072'
+Warning 249: set_input_delay command matched but was not applied to primary output '$iopadmap$po067'
+Warning 250: set_input_delay command matched but was not applied to primary output '$iopadmap$po059'
+Warning 251: set_input_delay command matched but was not applied to primary output '$iopadmap$po056'
+Warning 252: set_input_delay command matched but was not applied to primary output '$iopadmap$po047'
+Warning 253: set_input_delay command matched but was not applied to primary output '$iopadmap$po045'
+Warning 254: set_input_delay command matched but was not applied to primary output '$iopadmap$po040'
+Warning 255: set_input_delay command matched but was not applied to primary output '$iopadmap$po035'
+Warning 256: set_input_delay command matched but was not applied to primary output '$iopadmap$po033'
+Warning 257: set_input_delay command matched but was not applied to primary output '$iopadmap$po027'
+Warning 258: set_input_delay command matched but was not applied to primary output '$iopadmap$po018'
+Warning 259: set_input_delay command matched but was not applied to primary output '$iopadmap$po036'
+Warning 260: set_input_delay command matched but was not applied to primary output '$iopadmap$po037'
+Warning 261: set_input_delay command matched but was not applied to primary output '$iopadmap$po038'
+Warning 262: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19492'
+Warning 263: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19470'
+Warning 264: set_input_delay command matched but was not applied to primary output '$iopadmap$po039'
+Warning 265: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19416'
+Warning 266: set_input_delay command matched but was not applied to primary output '$iopadmap$po041'
+Warning 267: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19472'
+Warning 268: set_input_delay command matched but was not applied to primary output '$iopadmap$po042'
+Warning 269: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19452'
+Warning 270: set_input_delay command matched but was not applied to primary output '$iopadmap$po043'
+Warning 271: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19436'
+Warning 272: set_input_delay command matched but was not applied to primary output '$iopadmap$po044'
+Warning 273: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19424'
+Warning 274: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19392'
+Warning 275: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19496'
+Warning 276: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19508'
+Warning 277: set_input_delay command matched but was not applied to primary output '$iopadmap$po046'
+Warning 278: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19430'
+Warning 279: set_input_delay command matched but was not applied to primary output '$iopadmap$po048'
+Warning 280: set_input_delay command matched but was not applied to primary output '$iopadmap$po049'
+Warning 281: set_input_delay command matched but was not applied to primary output '$iopadmap$po050'
+Warning 282: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19462'
+Warning 283: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19512'
+Warning 284: set_input_delay command matched but was not applied to primary output '$iopadmap$po051'
+Warning 285: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19418'
+Warning 286: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19432'
+Warning 287: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19420'
+Warning 288: set_input_delay command matched but was not applied to primary output '$iopadmap$po052'
+Warning 289: set_input_delay command matched but was not applied to primary output '$iopadmap$po053'
+Warning 290: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19400'
+Warning 291: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19398'
+Warning 292: set_input_delay command matched but was not applied to primary output '$iopadmap$po054'
+Warning 293: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19443'
+Warning 294: set_input_delay command matched but was not applied to primary output '$iopadmap$po055'
+Warning 295: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19428'
+Warning 296: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19425'
+Warning 297: set_input_delay command matched but was not applied to primary output '$iopadmap$po057'
+Warning 298: set_input_delay command matched but was not applied to primary output '$iopadmap$po058'
+Warning 299: set_input_delay command matched but was not applied to primary output '$iopadmap$po060'
+Warning 300: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19421'
+Warning 301: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19520'
+Warning 302: set_input_delay command matched but was not applied to primary output '$iopadmap$po061'
+Warning 303: set_input_delay command matched but was not applied to primary output '$iopadmap$po062'
+Warning 304: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19474'
+Warning 305: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19446'
+Warning 306: set_input_delay command matched but was not applied to primary output '$iopadmap$po063'
+Warning 307: set_input_delay command matched but was not applied to primary output '$iopadmap$po064'
+Warning 308: set_input_delay command matched but was not applied to primary output '$iopadmap$po065'
+Warning 309: set_input_delay command matched but was not applied to primary output '$iopadmap$po066'
+Warning 310: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19484'
+Warning 311: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19524'
+Warning 312: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19504'
+Warning 313: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19434'
+Warning 314: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19526'
+Warning 315: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19391'
+Warning 316: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19460'
+Warning 317: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19497'
+Warning 318: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19494'
+Warning 319: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19464'
+Warning 320: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19453'
+Warning 321: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19498'
+Warning 322: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19466'
+Warning 323: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19463'
+Warning 324: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19534'
+Warning 325: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19530'
+Warning 326: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19532'
+Warning 327: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19456'
+Warning 328: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19410'
+Warning 329: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19514'
+Warning 330: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19529'
+Warning 331: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19402'
+Warning 332: set_input_delay command matched but was not applied to primary output '$iopadmap$po015'
+Warning 333: set_input_delay command matched but was not applied to primary output '$iopadmap$po016'
+Warning 334: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19412'
+Warning 335: set_input_delay command matched but was not applied to primary output '$iopadmap$po017'
+Warning 336: set_input_delay command matched but was not applied to primary output '$iopadmap$po019'
+Warning 337: set_input_delay command matched but was not applied to primary output '$iopadmap$po020'
+Warning 338: set_input_delay command matched but was not applied to primary output '$iopadmap$po021'
+Warning 339: set_input_delay command matched but was not applied to primary output '$iopadmap$po022'
+Warning 340: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19502'
+Warning 341: set_input_delay command matched but was not applied to primary output '$iopadmap$po023'
+Warning 342: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19444'
+Warning 343: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19531'
+Warning 344: set_input_delay command matched but was not applied to primary output '$iopadmap$po024'
+Warning 345: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19528'
+Warning 346: set_input_delay command matched but was not applied to primary output '$iopadmap$po025'
+Warning 347: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19521'
+Warning 348: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19527'
+Warning 349: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19500'
+Warning 350: set_input_delay command matched but was not applied to primary output '$iopadmap$po026'
+Warning 351: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19525'
+Warning 352: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19523'
+Warning 353: set_input_delay command matched but was not applied to primary output '$iopadmap$po028'
+Warning 354: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19490'
+Warning 355: set_input_delay command matched but was not applied to primary output '$iopadmap$po029'
+Warning 356: set_input_delay command matched but was not applied to primary output '$iopadmap$po030'
+Warning 357: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19516'
+Warning 358: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19519'
+Warning 359: set_input_delay command matched but was not applied to primary output '$iopadmap$po031'
+Warning 360: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19511'
+Warning 361: set_input_delay command matched but was not applied to primary output '$iopadmap$po032'
+Warning 362: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19390'
+Warning 363: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19513'
+Warning 364: set_input_delay command matched but was not applied to primary output '$iopadmap$po034'
+Warning 365: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19509'
+Warning 366: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19478'
+Warning 367: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19507'
+Warning 368: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19503'
+Warning 369: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19422'
+Warning 370: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19501'
+Warning 371: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19499'
+Warning 372: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19495'
+Warning 373: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19493'
+Warning 374: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19489'
+Warning 375: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19487'
+Warning 376: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19450'
+Warning 377: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19485'
+Warning 378: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19483'
+Warning 379: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19481'
+Warning 380: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19479'
+Warning 381: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19477'
+Warning 382: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19469'
+Warning 383: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19473'
+Warning 384: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19505'
+Warning 385: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19471'
+Warning 386: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19467'
+Warning 387: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19465'
+Warning 388: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19461'
+Warning 389: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19459'
+Warning 390: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19455'
+Warning 391: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19451'
+Warning 392: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19447'
+Warning 393: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19445'
+Warning 394: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19457'
+Warning 395: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19441'
+Warning 396: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19435'
+Warning 397: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19439'
+Warning 398: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19437'
+Warning 399: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19433'
+Warning 400: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19431'
+Warning 401: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19517'
+Warning 402: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19440'
+Warning 403: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19482'
+Warning 404: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19404'
+Warning 405: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19394'
+Warning 406: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19406'
+Warning 407: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19429'
+Warning 408: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19408'
+Warning 409: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19427'
+Warning 410: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19486'
+Warning 411: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19442'
+Warning 412: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19438'
+Warning 413: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19491'
+Warning 414: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19423'
+Warning 415: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19407'
+Warning 416: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19506'
+Warning 417: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19419'
+Warning 418: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19468'
+Warning 419: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19449'
+Warning 420: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19417'
+Warning 421: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19415'
+Warning 422: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19413'
+Warning 423: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19411'
+Warning 424: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19522'
+Warning 425: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19518'
+Warning 426: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19409'
+Warning 427: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19475'
+Warning 428: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19388'
+Warning 429: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19458'
+Warning 430: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19405'
+Warning 431: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19403'
+Warning 432: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19401'
+Warning 433: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19454'
+Warning 434: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19399'
+Warning 435: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19397'
+Warning 436: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19395'
+Warning 437: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19480'
+Warning 438: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19393'
+Warning 439: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19389'
+Warning 440: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19515'
+Warning 441: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$19387'
+Warning 442: set_output_delay command matched but was not applied to primary input '$iopadmap$pi143'
+Warning 443: set_output_delay command matched but was not applied to primary input '$iopadmap$pi133'
+Warning 444: set_output_delay command matched but was not applied to primary input '$iopadmap$pi129'
+Warning 445: set_output_delay command matched but was not applied to primary input '$iopadmap$pi122'
+Warning 446: set_output_delay command matched but was not applied to primary input '$iopadmap$pi119'
+Warning 447: set_output_delay command matched but was not applied to primary input '$iopadmap$pi093'
+Warning 448: set_output_delay command matched but was not applied to primary input '$iopadmap$pi085'
+Warning 449: set_output_delay command matched but was not applied to primary input '$iopadmap$pi080'
+Warning 450: set_output_delay command matched but was not applied to primary input '$iopadmap$pi069'
+Warning 451: set_output_delay command matched but was not applied to primary input '$iopadmap$pi064'
+Warning 452: set_output_delay command matched but was not applied to primary input '$iopadmap$pi063'
+Warning 453: set_output_delay command matched but was not applied to primary input '$iopadmap$pi062'
+Warning 454: set_output_delay command matched but was not applied to primary input '$iopadmap$pi057'
+Warning 455: set_output_delay command matched but was not applied to primary input '$iopadmap$pi048'
+Warning 456: set_output_delay command matched but was not applied to primary input '$iopadmap$pi029'
+Warning 457: set_output_delay command matched but was not applied to primary input '$iopadmap$pi025'
+Warning 458: set_output_delay command matched but was not applied to primary input '$iopadmap$pi013'
+Warning 459: set_output_delay command matched but was not applied to primary input '$iopadmap$pi006'
+Warning 460: set_output_delay command matched but was not applied to primary input '$iopadmap$pi000'
+Warning 461: set_output_delay command matched but was not applied to primary input '$iopadmap$pi033'
+Warning 462: set_output_delay command matched but was not applied to primary input '$iopadmap$pi131'
+Warning 463: set_output_delay command matched but was not applied to primary input '$iopadmap$pi046'
+Warning 464: set_output_delay command matched but was not applied to primary input '$iopadmap$pi132'
+Warning 465: set_output_delay command matched but was not applied to primary input '$iopadmap$pi047'
+Warning 466: set_output_delay command matched but was not applied to primary input '$iopadmap$pi049'
+Warning 467: set_output_delay command matched but was not applied to primary input '$iopadmap$pi050'
+Warning 468: set_output_delay command matched but was not applied to primary input '$iopadmap$pi051'
+Warning 469: set_output_delay command matched but was not applied to primary input '$iopadmap$pi052'
+Warning 470: set_output_delay command matched but was not applied to primary input '$iopadmap$pi034'
+Warning 471: set_output_delay command matched but was not applied to primary input '$iopadmap$pi053'
+Warning 472: set_output_delay command matched but was not applied to primary input '$iopadmap$pi054'
+Warning 473: set_output_delay command matched but was not applied to primary input '$iopadmap$pi134'
+Warning 474: set_output_delay command matched but was not applied to primary input '$iopadmap$pi135'
+Warning 475: set_output_delay command matched but was not applied to primary input '$iopadmap$pi055'
+Warning 476: set_output_delay command matched but was not applied to primary input '$iopadmap$pi056'
+Warning 477: set_output_delay command matched but was not applied to primary input '$iopadmap$pi058'
+Warning 478: set_output_delay command matched but was not applied to primary input '$iopadmap$pi035'
+Warning 479: set_output_delay command matched but was not applied to primary input '$iopadmap$pi059'
+Warning 480: set_output_delay command matched but was not applied to primary input '$iopadmap$pi060'
+Warning 481: set_output_delay command matched but was not applied to primary input '$iopadmap$pi136'
+Warning 482: set_output_delay command matched but was not applied to primary input '$iopadmap$pi061'
+Warning 483: set_output_delay command matched but was not applied to primary input '$iopadmap$pi065'
+Warning 484: set_output_delay command matched but was not applied to primary input '$iopadmap$pi066'
+Warning 485: set_output_delay command matched but was not applied to primary input '$iopadmap$pi067'
+Warning 486: set_output_delay command matched but was not applied to primary input '$iopadmap$pi036'
+Warning 487: set_output_delay command matched but was not applied to primary input '$iopadmap$pi068'
+Warning 488: set_output_delay command matched but was not applied to primary input '$iopadmap$pi001'
+Warning 489: set_output_delay command matched but was not applied to primary input '$iopadmap$pi137'
+Warning 490: set_output_delay command matched but was not applied to primary input '$iopadmap$pi002'
+Warning 491: set_output_delay command matched but was not applied to primary input '$iopadmap$pi037'
+Warning 492: set_output_delay command matched but was not applied to primary input '$iopadmap$pi138'
+Warning 493: set_output_delay command matched but was not applied to primary input '$iopadmap$pi070'
+Warning 494: set_output_delay command matched but was not applied to primary input '$iopadmap$pi003'
+Warning 495: set_output_delay command matched but was not applied to primary input '$iopadmap$pi071'
+Warning 496: set_output_delay command matched but was not applied to primary input '$iopadmap$pi072'
+Warning 497: set_output_delay command matched but was not applied to primary input '$iopadmap$pi038'
+Warning 498: set_output_delay command matched but was not applied to primary input '$iopadmap$pi073'
+Warning 499: set_output_delay command matched but was not applied to primary input '$iopadmap$pi139'
+Warning 500: set_output_delay command matched but was not applied to primary input '$iopadmap$pi074'
+Warning 501: set_output_delay command matched but was not applied to primary input '$iopadmap$pi075'
+Warning 502: set_output_delay command matched but was not applied to primary input '$iopadmap$pi039'
+Warning 503: set_output_delay command matched but was not applied to primary input '$iopadmap$pi076'
+Warning 504: set_output_delay command matched but was not applied to primary input '$iopadmap$pi077'
+Warning 505: set_output_delay command matched but was not applied to primary input '$iopadmap$pi140'
+Warning 506: set_output_delay command matched but was not applied to primary input '$iopadmap$pi004'
+Warning 507: set_output_delay command matched but was not applied to primary input '$iopadmap$pi141'
+Warning 508: set_output_delay command matched but was not applied to primary input '$iopadmap$pi078'
+Warning 509: set_output_delay command matched but was not applied to primary input '$iopadmap$pi005'
+Warning 510: set_output_delay command matched but was not applied to primary input '$iopadmap$pi079'
+Warning 511: set_output_delay command matched but was not applied to primary input '$iopadmap$pi081'
+Warning 512: set_output_delay command matched but was not applied to primary input '$iopadmap$pi007'
+Warning 513: set_output_delay command matched but was not applied to primary input '$iopadmap$pi082'
+Warning 514: set_output_delay command matched but was not applied to primary input '$iopadmap$pi008'
+Warning 515: set_output_delay command matched but was not applied to primary input '$iopadmap$pi142'
+Warning 516: set_output_delay command matched but was not applied to primary input '$iopadmap$pi084'
+Warning 517: set_output_delay command matched but was not applied to primary input '$iopadmap$pi086'
+Warning 518: set_output_delay command matched but was not applied to primary input '$iopadmap$pi087'
+Warning 519: set_output_delay command matched but was not applied to primary input '$iopadmap$pi009'
+Warning 520: set_output_delay command matched but was not applied to primary input '$iopadmap$pi088'
+Warning 521: set_output_delay command matched but was not applied to primary input '$iopadmap$pi010'
+Warning 522: set_output_delay command matched but was not applied to primary input '$iopadmap$pi011'
+Warning 523: set_output_delay command matched but was not applied to primary input '$iopadmap$pi012'
+Warning 524: set_output_delay command matched but was not applied to primary input '$iopadmap$pi040'
+Warning 525: set_output_delay command matched but was not applied to primary input '$iopadmap$pi089'
+Warning 526: set_output_delay command matched but was not applied to primary input '$iopadmap$pi090'
+Warning 527: set_output_delay command matched but was not applied to primary input '$iopadmap$pi091'
+Warning 528: set_output_delay command matched but was not applied to primary input '$iopadmap$pi041'
+Warning 529: set_output_delay command matched but was not applied to primary input '$iopadmap$pi014'
+Warning 530: set_output_delay command matched but was not applied to primary input '$iopadmap$pi092'
+Warning 531: set_output_delay command matched but was not applied to primary input '$iopadmap$pi144'
+Warning 532: set_output_delay command matched but was not applied to primary input '$iopadmap$pi015'
+Warning 533: set_output_delay command matched but was not applied to primary input '$iopadmap$pi016'
+Warning 534: set_output_delay command matched but was not applied to primary input '$iopadmap$pi094'
+Warning 535: set_output_delay command matched but was not applied to primary input '$iopadmap$pi095'
+Warning 536: set_output_delay command matched but was not applied to primary input '$iopadmap$pi017'
+Warning 537: set_output_delay command matched but was not applied to primary input '$iopadmap$pi096'
+Warning 538: set_output_delay command matched but was not applied to primary input '$iopadmap$pi042'
+Warning 539: set_output_delay command matched but was not applied to primary input '$iopadmap$pi145'
+Warning 540: set_output_delay command matched but was not applied to primary input '$iopadmap$pi097'
+Warning 541: set_output_delay command matched but was not applied to primary input '$iopadmap$pi098'
+Warning 542: set_output_delay command matched but was not applied to primary input '$iopadmap$pi146'
+Warning 543: set_output_delay command matched but was not applied to primary input '$iopadmap$pi099'
+Warning 544: set_output_delay command matched but was not applied to primary input '$iopadmap$pi100'
+Warning 545: set_output_delay command matched but was not applied to primary input '$iopadmap$pi018'
+Warning 546: set_output_delay command matched but was not applied to primary input '$iopadmap$pi019'
+Warning 547: set_output_delay command matched but was not applied to primary input '$iopadmap$pi043'
+Warning 548: set_output_delay command matched but was not applied to primary input '$iopadmap$pi020'
+Warning 549: set_output_delay command matched but was not applied to primary input '$iopadmap$pi021'
+Warning 550: set_output_delay command matched but was not applied to primary input '$iopadmap$pi106'
+Warning 551: set_output_delay command matched but was not applied to primary input '$iopadmap$pi022'
+Warning 552: set_output_delay command matched but was not applied to primary input '$iopadmap$pi109'
+Warning 553: set_output_delay command matched but was not applied to primary input '$iopadmap$pi023'
+Warning 554: set_output_delay command matched but was not applied to primary input '$iopadmap$pi110'
+Warning 555: set_output_delay command matched but was not applied to primary input '$iopadmap$pi111'
+Warning 556: set_output_delay command matched but was not applied to primary input '$iopadmap$pi024'
+Warning 557: set_output_delay command matched but was not applied to primary input '$iopadmap$pi112'
+Warning 558: set_output_delay command matched but was not applied to primary input '$iopadmap$pi113'
+Warning 559: set_output_delay command matched but was not applied to primary input '$iopadmap$pi114'
+Warning 560: set_output_delay command matched but was not applied to primary input '$iopadmap$pi115'
+Warning 561: set_output_delay command matched but was not applied to primary input '$iopadmap$pi116'
+Warning 562: set_output_delay command matched but was not applied to primary input '$iopadmap$pi026'
+Warning 563: set_output_delay command matched but was not applied to primary input '$iopadmap$pi117'
+Warning 564: set_output_delay command matched but was not applied to primary input '$iopadmap$pi044'
+Warning 565: set_output_delay command matched but was not applied to primary input '$iopadmap$pi118'
+Warning 566: set_output_delay command matched but was not applied to primary input '$iopadmap$pi027'
+Warning 567: set_output_delay command matched but was not applied to primary input '$iopadmap$pi120'
+Warning 568: set_output_delay command matched but was not applied to primary input '$iopadmap$pi028'
+Warning 569: set_output_delay command matched but was not applied to primary input '$iopadmap$pi045'
+Warning 570: set_output_delay command matched but was not applied to primary input '$iopadmap$pi123'
+Warning 571: set_output_delay command matched but was not applied to primary input '$iopadmap$pi124'
+Warning 572: set_output_delay command matched but was not applied to primary input '$iopadmap$pi125'
+Warning 573: set_output_delay command matched but was not applied to primary input '$iopadmap$pi126'
+Warning 574: set_output_delay command matched but was not applied to primary input '$iopadmap$pi030'
+Warning 575: set_output_delay command matched but was not applied to primary input '$iopadmap$pi031'
+Warning 576: set_output_delay command matched but was not applied to primary input '$iopadmap$pi032'
+Warning 577: set_output_delay command matched but was not applied to primary input '$iopadmap$pi127'
+
+Applied 4 SDC commands from '/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/packing/fabric_i2c_openfpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'rscga_virt_clk' (Virtual Clock)
+
+# Load Timing Constraints took 0.00 seconds (max_rss 20.3 MiB, delta_rss +0.3 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/i2c/results_dir/i2c/run_1/synth_1_1/impl_1_1_1/packing/fabric_i2c_post_synth.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.09 seconds).
+# Load packing took 0.12 seconds (max_rss 64.8 MiB, delta_rss +44.3 MiB)
+Warning 578: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io             : 411
+   io_output     : 275
+    outpad       : 275
+   io_input      : 136
+    inpad        : 136
+  clb            : 34
+   clb_lr        : 34
+    fle          : 269
+     fast6       : 93
+      lut6       : 93
+       lut       : 93
+     ble5        : 269
+      lut5       : 269
+       lut       : 269
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		411	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		34	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		0	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		0	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.01 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.10 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.13 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.10 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.13 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.02 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.00 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.00 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 65.6 MiB, delta_rss +0.0 MiB)
+Warning 579: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 580: Sized nonsensical R=0 transistor to minimum width
+Warning 581: Sized nonsensical R=0 transistor to minimum width
+Warning 582: Sized nonsensical R=0 transistor to minimum width
+Warning 583: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 13.10 seconds (max_rss 481.6 MiB, delta_rss +416.0 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 13.73 seconds (max_rss 481.6 MiB, delta_rss +416.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 30.19 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+Warning 584: Found no more sample locations for SOURCE in io_top
+Warning 585: Found no more sample locations for OPIN in io_top
+Warning 586: Found no more sample locations for SOURCE in io_right
+Warning 587: Found no more sample locations for OPIN in io_right
+Warning 588: Found no more sample locations for SOURCE in io_bottom
+Warning 589: Found no more sample locations for OPIN in io_bottom
+Warning 590: Found no more sample locations for SOURCE in io_left
+Warning 591: Found no more sample locations for OPIN in io_left
+Warning 592: Found no more sample locations for SOURCE in clb
+Warning 593: Found no more sample locations for OPIN in clb
+Warning 594: Found no more sample locations for SOURCE in dsp
+Warning 595: Found no more sample locations for SOURCE in bram
+## Computing src/opin lookahead took 0.09 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 30.28 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up
+RR graph channel widths unchanged, skipping RR graph rebuild
+## Computing delta delays
+Warning 596: Unable to route between blocks at (1,1) and (1,45) to characterize delay (setting to inf)
+Warning 597: Unable to route between blocks at (1,1) and (2,45) to characterize delay (setting to inf)
+Warning 598: Unable to route between blocks at (1,1) and (3,45) to characterize delay (setting to inf)
+Warning 599: Unable to route between blocks at (1,1) and (4,45) to characterize delay (setting to inf)
+Warning 600: Unable to route between blocks at (1,1) and (5,45) to characterize delay (setting to inf)
+Warning 601: Unable to route between blocks at (1,1) and (6,45) to characterize delay (setting to inf)
+Warning 602: Unable to route between blocks at (1,1) and (7,45) to characterize delay (setting to inf)
+Warning 603: Unable to route between blocks at (1,1) and (8,45) to characterize delay (setting to inf)
+Warning 604: Unable to route between blocks at (1,1) and (9,45) to characterize delay (setting to inf)
+Warning 605: Unable to route between blocks at (1,1) and (10,45) to characterize delay (setting to inf)
+Warning 606: Unable to route between blocks at (1,1) and (11,45) to characterize delay (setting to inf)
+Warning 607: Unable to route between blocks at (1,1) and (12,45) to characterize delay (setting to inf)
+Warning 608: Unable to route between blocks at (1,1) and (13,45) to characterize delay (setting to inf)
+Warning 609: Unable to route between blocks at (1,1) and (14,45) to characterize delay (setting to inf)
+Warning 610: Unable to route between blocks at (1,1) and (15,45) to characterize delay (setting to inf)
+Warning 611: Unable to route between blocks at (1,1) and (16,45) to characterize delay (setting to inf)
+Warning 612: Unable to route between blocks at (1,1) and (17,45) to characterize delay (setting to inf)
+Warning 613: Unable to route between blocks at (1,1) and (18,45) to characterize delay (setting to inf)
+Warning 614: Unable to route between blocks at (1,1) and (19,45) to characterize delay (setting to inf)
+Warning 615: Unable to route between blocks at (1,1) and (20,45) to characterize delay (setting to inf)
+Warning 616: Unable to route between blocks at (1,1) and (21,45) to characterize delay (setting to inf)
+Warning 617: Unable to route between blocks at (1,1) and (22,45) to characterize delay (setting to inf)
+Warning 618: Unable to route between blocks at (1,1) and (23,45) to characterize delay (setting to inf)
+Warning 619: Unable to route between blocks at (1,1) and (24,45) to characterize delay (setting to inf)
+Warning 620: Unable to route between blocks at (1,1) and (25,45) to characterize delay (setting to inf)
+Warning 621: Unable to route between blocks at (1,1) and (26,45) to characterize delay (setting to inf)
+Warning 622: Unable to route between blocks at (1,1) and (27,45) to characterize delay (setting to inf)
+Warning 623: Unable to route between blocks at (1,1) and (28,45) to characterize delay (setting to inf)
+Warning 624: Unable to route between blocks at (1,1) and (29,45) to characterize delay (setting to inf)
+Warning 625: Unable to route between blocks at (1,1) and (30,45) to characterize delay (setting to inf)
+Warning 626: Unable to route between blocks at (1,1) and (31,45) to characterize delay (setting to inf)
+Warning 627: Unable to route between blocks at (1,1) and (32,45) to characterize delay (setting to inf)
+Warning 628: Unable to route between blocks at (1,1) and (33,45) to characterize delay (setting to inf)
+Warning 629: Unable to route between blocks at (1,1) and (34,45) to characterize delay (setting to inf)
+Warning 630: Unable to route between blocks at (1,1) and (35,45) to characterize delay (setting to inf)
+Warning 631: Unable to route between blocks at (1,1) and (36,45) to characterize delay (setting to inf)
+Warning 632: Unable to route between blocks at (1,1) and (37,45) to characterize delay (setting to inf)
+Warning 633: Unable to route between blocks at (1,1) and (38,45) to characterize delay (setting to inf)
+Warning 634: Unable to route between blocks at (1,1) and (39,45) to characterize delay (setting to inf)
+Warning 635: Unable to route between blocks at (1,1) and (40,45) to characterize delay (setting to inf)
+Warning 636: Unable to route between blocks at (1,1) and (41,45) to characterize delay (setting to inf)
+Warning 637: Unable to route between blocks at (1,1) and (42,45) to characterize delay (setting to inf)
+Warning 638: Unable to route between blocks at (1,1) and (43,45) to characterize delay (setting to inf)
+Warning 639: Unable to route between blocks at (1,1) and (44,45) to characterize delay (setting to inf)
+Warning 640: Unable to route between blocks at (1,1) and (45,45) to characterize delay (setting to inf)
+Warning 641: Unable to route between blocks at (1,1) and (46,45) to characterize delay (setting to inf)
+Warning 642: Unable to route between blocks at (1,1) and (47,45) to characterize delay (setting to inf)
+Warning 643: Unable to route between blocks at (1,1) and (48,45) to characterize delay (setting to inf)
+Warning 644: Unable to route between blocks at (1,1) and (49,45) to characterize delay (setting to inf)
+Warning 645: Unable to route between blocks at (1,1) and (50,45) to characterize delay (setting to inf)
+Warning 646: Unable to route between blocks at (1,1) and (51,45) to characterize delay (setting to inf)
+Warning 647: Unable to route between blocks at (1,1) and (52,45) to characterize delay (setting to inf)
+Warning 648: Unable to route between blocks at (1,1) and (53,45) to characterize delay (setting to inf)
+Warning 649: Unable to route between blocks at (1,1) and (54,45) to characterize delay (setting to inf)
+Warning 650: Unable to route between blocks at (1,1) and (55,45) to characterize delay (setting to inf)
+Warning 651: Unable to route between blocks at (1,1) and (56,45) to characterize delay (setting to inf)
+Warning 652: Unable to route between blocks at (1,1) and (57,45) to characterize delay (setting to inf)
+Warning 653: Unable to route between blocks at (1,1) and (58,45) to characterize delay (setting to inf)
+Warning 654: Unable to route between blocks at (1,1) and (59,45) to characterize delay (setting to inf)
+Warning 655: Unable to route between blocks at (1,1) and (60,45) to characterize delay (setting to inf)
+Warning 656: Unable to route between blocks at (1,1) and (61,45) to characterize delay (setting to inf)
+Warning 657: Unable to route between blocks at (1,1) and (62,45) to characterize delay (setting to inf)
+Warning 658: Unable to route between blocks at (1,1) and (63,1) to characterize delay (setting to inf)
+Warning 659: Unable to route between blocks at (1,1) and (63,2) to characterize delay (setting to inf)
+Warning 660: Unable to route between blocks at (1,1) and (63,3) to characterize delay (setting to inf)
+Warning 661: Unable to route between blocks at (1,1) and (63,4) to characterize delay (setting to inf)
+Warning 662: Unable to route between blocks at (1,1) and (63,5) to characterize delay (setting to inf)
+Warning 663: Unable to route between blocks at (1,1) and (63,6) to characterize delay (setting to inf)
+Warning 664: Unable to route between blocks at (1,1) and (63,7) to characterize delay (setting to inf)
+Warning 665: Unable to route between blocks at (1,1) and (63,8) to characterize delay (setting to inf)
+Warning 666: Unable to route between blocks at (1,1) and (63,9) to characterize delay (setting to inf)
+Warning 667: Unable to route between blocks at (1,1) and (63,10) to characterize delay (setting to inf)
+Warning 668: Unable to route between blocks at (1,1) and (63,11) to characterize delay (setting to inf)
+Warning 669: Unable to route between blocks at (1,1) and (63,12) to characterize delay (setting to inf)
+Warning 670: Unable to route between blocks at (1,1) and (63,13) to characterize delay (setting to inf)
+Warning 671: Unable to route between blocks at (1,1) and (63,14) to characterize delay (setting to inf)
+Warning 672: Unable to route between blocks at (1,1) and (63,15) to characterize delay (setting to inf)
+Warning 673: Unable to route between blocks at (1,1) and (63,16) to characterize delay (setting to inf)
+Warning 674: Unable to route between blocks at (1,1) and (63,17) to characterize delay (setting to inf)
+Warning 675: Unable to route between blocks at (1,1) and (63,18) to characterize delay (setting to inf)
+Warning 676: Unable to route between blocks at (1,1) and (63,19) to characterize delay (setting to inf)
+Warning 677: Unable to route between blocks at (1,1) and (63,20) to characterize delay (setting to inf)
+Warning 678: Unable to route between blocks at (1,1) and (63,21) to characterize delay (setting to inf)
+Warning 679: Unable to route between blocks at (1,1) and (63,22) to characterize delay (setting to inf)
+Warning 680: Unable to route between blocks at (1,1) and (63,23) to characterize delay (setting to inf)
+Warning 681: Unable to route between blocks at (1,1) and (63,24) to characterize delay (setting to inf)
+Warning 682: Unable to route between blocks at (1,1) and (63,25) to characterize delay (setting to inf)
+Warning 683: Unable to route between blocks at (1,1) and (63,26) to characterize delay (setting to inf)
+Warning 684: Unable to route between blocks at (1,1) and (63,27) to characterize delay (setting to inf)
+Warning 685: Unable to route between blocks at (1,1) and (63,28) to characterize delay (setting to inf)
+Warning 686: Unable to route between blocks at (1,1) and (63,29) to characterize delay (setting to inf)
+Warning 687: Unable to route between blocks at (1,1) and (63,30) to characterize delay (setting to inf)
+Warning 688: Unable to route between blocks at (1,1) and (63,31) to characterize delay (setting to inf)
+Warning 689: Unable to route between blocks at (1,1) and (63,32) to characterize delay (setting to inf)
+Warning 690: Unable to route between blocks at (1,1) and (63,33) to characterize delay (setting to inf)
+Warning 691: Unable to route between blocks at (1,1) and (63,34) to characterize delay (setting to inf)
+Warning 692: Unable to route between blocks at (1,1) and (63,35) to characterize delay (setting to inf)
+Warning 693: Unable to route between blocks at (1,1) and (63,36) to characterize delay (setting to inf)
+Warning 694: Unable to route between blocks at (1,1) and (63,37) to characterize delay (setting to inf)
+Warning 695: Unable to route between blocks at (1,1) and (63,38) to characterize delay (setting to inf)
+Warning 696: Unable to route between blocks at (1,1) and (63,39) to characterize delay (setting to inf)
+Warning 697: Unable to route between blocks at (1,1) and (63,40) to characterize delay (setting to inf)
+Warning 698: Unable to route between blocks at (1,1) and (63,41) to characterize delay (setting to inf)
+Warning 699: Unable to route between blocks at (1,1) and (63,42) to characterize delay (setting to inf)
+Warning 700: Unable to route between blocks at (1,1) and (63,43) to characterize delay (setting to inf)
+Warning 701: Unable to route between blocks at (1,1) and (63,44) to characterize delay (setting to inf)
+Warning 702: Unable to route between blocks at (1,1) and (63,45) to characterize delay (setting to inf)
+Warning 703: Unable to route between blocks at (4,4) and (4,45) to characterize delay (setting to inf)
+Warning 704: Unable to route between blocks at (4,4) and (5,45) to characterize delay (setting to inf)
+Warning 705: Unable to route between blocks at (4,4) and (6,45) to characterize delay (setting to inf)
+Warning 706: Unable to route between blocks at (4,4) and (7,45) to characterize delay (setting to inf)
+Warning 707: Unable to route between blocks at (4,4) and (8,45) to characterize delay (setting to inf)
+Warning 708: Unable to route between blocks at (4,4) and (9,45) to characterize delay (setting to inf)
+Warning 709: Unable to route between blocks at (4,4) and (10,45) to characterize delay (setting to inf)
+Warning 710: Unable to route between blocks at (4,4) and (11,45) to characterize delay (setting to inf)
+Warning 711: Unable to route between blocks at (4,4) and (12,45) to characterize delay (setting to inf)
+Warning 712: Unable to route between blocks at (4,4) and (13,45) to characterize delay (setting to inf)
+Warning 713: Unable to route between blocks at (4,4) and (14,45) to characterize delay (setting to inf)
+Warning 714: Unable to route between blocks at (4,4) and (15,45) to characterize delay (setting to inf)
+Warning 715: Unable to route between blocks at (4,4) and (16,45) to characterize delay (setting to inf)
+Warning 716: Unable to route between blocks at (4,4) and (17,45) to characterize delay (setting to inf)
+Warning 717: Unable to route between blocks at (4,4) and (18,45) to characterize delay (setting to inf)
+Warning 718: Unable to route between blocks at (4,4) and (19,45) to characterize delay (setting to inf)
+Warning 719: Unable to route between blocks at (4,4) and (20,45) to characterize delay (setting to inf)
+Warning 720: Unable to route between blocks at (4,4) and (21,45) to characterize delay (setting to inf)
+Warning 721: Unable to route between blocks at (4,4) and (22,45) to characterize delay (setting to inf)
+Warning 722: Unable to route between blocks at (4,4) and (23,45) to characterize delay (setting to inf)
+Warning 723: Unable to route between blocks at (4,4) and (24,45) to characterize delay (setting to inf)
+Warning 724: Unable to route between blocks at (4,4) and (25,45) to characterize delay (setting to inf)
+Warning 725: Unable to route between blocks at (4,4) and (26,45) to characterize delay (setting to inf)
+Warning 726: Unable to route between blocks at (4,4) and (27,45) to characterize delay (setting to inf)
+Warning 727: Unable to route between blocks at (4,4) and (28,45) to characterize delay (setting to inf)
+Warning 728: Unable to route between blocks at (4,4) and (29,45) to characterize delay (setting to inf)
+Warning 729: Unable to route between blocks at (4,4) and (30,45) to characterize delay (setting to inf)
+Warning 730: Unable to route between blocks at (4,4) and (31,45) to characterize delay (setting to inf)
+Warning 731: Unable to route between blocks at (4,4) and (32,45) to characterize delay (setting to inf)
+Warning 732: Unable to route between blocks at (4,4) and (33,45) to characterize delay (setting to inf)
+Warning 733: Unable to route between blocks at (4,4) and (34,45) to characterize delay (setting to inf)
+Warning 734: Unable to route between blocks at (4,4) and (35,45) to characterize delay (setting to inf)
+Warning 735: Unable to route between blocks at (4,4) and (36,45) to characterize delay (setting to inf)
+Warning 736: Unable to route between blocks at (4,4) and (37,45) to characterize delay (setting to inf)
+Warning 737: Unable to route between blocks at (4,4) and (38,45) to characterize delay (setting to inf)
+Warning 738: Unable to route between blocks at (4,4) and (39,45) to characterize delay (setting to inf)
+Warning 739: Unable to route between blocks at (4,4) and (40,45) to characterize delay (setting to inf)
+Warning 740: Unable to route between blocks at (4,4) and (41,45) to characterize delay (setting to inf)
+Warning 741: Unable to route between blocks at (4,4) and (42,45) to characterize delay (setting to inf)
+Warning 742: Unable to route between blocks at (4,4) and (43,45) to characterize delay (setting to inf)
+Warning 743: Unable to route between blocks at (4,4) and (44,45) to characterize delay (setting to inf)
+Warning 744: Unable to route between blocks at (4,4) and (45,45) to characterize delay (setting to inf)
+Warning 745: Unable to route between blocks at (4,4) and (46,45) to characterize delay (setting to inf)
+Warning 746: Unable to route between blocks at (4,4) and (47,45) to characterize delay (setting to inf)
+Warning 747: Unable to route between blocks at (4,4) and (48,45) to characterize delay (setting to inf)
+Warning 748: Unable to route between blocks at (4,4) and (49,45) to characterize delay (setting to inf)
+Warning 749: Unable to route between blocks at (4,4) and (50,45) to characterize delay (setting to inf)
+Warning 750: Unable to route between blocks at (4,4) and (51,45) to characterize delay (setting to inf)
+Warning 751: Unable to route between blocks at (4,4) and (52,45) to characterize delay (setting to inf)
+Warning 752: Unable to route between blocks at (4,4) and (53,45) to characterize delay (setting to inf)
+Warning 753: Unable to route between blocks at (4,4) and (54,45) to characterize delay (setting to inf)
+Warning 754: Unable to route between blocks at (4,4) and (55,45) to characterize delay (setting to inf)
+Warning 755: Unable to route between blocks at (4,4) and (56,45) to characterize delay (setting to inf)
+Warning 756: Unable to route between blocks at (4,4) and (57,45) to characterize delay (setting to inf)
+Warning 757: Unable to route between blocks at (4,4) and (58,45) to characterize delay (setting to inf)
+Warning 758: Unable to route between blocks at (4,4) and (59,45) to characterize delay (setting to inf)
+Warning 759: Unable to route between blocks at (4,4) and (60,45) to characterize delay (setting to inf)
+Warning 760: Unable to route between blocks at (4,4) and (61,45) to characterize delay (setting to inf)
+Warning 761: Unable to route between blocks at (4,4) and (62,45) to characterize delay (setting to inf)
+Warning 762: Unable to route between blocks at (4,4) and (63,4) to characterize delay (setting to inf)
+Warning 763: Unable to route between blocks at (4,4) and (63,5) to characterize delay (setting to inf)
+Warning 764: Unable to route between blocks at (4,4) and (63,6) to characterize delay (setting to inf)
+Warning 765: Unable to route between blocks at (4,4) and (63,7) to characterize delay (setting to inf)
+Warning 766: Unable to route between blocks at (4,4) and (63,8) to characterize delay (setting to inf)
+Warning 767: Unable to route between blocks at (4,4) and (63,9) to characterize delay (setting to inf)
+Warning 768: Unable to route between blocks at (4,4) and (63,10) to characterize delay (setting to inf)
+Warning 769: Unable to route between blocks at (4,4) and (63,11) to characterize delay (setting to inf)
+Warning 770: Unable to route between blocks at (4,4) and (63,12) to characterize delay (setting to inf)
+Warning 771: Unable to route between blocks at (4,4) and (63,13) to characterize delay (setting to inf)
+Warning 772: Unable to route between blocks at (4,4) and (63,14) to characterize delay (setting to inf)
+Warning 773: Unable to route between blocks at (4,4) and (63,15) to characterize delay (setting to inf)
+Warning 774: Unable to route between blocks at (4,4) and (63,16) to characterize delay (setting to inf)
+Warning 775: Unable to route between blocks at (4,4) and (63,17) to characterize delay (setting to inf)
+Warning 776: Unable to route between blocks at (4,4) and (63,18) to characterize delay (setting to inf)
+Warning 777: Unable to route between blocks at (4,4) and (63,19) to characterize delay (setting to inf)
+Warning 778: Unable to route between blocks at (4,4) and (63,20) to characterize delay (setting to inf)
+Warning 779: Unable to route between blocks at (4,4) and (63,21) to characterize delay (setting to inf)
+Warning 780: Unable to route between blocks at (4,4) and (63,22) to characterize delay (setting to inf)
+Warning 781: Unable to route between blocks at (4,4) and (63,23) to characterize delay (setting to inf)
+Warning 782: Unable to route between blocks at (4,4) and (63,24) to characterize delay (setting to inf)
+Warning 783: Unable to route between blocks at (4,4) and (63,25) to characterize delay (setting to inf)
+Warning 784: Unable to route between blocks at (4,4) and (63,26) to characterize delay (setting to inf)
+Warning 785: Unable to route between blocks at (4,4) and (63,27) to characterize delay (setting to inf)
+Warning 786: Unable to route between blocks at (4,4) and (63,28) to characterize delay (setting to inf)
+Warning 787: Unable to route between blocks at (4,4) and (63,29) to characterize delay (setting to inf)
+Warning 788: Unable to route between blocks at (4,4) and (63,30) to characterize delay (setting to inf)
+Warning 789: Unable to route between blocks at (4,4) and (63,31) to characterize delay (setting to inf)
+Warning 790: Unable to route between blocks at (4,4) and (63,32) to characterize delay (setting to inf)
+Warning 791: Unable to route between blocks at (4,4) and (63,33) to characterize delay (setting to inf)
+Warning 792: Unable to route between blocks at (4,4) and (63,34) to characterize delay (setting to inf)
+Warning 793: Unable to route between blocks at (4,4) and (63,35) to characterize delay (setting to inf)
+Warning 794: Unable to route between blocks at (4,4) and (63,36) to characterize delay (setting to inf)
+Warning 795: Unable to route between blocks at (4,4) and (63,37) to characterize delay (setting to inf)
+Warning 796: Unable to route between blocks at (4,4) and (63,38) to characterize delay (setting to inf)
+Warning 797: Unable to route between blocks at (4,4) and (63,39) to characterize delay (setting to inf)
+Warning 798: Unable to route between blocks at (4,4) and (63,40) to characterize delay (setting to inf)
+Warning 799: Unable to route between blocks at (4,4) and (63,41) to characterize delay (setting to inf)
+Warning 800: Unable to route between blocks at (4,4) and (63,42) to characterize delay (setting to inf)
+Warning 801: Unable to route between blocks at (4,4) and (63,43) to characterize delay (setting to inf)
+Warning 802: Unable to route between blocks at (4,4) and (63,44) to characterize delay (setting to inf)
+Warning 803: Unable to route between blocks at (4,4) and (63,45) to characterize delay (setting to inf)
+Warning 804: Unable to route between blocks at (60,42) and (0,0) to characterize delay (setting to inf)
+Warning 805: Unable to route between blocks at (60,42) and (0,1) to characterize delay (setting to inf)
+Warning 806: Unable to route between blocks at (60,42) and (0,2) to characterize delay (setting to inf)
+Warning 807: Unable to route between blocks at (60,42) and (0,3) to characterize delay (setting to inf)
+Warning 808: Unable to route between blocks at (60,42) and (0,4) to characterize delay (setting to inf)
+Warning 809: Unable to route between blocks at (60,42) and (0,5) to characterize delay (setting to inf)
+Warning 810: Unable to route between blocks at (60,42) and (0,6) to characterize delay (setting to inf)
+Warning 811: Unable to route between blocks at (60,42) and (0,7) to characterize delay (setting to inf)
+Warning 812: Unable to route between blocks at (60,42) and (0,8) to characterize delay (setting to inf)
+Warning 813: Unable to route between blocks at (60,42) and (0,9) to characterize delay (setting to inf)
+Warning 814: Unable to route between blocks at (60,42) and (0,10) to characterize delay (setting to inf)
+Warning 815: Unable to route between blocks at (60,42) and (0,11) to characterize delay (setting to inf)
+Warning 816: Unable to route between blocks at (60,42) and (0,12) to characterize delay (setting to inf)
+Warning 817: Unable to route between blocks at (60,42) and (0,13) to characterize delay (setting to inf)
+Warning 818: Unable to route between blocks at (60,42) and (0,14) to characterize delay (setting to inf)
+Warning 819: Unable to route between blocks at (60,42) and (0,15) to characterize delay (setting to inf)
+Warning 820: Unable to route between blocks at (60,42) and (0,16) to characterize delay (setting to inf)
+Warning 821: Unable to route between blocks at (60,42) and (0,17) to characterize delay (setting to inf)
+Warning 822: Unable to route between blocks at (60,42) and (0,18) to characterize delay (setting to inf)
+Warning 823: Unable to route between blocks at (60,42) and (0,19) to characterize delay (setting to inf)
+Warning 824: Unable to route between blocks at (60,42) and (0,20) to characterize delay (setting to inf)
+Warning 825: Unable to route between blocks at (60,42) and (0,21) to characterize delay (setting to inf)
+Warning 826: Unable to route between blocks at (60,42) and (0,22) to characterize delay (setting to inf)
+Warning 827: Unable to route between blocks at (60,42) and (0,23) to characterize delay (setting to inf)
+Warning 828: Unable to route between blocks at (60,42) and (0,24) to characterize delay (setting to inf)
+Warning 829: Unable to route between blocks at (60,42) and (0,25) to characterize delay (setting to inf)
+Warning 830: Unable to route between blocks at (60,42) and (0,26) to characterize delay (setting to inf)
+Warning 831: Unable to route between blocks at (60,42) and (0,27) to characterize delay (setting to inf)
+Warning 832: Unable to route between blocks at (60,42) and (0,28) to characterize delay (setting to inf)
+Warning 833: Unable to route between blocks at (60,42) and (0,29) to characterize delay (setting to inf)
+Warning 834: Unable to route between blocks at (60,42) and (0,30) to characterize delay (setting to inf)
+Warning 835: Unable to route between blocks at (60,42) and (0,31) to characterize delay (setting to inf)
+Warning 836: Unable to route between blocks at (60,42) and (0,32) to characterize delay (setting to inf)
+Warning 837: Unable to route between blocks at (60,42) and (0,33) to characterize delay (setting to inf)
+Warning 838: Unable to route between blocks at (60,42) and (0,34) to characterize delay (setting to inf)
+Warning 839: Unable to route between blocks at (60,42) and (0,35) to characterize delay (setting to inf)
+Warning 840: Unable to route between blocks at (60,42) and (0,36) to characterize delay (setting to inf)
+Warning 841: Unable to route between blocks at (60,42) and (0,37) to characterize delay (setting to inf)
+Warning 842: Unable to route between blocks at (60,42) and (0,38) to characterize delay (setting to inf)
+Warning 843: Unable to route between blocks at (60,42) and (0,39) to characterize delay (setting to inf)
+Warning 844: Unable to route between blocks at (60,42) and (0,40) to characterize delay (setting to inf)
+Warning 845: Unable to route between blocks at (60,42) and (0,41) to characterize delay (setting to inf)
+Warning 846: Unable to route between blocks at (60,42) and (0,42) to characterize delay (setting to inf)
+Warning 847: Unable to route between blocks at (60,42) and (1,0) to characterize delay (setting to inf)
+Warning 848: Unable to route between blocks at (60,42) and (2,0) to characterize delay (setting to inf)
+Warning 849: Unable to route between blocks at (60,42) and (3,0) to characterize delay (setting to inf)
+Warning 850: Unable to route between blocks at (60,42) and (4,0) to characterize delay (setting to inf)
+Warning 851: Unable to route between blocks at (60,42) and (5,0) to characterize delay (setting to inf)
+Warning 852: Unable to route between blocks at (60,42) and (6,0) to characterize delay (setting to inf)
+Warning 853: Unable to route between blocks at (60,42) and (7,0) to characterize delay (setting to inf)
+Warning 854: Unable to route between blocks at (60,42) and (8,0) to characterize delay (setting to inf)
+Warning 855: Unable to route between blocks at (60,42) and (9,0) to characterize delay (setting to inf)
+Warning 856: Unable to route between blocks at (60,42) and (10,0) to characterize delay (setting to inf)
+Warning 857: Unable to route between blocks at (60,42) and (11,0) to characterize delay (setting to inf)
+Warning 858: Unable to route between blocks at (60,42) and (12,0) to characterize delay (setting to inf)
+Warning 859: Unable to route between blocks at (60,42) and (13,0) to characterize delay (setting to inf)
+Warning 860: Unable to route between blocks at (60,42) and (14,0) to characterize delay (setting to inf)
+Warning 861: Unable to route between blocks at (60,42) and (15,0) to characterize delay (setting to inf)
+Warning 862: Unable to route between blocks at (60,42) and (16,0) to characterize delay (setting to inf)
+Warning 863: Unable to route between blocks at (60,42) and (17,0) to characterize delay (setting to inf)
+Warning 864: Unable to route between blocks at (60,42) and (18,0) to characterize delay (setting to inf)
+Warning 865: Unable to route between blocks at (60,42) and (19,0) to characterize delay (setting to inf)
+Warning 866: Unable to route between blocks at (60,42) and (20,0) to characterize delay (setting to inf)
+Warning 867: Unable to route between blocks at (60,42) and (21,0) to characterize delay (setting to inf)
+Warning 868: Unable to route between blocks at (60,42) and (22,0) to characterize delay (setting to inf)
+Warning 869: Unable to route between blocks at (60,42) and (23,0) to characterize delay (setting to inf)
+Warning 870: Unable to route between blocks at (60,42) and (24,0) to characterize delay (setting to inf)
+Warning 871: Unable to route between blocks at (60,42) and (25,0) to characterize delay (setting to inf)
+Warning 872: Unable to route between blocks at (60,42) and (26,0) to characterize delay (setting to inf)
+Warning 873: Unable to route between blocks at (60,42) and (27,0) to characterize delay (setting to inf)
+Warning 874: Unable to route between blocks at (60,42) and (28,0) to characterize delay (setting to inf)
+Warning 875: Unable to route between blocks at (60,42) and (29,0) to characterize delay (setting to inf)
+Warning 876: Unable to route between blocks at (60,42) and (30,0) to characterize delay (setting to inf)
+Warning 877: Unable to route between blocks at (60,42) and (31,0) to characterize delay (setting to inf)
+Warning 878: Unable to route between blocks at (60,42) and (32,0) to characterize delay (setting to inf)
+Warning 879: Unable to route between blocks at (60,42) and (33,0) to characterize delay (setting to inf)
+Warning 880: Unable to route between blocks at (60,42) and (34,0) to characterize delay (setting to inf)
+Warning 881: Unable to route between blocks at (60,42) and (35,0) to characterize delay (setting to inf)
+Warning 882: Unable to route between blocks at (60,42) and (36,0) to characterize delay (setting to inf)
+Warning 883: Unable to route between blocks at (60,42) and (37,0) to characterize delay (setting to inf)
+Warning 884: Unable to route between blocks at (60,42) and (38,0) to characterize delay (setting to inf)
+Warning 885: Unable to route between blocks at (60,42) and (39,0) to characterize delay (setting to inf)
+Warning 886: Unable to route between blocks at (60,42) and (40,0) to characterize delay (setting to inf)
+Warning 887: Unable to route between blocks at (60,42) and (41,0) to characterize delay (setting to inf)
+Warning 888: Unable to route between blocks at (60,42) and (42,0) to characterize delay (setting to inf)
+Warning 889: Unable to route between blocks at (60,42) and (43,0) to characterize delay (setting to inf)
+Warning 890: Unable to route between blocks at (60,42) and (44,0) to characterize delay (setting to inf)
+Warning 891: Unable to route between blocks at (60,42) and (45,0) to characterize delay (setting to inf)
+Warning 892: Unable to route between blocks at (60,42) and (46,0) to characterize delay (setting to inf)
+Warning 893: Unable to route between blocks at (60,42) and (47,0) to characterize delay (setting to inf)
+Warning 894: Unable to route between blocks at (60,42) and (48,0) to characterize delay (setting to inf)
+Warning 895: Unable to route between blocks at (60,42) and (49,0) to characterize delay (setting to inf)
+Warning 896: Unable to route between blocks at (60,42) and (50,0) to characterize delay (setting to inf)
+Warning 897: Unable to route between blocks at (60,42) and (51,0) to characterize delay (setting to inf)
+Warning 898: Unable to route between blocks at (60,42) and (52,0) to characterize delay (setting to inf)
+Warning 899: Unable to route between blocks at (60,42) and (53,0) to characterize delay (setting to inf)
+Warning 900: Unable to route between blocks at (60,42) and (54,0) to characterize delay (setting to inf)
+Warning 901: Unable to route between blocks at (60,42) and (55,0) to characterize delay (setting to inf)
+Warning 902: Unable to route between blocks at (60,42) and (56,0) to characterize delay (setting to inf)
+Warning 903: Unable to route between blocks at (60,42) and (57,0) to characterize delay (setting to inf)
+Warning 904: Unable to route between blocks at (60,42) and (58,0) to characterize delay (setting to inf)
+Warning 905: Unable to route between blocks at (60,42) and (59,0) to characterize delay (setting to inf)
+Warning 906: Unable to route between blocks at (60,42) and (60,0) to characterize delay (setting to inf)
+Warning 907: Unable to route between blocks at (60,4) and (0,4) to characterize delay (setting to inf)
+Warning 908: Unable to route between blocks at (60,4) and (0,5) to characterize delay (setting to inf)
+Warning 909: Unable to route between blocks at (60,4) and (0,6) to characterize delay (setting to inf)
+Warning 910: Unable to route between blocks at (60,4) and (0,7) to characterize delay (setting to inf)
+Warning 911: Unable to route between blocks at (60,4) and (0,8) to characterize delay (setting to inf)
+Warning 912: Unable to route between blocks at (60,4) and (0,9) to characterize delay (setting to inf)
+Warning 913: Unable to route between blocks at (60,4) and (0,10) to characterize delay (setting to inf)
+Warning 914: Unable to route between blocks at (60,4) and (0,11) to characterize delay (setting to inf)
+Warning 915: Unable to route between blocks at (60,4) and (0,12) to characterize delay (setting to inf)
+Warning 916: Unable to route between blocks at (60,4) and (0,13) to characterize delay (setting to inf)
+Warning 917: Unable to route between blocks at (60,4) and (0,14) to characterize delay (setting to inf)
+Warning 918: Unable to route between blocks at (60,4) and (0,15) to characterize delay (setting to inf)
+Warning 919: Unable to route between blocks at (60,4) and (0,16) to characterize delay (setting to inf)
+Warning 920: Unable to route between blocks at (60,4) and (0,17) to characterize delay (setting to inf)
+Warning 921: Unable to route between blocks at (60,4) and (0,18) to characterize delay (setting to inf)
+Warning 922: Unable to route between blocks at (60,4) and (0,19) to characterize delay (setting to inf)
+Warning 923: Unable to route between blocks at (60,4) and (0,20) to characterize delay (setting to inf)
+Warning 924: Unable to route between blocks at (60,4) and (0,21) to characterize delay (setting to inf)
+Warning 925: Unable to route between blocks at (60,4) and (0,22) to characterize delay (setting to inf)
+Warning 926: Unable to route between blocks at (60,4) and (0,23) to characterize delay (setting to inf)
+Warning 927: Unable to route between blocks at (60,4) and (0,24) to characterize delay (setting to inf)
+Warning 928: Unable to route between blocks at (60,4) and (0,25) to characterize delay (setting to inf)
+Warning 929: Unable to route between blocks at (60,4) and (0,26) to characterize delay (setting to inf)
+Warning 930: Unable to route between blocks at (60,4) and (0,27) to characterize delay (setting to inf)
+Warning 931: Unable to route between blocks at (60,4) and (0,28) to characterize delay (setting to inf)
+Warning 932: Unable to route between blocks at (60,4) and (0,29) to characterize delay (setting to inf)
+Warning 933: Unable to route between blocks at (60,4) and (0,30) to characterize delay (setting to inf)
+Warning 934: Unable to route between blocks at (60,4) and (0,31) to characterize delay (setting to inf)
+Warning 935: Unable to route between blocks at (60,4) and (0,32) to characterize delay (setting to inf)
+Warning 936: Unable to route between blocks at (60,4) and (0,33) to characterize delay (setting to inf)
+Warning 937: Unable to route between blocks at (60,4) and (0,34) to characterize delay (setting to inf)
+Warning 938: Unable to route between blocks at (60,4) and (0,35) to characterize delay (setting to inf)
+Warning 939: Unable to route between blocks at (60,4) and (0,36) to characterize delay (setting to inf)
+Warning 940: Unable to route between blocks at (60,4) and (0,37) to characterize delay (setting to inf)
+Warning 941: Unable to route between blocks at (60,4) and (0,38) to characterize delay (setting to inf)
+Warning 942: Unable to route between blocks at (60,4) and (0,39) to characterize delay (setting to inf)
+Warning 943: Unable to route between blocks at (60,4) and (0,40) to characterize delay (setting to inf)
+Warning 944: Unable to route between blocks at (60,4) and (0,41) to characterize delay (setting to inf)
+Warning 945: Unable to route between blocks at (60,4) and (0,42) to characterize delay (setting to inf)
+Warning 946: Unable to route between blocks at (60,4) and (0,43) to characterize delay (setting to inf)
+Warning 947: Unable to route between blocks at (60,4) and (0,44) to characterize delay (setting to inf)
+Warning 948: Unable to route between blocks at (60,4) and (0,45) to characterize delay (setting to inf)
+Warning 949: Unable to route between blocks at (60,4) and (1,45) to characterize delay (setting to inf)
+Warning 950: Unable to route between blocks at (60,4) and (2,45) to characterize delay (setting to inf)
+Warning 951: Unable to route between blocks at (60,4) and (3,45) to characterize delay (setting to inf)
+Warning 952: Unable to route between blocks at (60,4) and (4,45) to characterize delay (setting to inf)
+Warning 953: Unable to route between blocks at (60,4) and (5,45) to characterize delay (setting to inf)
+Warning 954: Unable to route between blocks at (60,4) and (6,45) to characterize delay (setting to inf)
+Warning 955: Unable to route between blocks at (60,4) and (7,45) to characterize delay (setting to inf)
+Warning 956: Unable to route between blocks at (60,4) and (8,45) to characterize delay (setting to inf)
+Warning 957: Unable to route between blocks at (60,4) and (9,45) to characterize delay (setting to inf)
+Warning 958: Unable to route between blocks at (60,4) and (10,45) to characterize delay (setting to inf)
+Warning 959: Unable to route between blocks at (60,4) and (11,45) to characterize delay (setting to inf)
+Warning 960: Unable to route between blocks at (60,4) and (12,45) to characterize delay (setting to inf)
+Warning 961: Unable to route between blocks at (60,4) and (13,45) to characterize delay (setting to inf)
+Warning 962: Unable to route between blocks at (60,4) and (14,45) to characterize delay (setting to inf)
+Warning 963: Unable to route between blocks at (60,4) and (15,45) to characterize delay (setting to inf)
+Warning 964: Unable to route between blocks at (60,4) and (16,45) to characterize delay (setting to inf)
+Warning 965: Unable to route between blocks at (60,4) and (17,45) to characterize delay (setting to inf)
+Warning 966: Unable to route between blocks at (60,4) and (18,45) to characterize delay (setting to inf)
+Warning 967: Unable to route between blocks at (60,4) and (19,45) to characterize delay (setting to inf)
+Warning 968: Unable to route between blocks at (60,4) and (20,45) to characterize delay (setting to inf)
+Warning 969: Unable to route between blocks at (60,4) and (21,45) to characterize delay (setting to inf)
+Warning 970: Unable to route between blocks at (60,4) and (22,45) to characterize delay (setting to inf)
+Warning 971: Unable to route between blocks at (60,4) and (23,45) to characterize delay (setting to inf)
+Warning 972: Unable to route between blocks at (60,4) and (24,45) to characterize delay (setting to inf)
+Warning 973: Unable to route between blocks at (60,4) and (25,45) to characterize delay (setting to inf)
+Warning 974: Unable to route between blocks at (60,4) and (26,45) to characterize delay (setting to inf)
+Warning 975: Unable to route between blocks at (60,4) and (27,45) to characterize delay (setting to inf)
+Warning 976: Unable to route between blocks at (60,4) and (28,45) to characterize delay (setting to inf)
+Warning 977: Unable to route between blocks at (60,4) and (29,45) to characterize delay (setting to inf)
+Warning 978: Unable to route between blocks at (60,4) and (30,45) to characterize delay (setting to inf)
+Warning 979: Unable to route between blocks at (60,4) and (31,45) to characterize delay (setting to inf)
+Warning 980: Unable to route between blocks at (60,4) and (32,45) to characterize delay (setting to inf)
+Warning 981: Unable to route between blocks at (60,4) and (33,45) to characterize delay (setting to inf)
+Warning 982: Unable to route between blocks at (60,4) and (34,45) to characterize delay (setting to inf)
+Warning 983: Unable to route between blocks at (60,4) and (35,45) to characterize delay (setting to inf)
+Warning 984: Unable to route between blocks at (60,4) and (36,45) to characterize delay (setting to inf)
+Warning 985: Unable to route between blocks at (60,4) and (37,45) to characterize delay (setting to inf)
+Warning 986: Unable to route between blocks at (60,4) and (38,45) to characterize delay (setting to inf)
+Warning 987: Unable to route between blocks at (60,4) and (39,45) to characterize delay (setting to inf)
+Warning 988: Unable to route between blocks at (60,4) and (40,45) to characterize delay (setting to inf)
+Warning 989: Unable to route between blocks at (60,4) and (41,45) to characterize delay (setting to inf)
+Warning 990: Unable to route between blocks at (60,4) and (42,45) to characterize delay (setting to inf)
+Warning 991: Unable to route between blocks at (60,4) and (43,45) to characterize delay (setting to inf)
+Warning 992: Unable to route between blocks at (60,4) and (44,45) to characterize delay (setting to inf)
+Warning 993: Unable to route between blocks at (60,4) and (45,45) to characterize delay (setting to inf)
+Warning 994: Unable to route between blocks at (60,4) and (46,45) to characterize delay (setting to inf)
+Warning 995: Unable to route between blocks at (60,4) and (47,45) to characterize delay (setting to inf)
+Warning 996: Unable to route between blocks at (60,4) and (48,45) to characterize delay (setting to inf)
+Warning 997: Unable to route between blocks at (60,4) and (49,45) to characterize delay (setting to inf)
+Warning 998: Unable to route between blocks at (60,4) and (50,45) to characterize delay (setting to inf)
+Warning 999: Unable to route between blocks at (60,4) and (51,45) to characterize delay (setting to inf)
+Warning 1000: Unable to route between blocks at (60,4) and (52,45) to characterize delay (setting to inf)
+Warning 1001: Unable to route between blocks at (60,4) and (53,45) to characterize delay (setting to inf)
+Warning 1002: Unable to route between blocks at (60,4) and (54,45) to characterize delay (setting to inf)
+Warning 1003: Unable to route between blocks at (60,4) and (55,45) to characterize delay (setting to inf)
+Warning 1004: Unable to route between blocks at (60,4) and (56,45) to characterize delay (setting to inf)
+Warning 1005: Unable to route between blocks at (60,4) and (57,45) to characterize delay (setting to inf)
+Warning 1006: Unable to route between blocks at (60,4) and (58,45) to characterize delay (setting to inf)
+Warning 1007: Unable to route between blocks at (60,4) and (59,45) to characterize delay (setting to inf)
+Warning 1008: Unable to route between blocks at (60,4) and (60,45) to characterize delay (setting to inf)
+Warning 1009: Unable to route between blocks at (4,42) and (4,0) to characterize delay (setting to inf)
+Warning 1010: Unable to route between blocks at (4,42) and (5,0) to characterize delay (setting to inf)
+Warning 1011: Unable to route between blocks at (4,42) and (6,0) to characterize delay (setting to inf)
+Warning 1012: Unable to route between blocks at (4,42) and (7,0) to characterize delay (setting to inf)
+Warning 1013: Unable to route between blocks at (4,42) and (8,0) to characterize delay (setting to inf)
+Warning 1014: Unable to route between blocks at (4,42) and (9,0) to characterize delay (setting to inf)
+Warning 1015: Unable to route between blocks at (4,42) and (10,0) to characterize delay (setting to inf)
+Warning 1016: Unable to route between blocks at (4,42) and (11,0) to characterize delay (setting to inf)
+Warning 1017: Unable to route between blocks at (4,42) and (12,0) to characterize delay (setting to inf)
+Warning 1018: Unable to route between blocks at (4,42) and (13,0) to characterize delay (setting to inf)
+Warning 1019: Unable to route between blocks at (4,42) and (14,0) to characterize delay (setting to inf)
+Warning 1020: Unable to route between blocks at (4,42) and (15,0) to characterize delay (setting to inf)
+Warning 1021: Unable to route between blocks at (4,42) and (16,0) to characterize delay (setting to inf)
+Warning 1022: Unable to route between blocks at (4,42) and (17,0) to characterize delay (setting to inf)
+Warning 1023: Unable to route between blocks at (4,42) and (18,0) to characterize delay (setting to inf)
+Warning 1024: Unable to route between blocks at (4,42) and (19,0) to characterize delay (setting to inf)
+Warning 1025: Unable to route between blocks at (4,42) and (20,0) to characterize delay (setting to inf)
+Warning 1026: Unable to route between blocks at (4,42) and (21,0) to characterize delay (setting to inf)
+Warning 1027: Unable to route between blocks at (4,42) and (22,0) to characterize delay (setting to inf)
+Warning 1028: Unable to route between blocks at (4,42) and (23,0) to characterize delay (setting to inf)
+Warning 1029: Unable to route between blocks at (4,42) and (24,0) to characterize delay (setting to inf)
+Warning 1030: Unable to route between blocks at (4,42) and (25,0) to characterize delay (setting to inf)
+Warning 1031: Unable to route between blocks at (4,42) and (26,0) to characterize delay (setting to inf)
+Warning 1032: Unable to route between blocks at (4,42) and (27,0) to characterize delay (setting to inf)
+Warning 1033: Unable to route between blocks at (4,42) and (28,0) to characterize delay (setting to inf)
+Warning 1034: Unable to route between blocks at (4,42) and (29,0) to characterize delay (setting to inf)
+Warning 1035: Unable to route between blocks at (4,42) and (30,0) to characterize delay (setting to inf)
+Warning 1036: Unable to route between blocks at (4,42) and (31,0) to characterize delay (setting to inf)
+Warning 1037: Unable to route between blocks at (4,42) and (32,0) to characterize delay (setting to inf)
+Warning 1038: Unable to route between blocks at (4,42) and (33,0) to characterize delay (setting to inf)
+Warning 1039: Unable to route between blocks at (4,42) and (34,0) to characterize delay (setting to inf)
+Warning 1040: Unable to route between blocks at (4,42) and (35,0) to characterize delay (setting to inf)
+Warning 1041: Unable to route between blocks at (4,42) and (36,0) to characterize delay (setting to inf)
+Warning 1042: Unable to route between blocks at (4,42) and (37,0) to characterize delay (setting to inf)
+Warning 1043: Unable to route between blocks at (4,42) and (38,0) to characterize delay (setting to inf)
+Warning 1044: Unable to route between blocks at (4,42) and (39,0) to characterize delay (setting to inf)
+Warning 1045: Unable to route between blocks at (4,42) and (40,0) to characterize delay (setting to inf)
+Warning 1046: Unable to route between blocks at (4,42) and (41,0) to characterize delay (setting to inf)
+Warning 1047: Unable to route between blocks at (4,42) and (42,0) to characterize delay (setting to inf)
+Warning 1048: Unable to route between blocks at (4,42) and (43,0) to characterize delay (setting to inf)
+Warning 1049: Unable to route between blocks at (4,42) and (44,0) to characterize delay (setting to inf)
+Warning 1050: Unable to route between blocks at (4,42) and (45,0) to characterize delay (setting to inf)
+Warning 1051: Unable to route between blocks at (4,42) and (46,0) to characterize delay (setting to inf)
+Warning 1052: Unable to route between blocks at (4,42) and (47,0) to characterize delay (setting to inf)
+Warning 1053: Unable to route between blocks at (4,42) and (48,0) to characterize delay (setting to inf)
+Warning 1054: Unable to route between blocks at (4,42) and (49,0) to characterize delay (setting to inf)
+Warning 1055: Unable to route between blocks at (4,42) and (50,0) to characterize delay (setting to inf)
+Warning 1056: Unable to route between blocks at (4,42) and (51,0) to characterize delay (setting to inf)
+Warning 1057: Unable to route between blocks at (4,42) and (52,0) to characterize delay (setting to inf)
+Warning 1058: Unable to route between blocks at (4,42) and (53,0) to characterize delay (setting to inf)
+Warning 1059: Unable to route between blocks at (4,42) and (54,0) to characterize delay (setting to inf)
+Warning 1060: Unable to route between blocks at (4,42) and (55,0) to characterize delay (setting to inf)
+Warning 1061: Unable to route between blocks at (4,42) and (56,0) to characterize delay (setting to inf)
+Warning 1062: Unable to route between blocks at (4,42) and (57,0) to characterize delay (setting to inf)
+Warning 1063: Unable to route between blocks at (4,42) and (58,0) to characterize delay (setting to inf)
+Warning 1064: Unable to route between blocks at (4,42) and (59,0) to characterize delay (setting to inf)
+Warning 1065: Unable to route between blocks at (4,42) and (60,0) to characterize delay (setting to inf)
+Warning 1066: Unable to route between blocks at (4,42) and (61,0) to characterize delay (setting to inf)
+Warning 1067: Unable to route between blocks at (4,42) and (62,0) to characterize delay (setting to inf)
+Warning 1068: Unable to route between blocks at (4,42) and (63,0) to characterize delay (setting to inf)
+Warning 1069: Unable to route between blocks at (4,42) and (63,1) to characterize delay (setting to inf)
+Warning 1070: Unable to route between blocks at (4,42) and (63,2) to characterize delay (setting to inf)
+Warning 1071: Unable to route between blocks at (4,42) and (63,3) to characterize delay (setting to inf)
+Warning 1072: Unable to route between blocks at (4,42) and (63,4) to characterize delay (setting to inf)
+Warning 1073: Unable to route between blocks at (4,42) and (63,5) to characterize delay (setting to inf)
+Warning 1074: Unable to route between blocks at (4,42) and (63,6) to characterize delay (setting to inf)
+Warning 1075: Unable to route between blocks at (4,42) and (63,7) to characterize delay (setting to inf)
+Warning 1076: Unable to route between blocks at (4,42) and (63,8) to characterize delay (setting to inf)
+Warning 1077: Unable to route between blocks at (4,42) and (63,9) to characterize delay (setting to inf)
+Warning 1078: Unable to route between blocks at (4,42) and (63,10) to characterize delay (setting to inf)
+Warning 1079: Unable to route between blocks at (4,42) and (63,11) to characterize delay (setting to inf)
+Warning 1080: Unable to route between blocks at (4,42) and (63,12) to characterize delay (setting to inf)
+Warning 1081: Unable to route between blocks at (4,42) and (63,13) to characterize delay (setting to inf)
+Warning 1082: Unable to route between blocks at (4,42) and (63,14) to characterize delay (setting to inf)
+Warning 1083: Unable to route between blocks at (4,42) and (63,15) to characterize delay (setting to inf)
+Warning 1084: Unable to route between blocks at (4,42) and (63,16) to characterize delay (setting to inf)
+Warning 1085: Unable to route between blocks at (4,42) and (63,17) to characterize delay (setting to inf)
+Warning 1086: Unable to route between blocks at (4,42) and (63,18) to characterize delay (setting to inf)
+Warning 1087: Unable to route between blocks at (4,42) and (63,19) to characterize delay (setting to inf)
+Warning 1088: Unable to route between blocks at (4,42) and (63,20) to characterize delay (setting to inf)
+Warning 1089: Unable to route between blocks at (4,42) and (63,21) to characterize delay (setting to inf)
+Warning 1090: Unable to route between blocks at (4,42) and (63,22) to characterize delay (setting to inf)
+Warning 1091: Unable to route between blocks at (4,42) and (63,23) to characterize delay (setting to inf)
+Warning 1092: Unable to route between blocks at (4,42) and (63,24) to characterize delay (setting to inf)
+Warning 1093: Unable to route between blocks at (4,42) and (63,25) to characterize delay (setting to inf)
+Warning 1094: Unable to route between blocks at (4,42) and (63,26) to characterize delay (setting to inf)
+Warning 1095: Unable to route between blocks at (4,42) and (63,27) to characterize delay (setting to inf)
+Warning 1096: Unable to route between blocks at (4,42) and (63,28) to characterize delay (setting to inf)
+Warning 1097: Unable to route between blocks at (4,42) and (63,29) to characterize delay (setting to inf)
+Warning 1098: Unable to route between blocks at (4,42) and (63,30) to characterize delay (setting to inf)
+Warning 1099: Unable to route between blocks at (4,42) and (63,31) to characterize delay (setting to inf)
+Warning 1100: Unable to route between blocks at (4,42) and (63,32) to characterize delay (setting to inf)
+Warning 1101: Unable to route between blocks at (4,42) and (63,33) to characterize delay (setting to inf)
+Warning 1102: Unable to route between blocks at (4,42) and (63,34) to characterize delay (setting to inf)
+Warning 1103: Unable to route between blocks at (4,42) and (63,35) to characterize delay (setting to inf)
+Warning 1104: Unable to route between blocks at (4,42) and (63,36) to characterize delay (setting to inf)
+Warning 1105: Unable to route between blocks at (4,42) and (63,37) to characterize delay (setting to inf)
+Warning 1106: Unable to route between blocks at (4,42) and (63,38) to characterize delay (setting to inf)
+Warning 1107: Unable to route between blocks at (4,42) and (63,39) to characterize delay (setting to inf)
+Warning 1108: Unable to route between blocks at (4,42) and (63,40) to characterize delay (setting to inf)
+Warning 1109: Unable to route between blocks at (4,42) and (63,41) to characterize delay (setting to inf)
+Warning 1110: Unable to route between blocks at (4,42) and (63,42) to characterize delay (setting to inf)
+## Computing delta delays took 36.80 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up took 36.82 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+
+Bounding box mode is Cube
+
+Using simple RL 'Softmax agent' for choosing move and block types
+# Placement
+## Initial Placement
+Reading i2c_pin_loc.place.
+
+Warning 1111: Block $iopadmap$pi083 has an invalid name and it is going to be skipped.
+Warning 1112: Block $iopadmap$pi101 has an invalid name and it is going to be skipped.
+Warning 1113: Block $iopadmap$pi102 has an invalid name and it is going to be skipped.
+Warning 1114: Block $iopadmap$pi103 has an invalid name and it is going to be skipped.
+Warning 1115: Block $iopadmap$pi104 has an invalid name and it is going to be skipped.
+Warning 1116: Block $iopadmap$pi105 has an invalid name and it is going to be skipped.
+Warning 1117: Block $iopadmap$pi107 has an invalid name and it is going to be skipped.
+Warning 1118: Block $iopadmap$pi108 has an invalid name and it is going to be skipped.
+Warning 1119: Block $iopadmap$pi121 has an invalid name and it is going to be skipped.
+Warning 1120: Block $iopadmap$pi128 has an invalid name and it is going to be skipped.
+Warning 1121: Block $iopadmap$pi130 has an invalid name and it is going to be skipped.
+Warning 1122: Block $iopadmap$pi108 has an invalid name and it is going to be skipped.
+Warning 1123: Block $iopadmap$pi083 has an invalid name and it is going to be skipped.
+Warning 1124: Block $iopadmap$pi104 has an invalid name and it is going to be skipped.
+Warning 1125: Block $iopadmap$pi103 has an invalid name and it is going to be skipped.
+Warning 1126: Block $iopadmap$pi102 has an invalid name and it is going to be skipped.
+Warning 1127: Block $iopadmap$pi105 has an invalid name and it is going to be skipped.
+Warning 1128: Block $iopadmap$pi107 has an invalid name and it is going to be skipped.
+Warning 1129: Block $iopadmap$pi101 has an invalid name and it is going to be skipped.
+## Initial Placement took 0.00 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+# Placement took 0.00 seconds (max_rss 481.6 MiB, delta_rss +0.0 MiB)
+Error 1: 
+Type: Placement
+File: /nfs_eda_sw/softwares/Raptor/orgnl/Raptor/Backend/OpenFPGA/vtr-verilog-to-routing/vpr/src/base/read_place.cpp
+Line: 255
+Message: The location of cluster $iopadmap$pi126 (#440) is specified 2 times in the constraints file with conflicting locations. 
+Its location was last specified with block $iopadmap$pi126. 
+
+The entire flow of VPR took 81.42 seconds (max_rss 481.6 MiB)
