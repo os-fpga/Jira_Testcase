@@ -17,7 +17,7 @@
     "  Trace \\I_BUF --> \\CLK_BUF",
     "    Try \\I_BUF $iopadmap$top.clk out connection: $iopadmap$clk",
     "      Connected $auto$clkbufmap.cc:265:execute$428",
-    "  Trace \\I_BUF --> \\PLL",
+    "  Trace \\CLK_BUF --> \\PLL",
     "  Trace \\I_BUF --> \\I_DELAY",
     "  Trace \\I_BUF --> \\I_DDR",
     "  Trace \\I_BUF_DS --> \\I_DELAY",
@@ -32,6 +32,7 @@
     "  Trace \\O_BUFT_DS --> \\O_DELAY",
     "  Trace \\O_BUFT_DS --> \\O_DDR",
     "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace gearbox clock source",
     "  Assign location HP_1_CC_10_5P (and properties) to Port clk",
     "  Assign location HP_1_0_0P (and properties) to Port din",
     "  Assign location HP_1_1_0N (and properties) to Port dout",
@@ -55,6 +56,12 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -75,6 +82,11 @@
       },
       "parameters" : {
         "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -94,6 +106,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -112,6 +129,11 @@
         "O" : "dout"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     }
   ]

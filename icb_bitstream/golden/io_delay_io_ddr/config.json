@@ -72,7 +72,7 @@
     "  Trace \\I_BUF --> \\CLK_BUF",
     "    Try \\I_BUF \\clk_i_buf out connection: \\clk_buf_i",
     "      Connected \\clk_buf",
-    "  Trace \\I_BUF --> \\PLL",
+    "  Trace \\CLK_BUF --> \\PLL",
     "  Trace \\I_BUF --> \\I_DELAY",
     "    Try \\I_BUF $iopadmap$top.din out connection: $iopadmap$din",
     "      Connected \\i_delay",
@@ -97,26 +97,35 @@
     "  Trace \\O_DELAY --> \\O_DDR",
     "    Try \\O_DELAY \\o_delay out connection: \\o_delay_i",
     "      Connected \\o_ddr",
-    "  Assign location HR_3_1_0N (and properties) to Port i_delay_value[1]",
+    "  Trace gearbox clock source",
+    "    \\I_DELAY \\i_delay port \\CLK_IN: \\clk_clk_buf",
+    "      Connected to \\CLK_BUF \\clk_buf port \\O",
+    "    \\I_DDR \\i_ddr port \\C: \\clk_clk_buf",
+    "      Connected to \\CLK_BUF \\clk_buf port \\O",
+    "    \\O_DELAY \\o_delay port \\CLK_IN: \\clk_clk_buf",
+    "      Connected to \\CLK_BUF \\clk_buf port \\O",
+    "    \\O_DDR \\o_ddr port \\C: \\clk_clk_buf",
+    "      Connected to \\CLK_BUF \\clk_buf port \\O",
+    "  Assign location HR_5_1_0N (and properties) to Port i_delay_value[1]",
+    "  Assign location HR_1_3_1N (and properties) to Port delay_incdec",
+    "  Assign location HP_1_0_0P (and properties) to Port din",
     "  Assign location HR_1_1_0N (and properties) to Port delay_adj",
     "  Assign location HP_1_CC_10_5P (and properties) to Port clk",
-    "  Assign location HR_1_2_1P (and properties) to Port delay_incdec",
-    "  Assign location HP_1_2_1P (and properties) to Port reset",
+    "  Assign location HR_5_5_2N (and properties) to Port i_delay_value[5]",
+    "  Assign location HR_5_9_4N (and properties) to Port o_delay_value[3]",
+    "  Assign location HR_5_8_4P (and properties) to Port o_delay_value[2]",
     "  Assign location HP_1_3_1N (and properties) to Port enable",
-    "  Assign location HR_3_5_2N (and properties) to Port i_delay_value[5]",
-    "  Assign location HR_3_9_4N (and properties) to Port o_delay_value[3]",
-    "  Assign location HR_3_8_4P (and properties) to Port o_delay_value[2]",
-    "  Assign location HP_1_0_0P (and properties) to Port din",
-    "  Assign location HR_3_4_2P (and properties) to Port i_delay_value[4]",
-    "  Assign location HR_3_2_1P (and properties) to Port i_delay_value[2]",
-    "  Assign location HR_3_7_3N (and properties) to Port o_delay_value[1]",
-    "  Assign location HR_3_6_3P (and properties) to Port o_delay_value[0]",
-    "  Assign location HR_3_CC_11_5N (and properties) to Port o_delay_value[5]",
+    "  Assign location HR_5_2_1P (and properties) to Port i_delay_value[2]",
+    "  Assign location HR_5_4_2P (and properties) to Port i_delay_value[4]",
+    "  Assign location HR_5_7_3N (and properties) to Port o_delay_value[1]",
+    "  Assign location HR_5_6_3P (and properties) to Port o_delay_value[0]",
+    "  Assign location HR_5_0_0P (and properties) to Port i_delay_value[0]",
+    "  Assign location HR_5_CC_11_5N (and properties) to Port o_delay_value[5]",
     "  Assign location HP_1_1_0N (and properties) to Port dout",
-    "  Assign location HR_3_0_0P (and properties) to Port i_delay_value[0]",
+    "  Assign location HP_1_2_1P (and properties) to Port reset",
+    "  Assign location HR_5_3_1N (and properties) to Port i_delay_value[3]",
+    "  Assign location HR_5_CC_10_5P (and properties) to Port o_delay_value[4]",
     "  Assign location HR_1_0_0P (and properties) to Port delay_load",
-    "  Assign location HR_3_CC_10_5P (and properties) to Port o_delay_value[4]",
-    "  Assign location HR_3_3_1N (and properties) to Port i_delay_value[3]",
     "End of IO Analysis"
   ],
   "instances" : [
@@ -137,6 +146,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -145,7 +159,7 @@
       "linked_object" : "delay_incdec",
       "linked_objects" : {
         "delay_incdec" : {
-          "location" : "HR_1_2_1P",
+          "location" : "HR_1_3_1N",
           "properties" : {
           }
         }
@@ -156,6 +170,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -175,6 +194,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -194,6 +218,12 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "I_DELAY"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -208,11 +238,18 @@
         }
       },
       "connectivity" : {
+        "CLK_IN" : "clk_clk_buf",
         "I" : "$iopadmap$din",
         "O" : "i_ddr_d"
       },
       "parameters" : {
         "DELAY" : "50"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+        "I_DDR"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -227,9 +264,15 @@
         }
       },
       "connectivity" : {
+        "C" : "clk_clk_buf",
         "D" : "i_ddr_d"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "I_DELAY",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -248,6 +291,12 @@
         "O" : "dout"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "O_DELAY"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -262,11 +311,18 @@
         }
       },
       "connectivity" : {
+        "CLK_IN" : "clk_clk_buf",
         "I" : "o_delay_i",
         "O" : "$iopadmap$dout"
       },
       "parameters" : {
         "DELAY" : "60"
+      },
+      "pre_primitive" : "O_BUF",
+      "post_primitives" : [
+        "O_DDR"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -281,9 +337,15 @@
         }
       },
       "connectivity" : {
+        "C" : "clk_clk_buf",
         "Q" : "o_delay_i"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "O_DELAY",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -303,6 +365,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -311,7 +378,7 @@
       "linked_object" : "i_delay_value[0]",
       "linked_objects" : {
         "i_delay_value[0]" : {
-          "location" : "HR_3_0_0P",
+          "location" : "HR_5_0_0P",
           "properties" : {
           }
         }
@@ -321,6 +388,11 @@
         "O" : "i_delay_value[0]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -329,7 +401,7 @@
       "linked_object" : "i_delay_value[1]",
       "linked_objects" : {
         "i_delay_value[1]" : {
-          "location" : "HR_3_1_0N",
+          "location" : "HR_5_1_0N",
           "properties" : {
           }
         }
@@ -339,6 +411,11 @@
         "O" : "i_delay_value[1]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -347,7 +424,7 @@
       "linked_object" : "i_delay_value[2]",
       "linked_objects" : {
         "i_delay_value[2]" : {
-          "location" : "HR_3_2_1P",
+          "location" : "HR_5_2_1P",
           "properties" : {
           }
         }
@@ -357,6 +434,11 @@
         "O" : "i_delay_value[2]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -365,7 +447,7 @@
       "linked_object" : "i_delay_value[3]",
       "linked_objects" : {
         "i_delay_value[3]" : {
-          "location" : "HR_3_3_1N",
+          "location" : "HR_5_3_1N",
           "properties" : {
           }
         }
@@ -375,6 +457,11 @@
         "O" : "i_delay_value[3]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -383,7 +470,7 @@
       "linked_object" : "i_delay_value[4]",
       "linked_objects" : {
         "i_delay_value[4]" : {
-          "location" : "HR_3_4_2P",
+          "location" : "HR_5_4_2P",
           "properties" : {
           }
         }
@@ -393,6 +480,11 @@
         "O" : "i_delay_value[4]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -401,7 +493,7 @@
       "linked_object" : "i_delay_value[5]",
       "linked_objects" : {
         "i_delay_value[5]" : {
-          "location" : "HR_3_5_2N",
+          "location" : "HR_5_5_2N",
           "properties" : {
           }
         }
@@ -411,6 +503,11 @@
         "O" : "i_delay_value[5]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -419,7 +516,7 @@
       "linked_object" : "o_delay_value[0]",
       "linked_objects" : {
         "o_delay_value[0]" : {
-          "location" : "HR_3_6_3P",
+          "location" : "HR_5_6_3P",
           "properties" : {
           }
         }
@@ -429,6 +526,11 @@
         "O" : "o_delay_value[0]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -437,7 +539,7 @@
       "linked_object" : "o_delay_value[1]",
       "linked_objects" : {
         "o_delay_value[1]" : {
-          "location" : "HR_3_7_3N",
+          "location" : "HR_5_7_3N",
           "properties" : {
           }
         }
@@ -447,6 +549,11 @@
         "O" : "o_delay_value[1]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -455,7 +562,7 @@
       "linked_object" : "o_delay_value[2]",
       "linked_objects" : {
         "o_delay_value[2]" : {
-          "location" : "HR_3_8_4P",
+          "location" : "HR_5_8_4P",
           "properties" : {
           }
         }
@@ -465,6 +572,11 @@
         "O" : "o_delay_value[2]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -473,7 +585,7 @@
       "linked_object" : "o_delay_value[3]",
       "linked_objects" : {
         "o_delay_value[3]" : {
-          "location" : "HR_3_9_4N",
+          "location" : "HR_5_9_4N",
           "properties" : {
           }
         }
@@ -483,6 +595,11 @@
         "O" : "o_delay_value[3]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -491,7 +608,7 @@
       "linked_object" : "o_delay_value[4]",
       "linked_objects" : {
         "o_delay_value[4]" : {
-          "location" : "HR_3_CC_10_5P",
+          "location" : "HR_5_CC_10_5P",
           "properties" : {
           }
         }
@@ -501,6 +618,11 @@
         "O" : "o_delay_value[4]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -509,7 +631,7 @@
       "linked_object" : "o_delay_value[5]",
       "linked_objects" : {
         "o_delay_value[5]" : {
-          "location" : "HR_3_CC_11_5N",
+          "location" : "HR_5_CC_11_5N",
           "properties" : {
           }
         }
@@ -519,6 +641,11 @@
         "O" : "o_delay_value[5]"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -538,6 +665,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -556,6 +688,12 @@
         "O" : "clk_buf_i"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -576,6 +714,17 @@
       },
       "parameters" : {
         "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+        "O" : [
+          "i_delay",
+          "i_ddr",
+          "o_delay",
+          "o_ddr"
+        ]
       }
     }
   ]

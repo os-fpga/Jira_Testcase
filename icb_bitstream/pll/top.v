@@ -39,14 +39,19 @@ module top (
   input wire din,
   output reg dout
 );
+  wire clkbuf;
+  CLK_BUF clk_buf (
+    .I(clk),
+    .O(clkbuf)
+  );
   wire pll_clk;
   PLL #(
     .PLL_MULT(16),
     .PLL_DIV(1),
-    .PLL_POST_DIV(2)
+    .PLL_POST_DIV(34)
   ) pll (
     .PLL_EN(1'b1),
-    .CLK_IN(clk),
+    .CLK_IN(clkbuf),
     .CLK_OUT(),
     .CLK_OUT_DIV2(),
     .CLK_OUT_DIV3(),

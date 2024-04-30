@@ -190,6 +190,7 @@ def compare_golden(project):
           )
       else:
         print("    Error: Compare golden {file:s} failed".format(file=filename))
+        status = False
       g.close()
       r.close()
     else:
@@ -198,6 +199,7 @@ def compare_golden(project):
           file=result_file
         )
       )
+      status = False
   return status
 
 def main():
@@ -210,7 +212,7 @@ def main():
   parser.add_argument("-p", "--projects", default=None, help="A list of project(s) to run (seperated by ','). By default run all projects")
   parser.add_argument("-e", "--exclude_projects", default=None, help="A list of project(s) to exclude (seperated by ','). By default exclude none")
   parser.add_argument("-t", "--threads", type=int, default=1, help="Multi-threading count. By default is 1")
-  parser.add_argument("-d", "--device", default="GEMINI_COMPACT_10x8", help="Targeted device. By default is GEMINI_COMPACT_10x8")
+  parser.add_argument("-d", "--device", default="GEMINI_COMPACT_62x44", help="Targeted device. By default is GEMINI_COMPACT_10x8")
   parser.add_argument("-r", "--raptor_tool", default=None, help="Raptor tool path. Must be specified")
   parser.add_argument("-u", "--update", action="store_true", help="Update result instead of compare result")
   parser.add_argument("--add_tcl_control", default=None, help="Control feature(s) to add (seperated by ',') in Raptor TCL")

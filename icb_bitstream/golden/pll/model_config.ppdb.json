@@ -30,6 +30,30 @@
       "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
     },
     {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$clk",
+        "O" : "clkbuf"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "__location_validation__" : "TRUE",
+      "__location_validation_msg__" : "Pass:__clock_pin_is_valid__,__check_fabric_clock_resource__,__update_fabric_clock_resource__"
+    },
+    {
       "module" : "PLL",
       "name" : "pll",
       "linked_object" : "clk",
@@ -37,21 +61,21 @@
         "clk" : {
           "location" : "HP_1_CC_10_5P",
           "properties" : {
-            "OUT3_ROUTE_TO_FABRIC_CLK" : "0"
+            "OUT3_ROUTE_TO_FABRIC_CLK" : "1"
           },
           "config_attributes" : [
           ]
         }
       },
       "connectivity" : {
-        "CLK_IN" : "$iopadmap$clk",
+        "CLK_IN" : "clkbuf",
         "CLK_OUT_DIV4" : "pll_clk"
       },
       "parameters" : {
-        "OUT3_ROUTE_TO_FABRIC_CLK" : "0",
+        "OUT3_ROUTE_TO_FABRIC_CLK" : "1",
         "PLL_DIV" : "1",
         "PLL_MULT" : "16",
-        "PLL_POST_DIV" : "2"
+        "PLL_POST_DIV" : "34"
       },
       "__location_validation__" : "TRUE",
       "__location_validation_msg__" : "Pass:__pll_clock_pin_is_valid__,__check_fabric_clock_resource__,__check_pll_clock_pin_resource__,__allocate_pll_clock_pin_resource__,__update_fabric_clock_resource__"
