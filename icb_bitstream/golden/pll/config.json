@@ -15,12 +15,14 @@
     "    Get important connection of cell \\O_BUF $iopadmap$top.dout",
     "      Cell port \\O is connected to output port \\dout",
     "  Trace \\I_BUF --> \\CLK_BUF",
-    "  Trace \\I_BUF --> \\PLL",
     "    Try \\I_BUF $iopadmap$top.clk out connection: $iopadmap$clk",
+    "      Connected \\clk_buf",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "    Try \\CLK_BUF \\clk_buf out connection: \\clkbuf",
     "      Connected \\pll",
     "        Parameter \\PLL_DIV: 1",
     "        Parameter \\PLL_MULT: 16",
-    "        Parameter \\PLL_POST_DIV: 2",
+    "        Parameter \\PLL_POST_DIV: 34",
     "  Trace \\I_BUF --> \\I_DELAY",
     "  Trace \\I_BUF --> \\I_DDR",
     "  Trace \\I_BUF_DS --> \\I_DELAY",
@@ -35,6 +37,7 @@
     "  Trace \\O_BUFT_DS --> \\O_DELAY",
     "  Trace \\O_BUFT_DS --> \\O_DDR",
     "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace gearbox clock source",
     "  Assign location HP_1_CC_10_5P (and properties) to Port clk",
     "  Assign location HP_1_0_0P (and properties) to Port din",
     "  Assign location HP_1_1_0N (and properties) to Port dout",
@@ -58,6 +61,38 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_10_5P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$clk",
+        "O" : "clkbuf"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+        "PLL"
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -68,19 +103,24 @@
         "clk" : {
           "location" : "HP_1_CC_10_5P",
           "properties" : {
-            "OUT3_ROUTE_TO_FABRIC_CLK" : "0"
+            "OUT3_ROUTE_TO_FABRIC_CLK" : "1"
           }
         }
       },
       "connectivity" : {
-        "CLK_IN" : "$iopadmap$clk",
+        "CLK_IN" : "clkbuf",
         "CLK_OUT_DIV4" : "pll_clk"
       },
       "parameters" : {
-        "OUT3_ROUTE_TO_FABRIC_CLK" : "0",
+        "OUT3_ROUTE_TO_FABRIC_CLK" : "1",
         "PLL_DIV" : "1",
         "PLL_MULT" : "16",
-        "PLL_POST_DIV" : "2"
+        "PLL_POST_DIV" : "34"
+      },
+      "pre_primitive" : "CLK_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -100,6 +140,11 @@
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     },
     {
@@ -118,6 +163,11 @@
         "O" : "dout"
       },
       "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
       }
     }
   ]
