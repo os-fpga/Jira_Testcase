@@ -470,8 +470,8 @@ def main():
         remove_iopadmap(file_path)
         adjust_ios(file_path)
         instance_update(file_path)
-        copy_tasks(file_path,"../sim/bitstream_tb/bitstream_testbench.v","----- Can be changed by the user for his/her need -------")
-        copy_tasks(file_path,"../sim/bitstream_tb/bitstream_testbech_tasks.v","----- END output waveform to VCD file -------")
+        copy_tasks(file_path,"sim/bitstream_tb/bitstream_testbench.v","----- Can be changed by the user for his/her need -------")
+        copy_tasks(file_path,"sim/bitstream_tb/bitstream_testbech_tasks.v","----- END output waveform to VCD file -------")
         clk_update(file_path)
         # remove_lines_with_two_dollar_signs(file_path)
         replace_auto_in_file(file_path)
@@ -479,16 +479,9 @@ def main():
         remove_iopadmap(file_path)
         adjust_ios(file_path)
         remove_twodim_array(file_path)
-        if design_name != "up5bit_counter_dual_clock":
-            clk_update(file_path)
-        else:
-            if int(sys.argv[3]) > 1:
-                multiclock_update(file_path,int(sys.argv[3]))
-        if design_name in ["shift_register", "dffre_inst", "lut_ff_mux", "sp_ram", "up5bit_counter"]:
-            replacement(file_path,"clk_fm\[15\] = 1\'b0","clk_fm[15] = clock0")
-            replacement(file_path,"global_resetn_fm\[0\] = 1'b0","global_resetn_fm[0] = 1'b1")
-        # remove_lines_with_two_dollar_signs(file_path)
-        # remove_comma_from_line(file_path)
+        clk_update(file_path)
+        replacement(file_path,"clk_fm\[15\] = 1\'b0","clk_fm[15] = clock0")
+        replacement(file_path,"global_resetn_fm\[0\] = 1'b0","global_resetn_fm[0] = 1'b1")
         replace_auto_in_file(file_path)
     elif file_path.endswith("fabric_netlists.v"):
         inc_upate(file_path,"BIT_SIM/","`include \"")
