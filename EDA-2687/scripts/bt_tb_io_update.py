@@ -391,6 +391,77 @@ def multiclock_update(file_path,number_of_clocks):
     for i in range(number_of_clocks):
             replace_pattern_in_file(file_path,match[i],"clock"+str(i))
 
+def remove_lines_with_two_dollar_signs(filename):
+
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+
+    filtered_lines = []
+
+    for i,line in enumerate(lines):
+
+        dollar_sign_count = line.count('$')
+
+        if dollar_sign_count < 2:
+            filtered_lines.append(line)
+        elif ");" in line and dollar_sign_count >= 2:
+            filtered_lines.append(");")
+
+    with open(filename, 'w') as file:
+        file.writelines(filtered_lines)
+
+def remove_comma_from_line(file_path):
+
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    modified_lines = []
+    found_first_occurrence = False
+
+    for i, line in enumerate(lines):
+
+        if not found_first_occurrence and lines[i+1].strip() == ');':
+            found_first_occurrence = True
+
+            # print(line)
+            if ',' in lines[i]:
+                # print("in if",lines[i - 1])
+                # Remove the comma
+                lines[i] = lines[i].replace(',', '')
+                # line = line.replace(',', '')
+                # print("in if",lines[i])
+                # del lines[i]
+                modified_lines.append(lines[i])
+
+        elif not found_first_occurrence and ');' in line and line.strip() != ');':
+            found_first_occurrence = True
+
+            if ',' in line:
+                # Remove the commas
+                line = line.replace(',', '')
+                # lines[i - 1] = lines[i - 1].replace(',', '')
+
+        modified_lines.append(line)
+
+    with open(file_path, 'w') as file:
+        file.writelines(modified_lines)
+
+def replace_auto_in_file(file_path):
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    if file_path.endswith("_top_formal_verification.v"):
+        pattern = r'(\$auto\$rs_design_edit\.cc:\d+:execute\$)(\d+)'
+    else:
+        pattern = r'(\$auto\$rs_design_edit\.cc:\d+:execute\$)(\d+_gfpga)'
+
+    modified_content = re.sub(pattern, r'\\\1\2 ', content)
+
+    with open(file_path, 'w') as file:
+        file.write(modified_content)
+
+
 def main():
     file_path = sys.argv[1]
     design_name=sys.argv[2]
@@ -399,16 +470,26 @@ def main():
         remove_iopadmap(file_path)
         adjust_ios(file_path)
         instance_update(file_path)
-        copy_tasks(file_path,"sim/bitstream_tb/bitstream_testbench.v","----- Can be changed by the user for his/her need -------")
-        copy_tasks(file_path,"sim/bitstream_tb/bitstream_testbech_tasks.v","----- END output waveform to VCD file -------")
+        copy_tasks(file_path,"../sim/bitstream_tb/bitstream_testbench.v","----- Can be changed by the user for his/her need -------")
+        copy_tasks(file_path,"../sim/bitstream_tb/bitstream_testbech_tasks.v","----- END output waveform to VCD file -------")
         clk_update(file_path)
+        # remove_lines_with_two_dollar_signs(file_path)
+        replace_auto_in_file(file_path)
     elif file_path.endswith("fabric_"+design_name+"_top_formal_verification.v"):
         remove_iopadmap(file_path)
         adjust_ios(file_path)
         remove_twodim_array(file_path)
-        clk_update(file_path)
-        replacement(file_path,"clk_fm\[15\] = 1\'b0","clk_fm[15] = clock0")
-        replacement(file_path,"global_resetn_fm\[0\] = 1'b0","global_resetn_fm[0] = 1'b1")
+        if design_name != "up5bit_counter_dual_clock":
+            clk_update(file_path)
+        else:
+            if int(sys.argv[3]) > 1:
+                multiclock_update(file_path,int(sys.argv[3]))
+        if design_name in ["shift_register", "dffre_inst", "lut_ff_mux", "sp_ram", "up5bit_counter"]:
+            replacement(file_path,"clk_fm\[15\] = 1\'b0","clk_fm[15] = clock0")
+            replacement(file_path,"global_resetn_fm\[0\] = 1'b0","global_resetn_fm[0] = 1'b1")
+        # remove_lines_with_two_dollar_signs(file_path)
+        # remove_comma_from_line(file_path)
+        replace_auto_in_file(file_path)
     elif file_path.endswith("fabric_netlists.v"):
         inc_upate(file_path,"BIT_SIM/","`include \"")
         rename_p(file_path,"BIT_SIM/./SRC/","SRC/")
