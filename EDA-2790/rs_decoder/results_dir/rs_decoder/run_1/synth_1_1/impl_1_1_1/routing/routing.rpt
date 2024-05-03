@@ -1,0 +1,715 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.04
+Build    : 1.0.43
+Hash     : 3be1735
+Date     : Apr 30 2024
+Type     : Engineering
+Log Time   : Tue Apr 30 21:43:49 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/04_30_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/04_30_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/synthesis/fabric_rs_decoder_post_synth.eblif --sdc_file /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/packing/fabric_rs_decoder_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report rs_decoder_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top RS_dec_top --net_file /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/packing/fabric_rs_decoder_post_synth.net --place_file /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/placement/fabric_rs_decoder_post_synth.place --route_file /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/routing/fabric_rs_decoder_post_synth.route --route
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/04_30_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: fabric_rs_decoder_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.05 seconds (max_rss 35.3 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/packing/fabric_rs_decoder_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/placement/fabric_rs_decoder_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/routing/fabric_rs_decoder_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/packing/fabric_rs_decoder_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: rs_decoder_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 160
+RouterOpts.check_route: FULL
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 1500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: true
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: DETAILED_ROUTING
+AnalysisOpts.post_synth_netlist_unconn_input_handling: GND
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.03 seconds (max_rss 35.3 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/synthesis/fabric_rs_decoder_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.32 seconds (max_rss 53.3 MiB, delta_rss +18.0 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred   36 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 1051
+Swept block(s)      : 595
+Constant Pins Marked: 36
+# Clean circuit took 0.01 seconds (max_rss 53.3 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.02 seconds (max_rss 53.3 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 53.3 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 5989
+    .input   :      11
+    .output  :      21
+    0-LUT    :       3
+    6-LUT    :    3246
+    RS_TDP36K:       8
+    dffre    :    2700
+  Nets  : 6080
+    Avg Fanout:     4.5
+    Max Fanout:  2719.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 33371
+  Timing Graph Edges: 54649
+  Timing Graph Levels: 16
+# Build Timing Graph took 0.05 seconds (max_rss 53.3 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'BM_lamda_unit.clk' Fanout: 2719 pins (8.1%), 2708 blocks (45.2%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378337'
+Warning 168: set_input_delay command matched but was not applied to primary output '$iopadmap$CEO'
+Warning 169: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Valid_out'
+Warning 170: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[0]'
+Warning 171: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[1]'
+Warning 172: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[2]'
+Warning 173: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[3]'
+Warning 174: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[4]'
+Warning 175: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[5]'
+Warning 176: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[6]'
+Warning 177: set_input_delay command matched but was not applied to primary output 'out_stage_unit.Out_byte[7]'
+Warning 178: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378334'
+Warning 179: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378336'
+Warning 180: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378338'
+Warning 181: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378344'
+Warning 182: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378342'
+Warning 183: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378340'
+Warning 184: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378335'
+Warning 185: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378343'
+Warning 186: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378341'
+Warning 187: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:572:execute$378339'
+Warning 188: set_output_delay command matched but was not applied to primary input '$iopadmap$reset'
+Warning 189: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[0]'
+Warning 190: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[1]'
+Warning 191: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[2]'
+Warning 192: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[3]'
+Warning 193: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[4]'
+Warning 194: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[5]'
+Warning 195: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[6]'
+Warning 196: set_output_delay command matched but was not applied to primary input '$iopadmap$input_byte[7]'
+Warning 197: set_output_delay command matched but was not applied to primary input 'BM_lamda_unit.clk'
+Warning 198: set_output_delay command matched but was not applied to primary input '$iopadmap$CE'
+
+Applied 3 SDC commands from '/nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/packing/fabric_rs_decoder_openfpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'BM_lamda_unit.clk' Source: 'BM_lamda_unit.clk.inpad[0]'
+
+# Load Timing Constraints took 0.01 seconds (max_rss 53.3 MiB, delta_rss +0.0 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/packing/fabric_rs_decoder_post_synth.net'.
+Detected 3 constant generators (to see names run with higher pack verbosity)
+Warning 199: Netlist connects net $undef to both global and non-global pins.
+Warning 200: Netlist connects net $undef to both global and non-global pins.
+Warning 201: Netlist connects net $undef to both global and non-global pins.
+Warning 202: Netlist connects net $undef to both global and non-global pins.
+Warning 203: Netlist connects net $undef to both global and non-global pins.
+Warning 204: Netlist connects net $undef to both global and non-global pins.
+Warning 205: Netlist connects net $undef to both global and non-global pins.
+Warning 206: Netlist connects net $undef to both global and non-global pins.
+Warning 207: Netlist connects net $undef to both global and non-global pins.
+Warning 208: Netlist connects net $undef to both global and non-global pins.
+Warning 209: Netlist connects net $undef to both global and non-global pins.
+Warning 210: Netlist connects net $undef to both global and non-global pins.
+Warning 211: Netlist connects net $undef to both global and non-global pins.
+Warning 212: Netlist connects net $undef to both global and non-global pins.
+Warning 213: Netlist connects net $undef to both global and non-global pins.
+Warning 214: Netlist connects net $undef to both global and non-global pins.
+Warning 215: Netlist connects net $undef to both global and non-global pins.
+Warning 216: Netlist connects net $undef to both global and non-global pins.
+Warning 217: Netlist connects net $undef to both global and non-global pins.
+Warning 218: Netlist connects net $undef to both global and non-global pins.
+Warning 219: Netlist connects net $undef to both global and non-global pins.
+Warning 220: Netlist connects net $undef to both global and non-global pins.
+Warning 221: Netlist connects net $undef to both global and non-global pins.
+Warning 222: Netlist connects net $undef to both global and non-global pins.
+Warning 223: Netlist connects net $undef to both global and non-global pins.
+Warning 224: Netlist connects net $undef to both global and non-global pins.
+Warning 225: Netlist connects net $undef to both global and non-global pins.
+Warning 226: Netlist connects net $undef to both global and non-global pins.
+Warning 227: Netlist connects net $undef to both global and non-global pins.
+Warning 228: Netlist connects net $undef to both global and non-global pins.
+Warning 229: Netlist connects net $undef to both global and non-global pins.
+Warning 230: Netlist connects net $undef to both global and non-global pins.
+Warning 231: Netlist connects net $undef to both global and non-global pins.
+Warning 232: Netlist connects net $undef to both global and non-global pins.
+Warning 233: Netlist connects net $undef to both global and non-global pins.
+Warning 234: Netlist connects net $undef to both global and non-global pins.
+Warning 235: Netlist connects net $undef to both global and non-global pins.
+Warning 236: Netlist connects net $undef to both global and non-global pins.
+Warning 237: Netlist connects net $undef to both global and non-global pins.
+Warning 238: Netlist connects net $undef to both global and non-global pins.
+Warning 239: Netlist connects net $undef to both global and non-global pins.
+Warning 240: Netlist connects net $undef to both global and non-global pins.
+Warning 241: Netlist connects net $undef to both global and non-global pins.
+Warning 242: Netlist connects net $undef to both global and non-global pins.
+Warning 243: Netlist connects net $undef to both global and non-global pins.
+Warning 244: Netlist connects net $undef to both global and non-global pins.
+Warning 245: Netlist connects net $undef to both global and non-global pins.
+Warning 246: Netlist connects net $undef to both global and non-global pins.
+Warning 247: Netlist connects net $undef to both global and non-global pins.
+Warning 248: Netlist connects net $undef to both global and non-global pins.
+Warning 249: Netlist connects net $undef to both global and non-global pins.
+Warning 250: Netlist connects net $undef to both global and non-global pins.
+Warning 251: Netlist connects net $undef to both global and non-global pins.
+Warning 252: Netlist connects net $undef to both global and non-global pins.
+Warning 253: Netlist connects net $undef to both global and non-global pins.
+Warning 254: Netlist connects net $undef to both global and non-global pins.
+Warning 255: Netlist connects net $undef to both global and non-global pins.
+Warning 256: Netlist connects net $undef to both global and non-global pins.
+Warning 257: Netlist connects net $undef to both global and non-global pins.
+Warning 258: Netlist connects net $undef to both global and non-global pins.
+Warning 259: Netlist connects net $undef to both global and non-global pins.
+Warning 260: Netlist connects net $undef to both global and non-global pins.
+Warning 261: Netlist connects net $undef to both global and non-global pins.
+Warning 262: Netlist connects net $undef to both global and non-global pins.
+Warning 263: Netlist connects net $undef to both global and non-global pins.
+Warning 264: Netlist connects net $false to both global and non-global pins.
+Warning 265: Netlist connects net $false to both global and non-global pins.
+Warning 266: Netlist connects net $false to both global and non-global pins.
+Warning 267: Netlist connects net $false to both global and non-global pins.
+Warning 268: Netlist connects net $false to both global and non-global pins.
+Warning 269: Netlist connects net $false to both global and non-global pins.
+Warning 270: Netlist connects net $false to both global and non-global pins.
+Warning 271: Netlist connects net $false to both global and non-global pins.
+Warning 272: Netlist connects net $false to both global and non-global pins.
+Warning 273: Netlist connects net $false to both global and non-global pins.
+Warning 274: Netlist connects net $false to both global and non-global pins.
+Warning 275: Netlist connects net $false to both global and non-global pins.
+Warning 276: Netlist connects net $false to both global and non-global pins.
+Warning 277: Netlist connects net $false to both global and non-global pins.
+Warning 278: Netlist connects net $false to both global and non-global pins.
+Warning 279: Netlist connects net $false to both global and non-global pins.
+Warning 280: Netlist connects net $false to both global and non-global pins.
+Warning 281: Netlist connects net $false to both global and non-global pins.
+Warning 282: Netlist connects net $false to both global and non-global pins.
+Warning 283: Netlist connects net $false to both global and non-global pins.
+Warning 284: Netlist connects net $false to both global and non-global pins.
+Warning 285: Netlist connects net $false to both global and non-global pins.
+Warning 286: Netlist connects net $false to both global and non-global pins.
+Warning 287: Netlist connects net $false to both global and non-global pins.
+Warning 288: Netlist connects net $false to both global and non-global pins.
+Warning 289: Netlist connects net $false to both global and non-global pins.
+Warning 290: Netlist connects net $false to both global and non-global pins.
+Warning 291: Netlist connects net $false to both global and non-global pins.
+Warning 292: Netlist connects net $false to both global and non-global pins.
+Warning 293: Netlist connects net $false to both global and non-global pins.
+Warning 294: Netlist connects net $false to both global and non-global pins.
+Warning 295: Netlist connects net $false to both global and non-global pins.
+Warning 296: Netlist connects net $false to both global and non-global pins.
+Warning 297: Netlist connects net $false to both global and non-global pins.
+Warning 298: Netlist connects net $false to both global and non-global pins.
+Warning 299: Netlist connects net $false to both global and non-global pins.
+Warning 300: Netlist connects net $false to both global and non-global pins.
+Warning 301: Netlist connects net $false to both global and non-global pins.
+Warning 302: Netlist connects net $false to both global and non-global pins.
+Warning 303: Netlist connects net $false to both global and non-global pins.
+Warning 304: Netlist connects net $false to both global and non-global pins.
+Warning 305: Netlist connects net $false to both global and non-global pins.
+Warning 306: Netlist connects net $false to both global and non-global pins.
+Warning 307: Netlist connects net $false to both global and non-global pins.
+Warning 308: Netlist connects net $false to both global and non-global pins.
+Warning 309: Netlist connects net $false to both global and non-global pins.
+Warning 310: Netlist connects net $false to both global and non-global pins.
+Warning 311: Netlist connects net $false to both global and non-global pins.
+Finished loading packed FPGA netlist file (took 0.777399 seconds).
+# Load packing took 0.83 seconds (max_rss 125.5 MiB, delta_rss +72.2 MiB)
+Warning 312: Netlist contains 115 global net to non-global architecture pin connections
+
+Pb types usage...
+  io             : 32
+   io_output     : 21
+    outpad       : 21
+   io_input      : 11
+    inpad        : 11
+  clb            : 421
+   clb_lr        : 421
+    fle          : 3307
+     fast6       : 939
+      lut6       : 939
+       lut       : 939
+     ble6        : 407
+      lut6       : 407
+       lut       : 407
+      ff         : 407
+       DFFRE     : 407
+     ble5        : 3144
+      lut5       : 1903
+       lut       : 1903
+      ff         : 2293
+       DFFRE     : 2293
+  bram           : 8
+   bram_lr       : 8
+    mem_36K      : 8
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		32	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		421	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		0	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		8	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.15 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.19 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.00 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.14 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 134.4 MiB, delta_rss +0.0 MiB)
+Warning 313: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 314: Sized nonsensical R=0 transistor to minimum width
+Warning 315: Sized nonsensical R=0 transistor to minimum width
+Warning 316: Sized nonsensical R=0 transistor to minimum width
+Warning 317: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 12.95 seconds (max_rss 525.2 MiB, delta_rss +390.8 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 13.44 seconds (max_rss 525.2 MiB, delta_rss +390.8 MiB)
+
+# Load Placement
+Reading /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/placement/fabric_rs_decoder_post_synth.place.
+
+Successfully read /nfs_scratch/scratch/CGA/repo/2024-04-30-11-45-48_T10763R122/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/rs_decoder/results_dir/rs_decoder/run_1/synth_1_1/impl_1_1_1/placement/fabric_rs_decoder_post_synth.place.
+
+# Load Placement took 0.04 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 29.93 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+Warning 318: Found no more sample locations for SOURCE in io_top
+Warning 319: Found no more sample locations for OPIN in io_top
+Warning 320: Found no more sample locations for SOURCE in io_right
+Warning 321: Found no more sample locations for OPIN in io_right
+Warning 322: Found no more sample locations for SOURCE in io_bottom
+Warning 323: Found no more sample locations for OPIN in io_bottom
+Warning 324: Found no more sample locations for SOURCE in io_left
+Warning 325: Found no more sample locations for OPIN in io_left
+Warning 326: Found no more sample locations for SOURCE in clb
+Warning 327: Found no more sample locations for OPIN in clb
+Warning 328: Found no more sample locations for SOURCE in dsp
+Warning 329: Found no more sample locations for SOURCE in bram
+## Computing src/opin lookahead took 0.07 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 30.00 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+Confirming router algorithm: TIMING_DRIVEN.
+## Initializing router criticalities
+Warning 330: 475 timing endpoints were not constrained during timing analysis
+Initial Net Connection Criticality Histogram:
+[        0:      0.1)  708 (  6.1%) |*************
+[      0.1:      0.2)    0 (  0.0%) |
+[      0.2:      0.3)   42 (  0.4%) |*
+[      0.3:      0.4) 1606 ( 13.8%) |*******************************
+[      0.4:      0.5) 2117 ( 18.2%) |****************************************
+[      0.5:      0.6) 2417 ( 20.8%) |**********************************************
+[      0.6:      0.7) 2210 ( 19.0%) |******************************************
+[      0.7:      0.8) 1556 ( 13.4%) |******************************
+[      0.8:      0.9)  769 (  6.6%) |***************
+[      0.9:        1)  207 (  1.8%) |****
+## Initializing router criticalities took 0.24 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Warning 331: 475 timing endpoints were not constrained during timing analysis
+   1    0.4     0.0    0  943751    3603   11084    6187 ( 0.453%)   64505 ( 7.2%)    3.831     -1059.     -1.331      0.000      0.000      N/A
+   2    0.4     0.5   10  884887    2941    9949    4275 ( 0.313%)   64686 ( 7.3%)    3.831     -793.3     -1.331      0.000      0.000      N/A
+   3    0.4     0.6    2  861385    2550    8839    3633 ( 0.266%)   65546 ( 7.4%)    3.831     -794.0     -1.331      0.000      0.000      N/A
+   4    0.4     0.8    5  874865    2271    8266    2989 ( 0.219%)   66422 ( 7.5%)    3.831     -798.1     -1.331      0.000      0.000      N/A
+   5    0.4     1.1    5  815319    1955    7457    2213 ( 0.162%)   66892 ( 7.5%)    3.831     -759.2     -1.331      0.000      0.000      N/A
+   6    0.3     1.4   11  727077    1599    6416    1645 ( 0.120%)   67833 ( 7.6%)    3.831     -773.8     -1.331      0.000      0.000      N/A
+   7    0.3     1.9    6  659536    1284    5432    1188 ( 0.087%)   68983 ( 7.8%)    3.831     -771.6     -1.331      0.000      0.000      N/A
+   8    0.3     2.4    6  530756     972    4260     718 ( 0.053%)   69779 ( 7.8%)    3.831     -791.4     -1.331      0.000      0.000      N/A
+   9    0.2     3.1    4  423998     709    3134     452 ( 0.033%)   70522 ( 7.9%)    3.831     -792.3     -1.331      0.000      0.000      N/A
+  10    0.2     4.1    5  295531     422    2012     216 ( 0.016%)   71041 ( 8.0%)    3.831     -798.2     -1.331      0.000      0.000       24
+  11    0.1     5.3    5  175332     227    1055      73 ( 0.005%)   71526 ( 8.0%)    3.831     -796.3     -1.331      0.000      0.000       21
+  12    0.1     6.9    2   64886      77     347      23 ( 0.002%)   71680 ( 8.1%)    3.831     -797.2     -1.331      0.000      0.000       19
+  13    0.1     9.0    3   19454      31     103       7 ( 0.001%)   71772 ( 8.1%)    3.831     -797.4     -1.331      0.000      0.000       16
+  14    0.1    11.6    0    3511       7      18       1 ( 0.000%)   71787 ( 8.1%)    3.831     -797.5     -1.331      0.000      0.000       16
+  15    0.1    15.1    0     281       1       1       0 ( 0.000%)   71792 ( 8.1%)    3.831     -797.5     -1.331      0.000      0.000       15
+Restoring best routing
+Critical path: 3.83082 ns
+Successfully routed after 15 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1)  708 (  6.1%) |*************
+[      0.1:      0.2)    0 (  0.0%) |
+[      0.2:      0.3)   18 (  0.2%) |
+[      0.3:      0.4) 1642 ( 14.1%) |*******************************
+[      0.4:      0.5) 1979 ( 17.0%) |*************************************
+[      0.5:      0.6) 2447 ( 21.0%) |**********************************************
+[      0.6:      0.7) 2241 ( 19.3%) |******************************************
+[      0.7:      0.8) 1660 ( 14.3%) |*******************************
+[      0.8:      0.9)  785 (  6.7%) |***************
+[      0.9:        1)  152 (  1.3%) |***
+Router Stats: total_nets_routed: 18649 total_connections_routed: 68373 total_heap_pushes: 7280569 total_heap_pops: 1741267 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 7280569 total_external_heap_pops: 1741267 total_external_SOURCE_pushes: 63104 total_external_SOURCE_pops: 33248 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 63104 rt_node_SOURCE_high_fanout_pushes: 530 rt_node_SOURCE_entire_tree_pushes: 62574 total_external_SINK_pushes: 273979 total_external_SINK_pops: 247578 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 488297 total_external_IPIN_pops: 408070 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 63176 total_external_OPIN_pops: 37848 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 45252 rt_node_OPIN_high_fanout_pushes: 526 rt_node_OPIN_entire_tree_pushes: 44726 total_external_CHANX_pushes: 3142950 total_external_CHANX_pops: 531231 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 418467 rt_node_CHANX_high_fanout_pushes: 49108 rt_node_CHANX_entire_tree_pushes: 369359 total_external_CHANY_pushes: 3249063 total_external_CHANY_pops: 483292 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 365543 rt_node_CHANY_high_fanout_pushes: 45299 rt_node_CHANY_entire_tree_pushes: 320244 total_number_of_adding_all_rt: 1466552 total_number_of_adding_high_fanout_rt: 5811 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 229 
+# Routing took 4.09 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.05 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: 668007300
+Circuit successfully routed with a channel width factor of 160.
+# Synchronize the packed netlist to routing optimization
+OK: before pb_pin_fixup: pb_route connectivity is consistent in all 461 blocks
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.01 seconds (max_rss 525.2 MiB, delta_rss +0.0 MiB)
