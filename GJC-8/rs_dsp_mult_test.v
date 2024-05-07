@@ -20,13 +20,15 @@ module rs_dsp_mult_test(
    input 	 unsigned_a;  // Selects signed or unsigned data for A input
    input 	 unsigned_b;   // Selects signed or unsigned data for B input
 
-  RS_DSP_MULT dut (
-		   .a(a),
-		   .b(b),
-		   .z(z),
-		   .feedback(feedback),
-		   .unsigned_a(unsigned_a),
-		   .unsigned_b(unsigned_b)
+   DSP38 #(
+			.DSP_MODE("MULTIPLY")
+   )dut (
+		   .A(a),
+		   .B(b),
+		   .Z(z),
+		   .FEEDBACK(feedback),
+		   .UNSIGNED_A(unsigned_a),
+		   .UNSIGNED_B(unsigned_b)
 		   );
    
 endmodule

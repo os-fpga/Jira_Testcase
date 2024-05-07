@@ -1,5 +1,5 @@
 create_design flop2flop
-target_device GEMINI_COMPACT_10x8
+target_device 1VG28
 add_design_file flop2flop.v
 add_constraint_file flop2flop.sdc
 ipgenerate
