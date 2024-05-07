@@ -67,7 +67,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -89,7 +89,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -111,7 +111,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -133,7 +133,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -154,7 +154,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -176,7 +176,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -198,7 +198,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -220,7 +220,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -242,7 +242,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -264,7 +264,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -286,7 +286,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
@@ -308,7 +308,7 @@ module dsp38_test(
                   .LOAD_ACC(load_acc),
                   .UNSIGNED_A(unsigned_a),
                   .UNSIGNED_B(unsigned_b),
-                  .SATURATE_ENABLE(saturate_enable),
+                  .SATURATE(saturate_enable),
                   .SHIFT_RIGHT(shift_right),
                   .ROUND(round),
                   .SUBTRACT(subtract)
