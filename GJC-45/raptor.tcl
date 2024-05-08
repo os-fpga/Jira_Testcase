@@ -1,6 +1,6 @@
-create_design i_buf_i_delay_i_serdes_x4_dpa
-add_design_file i_buf_i_delay_i_serdes_x4_dpa.v
-set_top_module i_buf_i_delay_i_serdes_x4_dpa
+create_design i_buf_i_delay_i_serdes_x10_dpa
+add_design_file i_buf_i_delay_i_serdes_x10_dpa.v
+set_top_module i_buf_i_delay_i_serdes_x10_dpa
 # add_constraint_file constraints.sdc
 add_constraint_file pin_constraints.pin
 target_device 1VG28
