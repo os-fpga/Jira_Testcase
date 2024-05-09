@@ -1,0 +1,40 @@
+ 
+# Yosys/Surelog synthesis script for memory_test
+# Read source files
+plugin -i systemverilog
+read_systemverilog -synth  -top memory_test -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl +libext+.v+.sv  /nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/memory_test.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_single_port_ram.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_simple_dual_port_ram_single_clock.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_simple_dual_port_ram_dual_clock.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_true_dual_port_ram_single_clock.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_true_dual_port_ram_dual_clock.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_single_port_rom.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_dual_port_rom.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_mixed_width_ram.sv \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_mixed_width_true_dual_port_ram.sv \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_mixed_width_true_dual_port_ram_new_rw.sv \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_byte_enabled_simple_dual_port_ram.sv \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_byte_enabled_true_dual_port_ram.sv \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_single_port_ram_MLAB.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_async_ram_MLAB.v \
+/nfs_scratch/scratch/CGA/repo/2024-05-05-22-22-48_T10878R122/Validation/RTL_testcases/titan_benchmarks/memory_test/results_dir/.././rtl/infer_single_port_ram_M144K.v \
+/nfs_eda_sw/softwares/Raptor/instl_dir/05_04_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+
+# Technology mapping
+hierarchy -top memory_test
+
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto   -new_dsp19x2 -new_tdp36k -max_lut 45408 -max_reg 90816 -max_device_dsp 176 -max_device_bram 176 -max_device_carry_length 528 -max_dsp 176 -max_bram 176 -max_carry_length 528  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v memory_test_post_synth.v
+write_blif -param memory_test_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_memory_test.sdc -json config.json -w wrapper_memory_test_post_synth.v wrapper_memory_test_post_synth.eblif -pr post_pnr_wrapper_memory_test_post_synth.v post_pnr_wrapper_memory_test_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_memory_test_post_synth.v
+write_blif -param fabric_memory_test_post_synth.eblif
+
+  
