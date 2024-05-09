@@ -1,7 +1,7 @@
-create_design fabric_clock_rtl
-target_device 1GE100-ES1
-add_design_file fabric_clock_rtl.v
-add_constraint_file fabric_clock_rtl.sdc
+create_design test_clock_rtl
+target_device 1VG28
+add_design_file test_clock_rtl.v
+add_constraint_file test_clock_rtl.sdc
 ipgenerate
 analyze
 synth
