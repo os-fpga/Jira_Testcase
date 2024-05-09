@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 //  This is an example RTL code to infer an internal fabric clock (divide by 2)
 
-module fabric_clock_rtl (
+module test_clock_rtl (
   input D_full_speed,
   input D_half_speed,
   input CLK,
