@@ -1,0 +1,469 @@
+#! /opt/iverilog/bin/vvp -v
+:ivl_version "13.0 (devel)" "(s20221226-498-g52d049b51)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/system.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/v2005_math.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/va_math.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/v2009.vpi";
+S_0xf44ca0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x125f210 .scope module, "co_sim_GJC6" "co_sim_GJC6" 3 2;
+ .timescale -9 -12;
+v0xf2e8a0_0 .var "clk", 0 0;
+v0xf2e9f0_0 .var "din", 0 0;
+v0xf2eb40_0 .var/i "mismatch", 31 0;
+v0xf2fe20_0 .var "oe", 0 0;
+v0xf2ff70_0 .net "tristate_out", 0 0, L_0xf313a0;  1 drivers
+v0xf300c0_0 .net "tristate_out_netlist", 0 0, L_0xe5d4e0;  1 drivers
+E_0x1134f80 .event negedge, v0x1267870_0;
+S_0x125c960 .scope task, "compare" "compare" 3 51, 3 51 0, S_0x125f210;
+ .timescale -9 -12;
+TD_co_sim_GJC6.compare ;
+    %load/vec4 v0xf2ff70_0;
+    %load/vec4 v0xf300c0_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.0, 6;
+    %vpi_call/w 3 53 "$display", "Data Mismatch: Actual output: %0d, Netlist Output %0d, Time: %0t ", v0xf2ff70_0, v0xf300c0_0, $time {0 0 0};
+    %load/vec4 v0xf2eb40_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0xf2eb40_0, 0, 32;
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call/w 3 57 "$display", "Data Matched: Actual output: %0d, Netlist Output %0d, Time: %0t ", v0xf2ff70_0, v0xf300c0_0, $time {0 0 0};
+T_0.1 ;
+    %end;
+S_0x125c690 .scope module, "golden" "GJC6" 3 10, 4 8 0, S_0x125f210;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "din";
+    .port_info 1 /INPUT 1 "oe";
+    .port_info 2 /OUTPUT 1 "tristate_out";
+    .port_info 3 /INPUT 1 "clk";
+o0x7fb085be9018 .functor BUFZ 1, c4<z>; HiZ drive
+; Elide local net with no drivers, v0x125a380_0 name=_ivl_0
+v0x1267870_0 .net "clk", 0 0, v0xf2e8a0_0;  1 drivers
+v0x1267310_0 .net "din", 0 0, v0xf2e9f0_0;  1 drivers
+v0x1266ee0_0 .net "oe", 0 0, v0xf2fe20_0;  1 drivers
+v0x1129840_0 .var "q1", 0 0;
+v0x1129690_0 .var "q2", 0 0;
+v0x123c7c0_0 .net "tristate_out", 0 0, L_0xf313a0;  alias, 1 drivers
+E_0xf397e0 .event posedge, v0x1267870_0;
+L_0xf313a0 .functor MUXZ 1, o0x7fb085be9018, v0x1129690_0, v0xf2fe20_0, C4<>;
+S_0x125b910 .scope module, "synth_net" "GJC6_post_synth" 3 15, 5 3 0, S_0x125f210;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "din";
+    .port_info 1 /INPUT 1 "oe";
+    .port_info 2 /OUTPUT 1 "tristate_out";
+    .port_info 3 /INPUT 1 "clk";
+v0x10b6e90_0 .net "$auto$clkbufmap.cc:298:execute$445", 0 0, L_0xe5ffa0;  1 drivers
+v0x10b7dd0_0 .net "$iopadmap$clk", 0 0, L_0xe962e0;  1 drivers
+v0xf2a820_0 .net "$iopadmap$din", 0 0, L_0xe966f0;  1 drivers
+v0xf2a970_0 .net "$iopadmap$oe", 0 0, L_0xe96860;  1 drivers
+v0xf2aac0_0 .net "$iopadmap$tristate_out", 0 0, L_0xf33ea0;  1 drivers
+v0xf2bda0_0 .net "clk", 0 0, v0xf2e8a0_0;  alias, 1 drivers
+v0xf2bef0_0 .net "din", 0 0, v0xf2e9f0_0;  alias, 1 drivers
+v0xf2c040_0 .net "oe", 0 0, v0xf2fe20_0;  alias, 1 drivers
+v0xf2d320_0 .net "q1", 0 0, v0xfee610_0;  1 drivers
+v0xf2d470_0 .net "q2", 0 0, v0xfef050_0;  1 drivers
+v0xf2d5c0_0 .net "tristate_out", 0 0, L_0xe5d4e0;  alias, 1 drivers
+L_0xf33ff0 .concat [ 1 1 0 0], L_0xe96860, v0xfef050_0;
+S_0x1265320 .scope module, "$abc$196$auto$blifparse.cc:377:parse_blif$197" "DFFRE" 5 41, 6 11 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "R";
+    .port_info 2 /INPUT 1 "E";
+    .port_info 3 /INPUT 1 "C";
+    .port_info 4 /OUTPUT 1 "Q";
+v0x112ff00_0 .net "C", 0 0, L_0xe5ffa0;  alias, 1 drivers
+v0x11332a0_0 .net "D", 0 0, L_0xe966f0;  alias, 1 drivers
+L_0x7fb085ba0060 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x1133400_0 .net "E", 0 0, L_0x7fb085ba0060;  1 drivers
+v0xfee610_0 .var "Q", 0 0;
+L_0x7fb085ba0018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0xfed920_0 .net "R", 0 0, L_0x7fb085ba0018;  1 drivers
+E_0x11b1cc0/0 .event negedge, v0xfed920_0;
+E_0x11b1cc0/1 .event posedge, v0x112ff00_0;
+E_0x11b1cc0 .event/or E_0x11b1cc0/0, E_0x11b1cc0/1;
+S_0x125b610 .scope module, "$abc$196$auto$blifparse.cc:377:parse_blif$198" "DFFRE" 5 50, 6 11 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "D";
+    .port_info 1 /INPUT 1 "R";
+    .port_info 2 /INPUT 1 "E";
+    .port_info 3 /INPUT 1 "C";
+    .port_info 4 /OUTPUT 1 "Q";
+v0xfeec00_0 .net "C", 0 0, L_0xe5ffa0;  alias, 1 drivers
+v0xfeed70_0 .net "D", 0 0, v0xfee610_0;  alias, 1 drivers
+L_0x7fb085ba00f0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0xfeeee0_0 .net "E", 0 0, L_0x7fb085ba00f0;  1 drivers
+v0xfef050_0 .var "Q", 0 0;
+L_0x7fb085ba00a8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0xfef1c0_0 .net "R", 0 0, L_0x7fb085ba00a8;  1 drivers
+E_0x11e1140/0 .event negedge, v0xfef1c0_0;
+E_0x11e1140/1 .event posedge, v0x112ff00_0;
+E_0x11e1140 .event/or E_0x11e1140/0, E_0x11e1140/1;
+S_0x12635e0 .scope module, "$abc$441$auto$blifparse.cc:535:parse_blif$442" "LUT2" 5 61, 7 10 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 2 "A";
+    .port_info 1 /OUTPUT 1 "Y";
+P_0x1022b20 .param/l "INIT_VALUE" 0 7 11, C4<1000>;
+v0xfef330_0 .net "A", 1 0, L_0xf33ff0;  1 drivers
+v0xfef4a0_0 .net "Y", 0 0, L_0xf33ea0;  alias, 1 drivers
+v0xfef610_0 .net *"_ivl_1", 0 0, L_0xf314f0;  1 drivers
+v0xfef780_0 .net *"_ivl_11", 0 0, L_0xf32a70;  1 drivers
+v0xfef8f0_0 .net *"_ivl_13", 0 0, L_0xf32bc0;  1 drivers
+L_0x7fb085ba0138 .functor BUFT 1, C4<10>, C4<0>, C4<0>, C4<0>;
+v0xfee020_0 .net/2u *"_ivl_2", 1 0, L_0x7fb085ba0138;  1 drivers
+L_0x7fb085ba0180 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v0xfee190_0 .net/2u *"_ivl_4", 1 0, L_0x7fb085ba0180;  1 drivers
+v0xfefa60_0 .net *"_ivl_9", 0 0, L_0xf32920;  1 drivers
+v0xfefbd0_0 .net "s1", 1 0, L_0xf31640;  1 drivers
+L_0xf314f0 .part L_0xf33ff0, 1, 1;
+L_0xf31640 .functor MUXZ 2, L_0x7fb085ba0180, L_0x7fb085ba0138, L_0xf314f0, C4<>;
+L_0xf32920 .part L_0xf33ff0, 0, 1;
+L_0xf32a70 .part L_0xf31640, 1, 1;
+L_0xf32bc0 .part L_0xf31640, 0, 1;
+L_0xf33ea0 .functor MUXZ 1, L_0xf32bc0, L_0xf32a70, L_0xf32920, C4<>;
+S_0x1261280 .scope module, "$auto$clkbufmap.cc:265:execute$443" "CLK_BUF" 5 67, 8 10 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /OUTPUT 1 "O";
+L_0xe5ffa0 .functor BUFZ 1, L_0xe962e0, C4<0>, C4<0>, C4<0>;
+v0xfee300_0 .net "I", 0 0, L_0xe962e0;  alias, 1 drivers
+v0xfefd40_0 .net "O", 0 0, L_0xe5ffa0;  alias, 1 drivers
+S_0x125fc40 .scope module, "$iopadmap$GJC6.clk" "I_BUF" 5 76, 9 10 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0xf7d660 .param/str "WEAK_KEEPER" 0 9 11, "NONE";
+L_0xe962e0 .functor BUFT 1, v0xf2e8a0_0, C4<0>, C4<0>, C4<0>;
+L_0x7fb085ba01c8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0xfefeb0_0 .net "EN", 0 0, L_0x7fb085ba01c8;  1 drivers
+v0xff0020_0 .net "I", 0 0, v0xf2e8a0_0;  alias, 1 drivers
+v0xff0190_0 .net "O", 0 0, L_0xe962e0;  alias, 1 drivers
+S_0x125d920 .scope module, "$iopadmap$GJC6.din" "I_BUF" 5 86, 9 10 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0xf7ed70 .param/str "WEAK_KEEPER" 0 9 11, "NONE";
+L_0xe966f0 .functor BUFT 1, v0xf2e9f0_0, C4<0>, C4<0>, C4<0>;
+L_0x7fb085ba0210 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x11784a0_0 .net "EN", 0 0, L_0x7fb085ba0210;  1 drivers
+v0x11782f0_0 .net "I", 0 0, v0xf2e9f0_0;  alias, 1 drivers
+v0x1178610_0 .net "O", 0 0, L_0xe966f0;  alias, 1 drivers
+S_0x1262f80 .scope module, "$iopadmap$GJC6.oe" "I_BUF" 5 96, 9 10 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0xfc6cd0 .param/str "WEAK_KEEPER" 0 9 11, "NONE";
+L_0xe96860 .functor BUFT 1, v0xf2fe20_0, C4<0>, C4<0>, C4<0>;
+L_0x7fb085ba0258 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x10b7f40_0 .net "EN", 0 0, L_0x7fb085ba0258;  1 drivers
+v0x10b7130_0 .net "I", 0 0, v0xf2fe20_0;  alias, 1 drivers
+v0x10b80b0_0 .net "O", 0 0, L_0xe96860;  alias, 1 drivers
+S_0x1260c50 .scope module, "$iopadmap$GJC6.tristate_out" "O_BUF" 5 104, 10 10 1, S_0x125b910;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /OUTPUT 1 "O";
+L_0xe5d4e0 .functor BUFZ 1, L_0xf33ea0, C4<0>, C4<0>, C4<0>;
+v0x10b6d20_0 .net "I", 0 0, L_0xf33ea0;  alias, 1 drivers
+v0x10b7c60_0 .net "O", 0 0, L_0xe5d4e0;  alias, 1 drivers
+    .scope S_0x125c690;
+T_1 ;
+    %wait E_0xf397e0;
+    %load/vec4 v0x1267310_0;
+    %assign/vec4 v0x1129840_0, 0;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x125c690;
+T_2 ;
+    %wait E_0xf397e0;
+    %load/vec4 v0x1129840_0;
+    %assign/vec4 v0x1129690_0, 0;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x1265320;
+T_3 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xfee610_0, 0, 1;
+    %end;
+    .thread T_3, $init;
+    .scope S_0x1265320;
+T_4 ;
+    %wait E_0x11b1cc0;
+    %load/vec4 v0xfed920_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_4.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0xfee610_0, 0;
+    %jmp T_4.1;
+T_4.0 ;
+    %load/vec4 v0x1133400_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_4.2, 8;
+    %load/vec4 v0x11332a0_0;
+    %assign/vec4 v0xfee610_0, 0;
+T_4.2 ;
+T_4.1 ;
+    %jmp T_4;
+    .thread T_4;
+    .scope S_0x125b610;
+T_5 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xfef050_0, 0, 1;
+    %end;
+    .thread T_5, $init;
+    .scope S_0x125b610;
+T_6 ;
+    %wait E_0x11e1140;
+    %load/vec4 v0xfef1c0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_6.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0xfef050_0, 0;
+    %jmp T_6.1;
+T_6.0 ;
+    %load/vec4 v0xfeeee0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_6.2, 8;
+    %load/vec4 v0xfeed70_0;
+    %assign/vec4 v0xfef050_0, 0;
+T_6.2 ;
+T_6.1 ;
+    %jmp T_6;
+    .thread T_6;
+    .scope S_0x125fc40;
+T_7 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_7.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_7.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_7.2, 6;
+    %vpi_call/w 9 34 "$display", "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0xf7d660 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call/w 9 35 "$stop" {0 0 0};
+    %jmp T_7.4;
+T_7.0 ;
+    %jmp T_7.4;
+T_7.1 ;
+    %jmp T_7.4;
+T_7.2 ;
+    %jmp T_7.4;
+T_7.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_7;
+    .scope S_0x125d920;
+T_8 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_8.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_8.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_8.2, 6;
+    %vpi_call/w 9 34 "$display", "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0xf7ed70 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call/w 9 35 "$stop" {0 0 0};
+    %jmp T_8.4;
+T_8.0 ;
+    %jmp T_8.4;
+T_8.1 ;
+    %jmp T_8.4;
+T_8.2 ;
+    %jmp T_8.4;
+T_8.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_8;
+    .scope S_0x1262f80;
+T_9 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_9.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_9.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_9.2, 6;
+    %vpi_call/w 9 34 "$display", "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0xfc6cd0 {0 0 0};
+    %delay 1000, 0;
+    %vpi_call/w 9 35 "$stop" {0 0 0};
+    %jmp T_9.4;
+T_9.0 ;
+    %jmp T_9.4;
+T_9.1 ;
+    %jmp T_9.4;
+T_9.2 ;
+    %jmp T_9.4;
+T_9.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_9;
+    .scope S_0x1260c50;
+T_10 ;
+    %end;
+    .thread T_10;
+    .scope S_0x125f210;
+T_11 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0xf2eb40_0, 0, 32;
+    %end;
+    .thread T_11, $init;
+    .scope S_0x125f210;
+T_12 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xf2e8a0_0, 0, 1;
+T_12.0 ;
+    %delay 1000, 0;
+    %load/vec4 v0xf2e8a0_0;
+    %inv;
+    %store/vec4 v0xf2e8a0_0, 0, 1;
+    %jmp T_12.0;
+T_12.1 ;
+    %end;
+    .thread T_12;
+    .scope S_0x125f210;
+T_13 ;
+    %pushi/vec4 2, 0, 32;
+T_13.0 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_13.1, 5;
+    %jmp/1 T_13.1, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %wait E_0x1134f80;
+    %jmp T_13.0;
+T_13.1 ;
+    %pop/vec4 1;
+    %pushi/vec4 0, 0, 2;
+    %split/vec4 1;
+    %assign/vec4 v0xf2fe20_0, 0;
+    %assign/vec4 v0xf2e9f0_0, 0;
+    %pushi/vec4 2, 0, 32;
+T_13.2 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_13.3, 5;
+    %jmp/1 T_13.3, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %wait E_0x1134f80;
+    %jmp T_13.2;
+T_13.3 ;
+    %pop/vec4 1;
+    %fork TD_co_sim_GJC6.compare, S_0x125c960;
+    %join;
+    %pushi/vec4 100, 0, 32;
+T_13.4 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_13.5, 5;
+    %jmp/1 T_13.5, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %wait E_0x1134f80;
+    %vpi_func 3 32 "$urandom" 32 {0 0 0};
+    %pad/u 1;
+    %assign/vec4 v0xf2e9f0_0, 0;
+    %vpi_func 3 33 "$urandom" 32 {0 0 0};
+    %pad/u 1;
+    %assign/vec4 v0xf2fe20_0, 0;
+    %fork TD_co_sim_GJC6.compare, S_0x125c960;
+    %join;
+    %jmp T_13.4;
+T_13.5 ;
+    %pop/vec4 1;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0xf2e9f0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0xf2fe20_0, 0;
+    %pushi/vec4 2, 0, 32;
+T_13.6 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_13.7, 5;
+    %jmp/1 T_13.7, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %wait E_0x1134f80;
+    %jmp T_13.6;
+T_13.7 ;
+    %pop/vec4 1;
+    %fork TD_co_sim_GJC6.compare, S_0x125c960;
+    %join;
+    %load/vec4 v0xf2eb40_0;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_13.8, 4;
+    %vpi_call/w 3 44 "$display", "**** All Comparison Matched *** \012\011\011Simulation Passed\012" {0 0 0};
+    %jmp T_13.9;
+T_13.8 ;
+    %vpi_call/w 3 46 "$display", "%0d comparison(s) mismatched\012ERROR: SIM: Simulation Failed", v0xf2eb40_0 {0 0 0};
+T_13.9 ;
+    %delay 200000, 0;
+    %vpi_call/w 3 48 "$finish" {0 0 0};
+    %end;
+    .thread T_13;
+    .scope S_0x125f210;
+T_14 ;
+    %vpi_call/w 3 61 "$dumpfile", "tb.vcd" {0 0 0};
+    %vpi_call/w 3 62 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_14;
+# The file index is used to find the file name in the following table.
+:file_names 11;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC6/results_dir/.././sim/co_sim_tb/co_sim_GJC6.v";
+    "/nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC6/results_dir/.././rtl/GJC6.v";
+    "/nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC6/results_dir/GJC6/run_1/synth_1_1/synthesis/GJC6_post_synth.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/I_BUF.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v";
