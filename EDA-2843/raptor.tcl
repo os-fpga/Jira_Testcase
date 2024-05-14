@@ -48,7 +48,7 @@ if {[file exists and2/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/CustomModules]} {
     file copy -force openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/ and2/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/
 }
 
-clear_simulation_files
+# clear_simulation_files
 add_library_path openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
 
 simulate "bitstream_bd" "icarus"
