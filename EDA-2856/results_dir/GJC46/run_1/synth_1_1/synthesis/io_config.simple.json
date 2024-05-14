@@ -1,0 +1,356 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\bitslip_ctrl_n (index=0, width=1, offset=0)",
+    "    Detect input port \\clkGHz (index=0, width=1, offset=0)",
+    "    Detect input port \\data_i (index=0, width=1, offset=0)",
+    "    Detect output port \\data_o (index=0, width=1, offset=0)",
+    "    Detect input port \\enable_n (index=0, width=1, offset=0)",
+    "    Detect output port \\ready (index=0, width=1, offset=0)",
+    "    Detect input port \\reset (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF \\bitslip_buffer0",
+    "      Cell port \\I is connected to input port \\bitslip_ctrl_n",
+    "        Parameter \\WEAK_KEEPER: \"PULLUP\"",
+    "    Get important connection of cell \\I_BUF \\clk_i_buffer0",
+    "      Cell port \\I is connected to input port \\clkGHz",
+    "        Parameter \\WEAK_KEEPER: \"PULLDOWN\"",
+    "    Get important connection of cell \\O_BUFT \\counter_o_buft",
+    "      Cell port \\O is connected to output port \\data_o",
+    "    Get important connection of cell \\I_BUF \\data_i_buffer0",
+    "      Cell port \\I is connected to input port \\data_i",
+    "        Parameter \\WEAK_KEEPER: \"PULLDOWN\"",
+    "    Get important connection of cell \\I_BUF \\enable_buffer0",
+    "      Cell port \\I is connected to input port \\enable_n",
+    "        Parameter \\WEAK_KEEPER: \"PULLUP\"",
+    "    Get important connection of cell \\O_BUF \\ready_o_buffer0",
+    "      Cell port \\O is connected to output port \\ready",
+    "    Get important connection of cell \\I_BUF \\reset_buffer0",
+    "      Cell port \\I is connected to input port \\reset",
+    "        Parameter \\WEAK_KEEPER: \"PULLDOWN\"",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF \\clk_i_buffer0 out connection: \\clkGHz_buf -> \\clock_buffer",
+    "      Connected \\clock_buffer",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "    Try \\I_BUF \\data_i_buffer0 out connection: \\data_i_buf -> \\input_data_delay",
+    "      Connected \\input_data_delay",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "    Try \\I_DELAY \\input_data_delay out connection: \\data_i_delay -> \\input_data_serdes",
+    "      Connected \\input_data_serdes",
+    "        Parameter \\DPA_MODE: \"DPA\"",
+    "        Parameter \\WIDTH: 10",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "    Try \\O_BUFT \\counter_o_buft out connection: \\delay_out -> \\counter_o_delay",
+    "      Connected \\counter_o_delay",
+    "        Parameter \\DELAY: 0",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "    Try \\O_DELAY \\counter_o_delay out connection: \\delay_in -> \\counter_o_serdes",
+    "      Connected \\counter_o_serdes",
+    "        Parameter \\DATA_RATE: \"SDR\"",
+    "        Parameter \\WIDTH: 10",
+    "  Trace gearbox clock source",
+    "    \\I_DELAY \\input_data_delay port \\CLK_IN: \\clkGHz_clkbuf",
+    "      Connected to \\CLK_BUF \\clock_buffer port \\O",
+    "    \\I_SERDES \\input_data_serdes port \\PLL_CLK: \\clkGHz_clkbuf",
+    "      Connected to \\CLK_BUF \\clock_buffer port \\O",
+    "    \\O_DELAY \\counter_o_delay port \\CLK_IN: \\clkGHz_clkbuf",
+    "      Connected to \\CLK_BUF \\clock_buffer port \\O",
+    "    \\O_SERDES \\counter_o_serdes port \\PLL_CLK: \\clkGHz_clkbuf",
+    "      Connected to \\CLK_BUF \\clock_buffer port \\O",
+    "  Summary",
+    "        |-----------------------------------------------------------------------------------------|",
+    "        |                *****************************************************************        |",
+    "    IN  | bitslip_ctrl_n * I_BUF                                                         *        |",
+    "    IN  |         clkGHz * I_BUF |-> CLK_BUF                                             *        |",
+    "    OUT |                *                               O_SERDES |-> O_DELAY |-> O_BUFT * data_o |",
+    "    IN  |         data_i * I_BUF |-> I_DELAY |-> I_SERDES                                *        |",
+    "    IN  |       enable_n * I_BUF                                                         *        |",
+    "    OUT |                *                                                         O_BUF * ready  |",
+    "    IN  |          reset * I_BUF                                                         *        |",
+    "        |                *****************************************************************        |",
+    "        |-----------------------------------------------------------------------------------------|",
+    "  Error: Final checking failed. Design count: 13, Primitive count: 12, Instance count: 12",
+    "    Error: Missing \\CLK_BUF ($auto$clkbufmap.cc:265:execute$1745) in primitive list",
+    "    Error: Missing \\CLK_BUF ($auto$clkbufmap.cc:265:execute$1745) in instance list",
+    "    Error: Missing \\I_BUF (\\bitslip_buffer0) in instance list",
+    "    Error: Missing \\I_BUF (\\clk_i_buffer0) in instance list",
+    "    Error: Missing \\CLK_BUF (\\clock_buffer) in instance list",
+    "    Error: Missing \\O_BUFT (\\counter_o_buft) in instance list",
+    "    Error: Missing \\O_DELAY (\\counter_o_delay) in instance list",
+    "    Error: Missing \\O_SERDES (\\counter_o_serdes) in instance list",
+    "    Error: Missing \\I_BUF (\\data_i_buffer0) in instance list",
+    "    Error: Missing \\I_BUF (\\enable_buffer0) in instance list",
+    "    Error: Missing \\I_DELAY (\\input_data_delay) in instance list",
+    "    Error: Missing \\I_SERDES (\\input_data_serdes) in instance list",
+    "    Error: Missing \\O_BUF (\\ready_o_buffer0) in instance list",
+    "    Error: Missing \\I_BUF (\\reset_buffer0) in instance list",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "bitslip_buffer0",
+      "linked_object" : "bitslip_ctrl_n",
+      "linked_objects" : {
+        "bitslip_ctrl_n" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "bitslip_ctrl_n",
+        "O" : "bitslip_ctrl_n_buf"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "PULLUP"
+      }
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "clk_i_buffer0",
+      "linked_object" : "clkGHz",
+      "linked_objects" : {
+        "clkGHz" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clkGHz",
+        "O" : "clkGHz_buf"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "PULLDOWN"
+      }
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clock_buffer",
+      "linked_object" : "clkGHz",
+      "linked_objects" : {
+        "clkGHz" : {
+          "location" : "",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clkGHz_buf",
+        "O" : "clkGHz_clkbuf"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      }
+      }
+    },
+    {
+      "module" : "O_BUFT",
+      "name" : "counter_o_buft",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "delay_out",
+        "O" : "data_o"
+      },
+      "parameters" : {
+      }
+      }
+    },
+    {
+      "module" : "O_DELAY",
+      "name" : "counter_o_delay",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "clkGHz_clkbuf",
+        "I" : "delay_in",
+        "O" : "delay_out"
+      },
+      "parameters" : {
+        "DELAY" : "0"
+      }
+      }
+    },
+    {
+      "module" : "O_SERDES",
+      "name" : "counter_o_serdes",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "fabric_clk_div",
+        "PLL_CLK" : "clkGHz_clkbuf",
+        "Q" : "delay_in"
+      },
+      "parameters" : {
+        "DATA_RATE" : "SDR",
+        "WIDTH" : "10"
+      }
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "data_i_buffer0",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_i",
+        "O" : "data_i_buf"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "PULLDOWN"
+      }
+      }
+    },
+    {
+      "module" : "I_DELAY",
+      "name" : "input_data_delay",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "clkGHz_clkbuf",
+        "I" : "data_i_buf",
+        "O" : "data_i_delay"
+      },
+      "parameters" : {
+      }
+      }
+    },
+    {
+      "module" : "I_SERDES",
+      "name" : "input_data_serdes",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "fabric_clk_div",
+        "D" : "data_i_delay",
+        "PLL_CLK" : "clkGHz_clkbuf"
+      },
+      "parameters" : {
+        "DPA_MODE" : "DPA",
+        "WIDTH" : "10"
+      }
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "enable_buffer0",
+      "linked_object" : "enable_n",
+      "linked_objects" : {
+        "enable_n" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "enable_n",
+        "O" : "enable_buf_n"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "PULLUP"
+      }
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "ready_o_buffer0",
+      "linked_object" : "ready",
+      "linked_objects" : {
+        "ready" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "ready_buf",
+        "O" : "ready"
+      },
+      "parameters" : {
+      }
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "reset_buffer0",
+      "linked_object" : "reset",
+      "linked_objects" : {
+        "reset" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "reset",
+        "O" : "reset_buf"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "PULLDOWN"
+      }
+      }
+    }
+  ]
+}
