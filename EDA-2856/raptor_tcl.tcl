@@ -1,5 +1,5 @@
 create_design GJC46
-target_device 1GVTC
+target_device 1VG28
 add_include_path ./rtl
 add_library_path ./rtl
 add_library_ext .v .sv
