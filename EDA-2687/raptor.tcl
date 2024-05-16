@@ -10,6 +10,23 @@ add_constraint_file ./clk_constraint.sdc
 add_constraint_file ./pin_mapping.pin
 analyze
 synthesize 
+set input_file [open "sp_ram/run_1/synth_1_1/synthesis/sp_ram\_post_synth.v" r]
+
+set file_content [read $input_file]
+
+close $input_file
+set modified_content [string map {"sp_ram(" "sp_ram_post_synth("} $file_content]
+
+set output_file [open "sp_ram/run_1/synth_1_1/synthesis/sp_ram\_post_synth.v" w]
+
+puts $output_file $modified_content
+
+close $output_file
+puts "Modification completed."
+
+simulation_options compilation icarus gate -DPOSTSYNTH=1
+simulate gate icarus
+
 packing
 place
 route
@@ -27,7 +44,7 @@ puts $output_file $modified_content
 
 close $output_file
 puts "Modification completed."
-simulation_options compilation icarus pnr
+simulation_options compilation icarus pnr -DPNR=1
 simulate pnr icarus
 sta
 power
@@ -47,7 +64,6 @@ if {[file exists sp_ram/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/CustomModules]}
 }
 
 exec /bin/bash ./sed.sh
-clear_simulation_files
 add_library_path ./openfpga-pd-castor-rs/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
 
 simulate "bitstream_bd" "icarus"

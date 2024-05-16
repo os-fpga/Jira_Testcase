@@ -8,7 +8,11 @@ module sim_route_sp_ram;
 	integer mismatch=0;
 
 	sp_ram golden(.data(data),.addr(addr),.we(we),.clk(clk),.q(q));
+	`ifdef PNR
 	sp_ram_post_route netlist(.data(data),.addr(addr),.we(we),.clk(clk),.q(q_netlist));
+    `elsif POSTSYNTH
+	sp_ram_post_synth netlist(.data(data),.addr(addr),.we(we),.clk(clk),.q(q_netlist));
+	`endif
 
 always #1 clk = ~clk;
 
