@@ -1,0 +1,34 @@
+ 
+# Yosys synthesis script for test_feedback
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/05_24_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/CRC_Module.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/EthernetModule.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/InitModule.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/RxModule.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/TxModule.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/common.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/test_feedback.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/10_100m_ethernet-fifo_convertor/results_dir/.././rtl/tri_state.v 
+
+
+# Technology mapping
+hierarchy -top test_feedback
+
+setattr -set keep 1 w:\clk_10K
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v 10_100m_ethernet-fifo_convertor_post_synth.v
+write_blif -param 10_100m_ethernet-fifo_convertor_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_10_100m_ethernet-fifo_convertor.sdc -json config.json -w wrapper_10_100m_ethernet-fifo_convertor_post_synth.v wrapper_10_100m_ethernet-fifo_convertor_post_synth.eblif -pr post_pnr_wrapper_10_100m_ethernet-fifo_convertor_post_synth.v post_pnr_wrapper_10_100m_ethernet-fifo_convertor_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_10_100m_ethernet-fifo_convertor_post_synth.v
+write_blif -param fabric_10_100m_ethernet-fifo_convertor_post_synth.eblif
+
+  
