@@ -1,23 +1,22 @@
-`timescale 1ns/1ps
-
-module O_DDR_tb;
+module I_DDR_tb;
 
   // Ports
   reg CLK = 0;
-  wire O_DDR_Q, Expected_Q;
+  wire[1:0] I_DDR_Q, Expected_Q;
   reg R;
-  reg [1:0] DD = 2'd0;
+  reg DD;
   integer mismatch = 0;
   integer i;
 
   always #5 CLK = ~CLK;
 
-  always @(CLK) begin
-    compare(O_DDR_Q, Expected_Q);
+  always @(posedge CLK) begin
+    compare(I_DDR_Q, Expected_Q);
   end
 
   initial begin
     begin
+      DD = 0;
       $display ("Random input ");  
       R = 0;
       #2
@@ -25,10 +24,11 @@ module O_DDR_tb;
       #2
 
       for (i = 0; i < 20; i = i + 1) begin
-        @(posedge CLK);
+        @(CLK);
         DD <= $random;
       end
       repeat(2) @(posedge CLK);
+
       if (mismatch > 0) begin
       $display("-----------------Simulation Failed-----------------");
       end
@@ -39,22 +39,22 @@ module O_DDR_tb;
   end
 
   initial begin
-      $dumpfile("O_DDR.vcd");
+      $dumpfile("I_DDR.vcd");
       $dumpvars;
       #500;
       $display ("FINISH");
       $finish;
   end
 
-  O_DDR O_DDR_dut1 (
-    .D (DD),
-    .R (R),
-    .E (1'b1),
-    .C (CLK),
-    .Q (O_DDR_Q)
+  I_DDR I_DDR_dut1 (
+    .D(DD),
+    .R(R),
+    .E(1'b1),
+    .C(CLK),
+    .Q(I_DDR_Q)
   );
 
-  o_ddr o_ddr_dut2 (
+  i_ddr i_ddr_dut2 (
     .data(DD),
     .rst(R),
     .en(1'b1),
@@ -62,42 +62,47 @@ module O_DDR_tb;
     .Q(Expected_Q)
   );
 
-task compare(O_DDR_Q, Expected_Q);
-    if(O_DDR_Q !== Expected_Q) begin
-        $display("Output Mismatch. O_DDR_Q: %0h, Expected_Q: %0h", O_DDR_Q, Expected_Q);
+task compare(I_DDR_Q, Expected_Q);
+    if(I_DDR_Q !== Expected_Q) begin
+        $display("Output mismatch. I_DDR_Q: %0h, Expected_Q: %0h", I_DDR_Q, Expected_Q);
         mismatch = mismatch + 1;
     end
 endtask
 
 endmodule
 
-module o_ddr (
-  input wire [1:0]data, 
-  input wire rst, 
-  input wire en, 
-  input wire clk, 
-  output wire Q
-  );
+module i_ddr (
+  input data, 
+  input rst, 
+  input en, 
+  input clk, 
+  output reg [1:0] Q
+);
 
 reg [1:0] temp;
-reg  neg_dat;
 
 always@(posedge clk or negedge rst) begin
   if (!rst)
-    temp <= 2'd0;
+    temp[0] <= 1'd0;
   else if (en) begin
-    temp <= data;
+    temp[0] <= data;
   end 
 end
 
 always@(negedge clk or negedge rst) begin
   if (!rst)
-    neg_dat <= 1'd0;
+    temp[1] <= 1'd0;
   else if (en) begin
-    neg_dat <= temp[1];
+    temp[1] <= data;
   end
 end
 
-assign Q = clk ? temp[0] : neg_dat;
+always @(posedge clk or negedge rst) begin
+  if (!rst)
+    Q <= 2'd0;
+  else
+    Q[0] = temp[1];
+    Q[1] = temp[0];
+end
 
 endmodule
