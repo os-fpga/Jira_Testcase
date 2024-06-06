@@ -4,7 +4,7 @@ module O_DDR_tb;
 
   // Ports
   reg CLK = 0;
-  wire prim, behv;
+  wire O_DDR_Q, Expected_Q;
   reg R;
   reg [1:0] DD = 2'd0;
   integer mismatch = 0;
@@ -13,7 +13,7 @@ module O_DDR_tb;
   always #5 CLK = ~CLK;
 
   always @(CLK) begin
-    compare(prim, behv);
+    compare(O_DDR_Q, Expected_Q);
   end
 
   initial begin
@@ -51,7 +51,7 @@ module O_DDR_tb;
     .R (R),
     .E (1'b1),
     .C (CLK),
-    .Q (prim)
+    .Q (O_DDR_Q)
   );
 
   o_ddr o_ddr_dut2 (
@@ -59,12 +59,12 @@ module O_DDR_tb;
     .rst(R),
     .en(1'b1),
     .clk(CLK),
-    .Q(behv)
+    .Q(Expected_Q)
   );
 
-task compare(prim, behv);
-    if(prim !== behv) begin
-        $display("Output Mismatch. dut1: %0h, dut2: %0h", prim, behv);
+task compare(O_DDR_Q, Expected_Q);
+    if(O_DDR_Q !== Expected_Q) begin
+        $display("Output Mismatch. O_DDR_Q: %0h, Expected_Q: %0h", O_DDR_Q, Expected_Q);
         mismatch = mismatch + 1;
     end
 endtask
