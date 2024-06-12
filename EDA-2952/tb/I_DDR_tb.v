@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module I_DDR_tb;
 
   // Ports
@@ -10,22 +12,19 @@ module I_DDR_tb;
 
   always #5 CLK = ~CLK;
 
-  always @(posedge CLK) begin
-    compare(I_DDR_Q, Expected_Q);
-  end
-
   initial begin
     begin
       DD = 0;
       $display ("Random input ");  
       R = 0;
-      #2
+      @(posedge CLK);
       R = 1;
-      #2
+      @(posedge CLK);
 
       for (i = 0; i < 20; i = i + 1) begin
         @(CLK);
         DD <= $random;
+        compare(I_DDR_Q, Expected_Q);
       end
       repeat(2) @(posedge CLK);
 
@@ -64,7 +63,7 @@ module I_DDR_tb;
 
 task compare(I_DDR_Q, Expected_Q);
     if(I_DDR_Q !== Expected_Q) begin
-        $display("Output mismatch. I_DDR_Q: %0h, Expected_Q: %0h", I_DDR_Q, Expected_Q);
+        $display("Output mismatch. I_DDR_Q: %0h, Expected_Q: %0h", I_DDR_Q, Expected_Q, $time);
         mismatch = mismatch + 1;
     end
 endtask
