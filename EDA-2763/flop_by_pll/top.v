@@ -1,18 +1,9 @@
 module top(
-	input wire clk,
+  input wire clk,
   input wire [7:0] din,
-	output reg [7:0] dout
+  output reg [7:0] dout
 );
-  wire clkbuf;
   wire [7:0] pllclk;
-  /*
-    CLK_BUF is workaround - expect auto-inserted
-  */
-  CLK_BUF clk_buf 
-  (
-    .I(clk),
-    .O(clkbuf)
-  );
   PLL #(
     .DIVIDE_CLK_IN_BY_2("FALSE"),
     .PLL_MULT(16),
@@ -20,7 +11,7 @@ module top(
     .PLL_POST_DIV(34)
   ) pll_pin (
     .PLL_EN(1'b1),
-    .CLK_IN(clkbuf),
+    .CLK_IN(clk),
     .CLK_OUT(pllclk[0]),
     .CLK_OUT_DIV2(pllclk[1]),
     .CLK_OUT_DIV3(pllclk[2]),
