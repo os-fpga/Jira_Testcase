@@ -1,7 +1,7 @@
 module top(
-	input wire clk,
+  input wire clk,
   input wire [7:0] din,
-	output reg [7:0] dout
+  output reg [7:0] dout
 );
   wire [7:0] pllclk;
   PLL #(
