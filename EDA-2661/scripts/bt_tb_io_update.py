@@ -179,6 +179,40 @@ def adjust_ios(file_path):
         print("File updated successfully.")
     else:
         print("Pattern not found in the file.")
+
+def instance_update(file_path):
+    def modify_variable_line(match):
+        variable_name = match.group(1)
+        array_size = match.group(2)
+        endvar = match.group(3)
+        if any(match.group(0) == entry.group(0) for entry in last_occurrences):
+            return f'\t{variable_name}{endvar}'
+        else:
+            return f'// \t{variable_name}[{array_size}]{endvar}'
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    pattern = r'\t*(\w+)\[(\d+)\]([,\n])'
+
+    matches = list(re.finditer(pattern, content))
+    last_occurrences = []
+
+    for match in matches:
+        variable_name = match.group(1)
+        found = False
+        for i, entry in enumerate(last_occurrences):
+            if entry.group(1) == variable_name:
+                last_occurrences[i] = match
+                found = True
+                break
+        if not found:
+            last_occurrences.append(match)
+    modified_content = re.sub(pattern, modify_variable_line, content)
+
+    with open(file_path, 'w') as file:
+        file.write(modified_content)
+
     
     def modify_variable_line(match):
         variable_name = match.group(1)
@@ -266,6 +300,139 @@ def insert_new_lines(file_path,line,new_line):
 
     print("File updated successfully.")
 
+def copy_tasks(file_path,task_path,insert_string):
+    # task_path="../sim/bitstream_tb/bitstream_testbech_tasks.v"
+    # insert_string="----- END output waveform to VCD file -------"
+    if os.path.exists(task_path):
+        print(f"The file bitstream_testbech_tasks.v exists.")    
+        try:
+            with open(task_path, 'r') as src_file:
+                source_content = src_file.read()
+
+            with open(file_path, 'r') as dest_file:
+                dest_content = dest_file.read()
+
+            insert_index = dest_content.find(insert_string)
+
+            if insert_index != -1:
+                new_content = dest_content[:insert_index + len(insert_string)] + '\n' + source_content + '\n' + dest_content[insert_index + len(insert_string):]
+
+                with open(file_path, 'w') as dest_file:
+                    dest_file.write(new_content)
+
+                print("Content inserted successfully.")
+            else:
+                print("Insert string not found in the destination file.")
+
+        except FileNotFoundError:
+            print("One or both of the specified files does not exist.")
+    else:
+        print(f"The file bitstream_testbech_tasks.v does not exist.")
+
+def clk_update(file_path):
+    pattern = r'\$auto\$clkbufmap\.cc:\d+:execute\$\d+'
+
+    replacement = 'clock0'
+
+    with open(file_path, 'r') as f:
+        content = f.read()
+
+    new_content = re.sub(pattern, replacement, content)
+
+    with open(file_path, 'w') as f:
+            f.write(new_content)
+
+def replacement(file_path,pattern,replacement):
+
+    with open(file_path, 'r') as f:
+        content = f.read()
+
+    match = re.search(pattern, content)
+
+    if match:
+        print("Pattern found:", match.group())
+    else:
+        print("Pattern not found in the file.")
+
+    new_content = re.sub(pattern, replacement, content)
+
+    with open(file_path, 'w') as f:
+        f.write(new_content)
+
+
+def replace_pattern_in_file(file_path, pattern, replacement):
+
+    modified_pattern = pattern.replace("$", r"\$")
+
+    with open(file_path, 'r') as f:
+        content = f.read()
+
+    content = re.sub(modified_pattern, replacement, content)
+
+    with open(file_path, 'w') as f:
+        f.write(content)
+
+def multiclock_update(file_path,number_of_clocks):
+    match=[]
+    pattern = r'\$auto\$clkbufmap\.cc:\d+:execute\$\d+'
+
+    with open(file_path, 'r') as f:
+        content = f.read()
+
+    matches = re.findall(pattern, content)
+
+    if matches:
+        print("Patterns found:")
+        for i in matches:
+            match.append(i)
+    else:
+        print("Pattern not found in the file.")
+
+    for i in range(number_of_clocks):
+            replace_pattern_in_file(file_path,match[i],"clock"+str(i))
+
+def replace_auto_in_file(file_path):
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+
+    pattern = r'(\$auto\$[a-zA-Z_]+\.cc:\d+:[a-zA-Z_]+\$\d+)(_[a-zA-Z_]+)?'
+
+    modified_content = re.sub(pattern, r'\\\1\2 ', content)
+
+    with open(file_path, 'w') as file:
+        file.write(modified_content)
+
+def move_semicolon_to_next_line(file_path):
+    modified_lines = []
+    one = 1
+
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+
+    for line in lines:
+        line = line.rstrip()
+
+        if ');' in line:
+            if one==1:
+                index = line.find(');')
+
+                before_semicolon = line[:index]
+
+                modified_lines.append(before_semicolon + ',\n')
+
+                after_semicolon = line[index + 2:]
+
+                modified_lines.append(after_semicolon + ');\n')
+                one=0
+            else:
+                modified_lines.append(line + '\n')
+        else:
+            modified_lines.append(line + '\n')
+
+    with open(file_path, 'w') as file:
+        file.writelines(modified_lines)
+
 def main():
     file_path = sys.argv[1]
     design_name=sys.argv[2]
@@ -274,6 +441,8 @@ def main():
         remove_iopadmap(file_path)
         adjust_ios(file_path)
         remove_twodim_array(file_path)
+        multiclock_update(file_path,int(sys.argv[3]))
+        replace_auto_in_file(file_path)
     elif file_path.endswith("fabric_netlists.v"):
         inc_upate(file_path,"BIT_SIM/","`include \"")
         rename_p(file_path,"BIT_SIM/./SRC/","SRC/")

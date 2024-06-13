@@ -1,0 +1,27 @@
+ 
+# Yosys synthesis script for GJC4
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/05_13_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/.././rtl/GJC4.v 
+
+
+# Technology mapping
+hierarchy -top GJC4
+
+setattr -set keep 1 w:\vclk
+
+
+plugin -i synth-rs
+
+synth_rs -tech genesis3 -de -goal delay   -effort high -carry auto   -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v GJC4_post_synth.v
+write_blif -param GJC4_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_GJC4.sdc -json config.json -w wrapper_GJC4_post_synth.v wrapper_GJC4_post_synth.eblif -pr post_pnr_wrapper_GJC4_post_synth.v post_pnr_wrapper_GJC4_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_GJC4_post_synth.v
+write_blif -param fabric_GJC4_post_synth.eblif
+
+  

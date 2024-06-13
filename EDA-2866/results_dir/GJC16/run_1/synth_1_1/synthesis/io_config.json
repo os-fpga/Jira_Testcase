@@ -1,0 +1,264 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clk_i (index=0, width=1, offset=0)",
+    "    Detect input port \\data_i (index=0, width=2, offset=0)",
+    "    Detect input port \\data_i (index=1, width=2, offset=0)",
+    "    Detect output port \\data_o (index=0, width=1, offset=0)",
+    "    Detect input port \\enable (index=0, width=1, offset=0)",
+    "    Detect input port \\reset_n (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF \\buf0_",
+    "      Cell port \\I is connected to input port \\data_i[0]",
+    "    Get important connection of cell \\I_BUF \\buf1_",
+    "      Cell port \\I is connected to input port \\data_i[1]",
+    "    Get important connection of cell \\I_BUF \\buf2_",
+    "      Cell port \\I is connected to input port \\reset_n",
+    "    Get important connection of cell \\I_BUF \\buf3_",
+    "      Cell port \\I is connected to input port \\enable",
+    "    Get important connection of cell \\I_BUF \\buf4_",
+    "      Cell port \\I is connected to input port \\clk_i",
+    "    Get important connection of cell \\O_BUF \\ddr_buf",
+    "      Cell port \\O is connected to output port \\data_o",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF \\buf4_ out connection: \\clk_i_buf -> \\clock_buffer",
+    "      Connected \\clock_buffer",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "    Try \\O_BUF \\ddr_buf out connection: \\data_o_buf -> \\data_o_ddr",
+    "      Connected \\data_o_ddr",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace gearbox clock source",
+    "  Summary",
+    "        |-----------------------------------------------------------------------|",
+    "        |           ****************************************************        |",
+    "    IN  | data_i[0] * I_BUF                                            *        |",
+    "    IN  | data_i[1] * I_BUF                                            *        |",
+    "    IN  |   reset_n * I_BUF                                            *        |",
+    "    IN  |    enable * I_BUF                                            *        |",
+    "    IN  |     clk_i * I_BUF |-> CLK_BUF                                *        |",
+    "    OUT |           *                                  O_DDR |-> O_BUF * data_o |",
+    "        |           ****************************************************        |",
+    "        |-----------------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Assign location HP_2_CC_10_5P (and properties) to Port clk_i",
+    "  Assign location HR_2_6_3P (and properties) to Port data_i[0]",
+    "  Assign location HR_1_8_4P (and properties) to Port reset_n",
+    "  Assign location HR_2_8_4P (and properties) to Port data_i[1]",
+    "  Assign location HR_1_6_3P (and properties) to Port enable",
+    "  Assign location HR_5_12_6P (and properties) to Port data_o",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "buf0_",
+      "linked_object" : "data_i[0]",
+      "linked_objects" : {
+        "data_i[0]" : {
+          "location" : "HR_2_6_3P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_i[0]",
+        "O" : "data_i_buf[0]"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "buf1_",
+      "linked_object" : "data_i[1]",
+      "linked_objects" : {
+        "data_i[1]" : {
+          "location" : "HR_2_8_4P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_i[1]",
+        "O" : "data_i_buf[1]"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "buf2_",
+      "linked_object" : "reset_n",
+      "linked_objects" : {
+        "reset_n" : {
+          "location" : "HR_1_8_4P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "reset_n",
+        "O" : "reset_n_buf"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "buf3_",
+      "linked_object" : "enable",
+      "linked_objects" : {
+        "enable" : {
+          "location" : "HR_1_6_3P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "enable",
+        "O" : "enable_buf"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "buf4_",
+      "linked_object" : "clk_i",
+      "linked_objects" : {
+        "clk_i" : {
+          "location" : "HP_2_CC_10_5P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_i",
+        "O" : "clk_i_buf"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clock_buffer",
+      "linked_object" : "clk_i",
+      "linked_objects" : {
+        "clk_i" : {
+          "location" : "HP_2_CC_10_5P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_i_buf",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "ddr_buf",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "HR_5_12_6P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "data_o_buf",
+        "O" : "data_o"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "O_DDR"
+      ],
+      "route_clock_to" : {
+      }
+    },
+    {
+      "module" : "O_DDR",
+      "name" : "data_o_ddr",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "HR_5_12_6P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "C" : "clk_buf_i",
+        "Q" : "data_o_buf"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "O_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      }
+    }
+  ]
+}

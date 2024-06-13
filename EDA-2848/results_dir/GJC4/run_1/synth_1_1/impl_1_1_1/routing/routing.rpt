@@ -1,0 +1,1470 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.05
+Build    : 1.0.53
+Hash     : 4b7f724
+Date     : May 13 2024
+Type     : Engineering
+Log Time   : Mon May 13 10:11:55 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/05_13_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/05_13_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/synthesis/fabric_GJC4_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/packing/fabric_GJC4_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report GJC4_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top GJC4 --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/packing/fabric_GJC4_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/placement/fabric_GJC4_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/routing/fabric_GJC4_post_synth.route --route
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/05_13_2024_09_15_01/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: fabric_GJC4_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 21.9 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/packing/fabric_GJC4_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/placement/fabric_GJC4_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/routing/fabric_GJC4_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/packing/fabric_GJC4_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: GJC4_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 160
+RouterOpts.check_route: FULL
+RouterOpts.trim_empty_chan: false
+RouterOpts.trim_obs_chan: false
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_router_iterations: 1500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: true
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: DETAILED_ROUTING
+AnalysisOpts.post_synth_netlist_unconn_input_handling: GND
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 21.9 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/synthesis/fabric_GJC4_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.03 seconds (max_rss 26.0 MiB, delta_rss +4.1 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred   61 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 144 (144 dangling, 0 constant)
+Swept net(s)        : 146
+Swept block(s)      : 2
+Constant Pins Marked: 61
+# Clean circuit took 0.00 seconds (max_rss 26.0 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 26.0 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 26.0 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 724
+    .input                     :      61
+    .output                    :     589
+    0-LUT                      :       1
+    6-LUT                      :      61
+    RS_DSP_MULT                :       1
+    RS_DSP_MULTACC             :       1
+    RS_DSP_MULTACC_REGIN       :       1
+    RS_DSP_MULTACC_REGIN_REGOUT:       1
+    RS_DSP_MULTACC_REGOUT      :       1
+    RS_DSP_MULTADD             :       1
+    RS_DSP_MULTADD_REGIN       :       1
+    RS_DSP_MULTADD_REGIN_REGOUT:       1
+    RS_DSP_MULTADD_REGOUT      :       1
+    RS_DSP_MULT_REGIN          :       1
+    RS_DSP_MULT_REGIN_REGOUT   :       1
+    RS_DSP_MULT_REGOUT         :       1
+  Nets  : 651
+    Avg Fanout:     2.0
+    Max Fanout:    61.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 2102
+  Timing Graph Edges: 7091
+  Timing Graph Levels: 4
+# Build Timing Graph took 0.00 seconds (max_rss 26.0 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock '$auto$clkbufmap.cc:298:execute$398' Fanout: 11 pins (0.6%), 11 blocks (1.5%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1133'
+Warning 168: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1134'
+Warning 169: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1135'
+Warning 170: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1136'
+Warning 171: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1137'
+Warning 172: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1138'
+Warning 173: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1139'
+Warning 174: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1140'
+Warning 175: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1141'
+Warning 176: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1142'
+Warning 177: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1143'
+Warning 178: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1144'
+Warning 179: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1145'
+Warning 180: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1146'
+Warning 181: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1147'
+Warning 182: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1148'
+Warning 183: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1149'
+Warning 184: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1150'
+Warning 185: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1151'
+Warning 186: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1152'
+Warning 187: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1153'
+Warning 188: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1154'
+Warning 189: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1155'
+Warning 190: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1156'
+Warning 191: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1157'
+Warning 192: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1158'
+Warning 193: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1159'
+Warning 194: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1160'
+Warning 195: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1161'
+Warning 196: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1162'
+Warning 197: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1163'
+Warning 198: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1164'
+Warning 199: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1165'
+Warning 200: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1166'
+Warning 201: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1167'
+Warning 202: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1168'
+Warning 203: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1169'
+Warning 204: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1170'
+Warning 205: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1171'
+Warning 206: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1172'
+Warning 207: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1173'
+Warning 208: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1174'
+Warning 209: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1175'
+Warning 210: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1176'
+Warning 211: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1177'
+Warning 212: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1178'
+Warning 213: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1179'
+Warning 214: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1180'
+Warning 215: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1181'
+Warning 216: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1182'
+Warning 217: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1183'
+Warning 218: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1184'
+Warning 219: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1185'
+Warning 220: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1186'
+Warning 221: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1187'
+Warning 222: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1188'
+Warning 223: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1189'
+Warning 224: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1190'
+Warning 225: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1191'
+Warning 226: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1192'
+Warning 227: set_input_delay command matched but was not applied to primary output '$auto$rs_design_edit.cc:830:execute$1193'
+Warning 228: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[0]'
+Warning 229: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[1]'
+Warning 230: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[2]'
+Warning 231: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[3]'
+Warning 232: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[4]'
+Warning 233: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[5]'
+Warning 234: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[6]'
+Warning 235: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[7]'
+Warning 236: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[8]'
+Warning 237: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[9]'
+Warning 238: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[10]'
+Warning 239: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[11]'
+Warning 240: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[12]'
+Warning 241: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[13]'
+Warning 242: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[14]'
+Warning 243: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[15]'
+Warning 244: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[16]'
+Warning 245: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd[17]'
+Warning 246: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[0]'
+Warning 247: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[1]'
+Warning 248: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[2]'
+Warning 249: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[3]'
+Warning 250: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[4]'
+Warning 251: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[5]'
+Warning 252: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[6]'
+Warning 253: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[7]'
+Warning 254: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[8]'
+Warning 255: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[9]'
+Warning 256: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[10]'
+Warning 257: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[11]'
+Warning 258: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[12]'
+Warning 259: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[13]'
+Warning 260: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[14]'
+Warning 261: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[15]'
+Warning 262: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[16]'
+Warning 263: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin[17]'
+Warning 264: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[0]'
+Warning 265: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[1]'
+Warning 266: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[2]'
+Warning 267: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[3]'
+Warning 268: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[4]'
+Warning 269: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[5]'
+Warning 270: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[6]'
+Warning 271: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[7]'
+Warning 272: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[8]'
+Warning 273: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[9]'
+Warning 274: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[10]'
+Warning 275: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[11]'
+Warning 276: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[12]'
+Warning 277: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[13]'
+Warning 278: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[14]'
+Warning 279: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[15]'
+Warning 280: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[16]'
+Warning 281: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regin_regout[17]'
+Warning 282: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[0]'
+Warning 283: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[1]'
+Warning 284: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[2]'
+Warning 285: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[3]'
+Warning 286: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[4]'
+Warning 287: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[5]'
+Warning 288: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[6]'
+Warning 289: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[7]'
+Warning 290: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[8]'
+Warning 291: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[9]'
+Warning 292: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[10]'
+Warning 293: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[11]'
+Warning 294: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[12]'
+Warning 295: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[13]'
+Warning 296: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[14]'
+Warning 297: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[15]'
+Warning 298: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[16]'
+Warning 299: set_input_delay command matched but was not applied to primary output '$iopadmap$dly_b_multadd_regout[17]'
+Warning 300: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[0]'
+Warning 301: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[1]'
+Warning 302: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[2]'
+Warning 303: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[3]'
+Warning 304: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[4]'
+Warning 305: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[5]'
+Warning 306: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[6]'
+Warning 307: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[7]'
+Warning 308: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[8]'
+Warning 309: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[9]'
+Warning 310: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[10]'
+Warning 311: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[11]'
+Warning 312: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[12]'
+Warning 313: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[13]'
+Warning 314: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[14]'
+Warning 315: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[15]'
+Warning 316: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[16]'
+Warning 317: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[17]'
+Warning 318: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[18]'
+Warning 319: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[19]'
+Warning 320: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[20]'
+Warning 321: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[21]'
+Warning 322: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[22]'
+Warning 323: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[23]'
+Warning 324: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[24]'
+Warning 325: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[25]'
+Warning 326: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[26]'
+Warning 327: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[27]'
+Warning 328: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[28]'
+Warning 329: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[29]'
+Warning 330: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[30]'
+Warning 331: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[31]'
+Warning 332: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[32]'
+Warning 333: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[33]'
+Warning 334: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[34]'
+Warning 335: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[35]'
+Warning 336: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[36]'
+Warning 337: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult[37]'
+Warning 338: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[0]'
+Warning 339: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[1]'
+Warning 340: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[2]'
+Warning 341: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[3]'
+Warning 342: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[4]'
+Warning 343: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[5]'
+Warning 344: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[6]'
+Warning 345: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[7]'
+Warning 346: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[8]'
+Warning 347: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[9]'
+Warning 348: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[10]'
+Warning 349: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[11]'
+Warning 350: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[12]'
+Warning 351: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[13]'
+Warning 352: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[14]'
+Warning 353: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[15]'
+Warning 354: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[16]'
+Warning 355: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[17]'
+Warning 356: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[18]'
+Warning 357: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[19]'
+Warning 358: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[20]'
+Warning 359: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[21]'
+Warning 360: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[22]'
+Warning 361: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[23]'
+Warning 362: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[24]'
+Warning 363: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[25]'
+Warning 364: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[26]'
+Warning 365: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[27]'
+Warning 366: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[28]'
+Warning 367: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[29]'
+Warning 368: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[30]'
+Warning 369: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[31]'
+Warning 370: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[32]'
+Warning 371: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[33]'
+Warning 372: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[34]'
+Warning 373: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[35]'
+Warning 374: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[36]'
+Warning 375: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin[37]'
+Warning 376: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[0]'
+Warning 377: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[1]'
+Warning 378: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[2]'
+Warning 379: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[3]'
+Warning 380: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[4]'
+Warning 381: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[5]'
+Warning 382: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[6]'
+Warning 383: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[7]'
+Warning 384: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[8]'
+Warning 385: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[9]'
+Warning 386: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[10]'
+Warning 387: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[11]'
+Warning 388: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[12]'
+Warning 389: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[13]'
+Warning 390: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[14]'
+Warning 391: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[15]'
+Warning 392: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[16]'
+Warning 393: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[17]'
+Warning 394: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[18]'
+Warning 395: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[19]'
+Warning 396: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[20]'
+Warning 397: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[21]'
+Warning 398: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[22]'
+Warning 399: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[23]'
+Warning 400: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[24]'
+Warning 401: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[25]'
+Warning 402: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[26]'
+Warning 403: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[27]'
+Warning 404: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[28]'
+Warning 405: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[29]'
+Warning 406: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[30]'
+Warning 407: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[31]'
+Warning 408: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[32]'
+Warning 409: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[33]'
+Warning 410: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[34]'
+Warning 411: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[35]'
+Warning 412: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[36]'
+Warning 413: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regin_regout[37]'
+Warning 414: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[0]'
+Warning 415: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[1]'
+Warning 416: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[2]'
+Warning 417: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[3]'
+Warning 418: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[4]'
+Warning 419: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[5]'
+Warning 420: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[6]'
+Warning 421: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[7]'
+Warning 422: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[8]'
+Warning 423: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[9]'
+Warning 424: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[10]'
+Warning 425: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[11]'
+Warning 426: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[12]'
+Warning 427: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[13]'
+Warning 428: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[14]'
+Warning 429: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[15]'
+Warning 430: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[16]'
+Warning 431: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[17]'
+Warning 432: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[18]'
+Warning 433: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[19]'
+Warning 434: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[20]'
+Warning 435: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[21]'
+Warning 436: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[22]'
+Warning 437: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[23]'
+Warning 438: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[24]'
+Warning 439: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[25]'
+Warning 440: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[26]'
+Warning 441: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[27]'
+Warning 442: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[28]'
+Warning 443: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[29]'
+Warning 444: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[30]'
+Warning 445: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[31]'
+Warning 446: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[32]'
+Warning 447: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[33]'
+Warning 448: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[34]'
+Warning 449: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[35]'
+Warning 450: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[36]'
+Warning 451: set_input_delay command matched but was not applied to primary output '$iopadmap$z_mult_regout[37]'
+Warning 452: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[0]'
+Warning 453: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[1]'
+Warning 454: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[2]'
+Warning 455: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[3]'
+Warning 456: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[4]'
+Warning 457: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[5]'
+Warning 458: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[6]'
+Warning 459: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[7]'
+Warning 460: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[8]'
+Warning 461: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[9]'
+Warning 462: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[10]'
+Warning 463: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[11]'
+Warning 464: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[12]'
+Warning 465: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[13]'
+Warning 466: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[14]'
+Warning 467: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[15]'
+Warning 468: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[16]'
+Warning 469: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[17]'
+Warning 470: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[18]'
+Warning 471: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[19]'
+Warning 472: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[20]'
+Warning 473: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[21]'
+Warning 474: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[22]'
+Warning 475: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[23]'
+Warning 476: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[24]'
+Warning 477: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[25]'
+Warning 478: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[26]'
+Warning 479: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[27]'
+Warning 480: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[28]'
+Warning 481: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[29]'
+Warning 482: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[30]'
+Warning 483: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[31]'
+Warning 484: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[32]'
+Warning 485: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[33]'
+Warning 486: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[34]'
+Warning 487: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[35]'
+Warning 488: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[36]'
+Warning 489: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc[37]'
+Warning 490: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[0]'
+Warning 491: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[1]'
+Warning 492: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[2]'
+Warning 493: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[3]'
+Warning 494: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[4]'
+Warning 495: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[5]'
+Warning 496: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[6]'
+Warning 497: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[7]'
+Warning 498: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[8]'
+Warning 499: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[9]'
+Warning 500: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[10]'
+Warning 501: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[11]'
+Warning 502: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[12]'
+Warning 503: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[13]'
+Warning 504: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[14]'
+Warning 505: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[15]'
+Warning 506: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[16]'
+Warning 507: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[17]'
+Warning 508: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[18]'
+Warning 509: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[19]'
+Warning 510: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[20]'
+Warning 511: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[21]'
+Warning 512: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[22]'
+Warning 513: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[23]'
+Warning 514: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[24]'
+Warning 515: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[25]'
+Warning 516: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[26]'
+Warning 517: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[27]'
+Warning 518: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[28]'
+Warning 519: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[29]'
+Warning 520: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[30]'
+Warning 521: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[31]'
+Warning 522: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[32]'
+Warning 523: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[33]'
+Warning 524: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[34]'
+Warning 525: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[35]'
+Warning 526: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[36]'
+Warning 527: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin[37]'
+Warning 528: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[0]'
+Warning 529: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[1]'
+Warning 530: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[2]'
+Warning 531: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[3]'
+Warning 532: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[4]'
+Warning 533: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[5]'
+Warning 534: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[6]'
+Warning 535: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[7]'
+Warning 536: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[8]'
+Warning 537: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[9]'
+Warning 538: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[10]'
+Warning 539: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[11]'
+Warning 540: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[12]'
+Warning 541: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[13]'
+Warning 542: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[14]'
+Warning 543: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[15]'
+Warning 544: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[16]'
+Warning 545: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[17]'
+Warning 546: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[18]'
+Warning 547: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[19]'
+Warning 548: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[20]'
+Warning 549: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[21]'
+Warning 550: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[22]'
+Warning 551: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[23]'
+Warning 552: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[24]'
+Warning 553: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[25]'
+Warning 554: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[26]'
+Warning 555: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[27]'
+Warning 556: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[28]'
+Warning 557: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[29]'
+Warning 558: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[30]'
+Warning 559: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[31]'
+Warning 560: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[32]'
+Warning 561: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[33]'
+Warning 562: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[34]'
+Warning 563: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[35]'
+Warning 564: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[36]'
+Warning 565: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regin_regout[37]'
+Warning 566: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[0]'
+Warning 567: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[1]'
+Warning 568: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[2]'
+Warning 569: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[3]'
+Warning 570: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[4]'
+Warning 571: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[5]'
+Warning 572: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[6]'
+Warning 573: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[7]'
+Warning 574: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[8]'
+Warning 575: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[9]'
+Warning 576: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[10]'
+Warning 577: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[11]'
+Warning 578: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[12]'
+Warning 579: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[13]'
+Warning 580: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[14]'
+Warning 581: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[15]'
+Warning 582: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[16]'
+Warning 583: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[17]'
+Warning 584: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[18]'
+Warning 585: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[19]'
+Warning 586: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[20]'
+Warning 587: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[21]'
+Warning 588: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[22]'
+Warning 589: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[23]'
+Warning 590: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[24]'
+Warning 591: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[25]'
+Warning 592: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[26]'
+Warning 593: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[27]'
+Warning 594: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[28]'
+Warning 595: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[29]'
+Warning 596: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[30]'
+Warning 597: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[31]'
+Warning 598: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[32]'
+Warning 599: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[33]'
+Warning 600: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[34]'
+Warning 601: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[35]'
+Warning 602: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[36]'
+Warning 603: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multacc_regout[37]'
+Warning 604: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[0]'
+Warning 605: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[1]'
+Warning 606: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[2]'
+Warning 607: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[3]'
+Warning 608: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[4]'
+Warning 609: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[5]'
+Warning 610: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[6]'
+Warning 611: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[7]'
+Warning 612: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[8]'
+Warning 613: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[9]'
+Warning 614: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[10]'
+Warning 615: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[11]'
+Warning 616: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[12]'
+Warning 617: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[13]'
+Warning 618: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[14]'
+Warning 619: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[15]'
+Warning 620: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[16]'
+Warning 621: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[17]'
+Warning 622: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[18]'
+Warning 623: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[19]'
+Warning 624: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[20]'
+Warning 625: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[21]'
+Warning 626: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[22]'
+Warning 627: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[23]'
+Warning 628: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[24]'
+Warning 629: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[25]'
+Warning 630: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[26]'
+Warning 631: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[27]'
+Warning 632: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[28]'
+Warning 633: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[29]'
+Warning 634: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[30]'
+Warning 635: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[31]'
+Warning 636: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[32]'
+Warning 637: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[33]'
+Warning 638: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[34]'
+Warning 639: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[35]'
+Warning 640: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[36]'
+Warning 641: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd[37]'
+Warning 642: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[0]'
+Warning 643: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[1]'
+Warning 644: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[2]'
+Warning 645: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[3]'
+Warning 646: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[4]'
+Warning 647: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[5]'
+Warning 648: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[6]'
+Warning 649: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[7]'
+Warning 650: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[8]'
+Warning 651: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[9]'
+Warning 652: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[10]'
+Warning 653: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[11]'
+Warning 654: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[12]'
+Warning 655: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[13]'
+Warning 656: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[14]'
+Warning 657: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[15]'
+Warning 658: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[16]'
+Warning 659: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[17]'
+Warning 660: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[18]'
+Warning 661: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[19]'
+Warning 662: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[20]'
+Warning 663: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[21]'
+Warning 664: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[22]'
+Warning 665: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[23]'
+Warning 666: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[24]'
+Warning 667: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[25]'
+Warning 668: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[26]'
+Warning 669: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[27]'
+Warning 670: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[28]'
+Warning 671: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[29]'
+Warning 672: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[30]'
+Warning 673: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[31]'
+Warning 674: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[32]'
+Warning 675: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[33]'
+Warning 676: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[34]'
+Warning 677: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[35]'
+Warning 678: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[36]'
+Warning 679: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin[37]'
+Warning 680: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[0]'
+Warning 681: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[1]'
+Warning 682: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[2]'
+Warning 683: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[3]'
+Warning 684: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[4]'
+Warning 685: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[5]'
+Warning 686: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[6]'
+Warning 687: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[7]'
+Warning 688: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[8]'
+Warning 689: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[9]'
+Warning 690: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[10]'
+Warning 691: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[11]'
+Warning 692: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[12]'
+Warning 693: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[13]'
+Warning 694: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[14]'
+Warning 695: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[15]'
+Warning 696: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[16]'
+Warning 697: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[17]'
+Warning 698: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[18]'
+Warning 699: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[19]'
+Warning 700: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[20]'
+Warning 701: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[21]'
+Warning 702: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[22]'
+Warning 703: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[23]'
+Warning 704: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[24]'
+Warning 705: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[25]'
+Warning 706: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[26]'
+Warning 707: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[27]'
+Warning 708: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[28]'
+Warning 709: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[29]'
+Warning 710: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[30]'
+Warning 711: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[31]'
+Warning 712: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[32]'
+Warning 713: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[33]'
+Warning 714: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[34]'
+Warning 715: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[35]'
+Warning 716: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[36]'
+Warning 717: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regin_regout[37]'
+Warning 718: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[0]'
+Warning 719: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[1]'
+Warning 720: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[2]'
+Warning 721: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[3]'
+Warning 722: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[4]'
+Warning 723: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[5]'
+Warning 724: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[6]'
+Warning 725: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[7]'
+Warning 726: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[8]'
+Warning 727: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[9]'
+Warning 728: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[10]'
+Warning 729: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[11]'
+Warning 730: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[12]'
+Warning 731: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[13]'
+Warning 732: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[14]'
+Warning 733: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[15]'
+Warning 734: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[16]'
+Warning 735: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[17]'
+Warning 736: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[18]'
+Warning 737: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[19]'
+Warning 738: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[20]'
+Warning 739: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[21]'
+Warning 740: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[22]'
+Warning 741: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[23]'
+Warning 742: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[24]'
+Warning 743: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[25]'
+Warning 744: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[26]'
+Warning 745: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[27]'
+Warning 746: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[28]'
+Warning 747: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[29]'
+Warning 748: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[30]'
+Warning 749: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[31]'
+Warning 750: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[32]'
+Warning 751: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[33]'
+Warning 752: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[34]'
+Warning 753: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[35]'
+Warning 754: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[36]'
+Warning 755: set_input_delay command matched but was not applied to primary output '$iopadmap$z_multadd_regout[37]'
+Warning 756: set_output_delay command matched but was not applied to primary input '$auto$clkbufmap.cc:298:execute$398'
+Warning 757: set_output_delay command matched but was not applied to primary input '$iopadmap$a[0]'
+Warning 758: set_output_delay command matched but was not applied to primary input '$iopadmap$a[1]'
+Warning 759: set_output_delay command matched but was not applied to primary input '$iopadmap$a[2]'
+Warning 760: set_output_delay command matched but was not applied to primary input '$iopadmap$a[3]'
+Warning 761: set_output_delay command matched but was not applied to primary input '$iopadmap$a[4]'
+Warning 762: set_output_delay command matched but was not applied to primary input '$iopadmap$a[5]'
+Warning 763: set_output_delay command matched but was not applied to primary input '$iopadmap$a[6]'
+Warning 764: set_output_delay command matched but was not applied to primary input '$iopadmap$a[7]'
+Warning 765: set_output_delay command matched but was not applied to primary input '$iopadmap$a[8]'
+Warning 766: set_output_delay command matched but was not applied to primary input '$iopadmap$a[9]'
+Warning 767: set_output_delay command matched but was not applied to primary input '$iopadmap$a[10]'
+Warning 768: set_output_delay command matched but was not applied to primary input '$iopadmap$a[11]'
+Warning 769: set_output_delay command matched but was not applied to primary input '$iopadmap$a[12]'
+Warning 770: set_output_delay command matched but was not applied to primary input '$iopadmap$a[13]'
+Warning 771: set_output_delay command matched but was not applied to primary input '$iopadmap$a[14]'
+Warning 772: set_output_delay command matched but was not applied to primary input '$iopadmap$a[15]'
+Warning 773: set_output_delay command matched but was not applied to primary input '$iopadmap$a[16]'
+Warning 774: set_output_delay command matched but was not applied to primary input '$iopadmap$a[17]'
+Warning 775: set_output_delay command matched but was not applied to primary input '$iopadmap$a[18]'
+Warning 776: set_output_delay command matched but was not applied to primary input '$iopadmap$a[19]'
+Warning 777: set_output_delay command matched but was not applied to primary input '$iopadmap$acc_fir[0]'
+Warning 778: set_output_delay command matched but was not applied to primary input '$iopadmap$acc_fir[1]'
+Warning 779: set_output_delay command matched but was not applied to primary input '$iopadmap$acc_fir[2]'
+Warning 780: set_output_delay command matched but was not applied to primary input '$iopadmap$acc_fir[3]'
+Warning 781: set_output_delay command matched but was not applied to primary input '$iopadmap$acc_fir[4]'
+Warning 782: set_output_delay command matched but was not applied to primary input '$iopadmap$acc_fir[5]'
+Warning 783: set_output_delay command matched but was not applied to primary input '$iopadmap$b[0]'
+Warning 784: set_output_delay command matched but was not applied to primary input '$iopadmap$b[1]'
+Warning 785: set_output_delay command matched but was not applied to primary input '$iopadmap$b[2]'
+Warning 786: set_output_delay command matched but was not applied to primary input '$iopadmap$b[3]'
+Warning 787: set_output_delay command matched but was not applied to primary input '$iopadmap$b[4]'
+Warning 788: set_output_delay command matched but was not applied to primary input '$iopadmap$b[5]'
+Warning 789: set_output_delay command matched but was not applied to primary input '$iopadmap$b[6]'
+Warning 790: set_output_delay command matched but was not applied to primary input '$iopadmap$b[7]'
+Warning 791: set_output_delay command matched but was not applied to primary input '$iopadmap$b[8]'
+Warning 792: set_output_delay command matched but was not applied to primary input '$iopadmap$b[9]'
+Warning 793: set_output_delay command matched but was not applied to primary input '$iopadmap$b[10]'
+Warning 794: set_output_delay command matched but was not applied to primary input '$iopadmap$b[11]'
+Warning 795: set_output_delay command matched but was not applied to primary input '$iopadmap$b[12]'
+Warning 796: set_output_delay command matched but was not applied to primary input '$iopadmap$b[13]'
+Warning 797: set_output_delay command matched but was not applied to primary input '$iopadmap$b[14]'
+Warning 798: set_output_delay command matched but was not applied to primary input '$iopadmap$b[15]'
+Warning 799: set_output_delay command matched but was not applied to primary input '$iopadmap$b[16]'
+Warning 800: set_output_delay command matched but was not applied to primary input '$iopadmap$b[17]'
+Warning 801: set_output_delay command matched but was not applied to primary input '$iopadmap$feedback[0]'
+Warning 802: set_output_delay command matched but was not applied to primary input '$iopadmap$feedback[1]'
+Warning 803: set_output_delay command matched but was not applied to primary input '$iopadmap$feedback[2]'
+Warning 804: set_output_delay command matched but was not applied to primary input '$iopadmap$load_acc'
+Warning 805: set_output_delay command matched but was not applied to primary input '$iopadmap$reset'
+Warning 806: set_output_delay command matched but was not applied to primary input '$iopadmap$round'
+Warning 807: set_output_delay command matched but was not applied to primary input '$iopadmap$saturate_enable'
+Warning 808: set_output_delay command matched but was not applied to primary input '$iopadmap$shift_right[0]'
+Warning 809: set_output_delay command matched but was not applied to primary input '$iopadmap$shift_right[1]'
+Warning 810: set_output_delay command matched but was not applied to primary input '$iopadmap$shift_right[2]'
+Warning 811: set_output_delay command matched but was not applied to primary input '$iopadmap$shift_right[3]'
+Warning 812: set_output_delay command matched but was not applied to primary input '$iopadmap$shift_right[4]'
+Warning 813: set_output_delay command matched but was not applied to primary input '$iopadmap$shift_right[5]'
+Warning 814: set_output_delay command matched but was not applied to primary input '$iopadmap$subtract'
+Warning 815: set_output_delay command matched but was not applied to primary input '$iopadmap$unsigned_a'
+Warning 816: set_output_delay command matched but was not applied to primary input '$iopadmap$unsigned_b'
+
+Applied 3 SDC commands from '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/packing/fabric_GJC4_openfpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'vclk' (Virtual Clock)
+
+# Load Timing Constraints took 0.01 seconds (max_rss 26.0 MiB, delta_rss +0.0 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/packing/fabric_GJC4_post_synth.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.09 seconds).
+# Load packing took 0.10 seconds (max_rss 65.6 MiB, delta_rss +39.4 MiB)
+Warning 817: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io                               : 650
+   io_output                       : 589
+    outpad                         : 589
+   io_input                        : 61
+    inpad                          : 61
+  clb                              : 4
+   clb_lr                          : 4
+    fle                            : 31
+     ble5                          : 62
+      lut5                         : 62
+       lut                         : 62
+  dsp                              : 12
+   dsp_lr                          : 12
+    RS_DSP_MULT                    : 1
+    RS_DSP_MULT_REGIN              : 1
+    RS_DSP_MULT_REGOUT             : 1
+    RS_DSP_MULT_REGIN_REGOUT       : 1
+    RS_DSP_MULTADD                 : 1
+    RS_DSP_MULTADD_REGIN           : 1
+    RS_DSP_MULTADD_REGOUT          : 1
+    RS_DSP_MULTADD_REGIN_REGOUT    : 1
+    RS_DSP_MULTACC                 : 1
+    RS_DSP_MULTACC_REGIN           : 1
+    RS_DSP_MULTACC_REGOUT          : 1
+    RS_DSP_MULTACC_REGIN_REGOUT    : 1
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		650	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		4	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		12	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		0	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.02 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.15 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.21 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.15 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.21 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.00 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.21 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.00 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 66.4 MiB, delta_rss +0.0 MiB)
+Warning 818: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 819: Sized nonsensical R=0 transistor to minimum width
+Warning 820: Sized nonsensical R=0 transistor to minimum width
+Warning 821: Sized nonsensical R=0 transistor to minimum width
+Warning 822: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 13.06 seconds (max_rss 482.9 MiB, delta_rss +416.5 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 13.67 seconds (max_rss 482.9 MiB, delta_rss +416.5 MiB)
+
+# Load Placement
+Reading /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/placement/fabric_GJC4_post_synth.place.
+
+Successfully read /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC4/results_dir/GJC4/run_1/synth_1_1/impl_1_1_1/placement/fabric_GJC4_post_synth.place.
+
+# Load Placement took 0.04 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 30.48 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+Warning 823: Found no more sample locations for SOURCE in io_top
+Warning 824: Found no more sample locations for OPIN in io_top
+Warning 825: Found no more sample locations for SOURCE in io_right
+Warning 826: Found no more sample locations for OPIN in io_right
+Warning 827: Found no more sample locations for SOURCE in io_bottom
+Warning 828: Found no more sample locations for OPIN in io_bottom
+Warning 829: Found no more sample locations for SOURCE in io_left
+Warning 830: Found no more sample locations for OPIN in io_left
+Warning 831: Found no more sample locations for SOURCE in clb
+Warning 832: Found no more sample locations for OPIN in clb
+Warning 833: Found no more sample locations for SOURCE in dsp
+Warning 834: Found no more sample locations for SOURCE in bram
+## Computing src/opin lookahead took 0.10 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 30.58 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+Confirming router algorithm: TIMING_DRIVEN.
+## Initializing router criticalities
+Warning 835: 1057 timing endpoints were not constrained during timing analysis
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 1159 ( 93.8%) |**********************************************
+[      0.1:      0.2)    0 (  0.0%) |
+[      0.2:      0.3)    0 (  0.0%) |
+[      0.3:      0.4)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.6:      0.7)    0 (  0.0%) |
+[      0.7:      0.8)    0 (  0.0%) |
+[      0.8:      0.9)   18 (  1.5%) |*
+[      0.9:        1)   58 (  4.7%) |**
+## Initializing router criticalities took 0.01 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Warning 836: 1057 timing endpoints were not constrained during timing analysis
+   1    0.3     0.0    0 1056900     650    1224     998 ( 0.073%)   28711 ( 3.2%)    8.040     -106.9     -3.040      0.000      0.000      N/A
+   2    0.3     0.5    6  900890     286     860     209 ( 0.015%)   28688 ( 3.2%)    8.043     -107.1     -3.043      0.000      0.000      N/A
+   3    0.2     0.6    4  740522     122     683     116 ( 0.008%)   28809 ( 3.2%)    8.040     -106.9     -3.040      0.000      0.000      N/A
+   4    0.2     0.8    0  672392      81     621      88 ( 0.006%)   28827 ( 3.2%)    8.040     -107.3     -3.040      0.000      0.000      N/A
+   5    0.2     1.1    1  608890      58     553      54 ( 0.004%)   28866 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000      N/A
+   6    0.2     1.4    1  525942      39     422      34 ( 0.002%)   28881 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000      N/A
+   7    0.2     1.9    0  523629      28     305      22 ( 0.002%)   28885 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000      N/A
+   8    0.2     2.4    0  466584      26     293      16 ( 0.001%)   28875 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000      N/A
+   9    0.1     3.1    1  411093      18     204      14 ( 0.001%)   28952 ( 3.3%)    8.040     -107.4     -3.040      0.000      0.000      N/A
+  10    0.1     4.1    0  319808      14     160       6 ( 0.000%)   28897 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000       16
+  11    0.1     5.3    0  120196       6      72       1 ( 0.000%)   28900 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000       15
+  12    0.0     6.9    0   17857       2      24       1 ( 0.000%)   28900 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000       12
+  13    0.0     9.0    0   20320       2      24       1 ( 0.000%)   28900 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000       12
+  14    0.0    11.6    0   25312       3      36       1 ( 0.000%)   28900 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000       12
+  15    0.0    15.1    0    7269       1      12       0 ( 0.000%)   28904 ( 3.2%)    8.040     -107.4     -3.040      0.000      0.000       13
+Restoring best routing
+Critical path: 8.04007 ns
+Successfully routed after 15 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 1159 ( 93.8%) |**********************************************
+[      0.1:      0.2)    0 (  0.0%) |
+[      0.2:      0.3)    0 (  0.0%) |
+[      0.3:      0.4)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.6:      0.7)    0 (  0.0%) |
+[      0.7:      0.8)    0 (  0.0%) |
+[      0.8:      0.9)   19 (  1.5%) |*
+[      0.9:        1)   57 (  4.6%) |**
+Router Stats: total_nets_routed: 1336 total_connections_routed: 5493 total_heap_pushes: 6417604 total_heap_pops: 1591924 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 6417604 total_external_heap_pops: 1591924 total_external_SOURCE_pushes: 5493 total_external_SOURCE_pops: 1959 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 5493 rt_node_SOURCE_high_fanout_pushes: 0 rt_node_SOURCE_entire_tree_pushes: 5493 total_external_SINK_pushes: 106224 total_external_SINK_pops: 101771 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 236705 total_external_IPIN_pops: 214111 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 6008 total_external_OPIN_pops: 2416 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 4157 rt_node_OPIN_high_fanout_pushes: 0 rt_node_OPIN_entire_tree_pushes: 4157 total_external_CHANX_pushes: 2926135 total_external_CHANX_pops: 676791 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 120995 rt_node_CHANX_high_fanout_pushes: 0 rt_node_CHANX_entire_tree_pushes: 120995 total_external_CHANY_pushes: 3137039 total_external_CHANY_pops: 594876 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 118046 rt_node_CHANY_high_fanout_pushes: 0 rt_node_CHANY_entire_tree_pushes: 118046 total_number_of_adding_all_rt: 296147 total_number_of_adding_high_fanout_rt: 0 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 0 
+# Routing took 2.40 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.04 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -1900081456
+Circuit successfully routed with a channel width factor of 160.
+# Synchronize the packed netlist to routing optimization
+OK: before pb_pin_fixup: pb_route connectivity is consistent in all 666 blocks
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+Found 912 mismatches between routing and packing results.
+Fixed 577 routing traces due to mismatch between routing and packing results.
+OK: after pb_pin_fixup: pb_route connectivity is consistent in all 666 blocks
+# Synchronize the packed netlist to routing optimization took 0.01 seconds (max_rss 482.9 MiB, delta_rss +0.0 MiB)
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io        650                               0.906154                    0.0938462   
+       clb          4                                      1                         15.5   
+       dsp         12                                   53.5                           44   
+      bram          0                                      0                            0   
+Absorbed logical nets 0 out of 651 nets, 651 nets not absorbed.
+
+
+Average number of bends per net: 13.6262  Maximum # of bends: 88
+
+Number of global nets: 1
+Number of routed nets (nonglobal): 650
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 28904, average net length: 44.4677
+	Maximum net length: 254
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 11116, average wire segments per net: 17.1015
+	Maximum segments used by a net: 105
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)    0 (  0.0%) |
+[      0.9:        1)    0 (  0.0%) |
+[      0.8:      0.9)    0 (  0.0%) |
+[      0.7:      0.8)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.3:      0.4)    0 (  0.0%) |
+[      0.2:      0.3)   18 (  0.3%) |
+[      0.1:      0.2)  316 (  5.6%) |***
+[        0:      0.1) 5336 ( 94.1%) |**********************************************
+Maximum routing channel utilization:      0.29 at (47,8)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       9   4.062      160
+                         1      23  10.625      160
+                         2      35  13.156      160
+                         3      34  12.609      160
+                         4      33  10.000      160
+                         5      31   8.203      160
+                         6      28   7.094      160
+                         7      22   7.938      160
+                         8      47   9.422      160
+                         9      29   9.141      160
+                        10      35   8.281      160
+                        11      31   7.609      160
+                        12      21   6.344      160
+                        13      15   5.984      160
+                        14      13   5.688      160
+                        15      14   5.688      160
+                        16      14   4.172      160
+                        17      15   4.000      160
+                        18      22   5.016      160
+                        19      26   6.156      160
+                        20      27   3.594      160
+                        21      25   3.641      160
+                        22      19   3.609      160
+                        23       9   2.438      160
+                        24       7   2.141      160
+                        25       9   2.125      160
+                        26      32   3.797      160
+                        27      27   4.656      160
+                        28      26   5.188      160
+                        29      34   6.344      160
+                        30      29   6.609      160
+                        31      30   6.672      160
+                        32      33   5.328      160
+                        33      19   4.125      160
+                        34      17   3.984      160
+                        35      13   3.719      160
+                        36      15   3.672      160
+                        37      14   2.984      160
+                        38      17   3.438      160
+                        39      16   2.969      160
+                        40      17   3.125      160
+                        41      21   3.234      160
+                        42      20   4.031      160
+                        43      24   3.719      160
+                        44      16   1.922      160
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       6   0.957      160
+                         1      23  15.978      160
+                         2      17   6.304      160
+                         3      12   5.630      160
+                         4      11   5.196      160
+                         5      13   4.826      160
+                         6       5   1.783      160
+                         7      23   6.826      160
+                         8      10   4.413      160
+                         9      13   5.109      160
+                        10      30   8.913      160
+                        11      66  19.174      160
+                        12      31   7.978      160
+                        13      27   5.717      160
+                        14      12   4.022      160
+                        15       9   3.152      160
+                        16       9   2.717      160
+                        17       6   2.000      160
+                        18       8   2.304      160
+                        19      10   2.130      160
+                        20       8   1.761      160
+                        21       6   1.348      160
+                        22      13   2.283      160
+                        23      42   5.587      160
+                        24      13   3.217      160
+                        25      11   2.370      160
+                        26       7   1.761      160
+                        27       6   1.957      160
+                        28       8   2.065      160
+                        29      10   1.587      160
+                        30       4   1.174      160
+                        31       7   2.239      160
+                        32       8   2.239      160
+                        33       9   2.239      160
+                        34      17   2.783      160
+                        35      47   7.435      160
+                        36      21   3.652      160
+                        37      10   2.326      160
+                        38      11   2.522      160
+                        39      10   2.565      160
+                        40      10   3.348      160
+                        41       9   3.783      160
+                        42      12   4.717      160
+                        43      25   6.304      160
+                        44      23   7.109      160
+                        45      21   7.500      160
+                        46      29  12.326      160
+                        47      60  18.826      160
+                        48      15   6.326      160
+                        49      18   4.783      160
+                        50      13   6.022      160
+                        51      19   4.478      160
+                        52       6   1.457      160
+                        53       8   1.870      160
+                        54       9   3.217      160
+                        55       7   2.304      160
+                        56       4   1.239      160
+                        57       5   1.761      160
+                        58       9   3.630      160
+                        59       6   1.435      160
+                        60       5   0.826      160
+                        61      10   2.783      160
+                        62      16   8.674      160
+
+Total tracks in x-direction: 7200, in y-direction: 10080
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 1.7908e+08
+	Total used logic block area: 6.79158e+06
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 3.68034e+07, per logic tile: 12501.2
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      1  89280
+                                                      Y      1  88704
+                                                      X      4  93600
+                                                      Y      4  94752
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0245
+                                             4      0.0371
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0319
+                                             4      0.0277
+
+Segment occupancy by length: Length utilization
+                             ------ -----------
+                             L1          0.0282
+                             L4          0.0324
+
+Segment occupancy by type: name type utilization
+                           ---- ---- -----------
+                             L1    0      0.0282
+                             L4    1      0.0324
+Warning 837: 1057 timing endpoints were not constrained during timing analysis
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  5.2e-09:  5.2e-09)  2 (  5.3%) |*******
+[  5.2e-09:  5.3e-09)  2 (  5.3%) |*******
+[  5.3e-09:  5.3e-09)  5 ( 13.2%) |******************
+[  5.3e-09:  5.3e-09)  0 (  0.0%) |
+[  5.3e-09:  5.4e-09)  9 ( 23.7%) |*********************************
+[  5.4e-09:  5.4e-09) 13 ( 34.2%) |************************************************
+[  5.4e-09:  5.5e-09)  0 (  0.0%) |
+[  5.5e-09:  5.5e-09)  4 ( 10.5%) |***************
+[  5.5e-09:  5.6e-09)  1 (  2.6%) |****
+[  5.6e-09:  5.6e-09)  2 (  5.3%) |*******
+
+Final critical path delay (least slack): 8.04007 ns, Fmax: 124.377 MHz
+Final setup Worst Negative Slack (sWNS): -3.04007 ns
+Final setup Total Negative Slack (sTNS): -107.414 ns
+
+Final setup slack histogram:
+[   -3e-09:   -3e-09)  2 (  5.3%) |*******
+[   -3e-09:   -3e-09)  1 (  2.6%) |****
+[   -3e-09: -2.9e-09)  4 ( 10.5%) |***************
+[ -2.9e-09: -2.9e-09)  0 (  0.0%) |
+[ -2.9e-09: -2.8e-09) 13 ( 34.2%) |************************************************
+[ -2.8e-09: -2.8e-09)  9 ( 23.7%) |*********************************
+[ -2.8e-09: -2.7e-09)  0 (  0.0%) |
+[ -2.7e-09: -2.7e-09)  5 ( 13.2%) |******************
+[ -2.7e-09: -2.7e-09)  2 (  5.3%) |*******
+[ -2.7e-09: -2.6e-09)  2 (  5.3%) |*******
+
+Final geomean non-virtual intra-domain period: nan ns (nan MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: nan ns (nan MHz)
+
+Writing Implementation Netlist: fabric_GJC4_post_synthesis.v
+Writing Implementation Netlist: fabric_GJC4_post_synthesis.blif
+Writing Implementation SDF    : fabric_GJC4_post_synthesis.sdf
+Incr Slack updates 1 in 3.2638e-05 sec
+Full Max Req/Worst Slack updates 1 in 1.4933e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 3.9796e-05 sec
+Flow timing analysis took 0.0858313 seconds (0.0824661 STA, 0.00336516 slack) (17 full updates: 0 setup, 0 hold, 17 combined).
+VPR succeeded
+The entire flow of VPR took 47.60 seconds (max_rss 482.9 MiB)
+Incr Slack updates 16 in 0.000486272 sec
+Full Max Req/Worst Slack updates 2 in 3.2943e-05 sec
+Incr Max Req/Worst Slack updates 14 in 0.00026528 sec
+Incr Criticality updates 12 in 0.000486315 sec
+Full Criticality updates 4 in 0.000153188 sec
