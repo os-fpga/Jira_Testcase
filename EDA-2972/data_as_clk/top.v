@@ -4,6 +4,10 @@ module top
   input [1:0] din,
   output reg [1:0] dout
 );
+  
+  // This design is simplified version that similar to 
+  // https://github.com/os-fpga/Jira_Testcase/tree/main/EDA-2969
+  
   localparam FABRIC_CLK_GEN_METHOD = 1;
   reg [1:0] fabric_clk;
   generate
@@ -30,6 +34,7 @@ module top
   genvar i;
   generate
     for (i = 0; i < 2; i++) begin
+      // Use generated data as clock
       always @(posedge fabric_clk[i]) begin
         dout[i] <= din[i];
       end
