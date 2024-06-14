@@ -34,7 +34,7 @@ module top
   genvar i;
   generate
     for (i = 0; i < 2; i++) begin
-      // Use generated data as clock
+      // Use generated fabric data as clock
       always @(posedge fabric_clk[i]) begin
         dout[i] <= din[i];
       end
