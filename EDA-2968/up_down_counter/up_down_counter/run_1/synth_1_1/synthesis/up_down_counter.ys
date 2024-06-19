@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for up_down_counter
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/06_19_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../ -I/nfs_project/castor/DV/Azfar/Rigel/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/clb/up_down_counter  /nfs_project/castor/DV/Azfar/Rigel/DV/subsystem_level/fabric_verif_env/src/fabric_designs/benchmarks/clb/up_down_counter/up_down_counter.v 
+
+
+# Technology mapping
+hierarchy -top up_down_counter
+
+
+
+plugin -i synth-rs
+
+synth_rs -post_cleanup 1 -tech genesis3 -de -goal mixed   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 34848 -max_reg 69696 -max_device_dsp 154 -max_device_bram 154 -max_device_carry_length 48 -max_dsp 154 -max_bram 154 -max_carry_length 48  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v up_down_counter_post_synth.v
+write_blif -param up_down_counter_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_up_down_counter.sdc -json config.json -w wrapper_up_down_counter_post_synth.v wrapper_up_down_counter_post_synth.eblif -pr post_pnr_wrapper_up_down_counter_post_synth.v post_pnr_wrapper_up_down_counter_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_up_down_counter_post_synth.v
+write_blif -param fabric_up_down_counter_post_synth.eblif
+
+  
