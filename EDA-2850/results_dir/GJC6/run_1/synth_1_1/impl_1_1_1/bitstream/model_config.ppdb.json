@@ -1,0 +1,210 @@
+{
+  "messages" : [
+    "Netlist PPDB: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/13may/Validation/RTL_testcases/GJC-IO-Testcases/GJC6/results_dir/GJC6/run_1/synth_1_1/synthesis/io_config.json",
+    "Config Mapping: /nfs_eda_sw/softwares/Raptor/instl_dir/05_14_2024_09_15_01/share/raptor/configuration/Virgo/config_attributes.mapping.json",
+    "Property JSON: model_config.property.json",
+    "Validate Instances",
+    "Merge properties into instances",
+    "Re-location instances",
+    "Configure Mapping file initialization",
+    "Validation using '__primary_validation__' rule",
+    "Assign Boot Clock location",
+    "Allocate FCLK routing resource",
+    "Set CLKBUF configuration attributes",
+    "Allocate PLL resource (and set PLLREF configuration attributes)",
+    "Set PLL remaining configuration attributes",
+    "Validation using '__secondary_validation__' rule",
+    "Set configuration attributes",
+    "  Module: I_BUF ($iopadmap$GJC6.din)",
+    "    Object: din",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: I_BUF ($iopadmap$GJC6.oe)",
+    "    Object: oe",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: O_BUF ($iopadmap$GJC6.tristate_out)",
+    "    Object: tristate_out",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUF.IOSTANDARD",
+    "          Mismatch",
+    "Warning: Generated IO bitstream is invalid"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$GJC6.clk",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_2_10_5P",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk",
+        "O" : "$iopadmap$clk"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Invalidated because parent is invalid"
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "$auto$clkbufmap.cc:265:execute$443",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_2_10_5P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$clk",
+        "O" : "$auto$clkbufmap.cc:298:execute$445"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Fail:__clock_pin_is_valid__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$GJC6.din",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HR_2_6_3P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "$iopadmap$din"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$GJC6.oe",
+      "linked_object" : "oe",
+      "linked_objects" : {
+        "oe" : {
+          "location" : "HR_2_8_4P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "oe",
+        "O" : "$iopadmap$oe"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$GJC6.tristate_out",
+      "linked_object" : "tristate_out",
+      "linked_objects" : {
+        "tristate_out" : {
+          "location" : "HR_5_12_6P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "O_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$tristate_out",
+        "O" : "tristate_out"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.05
+Build    : 1.0.54
+Hash     : 48b2de3
+Date     : May 14 2024
+Type     : Engineering
+Log Time   : Tue May 14 09:12:34 2024 GMT
+#Timing report of worst 3 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 0
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: $iopadmap$oe.inpad[0] (.input at (1,29) clocked by $auto$clkbufmap.cc:298:execute$445)
+Endpoint  : out:$iopadmap$tristate_out.outpad[0] (.output at (62,31) clocked by $auto$clkbufmap.cc:298:execute$445)
+Path Type : setup
+
+Point                                                                            Incr      Path
+-----------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:298:execute$445 (rise edge)                            0.000     0.000
+clock source latency                                                            0.000     0.000
+input external delay                                                            1.000     1.000
+$iopadmap$oe.inpad[0] (.input at (1,29))                                        0.000     1.000
+| (intra 'io' routing)                                                          0.894     1.894
+| (inter-block routing)                                                         1.171     3.065
+| (intra 'clb' routing)                                                         0.085     3.150
+$iopadmap$tristate_out.in[1] (.names at (26,32))                                0.000     3.150
+| (primitive '.names' combinational delay)                                      0.218     3.368
+$iopadmap$tristate_out.out[0] (.names at (26,32))                               0.000     3.368
+| (intra 'clb' routing)                                                         0.000     3.368
+| (inter-block routing)                                                         1.588     4.957
+| (intra 'io' routing)                                                          0.733     5.690
+out:$iopadmap$tristate_out.outpad[0] (.output at (62,31))                       0.000     5.690
+data arrival time                                                                         5.690
+
+clock $auto$clkbufmap.cc:298:execute$445 (rise edge)                            5.000     5.000
+clock source latency                                                            0.000     5.000
+clock uncertainty                                                               0.000     5.000
+output external delay                                                          -1.000     4.000
+data required time                                                                        4.000
+-----------------------------------------------------------------------------------------------
+data required time                                                                        4.000
+data arrival time                                                                        -5.690
+-----------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                         -1.690
+
+
+#Path 2
+Startpoint: $iopadmap$din.inpad[0] (.input at (1,28) clocked by $auto$clkbufmap.cc:298:execute$445)
+Endpoint  : q1.D[0] (dffre at (26,32) clocked by $auto$clkbufmap.cc:298:execute$445)
+Path Type : setup
+
+Point                                                                                 Incr      Path
+----------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:298:execute$445 (rise edge)                                 0.000     0.000
+clock source latency                                                                 0.000     0.000
+input external delay                                                                 1.000     1.000
+$iopadmap$din.inpad[0] (.input at (1,28))                                            0.000     1.000
+| (intra 'io' routing)                                                               0.894     1.894
+| (inter-block routing)                                                              1.177     3.071
+| (intra 'clb' routing)                                                              0.221     3.292
+q1.D[0] (dffre at (26,32))                                                           0.000     3.292
+data arrival time                                                                              3.292
+
+clock $auto$clkbufmap.cc:298:execute$445 (rise edge)                                 5.000     5.000
+clock source latency                                                                 0.000     5.000
+$auto$clkbufmap.cc:298:execute$445.inpad[0] (.input at (39,1))                       0.000     5.000
+| (intra 'io' routing)                                                               0.894     5.894
+| (inter-block routing)                                                              0.000     5.894
+| (intra 'clb' routing)                                                              0.000     5.894
+q1.C[0] (dffre at (26,32))                                                           0.000     5.894
+clock uncertainty                                                                    0.000     5.894
+cell setup time                                                                     -0.032     5.863
+data required time                                                                             5.863
+----------------------------------------------------------------------------------------------------
+data required time                                                                             5.863
+data arrival time                                                                             -3.292
+----------------------------------------------------------------------------------------------------
+slack (MET)                                                                                    2.571
+
+
+#Path 3
+Startpoint: q1.Q[0] (dffre at (26,32) clocked by $auto$clkbufmap.cc:298:execute$445)
+Endpoint  : q2.D[0] (dffre at (26,32) clocked by $auto$clkbufmap.cc:298:execute$445)
+Path Type : setup
+
+Point                                                                                 Incr      Path
+----------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:298:execute$445 (rise edge)                                 0.000     0.000
+clock source latency                                                                 0.000     0.000
+$auto$clkbufmap.cc:298:execute$445.inpad[0] (.input at (39,1))                       0.000     0.000
+| (intra 'io' routing)                                                               0.894     0.894
+| (inter-block routing)                                                              0.000     0.894
+| (intra 'clb' routing)                                                              0.000     0.894
+q1.C[0] (dffre at (26,32))                                                           0.000     0.894
+| (primitive 'dffre' Tcq_max)                                                        0.154     1.048
+q1.Q[0] (dffre at (26,32)) [clock-to-output]                                         0.000     1.048
+| (intra 'clb' routing)                                                              0.184     1.233
+q2.D[0] (dffre at (26,32))                                                           0.000     1.233
+data arrival time                                                                              1.233
+
+clock $auto$clkbufmap.cc:298:execute$445 (rise edge)                                 5.000     5.000
+clock source latency                                                                 0.000     5.000
+$auto$clkbufmap.cc:298:execute$445.inpad[0] (.input at (39,1))                       0.000     5.000
+| (intra 'io' routing)                                                               0.894     5.894
+| (inter-block routing)                                                              0.000     5.894
+| (intra 'clb' routing)                                                              0.000     5.894
+q2.C[0] (dffre at (26,32))                                                           0.000     5.894
+clock uncertainty                                                                    0.000     5.894
+cell setup time                                                                     -0.032     5.863
+data required time                                                                             5.863
+----------------------------------------------------------------------------------------------------
+data required time                                                                             5.863
+data arrival time                                                                             -1.233
+----------------------------------------------------------------------------------------------------
+slack (MET)                                                                                    4.630
+
+
+#End of timing report

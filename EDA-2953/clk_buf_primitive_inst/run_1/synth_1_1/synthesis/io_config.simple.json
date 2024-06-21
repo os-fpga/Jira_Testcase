@@ -1,0 +1,129 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clock_input (index=0, width=1, offset=0)",
+    "    Detect output port \\clock_output (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF $iopadmap$clk_buf_primitive_inst.clock_input",
+    "      Cell port \\I is connected to input port \\clock_input",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "    Get important connection of cell \\O_BUF $iopadmap$clk_buf_primitive_inst.clock_output",
+    "      Cell port \\O is connected to output port \\clock_output",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF $iopadmap$clk_buf_primitive_inst.clock_input out connection: $iopadmap$clock_input -> \\clk_buf_inst",
+    "      Connected \\clk_buf_inst",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace gearbox clock source",
+    "  Trace Fabric Clock",
+    "    Module \\CLK_BUF \\clk_buf_inst: clock port \\O, net \\wire1",
+    "      Connected to cell \\DFFRE $abc$193$auto$blifparse.cc:377:parse_blif$194",
+    "        Which is not a IO primitive. Send to fabric",
+    "  Summary",
+    "        |-------------------------------------------------------------------------------|",
+    "        |             ****************************************************              |",
+    "    IN  | clock_input * I_BUF |-> CLK_BUF                                *              |",
+    "    OUT |             *                                            O_BUF * clock_output |",
+    "        |             ****************************************************              |",
+    "        |-------------------------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Cross-check instances vs wrapped-instances",
+    "  Generate SDC",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$clk_buf_primitive_inst.clock_input",
+      "linked_object" : "clock_input",
+      "linked_objects" : {
+        "clock_input" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clock_input",
+        "O" : "$iopadmap$clock_input"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf_inst",
+      "linked_object" : "clock_input",
+      "linked_objects" : {
+        "clock_input" : {
+          "location" : "",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$clock_input",
+        "O" : "wire1"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      }
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$clk_buf_primitive_inst.clock_output",
+      "linked_object" : "clock_output",
+      "linked_objects" : {
+        "clock_output" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "wire_out_clk",
+        "O" : "clock_output"
+      },
+      "parameters" : {
+      }
+      },
+      "errors" : [
+      ]
+    }
+  ]
+}
