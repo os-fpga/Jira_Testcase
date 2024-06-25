@@ -1,0 +1,14 @@
+create_design bit7_up_counter
+target_device GEMINI_COMPACT_10x8
+add_design_file ./bit7_up_counter.v
+set_top_module bit7_up_counter
+add_constraint_file pin_constraints.pin
+analyze
+synthesize
+packing
+place
+route
+sta
+power
+bitstream write_xml
+
