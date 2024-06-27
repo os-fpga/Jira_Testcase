@@ -26,8 +26,8 @@ set_pin_loc dout[3] HP_1_3_1N
 
 set_pin_loc dout[4] HP_1_4_2P
 
-set_pin_loc {dout[5] HP_1_5_2N
+set_pin_loc dout[5] HP_1_5_2N
 
-set_pin_loc {dout[6] HP_1_6_3P
+set_pin_loc dout[6] HP_1_6_3P
 
-set_pin_loc {dout[7] HP_1_7_3N
+set_pin_loc dout[7] HP_1_7_3N
