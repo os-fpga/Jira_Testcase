@@ -1,0 +1,58 @@
+ 
+# Yosys synthesis script for multi_clocks
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/07_02_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../.././rtl -I../../../../ -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/ArchBench/Testcases/multi_clocks/./rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/ArchBench/Testcases/multi_clocks/./rtl/multi_clocks.v 
+
+
+# Technology mapping
+hierarchy -top multi_clocks
+
+setattr -set keep 1 w:\clk[0]
+setattr -set keep 1 w:\clk[1]
+setattr -set keep 1 w:\clk[10]
+setattr -set keep 1 w:\clk[11]
+setattr -set keep 1 w:\clk[12]
+setattr -set keep 1 w:\clk[13]
+setattr -set keep 1 w:\clk[14]
+setattr -set keep 1 w:\clk[15]
+setattr -set keep 1 w:\clk[2]
+setattr -set keep 1 w:\clk[3]
+setattr -set keep 1 w:\clk[4]
+setattr -set keep 1 w:\clk[5]
+setattr -set keep 1 w:\clk[6]
+setattr -set keep 1 w:\clk[7]
+setattr -set keep 1 w:\clk[8]
+setattr -set keep 1 w:\clk[9]
+setattr -set keep 1 w:\design_clk_0
+setattr -set keep 1 w:\design_clk_1
+setattr -set keep 1 w:\design_clk_10
+setattr -set keep 1 w:\design_clk_11
+setattr -set keep 1 w:\design_clk_12
+setattr -set keep 1 w:\design_clk_13
+setattr -set keep 1 w:\design_clk_14
+setattr -set keep 1 w:\design_clk_15
+setattr -set keep 1 w:\design_clk_2
+setattr -set keep 1 w:\design_clk_3
+setattr -set keep 1 w:\design_clk_4
+setattr -set keep 1 w:\design_clk_5
+setattr -set keep 1 w:\design_clk_6
+setattr -set keep 1 w:\design_clk_7
+setattr -set keep 1 w:\design_clk_8
+setattr -set keep 1 w:\design_clk_9
+
+
+plugin -i synth-rs
+
+synth_rs -post_cleanup 1 -tech genesis3 -de -goal delay   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 34848 -max_reg 69696 -max_device_dsp 154 -max_device_bram 154 -max_device_carry_length 48 -max_dsp 154 -max_bram 154 -max_carry_length 48  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v multi_clocks_post_synth.v
+write_blif -param multi_clocks_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_multi_clocks.sdc -json config.json -w wrapper_multi_clocks_post_synth.v wrapper_multi_clocks_post_synth.eblif -pr post_pnr_wrapper_multi_clocks_post_synth.v post_pnr_wrapper_multi_clocks_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_multi_clocks_post_synth.v
+write_blif -param fabric_multi_clocks_post_synth.eblif
+
+  
