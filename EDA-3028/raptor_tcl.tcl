@@ -1,0 +1,13 @@
+create_design dsp_mul_signed_comb_iverilog
+target_device 1VG28
+add_design_file ./rtl/dsp_mul_signed_comb_iverilog.v
+set_top_module dsp_mul_signed_comb_iverilog
+add_constraint_file pin_map.pin
+analyze
+synthesize delay
+packing
+place
+route
+sta
+power
+bitstream 
