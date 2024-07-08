@@ -1,0 +1,541 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.07
+Build    : 1.1.23
+Hash     : 55e3ad8
+Date     : Jul  7 2024
+Type     : Engineering
+Log Time   : Mon Jul  8 09:54:56 2024 GMT
+#Timing report of worst 12 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 4
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: reset.inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : output_enable.R[0] (dffre at (51,43) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                  Incr      Path
+-----------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                  0.000     0.000
+clock source latency                                                                  0.000     0.000
+input external delay                                                                  0.000     0.000
+reset.inpad[0] (.input at (48,44))                                          0.000     0.000
+| (intra 'io' routing)                                                                0.779     0.779
+| (OPIN:957575 side: (RIGHT,) (48,44,0))                                              0.000     0.779
+| (CHANY:1324821 L4 length:1 (48,44,0-> (48,44,0))                                    0.119     0.898
+| (CHANX:1177238 L4 length:4 (49,43,0-> (52,43,0))                                    0.119     1.017
+| (CHANX:1177364 L4 length:4 (51,43,0-> (54,43,0))                                    0.119     1.136
+| (IPIN:816424 side: (TOP,) (51,43,0))                                                0.101     1.237
+| (intra 'clb' routing)                                                               0.066     1.303
+output_enable.R[0] (dffre at (51,43))                                                 0.000     1.303
+data arrival time                                                                               1.303
+
+clock clk_in (rise edge)                                  0.000     0.000
+clock source latency                                                                  0.000     0.000
+clk_in.inpad[0] (.input at (51,44))                       0.000     0.000
+| (intra 'io' routing)                                                                0.779     0.779
+| (inter-block routing:global net)                                                    0.000     0.779
+| (intra 'clb' routing)                                                               0.000     0.779
+output_enable.C[0] (dffre at (51,43))                                                 0.000     0.779
+clock uncertainty                                                                     0.000     0.779
+cell hold time                                                                       -0.028     0.751
+data required time                                                                              0.751
+-----------------------------------------------------------------------------------------------------
+data required time                                                                             -0.751
+data arrival time                                                                               1.303
+-----------------------------------------------------------------------------------------------------
+slack (MET)                                                                                     0.552
+
+
+#Path 2
+Startpoint: output_enable.Q[0] (dffre at (51,43) clocked by clk_in)
+Endpoint  : out:output_enable.outpad[0] (.output at (51,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                  Incr      Path
+-----------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                  0.000     0.000
+clock source latency                                                                  0.000     0.000
+clk_in.inpad[0] (.input at (51,44))                       0.000     0.000
+| (intra 'io' routing)                                                                0.779     0.779
+| (inter-block routing:global net)                                                    0.000     0.779
+| (intra 'clb' routing)                                                               0.000     0.779
+output_enable.C[0] (dffre at (51,43))                                                 0.000     0.779
+| (primitive 'dffre' Tcq_min)                                                         0.029     0.808
+output_enable.Q[0] (dffre at (51,43)) [clock-to-output]                               0.000     0.808
+| (intra 'clb' routing)                                                               0.000     0.808
+| (OPIN:816374 side: (TOP,) (51,43,0))                                                0.000     0.808
+| (CHANX:1177323 L1 length:1 (51,43,0-> (51,43,0))                                    0.061     0.869
+| (CHANY:1330403 L4 length:4 (50,43,0-> (50,40,0))                                    0.119     0.988
+| (CHANX:1165146 L1 length:1 (51,40,0-> (51,40,0))                                    0.061     1.049
+| (CHANY:1333366 L4 length:4 (51,41,0-> (51,44,0))                                    0.119     1.168
+| (IPIN:966359 side: (RIGHT,) (51,44,0))                                              0.101     1.269
+| (intra 'io' routing)                                                                0.516     1.784
+out:output_enable.outpad[0] (.output at (51,44))                                      0.000     1.784
+data arrival time                                                                               1.784
+
+clock clk_in (rise edge)                                  0.000     0.000
+clock source latency                                                                  0.000     0.000
+clock uncertainty                                                                     0.000     0.000
+output external delay                                                                 0.000     0.000
+data required time                                                                              0.000
+-----------------------------------------------------------------------------------------------------
+data required time                                                                             -0.000
+data arrival time                                                                               1.784
+-----------------------------------------------------------------------------------------------------
+slack (MET)                                                                                     1.784
+
+
+#Path 3
+Startpoint: pll_clk.inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : out:$auto$rs_design_edit.cc:492:handle_dangling_outs$756.outpad[0] (.output at (49,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                                          Incr      Path
+-----------------------------------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                                          0.000     0.000
+clock source latency                                                                                          0.000     0.000
+input external delay                                                                                          0.000     0.000
+pll_clk.inpad[0] (.input at (48,44))                                                                0.000     0.000
+| (intra 'io' routing)                                                                                        0.779     0.779
+| (OPIN:957576 side: (RIGHT,) (48,44,0))                                                                      0.000     0.779
+| (CHANY:1324627 L4 length:4 (48,44,0-> (48,41,0))                                                            0.119     0.898
+| (CHANX:1177222 L1 length:1 (49,43,0-> (49,43,0))                                                            0.061     0.959
+| (IPIN:816113 side: (TOP,) (49,43,0))                                                                        0.101     1.060
+| (intra 'clb' routing)                                                                                       0.066     1.126
+$auto$rs_design_edit.cc:492:handle_dangling_outs$756.in[0] (.names at (49,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                                                                    0.099     1.225
+$auto$rs_design_edit.cc:492:handle_dangling_outs$756.out[0] (.names at (49,43))                               0.000     1.225
+| (intra 'clb' routing)                                                                                       0.000     1.225
+| (OPIN:816086 side: (RIGHT,) (49,43,0))                                                                      0.000     1.225
+| (CHANY:1327662 L4 length:2 (49,43,0-> (49,44,0))                                                            0.119     1.344
+| (IPIN:960605 side: (RIGHT,) (49,44,0))                                                                      0.101     1.445
+| (intra 'io' routing)                                                                                        0.516     1.960
+out:$auto$rs_design_edit.cc:492:handle_dangling_outs$756.outpad[0] (.output at (49,44))                       0.000     1.960
+data arrival time                                                                                                       1.960
+
+clock clk_in (rise edge)                                                          0.000     0.000
+clock source latency                                                                                          0.000     0.000
+clock uncertainty                                                                                             0.000     0.000
+output external delay                                                                                         0.000     0.000
+data required time                                                                                                      0.000
+-----------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                     -0.000
+data arrival time                                                                                                       1.960
+-----------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                             1.960
+
+
+#Path 4
+Startpoint: load_word.inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : out:$auto$rs_design_edit.cc:615:add_wire_btw_prims$751.outpad[0] (.output at (49,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                                        Incr      Path
+---------------------------------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                                        0.000     0.000
+clock source latency                                                                                        0.000     0.000
+input external delay                                                                                        0.000     0.000
+load_word.inpad[0] (.input at (48,44))                                                            0.000     0.000
+| (intra 'io' routing)                                                                                      0.779     0.779
+| (OPIN:957577 side: (RIGHT,) (48,44,0))                                                                    0.000     0.779
+| (CHANY:1324707 L4 length:3 (48,44,0-> (48,42,0))                                                          0.119     0.898
+| (CHANX:1177208 L1 length:1 (49,43,0-> (49,43,0))                                                          0.061     0.959
+| (IPIN:816106 side: (TOP,) (49,43,0))                                                                      0.101     1.060
+| (intra 'clb' routing)                                                                                     0.066     1.126
+$auto$rs_design_edit.cc:615:add_wire_btw_prims$751.in[0] (.names at (49,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                                                                  0.065     1.191
+$auto$rs_design_edit.cc:615:add_wire_btw_prims$751.out[0] (.names at (49,43))                               0.000     1.191
+| (intra 'clb' routing)                                                                                     0.000     1.191
+| (OPIN:816078 side: (TOP,) (49,43,0))                                                                      0.000     1.191
+| (CHANX:1177206 L1 length:1 (49,43,0-> (49,43,0))                                                          0.061     1.252
+| (CHANY:1327738 L4 length:1 (49,44,0-> (49,44,0))                                                          0.119     1.371
+| (IPIN:960604 side: (RIGHT,) (49,44,0))                                                                    0.101     1.471
+| (intra 'io' routing)                                                                                      0.516     1.987
+out:$auto$rs_design_edit.cc:615:add_wire_btw_prims$751.outpad[0] (.output at (49,44))                       0.000     1.987
+data arrival time                                                                                                     1.987
+
+clock clk_in (rise edge)                                                        0.000     0.000
+clock source latency                                                                                        0.000     0.000
+clock uncertainty                                                                                           0.000     0.000
+output external delay                                                                                       0.000     0.000
+data required time                                                                                                    0.000
+---------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                   -0.000
+data arrival time                                                                                                     1.987
+---------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                           1.987
+
+
+#Path 5
+Startpoint: i1[0].inpad[0] (.input at (51,44) clocked by clk_in)
+Endpoint  : out:data_in[2].outpad[0] (.output at (51,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                Incr      Path
+-----------------------------------------------------------------------------------
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+input external delay                                                0.000     0.000
+i1[0].inpad[0] (.input at (51,44))                        0.000     0.000
+| (intra 'io' routing)                                              0.779     0.779
+| (OPIN:966221 side: (RIGHT,) (51,44,0))                            0.000     0.779
+| (CHANY:1333441 L4 length:3 (51,44,0-> (51,42,0))                  0.119     0.898
+| (CHANX:1177331 L1 length:1 (51,43,0-> (51,43,0))                  0.061     0.959
+| (IPIN:816421 side: (TOP,) (51,43,0))                              0.101     1.060
+| (intra 'clb' routing)                                             0.066     1.126
+data_in[2].in[5] (.names at (51,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                          0.017     1.144
+data_in[2].out[0] (.names at (51,43))                               0.000     1.144
+| (intra 'clb' routing)                                             0.000     1.144
+| (OPIN:816390 side: (RIGHT,) (51,43,0))                            0.000     1.144
+| (CHANY:1333458 L1 length:1 (51,43,0-> (51,43,0))                  0.061     1.204
+| (CHANX:1177333 L1 length:1 (51,43,0-> (51,43,0))                  0.061     1.265
+| (CHANY:1330393 L4 length:4 (50,43,0-> (50,40,0))                  0.119     1.384
+| (CHANX:1173304 L4 length:4 (51,42,0-> (54,42,0))                  0.119     1.503
+| (CHANY:1333496 L4 length:2 (51,43,0-> (51,44,0))                  0.119     1.622
+| (IPIN:966361 side: (RIGHT,) (51,44,0))                            0.101     1.723
+| (intra 'io' routing)                                              0.516     2.239
+out:data_in[2].outpad[0] (.output at (51,44))                       0.000     2.239
+data arrival time                                                             2.239
+
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+clock uncertainty                                                   0.000     0.000
+output external delay                                               0.000     0.000
+data required time                                                            0.000
+-----------------------------------------------------------------------------------
+data required time                                                           -0.000
+data arrival time                                                             2.239
+-----------------------------------------------------------------------------------
+slack (MET)                                                                   2.239
+
+
+#Path 6
+Startpoint: pll_clk.inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : out:$auto$rs_design_edit.cc:615:add_wire_btw_prims$752.outpad[0] (.output at (49,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                                        Incr      Path
+---------------------------------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                                        0.000     0.000
+clock source latency                                                                                        0.000     0.000
+input external delay                                                                                        0.000     0.000
+pll_clk.inpad[0] (.input at (48,44))                                                              0.000     0.000
+| (intra 'io' routing)                                                                                      0.779     0.779
+| (OPIN:957576 side: (RIGHT,) (48,44,0))                                                                    0.000     0.779
+| (CHANY:1324627 L4 length:4 (48,44,0-> (48,41,0))                                                          0.119     0.898
+| (CHANX:1177222 L1 length:1 (49,43,0-> (49,43,0))                                                          0.061     0.959
+| (IPIN:816113 side: (TOP,) (49,43,0))                                                                      0.101     1.060
+| (intra 'clb' routing)                                                                                     0.066     1.126
+$auto$rs_design_edit.cc:615:add_wire_btw_prims$752.in[0] (.names at (49,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                                                                  0.144     1.270
+$auto$rs_design_edit.cc:615:add_wire_btw_prims$752.out[0] (.names at (49,43))                               0.000     1.270
+| (intra 'clb' routing)                                                                                     0.000     1.270
+| (OPIN:816077 side: (TOP,) (49,43,0))                                                                      0.000     1.270
+| (CHANX:1177205 L1 length:1 (49,43,0-> (49,43,0))                                                          0.061     1.331
+| (CHANY:1324786 L1 length:1 (48,44,0-> (48,44,0))                                                          0.061     1.392
+| (CHANX:1181306 L4 length:4 (49,44,0-> (52,44,0))                                                          0.119     1.510
+| (CHANY:1327725 L4 length:1 (49,44,0-> (49,44,0))                                                          0.119     1.629
+| (IPIN:960603 side: (RIGHT,) (49,44,0))                                                                    0.101     1.730
+| (intra 'io' routing)                                                                                      0.516     2.246
+out:$auto$rs_design_edit.cc:615:add_wire_btw_prims$752.outpad[0] (.output at (49,44))                       0.000     2.246
+data arrival time                                                                                                     2.246
+
+clock clk_in (rise edge)                                                        0.000     0.000
+clock source latency                                                                                        0.000     0.000
+clock uncertainty                                                                                           0.000     0.000
+output external delay                                                                                       0.000     0.000
+data required time                                                                                                    0.000
+---------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                   -0.000
+data arrival time                                                                                                     2.246
+---------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                           2.246
+
+
+#Path 7
+Startpoint: i1[1].inpad[0] (.input at (51,44) clocked by clk_in)
+Endpoint  : out:data_in[1].outpad[0] (.output at (51,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                Incr      Path
+-----------------------------------------------------------------------------------
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+input external delay                                                0.000     0.000
+i1[1].inpad[0] (.input at (51,44))                        0.000     0.000
+| (intra 'io' routing)                                              0.779     0.779
+| (OPIN:966220 side: (RIGHT,) (51,44,0))                            0.000     0.779
+| (CHANY:1333377 L4 length:4 (51,44,0-> (51,41,0))                  0.119     0.898
+| (CHANX:1177329 L1 length:1 (51,43,0-> (51,43,0))                  0.061     0.959
+| (IPIN:816404 side: (TOP,) (51,43,0))                              0.101     1.060
+| (intra 'clb' routing)                                             0.066     1.126
+data_in[1].in[1] (.names at (51,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                          0.101     1.227
+data_in[1].out[0] (.names at (51,43))                               0.000     1.227
+| (intra 'clb' routing)                                             0.000     1.227
+| (OPIN:816373 side: (TOP,) (51,43,0))                              0.000     1.227
+| (CHANX:1177161 L4 length:4 (51,43,0-> (48,43,0))                  0.119     1.346
+| (CHANY:1330600 L1 length:1 (50,44,0-> (50,44,0))                  0.061     1.407
+| (CHANX:1181444 L4 length:4 (51,44,0-> (54,44,0))                  0.119     1.526
+| (CHANY:1333493 L4 length:2 (51,44,0-> (51,43,0))                  0.119     1.645
+| (IPIN:966362 side: (RIGHT,) (51,44,0))                            0.101     1.746
+| (intra 'io' routing)                                              0.516     2.261
+out:data_in[1].outpad[0] (.output at (51,44))                       0.000     2.261
+data arrival time                                                             2.261
+
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+clock uncertainty                                                   0.000     0.000
+output external delay                                               0.000     0.000
+data required time                                                            0.000
+-----------------------------------------------------------------------------------
+data required time                                                           -0.000
+data arrival time                                                             2.261
+-----------------------------------------------------------------------------------
+slack (MET)                                                                   2.261
+
+
+#Path 8
+Startpoint: load_word.inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : out:$auto$rs_design_edit.cc:492:handle_dangling_outs$755.outpad[0] (.output at (49,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                                          Incr      Path
+-----------------------------------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                                          0.000     0.000
+clock source latency                                                                                          0.000     0.000
+input external delay                                                                                          0.000     0.000
+load_word.inpad[0] (.input at (48,44))                                                              0.000     0.000
+| (intra 'io' routing)                                                                                        0.779     0.779
+| (OPIN:957577 side: (RIGHT,) (48,44,0))                                                                      0.000     0.779
+| (CHANY:1324707 L4 length:3 (48,44,0-> (48,42,0))                                                            0.119     0.898
+| (CHANX:1177208 L1 length:1 (49,43,0-> (49,43,0))                                                            0.061     0.959
+| (IPIN:816106 side: (TOP,) (49,43,0))                                                                        0.101     1.060
+| (intra 'clb' routing)                                                                                       0.066     1.126
+$auto$rs_design_edit.cc:492:handle_dangling_outs$755.in[0] (.names at (49,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                                                                    0.101     1.227
+$auto$rs_design_edit.cc:492:handle_dangling_outs$755.out[0] (.names at (49,43))                               0.000     1.227
+| (intra 'clb' routing)                                                                                       0.000     1.227
+| (OPIN:816092 side: (RIGHT,) (49,43,0))                                                                      0.000     1.227
+| (CHANY:1327643 L1 length:1 (49,43,0-> (49,43,0))                                                            0.061     1.288
+| (CHANX:1173212 L1 length:1 (50,42,0-> (50,42,0))                                                            0.061     1.349
+| (CHANY:1330580 L4 length:2 (50,43,0-> (50,44,0))                                                            0.119     1.468
+| (CHANX:1177101 L4 length:4 (50,43,0-> (47,43,0))                                                            0.119     1.587
+| (CHANY:1327700 L1 length:1 (49,44,0-> (49,44,0))                                                            0.061     1.648
+| (IPIN:960606 side: (RIGHT,) (49,44,0))                                                                      0.101     1.749
+| (intra 'io' routing)                                                                                        0.516     2.264
+out:$auto$rs_design_edit.cc:492:handle_dangling_outs$755.outpad[0] (.output at (49,44))                      -0.000     2.264
+data arrival time                                                                                                       2.264
+
+clock clk_in (rise edge)                                                          0.000     0.000
+clock source latency                                                                                          0.000     0.000
+clock uncertainty                                                                                             0.000     0.000
+output external delay                                                                                         0.000     0.000
+data required time                                                                                                      0.000
+-----------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                     -0.000
+data arrival time                                                                                                       2.264
+-----------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                             2.264
+
+
+#Path 9
+Startpoint: reset.inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : out:$auto$rs_design_edit.cc:615:add_wire_btw_prims$753.outpad[0] (.output at (49,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                                        Incr      Path
+---------------------------------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                                        0.000     0.000
+clock source latency                                                                                        0.000     0.000
+input external delay                                                                                        0.000     0.000
+reset.inpad[0] (.input at (48,44))                                                                0.000     0.000
+| (intra 'io' routing)                                                                                      0.779     0.779
+| (OPIN:957575 side: (RIGHT,) (48,44,0))                                                                    0.000     0.779
+| (CHANY:1324783 L1 length:1 (48,44,0-> (48,44,0))                                                          0.061     0.840
+| (CHANX:1177200 L1 length:1 (49,43,0-> (49,43,0))                                                          0.061     0.901
+| (IPIN:816118 side: (TOP,) (49,43,0))                                                                      0.101     1.002
+| (intra 'clb' routing)                                                                                     0.066     1.068
+$auto$rs_design_edit.cc:615:add_wire_btw_prims$753.in[0] (.names at (49,43))                                0.000     1.068
+| (primitive '.names' combinational delay)                                                                  0.144     1.212
+$auto$rs_design_edit.cc:615:add_wire_btw_prims$753.out[0] (.names at (49,43))                               0.000     1.212
+| (intra 'clb' routing)                                                                                     0.000     1.212
+| (OPIN:816087 side: (RIGHT,) (49,43,0))                                                                    0.000     1.212
+| (CHANY:1327473 L4 length:4 (49,43,0-> (49,40,0))                                                          0.119     1.331
+| (CHANX:1173153 L1 length:1 (49,42,0-> (49,42,0))                                                          0.061     1.392
+| (CHANY:1324493 L4 length:4 (48,42,0-> (48,39,0))                                                          0.119     1.510
+| (CHANX:1169076 L1 length:1 (49,41,0-> (49,41,0))                                                          0.061     1.571
+| (CHANY:1327612 L4 length:3 (49,42,0-> (49,44,0))                                                          0.119     1.690
+| (IPIN:960602 side: (RIGHT,) (49,44,0))                                                                    0.101     1.791
+| (intra 'io' routing)                                                                                      0.516     2.307
+out:$auto$rs_design_edit.cc:615:add_wire_btw_prims$753.outpad[0] (.output at (49,44))                       0.000     2.307
+data arrival time                                                                                                     2.307
+
+clock clk_in (rise edge)                                                        0.000     0.000
+clock source latency                                                                                        0.000     0.000
+clock uncertainty                                                                                           0.000     0.000
+output external delay                                                                                       0.000     0.000
+data required time                                                                                                    0.000
+---------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                   -0.000
+data arrival time                                                                                                     2.307
+---------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                           2.307
+
+
+#Path 10
+Startpoint: channel_bond_sync_in.inpad[0] (.input at (51,44) clocked by clk_in)
+Endpoint  : out:$auto$rs_design_edit.cc:492:handle_dangling_outs$754.outpad[0] (.output at (49,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                                                          Incr      Path
+-----------------------------------------------------------------------------------------------------------------------------
+clock clk_in (rise edge)                                                          0.000     0.000
+clock source latency                                                                                          0.000     0.000
+input external delay                                                                                          0.000     0.000
+channel_bond_sync_in.inpad[0] (.input at (51,44))                                                   0.000     0.000
+| (intra 'io' routing)                                                                                        0.779     0.779
+| (OPIN:966222 side: (RIGHT,) (51,44,0))                                                                      0.000     0.779
+| (CHANY:1333533 L1 length:1 (51,44,0-> (51,44,0))                                                            0.061     0.840
+| (CHANX:1177173 L4 length:4 (51,43,0-> (48,43,0))                                                            0.119     0.959
+| (IPIN:816116 side: (TOP,) (49,43,0))                                                                        0.101     1.060
+| (intra 'clb' routing)                                                                                       0.066     1.126
+$auto$rs_design_edit.cc:492:handle_dangling_outs$754.in[0] (.names at (49,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                                                                    0.099     1.225
+$auto$rs_design_edit.cc:492:handle_dangling_outs$754.out[0] (.names at (49,43))                               0.000     1.225
+| (intra 'clb' routing)                                                                                       0.000     1.225
+| (OPIN:816071 side: (TOP,) (49,43,0))                                                                        0.000     1.225
+| (CHANX:1177049 L4 length:4 (49,43,0-> (46,43,0))                                                            0.119     1.344
+| (CHANY:1316086 L4 length:1 (45,44,0-> (45,44,0))                                                            0.119     1.463
+| (CHANX:1181100 L4 length:4 (46,44,0-> (49,44,0))                                                            0.119     1.582
+| (CHANX:1181272 L1 length:1 (49,44,0-> (49,44,0))                                                            0.061     1.643
+| (CHANY:1327703 L1 length:1 (49,44,0-> (49,44,0))                                                            0.061     1.704
+| (IPIN:960607 side: (RIGHT,) (49,44,0))                                                                      0.101     1.804
+| (intra 'io' routing)                                                                                        0.516     2.320
+out:$auto$rs_design_edit.cc:492:handle_dangling_outs$754.outpad[0] (.output at (49,44))                       0.000     2.320
+data arrival time                                                                                                       2.320
+
+clock clk_in (rise edge)                                                          0.000     0.000
+clock source latency                                                                                          0.000     0.000
+clock uncertainty                                                                                             0.000     0.000
+output external delay                                                                                         0.000     0.000
+data required time                                                                                                      0.000
+-----------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                     -0.000
+data arrival time                                                                                                       2.320
+-----------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                             2.320
+
+
+#Path 11
+Startpoint: i1[0].inpad[0] (.input at (51,44) clocked by clk_in)
+Endpoint  : out:data_in[0].outpad[0] (.output at (51,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                Incr      Path
+-----------------------------------------------------------------------------------
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+input external delay                                                0.000     0.000
+i1[0].inpad[0] (.input at (51,44))                        0.000     0.000
+| (intra 'io' routing)                                              0.779     0.779
+| (OPIN:966221 side: (RIGHT,) (51,44,0))                            0.000     0.779
+| (CHANY:1333441 L4 length:3 (51,44,0-> (51,42,0))                  0.119     0.898
+| (CHANX:1177331 L1 length:1 (51,43,0-> (51,43,0))                  0.061     0.959
+| (IPIN:816421 side: (TOP,) (51,43,0))                              0.101     1.060
+| (intra 'clb' routing)                                             0.066     1.126
+data_in[0].in[1] (.names at (51,43))                                0.000     1.126
+| (primitive '.names' combinational delay)                          0.099     1.225
+data_in[0].out[0] (.names at (51,43))                               0.000     1.225
+| (intra 'clb' routing)                                             0.000     1.225
+| (OPIN:816391 side: (RIGHT,) (51,43,0))                            0.000     1.225
+| (CHANY:1333508 L4 length:2 (51,43,0-> (51,44,0))                  0.119     1.344
+| (CHANX:1181490 L4 length:4 (52,44,0-> (55,44,0))                  0.119     1.463
+| (CHANY:1336455 L1 length:1 (52,44,0-> (52,44,0))                  0.061     1.524
+| (CHANX:1177227 L4 length:4 (52,43,0-> (49,43,0))                  0.119     1.643
+| (CHANY:1333518 L1 length:1 (51,44,0-> (51,44,0))                  0.061     1.704
+| (IPIN:966363 side: (RIGHT,) (51,44,0))                            0.101     1.804
+| (intra 'io' routing)                                              0.516     2.320
+out:data_in[0].outpad[0] (.output at (51,44))                       0.000     2.320
+data arrival time                                                             2.320
+
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+clock uncertainty                                                   0.000     0.000
+output external delay                                               0.000     0.000
+data required time                                                            0.000
+-----------------------------------------------------------------------------------
+data required time                                                           -0.000
+data arrival time                                                             2.320
+-----------------------------------------------------------------------------------
+slack (MET)                                                                   2.320
+
+
+#Path 12
+Startpoint: i1[3].inpad[0] (.input at (48,44) clocked by clk_in)
+Endpoint  : out:data_in[3].outpad[0] (.output at (51,44) clocked by clk_in)
+Path Type : hold
+
+Point                                                                Incr      Path
+-----------------------------------------------------------------------------------
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+input external delay                                                0.000     0.000
+i1[3].inpad[0] (.input at (48,44))                        0.000     0.000
+| (intra 'io' routing)                                              0.779     0.779
+| (OPIN:957582 side: (RIGHT,) (48,44,0))                            0.000     0.779
+| (CHANY:1324749 L4 length:2 (48,44,0-> (48,43,0))                  0.119     0.898
+| (CHANX:1173166 L4 length:4 (49,42,0-> (52,42,0))                  0.119     1.017
+| (CHANY:1333470 L1 length:1 (51,43,0-> (51,43,0))                  0.061     1.078
+| (IPIN:816439 side: (RIGHT,) (51,43,0))                            0.101     1.179
+| (intra 'clb' routing)                                             0.066     1.245
+data_in[3].in[2] (.names at (51,43))                                0.000     1.245
+| (primitive '.names' combinational delay)                          0.101     1.346
+data_in[3].out[0] (.names at (51,43))                               0.000     1.346
+| (intra 'clb' routing)                                             0.000     1.346
+| (OPIN:816392 side: (RIGHT,) (51,43,0))                            0.000     1.346
+| (CHANY:1333463 L1 length:1 (51,43,0-> (51,43,0))                  0.061     1.407
+| (CHANX:1173115 L4 length:4 (51,42,0-> (48,42,0))                  0.119     1.526
+| (CHANY:1330590 L4 length:2 (50,43,0-> (50,44,0))                  0.119     1.645
+| (CHANX:1181386 L1 length:1 (51,44,0-> (51,44,0))                  0.061     1.706
+| (CHANY:1333513 L1 length:1 (51,44,0-> (51,44,0))                  0.061     1.767
+| (IPIN:966360 side: (RIGHT,) (51,44,0))                            0.101     1.867
+| (intra 'io' routing)                                              0.516     2.383
+out:data_in[3].outpad[0] (.output at (51,44))                       0.000     2.383
+data arrival time                                                             2.383
+
+clock clk_in (rise edge)                0.000     0.000
+clock source latency                                                0.000     0.000
+clock uncertainty                                                   0.000     0.000
+output external delay                                               0.000     0.000
+data required time                                                            0.000
+-----------------------------------------------------------------------------------
+data required time                                                           -0.000
+data arrival time                                                             2.383
+-----------------------------------------------------------------------------------
+slack (MET)                                                                   2.383
+
+
+#End of timing report
