@@ -1,0 +1,39 @@
+ 
+# Yosys synthesis script for sudoku_check
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/07_02_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/fifo.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/pll.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/puz_bank3.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_ans.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_bin2hex.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_check.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_core.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_hex2bin.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_mask.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_mask_stg2.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_partials.v 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/sudoku_check/results_dir/.././rtl/sudoku_solution.v 
+
+
+# Technology mapping
+hierarchy -top sudoku_check
+
+setattr -set keep 1 w:\clk
+
+
+plugin -i synth-rs
+
+synth_rs -post_cleanup 1 -tech genesis3 -de -goal delay   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v sudoku_check_post_synth.v
+write_blif -param sudoku_check_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_sudoku_check.sdc -json config.json -w wrapper_sudoku_check_post_synth.v wrapper_sudoku_check_post_synth.eblif -pr post_pnr_wrapper_sudoku_check_post_synth.v post_pnr_wrapper_sudoku_check_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_sudoku_check_post_synth.v
+write_blif -param fabric_sudoku_check_post_synth.eblif
+
+  
