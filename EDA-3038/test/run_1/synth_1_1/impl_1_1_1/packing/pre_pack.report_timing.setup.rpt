@@ -1,0 +1,91 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.07
+Build    : 1.1.24
+Hash     : a533563
+Date     : Jul  9 2024
+Type     : Engineering
+Log Time   : Tue Jul  9 07:50:38 2024 GMT
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 0
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: $abc$186$lo0.Q[0] (dffnre clocked by clk)
+Endpoint  : out:data_o.outpad[0] (.output clocked by clk)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clk (rise edge)                       0.000     0.000
+clock source latency                                                       0.000     0.000
+clk.inpad[0] (.input)                       0.000     0.000
+$abc$186$lo0.C[0] (dffnre)                                                 0.890     0.890
+$abc$186$lo0.Q[0] (dffnre) [clock-to-output]                               0.154     1.044
+data_o.in[1] (.names)                                            0.890     1.935
+data_o.out[0] (.names)                                           0.197     2.132
+out:data_o.outpad[0] (.output)                                   0.890     3.022
+data arrival time                                                                    3.022
+
+clock clk (rise edge)                      10.000    10.000
+clock source latency                                                       0.000    10.000
+clock uncertainty                                                          0.000    10.000
+output external delay                                                     -2.000     8.000
+data required time                                                                   8.000
+------------------------------------------------------------------------------------------
+data required time                                                                   8.000
+data arrival time                                                                   -3.022
+------------------------------------------------------------------------------------------
+slack (MET)                                                                          4.978
+
+
+#Path 2
+Startpoint: $iopadmap$clk.inpad[0] (.input clocked by clk)
+Endpoint  : $abc$186$lo0.R[0] (dffnre clocked by clk)
+Path Type : setup
+
+Point                                                                                                                                                                                                                                              Incr      Path
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clock clk (rise edge)                                                                                                                                                                                              0.000     0.000
+clock source latency                                                                                                                                                                                                                              0.000     0.000
+input external delay                                                                                                                                                                                                                              1.000     1.000
+$iopadmap$clk.inpad[0] (.input)                                                                                                                                                                                                                   0.000     1.000
+$abc$433$techmap$techmap354$abc$191$auto$blifparse.cc:377:parse_blif$192.$logic_not$/nfs_eda_sw/softwares/Raptor/instl_dir/07_09_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v:342$312_Y.in[0] (.names)                        0.890     1.890
+$abc$433$techmap$techmap354$abc$191$auto$blifparse.cc:377:parse_blif$192.$logic_not$/nfs_eda_sw/softwares/Raptor/instl_dir/07_09_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v:342$312_Y.out[0] (.names)                       0.218     2.109
+$abc$186$lo0.R[0] (dffnre)                                                                                                                                                                                                                        0.890     2.999
+data arrival time                                                                                                                                                                                                                                           2.999
+
+clock clk (rise edge)                                                                                                                                                                                             10.000    10.000
+clock source latency                                                                                                                                                                                                                              0.000    10.000
+clk.inpad[0] (.input)                                                                                                                                                                                              0.000    10.000
+$abc$186$lo0.C[0] (dffnre)                                                                                                                                                                                                                        0.890    10.890
+clock uncertainty                                                                                                                                                                                                                                 0.000    10.890
+cell setup time                                                                                                                                                                                                                                  -0.032    10.859
+data required time                                                                                                                                                                                                                                         10.859
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                                                                                                                                                         10.859
+data arrival time                                                                                                                                                                                                                                          -2.999
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                                                                                                                                                                 7.860
+
+
+#End of timing report

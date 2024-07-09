@@ -1,0 +1,191 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clk (index=0, width=1, offset=0)",
+    "    Detect output port \\data_o (index=0, width=1, offset=0)",
+    "    Detect input port \\en (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF $iopadmap$test.clk",
+    "      Cell port \\I is connected to input port \\clk",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: 1",
+    "    Get important connection of cell \\O_BUF $iopadmap$test.data_o",
+    "      Cell port \\O is connected to output port \\data_o",
+    "        Data Width: 1",
+    "    Get important connection of cell \\I_BUF $iopadmap$test.en",
+    "      Cell port \\I is connected to input port \\en",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: 1",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF $iopadmap$test.clk out connection: $iopadmap$clk -> $auto$clkbufmap.cc:306:execute$437",
+    "      Connected $auto$clkbufmap.cc:306:execute$437",
+    "        Data Width: -2",
+    "  Trace \\I_BUF_DS --> \\CLK_BUF",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace fabric clock buffer",
+    "  Trace gearbox clock source",
+    "  Trace Fabric Clock",
+    "    Module \\CLK_BUF $auto$clkbufmap.cc:306:execute$437: clock port \\O, net $auto$clkbufmap.cc:339:execute$439",
+    "      Connected to cell \\DFFNRE $abc$191$auto$blifparse.cc:377:parse_blif$192",
+    "        Which is not a IO primitive. Send to fabric",
+    "  Summary",
+    "        |-----------------------------------------------------------------|",
+    "        |     ****************************************************        |",
+    "    IN  | clk * I_BUF |-> CLK_BUF                                *        |",
+    "    OUT |     *                                            O_BUF * data_o |",
+    "    IN  |  en * I_BUF                                            *        |",
+    "        |     ****************************************************        |",
+    "        |-----------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Cross-check instances vs wrapped-instances",
+    "  Generate SDC",
+    "    Determine data signals",
+    "      Pin object=clk, location: ",
+    "        Pin location is not assigned",
+    "      Pin object=data_o, location: ",
+    "        Pin location is not assigned",
+    "      Pin object=en, location: ",
+    "        Pin location is not assigned",
+    "    Determine internal control signals",
+    "      Module=I_BUF LinkedObject=clk Location= Port=EN Signal=in:f2g_in_en_{A|B}",
+    "        Location  does not have any mode to begin with",
+    "      Module=I_BUF LinkedObject=en Location= Port=EN Signal=in:f2g_in_en_{A|B}",
+    "        Location  does not have any mode to begin with",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$test.clk",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk",
+        "O" : "$iopadmap$clk"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "$auto$clkbufmap.cc:306:execute$437",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$clk",
+        "O" : "$auto$clkbufmap.cc:339:execute$439"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$iopadmap$test.data_o",
+      "linked_object" : "data_o",
+      "linked_objects" : {
+        "data_o" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$iopadmap$data_o",
+        "O" : "data_o"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$iopadmap$test.en",
+      "linked_object" : "en",
+      "linked_objects" : {
+        "en" : {
+          "location" : "",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "en",
+        "O" : "$iopadmap$en"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    }
+  ]
+}
