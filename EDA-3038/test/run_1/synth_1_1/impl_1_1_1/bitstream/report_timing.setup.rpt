@@ -1,0 +1,90 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.07
+Build    : 1.1.24
+Hash     : a533563
+Date     : Jul  9 2024
+Type     : Engineering
+Log Time   : Tue Jul  9 07:56:45 2024 GMT
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 4
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: $iopadmap$en.inpad[0] (.input clocked by $auto$clkbufmap.cc:339:execute$439)
+Endpoint  : out:$iopadmap$data_o.outpad[0] (.output clocked by $auto$clkbufmap.cc:339:execute$439)
+Path Type : setup
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:339:execute$439 (rise edge)             0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             1.000     1.000
+$iopadmap$en.inpad[0] (.input)                                   0.000     1.000
+$iopadmap$data_o.in[0] (.names)                                  1.440     2.440
+$iopadmap$data_o.out[0] (.names)                                 0.218     2.658
+out:$iopadmap$data_o.outpad[0] (.output)                         1.193     3.851
+data arrival time                                                          3.851
+
+clock $auto$clkbufmap.cc:339:execute$439 (rise edge)            10.000    10.000
+clock source latency                                             0.000    10.000
+clock uncertainty                                                0.000    10.000
+output external delay                                           -2.000     8.000
+data required time                                                         8.000
+--------------------------------------------------------------------------------
+data required time                                                         8.000
+data arrival time                                                         -3.851
+--------------------------------------------------------------------------------
+slack (MET)                                                                4.149
+
+
+#Path 2
+Startpoint: $iopadmap$clk.inpad[0] (.input clocked by $auto$clkbufmap.cc:339:execute$439)
+Endpoint  : $abc$186$lo0.R[0] (dffnre clocked by $auto$clkbufmap.cc:339:execute$439)
+Path Type : setup
+
+Point                                                                                                                                                                                                                                              Incr      Path
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clock $auto$clkbufmap.cc:339:execute$439 (rise edge)                                                                                                                                                                                              0.000     0.000
+clock source latency                                                                                                                                                                                                                              0.000     0.000
+input external delay                                                                                                                                                                                                                              1.000     1.000
+$iopadmap$clk.inpad[0] (.input)                                                                                                                                                                                                                   0.000     1.000
+$abc$433$techmap$techmap354$abc$191$auto$blifparse.cc:377:parse_blif$192.$logic_not$/nfs_eda_sw/softwares/Raptor/instl_dir/07_09_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v:342$312_Y.in[0] (.names)                        1.379     2.379
+$abc$433$techmap$techmap354$abc$191$auto$blifparse.cc:377:parse_blif$192.$logic_not$/nfs_eda_sw/softwares/Raptor/instl_dir/07_09_2024_09_15_01/bin/../share/yosys/rapidsilicon/genesis3/ffs_map.v:342$312_Y.out[0] (.names)                       0.148     2.527
+$abc$186$lo0.R[0] (dffnre)                                                                                                                                                                                                                        0.308     2.834
+data arrival time                                                                                                                                                                                                                                           2.834
+
+clock $auto$clkbufmap.cc:339:execute$439 (rise edge)                                                                                                                                                                                             10.000    10.000
+clock source latency                                                                                                                                                                                                                              0.000    10.000
+$auto$clkbufmap.cc:339:execute$439.inpad[0] (.input)                                                                                                                                                                                              0.000    10.000
+$abc$186$lo0.C[0] (dffnre)                                                                                                                                                                                                                        0.894    10.894
+clock uncertainty                                                                                                                                                                                                                                 0.000    10.894
+cell setup time                                                                                                                                                                                                                                  -0.032    10.863
+data required time                                                                                                                                                                                                                                         10.863
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                                                                                                                                                         10.863
+data arrival time                                                                                                                                                                                                                                          -2.834
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                                                                                                                                                                 8.028
+
+
+#End of timing report
