@@ -1,24 +1,23 @@
-create_design GJC4
+create_design simple_testcase_one_DSP
 target_device 1VG28
 add_include_path ./rtl
 add_library_path ./rtl
 add_library_ext .v .sv
-add_design_file ./rtl/GJC4.v
-set_top_module GJC4
-add_constraint_file dsp38_test.sdc
+add_design_file ./rtl/simple_testcase_one_DSP.v
+set_top_module simple_testcase_one_DSP
 analyze
 synthesize delay
-add_simulation_file ./sim/co_sim_tb/co_sim_GJC4.v ./rtl/GJC4.v
-set_top_testbench co_sim_GJC4
+add_simulation_file ./sim/co_sim_tb/co_sim_simple_testcase_one_DSP.v ./rtl/simple_testcase_one_DSP.v
+set_top_testbench co_sim_simple_testcase_one_DSP
 # Open the input file in read mode
-set input_file [open "GJC4/run_1/synth_1_1/synthesis/GJC4\_post_synth.v" r]
+set input_file [open "simple_testcase_one_DSP/run_1/synth_1_1/synthesis/simple_testcase_one_DSP\_post_synth.v" r]
 # Read the file content
 set file_content [read $input_file]
 # Close the input file after reading
 close $input_file
-set modified_content [string map {"GJC4(" "GJC4_post_synth("} $file_content]
+set modified_content [string map {"simple_testcase_one_DSP(" "simple_testcase_one_DSP_post_synth("} $file_content]
 # Open the file again, this time in write mode to overwrite the old content
-set output_file [open "GJC4/run_1/synth_1_1/synthesis/GJC4\_post_synth.v" w]
+set output_file [open "simple_testcase_one_DSP/run_1/synth_1_1/synthesis/simple_testcase_one_DSP\_post_synth.v" w]
 # Write the modified content back to the file
 puts $output_file $modified_content
 # Close the file
@@ -30,14 +29,14 @@ packing
 place
 route
 # Open the input file in read mode
-set input_file [open "GJC4/run_1/synth_1_1/synthesis/post_pnr_wrapper_GJC4\_post_synth.v" r]
+set input_file [open "simple_testcase_one_DSP/run_1/synth_1_1/synthesis/post_pnr_wrapper_simple_testcase_one_DSP\_post_synth.v" r]
 # Read the file content
 set file_content [read $input_file]
 # Close the input file after reading
 close $input_file
-set modified_content [string map {"module GJC4(" "module GJC4_post_route ("} $file_content]
+set modified_content [string map {"module simple_testcase_one_DSP(" "module simple_testcase_one_DSP_post_route ("} $file_content]
 # Open the file again, this time in write mode to overwrite the old content
-set output_file [open "GJC4/run_1/synth_1_1/synthesis/post_pnr_wrapper_GJC4\_post_synth.v" w]
+set output_file [open "simple_testcase_one_DSP/run_1/synth_1_1/synthesis/post_pnr_wrapper_simple_testcase_one_DSP\_post_synth.v" w]
 # Write the modified content back to the file
 puts $output_file $modified_content
 # Close the file
