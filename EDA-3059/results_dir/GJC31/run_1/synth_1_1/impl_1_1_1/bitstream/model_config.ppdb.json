@@ -1,0 +1,474 @@
+{
+  "messages" : [
+    "Netlist PPDB: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/14thjuly/Validation/RTL_testcases/GJC-IO-Testcases/GJC31/results_dir/GJC31/run_1/synth_1_1/synthesis/io_config.json",
+    "Config Mapping: /nfs_eda_sw/softwares/Raptor/instl_dir/07_14_2024_09_15_01/share/raptor/configuration/Virgo/gemini_compact_22x4_config_attributes.mapping.json",
+    "Property JSON: model_config.property.json",
+    "Preparing Python file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/14thjuly/Validation/RTL_testcases/GJC-IO-Testcases/GJC31/results_dir/GJC31/run_1/synth_1_1/impl_1_1_1/bitstream/config.py",
+    "Read resources",
+    "Validate Instances",
+    "Merge properties into instances",
+    "Re-location instances",
+    "Configure Mapping file initialization",
+    "Validation using '__primary_validation__' rule",
+    "Internal error validations",
+    "Assign instance-without-location",
+    "Allocate FCLK routing resource",
+    "  CLKBUF clock_buffer (location:HP_1_CC_18_9P)",
+    "  PLL clk_pll_gen Port CLK_OUT_DIV4 (location:HP_1_CC_18_9P)",
+    "    Warning: Not able to route PLL clk_pll_gen Port CLK_OUT_DIV4 (location:HP_1_CC_18_9P) to gearbox module data_i_delay clock. Reason: Only PLL output port 'CLK_OUT' can use FCLK resource",
+    "    Warning: Not able to route PLL clk_pll_gen Port CLK_OUT_DIV4 (location:HP_1_CC_18_9P) to gearbox module data_i_ddr clock. Reason: Only PLL output port 'CLK_OUT' can use FCLK resource",
+    "Set CLKBUF configuration attributes",
+    "Allocate PLL resource (and set PLLREF configuration attributes)",
+    "Set PLL remaining configuration attributes",
+    "Validation using '__secondary_validation__' rule",
+    "Set configuration attributes",
+    "  Module: I_BUF ($ibuf$GJC31.$ibuf_clk_i_buf)",
+    "    Object: clk_i_buf",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: CLK_BUF (clock_buffer)",
+    "    Object: clk_i_buf",
+    "      Parameter",
+    "      Property",
+    "        Rule CLK_BUF.GBOX_TOP",
+    "          Match",
+    "        Rule CLK_BUF.ROOT_BANK_CLKMUX",
+    "          Mismatch",
+    "        Rule CLK_BUF.ROOT_MUX",
+    "          Mismatch",
+    "  Module: I_BUF ($ibuf$GJC31.$ibuf_dly_inc_pulse_inv_buf)",
+    "    Object: dly_inc_pulse_inv_buf",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: I_BUF ($ibuf$GJC31.$ibuf_enable_buf)",
+    "    Object: enable_buf",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: I_BUF ($ibuf$GJC31.$ibuf_reset_n_buf)",
+    "    Object: reset_n_buf",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: O_BUF ($obuf$GJC31.$obuf_data_o_buf)",
+    "    Object: data_o_buf[0]",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUF.IOSTANDARD",
+    "          Mismatch",
+    "Warning: Generated IO bitstream is invalid"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$GJC31.$ibuf_clk_i_buf",
+      "linked_object" : "clk_i_buf",
+      "linked_objects" : {
+        "clk_i_buf" : {
+          "location" : "HP_1_CC_18_9P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_i_buf",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clock_buffer",
+      "linked_object" : "clk_i_buf",
+      "linked_objects" : {
+        "clk_i_buf" : {
+          "location" : "HP_1_CC_18_9P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "CLK_BUF" : "GBOX_TOP_SRC==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_buf_i",
+        "O" : "clk_pll"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+        "PLL"
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__clock_pin_is_valid__,__check_fabric_clock_resource__,__update_fabric_clock_resource__"
+    },
+    {
+      "module" : "PLL",
+      "name" : "clk_pll_gen",
+      "linked_object" : "clk_i_buf",
+      "linked_objects" : {
+        "clk_i_buf" : {
+          "location" : "HP_1_CC_18_9P",
+          "properties" : {
+            "OUT3_ROUTE_TO_FABRIC_CLK" : "0"
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "clk_pll",
+        "CLK_OUT_DIV4" : "clk_i"
+      },
+      "parameters" : {
+        "DEV_FAMILY" : "VIRGO",
+        "DIVIDE_CLK_IN_BY_2" : "FALSE",
+        "OUT3_ROUTE_TO_FABRIC_CLK" : "0",
+        "PLL_DIV" : "32",
+        "PLL_MULT" : "100",
+        "PLL_MULT_FRAC" : "0",
+        "PLL_POST_DIV" : "17"
+      },
+      "pre_primitive" : "CLK_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+        "CLK_OUT_DIV4" : [
+          "data_i_delay",
+          "data_i_ddr"
+        ]
+      },
+      "route_clock_result" : {
+        "CLK_OUT_DIV4" : [
+          "Not able to route PLL clk_pll_gen Port CLK_OUT_DIV4 (location:HP_1_CC_18_9P) to gearbox module data_i_delay clock. Reason: Only PLL output port 'CLK_OUT' can use FCLK resource",
+          "Not able to route PLL clk_pll_gen Port CLK_OUT_DIV4 (location:HP_1_CC_18_9P) to gearbox module data_i_ddr clock. Reason: Only PLL output port 'CLK_OUT' can use FCLK resource"
+        ]
+      },
+      "errors" : [
+      ],
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Fail to route the clock"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$GJC31.$ibuf_data_i",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "data_i",
+        "O" : "data_i_buf"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "I_DELAY"
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Fail:__pin_is_valid__"
+    },
+    {
+      "module" : "I_DELAY",
+      "name" : "data_i_delay",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "CLK_IN" : "clk_i",
+        "I" : "data_i_buf",
+        "O" : "data_i_buf_delayed"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+        "I_DDR"
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Invalidated because other instance in the chain is invalid"
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "data_i_ddr",
+      "linked_object" : "data_i",
+      "linked_objects" : {
+        "data_i" : {
+          "location" : "",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "C" : "clk_i",
+        "D" : "data_i_buf_delayed"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "I_DELAY",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Invalidated because other instance in the chain is invalid"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$GJC31.$ibuf_dly_inc_pulse_inv_buf",
+      "linked_object" : "dly_inc_pulse_inv_buf",
+      "linked_objects" : {
+        "dly_inc_pulse_inv_buf" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "dly_inc_pulse_inv_buf",
+        "O" : "dly_inc_pulse_inv"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$GJC31.$ibuf_enable_buf",
+      "linked_object" : "enable_buf",
+      "linked_objects" : {
+        "enable_buf" : {
+          "location" : "HP_1_4_2P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "enable_buf",
+        "O" : "enable"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$GJC31.$ibuf_reset_n_buf",
+      "linked_object" : "reset_n_buf",
+      "linked_objects" : {
+        "reset_n_buf" : {
+          "location" : "HP_1_2_1P",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "I_BUF" : "WEAK_KEEPER==NONE"
+            },
+            {
+              "I_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "reset_n_buf",
+        "O" : "reset_n"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$obuf$GJC31.$obuf_data_o_buf",
+      "linked_object" : "data_o_buf[0]",
+      "linked_objects" : {
+        "data_o_buf[0]" : {
+          "location" : "HP_1_3_1N",
+          "properties" : {
+          },
+          "config_attributes" : [
+            {
+              "O_BUF" : "IOSTANDARD==DEFAULT"
+            }
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "data_o[0]",
+        "O" : "data_o_buf[0]"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+    },
+    {
+      "module" : "O_BUF",
+      "name" : "$obuf$GJC31.$obuf_data_o_buf_1",
+      "linked_object" : "data_o_buf[1]",
+      "linked_objects" : {
+        "data_o_buf[1]" : {
+          "location" : "HP_1_4_2P",
+          "properties" : {
+          },
+          "config_attributes" : [
+          ]
+        }
+      },
+      "connectivity" : {
+        "I" : "data_o[1]",
+        "O" : "data_o_buf[1]"
+      },
+      "parameters" : {
+      },
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "FALSE",
+      "__validation_msg__" : "Pass:__pin_is_valid__;Fail:__check_pin_resource__"
+    }
+  ]
+}
