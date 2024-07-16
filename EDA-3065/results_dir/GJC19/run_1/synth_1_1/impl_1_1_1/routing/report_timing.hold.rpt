@@ -1,0 +1,771 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.07
+Build    : 1.1.30
+Hash     : 8801a76
+Date     : Jul 16 2024
+Type     : Engineering
+Log Time   : Tue Jul 16 06:10:38 2024 GMT
+#Timing report of worst 16 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 4
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[4].inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:$auto$rs_design_edit.cc:498:handle_dangling_outs$507.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                                        Incr      Path
+---------------------------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                                          0.000     0.000
+clock source latency                                                                                        0.000     0.000
+input external delay                                                                                        0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[4].inpad[0] (.input at (4,1))                                                  0.000     0.000
+| (intra 'io' routing)                                                                                      0.779     0.779
+| (OPIN:10088 side: (TOP,) (4,1,0))                                                                         0.000     0.779
+| (CHANX:146089 L1 length:1 (4,1,0-> (4,1,0))                                                               0.061     0.840
+| (CHANY:153030 L1 length:1 (3,2,0-> (3,2,0))                                                               0.061     0.901
+| (CHANX:147622 L4 length:4 (4,2,0-> (7,2,0))                                                               0.119     1.020
+| (IPIN:66624 side: (TOP,) (4,2,0))                                                                         0.101     1.121
+| (intra 'clb' routing)                                                                                     0.066     1.187
+$auto$rs_design_edit.cc:498:handle_dangling_outs$507.in[0] (.names at (4,2))                                0.000     1.187
+| (primitive '.names' combinational delay)                                                                  0.065     1.252
+$auto$rs_design_edit.cc:498:handle_dangling_outs$507.out[0] (.names at (4,2))                               0.000     1.252
+| (intra 'clb' routing)                                                                                     0.000     1.252
+| (OPIN:66605 side: (RIGHT,) (4,2,0))                                                                       0.000     1.252
+| (CHANY:153307 L4 length:2 (4,2,0-> (4,1,0))                                                               0.119     1.371
+| (CHANX:145887 L4 length:4 (4,1,0-> (1,1,0))                                                               0.119     1.490
+| (IPIN:10264 side: (TOP,) (4,1,0))                                                                         0.101     1.590
+| (intra 'io' routing)                                                                                      0.516     2.106
+out:$auto$rs_design_edit.cc:498:handle_dangling_outs$507.outpad[0] (.output at (4,1))                       0.000     2.106
+data arrival time                                                                                                     2.106
+
+clock virtual_io_clock (rise edge)                                                                          0.000     0.000
+clock source latency                                                                                        0.000     0.000
+clock uncertainty                                                                                           0.000     0.000
+output external delay                                                                                       0.000     0.000
+data required time                                                                                                    0.000
+---------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                   -0.000
+data arrival time                                                                                                     2.106
+---------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                           2.106
+
+
+#Path 2
+Startpoint: data_i.inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:data_i_inv_delayed.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                      Incr      Path
+-----------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                        0.000     0.000
+clock source latency                                                      0.000     0.000
+input external delay                                                      0.000     0.000
+data_i.inpad[0] (.input at (4,1))                                         0.000     0.000
+| (intra 'io' routing)                                                    0.779     0.779
+| (OPIN:10115 side: (TOP,) (4,1,0))                                       0.000     0.779
+| (CHANX:146079 L1 length:1 (4,1,0-> (4,1,0))                             0.061     0.840
+| (CHANY:153020 L1 length:1 (3,2,0-> (3,2,0))                             0.061     0.901
+| (CHANX:147632 L4 length:4 (4,2,0-> (7,2,0))                             0.119     1.020
+| (IPIN:66636 side: (TOP,) (4,2,0))                                       0.101     1.121
+| (intra 'clb' routing)                                                   0.066     1.187
+data_i_inv_delayed.in[0] (.names at (4,2))                                0.000     1.187
+| (primitive '.names' combinational delay)                                0.099     1.286
+data_i_inv_delayed.out[0] (.names at (4,2))                               0.000     1.286
+| (intra 'clb' routing)                                                   0.000     1.286
+| (OPIN:66612 side: (RIGHT,) (4,2,0))                                     0.000     1.286
+| (CHANY:153299 L4 length:2 (4,2,0-> (4,1,0))                             0.119     1.405
+| (CHANY:153281 L4 length:1 (4,1,0-> (4,1,0))                             0.119     1.524
+| (IPIN:10292 side: (RIGHT,) (4,1,0))                                     0.101     1.625
+| (intra 'io' routing)                                                    0.516     2.140
+out:data_i_inv_delayed.outpad[0] (.output at (4,1))                       0.000     2.140
+data arrival time                                                                   2.140
+
+clock virtual_io_clock (rise edge)                                        0.000     0.000
+clock source latency                                                      0.000     0.000
+clock uncertainty                                                         0.000     0.000
+output external delay                                                     0.000     0.000
+data required time                                                                  0.000
+-----------------------------------------------------------------------------------------
+data required time                                                                 -0.000
+data arrival time                                                                   2.140
+-----------------------------------------------------------------------------------------
+slack (MET)                                                                         2.140
+
+
+#Path 3
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[1].inpad[0] (.input at (11,1) clocked by virtual_io_clock)
+Endpoint  : out:$auto$rs_design_edit.cc:498:handle_dangling_outs$510.outpad[0] (.output at (11,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                                         Incr      Path
+----------------------------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                                           0.000     0.000
+clock source latency                                                                                         0.000     0.000
+input external delay                                                                                         0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[1].inpad[0] (.input at (11,1))                                                  0.000     0.000
+| (intra 'io' routing)                                                                                       0.779     0.779
+| (OPIN:30255 side: (TOP,) (11,1,0))                                                                         0.000     0.779
+| (CHANX:146550 L1 length:1 (11,1,0-> (11,1,0))                                                              0.061     0.840
+| (CHANY:155866 L4 length:3 (11,2,0-> (11,4,0))                                                              0.119     0.959
+| (CHANX:148031 L1 length:1 (11,2,0-> (11,2,0))                                                              0.061     1.020
+| (IPIN:67680 side: (TOP,) (11,2,0))                                                                         0.101     1.121
+| (intra 'clb' routing)                                                                                      0.066     1.187
+$auto$rs_design_edit.cc:498:handle_dangling_outs$510.in[0] (.names at (11,2))                                0.000     1.187
+| (primitive '.names' combinational delay)                                                                   0.154     1.341
+$auto$rs_design_edit.cc:498:handle_dangling_outs$510.out[0] (.names at (11,2))                               0.000     1.341
+| (intra 'clb' routing)                                                                                      0.000     1.341
+| (OPIN:67650 side: (TOP,) (11,2,0))                                                                         0.000     1.341
+| (CHANX:147865 L4 length:4 (11,2,0-> (8,2,0))                                                               0.119     1.460
+| (CHANY:155481 L1 length:1 (10,2,0-> (10,2,0))                                                              0.061     1.521
+| (CHANX:146522 L1 length:1 (11,1,0-> (11,1,0))                                                              0.061     1.582
+| (IPIN:30401 side: (TOP,) (11,1,0))                                                                         0.101     1.683
+| (intra 'io' routing)                                                                                       0.516     2.199
+out:$auto$rs_design_edit.cc:498:handle_dangling_outs$510.outpad[0] (.output at (11,1))                       0.000     2.199
+data arrival time                                                                                                      2.199
+
+clock virtual_io_clock (rise edge)                                                                           0.000     0.000
+clock source latency                                                                                         0.000     0.000
+clock uncertainty                                                                                            0.000     0.000
+output external delay                                                                                        0.000     0.000
+data required time                                                                                                     0.000
+----------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                    -0.000
+data arrival time                                                                                                      2.199
+----------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                            2.199
+
+
+#Path 4
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[5].inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:dly_tap_val_inv_buf[5].outpad[0] (.output at (1,2) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                             Incr      Path
+------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                               0.000     0.000
+clock source latency                                                             0.000     0.000
+input external delay                                                             0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[5].inpad[0] (.input at (4,1))                       0.000     0.000
+| (intra 'io' routing)                                                           0.779     0.779
+| (OPIN:10080 side: (TOP,) (4,1,0))                                              0.000     0.779
+| (CHANX:146072 L1 length:1 (4,1,0-> (4,1,0))                                    0.061     0.840
+| (CHANY:153368 L1 length:1 (4,2,0-> (4,2,0))                                    0.061     0.901
+| (CHANX:147579 L1 length:1 (4,2,0-> (4,2,0))                                    0.061     0.962
+| (IPIN:66637 side: (TOP,) (4,2,0))                                              0.101     1.063
+| (intra 'clb' routing)                                                          0.066     1.129
+dly_tap_val[5].in[0] (.names at (4,2))                                          -0.000     1.129
+| (primitive '.names' combinational delay)                                       0.099     1.228
+dly_tap_val[5].out[0] (.names at (4,2))                                          0.000     1.228
+| (intra 'clb' routing)                                                          0.066     1.294
+dly_tap_val_inv_buf[5].in[0] (.names at (4,2))                                       0.000     1.294
+| (primitive '.names' combinational delay)                                       0.144     1.438
+dly_tap_val_inv_buf[5].out[0] (.names at (4,2))                                      0.000     1.438
+| (intra 'clb' routing)                                                          0.000     1.438
+| (OPIN:66597 side: (TOP,) (4,2,0))                                              0.000     1.438
+| (CHANX:147423 L4 length:4 (4,2,0-> (1,2,0))                                    0.119     1.557
+| (CHANX:147301 L1 length:1 (1,2,0-> (1,2,0))                                    0.061     1.618
+| (IPIN:64982 side: (TOP,) (1,2,0))                                              0.101     1.719
+| (intra 'io' routing)                                                           0.516     2.234
+out:dly_tap_val_inv_buf[5].outpad[0] (.output at (1,2))                              0.000     2.234
+data arrival time                                                                          2.234
+
+clock virtual_io_clock (rise edge)                                               0.000     0.000
+clock source latency                                                             0.000     0.000
+clock uncertainty                                                                0.000     0.000
+output external delay                                                            0.000     0.000
+data required time                                                                         0.000
+------------------------------------------------------------------------------------------------
+data required time                                                                        -0.000
+data arrival time                                                                          2.234
+------------------------------------------------------------------------------------------------
+slack (MET)                                                                                2.234
+
+
+#Path 5
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[5].inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:$auto$rs_design_edit.cc:498:handle_dangling_outs$506.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                                        Incr      Path
+---------------------------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                                          0.000     0.000
+clock source latency                                                                                        0.000     0.000
+input external delay                                                                                        0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[5].inpad[0] (.input at (4,1))                                                  0.000     0.000
+| (intra 'io' routing)                                                                                      0.779     0.779
+| (OPIN:10080 side: (TOP,) (4,1,0))                                                                         0.000     0.779
+| (CHANX:146072 L1 length:1 (4,1,0-> (4,1,0))                                                               0.061     0.840
+| (CHANY:153368 L1 length:1 (4,2,0-> (4,2,0))                                                               0.061     0.901
+| (CHANX:147579 L1 length:1 (4,2,0-> (4,2,0))                                                               0.061     0.962
+| (IPIN:66637 side: (TOP,) (4,2,0))                                                                         0.101     1.063
+| (intra 'clb' routing)                                                                                     0.066     1.129
+$auto$rs_design_edit.cc:498:handle_dangling_outs$506.in[0] (.names at (4,2))                               -0.000     1.129
+| (primitive '.names' combinational delay)                                                                  0.099     1.228
+$auto$rs_design_edit.cc:498:handle_dangling_outs$506.out[0] (.names at (4,2))                               0.000     1.228
+| (intra 'clb' routing)                                                                                     0.000     1.228
+| (OPIN:66600 side: (TOP,) (4,2,0))                                                                         0.000     1.228
+| (CHANX:147638 L4 length:4 (4,2,0-> (7,2,0))                                                               0.119     1.347
+| (CHANX:147798 L1 length:1 (7,2,0-> (7,2,0))                                                               0.061     1.408
+| (CHANY:154453 L1 length:1 (7,2,0-> (7,2,0))                                                               0.061     1.469
+| (CHANX:146109 L4 length:4 (7,1,0-> (4,1,0))                                                               0.119     1.588
+| (CHANY:153225 L1 length:1 (4,1,0-> (4,1,0))                                                               0.061     1.649
+| (IPIN:10280 side: (RIGHT,) (4,1,0))                                                                       0.101     1.750
+| (intra 'io' routing)                                                                                      0.516     2.265
+out:$auto$rs_design_edit.cc:498:handle_dangling_outs$506.outpad[0] (.output at (4,1))                      -0.000     2.265
+data arrival time                                                                                                     2.265
+
+clock virtual_io_clock (rise edge)                                                                          0.000     0.000
+clock source latency                                                                                        0.000     0.000
+clock uncertainty                                                                                           0.000     0.000
+output external delay                                                                                       0.000     0.000
+data required time                                                                                                    0.000
+---------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                   -0.000
+data arrival time                                                                                                     2.265
+---------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                           2.265
+
+
+#Path 6
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[2].inpad[0] (.input at (11,1) clocked by virtual_io_clock)
+Endpoint  : out:$auto$rs_design_edit.cc:498:handle_dangling_outs$509.outpad[0] (.output at (11,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                                         Incr      Path
+----------------------------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                                           0.000     0.000
+clock source latency                                                                                         0.000     0.000
+input external delay                                                                                         0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[2].inpad[0] (.input at (11,1))                                                  0.000     0.000
+| (intra 'io' routing)                                                                                       0.779     0.779
+| (OPIN:30285 side: (TOP,) (11,1,0))                                                                         0.000     0.779
+| (CHANX:146547 L1 length:1 (11,1,0-> (11,1,0))                                                              0.061     0.840
+| (CHANY:155504 L1 length:1 (10,2,0-> (10,2,0))                                                              0.061     0.901
+| (CHANX:148060 L4 length:4 (11,2,0-> (14,2,0))                                                              0.119     1.020
+| (IPIN:67677 side: (TOP,) (11,2,0))                                                                         0.101     1.121
+| (intra 'clb' routing)                                                                                      0.066     1.187
+$auto$rs_design_edit.cc:498:handle_dangling_outs$509.in[0] (.names at (11,2))                                0.000     1.187
+| (primitive '.names' combinational delay)                                                                   0.065     1.252
+$auto$rs_design_edit.cc:498:handle_dangling_outs$509.out[0] (.names at (11,2))                               0.000     1.252
+| (intra 'clb' routing)                                                                                      0.000     1.252
+| (OPIN:67654 side: (TOP,) (11,2,0))                                                                         0.000     1.252
+| (CHANX:148033 L1 length:1 (11,2,0-> (11,2,0))                                                              0.061     1.313
+| (CHANY:155435 L4 length:2 (10,2,0-> (10,1,0))                                                              0.119     1.432
+| (CHANX:145068 L4 length:4 (11,0,0-> (14,0,0))                                                              0.119     1.551
+| (CHANY:155732 L4 length:2 (11,1,0-> (11,2,0))                                                              0.119     1.670
+| (IPIN:30454 side: (RIGHT,) (11,1,0))                                                                       0.101     1.770
+| (intra 'io' routing)                                                                                       0.516     2.286
+out:$auto$rs_design_edit.cc:498:handle_dangling_outs$509.outpad[0] (.output at (11,1))                       0.000     2.286
+data arrival time                                                                                                      2.286
+
+clock virtual_io_clock (rise edge)                                                                           0.000     0.000
+clock source latency                                                                                         0.000     0.000
+clock uncertainty                                                                                            0.000     0.000
+output external delay                                                                                        0.000     0.000
+data required time                                                                                                     0.000
+----------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                    -0.000
+data arrival time                                                                                                      2.286
+----------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                            2.286
+
+
+#Path 7
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[3].inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:$auto$rs_design_edit.cc:498:handle_dangling_outs$508.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                                        Incr      Path
+---------------------------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                                          0.000     0.000
+clock source latency                                                                                        0.000     0.000
+input external delay                                                                                        0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[3].inpad[0] (.input at (4,1))                                                  0.000     0.000
+| (intra 'io' routing)                                                                                      0.779     0.779
+| (OPIN:10148 side: (RIGHT,) (4,1,0))                                                                       0.000     0.779
+| (CHANY:153352 L4 length:4 (4,1,0-> (4,4,0))                                                               0.119     0.898
+| (CHANX:147599 L1 length:1 (4,2,0-> (4,2,0))                                                               0.061     0.959
+| (IPIN:66631 side: (TOP,) (4,2,0))                                                                         0.101     1.060
+| (intra 'clb' routing)                                                                                     0.066     1.126
+$auto$rs_design_edit.cc:498:handle_dangling_outs$508.in[0] (.names at (4,2))                                0.000     1.126
+| (primitive '.names' combinational delay)                                                                  0.154     1.280
+$auto$rs_design_edit.cc:498:handle_dangling_outs$508.out[0] (.names at (4,2))                               0.000     1.280
+| (intra 'clb' routing)                                                                                     0.000     1.280
+| (OPIN:66609 side: (RIGHT,) (4,2,0))                                                                       0.000     1.280
+| (CHANY:153377 L1 length:1 (4,2,0-> (4,2,0))                                                               0.061     1.341
+| (CHANX:146146 L1 length:1 (5,1,0-> (5,1,0))                                                               0.061     1.402
+| (CHANY:153774 L4 length:3 (5,2,0-> (5,4,0))                                                               0.119     1.521
+| (CHANX:147643 L1 length:1 (5,2,0-> (5,2,0))                                                               0.061     1.582
+| (CHANY:153347 L4 length:2 (4,2,0-> (4,1,0))                                                               0.119     1.701
+| (IPIN:10285 side: (RIGHT,) (4,1,0))                                                                       0.101     1.802
+| (intra 'io' routing)                                                                                      0.516     2.318
+out:$auto$rs_design_edit.cc:498:handle_dangling_outs$508.outpad[0] (.output at (4,1))                      -0.000     2.318
+data arrival time                                                                                                     2.318
+
+clock virtual_io_clock (rise edge)                                                                          0.000     0.000
+clock source latency                                                                                        0.000     0.000
+clock uncertainty                                                                                           0.000     0.000
+output external delay                                                                                       0.000     0.000
+data required time                                                                                                    0.000
+---------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                   -0.000
+data arrival time                                                                                                     2.318
+---------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                           2.318
+
+
+#Path 8
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[4].inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:dly_tap_val_inv_buf[4].outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                             Incr      Path
+------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                               0.000     0.000
+clock source latency                                                             0.000     0.000
+input external delay                                                             0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[4].inpad[0] (.input at (4,1))                       0.000     0.000
+| (intra 'io' routing)                                                           0.779     0.779
+| (OPIN:10088 side: (TOP,) (4,1,0))                                              0.000     0.779
+| (CHANX:146089 L1 length:1 (4,1,0-> (4,1,0))                                    0.061     0.840
+| (CHANY:153030 L1 length:1 (3,2,0-> (3,2,0))                                    0.061     0.901
+| (CHANX:147622 L4 length:4 (4,2,0-> (7,2,0))                                    0.119     1.020
+| (IPIN:66624 side: (TOP,) (4,2,0))                                              0.101     1.121
+| (intra 'clb' routing)                                                          0.066     1.187
+dly_tap_val[4].in[0] (.names at (4,2))                                           0.000     1.187
+| (primitive '.names' combinational delay)                                       0.065     1.252
+dly_tap_val[4].out[0] (.names at (4,2))                                          0.000     1.252
+| (intra 'clb' routing)                                                          0.066     1.318
+dly_tap_val_inv_buf[4].in[0] (.names at (4,2))                                       0.000     1.318
+| (primitive '.names' combinational delay)                                       0.101     1.419
+dly_tap_val_inv_buf[4].out[0] (.names at (4,2))                                      0.000     1.419
+| (intra 'clb' routing)                                                          0.000     1.419
+| (OPIN:66602 side: (TOP,) (4,2,0))                                              0.000     1.419
+| (CHANX:147610 L4 length:4 (4,2,0-> (7,2,0))                                    0.119     1.538
+| (CHANY:153729 L1 length:1 (5,2,0-> (5,2,0))                                    0.061     1.599
+| (CHANX:146001 L4 length:4 (5,1,0-> (2,1,0))                                    0.119     1.718
+| (IPIN:10249 side: (TOP,) (4,1,0))                                              0.101     1.819
+| (intra 'io' routing)                                                           0.516     2.334
+out:dly_tap_val_inv_buf[4].outpad[0] (.output at (4,1))                              0.000     2.334
+data arrival time                                                                          2.334
+
+clock virtual_io_clock (rise edge)                                               0.000     0.000
+clock source latency                                                             0.000     0.000
+clock uncertainty                                                                0.000     0.000
+output external delay                                                            0.000     0.000
+data required time                                                                         0.000
+------------------------------------------------------------------------------------------------
+data required time                                                                        -0.000
+data arrival time                                                                          2.334
+------------------------------------------------------------------------------------------------
+slack (MET)                                                                                2.334
+
+
+#Path 9
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[0].inpad[0] (.input at (11,1) clocked by virtual_io_clock)
+Endpoint  : out:$auto$rs_design_edit.cc:498:handle_dangling_outs$511.outpad[0] (.output at (11,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                                         Incr      Path
+----------------------------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                                           0.000     0.000
+clock source latency                                                                                         0.000     0.000
+input external delay                                                                                         0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[0].inpad[0] (.input at (11,1))                                                  0.000     0.000
+| (intra 'io' routing)                                                                                       0.779     0.779
+| (OPIN:30268 side: (TOP,) (11,1,0))                                                                         0.000     0.779
+| (CHANX:146560 L4 length:4 (11,1,0-> (14,1,0))                                                              0.119     0.898
+| (CHANY:155856 L1 length:1 (11,2,0-> (11,2,0))                                                              0.061     0.959
+| (CHANX:148051 L1 length:1 (11,2,0-> (11,2,0))                                                              0.061     1.020
+| (IPIN:67690 side: (TOP,) (11,2,0))                                                                         0.101     1.121
+| (intra 'clb' routing)                                                                                      0.066     1.187
+$auto$rs_design_edit.cc:498:handle_dangling_outs$511.in[0] (.names at (11,2))                                0.000     1.187
+| (primitive '.names' combinational delay)                                                                   0.144     1.331
+$auto$rs_design_edit.cc:498:handle_dangling_outs$511.out[0] (.names at (11,2))                               0.000     1.331
+| (intra 'clb' routing)                                                                                      0.000     1.331
+| (OPIN:67672 side: (RIGHT,) (11,2,0))                                                                       0.000     1.331
+| (CHANY:155852 L1 length:1 (11,2,0-> (11,2,0))                                                              0.061     1.392
+| (CHANX:148128 L4 length:4 (12,2,0-> (15,2,0))                                                              0.119     1.510
+| (CHANY:156209 L1 length:1 (12,2,0-> (12,2,0))                                                              0.061     1.571
+| (CHANX:146433 L4 length:4 (12,1,0-> (9,1,0))                                                               0.119     1.690
+| (CHANX:146545 L1 length:1 (11,1,0-> (11,1,0))                                                              0.061     1.751
+| (IPIN:30396 side: (TOP,) (11,1,0))                                                                         0.101     1.852
+| (intra 'io' routing)                                                                                       0.516     2.368
+out:$auto$rs_design_edit.cc:498:handle_dangling_outs$511.outpad[0] (.output at (11,1))                       0.000     2.368
+data arrival time                                                                                                      2.368
+
+clock virtual_io_clock (rise edge)                                                                           0.000     0.000
+clock source latency                                                                                         0.000     0.000
+clock uncertainty                                                                                            0.000     0.000
+output external delay                                                                                        0.000     0.000
+data required time                                                                                                     0.000
+----------------------------------------------------------------------------------------------------------------------------
+data required time                                                                                                    -0.000
+data arrival time                                                                                                      2.368
+----------------------------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                                            2.368
+
+
+#Path 10
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[3].inpad[0] (.input at (4,1) clocked by virtual_io_clock)
+Endpoint  : out:dly_tap_val_inv_buf[3].outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                             Incr      Path
+------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                               0.000     0.000
+clock source latency                                                             0.000     0.000
+input external delay                                                             0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[3].inpad[0] (.input at (4,1))                       0.000     0.000
+| (intra 'io' routing)                                                           0.779     0.779
+| (OPIN:10148 side: (RIGHT,) (4,1,0))                                            0.000     0.779
+| (CHANY:153352 L4 length:4 (4,1,0-> (4,4,0))                                    0.119     0.898
+| (CHANX:147599 L1 length:1 (4,2,0-> (4,2,0))                                    0.061     0.959
+| (IPIN:66631 side: (TOP,) (4,2,0))                                              0.101     1.060
+| (intra 'clb' routing)                                                          0.066     1.126
+dly_tap_val[3].in[0] (.names at (4,2))                                           0.000     1.126
+| (primitive '.names' combinational delay)                                       0.154     1.280
+dly_tap_val[3].out[0] (.names at (4,2))                                          0.000     1.280
+| (intra 'clb' routing)                                                          0.066     1.347
+dly_tap_val_inv_buf[3].in[0] (.names at (4,2))                                       0.000     1.347
+| (primitive '.names' combinational delay)                                       0.099     1.446
+dly_tap_val_inv_buf[3].out[0] (.names at (4,2))                                      0.000     1.446
+| (intra 'clb' routing)                                                          0.000     1.446
+| (OPIN:66606 side: (RIGHT,) (4,2,0))                                            0.000     1.446
+| (CHANY:153370 L1 length:1 (4,2,0-> (4,2,0))                                    0.061     1.507
+| (CHANX:147698 L4 length:4 (5,2,0-> (8,2,0))                                    0.119     1.626
+| (CHANY:153735 L1 length:1 (5,2,0-> (5,2,0))                                    0.061     1.687
+| (CHANX:145995 L4 length:4 (5,1,0-> (2,1,0))                                    0.119     1.806
+| (IPIN:10269 side: (TOP,) (4,1,0))                                              0.101     1.906
+| (intra 'io' routing)                                                           0.516     2.422
+out:dly_tap_val_inv_buf[3].outpad[0] (.output at (4,1))                              0.000     2.422
+data arrival time                                                                          2.422
+
+clock virtual_io_clock (rise edge)                                               0.000     0.000
+clock source latency                                                             0.000     0.000
+clock uncertainty                                                                0.000     0.000
+output external delay                                                            0.000     0.000
+data required time                                                                         0.000
+------------------------------------------------------------------------------------------------
+data required time                                                                        -0.000
+data arrival time                                                                          2.422
+------------------------------------------------------------------------------------------------
+slack (MET)                                                                                2.422
+
+
+#Path 11
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[0].inpad[0] (.input at (11,1) clocked by virtual_io_clock)
+Endpoint  : out:dly_tap_val_inv_buf[0].outpad[0] (.output at (11,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                              Incr      Path
+-------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+input external delay                                                              0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[0].inpad[0] (.input at (11,1))                       0.000     0.000
+| (intra 'io' routing)                                                            0.779     0.779
+| (OPIN:30268 side: (TOP,) (11,1,0))                                              0.000     0.779
+| (CHANX:146560 L4 length:4 (11,1,0-> (14,1,0))                                   0.119     0.898
+| (CHANY:155856 L1 length:1 (11,2,0-> (11,2,0))                                   0.061     0.959
+| (CHANX:148051 L1 length:1 (11,2,0-> (11,2,0))                                   0.061     1.020
+| (IPIN:67690 side: (TOP,) (11,2,0))                                              0.101     1.121
+| (intra 'clb' routing)                                                           0.066     1.187
+dly_tap_val[0].in[0] (.names at (11,2))                                           0.000     1.187
+| (primitive '.names' combinational delay)                                        0.144     1.331
+dly_tap_val[0].out[0] (.names at (11,2))                                          0.000     1.331
+| (intra 'clb' routing)                                                           0.066     1.397
+dly_tap_val_inv_buf[0].in[0] (.names at (11,2))                                       0.000     1.397
+| (primitive '.names' combinational delay)                                        0.101     1.498
+dly_tap_val_inv_buf[0].out[0] (.names at (11,2))                                      0.000     1.498
+| (intra 'clb' routing)                                                           0.000     1.498
+| (OPIN:67660 side: (TOP,) (11,2,0))                                              0.000     1.498
+| (CHANX:148045 L1 length:1 (11,2,0-> (11,2,0))                                   0.061     1.559
+| (CHANY:155387 L4 length:2 (10,2,0-> (10,1,0))                                   0.119     1.678
+| (CHANX:145020 L1 length:1 (11,0,0-> (11,0,0))                                   0.061     1.739
+| (CHANY:155828 L4 length:2 (11,1,0-> (11,2,0))                                   0.119     1.858
+| (IPIN:30438 side: (RIGHT,) (11,1,0))                                            0.101     1.958
+| (intra 'io' routing)                                                            0.516     2.474
+out:dly_tap_val_inv_buf[0].outpad[0] (.output at (11,1))                             -0.000     2.474
+data arrival time                                                                           2.474
+
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+clock uncertainty                                                                 0.000     0.000
+output external delay                                                             0.000     0.000
+data required time                                                                          0.000
+-------------------------------------------------------------------------------------------------
+data required time                                                                         -0.000
+data arrival time                                                                           2.474
+-------------------------------------------------------------------------------------------------
+slack (MET)                                                                                 2.474
+
+
+#Path 12
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[1].inpad[0] (.input at (11,1) clocked by virtual_io_clock)
+Endpoint  : out:dly_tap_val_inv_buf[1].outpad[0] (.output at (11,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                              Incr      Path
+-------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+input external delay                                                              0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[1].inpad[0] (.input at (11,1))                       0.000     0.000
+| (intra 'io' routing)                                                            0.779     0.779
+| (OPIN:30255 side: (TOP,) (11,1,0))                                              0.000     0.779
+| (CHANX:146550 L1 length:1 (11,1,0-> (11,1,0))                                   0.061     0.840
+| (CHANY:155866 L4 length:3 (11,2,0-> (11,4,0))                                   0.119     0.959
+| (CHANX:148031 L1 length:1 (11,2,0-> (11,2,0))                                   0.061     1.020
+| (IPIN:67680 side: (TOP,) (11,2,0))                                              0.101     1.121
+| (intra 'clb' routing)                                                           0.066     1.187
+dly_tap_val[1].in[0] (.names at (11,2))                                           0.000     1.187
+| (primitive '.names' combinational delay)                                        0.154     1.341
+dly_tap_val[1].out[0] (.names at (11,2))                                          0.000     1.341
+| (intra 'clb' routing)                                                           0.066     1.408
+dly_tap_val_inv_buf[1].in[0] (.names at (11,2))                                       0.000     1.408
+| (primitive '.names' combinational delay)                                        0.154     1.562
+dly_tap_val_inv_buf[1].out[0] (.names at (11,2))                                      0.000     1.562
+| (intra 'clb' routing)                                                           0.000     1.562
+| (OPIN:67653 side: (TOP,) (11,2,0))                                              0.000     1.562
+| (CHANX:148078 L4 length:4 (11,2,0-> (14,2,0))                                   0.119     1.681
+| (CHANY:156543 L1 length:1 (13,2,0-> (13,2,0))                                   0.061     1.742
+| (CHANX:146515 L4 length:4 (13,1,0-> (10,1,0))                                   0.119     1.861
+| (IPIN:30398 side: (TOP,) (11,1,0))                                              0.101     1.962
+| (intra 'io' routing)                                                            0.516     2.477
+out:dly_tap_val_inv_buf[1].outpad[0] (.output at (11,1))                              0.000     2.477
+data arrival time                                                                           2.477
+
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+clock uncertainty                                                                 0.000     0.000
+output external delay                                                             0.000     0.000
+data required time                                                                          0.000
+-------------------------------------------------------------------------------------------------
+data required time                                                                         -0.000
+data arrival time                                                                           2.477
+-------------------------------------------------------------------------------------------------
+slack (MET)                                                                                 2.477
+
+
+#Path 13
+Startpoint: dly_adj_buf.inpad[0] (.input at (1,2) clocked by virtual_io_clock)
+Endpoint  : out:$f2g_trx_dly_adj_buf_dly_adj_buf_inv.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                Incr      Path
+---------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                  0.000     0.000
+clock source latency                                                                0.000     0.000
+input external delay                                                                0.000     0.000
+dly_adj_buf.inpad[0] (.input at (1,2))                                                  0.000     0.000
+| (intra 'io' routing)                                                              0.779     0.779
+| (OPIN:64803 side: (TOP,) (1,2,0))                                                 0.000     0.779
+| (CHANX:147295 L1 length:1 (1,2,0-> (1,2,0))                                       0.061     0.840
+| (CHANY:152028 L1 length:1 (0,3,0-> (0,3,0))                                       0.061     0.901
+| (CHANX:148944 L4 length:4 (1,3,0-> (4,3,0))                                       0.119     1.020
+| (CHANY:153357 L4 length:3 (4,3,0-> (4,1,0))                                       0.119     1.139
+| (CHANX:147597 L1 length:1 (4,2,0-> (4,2,0))                                       0.061     1.200
+| (IPIN:66630 side: (TOP,) (4,2,0))                                                 0.101     1.301
+| (intra 'clb' routing)                                                             0.066     1.367
+dly_adj_buf_inv.in[0] (.names at (4,2))                                                -0.000     1.367
+| (primitive '.names' combinational delay)                                          0.154     1.521
+dly_adj_buf_inv.out[0] (.names at (4,2))                                                0.000     1.521
+| (intra 'clb' routing)                                                             0.066     1.588
+$f2g_trx_dly_adj_buf_dly_adj_buf_inv.in[0] (.names at (4,2))                                0.000     1.588
+| (primitive '.names' combinational delay)                                          0.065     1.652
+$f2g_trx_dly_adj_buf_dly_adj_buf_inv.out[0] (.names at (4,2))                               0.000     1.652
+| (intra 'clb' routing)                                                             0.000     1.652
+| (OPIN:66593 side: (TOP,) (4,2,0))                                                 0.000     1.652
+| (CHANX:147608 L4 length:4 (4,2,0-> (7,2,0))                                       0.119     1.771
+| (CHANY:153723 L1 length:1 (5,2,0-> (5,2,0))                                       0.061     1.832
+| (CHANX:146007 L4 length:4 (5,1,0-> (2,1,0))                                       0.119     1.951
+| (IPIN:10229 side: (TOP,) (4,1,0))                                                 0.101     2.052
+| (intra 'io' routing)                                                              0.516     2.568
+out:$f2g_trx_dly_adj_buf_dly_adj_buf_inv.outpad[0] (.output at (4,1))                      -0.000     2.568
+data arrival time                                                                             2.568
+
+clock virtual_io_clock (rise edge)                                                  0.000     0.000
+clock source latency                                                                0.000     0.000
+clock uncertainty                                                                   0.000     0.000
+output external delay                                                               0.000     0.000
+data required time                                                                            0.000
+---------------------------------------------------------------------------------------------------
+data required time                                                                           -0.000
+data arrival time                                                                             2.568
+---------------------------------------------------------------------------------------------------
+slack (MET)                                                                                   2.568
+
+
+#Path 14
+Startpoint: $f2g_trx_dly_tap_dly_tap_val[2].inpad[0] (.input at (11,1) clocked by virtual_io_clock)
+Endpoint  : out:dly_tap_val_inv_buf[2].outpad[0] (.output at (11,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                              Incr      Path
+-------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+input external delay                                                              0.000     0.000
+$f2g_trx_dly_tap_dly_tap_val[2].inpad[0] (.input at (11,1))                       0.000     0.000
+| (intra 'io' routing)                                                            0.779     0.779
+| (OPIN:30285 side: (TOP,) (11,1,0))                                              0.000     0.779
+| (CHANX:146547 L1 length:1 (11,1,0-> (11,1,0))                                   0.061     0.840
+| (CHANY:155504 L1 length:1 (10,2,0-> (10,2,0))                                   0.061     0.901
+| (CHANX:148060 L4 length:4 (11,2,0-> (14,2,0))                                   0.119     1.020
+| (IPIN:67677 side: (TOP,) (11,2,0))                                              0.101     1.121
+| (intra 'clb' routing)                                                           0.066     1.187
+dly_tap_val[2].in[0] (.names at (11,2))                                           0.000     1.187
+| (primitive '.names' combinational delay)                                        0.154     1.341
+dly_tap_val[2].out[0] (.names at (11,2))                                          0.000     1.341
+| (intra 'clb' routing)                                                           0.066     1.408
+dly_tap_val_inv_buf[2].in[0] (.names at (11,2))                                       0.000     1.408
+| (primitive '.names' combinational delay)                                        0.144     1.551
+dly_tap_val_inv_buf[2].out[0] (.names at (11,2))                                      0.000     1.551
+| (intra 'clb' routing)                                                           0.000     1.551
+| (OPIN:67657 side: (TOP,) (11,2,0))                                              0.000     1.551
+| (CHANX:148070 L4 length:4 (11,2,0-> (14,2,0))                                   0.119     1.670
+| (CHANX:148130 L4 length:4 (12,2,0-> (15,2,0))                                   0.119     1.789
+| (CHANY:156215 L1 length:1 (12,2,0-> (12,2,0))                                   0.061     1.850
+| (CHANX:146427 L4 length:4 (12,1,0-> (9,1,0))                                    0.119     1.969
+| (IPIN:30413 side: (TOP,) (11,1,0))                                              0.101     2.070
+| (intra 'io' routing)                                                            0.516     2.585
+out:dly_tap_val_inv_buf[2].outpad[0] (.output at (11,1))                              0.000     2.585
+data arrival time                                                                           2.585
+
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+clock uncertainty                                                                 0.000     0.000
+output external delay                                                             0.000     0.000
+data required time                                                                          0.000
+-------------------------------------------------------------------------------------------------
+data required time                                                                         -0.000
+data arrival time                                                                           2.585
+-------------------------------------------------------------------------------------------------
+slack (MET)                                                                                 2.585
+
+
+#Path 15
+Startpoint: dly_incdec_buf.inpad[0] (.input at (1,2) clocked by virtual_io_clock)
+Endpoint  : out:$f2g_trx_dly_inc_dly_incdec_buf_inv.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                                   Incr      Path
+------------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                     0.000     0.000
+clock source latency                                                                   0.000     0.000
+input external delay                                                                   0.000     0.000
+dly_incdec_buf.inpad[0] (.input at (1,2))                                                  0.000     0.000
+| (intra 'io' routing)                                                                 0.779     0.779
+| (OPIN:64858 side: (TOP,) (1,2,0))                                                    0.000     0.779
+| (CHANX:147372 L4 length:2 (1,2,0-> (2,2,0))                                          0.119     0.898
+| (CHANX:147488 L4 length:4 (2,2,0-> (5,2,0))                                          0.119     1.017
+| (CHANY:153397 L1 length:1 (4,2,0-> (4,2,0))                                          0.061     1.078
+| (IPIN:66662 side: (RIGHT,) (4,2,0))                                                  0.101     1.179
+| (intra 'clb' routing)                                                                0.066     1.245
+dly_incdec_buf_inv.in[0] (.names at (4,2))                                                 0.000     1.245
+| (primitive '.names' combinational delay)                                             0.099     1.344
+dly_incdec_buf_inv.out[0] (.names at (4,2))                                                0.000     1.344
+| (intra 'clb' routing)                                                                0.000     1.344
+| (OPIN:66615 side: (RIGHT,) (4,2,0))                                                  0.000     1.344
+| (CHANY:153388 L1 length:1 (4,2,0-> (4,2,0))                                          0.061     1.405
+| (IPIN:66658 side: (RIGHT,) (4,2,0))                                                  0.101     1.506
+| (intra 'clb' routing)                                                                0.066     1.572
+$f2g_trx_dly_inc_dly_incdec_buf_inv.in[0] (.names at (4,2))                                0.000     1.572
+| (primitive '.names' combinational delay)                                             0.144     1.716
+$f2g_trx_dly_inc_dly_incdec_buf_inv.out[0] (.names at (4,2))                               0.000     1.716
+| (intra 'clb' routing)                                                                0.000     1.716
+| (OPIN:66614 side: (RIGHT,) (4,2,0))                                                  0.000     1.716
+| (CHANY:153402 L4 length:3 (4,2,0-> (4,4,0))                                          0.119     1.834
+| (CHANX:147646 L1 length:1 (5,2,0-> (5,2,0))                                          0.061     1.895
+| (CHANY:153725 L1 length:1 (5,2,0-> (5,2,0))                                          0.061     1.956
+| (CHANX:146005 L4 length:4 (5,1,0-> (2,1,0))                                          0.119     2.075
+| (IPIN:10225 side: (TOP,) (4,1,0))                                                    0.101     2.176
+| (intra 'io' routing)                                                                 0.516     2.692
+out:$f2g_trx_dly_inc_dly_incdec_buf_inv.outpad[0] (.output at (4,1))                       0.000     2.692
+data arrival time                                                                                2.692
+
+clock virtual_io_clock (rise edge)                                                     0.000     0.000
+clock source latency                                                                   0.000     0.000
+clock uncertainty                                                                      0.000     0.000
+output external delay                                                                  0.000     0.000
+data required time                                                                               0.000
+------------------------------------------------------------------------------------------------------
+data required time                                                                              -0.000
+data arrival time                                                                                2.692
+------------------------------------------------------------------------------------------------------
+slack (MET)                                                                                      2.692
+
+
+#Path 16
+Startpoint: dly_ld_buf.inpad[0] (.input at (1,2) clocked by virtual_io_clock)
+Endpoint  : out:$f2g_trx_dly_ld_buf_dly_ld_buf_inv.outpad[0] (.output at (4,1) clocked by virtual_io_clock)
+Path Type : hold
+
+Point                                                                              Incr      Path
+-------------------------------------------------------------------------------------------------
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+input external delay                                                              0.000     0.000
+dly_ld_buf.inpad[0] (.input at (1,2))                                                 0.000     0.000
+| (intra 'io' routing)                                                            0.779     0.779
+| (OPIN:64802 side: (TOP,) (1,2,0))                                               0.000     0.779
+| (CHANX:147388 L4 length:2 (1,2,0-> (2,2,0))                                     0.119     0.898
+| (CHANX:147500 L4 length:4 (2,2,0-> (5,2,0))                                     0.119     1.017
+| (CHANY:153369 L1 length:1 (4,2,0-> (4,2,0))                                     0.061     1.078
+| (IPIN:66648 side: (RIGHT,) (4,2,0))                                             0.101     1.179
+| (intra 'clb' routing)                                                           0.066     1.245
+dly_ld_buf_inv.in[0] (.names at (4,2))                                                0.000     1.245
+| (primitive '.names' combinational delay)                                        0.144     1.389
+dly_ld_buf_inv.out[0] (.names at (4,2))                                               0.000     1.389
+| (intra 'clb' routing)                                                           0.066     1.455
+$f2g_trx_dly_ld_buf_dly_ld_buf_inv.in[0] (.names at (4,2))                                0.000     1.455
+| (primitive '.names' combinational delay)                                        0.154     1.609
+$f2g_trx_dly_ld_buf_dly_ld_buf_inv.out[0] (.names at (4,2))                               0.000     1.609
+| (intra 'clb' routing)                                                           0.000     1.609
+| (OPIN:66596 side: (TOP,) (4,2,0))                                               0.000     1.609
+| (CHANX:147583 L1 length:1 (4,2,0-> (4,2,0))                                     0.061     1.670
+| (CHANY:152979 L4 length:2 (3,2,0-> (3,1,0))                                     0.119     1.789
+| (CHANY:152859 L1 length:1 (3,1,0-> (3,1,0))                                     0.061     1.850
+| (CHANX:144572 L1 length:1 (4,0,0-> (4,0,0))                                     0.061     1.911
+| (CHANY:153364 L4 length:2 (4,1,0-> (4,2,0))                                     0.119     2.030
+| (CHANX:146103 L1 length:1 (4,1,0-> (4,1,0))                                     0.061     2.091
+| (IPIN:10239 side: (TOP,) (4,1,0))                                               0.101     2.192
+| (intra 'io' routing)                                                            0.516     2.707
+out:$f2g_trx_dly_ld_buf_dly_ld_buf_inv.outpad[0] (.output at (4,1))                       0.000     2.707
+data arrival time                                                                           2.707
+
+clock virtual_io_clock (rise edge)                                                0.000     0.000
+clock source latency                                                              0.000     0.000
+clock uncertainty                                                                 0.000     0.000
+output external delay                                                             0.000     0.000
+data required time                                                                          0.000
+-------------------------------------------------------------------------------------------------
+data required time                                                                         -0.000
+data arrival time                                                                           2.707
+-------------------------------------------------------------------------------------------------
+slack (MET)                                                                                 2.707
+
+
+#End of timing report
