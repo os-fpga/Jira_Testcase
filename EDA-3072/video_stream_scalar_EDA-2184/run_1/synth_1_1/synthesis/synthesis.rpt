@@ -1,0 +1,570 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.07
+Build    : 1.1.32
+Hash     : f231183
+Date     : Jul 19 2024
+Type     : Engineering
+Log Time   : Fri Jul 19 10:28:25 2024 GMT
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 d2189b06a, gcc 11.2.1 -fPIC -Os)
+
+
+-- Executing script file `video_stream_scalar_EDA-2184.ys' --
+
+1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+Parsing SystemVerilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v' to AST representation.
+Generating RTLIL representation for module `\BOOT_CLOCK'.
+Generating RTLIL representation for module `\CARRY'.
+Generating RTLIL representation for module `\CLK_BUF'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DSP19X2'.
+Generating RTLIL representation for module `\DSP38'.
+Generating RTLIL representation for module `\FCLK_BUF'.
+Generating RTLIL representation for module `\FIFO18KX2'.
+Generating RTLIL representation for module `\FIFO36K'.
+Generating RTLIL representation for module `\I_BUF_DS'.
+Generating RTLIL representation for module `\I_BUF'.
+Generating RTLIL representation for module `\I_DDR'.
+Generating RTLIL representation for module `\I_DELAY'.
+Generating RTLIL representation for module `\I_SERDES'.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\LUT5'.
+Generating RTLIL representation for module `\LUT6'.
+Generating RTLIL representation for module `\O_BUF_DS'.
+Generating RTLIL representation for module `\O_BUFT_DS'.
+Generating RTLIL representation for module `\O_BUFT'.
+Generating RTLIL representation for module `\O_BUF'.
+Generating RTLIL representation for module `\O_DDR'.
+Generating RTLIL representation for module `\O_DELAY'.
+Generating RTLIL representation for module `\O_SERDES_CLK'.
+Generating RTLIL representation for module `\O_SERDES'.
+Generating RTLIL representation for module `\PLL'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_M'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AHB_S'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M0'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_AXI_M1'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_DMA'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_IRQ'.
+Generating RTLIL representation for module `\SOC_FPGA_INTF_JTAG'.
+Generating RTLIL representation for module `\SOC_FPGA_TEMPERATURE'.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Generating RTLIL representation for module `\LATCH'.
+Generating RTLIL representation for module `\LATCHN'.
+Generating RTLIL representation for module `\LATCHR'.
+Generating RTLIL representation for module `\LATCHS'.
+Generating RTLIL representation for module `\LATCHNR'.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v' to AST representation.
+Generating RTLIL representation for module `\streamScaler'.
+Generating RTLIL representation for module `\ramFifo'.
+/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:624: Warning: Range [0:-1] select out of bounds on signal `\readSelect': Setting 1 LSB bits to undef.
+Generating RTLIL representation for module `\ramDualPort'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v
+Parsing Verilog input from `/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v' to AST representation.
+Generating RTLIL representation for module `\streamScaler_sr_top'.
+Successfully finished Verilog frontend.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     \streamScaler
+Used module:         \ramFifo
+Used module:             \ramDualPort
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Parameter \BUFFER_SIZE = 4
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\ramFifo'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Parameter \BUFFER_SIZE = 4
+Generating RTLIL representation for module `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 8
+
+4.3. Executing AST frontend in derive mode using pre-parsed AST for module `\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 8
+Generating RTLIL representation for module `$paramod$b098088021a308c8eb75e64cabf8851707a43e74\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 8
+Found cached RTLIL representation for module `$paramod$b098088021a308c8eb75e64cabf8851707a43e74\ramDualPort'.
+Reprocessing module ramFifo because instantiated module ramDualPort has become available.
+Generating RTLIL representation for module `\ramFifo'.
+/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:624: Warning: Range [0:-1] select out of bounds on signal `\readSelect': Setting 1 LSB bits to undef.
+Parameter \DATA_WIDTH = 8
+Parameter \CHANNELS = 1
+Parameter \DISCARD_CNT_WIDTH = 8
+Parameter \INPUT_X_RES_WIDTH = 11
+Parameter \INPUT_Y_RES_WIDTH = 11
+Parameter \OUTPUT_X_RES_WIDTH = 11
+Parameter \OUTPUT_Y_RES_WIDTH = 11
+Parameter \FRACTION_BITS = 8
+Parameter \SCALE_INT_BITS = 4
+Parameter \SCALE_FRAC_BITS = 14
+Parameter \BUFFER_SIZE = 4
+Parameter \COEFF_WIDTH = 9
+Parameter \SCALE_BITS = 18
+Parameter \BUFFER_SIZE_WIDTH = 3
+
+4.4. Executing AST frontend in derive mode using pre-parsed AST for module `\streamScaler'.
+Parameter \DATA_WIDTH = 8
+Parameter \CHANNELS = 1
+Parameter \DISCARD_CNT_WIDTH = 8
+Parameter \INPUT_X_RES_WIDTH = 11
+Parameter \INPUT_Y_RES_WIDTH = 11
+Parameter \OUTPUT_X_RES_WIDTH = 11
+Parameter \OUTPUT_Y_RES_WIDTH = 11
+Parameter \FRACTION_BITS = 8
+Parameter \SCALE_INT_BITS = 4
+Parameter \SCALE_FRAC_BITS = 14
+Parameter \BUFFER_SIZE = 4
+Parameter \COEFF_WIDTH = 9
+Parameter \SCALE_BITS = 18
+Parameter \BUFFER_SIZE_WIDTH = 3
+Generating RTLIL representation for module `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler'.
+
+4.5. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         \ramFifo
+Used module:             \ramDualPort
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 8
+Found cached RTLIL representation for module `$paramod$b098088021a308c8eb75e64cabf8851707a43e74\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 8
+Found cached RTLIL representation for module `$paramod$b098088021a308c8eb75e64cabf8851707a43e74\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Parameter \BUFFER_SIZE = 4
+Found cached RTLIL representation for module `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo'.
+
+4.6. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo
+Used module:             \ramDualPort
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+
+4.7. Executing AST frontend in derive mode using pre-parsed AST for module `\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Generating RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Reprocessing module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo because instantiated module $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort has become available.
+Generating RTLIL representation for module `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo'.
+
+4.8. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo
+Used module:             \ramDualPort
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+Parameter \DATA_WIDTH = 8
+Parameter \ADDRESS_WIDTH = 11
+Found cached RTLIL representation for module `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort'.
+
+4.9. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo
+Used module:             $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort
+
+4.10. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo
+Used module:             $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort
+Removing unused module `\ramFifo'.
+Removing unused module `\ramDualPort'.
+Removing unused module `$paramod$b098088021a308c8eb75e64cabf8851707a43e74\ramDualPort'.
+Removing unused module `\streamScaler'.
+Removed 4 unused modules.
+
+5. Executing synth_rs pass: v0.4.218
+
+5.1. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/common/cells_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/common/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\inv'.
+Generating RTLIL representation for module `\buff'.
+Generating RTLIL representation for module `\logic_0'.
+Generating RTLIL representation for module `\logic_1'.
+Generating RTLIL representation for module `\gclkbuff'.
+Successfully finished Verilog frontend.
+
+5.2. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v' to AST representation.
+Replacing existing blackbox module `\CARRY' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CARRY.v:10.1-19.10.
+Generating RTLIL representation for module `\CARRY'.
+Successfully finished Verilog frontend.
+
+5.3. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v' to AST representation.
+Replacing existing blackbox module `\LATCH' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:20.1-34.10.
+Generating RTLIL representation for module `\LATCH'.
+Replacing existing blackbox module `\LATCHN' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:48.1-62.10.
+Generating RTLIL representation for module `\LATCHN'.
+Replacing existing blackbox module `\LATCHR' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:81.1-97.10.
+Generating RTLIL representation for module `\LATCHR'.
+Replacing existing blackbox module `\LATCHS' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:115.1-131.10.
+Generating RTLIL representation for module `\LATCHS'.
+Replacing existing blackbox module `\LATCHNR' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:150.1-166.10.
+Generating RTLIL representation for module `\LATCHNR'.
+Replacing existing blackbox module `\LATCHNS' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/llatches_sim.v:184.1-200.10.
+Generating RTLIL representation for module `\LATCHNS'.
+Generating RTLIL representation for module `\LATCHSRE'.
+Generating RTLIL representation for module `\LATCHNSRE'.
+Successfully finished Verilog frontend.
+
+5.4. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v' to AST representation.
+Replacing existing blackbox module `\DFFRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFRE'.
+Successfully finished Verilog frontend.
+
+5.5. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v' to AST representation.
+Replacing existing blackbox module `\DFFNRE' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DFFNRE.v:11.1-25.10.
+Generating RTLIL representation for module `\DFFNRE'.
+Successfully finished Verilog frontend.
+
+5.6. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v' to AST representation.
+Replacing existing blackbox module `\LUT1' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT1.v:10.1-20.10.
+Generating RTLIL representation for module `\LUT1'.
+Successfully finished Verilog frontend.
+
+5.7. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v' to AST representation.
+Replacing existing blackbox module `\LUT2' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT2.v:10.1-21.10.
+Generating RTLIL representation for module `\LUT2'.
+Successfully finished Verilog frontend.
+
+5.8. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v' to AST representation.
+Replacing existing blackbox module `\LUT3' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT3.v:10.1-22.10.
+Generating RTLIL representation for module `\LUT3'.
+Successfully finished Verilog frontend.
+
+5.9. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v' to AST representation.
+Replacing existing blackbox module `\LUT4' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT4.v:11.1-25.10.
+Generating RTLIL representation for module `\LUT4'.
+Successfully finished Verilog frontend.
+
+5.10. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v' to AST representation.
+Replacing existing blackbox module `\LUT5' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT5.v:10.1-24.10.
+Generating RTLIL representation for module `\LUT5'.
+Successfully finished Verilog frontend.
+
+5.11. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v' to AST representation.
+Replacing existing blackbox module `\LUT6' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/LUT6.v:10.1-25.10.
+Generating RTLIL representation for module `\LUT6'.
+Successfully finished Verilog frontend.
+
+5.12. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v' to AST representation.
+Replacing existing blackbox module `\CLK_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/CLK_BUF.v:10.1-17.10.
+Generating RTLIL representation for module `\CLK_BUF'.
+Successfully finished Verilog frontend.
+
+5.13. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v' to AST representation.
+Replacing existing blackbox module `\O_BUF' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUF.v:10.1-22.10.
+Generating RTLIL representation for module `\O_BUF'.
+Successfully finished Verilog frontend.
+
+5.14. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v' to AST representation.
+Replacing existing blackbox module `\DSP38' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v:10.1-339.10.
+Generating RTLIL representation for module `\DSP38'.
+Successfully finished Verilog frontend.
+
+5.15. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v' to AST representation.
+Replacing existing blackbox module `\TDP_RAM36K' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:2.1-29.10.
+Generating RTLIL representation for module `\TDP_RAM36K'.
+Replacing existing blackbox module `\TDP_RAM18KX2' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:33.1-84.10.
+Generating RTLIL representation for module `\TDP_RAM18KX2'.
+Generating RTLIL representation for module `\RS_DSP3'.
+Replacing existing blackbox module `\DSP19X2' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/bram_map_rs.v:116.1-149.10.
+Generating RTLIL representation for module `\DSP19X2'.
+Successfully finished Verilog frontend.
+
+5.16. Executing Verilog-2005 frontend: /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v
+Parsing Verilog input from `/nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v' to AST representation.
+Generating RTLIL representation for module `\TDP_BRAM18'.
+Replacing existing blackbox module `\BRAM2x18_TDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:112.1-540.10.
+Generating RTLIL representation for module `\BRAM2x18_TDP'.
+Replacing existing blackbox module `\BRAM2x18_SDP' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:542.1-951.10.
+Generating RTLIL representation for module `\BRAM2x18_SDP'.
+Replacing existing blackbox module `\_$_mem_v2_asymmetric' at /nfs_eda_sw/softwares/Raptor/instl_dir/07_19_2024_09_15_02/bin/../share/yosys/rapidsilicon/genesis3/brams_sim.v:953.1-1356.10.
+Generating RTLIL representation for module `\_$_mem_v2_asymmetric'.
+Successfully finished Verilog frontend.
+
+5.17. Executing HIERARCHY pass (managing design hierarchy).
+
+5.17.1. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo
+Used module:             $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort
+
+5.17.2. Analyzing design hierarchy..
+Top module:  \streamScaler_sr_top
+Used module:     $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler
+Used module:         $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo
+Used module:             $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort
+Removed 0 unused modules.
+
+5.18. Executing PROC pass (convert processes to netlists).
+
+5.18.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.18.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed 1 dead cases from process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$566 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$566 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Removed 1 dead cases from process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$563 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$563 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Removed 1 dead cases from process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$560 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$560 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Removed 1 dead cases from process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$557 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$557 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 6 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:686$512 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:630$509 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 2 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:612$508 in module $paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448 in module $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.
+Marked 4 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:443$417 in module $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.
+Marked 2 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:396$408 in module $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.
+Marked 2 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:293$385 in module $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:252$362 in module $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.
+Marked 5 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:151$336 in module $paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:747$468 in module $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort.
+Marked 1 switch rules as full_case in process $proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:733$460 in module $paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort.
+Removed a total of 4 dead cases.
+
+5.18.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 23 redundant assignments.
+Promoted 28 assignments to connections.
+
+5.18.4. Executing PROC_INIT pass (extract init attributes).
+
+5.18.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:686$512'.
+Found async reset \rst in `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:630$509'.
+Found async reset \rst in `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:612$508'.
+Found async reset \rst in `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+Found async reset \rst in `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:293$385'.
+Found async reset \rst in `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:252$362'.
+
+5.18.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~40 debug messages>
+
+5.18.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$566'.
+     1/1: $1$mem2reg_rd$\ramDataOutB$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:683$507_DATA[7:0]$568
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$563'.
+     1/1: $1$mem2reg_rd$\ramDataOutB$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:682$506_DATA[7:0]$565
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$560'.
+     1/1: $1$mem2reg_rd$\ramDataOutA$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:681$505_DATA[7:0]$562
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$557'.
+     1/1: $1$mem2reg_rd$\ramDataOutA$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:680$504_DATA[7:0]$559
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:686$512'.
+     1/1: $0\fillCount[2:0]
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:630$509'.
+     1/1: $0\writeSelect[3:0]
+Creating decoders for process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:612$508'.
+     1/1: $0\readSelect[3:0]
+Creating decoders for process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+     1/9: $0\dOut[7:0]
+     2/9: $0\product11[16:0]
+     3/9: $0\product10[16:0]
+     4/9: $0\product01[16:0]
+     5/9: $0\product00[16:0]
+     6/9: $0\readData11Reg[7:0]
+     7/9: $0\readData10Reg[7:0]
+     8/9: $0\readData01Reg[7:0]
+     9/9: $0\readData00Reg[7:0]
+Creating decoders for process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:443$417'.
+     1/8: $0\forceRead[0:0]
+     2/8: $0\enableNextDin[0:0]
+     3/8: $0\writeColCount[10:0]
+     4/8: $0\writeState[1:0]
+     5/8: $0\discardCountReg[7:0]
+     6/8: $0\discardInput[0:0]
+     7/8: $0\writeRowCount[10:0]
+     8/8: $0\readyForRead[0:0]
+Creating decoders for process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:396$408'.
+     1/4: $0\getNextPlusOne[0:0]
+     2/4: $0\writeOutputLine[10:0]
+     3/4: $0\writeNextPlusOne[10:0]
+     4/4: $0\writeNextValidLine[10:0]
+Creating decoders for process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:293$385'.
+     1/5: $0\coeff11[8:0]
+     2/5: $0\coeff10[8:0]
+     3/5: $0\coeff01[8:0]
+     4/5: $0\coeff00[8:0]
+     5/5: $0\xBlend[8:0]
+Creating decoders for process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:252$362'.
+     1/4: $0\dOutValid[0:0]
+     2/4: $0\dOutValid_3[0:0]
+     3/4: $0\dOutValid_2[0:0]
+     4/4: $0\dOutValid_1[0:0]
+Creating decoders for process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:151$336'.
+     1/10: $0\yScaleAmountNext[24:0]
+     2/10: $0\readState[0:0]
+     3/10: $0\dOutValidInt[0:0]
+     4/10: $0\lineSwitchOutputDisable[0:0]
+     5/10: $0\yScaleAmount[24:0]
+     6/10: $0\xScaleAmount[24:0]
+     7/10: $0\outputColumn[10:0]
+     8/10: $0\outputLine[10:0]
+     9/10: $0\advanceRead2[0:0]
+    10/10: $0\advanceRead1[0:0]
+Creating decoders for process `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:747$468'.
+     1/4: $0\qB[7:0]
+     2/4: $1$memwr$\ram$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:751$459_EN[7:0]$472
+     3/4: $1$memwr$\ram$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:751$459_DATA[7:0]$473
+     4/4: $1$memwr$\ram$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:751$459_ADDR[10:0]$474
+Creating decoders for process `$paramod$18cb21fb90708fc6090f5cc5f35688a6f5908992\ramDualPort.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:733$460'.
+     1/4: $0\qA[7:0]
+     2/4: $1$memwr$\ram$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:737$458_EN[7:0]$464
+     3/4: $1$memwr$\ram$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:737$458_DATA[7:0]$465
+     4/4: $1$memwr$\ram$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:737$458_ADDR[10:0]$466
+
+5.18.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutA[1]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutA[2]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutB[1]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutB[2]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutA[4]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutA[8]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutB[4]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\ramDataOutB[8]' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$569'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$mem2reg_rd$\ramDataOutB$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:683$507_DATA' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$566'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$mem2reg_rd$\ramDataOutB$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:682$506_DATA' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$563'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$mem2reg_rd$\ramDataOutA$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:681$505_DATA' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$560'.
+No latch inferred for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$mem2reg_rd$\ramDataOutA$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:680$504_DATA' from process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:0$557'.
+
+5.18.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\streamScaler_sr_top.\dIn_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$963' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\inputDiscardCnt_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$964' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\inputXRes_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$965' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\inputYRes_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$966' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\outputXRes_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$967' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\outputYRes_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$968' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\xScale_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$969' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\yScale_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$970' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\leftOffset_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$971' with positive edge clock.
+Creating register for signal `\streamScaler_sr_top.\topFracOffset_reg' using process `\streamScaler_sr_top.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler_sr_top.v:117$188'.
+  created $dff cell `$procdff$972' with positive edge clock.
+Creating register for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\fillCount' using process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:686$512'.
+  created $adff cell `$procdff$973' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\writeSelect' using process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:630$509'.
+  created $adff cell `$procdff$974' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.\readSelect' using process `$paramod$860786f6f2fd7b12cd3bf751c52138cfca08ba9b\ramFifo.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:612$508'.
+  created $adff cell `$procdff$975' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\dOut' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$976' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\readData00Reg' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$977' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\readData01Reg' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$978' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\readData10Reg' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$979' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\readData11Reg' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$980' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\product00' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$981' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\product01' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$982' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\product10' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$983' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\product11' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:335$448'.
+  created $adff cell `$procdff$984' with positive edge clock and positive level reset.
+Creating register for signal `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.\readyForRead' using process `$paramod$35d7ee669ab3f736185a188d54797f87db819916\streamScaler.$proc$/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os_fpga2/Validation/RTL_testcases/jira_testcases/video_stream_scaler_EDA-2184/results_dir/.././rtl/scaler.v:443$417'.
+ERROR: Multiple edge sensitive events found for this signal!
