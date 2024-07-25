@@ -1,0 +1,5681 @@
+#! /opt/iverilog/bin/vvp -v
+:ivl_version "13.0 (devel)" "(s20221226-498-g52d049b51)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/system.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/v2005_math.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/va_math.vpi";
+:vpi_module "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/bin/HDL_simulator/iverilog/lib/ivl/v2009.vpi";
+S_0x2cf5b80 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x2d0f4e0 .scope module, "co_sim_GJC4_updated" "co_sim_GJC4_updated" 3 2;
+ .timescale -9 -12;
+v0x272d190_0 .var "a", 19 0;
+v0x272abf0_0 .var "b", 17 0;
+v0x2748860_0 .var "feedback", 2 0;
+v0x2c52dd0_0 .var/i "mismatch", 31 0;
+v0x2c50630_0 .var "unsigned_a", 0 0;
+v0x2ce23f0_0 .var "unsigned_b", 0 0;
+v0x29d2530_0 .net "z_mult", 37 0, L_0x2ab8030;  1 drivers
+v0x27470c0_0 .net "z_mult_netlist", 37 0, L_0x2c57070;  1 drivers
+S_0x2cf3600 .scope begin, "$ivl_for_loop1" "$ivl_for_loop1" 3 25, 3 25 0, S_0x2d0f4e0;
+ .timescale -9 -12;
+v0x2c97340_0 .var/2s "i", 31 0;
+S_0x2cf0ef0 .scope task, "compare" "compare" 3 51, 3 51 0, S_0x2d0f4e0;
+ .timescale -9 -12;
+TD_co_sim_GJC4_updated.compare ;
+    %load/vec4 v0x29d2530_0;
+    %load/vec4 v0x27470c0_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.0, 6;
+    %vpi_call/w 3 53 "$display", "Data Mismatch: Actual output: %0d, Netlist Output %0d, Time: %0t ", v0x29d2530_0, v0x27470c0_0, $time {0 0 0};
+    %load/vec4 v0x2c52dd0_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x2c52dd0_0, 0, 32;
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call/w 3 57 "$display", "Data Matched: Actual output: %0d, Netlist Output %0d, Time: %0t ", v0x29d2530_0, v0x27470c0_0, $time {0 0 0};
+T_0.1 ;
+    %end;
+S_0x2cee7e0 .scope module, "golden" "GJC4_updated" 3 11, 4 2 0, S_0x2d0f4e0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 20 "a";
+    .port_info 1 /INPUT 18 "b";
+    .port_info 2 /INPUT 3 "feedback";
+    .port_info 3 /INPUT 1 "unsigned_a";
+    .port_info 4 /INPUT 1 "unsigned_b";
+    .port_info 5 /OUTPUT 38 "z_mult";
+v0x276b050_0 .net "a", 19 0, v0x272d190_0;  1 drivers
+v0x276b1a0_0 .net "b", 17 0, v0x272abf0_0;  1 drivers
+v0x276b2f0_0 .net "feedback", 2 0, v0x2748860_0;  1 drivers
+v0x276c5d0_0 .net "unsigned_a", 0 0, v0x2c50630_0;  1 drivers
+v0x276c720_0 .net "unsigned_b", 0 0, v0x2ce23f0_0;  1 drivers
+v0x276c870_0 .net "z_mult", 37 0, L_0x2ab8030;  alias, 1 drivers
+S_0x2cec0d0 .scope module, "dut_mult" "DSP38" 4 14, 5 10 1, S_0x2cee7e0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 20 "A";
+    .port_info 1 /INPUT 18 "B";
+    .port_info 2 /INPUT 6 "ACC_FIR";
+    .port_info 3 /OUTPUT 38 "Z";
+    .port_info 4 /OUTPUT 18 "DLY_B";
+    .port_info 5 /INPUT 1 "CLK";
+    .port_info 6 /INPUT 1 "RESET";
+    .port_info 7 /INPUT 3 "FEEDBACK";
+    .port_info 8 /INPUT 1 "LOAD_ACC";
+    .port_info 9 /INPUT 1 "SATURATE";
+    .port_info 10 /INPUT 6 "SHIFT_RIGHT";
+    .port_info 11 /INPUT 1 "ROUND";
+    .port_info 12 /INPUT 1 "SUBTRACT";
+    .port_info 13 /INPUT 1 "UNSIGNED_A";
+    .port_info 14 /INPUT 1 "UNSIGNED_B";
+P_0x2d0ac50 .param/l "COEFF_0" 0 5 12, C4<00000000000000000000>;
+P_0x2d0ac90 .param/l "COEFF_1" 0 5 13, C4<00000000000000000000>;
+P_0x2d0acd0 .param/l "COEFF_2" 0 5 14, C4<00000000000000000000>;
+P_0x2d0ad10 .param/l "COEFF_3" 0 5 15, C4<00000000000000000000>;
+P_0x2d0ad50 .param/str "DSP_MODE" 0 5 11, "MULTIPLY";
+P_0x2d0ad90 .param/str "INPUT_REG_EN" 0 5 17, "FALSE";
+P_0x2d0add0 .param/str "OUTPUT_REG_EN" 0 5 16, "FALSE";
+L_0x2ab8030 .functor BUFZ 38, v0x2769c20_0, C4<00000000000000000000000000000000000000>, C4<00000000000000000000000000000000000000>, C4<00000000000000000000000000000000000000>;
+v0x29b8270_0 .net "A", 19 0, v0x272d190_0;  alias, 1 drivers
+o0x7f287c7dc078 .functor BUFZ 6, c4<zzzzzz>; HiZ drive
+v0x29c0790_0 .net "ACC_FIR", 5 0, o0x7f287c7dc078;  0 drivers
+v0x29c05e0_0 .net "B", 17 0, v0x272abf0_0;  alias, 1 drivers
+o0x7f287c7dc0d8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x2aa3320_0 .net "CLK", 0 0, o0x7f287c7dc0d8;  0 drivers
+v0x2aa2f00_0 .var "DLY_B", 17 0;
+v0x29c6e50_0 .net "FEEDBACK", 2 0, v0x2748860_0;  alias, 1 drivers
+o0x7f287c7dc168 .functor BUFZ 1, c4<z>; HiZ drive
+v0x29ca1f0_0 .net "LOAD_ACC", 0 0, o0x7f287c7dc168;  0 drivers
+o0x7f287c7dc198 .functor BUFZ 1, c4<z>; HiZ drive
+v0x29ca350_0 .net "RESET", 0 0, o0x7f287c7dc198;  0 drivers
+o0x7f287c7dc1c8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x2829830_0 .net "ROUND", 0 0, o0x7f287c7dc1c8;  0 drivers
+o0x7f287c7dc1f8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x2828b40_0 .net "SATURATE", 0 0, o0x7f287c7dc1f8;  0 drivers
+o0x7f287c7dc228 .functor BUFZ 6, c4<zzzzzz>; HiZ drive
+v0x2829e20_0 .net "SHIFT_RIGHT", 5 0, o0x7f287c7dc228;  0 drivers
+o0x7f287c7dc258 .functor BUFZ 1, c4<z>; HiZ drive
+v0x2829f90_0 .net "SUBTRACT", 0 0, o0x7f287c7dc258;  0 drivers
+v0x282a100_0 .net "UNSIGNED_A", 0 0, v0x2c50630_0;  alias, 1 drivers
+v0x282a270_0 .net "UNSIGNED_B", 0 0, v0x2ce23f0_0;  alias, 1 drivers
+v0x282a3e0_0 .net "Z", 37 0, L_0x2ab8030;  alias, 1 drivers
+v0x282a550_0 .var "a_int", 19 0;
+v0x282a6c0_0 .var "a_reg", 19 0;
+v0x282a830_0 .var "acc_fir_int", 5 0;
+v0x282a9a0_0 .var "acc_fir_reg", 5 0;
+v0x282ab10_0 .var/s "accumulator", 63 0;
+v0x2829240_0 .var/s "add_sub_in", 63 0;
+v0x28293b0_0 .var/s "add_sub_out", 63 0;
+v0x282ac80_0 .var "b_int", 17 0;
+v0x282adf0_0 .var "b_reg", 17 0;
+v0x2829520_0 .var "feedback_int", 2 0;
+v0x282af60_0 .var "feedback_reg", 2 0;
+v0x282b0d0_0 .var "load_acc_int", 0 0;
+v0x282b240_0 .var "load_acc_reg", 0 0;
+v0x282b3b0_0 .var "mult_a", 19 0;
+v0x286a570_0 .var "mult_b", 17 0;
+v0x286a3c0_0 .var/s "mult_out", 63 0;
+v0x286a6e0_0 .var/s "pre_shift", 63 0;
+v0x28e2d20_0 .var/s "round", 63 0;
+v0x28e3c40_0 .var "round_int", 0 0;
+v0x28e2e90_0 .var "round_reg1", 0 0;
+v0x28e3db0_0 .var "round_reg2", 0 0;
+v0x28e2a40_0 .var/s "saturate", 37 0;
+v0x28e3960_0 .var "saturate_int", 0 0;
+v0x28e2bb0_0 .var "saturate_reg1", 0 0;
+v0x28e3ad0_0 .var "saturate_reg2", 0 0;
+v0x2765a50_0 .var/s "shift_right", 63 0;
+v0x2765ba0_0 .var "shift_right_int", 5 0;
+v0x2765cf0_0 .var "shift_right_reg1", 5 0;
+v0x2766fd0_0 .var "shift_right_reg2", 5 0;
+v0x2767120_0 .var "subtract_int", 0 0;
+v0x2767270_0 .var "subtract_reg", 0 0;
+v0x2768550_0 .var "unsigned_a_int", 0 0;
+v0x27686a0_0 .var "unsigned_a_reg", 0 0;
+v0x27687f0_0 .var "unsigned_b_int", 0 0;
+v0x2769ad0_0 .var "unsigned_b_reg", 0 0;
+v0x2769c20_0 .var "z_out", 37 0;
+v0x2769d70_0 .var "z_out_reg", 37 0;
+E_0x28afde0 .event anyedge, v0x29c6e50_0;
+E_0x28aee80 .event anyedge, v0x29c0790_0;
+E_0x28aeec0 .event posedge, v0x29ca350_0, v0x2aa3320_0;
+E_0x28af090/0 .event anyedge, v0x28293b0_0, v0x286a6e0_0, v0x2765ba0_0, v0x28e3c40_0;
+E_0x28af090/1 .event anyedge, v0x2765a50_0, v0x28e3960_0, v0x2768550_0, v0x27687f0_0;
+E_0x28af090/2 .event anyedge, v0x28e2d20_0, v0x286a3c0_0;
+E_0x28af090 .event/or E_0x28af090/0, E_0x28af090/1, E_0x28af090/2;
+E_0x28af0d0 .event anyedge, v0x2767120_0, v0x2829240_0, v0x286a3c0_0;
+E_0x28b42c0 .event anyedge, v0x2768550_0, v0x27687f0_0, v0x282b3b0_0, v0x286a570_0;
+E_0x28ae1b0/0 .event anyedge, v0x2829520_0, v0x282a550_0, v0x282ac80_0, v0x282ab10_0;
+E_0x28ae1b0/1 .event anyedge, v0x2768550_0, v0x282a830_0;
+E_0x28ae1b0 .event/or E_0x28ae1b0/0, E_0x28ae1b0/1;
+E_0x28b47a0/0 .event anyedge, v0x29b8270_0, v0x29c05e0_0, v0x2829f90_0, v0x29c0790_0;
+E_0x28b47a0/1 .event anyedge, v0x29c6e50_0, v0x29ca1f0_0, v0x282a100_0, v0x282a270_0;
+E_0x28b47a0/2 .event anyedge, v0x2829e20_0, v0x2829830_0, v0x2828b40_0;
+E_0x28b47a0 .event/or E_0x28b47a0/0, E_0x28b47a0/1, E_0x28b47a0/2;
+S_0x2ce99c0 .scope module, "synth_net" "GJC4_updated_post_synth" 3 16, 6 3 0, S_0x2d0f4e0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 20 "a";
+    .port_info 1 /INPUT 18 "b";
+    .port_info 2 /INPUT 3 "feedback";
+    .port_info 3 /INPUT 1 "unsigned_a";
+    .port_info 4 /INPUT 1 "unsigned_b";
+    .port_info 5 /OUTPUT 38 "z_mult";
+v0x26fdc70_0 .net "$ibuf_a[0]", 0 0, L_0x2a04ea0;  1 drivers
+v0x26fdb00_0 .net "$ibuf_a[10]", 0 0, L_0x2a04b50;  1 drivers
+v0x26ffeb0_0 .net "$ibuf_a[11]", 0 0, L_0x2a1eac0;  1 drivers
+v0x26f93a0_0 .net "$ibuf_a[12]", 0 0, L_0x2a0c610;  1 drivers
+v0x26f9510_0 .net "$ibuf_a[13]", 0 0, L_0x298e810;  1 drivers
+v0x26fb610_0 .net "$ibuf_a[14]", 0 0, L_0x289f560;  1 drivers
+v0x26f6fb0_0 .net "$ibuf_a[15]", 0 0, L_0x2a20cc0;  1 drivers
+v0x26cf190_0 .net "$ibuf_a[16]", 0 0, L_0x2a0e860;  1 drivers
+v0x26c31e0_0 .net "$ibuf_a[17]", 0 0, L_0x2a22150;  1 drivers
+v0x26f04c0_0 .net "$ibuf_a[18]", 0 0, L_0x2a0fcf0;  1 drivers
+v0x26f0630_0 .net "$ibuf_a[19]", 0 0, L_0x2a20540;  1 drivers
+v0x26f07a0_0 .net "$ibuf_a[1]", 0 0, L_0x2a05620;  1 drivers
+v0x26c6030_0 .net "$ibuf_a[2]", 0 0, L_0x294e4a0;  1 drivers
+v0x2648c60_0 .net "$ibuf_a[3]", 0 0, L_0x2a3fcf0;  1 drivers
+v0x2648f40_0 .net "$ibuf_a[4]", 0 0, L_0x2a3f2c0;  1 drivers
+v0x2648dd0_0 .net "$ibuf_a[5]", 0 0, L_0x27a7e90;  1 drivers
+v0x26490b0_0 .net "$ibuf_a[6]", 0 0, L_0x2951800;  1 drivers
+v0x2673a00_0 .net "$ibuf_a[7]", 0 0, L_0x2a3ade0;  1 drivers
+v0x2673ce0_0 .net "$ibuf_a[8]", 0 0, L_0x2a3a9b0;  1 drivers
+v0x2673b70_0 .net "$ibuf_a[9]", 0 0, L_0x2a3cd70;  1 drivers
+v0x2673e50_0 .net "$ibuf_b[0]", 0 0, L_0x2a1f750;  1 drivers
+v0x2678ed0_0 .net "$ibuf_b[10]", 0 0, L_0x2a20b10;  1 drivers
+v0x270d640_0 .net "$ibuf_b[11]", 0 0, L_0x2a09760;  1 drivers
+v0x270d7b0_0 .net "$ibuf_b[12]", 0 0, L_0x2996e80;  1 drivers
+v0x2704de0_0 .net "$ibuf_b[13]", 0 0, L_0x29943c0;  1 drivers
+v0x270a550_0 .net "$ibuf_b[14]", 0 0, L_0x2994060;  1 drivers
+v0x268f220_0 .net "$ibuf_b[15]", 0 0, L_0x29971f0;  1 drivers
+v0x268f500_0 .net "$ibuf_b[16]", 0 0, L_0x2956290;  1 drivers
+v0x268f390_0 .net "$ibuf_b[17]", 0 0, L_0x27809f0;  1 drivers
+v0x268f670_0 .net "$ibuf_b[1]", 0 0, L_0x2a1fe20;  1 drivers
+v0x28d68a0_0 .net "$ibuf_b[2]", 0 0, L_0x2868ad0;  1 drivers
+v0x298ade0_0 .net "$ibuf_b[3]", 0 0, L_0x27a8000;  1 drivers
+v0x2a64600_0 .net "$ibuf_b[4]", 0 0, L_0x27b38c0;  1 drivers
+v0x28a0950_0 .net "$ibuf_b[5]", 0 0, L_0x29512f0;  1 drivers
+v0x28d1ea0_0 .net "$ibuf_b[6]", 0 0, L_0x2a08310;  1 drivers
+v0x28d01a0_0 .net "$ibuf_b[7]", 0 0, L_0x2a08b00;  1 drivers
+v0x28de090_0 .net "$ibuf_b[8]", 0 0, L_0x2a07640;  1 drivers
+v0x2a5d600_0 .net "$ibuf_b[9]", 0 0, L_0x2991690;  1 drivers
+v0x28688b0_0 .net "$ibuf_feedback[0]", 0 0, L_0x2990e00;  1 drivers
+v0x2a77ae0_0 .net "$ibuf_feedback[1]", 0 0, L_0x29911d0;  1 drivers
+v0x2c56e80_0 .net "$ibuf_feedback[2]", 0 0, L_0x2990bf0;  1 drivers
+v0x275f400_0 .net "$ibuf_unsigned_a", 0 0, L_0x29900e0;  1 drivers
+v0x277a4d0_0 .net "$ibuf_unsigned_b", 0 0, L_0x29531d0;  1 drivers
+v0x2c467c0_0 .net "$obuf_z_mult[0]", 0 0, L_0x2cc71e0;  1 drivers
+v0x275ce30_0 .net "$obuf_z_mult[10]", 0 0, L_0x2cdd0c0;  1 drivers
+v0x27138d0_0 .net "$obuf_z_mult[11]", 0 0, L_0x2cdf7a0;  1 drivers
+v0x2778f50_0 .net "$obuf_z_mult[12]", 0 0, L_0x2ce1e80;  1 drivers
+v0x2c36b70_0 .net "$obuf_z_mult[13]", 0 0, L_0x2ce6c40;  1 drivers
+v0x2702270_0 .net "$obuf_z_mult[14]", 0 0, L_0x2ce93f0;  1 drivers
+v0x2734b50_0 .net "$obuf_z_mult[15]", 0 0, L_0x2ce9350;  1 drivers
+v0x26ee940_0 .net "$obuf_z_mult[16]", 0 0, L_0x2ceba60;  1 drivers
+v0x2780130_0 .net "$obuf_z_mult[17]", 0 0, L_0x2cee170;  1 drivers
+v0x277ba50_0 .net "$obuf_z_mult[18]", 0 0, L_0x2cf0880;  1 drivers
+v0x2829cd0_0 .net "$obuf_z_mult[19]", 0 0, L_0x2c81180;  1 drivers
+v0x2c302f0_0 .net "$obuf_z_mult[1]", 0 0, L_0x2cc98f0;  1 drivers
+v0x2c35260_0 .net "$obuf_z_mult[20]", 0 0, L_0x2c48d40;  1 drivers
+v0x2c3ba90_0 .net "$obuf_z_mult[21]", 0 0, L_0x2c69080;  1 drivers
+v0x2c32ac0_0 .net "$obuf_z_mult[22]", 0 0, L_0x2c5bf10;  1 drivers
+v0x2828cc0_0 .net "$obuf_z_mult[23]", 0 0, L_0x2c89390;  1 drivers
+v0x27779d0_0 .net "$obuf_z_mult[24]", 0 0, L_0x2c90ab0;  1 drivers
+v0x2a7a060_0 .net "$obuf_z_mult[25]", 0 0, L_0x2cc7790;  1 drivers
+v0x2707aa0_0 .net "$obuf_z_mult[26]", 0 0, L_0x2c177a0;  1 drivers
+v0x2736ba0_0 .net "$obuf_z_mult[27]", 0 0, L_0x2cc9e90;  1 drivers
+v0x270a6c0_0 .net "$obuf_z_mult[28]", 0 0, L_0x2c3bc00;  1 drivers
+v0x29c6cc0_0 .net "$obuf_z_mult[29]", 0 0, L_0x2ccc590;  1 drivers
+v0x2710980_0 .net "$obuf_z_mult[2]", 0 0, L_0x2ccc000;  1 drivers
+v0x26f0330_0 .net "$obuf_z_mult[30]", 0 0, L_0x2c40b30;  1 drivers
+v0x28ad2e0_0 .net "$obuf_z_mult[31]", 0 0, L_0x2ccec90;  1 drivers
+v0x273a1a0_0 .net "$obuf_z_mult[32]", 0 0, L_0x2cd1390;  1 drivers
+v0x28adb80_0 .net "$obuf_z_mult[33]", 0 0, L_0x2c60ee0;  1 drivers
+v0x2c55570_0 .net "$obuf_z_mult[34]", 0 0, L_0x2c60e40;  1 drivers
+v0x272ff90_0 .net "$obuf_z_mult[35]", 0 0, L_0x2c7c250;  1 drivers
+v0x27d9300_0 .net "$obuf_z_mult[36]", 0 0, L_0x2cecfe0;  1 drivers
+v0x28296a0_0 .net "$obuf_z_mult[37]", 0 0, L_0x2cdfff0;  1 drivers
+v0x2c409c0_0 .net "$obuf_z_mult[3]", 0 0, L_0x2cce710;  1 drivers
+v0x28a74b0_0 .net "$obuf_z_mult[4]", 0 0, L_0x2cd0e20;  1 drivers
+v0x27325a0_0 .net "$obuf_z_mult[5]", 0 0, L_0x2cd35d0;  1 drivers
+v0x2718370_0 .net "$obuf_z_mult[6]", 0 0, L_0x2cd3530;  1 drivers
+v0x275b610_0 .net "$obuf_z_mult[7]", 0 0, L_0x2cd5c20;  1 drivers
+v0x2c4b6f0_0 .net "$obuf_z_mult[8]", 0 0, L_0x2cd8300;  1 drivers
+v0x2c4de90_0 .net "$obuf_z_mult[9]", 0 0, L_0x2cda9e0;  1 drivers
+v0x26dd610_0 .net "a", 19 0, v0x272d190_0;  alias, 1 drivers
+v0x26f0070_0 .net "b", 17 0, v0x272abf0_0;  alias, 1 drivers
+v0x271e840_0 .net "feedback", 2 0, v0x2748860_0;  alias, 1 drivers
+v0x2776450_0 .net "unsigned_a", 0 0, v0x2c50630_0;  alias, 1 drivers
+v0x275e120_0 .net "unsigned_b", 0 0, v0x2ce23f0_0;  alias, 1 drivers
+v0x2c48f50_0 .net "z_mult", 37 0, L_0x2c57070;  alias, 1 drivers
+L_0x2a3d980 .part v0x272d190_0, 0, 1;
+L_0x2992300 .part v0x272d190_0, 1, 1;
+L_0x2ce5bb0 .part v0x272d190_0, 10, 1;
+L_0x2c8bb70 .part v0x272d190_0, 11, 1;
+L_0x2c8e310 .part v0x272d190_0, 12, 1;
+L_0x2d0d000 .part v0x272d190_0, 13, 1;
+L_0x2c30120 .part v0x272d190_0, 14, 1;
+L_0x2c35090 .part v0x272d190_0, 15, 1;
+L_0x2c465f0 .part v0x272d190_0, 16, 1;
+L_0x2c4b520 .part v0x272d190_0, 17, 1;
+L_0x2c4dcc0 .part v0x272d190_0, 18, 1;
+L_0x2c50460 .part v0x272d190_0, 19, 1;
+L_0x2c52c00 .part v0x272d190_0, 2, 1;
+L_0x2c553a0 .part v0x272d190_0, 3, 1;
+L_0x2c66930 .part v0x272d190_0, 4, 1;
+L_0x2c6b860 .part v0x272d190_0, 5, 1;
+L_0x2c6e000 .part v0x272d190_0, 6, 1;
+L_0x2c72f40 .part v0x272d190_0, 7, 1;
+L_0x2c86c40 .part v0x272d190_0, 8, 1;
+L_0x2c93290 .part v0x272d190_0, 9, 1;
+L_0x2c24950 .part v0x272abf0_0, 0, 1;
+L_0x2c249f0 .part v0x272abf0_0, 1, 1;
+L_0x2c756e0 .part v0x272abf0_0, 10, 1;
+L_0x2d01630 .part v0x272abf0_0, 11, 1;
+L_0x2d016d0 .part v0x272abf0_0, 12, 1;
+L_0x2cf56d0 .part v0x272abf0_0, 13, 1;
+L_0x2cf5770 .part v0x272abf0_0, 14, 1;
+L_0x2c1d0b0 .part v0x272abf0_0, 15, 1;
+L_0x2c77310 .part v0x272abf0_0, 16, 1;
+L_0x2c773b0 .part v0x272abf0_0, 17, 1;
+L_0x2ce45e0 .part v0x272abf0_0, 2, 1;
+L_0x2c36cc0 .part v0x272abf0_0, 3, 1;
+L_0x2c36d60 .part v0x272abf0_0, 4, 1;
+L_0x2c707a0 .part v0x272abf0_0, 5, 1;
+L_0x2c56fd0 .part v0x272abf0_0, 6, 1;
+L_0x2cf4510 .part v0x272abf0_0, 7, 1;
+L_0x2cf45b0 .part v0x272abf0_0, 8, 1;
+L_0x2cf1e00 .part v0x272abf0_0, 9, 1;
+L_0x2cf1ea0 .part v0x2748860_0, 0, 1;
+L_0x2cef6f0 .part v0x2748860_0, 1, 1;
+L_0x2cef790 .part v0x2748860_0, 2, 1;
+LS_0x2c57070_0_0 .concat8 [ 1 1 1 1], L_0x2956fc0, L_0x2957680, L_0x2a224b0, L_0x26eef20;
+LS_0x2c57070_0_4 .concat8 [ 1 1 1 1], L_0x27b2f30, L_0x2952e00, L_0x2956c40, L_0x27ffa00;
+LS_0x2c57070_0_8 .concat8 [ 1 1 1 1], L_0x27b2270, L_0x2664da0, L_0x2956750, L_0x27a50c0;
+LS_0x2c57070_0_12 .concat8 [ 1 1 1 1], L_0x27aceb0, L_0x27b2c00, L_0x2711700, L_0x27ff260;
+LS_0x2c57070_0_16 .concat8 [ 1 1 1 1], L_0x2950f20, L_0x294fe80, L_0x27a73c0, L_0x27a6d90;
+LS_0x2c57070_0_20 .concat8 [ 1 1 1 1], L_0x2950250, L_0x294dc00, L_0x294bbd0, L_0x2995c10;
+LS_0x2c57070_0_24 .concat8 [ 1 1 1 1], L_0x27a5620, L_0x27a5770, L_0x27a58c0, L_0x27a8960;
+LS_0x2c57070_0_28 .concat8 [ 1 1 1 1], L_0x280e5a0, L_0x2664360, L_0x27b6270, L_0x2a63890;
+LS_0x2c57070_0_32 .concat8 [ 1 1 1 1], L_0x2a778d0, L_0x27ae440, L_0x27b25a0, L_0x27a9bd0;
+LS_0x2c57070_0_36 .concat8 [ 1 1 0 0], L_0x27add10, L_0x27aaa90;
+LS_0x2c57070_1_0 .concat8 [ 4 4 4 4], LS_0x2c57070_0_0, LS_0x2c57070_0_4, LS_0x2c57070_0_8, LS_0x2c57070_0_12;
+LS_0x2c57070_1_4 .concat8 [ 4 4 4 4], LS_0x2c57070_0_16, LS_0x2c57070_0_20, LS_0x2c57070_0_24, LS_0x2c57070_0_28;
+LS_0x2c57070_1_8 .concat8 [ 4 2 0 0], LS_0x2c57070_0_32, LS_0x2c57070_0_36;
+L_0x2c57070 .concat8 [ 16 16 6 0], LS_0x2c57070_1_0, LS_0x2c57070_1_4, LS_0x2c57070_1_8;
+LS_0x2ce4680_0_0 .concat [ 1 1 1 1], L_0x2a04ea0, L_0x2a05620, L_0x294e4a0, L_0x2a3fcf0;
+LS_0x2ce4680_0_4 .concat [ 1 1 1 1], L_0x2a3f2c0, L_0x27a7e90, L_0x2951800, L_0x2a3ade0;
+LS_0x2ce4680_0_8 .concat [ 1 1 1 1], L_0x2a3a9b0, L_0x2a3cd70, L_0x2a04b50, L_0x2a1eac0;
+LS_0x2ce4680_0_12 .concat [ 1 1 1 1], L_0x2a0c610, L_0x298e810, L_0x289f560, L_0x2a20cc0;
+LS_0x2ce4680_0_16 .concat [ 1 1 1 1], L_0x2a0e860, L_0x2a22150, L_0x2a0fcf0, L_0x2a20540;
+LS_0x2ce4680_1_0 .concat [ 4 4 4 4], LS_0x2ce4680_0_0, LS_0x2ce4680_0_4, LS_0x2ce4680_0_8, LS_0x2ce4680_0_12;
+LS_0x2ce4680_1_4 .concat [ 4 0 0 0], LS_0x2ce4680_0_16;
+L_0x2ce4680 .concat [ 16 4 0 0], LS_0x2ce4680_1_0, LS_0x2ce4680_1_4;
+LS_0x2ce26d0_0_0 .concat [ 1 1 1 1], L_0x2a1f750, L_0x2a1fe20, L_0x2868ad0, L_0x27a8000;
+LS_0x2ce26d0_0_4 .concat [ 1 1 1 1], L_0x27b38c0, L_0x29512f0, L_0x2a08310, L_0x2a08b00;
+LS_0x2ce26d0_0_8 .concat [ 1 1 1 1], L_0x2a07640, L_0x2991690, L_0x2a20b10, L_0x2a09760;
+LS_0x2ce26d0_0_12 .concat [ 1 1 1 1], L_0x2996e80, L_0x29943c0, L_0x2994060, L_0x29971f0;
+LS_0x2ce26d0_0_16 .concat [ 1 1 0 0], L_0x2956290, L_0x27809f0;
+LS_0x2ce26d0_1_0 .concat [ 4 4 4 4], LS_0x2ce26d0_0_0, LS_0x2ce26d0_0_4, LS_0x2ce26d0_0_8, LS_0x2ce26d0_0_12;
+LS_0x2ce26d0_1_4 .concat [ 2 0 0 0], LS_0x2ce26d0_0_16;
+L_0x2ce26d0 .concat [ 16 2 0 0], LS_0x2ce26d0_1_0, LS_0x2ce26d0_1_4;
+L_0x2cdfff0 .part v0x26a97f0_0, 37, 1;
+L_0x2cecfe0 .part v0x26a97f0_0, 36, 1;
+L_0x2c7c250 .part v0x26a97f0_0, 35, 1;
+L_0x2c60e40 .part v0x26a97f0_0, 34, 1;
+L_0x2c60ee0 .part v0x26a97f0_0, 33, 1;
+L_0x2cd1390 .part v0x26a97f0_0, 32, 1;
+L_0x2ccec90 .part v0x26a97f0_0, 31, 1;
+L_0x2c40b30 .part v0x26a97f0_0, 30, 1;
+L_0x2ccc590 .part v0x26a97f0_0, 29, 1;
+L_0x2c3bc00 .part v0x26a97f0_0, 28, 1;
+L_0x2cc9e90 .part v0x26a97f0_0, 27, 1;
+L_0x2c177a0 .part v0x26a97f0_0, 26, 1;
+L_0x2cc7790 .part v0x26a97f0_0, 25, 1;
+L_0x2c90ab0 .part v0x26a97f0_0, 24, 1;
+L_0x2c89390 .part v0x26a97f0_0, 23, 1;
+L_0x2c5bf10 .part v0x26a97f0_0, 22, 1;
+L_0x2c69080 .part v0x26a97f0_0, 21, 1;
+L_0x2c48d40 .part v0x26a97f0_0, 20, 1;
+L_0x2c81180 .part v0x26a97f0_0, 19, 1;
+L_0x2cf0880 .part v0x26a97f0_0, 18, 1;
+L_0x2cee170 .part v0x26a97f0_0, 17, 1;
+L_0x2ceba60 .part v0x26a97f0_0, 16, 1;
+L_0x2ce9350 .part v0x26a97f0_0, 15, 1;
+L_0x2ce93f0 .part v0x26a97f0_0, 14, 1;
+L_0x2ce6c40 .part v0x26a97f0_0, 13, 1;
+L_0x2ce1e80 .part v0x26a97f0_0, 12, 1;
+L_0x2cdf7a0 .part v0x26a97f0_0, 11, 1;
+L_0x2cdd0c0 .part v0x26a97f0_0, 10, 1;
+L_0x2cda9e0 .part v0x26a97f0_0, 9, 1;
+L_0x2cd8300 .part v0x26a97f0_0, 8, 1;
+L_0x2cd5c20 .part v0x26a97f0_0, 7, 1;
+L_0x2cd3530 .part v0x26a97f0_0, 6, 1;
+L_0x2cd35d0 .part v0x26a97f0_0, 5, 1;
+L_0x2cd0e20 .part v0x26a97f0_0, 4, 1;
+L_0x2cce710 .part v0x26a97f0_0, 3, 1;
+L_0x2ccc000 .part v0x26a97f0_0, 2, 1;
+L_0x2cc98f0 .part v0x26a97f0_0, 1, 1;
+L_0x2cc71e0 .part v0x26a97f0_0, 0, 1;
+L_0x2cc4ad0 .concat [ 1 1 1 0], L_0x2990e00, L_0x29911d0, L_0x2990bf0;
+S_0x2ce72b0 .scope module, "$ibuf$GJC4_updated.$ibuf_a" "I_BUF" 6 195, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a92340 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a04ea0 .functor BUFT 1, L_0x2a3d980, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x276db50_0 .net "EN", 0 0, L_0x7f287c793018;  1 drivers
+v0x276dca0_0 .net "I", 0 0, L_0x2a3d980;  1 drivers
+v0x276ddf0_0 .net "O", 0 0, L_0x2a04ea0;  alias, 1 drivers
+S_0x2ce24f0 .scope module, "$ibuf$GJC4_updated.$ibuf_a_1" "I_BUF" 6 205, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x28de740 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a05620 .functor BUFT 1, L_0x2992300, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793060 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x276f0d0_0 .net "EN", 0 0, L_0x7f287c793060;  1 drivers
+v0x276f220_0 .net "I", 0 0, L_0x2992300;  1 drivers
+v0x276f370_0 .net "O", 0 0, L_0x2a05620;  alias, 1 drivers
+S_0x2cdfe10 .scope module, "$ibuf$GJC4_updated.$ibuf_a_10" "I_BUF" 6 215, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x28d6f90 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a04b50 .functor BUFT 1, L_0x2ce5bb0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7930a8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2770650_0 .net "EN", 0 0, L_0x7f287c7930a8;  1 drivers
+v0x27707a0_0 .net "I", 0 0, L_0x2ce5bb0;  1 drivers
+v0x27708f0_0 .net "O", 0 0, L_0x2a04b50;  alias, 1 drivers
+S_0x2cdd730 .scope module, "$ibuf$GJC4_updated.$ibuf_a_11" "I_BUF" 6 225, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a73da0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a1eac0 .functor BUFT 1, L_0x2c8bb70, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7930f0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2771bd0_0 .net "EN", 0 0, L_0x7f287c7930f0;  1 drivers
+v0x2771d20_0 .net "I", 0 0, L_0x2c8bb70;  1 drivers
+v0x2771e70_0 .net "O", 0 0, L_0x2a1eac0;  alias, 1 drivers
+S_0x2cdb050 .scope module, "$ibuf$GJC4_updated.$ibuf_a_12" "I_BUF" 6 235, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x29d72a0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a0c610 .functor BUFT 1, L_0x2c8e310, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793138 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2773150_0 .net "EN", 0 0, L_0x7f287c793138;  1 drivers
+v0x27732a0_0 .net "I", 0 0, L_0x2c8e310;  1 drivers
+v0x27733f0_0 .net "O", 0 0, L_0x2a0c610;  alias, 1 drivers
+S_0x2cd8970 .scope module, "$ibuf$GJC4_updated.$ibuf_a_13" "I_BUF" 6 245, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x29d4790 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x298e810 .functor BUFT 1, L_0x2d0d000, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793180 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x27746d0_0 .net "EN", 0 0, L_0x7f287c793180;  1 drivers
+v0x27747e0_0 .net "I", 0 0, L_0x2d0d000;  1 drivers
+v0x2775b10_0 .net "O", 0 0, L_0x298e810;  alias, 1 drivers
+S_0x2cd6290 .scope module, "$ibuf$GJC4_updated.$ibuf_a_14" "I_BUF" 6 255, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a7a470 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x289f560 .functor BUFT 1, L_0x2c30120, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7931c8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2776300_0 .net "EN", 0 0, L_0x7f287c7931c8;  1 drivers
+v0x2777880_0 .net "I", 0 0, L_0x2c30120;  1 drivers
+v0x2778e00_0 .net "O", 0 0, L_0x289f560;  alias, 1 drivers
+S_0x2cd3ba0 .scope module, "$ibuf$GJC4_updated.$ibuf_a_15" "I_BUF" 6 265, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2ab0770 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a20cc0 .functor BUFT 1, L_0x2c35090, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793210 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x277a380_0 .net "EN", 0 0, L_0x7f287c793210;  1 drivers
+v0x277b900_0 .net "I", 0 0, L_0x2c35090;  1 drivers
+v0x277ce80_0 .net "O", 0 0, L_0x2a20cc0;  alias, 1 drivers
+S_0x2cd1490 .scope module, "$ibuf$GJC4_updated.$ibuf_a_16" "I_BUF" 6 275, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x29d1380 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a0e860 .functor BUFT 1, L_0x2c465f0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793258 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x277da90_0 .net "EN", 0 0, L_0x7f287c793258;  1 drivers
+v0x2a89270_0 .net "I", 0 0, L_0x2c465f0;  1 drivers
+v0x28ad9e0_0 .net "O", 0 0, L_0x2a0e860;  alias, 1 drivers
+S_0x2cced80 .scope module, "$ibuf$GJC4_updated.$ibuf_a_17" "I_BUF" 6 285, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a3c0a0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a22150 .functor BUFT 1, L_0x2c4b520, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7932a0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x28add10_0 .net "EN", 0 0, L_0x7f287c7932a0;  1 drivers
+v0x28adfd0_0 .net "I", 0 0, L_0x2c4b520;  1 drivers
+v0x2a5c9c0_0 .net "O", 0 0, L_0x2a22150;  alias, 1 drivers
+S_0x2ccc670 .scope module, "$ibuf$GJC4_updated.$ibuf_a_18" "I_BUF" 6 295, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a0b450 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a0fcf0 .functor BUFT 1, L_0x2c4dcc0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7932e8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2a90e20_0 .net "EN", 0 0, L_0x7f287c7932e8;  1 drivers
+v0x28a63e0_0 .net "I", 0 0, L_0x2c4dcc0;  1 drivers
+v0x28a8260_0 .net "O", 0 0, L_0x2a0fcf0;  alias, 1 drivers
+S_0x2cc9f60 .scope module, "$ibuf$GJC4_updated.$ibuf_a_19" "I_BUF" 6 305, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a21df0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a20540 .functor BUFT 1, L_0x2c50460, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793330 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x28deb20_0 .net "EN", 0 0, L_0x7f287c793330;  1 drivers
+v0x28d71e0_0 .net "I", 0 0, L_0x2c50460;  1 drivers
+v0x28d1610_0 .net "O", 0 0, L_0x2a20540;  alias, 1 drivers
+S_0x2cc7850 .scope module, "$ibuf$GJC4_updated.$ibuf_a_2" "I_BUF" 6 315, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2997d20 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x294e4a0 .functor BUFT 1, L_0x2c52c00, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793378 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x28d1820_0 .net "EN", 0 0, L_0x7f287c793378;  1 drivers
+v0x28d81f0_0 .net "I", 0 0, L_0x2c52c00;  1 drivers
+v0x28d8400_0 .net "O", 0 0, L_0x294e4a0;  alias, 1 drivers
+S_0x2cc5140 .scope module, "$ibuf$GJC4_updated.$ibuf_a_3" "I_BUF" 6 325, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2950680 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a3fcf0 .functor BUFT 1, L_0x2c553a0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7933c0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x28d8650_0 .net "EN", 0 0, L_0x7f287c7933c0;  1 drivers
+v0x29d08e0_0 .net "I", 0 0, L_0x2c553a0;  1 drivers
+v0x29dbb30_0 .net "O", 0 0, L_0x2a3fcf0;  alias, 1 drivers
+S_0x2cc2a60 .scope module, "$ibuf$GJC4_updated.$ibuf_a_4" "I_BUF" 6 335, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a77d00 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a3f2c0 .functor BUFT 1, L_0x2c66930, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793408 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2a78f90_0 .net "EN", 0 0, L_0x7f287c793408;  1 drivers
+v0x2a7ae10_0 .net "I", 0 0, L_0x2c66930;  1 drivers
+v0x28a0060_0 .net "O", 0 0, L_0x2a3f2c0;  alias, 1 drivers
+S_0x2cc0380 .scope module, "$ibuf$GJC4_updated.$ibuf_a_5" "I_BUF" 6 345, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27a5a30 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x27a7e90 .functor BUFT 1, L_0x2c6b860, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793450 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x289ff00_0 .net "EN", 0 0, L_0x7f287c793450;  1 drivers
+v0x289fdb0_0 .net "I", 0 0, L_0x2c6b860;  1 drivers
+v0x28a0260_0 .net "O", 0 0, L_0x27a7e90;  alias, 1 drivers
+S_0x2cbdca0 .scope module, "$ibuf$GJC4_updated.$ibuf_a_6" "I_BUF" 6 355, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27b3260 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2951800 .functor BUFT 1, L_0x2c6e000, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793498 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x298b420_0 .net "EN", 0 0, L_0x7f287c793498;  1 drivers
+v0x298b880_0 .net "I", 0 0, L_0x2c6e000;  1 drivers
+v0x298b630_0 .net "O", 0 0, L_0x2951800;  alias, 1 drivers
+S_0x2cbb5c0 .scope module, "$ibuf$GJC4_updated.$ibuf_a_7" "I_BUF" 6 365, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27fe3c0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a3ade0 .functor BUFT 1, L_0x2c72f40, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7934e0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2a39b80_0 .net "EN", 0 0, L_0x7f287c7934e0;  1 drivers
+v0x2a39cd0_0 .net "I", 0 0, L_0x2c72f40;  1 drivers
+v0x2a04650_0 .net "O", 0 0, L_0x2a3ade0;  alias, 1 drivers
+S_0x2cb8ee0 .scope module, "$ibuf$GJC4_updated.$ibuf_a_8" "I_BUF" 6 375, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2805b60 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a3a9b0 .functor BUFT 1, L_0x2c86c40, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793528 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2a05120_0 .net "EN", 0 0, L_0x7f287c793528;  1 drivers
+v0x2a044e0_0 .net "I", 0 0, L_0x2c86c40;  1 drivers
+v0x2a04fb0_0 .net "O", 0 0, L_0x2a3a9b0;  alias, 1 drivers
+S_0x2cb6800 .scope module, "$ibuf$GJC4_updated.$ibuf_a_9" "I_BUF" 6 385, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2692750 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a3cd70 .functor BUFT 1, L_0x2c93290, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793570 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2a047a0_0 .net "EN", 0 0, L_0x7f287c793570;  1 drivers
+v0x2a05270_0 .net "I", 0 0, L_0x2c93290;  1 drivers
+v0x289f330_0 .net "O", 0 0, L_0x2a3cd70;  alias, 1 drivers
+S_0x2cb4110 .scope module, "$ibuf$GJC4_updated.$ibuf_b" "I_BUF" 6 395, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26d3520 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a1f750 .functor BUFT 1, L_0x2c24950, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7935b8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x298f4a0_0 .net "EN", 0 0, L_0x7f287c7935b8;  1 drivers
+v0x294d830_0 .net "I", 0 0, L_0x2c24950;  1 drivers
+v0x277ffc0_0 .net "O", 0 0, L_0x2a1f750;  alias, 1 drivers
+S_0x2cb1a00 .scope module, "$ibuf$GJC4_updated.$ibuf_b_1" "I_BUF" 6 405, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2713b50 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a1fe20 .functor BUFT 1, L_0x2c249f0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793600 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x27802c0_0 .net "EN", 0 0, L_0x7f287c793600;  1 drivers
+v0x2780430_0 .net "I", 0 0, L_0x2c249f0;  1 drivers
+v0x27805a0_0 .net "O", 0 0, L_0x2a1fe20;  alias, 1 drivers
+S_0x2caf2f0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_10" "I_BUF" 6 415, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26b7b90 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a20b10 .functor BUFT 1, L_0x2c756e0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793648 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2780710_0 .net "EN", 0 0, L_0x7f287c793648;  1 drivers
+v0x2780880_0 .net "I", 0 0, L_0x2c756e0;  1 drivers
+v0x27d9190_0 .net "O", 0 0, L_0x2a20b10;  alias, 1 drivers
+S_0x2cacbe0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_11" "I_BUF" 6 425, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26c4ac0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a09760 .functor BUFT 1, L_0x2d01630, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793690 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x27d9490_0 .net "EN", 0 0, L_0x7f287c793690;  1 drivers
+v0x27d9600_0 .net "I", 0 0, L_0x2d01630;  1 drivers
+v0x27d9770_0 .net "O", 0 0, L_0x2a09760;  alias, 1 drivers
+S_0x2caa4d0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_12" "I_BUF" 6 435, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x272b4d0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2996e80 .functor BUFT 1, L_0x2d016d0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7936d8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x264dd40_0 .net "EN", 0 0, L_0x7f287c7936d8;  1 drivers
+v0x264e020_0 .net "I", 0 0, L_0x2d016d0;  1 drivers
+v0x264deb0_0 .net "O", 0 0, L_0x2996e80;  alias, 1 drivers
+S_0x2ca7dc0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_13" "I_BUF" 6 445, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27396e0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x29943c0 .functor BUFT 1, L_0x2cf56d0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793720 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x264e190_0 .net "EN", 0 0, L_0x7f287c793720;  1 drivers
+v0x26505a0_0 .net "I", 0 0, L_0x2cf56d0;  1 drivers
+v0x2650880_0 .net "O", 0 0, L_0x29943c0;  alias, 1 drivers
+S_0x2ca56a0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_14" "I_BUF" 6 455, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26d1aa0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2994060 .functor BUFT 1, L_0x2cf5770, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793768 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2650710_0 .net "EN", 0 0, L_0x7f287c793768;  1 drivers
+v0x26509f0_0 .net "I", 0 0, L_0x2cf5770;  1 drivers
+v0x2691a80_0 .net "O", 0 0, L_0x2994060;  alias, 1 drivers
+S_0x2ca2fb0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_15" "I_BUF" 6 465, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x268a6e0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x29971f0 .functor BUFT 1, L_0x2c1d0b0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7937b0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2691d60_0 .net "EN", 0 0, L_0x7f287c7937b0;  1 drivers
+v0x2691bf0_0 .net "I", 0 0, L_0x2c1d0b0;  1 drivers
+v0x2691ed0_0 .net "O", 0 0, L_0x29971f0;  alias, 1 drivers
+S_0x2ca08d0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_16" "I_BUF" 6 475, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26859c0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2956290 .functor BUFT 1, L_0x2c77310, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7937f8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2663da0_0 .net "EN", 0 0, L_0x7f287c7937f8;  1 drivers
+v0x2664080_0 .net "I", 0 0, L_0x2c77310;  1 drivers
+v0x2663f10_0 .net "O", 0 0, L_0x2956290;  alias, 1 drivers
+S_0x2c9e1f0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_17" "I_BUF" 6 485, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26fe0c0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x27809f0 .functor BUFT 1, L_0x2c773b0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793840 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26641f0_0 .net "EN", 0 0, L_0x7f287c793840;  1 drivers
+v0x26616d0_0 .net "I", 0 0, L_0x2c773b0;  1 drivers
+v0x26619b0_0 .net "O", 0 0, L_0x27809f0;  alias, 1 drivers
+S_0x2c9bb10 .scope module, "$ibuf$GJC4_updated.$ibuf_b_2" "I_BUF" 6 495, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26c3a60 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2868ad0 .functor BUFT 1, L_0x2ce45e0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793888 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2661840_0 .net "EN", 0 0, L_0x7f287c793888;  1 drivers
+v0x2661b20_0 .net "I", 0 0, L_0x2ce45e0;  1 drivers
+v0x26f1cd0_0 .net "O", 0 0, L_0x2868ad0;  alias, 1 drivers
+S_0x2c993d0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_3" "I_BUF" 6 505, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26743d0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x27a8000 .functor BUFT 1, L_0x2c36cc0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7938d0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26f3660_0 .net "EN", 0 0, L_0x7f287c7938d0;  1 drivers
+v0x26de040_0 .net "I", 0 0, L_0x2c36cc0;  1 drivers
+v0x26ddbf0_0 .net "O", 0 0, L_0x27a8000;  alias, 1 drivers
+S_0x2c97010 .scope module, "$ibuf$GJC4_updated.$ibuf_b_4" "I_BUF" 6 515, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2718c50 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x27b38c0 .functor BUFT 1, L_0x2c36d60, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793918 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26ddd60_0 .net "EN", 0 0, L_0x7f287c793918;  1 drivers
+v0x26dded0_0 .net "I", 0 0, L_0x2c36d60;  1 drivers
+v0x26dda80_0 .net "O", 0 0, L_0x27b38c0;  alias, 1 drivers
+S_0x2c32870 .scope module, "$ibuf$GJC4_updated.$ibuf_b_5" "I_BUF" 6 525, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x28a6a20 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x29512f0 .functor BUFT 1, L_0x2c707a0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793960 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26dd7a0_0 .net "EN", 0 0, L_0x7f287c793960;  1 drivers
+v0x26dd910_0 .net "I", 0 0, L_0x2c707a0;  1 drivers
+v0x26dad80_0 .net "O", 0 0, L_0x29512f0;  alias, 1 drivers
+S_0x2d0b1f0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_6" "I_BUF" 6 535, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x28cdc80 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a08310 .functor BUFT 1, L_0x2c56fd0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7939a8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26daef0_0 .net "EN", 0 0, L_0x7f287c7939a8;  1 drivers
+v0x26da650_0 .net "I", 0 0, L_0x2c56fd0;  1 drivers
+v0x26da7c0_0 .net "O", 0 0, L_0x2a08310;  alias, 1 drivers
+S_0x2cf52f0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_7" "I_BUF" 6 545, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2851ef0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a08b00 .functor BUFT 1, L_0x2cf4510, C4<0>, C4<0>, C4<0>;
+L_0x7f287c7939f0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26da930_0 .net "EN", 0 0, L_0x7f287c7939f0;  1 drivers
+v0x26da370_0 .net "I", 0 0, L_0x2cf4510;  1 drivers
+v0x26daaa0_0 .net "O", 0 0, L_0x2a08b00;  alias, 1 drivers
+S_0x2cf2be0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_8" "I_BUF" 6 555, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x29d2320 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2a07640 .functor BUFT 1, L_0x2cf45b0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793a38 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26dac10_0 .net "EN", 0 0, L_0x7f287c793a38;  1 drivers
+v0x26da4e0_0 .net "I", 0 0, L_0x2cf45b0;  1 drivers
+v0x26db4b0_0 .net "O", 0 0, L_0x2a07640;  alias, 1 drivers
+S_0x2cf04d0 .scope module, "$ibuf$GJC4_updated.$ibuf_b_9" "I_BUF" 6 565, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2aafa50 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2991690 .functor BUFT 1, L_0x2cf1e00, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793a80 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26db620_0 .net "EN", 0 0, L_0x7f287c793a80;  1 drivers
+v0x26db340_0 .net "I", 0 0, L_0x2cf1e00;  1 drivers
+v0x26db060_0 .net "O", 0 0, L_0x2991690;  alias, 1 drivers
+S_0x2ceddc0 .scope module, "$ibuf$GJC4_updated.$ibuf_feedback" "I_BUF" 6 575, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2ab4e50 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2990e00 .functor BUFT 1, L_0x2cf1ea0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793ac8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26db1d0_0 .net "EN", 0 0, L_0x7f287c793ac8;  1 drivers
+v0x26d8280_0 .net "I", 0 0, L_0x2cf1ea0;  1 drivers
+v0x26d7fa0_0 .net "O", 0 0, L_0x2990e00;  alias, 1 drivers
+S_0x2ceb6b0 .scope module, "$ibuf$GJC4_updated.$ibuf_feedback_1" "I_BUF" 6 585, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2aa8b80 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x29911d0 .functor BUFT 1, L_0x2cef6f0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793b10 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26d83f0_0 .net "EN", 0 0, L_0x7f287c793b10;  1 drivers
+v0x26d8560_0 .net "I", 0 0, L_0x2cef6f0;  1 drivers
+v0x26d8110_0 .net "O", 0 0, L_0x29911d0;  alias, 1 drivers
+S_0x2ce8fa0 .scope module, "$ibuf$GJC4_updated.$ibuf_feedback_2" "I_BUF" 6 595, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a41290 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x2990bf0 .functor BUFT 1, L_0x2cef790, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793b58 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26d8b20_0 .net "EN", 0 0, L_0x7f287c793b58;  1 drivers
+v0x26d8c90_0 .net "I", 0 0, L_0x2cef790;  1 drivers
+v0x26d89b0_0 .net "O", 0 0, L_0x2990bf0;  alias, 1 drivers
+S_0x2ce68c0 .scope module, "$ibuf$GJC4_updated.$ibuf_unsigned_a" "I_BUF" 6 605, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a0bc70 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x29900e0 .functor BUFT 1, v0x2c50630_0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793ba0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26d86d0_0 .net "EN", 0 0, L_0x7f287c793ba0;  1 drivers
+v0x26d8840_0 .net "I", 0 0, v0x2c50630_0;  alias, 1 drivers
+v0x26d2c60_0 .net "O", 0 0, L_0x29900e0;  alias, 1 drivers
+S_0x2ce4200 .scope module, "$ibuf$GJC4_updated.$ibuf_unsigned_b" "I_BUF" 6 615, 7 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "EN";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x29559e0 .param/str "WEAK_KEEPER" 0 7 11, "NONE";
+L_0x29531d0 .functor BUFT 1, v0x2ce23f0_0, C4<0>, C4<0>, C4<0>;
+L_0x7f287c793be8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26d2af0_0 .net "EN", 0 0, L_0x7f287c793be8;  1 drivers
+v0x26c1e10_0 .net "I", 0 0, v0x2ce23f0_0;  alias, 1 drivers
+v0x26c1ca0_0 .net "O", 0 0, L_0x29531d0;  alias, 1 drivers
+S_0x2ce1b60 .scope module, "$obuf$GJC4_updated.$obuf_z_mult" "O_BUFT" 6 623, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27af140 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2956fc0 .functor BUFT 1, L_0x2cc71e0, C4<0>, C4<0>, C4<0>;
+v0x265f000_0 .net "I", 0 0, L_0x2cc71e0;  alias, 1 drivers
+v0x265f2e0_0 .net "O", 0 0, L_0x2956fc0;  1 drivers
+L_0x7f287c793c30 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x265f170_0 .net "T", 0 0, L_0x7f287c793c30;  1 drivers
+S_0x2cdf480 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_1" "O_BUFT" 6 631, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27b1c10 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2957680 .functor BUFT 1, L_0x2cc98f0, C4<0>, C4<0>, C4<0>;
+v0x265f450_0 .net "I", 0 0, L_0x2cc98f0;  alias, 1 drivers
+v0x265c930_0 .net "O", 0 0, L_0x2957680;  1 drivers
+L_0x7f287c793c78 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x265cc10_0 .net "T", 0 0, L_0x7f287c793c78;  1 drivers
+S_0x2cdcda0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_10" "O_BUFT" 6 639, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27b0b00 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2956750 .functor BUFT 1, L_0x2cdd0c0, C4<0>, C4<0>, C4<0>;
+v0x265caa0_0 .net "I", 0 0, L_0x2cdd0c0;  alias, 1 drivers
+v0x265cd80_0 .net "O", 0 0, L_0x2956750;  1 drivers
+L_0x7f287c793cc0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x266aa60_0 .net "T", 0 0, L_0x7f287c793cc0;  1 drivers
+S_0x2cda6c0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_11" "O_BUFT" 6 647, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27b6f50 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a50c0 .functor BUFT 1, L_0x2cdf7a0, C4<0>, C4<0>, C4<0>;
+v0x266ad40_0 .net "I", 0 0, L_0x2cdf7a0;  alias, 1 drivers
+v0x266abd0_0 .net "O", 0 0, L_0x27a50c0;  1 drivers
+L_0x7f287c793d08 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x266aeb0_0 .net "T", 0 0, L_0x7f287c793d08;  1 drivers
+S_0x2cd7fe0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_12" "O_BUFT" 6 655, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27ff560 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27aceb0 .functor BUFT 1, L_0x2ce1e80, C4<0>, C4<0>, C4<0>;
+v0x2666470_0 .net "I", 0 0, L_0x2ce1e80;  alias, 1 drivers
+v0x2666750_0 .net "O", 0 0, L_0x27aceb0;  1 drivers
+L_0x7f287c793d50 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26665e0_0 .net "T", 0 0, L_0x7f287c793d50;  1 drivers
+S_0x2cd58d0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_13" "O_BUFT" 6 663, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26d8f60 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27b2c00 .functor BUFT 1, L_0x2ce6c40, C4<0>, C4<0>, C4<0>;
+v0x26668c0_0 .net "I", 0 0, L_0x2ce6c40;  alias, 1 drivers
+v0x2710810_0 .net "O", 0 0, L_0x27b2c00;  1 drivers
+L_0x7f287c793d98 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2713760_0 .net "T", 0 0, L_0x7f287c793d98;  1 drivers
+S_0x2cd3180 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_14" "O_BUFT" 6 671, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2710c00 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2711700 .functor BUFT 1, L_0x2ce93f0, C4<0>, C4<0>, C4<0>;
+v0x2714e60_0 .net "I", 0 0, L_0x2ce93f0;  alias, 1 drivers
+v0x2708ec0_0 .net "O", 0 0, L_0x2711700;  1 drivers
+L_0x7f287c793de0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2656ae0_0 .net "T", 0 0, L_0x7f287c793de0;  1 drivers
+S_0x2cd0a70 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_15" "O_BUFT" 6 679, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2654ed0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27ff260 .functor BUFT 1, L_0x2ce9350, C4<0>, C4<0>, C4<0>;
+v0x2656c50_0 .net "I", 0 0, L_0x2ce9350;  alias, 1 drivers
+v0x26589d0_0 .net "O", 0 0, L_0x27ff260;  1 drivers
+L_0x7f287c793e28 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2658b40_0 .net "T", 0 0, L_0x7f287c793e28;  1 drivers
+S_0x2cce360 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_16" "O_BUFT" 6 687, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x275f590 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2950f20 .functor BUFT 1, L_0x2ceba60, C4<0>, C4<0>, C4<0>;
+v0x2654bf0_0 .net "I", 0 0, L_0x2ceba60;  alias, 1 drivers
+v0x2654d60_0 .net "O", 0 0, L_0x2950f20;  1 drivers
+L_0x7f287c793e70 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x265a8c0_0 .net "T", 0 0, L_0x7f287c793e70;  1 drivers
+S_0x2ccbc50 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_17" "O_BUFT" 6 695, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2695ae0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x294fe80 .functor BUFT 1, L_0x2cee170, C4<0>, C4<0>, C4<0>;
+v0x265aa30_0 .net "I", 0 0, L_0x2cee170;  alias, 1 drivers
+v0x2652d00_0 .net "O", 0 0, L_0x294fe80;  1 drivers
+L_0x7f287c793eb8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2652e70_0 .net "T", 0 0, L_0x7f287c793eb8;  1 drivers
+S_0x2cc9540 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_18" "O_BUFT" 6 703, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2737950 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a73c0 .functor BUFT 1, L_0x2cf0880, C4<0>, C4<0>, C4<0>;
+v0x26eead0_0 .net "I", 0 0, L_0x2cf0880;  alias, 1 drivers
+v0x26eec40_0 .net "O", 0 0, L_0x27a73c0;  1 drivers
+L_0x7f287c793f00 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26eedb0_0 .net "T", 0 0, L_0x7f287c793f00;  1 drivers
+S_0x2cc6e30 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_19" "O_BUFT" 6 711, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x268cf60 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a6d90 .functor BUFT 1, L_0x2c81180, C4<0>, C4<0>, C4<0>;
+v0x26b6ec0_0 .net "I", 0 0, L_0x2c81180;  alias, 1 drivers
+v0x26b71a0_0 .net "O", 0 0, L_0x27a6d90;  1 drivers
+L_0x7f287c793f48 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26b7030_0 .net "T", 0 0, L_0x7f287c793f48;  1 drivers
+S_0x2cc4750 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_2" "O_BUFT" 6 719, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2721d70 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2a224b0 .functor BUFT 1, L_0x2ccc000, C4<0>, C4<0>, C4<0>;
+v0x26b7310_0 .net "I", 0 0, L_0x2ccc000;  alias, 1 drivers
+v0x2644e00_0 .net "O", 0 0, L_0x2a224b0;  1 drivers
+L_0x7f287c793f90 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2644f70_0 .net "T", 0 0, L_0x7f287c793f90;  1 drivers
+S_0x2cc20d0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_20" "O_BUFT" 6 727, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x271bf80 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2950250 .functor BUFT 1, L_0x2c48d40, C4<0>, C4<0>, C4<0>;
+v0x26cb590_0 .net "I", 0 0, L_0x2c48d40;  alias, 1 drivers
+v0x264b4c0_0 .net "O", 0 0, L_0x2950250;  1 drivers
+L_0x7f287c793fd8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x264b7a0_0 .net "T", 0 0, L_0x7f287c793fd8;  1 drivers
+S_0x2cbf9f0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_21" "O_BUFT" 6 735, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26fb3f0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x294dc00 .functor BUFT 1, L_0x2c69080, C4<0>, C4<0>, C4<0>;
+v0x264b630_0 .net "I", 0 0, L_0x2c69080;  alias, 1 drivers
+v0x264b910_0 .net "O", 0 0, L_0x294dc00;  1 drivers
+L_0x7f287c794020 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x262eeb0_0 .net "T", 0 0, L_0x7f287c794020;  1 drivers
+S_0x2cbd310 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_22" "O_BUFT" 6 743, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26e11c0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x294bbd0 .functor BUFT 1, L_0x2c5bf10, C4<0>, C4<0>, C4<0>;
+v0x26878a0_0 .net "I", 0 0, L_0x2c5bf10;  alias, 1 drivers
+v0x2687b80_0 .net "O", 0 0, L_0x294bbd0;  1 drivers
+L_0x7f287c794068 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2687a10_0 .net "T", 0 0, L_0x7f287c794068;  1 drivers
+S_0x2cbac30 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_23" "O_BUFT" 6 751, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2674700 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2995c10 .functor BUFT 1, L_0x2c89390, C4<0>, C4<0>, C4<0>;
+v0x2687cf0_0 .net "I", 0 0, L_0x2c89390;  alias, 1 drivers
+v0x2646c70_0 .net "O", 0 0, L_0x2995c10;  1 drivers
+L_0x7f287c7940b0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2646de0_0 .net "T", 0 0, L_0x7f287c7940b0;  1 drivers
+S_0x2cb8550 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_24" "O_BUFT" 6 759, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a69930 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a5620 .functor BUFT 1, L_0x2c90ab0, C4<0>, C4<0>, C4<0>;
+v0x26827a0_0 .net "I", 0 0, L_0x2c90ab0;  alias, 1 drivers
+v0x2682a80_0 .net "O", 0 0, L_0x27a5620;  1 drivers
+L_0x7f287c7940f8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2682910_0 .net "T", 0 0, L_0x7f287c7940f8;  1 drivers
+S_0x2cb5e40 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_25" "O_BUFT" 6 767, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2854f70 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a5770 .functor BUFT 1, L_0x2cc7790, C4<0>, C4<0>, C4<0>;
+v0x2682bf0_0 .net "I", 0 0, L_0x2cc7790;  alias, 1 drivers
+v0x26942e0_0 .net "O", 0 0, L_0x27a5770;  1 drivers
+L_0x7f287c794140 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26945c0_0 .net "T", 0 0, L_0x7f287c794140;  1 drivers
+S_0x2cb36f0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_26" "O_BUFT" 6 775, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x29d68b0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a58c0 .functor BUFT 1, L_0x2c177a0, C4<0>, C4<0>, C4<0>;
+v0x2694450_0 .net "I", 0 0, L_0x2c177a0;  alias, 1 drivers
+v0x2694730_0 .net "O", 0 0, L_0x27a58c0;  1 drivers
+L_0x7f287c794188 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2694a10_0 .net "T", 0 0, L_0x7f287c794188;  1 drivers
+S_0x2cb0fe0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_27" "O_BUFT" 6 783, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a795d0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a8960 .functor BUFT 1, L_0x2cc9e90, C4<0>, C4<0>, C4<0>;
+v0x26948a0_0 .net "I", 0 0, L_0x2cc9e90;  alias, 1 drivers
+v0x26b2fb0_0 .net "O", 0 0, L_0x27a8960;  1 drivers
+L_0x7f287c7941d0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26b3290_0 .net "T", 0 0, L_0x7f287c7941d0;  1 drivers
+S_0x2cae8d0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_28" "O_BUFT" 6 791, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2ab4930 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x280e5a0 .functor BUFT 1, L_0x2c3bc00, C4<0>, C4<0>, C4<0>;
+v0x26b3120_0 .net "I", 0 0, L_0x2c3bc00;  alias, 1 drivers
+v0x26b3400_0 .net "O", 0 0, L_0x280e5a0;  1 drivers
+L_0x7f287c794218 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26abc00_0 .net "T", 0 0, L_0x7f287c794218;  1 drivers
+S_0x2cac1c0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_29" "O_BUFT" 6 799, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a415f0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2664360 .functor BUFT 1, L_0x2ccc590, C4<0>, C4<0>, C4<0>;
+v0x26abee0_0 .net "I", 0 0, L_0x2ccc590;  alias, 1 drivers
+v0x26abd70_0 .net "O", 0 0, L_0x2664360;  1 drivers
+L_0x7f287c794260 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x26ac050_0 .net "T", 0 0, L_0x7f287c794260;  1 drivers
+S_0x2ca9ab0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_3" "O_BUFT" 6 807, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2a06830 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x26eef20 .functor BUFT 1, L_0x2cce710, C4<0>, C4<0>, C4<0>;
+v0x2732730_0 .net "I", 0 0, L_0x2cce710;  alias, 1 drivers
+v0x2732a10_0 .net "O", 0 0, L_0x26eef20;  1 drivers
+L_0x7f287c7942a8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2732b80_0 .net "T", 0 0, L_0x7f287c7942a8;  1 drivers
+S_0x2ca73a0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_30" "O_BUFT" 6 815, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x298f370 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27b6270 .functor BUFT 1, L_0x2c40b30, C4<0>, C4<0>, C4<0>;
+v0x2732cf0_0 .net "I", 0 0, L_0x2c40b30;  alias, 1 drivers
+v0x27328a0_0 .net "O", 0 0, L_0x27b6270;  1 drivers
+L_0x7f287c7942f0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2730120_0 .net "T", 0 0, L_0x7f287c7942f0;  1 drivers
+S_0x2ca4c80 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_31" "O_BUFT" 6 823, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2998640 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2a63890 .functor BUFT 1, L_0x2ccec90, C4<0>, C4<0>, C4<0>;
+v0x2730400_0 .net "I", 0 0, L_0x2ccec90;  alias, 1 drivers
+v0x2730570_0 .net "O", 0 0, L_0x2a63890;  1 drivers
+L_0x7f287c794338 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2730290_0 .net "T", 0 0, L_0x7f287c794338;  1 drivers
+S_0x2ca2620 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_32" "O_BUFT" 6 831, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2957320 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2a778d0 .functor BUFT 1, L_0x2cd1390, C4<0>, C4<0>, C4<0>;
+v0x272d320_0 .net "I", 0 0, L_0x2cd1390;  alias, 1 drivers
+v0x272dbc0_0 .net "O", 0 0, L_0x2a778d0;  1 drivers
+L_0x7f287c794380 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x272d600_0 .net "T", 0 0, L_0x7f287c794380;  1 drivers
+S_0x2c9ff40 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_33" "O_BUFT" 6 839, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x27a6480 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27ae440 .functor BUFT 1, L_0x2c60ee0, C4<0>, C4<0>, C4<0>;
+v0x272d770_0 .net "I", 0 0, L_0x2c60ee0;  alias, 1 drivers
+v0x272da50_0 .net "O", 0 0, L_0x27ae440;  1 drivers
+L_0x7f287c7943c8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x272dea0_0 .net "T", 0 0, L_0x7f287c7943c8;  1 drivers
+S_0x2c9d860 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_34" "O_BUFT" 6 847, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2800360 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27b25a0 .functor BUFT 1, L_0x2c60e40, C4<0>, C4<0>, C4<0>;
+v0x272dd30_0 .net "I", 0 0, L_0x2c60e40;  alias, 1 drivers
+v0x272d8e0_0 .net "O", 0 0, L_0x27b25a0;  1 drivers
+L_0x7f287c794410 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x272d490_0 .net "T", 0 0, L_0x7f287c794410;  1 drivers
+S_0x2c9b100 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_35" "O_BUFT" 6 855, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x28072a0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27a9bd0 .functor BUFT 1, L_0x2c7c250, C4<0>, C4<0>, C4<0>;
+v0x272ad80_0 .net "I", 0 0, L_0x2c7c250;  alias, 1 drivers
+v0x272b060_0 .net "O", 0 0, L_0x27a9bd0;  1 drivers
+L_0x7f287c794458 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x272b1d0_0 .net "T", 0 0, L_0x7f287c794458;  1 drivers
+S_0x2c969b0 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_36" "O_BUFT" 6 863, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26f2cb0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27add10 .functor BUFT 1, L_0x2cecfe0, C4<0>, C4<0>, C4<0>;
+v0x272aef0_0 .net "I", 0 0, L_0x2cecfe0;  alias, 1 drivers
+v0x2736d30_0 .net "O", 0 0, L_0x27add10;  1 drivers
+L_0x7f287c7944a0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2736ea0_0 .net "T", 0 0, L_0x7f287c7944a0;  1 drivers
+S_0x299ba00 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_37" "O_BUFT" 6 871, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x266b730 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27aaa90 .functor BUFT 1, L_0x2cdfff0, C4<0>, C4<0>, C4<0>;
+v0x2737010_0 .net "I", 0 0, L_0x2cdfff0;  alias, 1 drivers
+v0x2734ce0_0 .net "O", 0 0, L_0x27aaa90;  1 drivers
+L_0x7f287c7944e8 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2734e50_0 .net "T", 0 0, L_0x7f287c7944e8;  1 drivers
+S_0x2cf3370 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_4" "O_BUFT" 6 879, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2656dc0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27b2f30 .functor BUFT 1, L_0x2cd0e20, C4<0>, C4<0>, C4<0>;
+v0x2734fc0_0 .net "I", 0 0, L_0x2cd0e20;  alias, 1 drivers
+v0x27486f0_0 .net "O", 0 0, L_0x27b2f30;  1 drivers
+L_0x7f287c794530 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2748580_0 .net "T", 0 0, L_0x7f287c794530;  1 drivers
+S_0x2cf0c60 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_5" "O_BUFT" 6 887, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x275ecf0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2952e00 .functor BUFT 1, L_0x2cd35d0, C4<0>, C4<0>, C4<0>;
+v0x2747e50_0 .net "I", 0 0, L_0x2cd35d0;  alias, 1 drivers
+v0x2747fc0_0 .net "O", 0 0, L_0x2952e00;  1 drivers
+L_0x7f287c794578 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x27482a0_0 .net "T", 0 0, L_0x7f287c794578;  1 drivers
+S_0x2cee550 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_6" "O_BUFT" 6 895, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x273d6f0 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2956c40 .functor BUFT 1, L_0x2cd3530, C4<0>, C4<0>, C4<0>;
+v0x2748130_0 .net "I", 0 0, L_0x2cd3530;  alias, 1 drivers
+v0x2748410_0 .net "O", 0 0, L_0x2956c40;  1 drivers
+L_0x7f287c7945c0 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2748d20_0 .net "T", 0 0, L_0x7f287c7945c0;  1 drivers
+S_0x2cebe40 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_7" "O_BUFT" 6 903, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26c0210 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27ffa00 .functor BUFT 1, L_0x2cd5c20, C4<0>, C4<0>, C4<0>;
+v0x2748e90_0 .net "I", 0 0, L_0x2cd5c20;  alias, 1 drivers
+v0x2749000_0 .net "O", 0 0, L_0x27ffa00;  1 drivers
+L_0x7f287c794608 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2739300_0 .net "T", 0 0, L_0x7f287c794608;  1 drivers
+S_0x2ce9730 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_8" "O_BUFT" 6 911, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x2760a40 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x27b2270 .functor BUFT 1, L_0x2cd8300, C4<0>, C4<0>, C4<0>;
+v0x273a030_0 .net "I", 0 0, L_0x2cd8300;  alias, 1 drivers
+v0x273a660_0 .net "O", 0 0, L_0x27b2270;  1 drivers
+L_0x7f287c794650 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x2697340_0 .net "T", 0 0, L_0x7f287c794650;  1 drivers
+S_0x2ce7020 .scope module, "$obuf$GJC4_updated.$obuf_z_mult_9" "O_BUFT" 6 919, 8 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "I";
+    .port_info 1 /INPUT 1 "T";
+    .port_info 2 /OUTPUT 1 "O";
+P_0x26ecc00 .param/str "WEAK_KEEPER" 0 8 11, "NONE";
+L_0x2664da0 .functor BUFT 1, L_0x2cda9e0, C4<0>, C4<0>, C4<0>;
+v0x26974b0_0 .net "I", 0 0, L_0x2cda9e0;  alias, 1 drivers
+v0x26d13b0_0 .net "O", 0 0, L_0x2664da0;  1 drivers
+L_0x7f287c794698 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x267ae20_0 .net "T", 0 0, L_0x7f287c794698;  1 drivers
+S_0x2ce2260 .scope module, "dut_mult" "DSP38" 6 930, 5 10 1, S_0x2ce99c0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 20 "A";
+    .port_info 1 /INPUT 18 "B";
+    .port_info 2 /INPUT 6 "ACC_FIR";
+    .port_info 3 /OUTPUT 38 "Z";
+    .port_info 4 /OUTPUT 18 "DLY_B";
+    .port_info 5 /INPUT 1 "CLK";
+    .port_info 6 /INPUT 1 "RESET";
+    .port_info 7 /INPUT 3 "FEEDBACK";
+    .port_info 8 /INPUT 1 "LOAD_ACC";
+    .port_info 9 /INPUT 1 "SATURATE";
+    .port_info 10 /INPUT 6 "SHIFT_RIGHT";
+    .port_info 11 /INPUT 1 "ROUND";
+    .port_info 12 /INPUT 1 "SUBTRACT";
+    .port_info 13 /INPUT 1 "UNSIGNED_A";
+    .port_info 14 /INPUT 1 "UNSIGNED_B";
+P_0x2cdfb80 .param/l "COEFF_0" 0 5 12, C4<00000000000000000000>;
+P_0x2cdfbc0 .param/l "COEFF_1" 0 5 13, C4<00000000000000000000>;
+P_0x2cdfc00 .param/l "COEFF_2" 0 5 14, C4<00000000000000000000>;
+P_0x2cdfc40 .param/l "COEFF_3" 0 5 15, C4<00000000000000000000>;
+P_0x2cdfc80 .param/str "DSP_MODE" 0 5 11, "MULTIPLY";
+P_0x2cdfcc0 .param/str "INPUT_REG_EN" 0 5 17, "FALSE";
+P_0x2cdfd00 .param/str "OUTPUT_REG_EN" 0 5 16, "FALSE";
+v0x267b100_0 .net "A", 19 0, L_0x2ce4680;  1 drivers
+o0x7f287c7e28e8 .functor BUFZ 6, c4<zzzzzz>; HiZ drive
+v0x267af90_0 .net "ACC_FIR", 5 0, o0x7f287c7e28e8;  0 drivers
+v0x267b270_0 .net "B", 17 0, L_0x2ce26d0;  1 drivers
+o0x7f287c7e2948 .functor BUFZ 1, c4<z>; HiZ drive
+v0x26bf540_0 .net "CLK", 0 0, o0x7f287c7e2948;  0 drivers
+v0x26bf820_0 .var "DLY_B", 17 0;
+v0x26bf6b0_0 .net "FEEDBACK", 2 0, L_0x2cc4ad0;  1 drivers
+o0x7f287c7e29d8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x26bf990_0 .net "LOAD_ACC", 0 0, o0x7f287c7e29d8;  0 drivers
+o0x7f287c7e2a08 .functor BUFZ 1, c4<z>; HiZ drive
+v0x26bad20_0 .net "RESET", 0 0, o0x7f287c7e2a08;  0 drivers
+o0x7f287c7e2a38 .functor BUFZ 1, c4<z>; HiZ drive
+v0x26bae90_0 .net "ROUND", 0 0, o0x7f287c7e2a38;  0 drivers
+o0x7f287c7e2a68 .functor BUFZ 1, c4<z>; HiZ drive
+v0x26bcce0_0 .net "SATURATE", 0 0, o0x7f287c7e2a68;  0 drivers
+o0x7f287c7e2a98 .functor BUFZ 6, c4<zzzzzz>; HiZ drive
+v0x26bcfc0_0 .net "SHIFT_RIGHT", 5 0, o0x7f287c7e2a98;  0 drivers
+o0x7f287c7e2ac8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x26bce50_0 .net "SUBTRACT", 0 0, o0x7f287c7e2ac8;  0 drivers
+v0x26bd130_0 .net "UNSIGNED_A", 0 0, L_0x29900e0;  alias, 1 drivers
+v0x267d6a0_0 .net "UNSIGNED_B", 0 0, L_0x29531d0;  alias, 1 drivers
+v0x267d980_0 .net "Z", 37 0, v0x26a97f0_0;  1 drivers
+v0x267d810_0 .var "a_int", 19 0;
+v0x267daf0_0 .var "a_reg", 19 0;
+v0x268c9a0_0 .var "acc_fir_int", 5 0;
+v0x268cc80_0 .var "acc_fir_reg", 5 0;
+v0x268cb10_0 .var/s "accumulator", 63 0;
+v0x268cdf0_0 .var/s "add_sub_in", 63 0;
+v0x268a120_0 .var/s "add_sub_out", 63 0;
+v0x268a400_0 .var "b_int", 17 0;
+v0x268a290_0 .var "b_reg", 17 0;
+v0x268a570_0 .var "feedback_int", 2 0;
+v0x271eac0_0 .var "feedback_reg", 2 0;
+v0x271ec30_0 .var "load_acc_int", 0 0;
+v0x271e650_0 .var "load_acc_reg", 0 0;
+v0x271eda0_0 .var "mult_a", 19 0;
+v0x271ef10_0 .var "mult_b", 17 0;
+v0x271f080_0 .var/s "mult_out", 63 0;
+v0x266e710_0 .var/s "pre_shift", 63 0;
+v0x2685020_0 .var/s "round", 63 0;
+v0x2685300_0 .var "round_int", 0 0;
+v0x2685190_0 .var "round_reg1", 0 0;
+v0x2685470_0 .var "round_reg2", 0 0;
+v0x267ff20_0 .var/s "saturate", 37 0;
+v0x2680200_0 .var "saturate_int", 0 0;
+v0x2680090_0 .var "saturate_reg1", 0 0;
+v0x2680370_0 .var "saturate_reg2", 0 0;
+v0x271a6c0_0 .var/s "shift_right", 63 0;
+v0x271a830_0 .var "shift_right_int", 5 0;
+v0x271c930_0 .var "shift_right_reg1", 5 0;
+v0x26ae460_0 .var "shift_right_reg2", 5 0;
+v0x26ae740_0 .var "subtract_int", 0 0;
+v0x26ae5d0_0 .var "subtract_reg", 0 0;
+v0x26ae8b0_0 .var "unsigned_a_int", 0 0;
+v0x26a93a0_0 .var "unsigned_a_reg", 0 0;
+v0x26a9680_0 .var "unsigned_b_int", 0 0;
+v0x26a9510_0 .var "unsigned_b_reg", 0 0;
+v0x26a97f0_0 .var "z_out", 37 0;
+v0x26fd990_0 .var "z_out_reg", 37 0;
+E_0x26bfb20 .event anyedge, v0x26bf6b0_0;
+E_0x2649260 .event anyedge, v0x267af90_0;
+E_0x2cdd6d0 .event posedge, v0x26bad20_0, v0x26bf540_0;
+E_0x2856710/0 .event anyedge, v0x268a120_0, v0x266e710_0, v0x271a830_0, v0x2685300_0;
+E_0x2856710/1 .event anyedge, v0x271a6c0_0, v0x2680200_0, v0x26ae8b0_0, v0x26a9680_0;
+E_0x2856710/2 .event anyedge, v0x2685020_0, v0x271f080_0;
+E_0x2856710 .event/or E_0x2856710/0, E_0x2856710/1, E_0x2856710/2;
+E_0x2856750 .event anyedge, v0x26ae740_0, v0x268cdf0_0, v0x271f080_0;
+E_0x2856490 .event anyedge, v0x26ae8b0_0, v0x26a9680_0, v0x271eda0_0, v0x271ef10_0;
+E_0x2856350/0 .event anyedge, v0x268a570_0, v0x267d810_0, v0x268a400_0, v0x268cb10_0;
+E_0x2856350/1 .event anyedge, v0x26ae8b0_0, v0x268c9a0_0;
+E_0x2856350 .event/or E_0x2856350/0, E_0x2856350/1;
+E_0x285a1c0/0 .event anyedge, v0x267b100_0, v0x267b270_0, v0x26bce50_0, v0x267af90_0;
+E_0x285a1c0/1 .event anyedge, v0x26bf6b0_0, v0x26bf990_0, v0x26d2c60_0, v0x26c1ca0_0;
+E_0x285a1c0/2 .event anyedge, v0x26bcfc0_0, v0x26bae90_0, v0x26bcce0_0;
+E_0x285a1c0 .event/or E_0x285a1c0/0, E_0x285a1c0/1, E_0x285a1c0/2;
+    .scope S_0x2cec0d0;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2767270_0, 0, 1;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x282a9a0_0, 0, 6;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0x282af60_0, 0, 3;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x2765cf0_0, 0, 6;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x2766fd0_0, 0, 6;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x28e2e90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x28e3db0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x28e2bb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x28e3ad0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x282b240_0, 0, 1;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x282a6c0_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x282adf0_0, 0, 18;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x27686a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x2769ad0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2767120_0, 0, 1;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x282a830_0, 0, 6;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0x2829520_0, 0, 3;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x2765ba0_0, 0, 6;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x28e3c40_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x28e3960_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x282b0d0_0, 0, 1;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x282a550_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x282ac80_0, 0, 18;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x2768550_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x27687f0_0, 0, 1;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x282ab10_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x286a3c0_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x28293b0_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x286a6e0_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x2765a50_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x28e2d20_0, 0, 64;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x2769c20_0, 0, 38;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x2769d70_0, 0, 38;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %end;
+    .thread T_1, $init;
+    .scope S_0x2cec0d0;
+T_2 ;
+    %wait E_0x28aeec0;
+    %load/vec4 v0x29ca350_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_2.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x2767270_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x282a9a0_0, 0;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v0x282af60_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x2765cf0_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x2766fd0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x28e2e90_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x28e3db0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x28e2bb0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x28e3ad0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x282b240_0, 0;
+    %pushi/vec4 0, 0, 20;
+    %assign/vec4 v0x282a6c0_0, 0;
+    %pushi/vec4 0, 0, 18;
+    %assign/vec4 v0x282adf0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x27686a0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x2769ad0_0, 0;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0x2829f90_0;
+    %assign/vec4 v0x2767270_0, 0;
+    %load/vec4 v0x29c0790_0;
+    %assign/vec4 v0x282a9a0_0, 0;
+    %load/vec4 v0x29c6e50_0;
+    %assign/vec4 v0x282af60_0, 0;
+    %load/vec4 v0x2829e20_0;
+    %assign/vec4 v0x2765cf0_0, 0;
+    %load/vec4 v0x2765cf0_0;
+    %assign/vec4 v0x2766fd0_0, 0;
+    %load/vec4 v0x2829830_0;
+    %assign/vec4 v0x28e2e90_0, 0;
+    %load/vec4 v0x28e2e90_0;
+    %assign/vec4 v0x28e3db0_0, 0;
+    %load/vec4 v0x2828b40_0;
+    %assign/vec4 v0x28e2bb0_0, 0;
+    %load/vec4 v0x28e2bb0_0;
+    %assign/vec4 v0x28e3ad0_0, 0;
+    %load/vec4 v0x29ca1f0_0;
+    %assign/vec4 v0x282b240_0, 0;
+    %load/vec4 v0x29b8270_0;
+    %assign/vec4 v0x282a6c0_0, 0;
+    %load/vec4 v0x29c05e0_0;
+    %assign/vec4 v0x282adf0_0, 0;
+    %load/vec4 v0x282a100_0;
+    %assign/vec4 v0x27686a0_0, 0;
+    %load/vec4 v0x282a270_0;
+    %assign/vec4 v0x2769ad0_0, 0;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x2cec0d0;
+T_3 ;
+    %wait E_0x28b47a0;
+    %load/vec4 v0x29b8270_0;
+    %store/vec4 v0x282a550_0, 0, 20;
+    %load/vec4 v0x29c05e0_0;
+    %store/vec4 v0x282ac80_0, 0, 18;
+    %load/vec4 v0x2829f90_0;
+    %store/vec4 v0x2767120_0, 0, 1;
+    %load/vec4 v0x29c0790_0;
+    %store/vec4 v0x282a830_0, 0, 6;
+    %load/vec4 v0x29c6e50_0;
+    %store/vec4 v0x2829520_0, 0, 3;
+    %load/vec4 v0x29ca1f0_0;
+    %store/vec4 v0x282b0d0_0, 0, 1;
+    %load/vec4 v0x282a100_0;
+    %store/vec4 v0x2768550_0, 0, 1;
+    %load/vec4 v0x282a270_0;
+    %store/vec4 v0x27687f0_0, 0, 1;
+    %load/vec4 v0x2829e20_0;
+    %store/vec4 v0x2765ba0_0, 0, 6;
+    %load/vec4 v0x2829830_0;
+    %store/vec4 v0x28e3c40_0, 0, 1;
+    %load/vec4 v0x2828b40_0;
+    %store/vec4 v0x28e3960_0, 0, 1;
+    %jmp T_3;
+    .thread T_3, $push;
+    .scope S_0x2cec0d0;
+T_4 ;
+    %wait E_0x28ae1b0;
+    %load/vec4 v0x2829520_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.3, 6;
+    %dup/vec4;
+    %pushi/vec4 4, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.4, 6;
+    %dup/vec4;
+    %pushi/vec4 5, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.5, 6;
+    %dup/vec4;
+    %pushi/vec4 6, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.6, 6;
+    %dup/vec4;
+    %pushi/vec4 7, 0, 3;
+    %cmp/u;
+    %jmp/1 T_4.7, 6;
+    %jmp T_4.8;
+T_4.0 ;
+    %load/vec4 v0x282a550_0;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %load/vec4 v0x282ac80_0;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %load/vec4 v0x282ab10_0;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.1 ;
+    %load/vec4 v0x282a550_0;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %load/vec4 v0x282ac80_0;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.2 ;
+    %load/vec4 v0x282a550_0;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_4.9, 8;
+    %load/vec4 v0x282a550_0;
+    %pad/u 64;
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/1 T_4.10, 8;
+T_4.9 ; End of true expr.
+    %load/vec4 v0x282a550_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x282a550_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/0 T_4.10, 8;
+ ; End of false expr.
+    %blend;
+T_4.10;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.3 ;
+    %load/vec4 v0x282ab10_0;
+    %pad/s 20;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %load/vec4 v0x282ac80_0;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_4.11, 8;
+    %load/vec4 v0x282a550_0;
+    %pad/u 64;
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/1 T_4.12, 8;
+T_4.11 ; End of true expr.
+    %load/vec4 v0x282a550_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x282a550_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/0 T_4.12, 8;
+ ; End of false expr.
+    %blend;
+T_4.12;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.4 ;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %load/vec4 v0x282ac80_0;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_4.13, 8;
+    %load/vec4 v0x282a550_0;
+    %pad/u 64;
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/1 T_4.14, 8;
+T_4.13 ; End of true expr.
+    %load/vec4 v0x282a550_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x282a550_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/0 T_4.14, 8;
+ ; End of false expr.
+    %blend;
+T_4.14;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.5 ;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %load/vec4 v0x282ac80_0;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_4.15, 8;
+    %load/vec4 v0x282a550_0;
+    %pad/u 64;
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/1 T_4.16, 8;
+T_4.15 ; End of true expr.
+    %load/vec4 v0x282a550_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x282a550_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/0 T_4.16, 8;
+ ; End of false expr.
+    %blend;
+T_4.16;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.6 ;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x282b3b0_0, 0, 20;
+    %load/vec4 v0x282ac80_0;
+    %store/vec4 v0x286a570_0, 0, 18;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_4.17, 8;
+    %load/vec4 v0x282a550_0;
+    %pad/u 64;
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/1 T_4.18, 8;
+T_4.17 ; End of true expr.
+    %load/vec4 v0x282a550_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x282a550_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/0 T_4.18, 8;
+ ; End of false expr.
+    %blend;
+T_4.18;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.7 ;
+    %pushi/vec4 0, 0, 20;
+    %assign/vec4 v0x282b3b0_0, 0;
+    %load/vec4 v0x282ac80_0;
+    %assign/vec4 v0x286a570_0, 0;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_4.19, 8;
+    %load/vec4 v0x282a550_0;
+    %pad/u 64;
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/1 T_4.20, 8;
+T_4.19 ; End of true expr.
+    %load/vec4 v0x282a550_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x282a550_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x282a830_0;
+    %shiftl 4;
+    %jmp/0 T_4.20, 8;
+ ; End of false expr.
+    %blend;
+T_4.20;
+    %store/vec4 v0x2829240_0, 0, 64;
+    %jmp T_4.8;
+T_4.8 ;
+    %pop/vec4 1;
+    %jmp T_4;
+    .thread T_4, $push;
+    .scope S_0x2cec0d0;
+T_5 ;
+    %wait E_0x28b42c0;
+    %load/vec4 v0x2768550_0;
+    %load/vec4 v0x27687f0_0;
+    %concat/vec4; draw_concat_vec4
+    %dup/vec4;
+    %pushi/vec4 0, 0, 2;
+    %cmp/u;
+    %jmp/1 T_5.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 2;
+    %cmp/u;
+    %jmp/1 T_5.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 2;
+    %cmp/u;
+    %jmp/1 T_5.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 2;
+    %cmp/u;
+    %jmp/1 T_5.3, 6;
+    %jmp T_5.4;
+T_5.0 ;
+    %load/vec4 v0x282b3b0_0;
+    %pad/s 64;
+    %load/vec4 v0x286a570_0;
+    %pad/s 64;
+    %mul;
+    %store/vec4 v0x286a3c0_0, 0, 64;
+    %jmp T_5.4;
+T_5.1 ;
+    %load/vec4 v0x282b3b0_0;
+    %pad/s 64;
+    %pushi/vec4 0, 0, 1;
+    %load/vec4 v0x286a570_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/s 64;
+    %mul;
+    %store/vec4 v0x286a3c0_0, 0, 64;
+    %jmp T_5.4;
+T_5.2 ;
+    %pushi/vec4 0, 0, 1;
+    %load/vec4 v0x282b3b0_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/s 64;
+    %load/vec4 v0x286a570_0;
+    %pad/s 64;
+    %mul;
+    %store/vec4 v0x286a3c0_0, 0, 64;
+    %jmp T_5.4;
+T_5.3 ;
+    %load/vec4 v0x282b3b0_0;
+    %pad/u 64;
+    %load/vec4 v0x286a570_0;
+    %pad/u 64;
+    %mul;
+    %store/vec4 v0x286a3c0_0, 0, 64;
+    %jmp T_5.4;
+T_5.4 ;
+    %pop/vec4 1;
+    %jmp T_5;
+    .thread T_5, $push;
+    .scope S_0x2cec0d0;
+T_6 ;
+    %wait E_0x28af0d0;
+    %load/vec4 v0x2767120_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_6.0, 8;
+    %load/vec4 v0x2829240_0;
+    %load/vec4 v0x286a3c0_0;
+    %sub;
+    %store/vec4 v0x28293b0_0, 0, 64;
+    %jmp T_6.1;
+T_6.0 ;
+    %load/vec4 v0x2829240_0;
+    %load/vec4 v0x286a3c0_0;
+    %add;
+    %store/vec4 v0x28293b0_0, 0, 64;
+T_6.1 ;
+    %jmp T_6;
+    .thread T_6, $push;
+    .scope S_0x2cec0d0;
+T_7 ;
+    %wait E_0x28aeec0;
+    %load/vec4 v0x29ca350_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_7.0, 8;
+    %pushi/vec4 0, 0, 64;
+    %assign/vec4 v0x282ab10_0, 0;
+    %jmp T_7.1;
+T_7.0 ;
+    %load/vec4 v0x282b0d0_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_7.2, 8;
+    %load/vec4 v0x28293b0_0;
+    %assign/vec4 v0x282ab10_0, 0;
+    %jmp T_7.3;
+T_7.2 ;
+    %load/vec4 v0x282ab10_0;
+    %assign/vec4 v0x282ab10_0, 0;
+T_7.3 ;
+T_7.1 ;
+    %jmp T_7;
+    .thread T_7;
+    .scope S_0x2cec0d0;
+T_8 ;
+    %wait E_0x28af090;
+    %load/vec4 v0x28293b0_0;
+    %store/vec4 v0x286a6e0_0, 0, 64;
+    %load/vec4 v0x286a6e0_0;
+    %ix/getv 4, v0x2765ba0_0;
+    %shiftr/s 4;
+    %store/vec4 v0x2765a50_0, 0, 64;
+    %load/vec4 v0x28e3c40_0;
+    %flag_set/vec4 9;
+    %flag_get/vec4 9;
+    %jmp/0 T_8.2, 9;
+    %pushi/vec4 0, 0, 32;
+    %load/vec4 v0x2765ba0_0;
+    %pad/u 32;
+    %cmp/u;
+    %flag_get/vec4 5;
+    %and;
+T_8.2;
+    %flag_set/vec4 8;
+    %jmp/0 T_8.0, 8;
+    %load/vec4 v0x286a6e0_0;
+    %load/vec4 v0x2765ba0_0;
+    %pad/u 32;
+    %subi 1, 0, 32;
+    %part/u 1;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %flag_mov 9, 4;
+    %jmp/0 T_8.3, 9;
+    %load/vec4 v0x2765a50_0;
+    %addi 1, 0, 64;
+    %jmp/1 T_8.4, 9;
+T_8.3 ; End of true expr.
+    %load/vec4 v0x2765a50_0;
+    %jmp/0 T_8.4, 9;
+ ; End of false expr.
+    %blend;
+T_8.4;
+    %jmp/1 T_8.1, 8;
+T_8.0 ; End of true expr.
+    %load/vec4 v0x2765a50_0;
+    %jmp/0 T_8.1, 8;
+ ; End of false expr.
+    %blend;
+T_8.1;
+    %store/vec4 v0x28e2d20_0, 0, 64;
+    %load/vec4 v0x28e3960_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_8.5, 8;
+    %load/vec4 v0x2768550_0;
+    %flag_set/vec4 9;
+    %flag_get/vec4 9;
+    %jmp/0 T_8.9, 9;
+    %load/vec4 v0x27687f0_0;
+    %and;
+T_8.9;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_8.7, 8;
+    %load/vec4 v0x28e2d20_0;
+    %cmpi/s 0, 0, 64;
+    %jmp/0xz  T_8.10, 5;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+    %jmp T_8.11;
+T_8.10 ;
+    %pushi/vec4 4294967295, 0, 58;
+    %concati/vec4 63, 0, 6;
+    %load/vec4 v0x28e2d20_0;
+    %cmp/u;
+    %jmp/0xz  T_8.12, 5;
+    %pushi/vec4 4294967295, 0, 32;
+    %concati/vec4 63, 0, 6;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+    %jmp T_8.13;
+T_8.12 ;
+    %load/vec4 v0x28e2d20_0;
+    %parti/s 38, 0, 2;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+T_8.13 ;
+T_8.11 ;
+    %jmp T_8.8;
+T_8.7 ;
+    %pushi/vec4 4294967295, 0, 59;
+    %concati/vec4 31, 0, 5;
+    %load/vec4 v0x28e2d20_0;
+    %cmp/s;
+    %jmp/0xz  T_8.14, 5;
+    %pushi/vec4 4294967295, 0, 33;
+    %concati/vec4 31, 0, 5;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+    %jmp T_8.15;
+T_8.14 ;
+    %load/vec4 v0x28e2d20_0;
+    %pushi/vec4 4294967264, 0, 32;
+    %concati/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/0xz  T_8.16, 5;
+    %pushi/vec4 2147483648, 0, 32;
+    %concati/vec4 0, 0, 6;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+    %jmp T_8.17;
+T_8.16 ;
+    %load/vec4 v0x28e2d20_0;
+    %parti/s 38, 0, 2;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+T_8.17 ;
+T_8.15 ;
+T_8.8 ;
+    %jmp T_8.6;
+T_8.5 ;
+    %load/vec4 v0x28e2d20_0;
+    %parti/s 38, 0, 2;
+    %store/vec4 v0x28e2a40_0, 0, 38;
+T_8.6 ;
+    %load/vec4 v0x286a3c0_0;
+    %pad/s 38;
+    %store/vec4 v0x2769c20_0, 0, 38;
+    %jmp T_8;
+    .thread T_8, $push;
+    .scope S_0x2cec0d0;
+T_9 ;
+    %wait E_0x28aeec0;
+    %load/vec4 v0x29ca350_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_9.0, 8;
+    %pushi/vec4 0, 0, 38;
+    %assign/vec4 v0x2769d70_0, 0;
+    %jmp T_9.1;
+T_9.0 ;
+    %pushi/vec4 262143, 262143, 18;
+    %assign/vec4 v0x2aa2f00_0, 0;
+    %load/vec4 v0x2769c20_0;
+    %assign/vec4 v0x2769d70_0, 0;
+T_9.1 ;
+    %jmp T_9;
+    .thread T_9;
+    .scope S_0x2cec0d0;
+T_10 ;
+    %wait E_0x28aee80;
+    %load/vec4 v0x29c0790_0;
+    %pad/u 32;
+    %cmpi/u 43, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %jmp/0xz  T_10.0, 5;
+    %vpi_call/w 5 301 "$fatal", 32'sb00000000000000000000000000000001, "\012ERROR: DSP38 instance %m ACC_FIR input is %d which is greater than 43 which serves no function", v0x29c0790_0 {0 0 0};
+T_10.0 ;
+    %jmp T_10;
+    .thread T_10, $push;
+    .scope S_0x2cec0d0;
+T_11 ;
+    %wait E_0x28afde0;
+    %pushi/vec4 2594871464, 0, 121;
+    %concati/vec4 1229999193, 0, 31;
+    %dup/vec4;
+    %pushi/vec4 1297435732, 0, 32; draw_string_vec4
+    %pushi/vec4 1229999193, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1598112579, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1431131468, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 4281413, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_11.0, 6;
+    %jmp T_11.1;
+T_11.0 ;
+    %load/vec4 v0x29c6e50_0;
+    %pad/u 32;
+    %cmpi/u 1, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %jmp/0xz  T_11.2, 5;
+    %vpi_call/w 5 308 "$fatal", 32'sb00000000000000000000000000000001, "\012ERROR: DSP38 instance %m has parameter DSP_MODE set to %s and FEEDBACK set to %0d. Valid values of FEEDBACK for this mode are 0,1 \012", P_0x2d0ad50, v0x29c6e50_0 {0 0 0};
+T_11.2 ;
+    %jmp T_11.1;
+T_11.1 ;
+    %pop/vec4 1;
+    %jmp T_11;
+    .thread T_11, $push;
+    .scope S_0x2cec0d0;
+T_12 ;
+    %pushi/vec4 2594871464, 0, 121;
+    %concati/vec4 1229999193, 0, 31;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 77, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1431065673, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5262425, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.0, 6;
+    %dup/vec4;
+    %pushi/vec4 77, 0, 32; draw_string_vec4
+    %pushi/vec4 1431065673, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1347180895, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1094992991, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5461314, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1297435732, 0, 32; draw_string_vec4
+    %pushi/vec4 1229999193, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1598112579, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1431131468, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 4281413, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.2, 6;
+    %vpi_call/w 5 321 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: DSP38 instance %m has parameter DSP_MODE set to %s.  Valid values are MULTIPLY, MULTIPLY_ADD_SUB, MULTIPLY_ACCUMULATE\012", P_0x2d0ad50 {0 0 0};
+    %jmp T_12.4;
+T_12.0 ;
+    %jmp T_12.4;
+T_12.1 ;
+    %jmp T_12.4;
+T_12.2 ;
+    %jmp T_12.4;
+T_12.4 ;
+    %pop/vec4 1;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %dup/vec4;
+    %pushi/vec4 5526101, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.5, 6;
+    %dup/vec4;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.6, 6;
+    %vpi_call/w 5 328 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: DSP38 instance %m has parameter OUTPUT_REG_EN set to %s.  Valid values are TRUE, FALSE\012", P_0x2d0add0 {0 0 0};
+    %jmp T_12.8;
+T_12.5 ;
+    %jmp T_12.8;
+T_12.6 ;
+    %jmp T_12.8;
+T_12.8 ;
+    %pop/vec4 1;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %dup/vec4;
+    %pushi/vec4 5526101, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.9, 6;
+    %dup/vec4;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_12.10, 6;
+    %vpi_call/w 5 335 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: DSP38 instance %m has parameter INPUT_REG_EN set to %s.  Valid values are TRUE, FALSE\012", P_0x2d0ad90 {0 0 0};
+    %jmp T_12.12;
+T_12.9 ;
+    %jmp T_12.12;
+T_12.10 ;
+    %jmp T_12.12;
+T_12.12 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_12;
+    .scope S_0x2ce72b0;
+T_13 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_13.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_13.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_13.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a92340 {0 0 0};
+    %jmp T_13.4;
+T_13.0 ;
+    %jmp T_13.4;
+T_13.1 ;
+    %jmp T_13.4;
+T_13.2 ;
+    %jmp T_13.4;
+T_13.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_13;
+    .scope S_0x2ce24f0;
+T_14 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_14.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_14.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_14.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x28de740 {0 0 0};
+    %jmp T_14.4;
+T_14.0 ;
+    %jmp T_14.4;
+T_14.1 ;
+    %jmp T_14.4;
+T_14.2 ;
+    %jmp T_14.4;
+T_14.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_14;
+    .scope S_0x2cdfe10;
+T_15 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_15.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_15.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_15.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x28d6f90 {0 0 0};
+    %jmp T_15.4;
+T_15.0 ;
+    %jmp T_15.4;
+T_15.1 ;
+    %jmp T_15.4;
+T_15.2 ;
+    %jmp T_15.4;
+T_15.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_15;
+    .scope S_0x2cdd730;
+T_16 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_16.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_16.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_16.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a73da0 {0 0 0};
+    %jmp T_16.4;
+T_16.0 ;
+    %jmp T_16.4;
+T_16.1 ;
+    %jmp T_16.4;
+T_16.2 ;
+    %jmp T_16.4;
+T_16.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_16;
+    .scope S_0x2cdb050;
+T_17 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_17.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_17.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_17.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x29d72a0 {0 0 0};
+    %jmp T_17.4;
+T_17.0 ;
+    %jmp T_17.4;
+T_17.1 ;
+    %jmp T_17.4;
+T_17.2 ;
+    %jmp T_17.4;
+T_17.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_17;
+    .scope S_0x2cd8970;
+T_18 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_18.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_18.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_18.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x29d4790 {0 0 0};
+    %jmp T_18.4;
+T_18.0 ;
+    %jmp T_18.4;
+T_18.1 ;
+    %jmp T_18.4;
+T_18.2 ;
+    %jmp T_18.4;
+T_18.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_18;
+    .scope S_0x2cd6290;
+T_19 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_19.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_19.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_19.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a7a470 {0 0 0};
+    %jmp T_19.4;
+T_19.0 ;
+    %jmp T_19.4;
+T_19.1 ;
+    %jmp T_19.4;
+T_19.2 ;
+    %jmp T_19.4;
+T_19.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_19;
+    .scope S_0x2cd3ba0;
+T_20 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_20.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_20.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_20.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2ab0770 {0 0 0};
+    %jmp T_20.4;
+T_20.0 ;
+    %jmp T_20.4;
+T_20.1 ;
+    %jmp T_20.4;
+T_20.2 ;
+    %jmp T_20.4;
+T_20.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_20;
+    .scope S_0x2cd1490;
+T_21 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_21.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_21.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_21.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x29d1380 {0 0 0};
+    %jmp T_21.4;
+T_21.0 ;
+    %jmp T_21.4;
+T_21.1 ;
+    %jmp T_21.4;
+T_21.2 ;
+    %jmp T_21.4;
+T_21.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_21;
+    .scope S_0x2cced80;
+T_22 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_22.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_22.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_22.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a3c0a0 {0 0 0};
+    %jmp T_22.4;
+T_22.0 ;
+    %jmp T_22.4;
+T_22.1 ;
+    %jmp T_22.4;
+T_22.2 ;
+    %jmp T_22.4;
+T_22.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_22;
+    .scope S_0x2ccc670;
+T_23 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_23.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_23.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_23.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a0b450 {0 0 0};
+    %jmp T_23.4;
+T_23.0 ;
+    %jmp T_23.4;
+T_23.1 ;
+    %jmp T_23.4;
+T_23.2 ;
+    %jmp T_23.4;
+T_23.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_23;
+    .scope S_0x2cc9f60;
+T_24 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_24.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_24.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_24.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a21df0 {0 0 0};
+    %jmp T_24.4;
+T_24.0 ;
+    %jmp T_24.4;
+T_24.1 ;
+    %jmp T_24.4;
+T_24.2 ;
+    %jmp T_24.4;
+T_24.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_24;
+    .scope S_0x2cc7850;
+T_25 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_25.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_25.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_25.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2997d20 {0 0 0};
+    %jmp T_25.4;
+T_25.0 ;
+    %jmp T_25.4;
+T_25.1 ;
+    %jmp T_25.4;
+T_25.2 ;
+    %jmp T_25.4;
+T_25.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_25;
+    .scope S_0x2cc5140;
+T_26 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_26.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_26.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_26.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2950680 {0 0 0};
+    %jmp T_26.4;
+T_26.0 ;
+    %jmp T_26.4;
+T_26.1 ;
+    %jmp T_26.4;
+T_26.2 ;
+    %jmp T_26.4;
+T_26.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_26;
+    .scope S_0x2cc2a60;
+T_27 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_27.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_27.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_27.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a77d00 {0 0 0};
+    %jmp T_27.4;
+T_27.0 ;
+    %jmp T_27.4;
+T_27.1 ;
+    %jmp T_27.4;
+T_27.2 ;
+    %jmp T_27.4;
+T_27.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_27;
+    .scope S_0x2cc0380;
+T_28 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_28.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_28.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_28.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27a5a30 {0 0 0};
+    %jmp T_28.4;
+T_28.0 ;
+    %jmp T_28.4;
+T_28.1 ;
+    %jmp T_28.4;
+T_28.2 ;
+    %jmp T_28.4;
+T_28.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_28;
+    .scope S_0x2cbdca0;
+T_29 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_29.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_29.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_29.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27b3260 {0 0 0};
+    %jmp T_29.4;
+T_29.0 ;
+    %jmp T_29.4;
+T_29.1 ;
+    %jmp T_29.4;
+T_29.2 ;
+    %jmp T_29.4;
+T_29.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_29;
+    .scope S_0x2cbb5c0;
+T_30 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_30.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_30.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_30.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27fe3c0 {0 0 0};
+    %jmp T_30.4;
+T_30.0 ;
+    %jmp T_30.4;
+T_30.1 ;
+    %jmp T_30.4;
+T_30.2 ;
+    %jmp T_30.4;
+T_30.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_30;
+    .scope S_0x2cb8ee0;
+T_31 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_31.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_31.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_31.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2805b60 {0 0 0};
+    %jmp T_31.4;
+T_31.0 ;
+    %jmp T_31.4;
+T_31.1 ;
+    %jmp T_31.4;
+T_31.2 ;
+    %jmp T_31.4;
+T_31.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_31;
+    .scope S_0x2cb6800;
+T_32 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_32.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_32.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_32.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2692750 {0 0 0};
+    %jmp T_32.4;
+T_32.0 ;
+    %jmp T_32.4;
+T_32.1 ;
+    %jmp T_32.4;
+T_32.2 ;
+    %jmp T_32.4;
+T_32.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_32;
+    .scope S_0x2cb4110;
+T_33 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_33.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_33.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_33.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26d3520 {0 0 0};
+    %jmp T_33.4;
+T_33.0 ;
+    %jmp T_33.4;
+T_33.1 ;
+    %jmp T_33.4;
+T_33.2 ;
+    %jmp T_33.4;
+T_33.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_33;
+    .scope S_0x2cb1a00;
+T_34 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_34.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_34.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_34.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2713b50 {0 0 0};
+    %jmp T_34.4;
+T_34.0 ;
+    %jmp T_34.4;
+T_34.1 ;
+    %jmp T_34.4;
+T_34.2 ;
+    %jmp T_34.4;
+T_34.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_34;
+    .scope S_0x2caf2f0;
+T_35 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_35.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_35.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_35.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26b7b90 {0 0 0};
+    %jmp T_35.4;
+T_35.0 ;
+    %jmp T_35.4;
+T_35.1 ;
+    %jmp T_35.4;
+T_35.2 ;
+    %jmp T_35.4;
+T_35.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_35;
+    .scope S_0x2cacbe0;
+T_36 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_36.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_36.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_36.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26c4ac0 {0 0 0};
+    %jmp T_36.4;
+T_36.0 ;
+    %jmp T_36.4;
+T_36.1 ;
+    %jmp T_36.4;
+T_36.2 ;
+    %jmp T_36.4;
+T_36.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_36;
+    .scope S_0x2caa4d0;
+T_37 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_37.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_37.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_37.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x272b4d0 {0 0 0};
+    %jmp T_37.4;
+T_37.0 ;
+    %jmp T_37.4;
+T_37.1 ;
+    %jmp T_37.4;
+T_37.2 ;
+    %jmp T_37.4;
+T_37.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_37;
+    .scope S_0x2ca7dc0;
+T_38 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_38.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_38.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_38.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27396e0 {0 0 0};
+    %jmp T_38.4;
+T_38.0 ;
+    %jmp T_38.4;
+T_38.1 ;
+    %jmp T_38.4;
+T_38.2 ;
+    %jmp T_38.4;
+T_38.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_38;
+    .scope S_0x2ca56a0;
+T_39 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_39.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_39.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_39.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26d1aa0 {0 0 0};
+    %jmp T_39.4;
+T_39.0 ;
+    %jmp T_39.4;
+T_39.1 ;
+    %jmp T_39.4;
+T_39.2 ;
+    %jmp T_39.4;
+T_39.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_39;
+    .scope S_0x2ca2fb0;
+T_40 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_40.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_40.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_40.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x268a6e0 {0 0 0};
+    %jmp T_40.4;
+T_40.0 ;
+    %jmp T_40.4;
+T_40.1 ;
+    %jmp T_40.4;
+T_40.2 ;
+    %jmp T_40.4;
+T_40.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_40;
+    .scope S_0x2ca08d0;
+T_41 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_41.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_41.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_41.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26859c0 {0 0 0};
+    %jmp T_41.4;
+T_41.0 ;
+    %jmp T_41.4;
+T_41.1 ;
+    %jmp T_41.4;
+T_41.2 ;
+    %jmp T_41.4;
+T_41.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_41;
+    .scope S_0x2c9e1f0;
+T_42 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_42.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_42.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_42.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26fe0c0 {0 0 0};
+    %jmp T_42.4;
+T_42.0 ;
+    %jmp T_42.4;
+T_42.1 ;
+    %jmp T_42.4;
+T_42.2 ;
+    %jmp T_42.4;
+T_42.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_42;
+    .scope S_0x2c9bb10;
+T_43 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_43.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_43.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_43.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26c3a60 {0 0 0};
+    %jmp T_43.4;
+T_43.0 ;
+    %jmp T_43.4;
+T_43.1 ;
+    %jmp T_43.4;
+T_43.2 ;
+    %jmp T_43.4;
+T_43.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_43;
+    .scope S_0x2c993d0;
+T_44 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_44.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_44.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_44.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26743d0 {0 0 0};
+    %jmp T_44.4;
+T_44.0 ;
+    %jmp T_44.4;
+T_44.1 ;
+    %jmp T_44.4;
+T_44.2 ;
+    %jmp T_44.4;
+T_44.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_44;
+    .scope S_0x2c97010;
+T_45 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_45.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_45.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_45.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2718c50 {0 0 0};
+    %jmp T_45.4;
+T_45.0 ;
+    %jmp T_45.4;
+T_45.1 ;
+    %jmp T_45.4;
+T_45.2 ;
+    %jmp T_45.4;
+T_45.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_45;
+    .scope S_0x2c32870;
+T_46 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_46.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_46.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_46.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x28a6a20 {0 0 0};
+    %jmp T_46.4;
+T_46.0 ;
+    %jmp T_46.4;
+T_46.1 ;
+    %jmp T_46.4;
+T_46.2 ;
+    %jmp T_46.4;
+T_46.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_46;
+    .scope S_0x2d0b1f0;
+T_47 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_47.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_47.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_47.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x28cdc80 {0 0 0};
+    %jmp T_47.4;
+T_47.0 ;
+    %jmp T_47.4;
+T_47.1 ;
+    %jmp T_47.4;
+T_47.2 ;
+    %jmp T_47.4;
+T_47.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_47;
+    .scope S_0x2cf52f0;
+T_48 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_48.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_48.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_48.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2851ef0 {0 0 0};
+    %jmp T_48.4;
+T_48.0 ;
+    %jmp T_48.4;
+T_48.1 ;
+    %jmp T_48.4;
+T_48.2 ;
+    %jmp T_48.4;
+T_48.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_48;
+    .scope S_0x2cf2be0;
+T_49 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_49.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_49.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_49.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x29d2320 {0 0 0};
+    %jmp T_49.4;
+T_49.0 ;
+    %jmp T_49.4;
+T_49.1 ;
+    %jmp T_49.4;
+T_49.2 ;
+    %jmp T_49.4;
+T_49.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_49;
+    .scope S_0x2cf04d0;
+T_50 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_50.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_50.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_50.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2aafa50 {0 0 0};
+    %jmp T_50.4;
+T_50.0 ;
+    %jmp T_50.4;
+T_50.1 ;
+    %jmp T_50.4;
+T_50.2 ;
+    %jmp T_50.4;
+T_50.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_50;
+    .scope S_0x2ceddc0;
+T_51 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_51.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_51.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_51.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2ab4e50 {0 0 0};
+    %jmp T_51.4;
+T_51.0 ;
+    %jmp T_51.4;
+T_51.1 ;
+    %jmp T_51.4;
+T_51.2 ;
+    %jmp T_51.4;
+T_51.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_51;
+    .scope S_0x2ceb6b0;
+T_52 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_52.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_52.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_52.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2aa8b80 {0 0 0};
+    %jmp T_52.4;
+T_52.0 ;
+    %jmp T_52.4;
+T_52.1 ;
+    %jmp T_52.4;
+T_52.2 ;
+    %jmp T_52.4;
+T_52.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_52;
+    .scope S_0x2ce8fa0;
+T_53 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_53.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_53.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_53.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a41290 {0 0 0};
+    %jmp T_53.4;
+T_53.0 ;
+    %jmp T_53.4;
+T_53.1 ;
+    %jmp T_53.4;
+T_53.2 ;
+    %jmp T_53.4;
+T_53.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_53;
+    .scope S_0x2ce68c0;
+T_54 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_54.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_54.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_54.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a0bc70 {0 0 0};
+    %jmp T_54.4;
+T_54.0 ;
+    %jmp T_54.4;
+T_54.1 ;
+    %jmp T_54.4;
+T_54.2 ;
+    %jmp T_54.4;
+T_54.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_54;
+    .scope S_0x2ce4200;
+T_55 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_55.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_55.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_55.2, 6;
+    %vpi_call/w 7 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: I_BUF instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x29559e0 {0 0 0};
+    %jmp T_55.4;
+T_55.0 ;
+    %jmp T_55.4;
+T_55.1 ;
+    %jmp T_55.4;
+T_55.2 ;
+    %jmp T_55.4;
+T_55.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_55;
+    .scope S_0x2ce1b60;
+T_56 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_56.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_56.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_56.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27af140 {0 0 0};
+    %jmp T_56.4;
+T_56.0 ;
+    %jmp T_56.4;
+T_56.1 ;
+    %jmp T_56.4;
+T_56.2 ;
+    %jmp T_56.4;
+T_56.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_56;
+    .scope S_0x2cdf480;
+T_57 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_57.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_57.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_57.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27b1c10 {0 0 0};
+    %jmp T_57.4;
+T_57.0 ;
+    %jmp T_57.4;
+T_57.1 ;
+    %jmp T_57.4;
+T_57.2 ;
+    %jmp T_57.4;
+T_57.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_57;
+    .scope S_0x2cdcda0;
+T_58 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_58.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_58.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_58.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27b0b00 {0 0 0};
+    %jmp T_58.4;
+T_58.0 ;
+    %jmp T_58.4;
+T_58.1 ;
+    %jmp T_58.4;
+T_58.2 ;
+    %jmp T_58.4;
+T_58.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_58;
+    .scope S_0x2cda6c0;
+T_59 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_59.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_59.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_59.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27b6f50 {0 0 0};
+    %jmp T_59.4;
+T_59.0 ;
+    %jmp T_59.4;
+T_59.1 ;
+    %jmp T_59.4;
+T_59.2 ;
+    %jmp T_59.4;
+T_59.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_59;
+    .scope S_0x2cd7fe0;
+T_60 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_60.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_60.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_60.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27ff560 {0 0 0};
+    %jmp T_60.4;
+T_60.0 ;
+    %jmp T_60.4;
+T_60.1 ;
+    %jmp T_60.4;
+T_60.2 ;
+    %jmp T_60.4;
+T_60.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_60;
+    .scope S_0x2cd58d0;
+T_61 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_61.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_61.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_61.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26d8f60 {0 0 0};
+    %jmp T_61.4;
+T_61.0 ;
+    %jmp T_61.4;
+T_61.1 ;
+    %jmp T_61.4;
+T_61.2 ;
+    %jmp T_61.4;
+T_61.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_61;
+    .scope S_0x2cd3180;
+T_62 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_62.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_62.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_62.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2710c00 {0 0 0};
+    %jmp T_62.4;
+T_62.0 ;
+    %jmp T_62.4;
+T_62.1 ;
+    %jmp T_62.4;
+T_62.2 ;
+    %jmp T_62.4;
+T_62.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_62;
+    .scope S_0x2cd0a70;
+T_63 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_63.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_63.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_63.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2654ed0 {0 0 0};
+    %jmp T_63.4;
+T_63.0 ;
+    %jmp T_63.4;
+T_63.1 ;
+    %jmp T_63.4;
+T_63.2 ;
+    %jmp T_63.4;
+T_63.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_63;
+    .scope S_0x2cce360;
+T_64 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_64.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_64.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_64.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x275f590 {0 0 0};
+    %jmp T_64.4;
+T_64.0 ;
+    %jmp T_64.4;
+T_64.1 ;
+    %jmp T_64.4;
+T_64.2 ;
+    %jmp T_64.4;
+T_64.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_64;
+    .scope S_0x2ccbc50;
+T_65 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_65.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_65.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_65.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2695ae0 {0 0 0};
+    %jmp T_65.4;
+T_65.0 ;
+    %jmp T_65.4;
+T_65.1 ;
+    %jmp T_65.4;
+T_65.2 ;
+    %jmp T_65.4;
+T_65.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_65;
+    .scope S_0x2cc9540;
+T_66 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_66.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_66.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_66.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2737950 {0 0 0};
+    %jmp T_66.4;
+T_66.0 ;
+    %jmp T_66.4;
+T_66.1 ;
+    %jmp T_66.4;
+T_66.2 ;
+    %jmp T_66.4;
+T_66.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_66;
+    .scope S_0x2cc6e30;
+T_67 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_67.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_67.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_67.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x268cf60 {0 0 0};
+    %jmp T_67.4;
+T_67.0 ;
+    %jmp T_67.4;
+T_67.1 ;
+    %jmp T_67.4;
+T_67.2 ;
+    %jmp T_67.4;
+T_67.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_67;
+    .scope S_0x2cc4750;
+T_68 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_68.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_68.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_68.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2721d70 {0 0 0};
+    %jmp T_68.4;
+T_68.0 ;
+    %jmp T_68.4;
+T_68.1 ;
+    %jmp T_68.4;
+T_68.2 ;
+    %jmp T_68.4;
+T_68.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_68;
+    .scope S_0x2cc20d0;
+T_69 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_69.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_69.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_69.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x271bf80 {0 0 0};
+    %jmp T_69.4;
+T_69.0 ;
+    %jmp T_69.4;
+T_69.1 ;
+    %jmp T_69.4;
+T_69.2 ;
+    %jmp T_69.4;
+T_69.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_69;
+    .scope S_0x2cbf9f0;
+T_70 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_70.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_70.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_70.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26fb3f0 {0 0 0};
+    %jmp T_70.4;
+T_70.0 ;
+    %jmp T_70.4;
+T_70.1 ;
+    %jmp T_70.4;
+T_70.2 ;
+    %jmp T_70.4;
+T_70.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_70;
+    .scope S_0x2cbd310;
+T_71 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_71.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_71.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_71.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26e11c0 {0 0 0};
+    %jmp T_71.4;
+T_71.0 ;
+    %jmp T_71.4;
+T_71.1 ;
+    %jmp T_71.4;
+T_71.2 ;
+    %jmp T_71.4;
+T_71.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_71;
+    .scope S_0x2cbac30;
+T_72 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_72.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_72.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_72.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2674700 {0 0 0};
+    %jmp T_72.4;
+T_72.0 ;
+    %jmp T_72.4;
+T_72.1 ;
+    %jmp T_72.4;
+T_72.2 ;
+    %jmp T_72.4;
+T_72.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_72;
+    .scope S_0x2cb8550;
+T_73 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_73.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_73.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_73.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a69930 {0 0 0};
+    %jmp T_73.4;
+T_73.0 ;
+    %jmp T_73.4;
+T_73.1 ;
+    %jmp T_73.4;
+T_73.2 ;
+    %jmp T_73.4;
+T_73.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_73;
+    .scope S_0x2cb5e40;
+T_74 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_74.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_74.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_74.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2854f70 {0 0 0};
+    %jmp T_74.4;
+T_74.0 ;
+    %jmp T_74.4;
+T_74.1 ;
+    %jmp T_74.4;
+T_74.2 ;
+    %jmp T_74.4;
+T_74.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_74;
+    .scope S_0x2cb36f0;
+T_75 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_75.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_75.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_75.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x29d68b0 {0 0 0};
+    %jmp T_75.4;
+T_75.0 ;
+    %jmp T_75.4;
+T_75.1 ;
+    %jmp T_75.4;
+T_75.2 ;
+    %jmp T_75.4;
+T_75.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_75;
+    .scope S_0x2cb0fe0;
+T_76 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_76.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_76.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_76.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a795d0 {0 0 0};
+    %jmp T_76.4;
+T_76.0 ;
+    %jmp T_76.4;
+T_76.1 ;
+    %jmp T_76.4;
+T_76.2 ;
+    %jmp T_76.4;
+T_76.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_76;
+    .scope S_0x2cae8d0;
+T_77 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_77.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_77.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_77.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2ab4930 {0 0 0};
+    %jmp T_77.4;
+T_77.0 ;
+    %jmp T_77.4;
+T_77.1 ;
+    %jmp T_77.4;
+T_77.2 ;
+    %jmp T_77.4;
+T_77.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_77;
+    .scope S_0x2cac1c0;
+T_78 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_78.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_78.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_78.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a415f0 {0 0 0};
+    %jmp T_78.4;
+T_78.0 ;
+    %jmp T_78.4;
+T_78.1 ;
+    %jmp T_78.4;
+T_78.2 ;
+    %jmp T_78.4;
+T_78.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_78;
+    .scope S_0x2ca9ab0;
+T_79 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_79.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_79.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_79.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2a06830 {0 0 0};
+    %jmp T_79.4;
+T_79.0 ;
+    %jmp T_79.4;
+T_79.1 ;
+    %jmp T_79.4;
+T_79.2 ;
+    %jmp T_79.4;
+T_79.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_79;
+    .scope S_0x2ca73a0;
+T_80 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_80.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_80.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_80.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x298f370 {0 0 0};
+    %jmp T_80.4;
+T_80.0 ;
+    %jmp T_80.4;
+T_80.1 ;
+    %jmp T_80.4;
+T_80.2 ;
+    %jmp T_80.4;
+T_80.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_80;
+    .scope S_0x2ca4c80;
+T_81 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_81.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_81.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_81.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2998640 {0 0 0};
+    %jmp T_81.4;
+T_81.0 ;
+    %jmp T_81.4;
+T_81.1 ;
+    %jmp T_81.4;
+T_81.2 ;
+    %jmp T_81.4;
+T_81.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_81;
+    .scope S_0x2ca2620;
+T_82 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_82.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_82.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_82.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2957320 {0 0 0};
+    %jmp T_82.4;
+T_82.0 ;
+    %jmp T_82.4;
+T_82.1 ;
+    %jmp T_82.4;
+T_82.2 ;
+    %jmp T_82.4;
+T_82.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_82;
+    .scope S_0x2c9ff40;
+T_83 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_83.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_83.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_83.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x27a6480 {0 0 0};
+    %jmp T_83.4;
+T_83.0 ;
+    %jmp T_83.4;
+T_83.1 ;
+    %jmp T_83.4;
+T_83.2 ;
+    %jmp T_83.4;
+T_83.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_83;
+    .scope S_0x2c9d860;
+T_84 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_84.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_84.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_84.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2800360 {0 0 0};
+    %jmp T_84.4;
+T_84.0 ;
+    %jmp T_84.4;
+T_84.1 ;
+    %jmp T_84.4;
+T_84.2 ;
+    %jmp T_84.4;
+T_84.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_84;
+    .scope S_0x2c9b100;
+T_85 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_85.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_85.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_85.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x28072a0 {0 0 0};
+    %jmp T_85.4;
+T_85.0 ;
+    %jmp T_85.4;
+T_85.1 ;
+    %jmp T_85.4;
+T_85.2 ;
+    %jmp T_85.4;
+T_85.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_85;
+    .scope S_0x2c969b0;
+T_86 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_86.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_86.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_86.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26f2cb0 {0 0 0};
+    %jmp T_86.4;
+T_86.0 ;
+    %jmp T_86.4;
+T_86.1 ;
+    %jmp T_86.4;
+T_86.2 ;
+    %jmp T_86.4;
+T_86.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_86;
+    .scope S_0x299ba00;
+T_87 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_87.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_87.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_87.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x266b730 {0 0 0};
+    %jmp T_87.4;
+T_87.0 ;
+    %jmp T_87.4;
+T_87.1 ;
+    %jmp T_87.4;
+T_87.2 ;
+    %jmp T_87.4;
+T_87.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_87;
+    .scope S_0x2cf3370;
+T_88 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_88.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_88.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_88.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2656dc0 {0 0 0};
+    %jmp T_88.4;
+T_88.0 ;
+    %jmp T_88.4;
+T_88.1 ;
+    %jmp T_88.4;
+T_88.2 ;
+    %jmp T_88.4;
+T_88.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_88;
+    .scope S_0x2cf0c60;
+T_89 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_89.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_89.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_89.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x275ecf0 {0 0 0};
+    %jmp T_89.4;
+T_89.0 ;
+    %jmp T_89.4;
+T_89.1 ;
+    %jmp T_89.4;
+T_89.2 ;
+    %jmp T_89.4;
+T_89.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_89;
+    .scope S_0x2cee550;
+T_90 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_90.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_90.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_90.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x273d6f0 {0 0 0};
+    %jmp T_90.4;
+T_90.0 ;
+    %jmp T_90.4;
+T_90.1 ;
+    %jmp T_90.4;
+T_90.2 ;
+    %jmp T_90.4;
+T_90.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_90;
+    .scope S_0x2cebe40;
+T_91 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_91.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_91.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_91.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26c0210 {0 0 0};
+    %jmp T_91.4;
+T_91.0 ;
+    %jmp T_91.4;
+T_91.1 ;
+    %jmp T_91.4;
+T_91.2 ;
+    %jmp T_91.4;
+T_91.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_91;
+    .scope S_0x2ce9730;
+T_92 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_92.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_92.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_92.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x2760a40 {0 0 0};
+    %jmp T_92.4;
+T_92.0 ;
+    %jmp T_92.4;
+T_92.1 ;
+    %jmp T_92.4;
+T_92.2 ;
+    %jmp T_92.4;
+T_92.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_92;
+    .scope S_0x2ce7020;
+T_93 ;
+    %pushi/vec4 1313820229, 0, 64;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 1313820229, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_93.0, 6;
+    %dup/vec4;
+    %pushi/vec4 20565, 0, 32; draw_string_vec4
+    %pushi/vec4 1280070992, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_93.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1347767372, 0, 32; draw_string_vec4
+    %pushi/vec4 1146050382, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_93.2, 6;
+    %vpi_call/w 8 34 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: O_BUFT instance %m has parameter WEAK_KEEPER set to %s.  Valid values are NONE, PULLUP, PULLDOWN\012", P_0x26ecc00 {0 0 0};
+    %jmp T_93.4;
+T_93.0 ;
+    %jmp T_93.4;
+T_93.1 ;
+    %jmp T_93.4;
+T_93.2 ;
+    %jmp T_93.4;
+T_93.4 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_93;
+    .scope S_0x2ce2260;
+T_94 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x26ae5d0_0, 0, 1;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x268cc80_0, 0, 6;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0x271eac0_0, 0, 3;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x271c930_0, 0, 6;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x26ae460_0, 0, 6;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2685190_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2685470_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2680090_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2680370_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x271e650_0, 0, 1;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x267daf0_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x268a290_0, 0, 18;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x26a93a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x26a9510_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x26ae740_0, 0, 1;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x268c9a0_0, 0, 6;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v0x268a570_0, 0, 3;
+    %pushi/vec4 0, 0, 6;
+    %store/vec4 v0x271a830_0, 0, 6;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2685300_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x2680200_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x271ec30_0, 0, 1;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x267d810_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x268a400_0, 0, 18;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x26ae8b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x26a9680_0, 0, 1;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x268cb10_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x271f080_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x268a120_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x266e710_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x271a6c0_0, 0, 64;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x2685020_0, 0, 64;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x267ff20_0, 0, 38;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x26a97f0_0, 0, 38;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x26fd990_0, 0, 38;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %end;
+    .thread T_94, $init;
+    .scope S_0x2ce2260;
+T_95 ;
+    %wait E_0x2cdd6d0;
+    %load/vec4 v0x26bad20_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_95.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x26ae5d0_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x268cc80_0, 0;
+    %pushi/vec4 0, 0, 3;
+    %assign/vec4 v0x271eac0_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x271c930_0, 0;
+    %pushi/vec4 0, 0, 6;
+    %assign/vec4 v0x26ae460_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x2685190_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x2685470_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x2680090_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x2680370_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x271e650_0, 0;
+    %pushi/vec4 0, 0, 20;
+    %assign/vec4 v0x267daf0_0, 0;
+    %pushi/vec4 0, 0, 18;
+    %assign/vec4 v0x268a290_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x26a93a0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x26a9510_0, 0;
+    %jmp T_95.1;
+T_95.0 ;
+    %load/vec4 v0x26bce50_0;
+    %assign/vec4 v0x26ae5d0_0, 0;
+    %load/vec4 v0x267af90_0;
+    %assign/vec4 v0x268cc80_0, 0;
+    %load/vec4 v0x26bf6b0_0;
+    %assign/vec4 v0x271eac0_0, 0;
+    %load/vec4 v0x26bcfc0_0;
+    %assign/vec4 v0x271c930_0, 0;
+    %load/vec4 v0x271c930_0;
+    %assign/vec4 v0x26ae460_0, 0;
+    %load/vec4 v0x26bae90_0;
+    %assign/vec4 v0x2685190_0, 0;
+    %load/vec4 v0x2685190_0;
+    %assign/vec4 v0x2685470_0, 0;
+    %load/vec4 v0x26bcce0_0;
+    %assign/vec4 v0x2680090_0, 0;
+    %load/vec4 v0x2680090_0;
+    %assign/vec4 v0x2680370_0, 0;
+    %load/vec4 v0x26bf990_0;
+    %assign/vec4 v0x271e650_0, 0;
+    %load/vec4 v0x267b100_0;
+    %assign/vec4 v0x267daf0_0, 0;
+    %load/vec4 v0x267b270_0;
+    %assign/vec4 v0x268a290_0, 0;
+    %load/vec4 v0x26bd130_0;
+    %assign/vec4 v0x26a93a0_0, 0;
+    %load/vec4 v0x267d6a0_0;
+    %assign/vec4 v0x26a9510_0, 0;
+T_95.1 ;
+    %jmp T_95;
+    .thread T_95;
+    .scope S_0x2ce2260;
+T_96 ;
+    %wait E_0x285a1c0;
+    %load/vec4 v0x267b100_0;
+    %store/vec4 v0x267d810_0, 0, 20;
+    %load/vec4 v0x267b270_0;
+    %store/vec4 v0x268a400_0, 0, 18;
+    %load/vec4 v0x26bce50_0;
+    %store/vec4 v0x26ae740_0, 0, 1;
+    %load/vec4 v0x267af90_0;
+    %store/vec4 v0x268c9a0_0, 0, 6;
+    %load/vec4 v0x26bf6b0_0;
+    %store/vec4 v0x268a570_0, 0, 3;
+    %load/vec4 v0x26bf990_0;
+    %store/vec4 v0x271ec30_0, 0, 1;
+    %load/vec4 v0x26bd130_0;
+    %store/vec4 v0x26ae8b0_0, 0, 1;
+    %load/vec4 v0x267d6a0_0;
+    %store/vec4 v0x26a9680_0, 0, 1;
+    %load/vec4 v0x26bcfc0_0;
+    %store/vec4 v0x271a830_0, 0, 6;
+    %load/vec4 v0x26bae90_0;
+    %store/vec4 v0x2685300_0, 0, 1;
+    %load/vec4 v0x26bcce0_0;
+    %store/vec4 v0x2680200_0, 0, 1;
+    %jmp T_96;
+    .thread T_96, $push;
+    .scope S_0x2ce2260;
+T_97 ;
+    %wait E_0x2856350;
+    %load/vec4 v0x268a570_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.3, 6;
+    %dup/vec4;
+    %pushi/vec4 4, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.4, 6;
+    %dup/vec4;
+    %pushi/vec4 5, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.5, 6;
+    %dup/vec4;
+    %pushi/vec4 6, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.6, 6;
+    %dup/vec4;
+    %pushi/vec4 7, 0, 3;
+    %cmp/u;
+    %jmp/1 T_97.7, 6;
+    %jmp T_97.8;
+T_97.0 ;
+    %load/vec4 v0x267d810_0;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %load/vec4 v0x268a400_0;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %load/vec4 v0x268cb10_0;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.1 ;
+    %load/vec4 v0x267d810_0;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %load/vec4 v0x268a400_0;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %pushi/vec4 0, 0, 64;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.2 ;
+    %load/vec4 v0x267d810_0;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %pushi/vec4 0, 0, 18;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_97.9, 8;
+    %load/vec4 v0x267d810_0;
+    %pad/u 64;
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/1 T_97.10, 8;
+T_97.9 ; End of true expr.
+    %load/vec4 v0x267d810_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x267d810_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/0 T_97.10, 8;
+ ; End of false expr.
+    %blend;
+T_97.10;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.3 ;
+    %load/vec4 v0x268cb10_0;
+    %pad/s 20;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %load/vec4 v0x268a400_0;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_97.11, 8;
+    %load/vec4 v0x267d810_0;
+    %pad/u 64;
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/1 T_97.12, 8;
+T_97.11 ; End of true expr.
+    %load/vec4 v0x267d810_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x267d810_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/0 T_97.12, 8;
+ ; End of false expr.
+    %blend;
+T_97.12;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.4 ;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %load/vec4 v0x268a400_0;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_97.13, 8;
+    %load/vec4 v0x267d810_0;
+    %pad/u 64;
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/1 T_97.14, 8;
+T_97.13 ; End of true expr.
+    %load/vec4 v0x267d810_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x267d810_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/0 T_97.14, 8;
+ ; End of false expr.
+    %blend;
+T_97.14;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.5 ;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %load/vec4 v0x268a400_0;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_97.15, 8;
+    %load/vec4 v0x267d810_0;
+    %pad/u 64;
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/1 T_97.16, 8;
+T_97.15 ; End of true expr.
+    %load/vec4 v0x267d810_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x267d810_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/0 T_97.16, 8;
+ ; End of false expr.
+    %blend;
+T_97.16;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.6 ;
+    %pushi/vec4 0, 0, 20;
+    %store/vec4 v0x271eda0_0, 0, 20;
+    %load/vec4 v0x268a400_0;
+    %store/vec4 v0x271ef10_0, 0, 18;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_97.17, 8;
+    %load/vec4 v0x267d810_0;
+    %pad/u 64;
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/1 T_97.18, 8;
+T_97.17 ; End of true expr.
+    %load/vec4 v0x267d810_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x267d810_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/0 T_97.18, 8;
+ ; End of false expr.
+    %blend;
+T_97.18;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.7 ;
+    %pushi/vec4 0, 0, 20;
+    %assign/vec4 v0x271eda0_0, 0;
+    %load/vec4 v0x268a400_0;
+    %assign/vec4 v0x271ef10_0, 0;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 8;
+    %jmp/0 T_97.19, 8;
+    %load/vec4 v0x267d810_0;
+    %pad/u 64;
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/1 T_97.20, 8;
+T_97.19 ; End of true expr.
+    %load/vec4 v0x267d810_0;
+    %parti/s 1, 19, 6;
+    %replicate 44;
+    %load/vec4 v0x267d810_0;
+    %concat/vec4; draw_concat_vec4
+    %ix/getv 4, v0x268c9a0_0;
+    %shiftl 4;
+    %jmp/0 T_97.20, 8;
+ ; End of false expr.
+    %blend;
+T_97.20;
+    %store/vec4 v0x268cdf0_0, 0, 64;
+    %jmp T_97.8;
+T_97.8 ;
+    %pop/vec4 1;
+    %jmp T_97;
+    .thread T_97, $push;
+    .scope S_0x2ce2260;
+T_98 ;
+    %wait E_0x2856490;
+    %load/vec4 v0x26ae8b0_0;
+    %load/vec4 v0x26a9680_0;
+    %concat/vec4; draw_concat_vec4
+    %dup/vec4;
+    %pushi/vec4 0, 0, 2;
+    %cmp/u;
+    %jmp/1 T_98.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 2;
+    %cmp/u;
+    %jmp/1 T_98.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 2;
+    %cmp/u;
+    %jmp/1 T_98.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 2;
+    %cmp/u;
+    %jmp/1 T_98.3, 6;
+    %jmp T_98.4;
+T_98.0 ;
+    %load/vec4 v0x271eda0_0;
+    %pad/s 64;
+    %load/vec4 v0x271ef10_0;
+    %pad/s 64;
+    %mul;
+    %store/vec4 v0x271f080_0, 0, 64;
+    %jmp T_98.4;
+T_98.1 ;
+    %load/vec4 v0x271eda0_0;
+    %pad/s 64;
+    %pushi/vec4 0, 0, 1;
+    %load/vec4 v0x271ef10_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/s 64;
+    %mul;
+    %store/vec4 v0x271f080_0, 0, 64;
+    %jmp T_98.4;
+T_98.2 ;
+    %pushi/vec4 0, 0, 1;
+    %load/vec4 v0x271eda0_0;
+    %concat/vec4; draw_concat_vec4
+    %pad/s 64;
+    %load/vec4 v0x271ef10_0;
+    %pad/s 64;
+    %mul;
+    %store/vec4 v0x271f080_0, 0, 64;
+    %jmp T_98.4;
+T_98.3 ;
+    %load/vec4 v0x271eda0_0;
+    %pad/u 64;
+    %load/vec4 v0x271ef10_0;
+    %pad/u 64;
+    %mul;
+    %store/vec4 v0x271f080_0, 0, 64;
+    %jmp T_98.4;
+T_98.4 ;
+    %pop/vec4 1;
+    %jmp T_98;
+    .thread T_98, $push;
+    .scope S_0x2ce2260;
+T_99 ;
+    %wait E_0x2856750;
+    %load/vec4 v0x26ae740_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_99.0, 8;
+    %load/vec4 v0x268cdf0_0;
+    %load/vec4 v0x271f080_0;
+    %sub;
+    %store/vec4 v0x268a120_0, 0, 64;
+    %jmp T_99.1;
+T_99.0 ;
+    %load/vec4 v0x268cdf0_0;
+    %load/vec4 v0x271f080_0;
+    %add;
+    %store/vec4 v0x268a120_0, 0, 64;
+T_99.1 ;
+    %jmp T_99;
+    .thread T_99, $push;
+    .scope S_0x2ce2260;
+T_100 ;
+    %wait E_0x2cdd6d0;
+    %load/vec4 v0x26bad20_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_100.0, 8;
+    %pushi/vec4 0, 0, 64;
+    %assign/vec4 v0x268cb10_0, 0;
+    %jmp T_100.1;
+T_100.0 ;
+    %load/vec4 v0x271ec30_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_100.2, 8;
+    %load/vec4 v0x268a120_0;
+    %assign/vec4 v0x268cb10_0, 0;
+    %jmp T_100.3;
+T_100.2 ;
+    %load/vec4 v0x268cb10_0;
+    %assign/vec4 v0x268cb10_0, 0;
+T_100.3 ;
+T_100.1 ;
+    %jmp T_100;
+    .thread T_100;
+    .scope S_0x2ce2260;
+T_101 ;
+    %wait E_0x2856710;
+    %load/vec4 v0x268a120_0;
+    %store/vec4 v0x266e710_0, 0, 64;
+    %load/vec4 v0x266e710_0;
+    %ix/getv 4, v0x271a830_0;
+    %shiftr/s 4;
+    %store/vec4 v0x271a6c0_0, 0, 64;
+    %load/vec4 v0x2685300_0;
+    %flag_set/vec4 9;
+    %flag_get/vec4 9;
+    %jmp/0 T_101.2, 9;
+    %pushi/vec4 0, 0, 32;
+    %load/vec4 v0x271a830_0;
+    %pad/u 32;
+    %cmp/u;
+    %flag_get/vec4 5;
+    %and;
+T_101.2;
+    %flag_set/vec4 8;
+    %jmp/0 T_101.0, 8;
+    %load/vec4 v0x266e710_0;
+    %load/vec4 v0x271a830_0;
+    %pad/u 32;
+    %subi 1, 0, 32;
+    %part/u 1;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %flag_mov 9, 4;
+    %jmp/0 T_101.3, 9;
+    %load/vec4 v0x271a6c0_0;
+    %addi 1, 0, 64;
+    %jmp/1 T_101.4, 9;
+T_101.3 ; End of true expr.
+    %load/vec4 v0x271a6c0_0;
+    %jmp/0 T_101.4, 9;
+ ; End of false expr.
+    %blend;
+T_101.4;
+    %jmp/1 T_101.1, 8;
+T_101.0 ; End of true expr.
+    %load/vec4 v0x271a6c0_0;
+    %jmp/0 T_101.1, 8;
+ ; End of false expr.
+    %blend;
+T_101.1;
+    %store/vec4 v0x2685020_0, 0, 64;
+    %load/vec4 v0x2680200_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_101.5, 8;
+    %load/vec4 v0x26ae8b0_0;
+    %flag_set/vec4 9;
+    %flag_get/vec4 9;
+    %jmp/0 T_101.9, 9;
+    %load/vec4 v0x26a9680_0;
+    %and;
+T_101.9;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_101.7, 8;
+    %load/vec4 v0x2685020_0;
+    %cmpi/s 0, 0, 64;
+    %jmp/0xz  T_101.10, 5;
+    %pushi/vec4 0, 0, 38;
+    %store/vec4 v0x267ff20_0, 0, 38;
+    %jmp T_101.11;
+T_101.10 ;
+    %pushi/vec4 4294967295, 0, 58;
+    %concati/vec4 63, 0, 6;
+    %load/vec4 v0x2685020_0;
+    %cmp/u;
+    %jmp/0xz  T_101.12, 5;
+    %pushi/vec4 4294967295, 0, 32;
+    %concati/vec4 63, 0, 6;
+    %store/vec4 v0x267ff20_0, 0, 38;
+    %jmp T_101.13;
+T_101.12 ;
+    %load/vec4 v0x2685020_0;
+    %parti/s 38, 0, 2;
+    %store/vec4 v0x267ff20_0, 0, 38;
+T_101.13 ;
+T_101.11 ;
+    %jmp T_101.8;
+T_101.7 ;
+    %pushi/vec4 4294967295, 0, 59;
+    %concati/vec4 31, 0, 5;
+    %load/vec4 v0x2685020_0;
+    %cmp/s;
+    %jmp/0xz  T_101.14, 5;
+    %pushi/vec4 4294967295, 0, 33;
+    %concati/vec4 31, 0, 5;
+    %store/vec4 v0x267ff20_0, 0, 38;
+    %jmp T_101.15;
+T_101.14 ;
+    %load/vec4 v0x2685020_0;
+    %pushi/vec4 4294967264, 0, 32;
+    %concati/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/0xz  T_101.16, 5;
+    %pushi/vec4 2147483648, 0, 32;
+    %concati/vec4 0, 0, 6;
+    %store/vec4 v0x267ff20_0, 0, 38;
+    %jmp T_101.17;
+T_101.16 ;
+    %load/vec4 v0x2685020_0;
+    %parti/s 38, 0, 2;
+    %store/vec4 v0x267ff20_0, 0, 38;
+T_101.17 ;
+T_101.15 ;
+T_101.8 ;
+    %jmp T_101.6;
+T_101.5 ;
+    %load/vec4 v0x2685020_0;
+    %parti/s 38, 0, 2;
+    %store/vec4 v0x267ff20_0, 0, 38;
+T_101.6 ;
+    %load/vec4 v0x271f080_0;
+    %pad/s 38;
+    %store/vec4 v0x26a97f0_0, 0, 38;
+    %jmp T_101;
+    .thread T_101, $push;
+    .scope S_0x2ce2260;
+T_102 ;
+    %wait E_0x2cdd6d0;
+    %load/vec4 v0x26bad20_0;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_102.0, 8;
+    %pushi/vec4 0, 0, 38;
+    %assign/vec4 v0x26fd990_0, 0;
+    %jmp T_102.1;
+T_102.0 ;
+    %pushi/vec4 262143, 262143, 18;
+    %assign/vec4 v0x26bf820_0, 0;
+    %load/vec4 v0x26a97f0_0;
+    %assign/vec4 v0x26fd990_0, 0;
+T_102.1 ;
+    %jmp T_102;
+    .thread T_102;
+    .scope S_0x2ce2260;
+T_103 ;
+    %wait E_0x2649260;
+    %load/vec4 v0x267af90_0;
+    %pad/u 32;
+    %cmpi/u 43, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %jmp/0xz  T_103.0, 5;
+    %vpi_call/w 5 301 "$fatal", 32'sb00000000000000000000000000000001, "\012ERROR: DSP38 instance %m ACC_FIR input is %d which is greater than 43 which serves no function", v0x267af90_0 {0 0 0};
+T_103.0 ;
+    %jmp T_103;
+    .thread T_103, $push;
+    .scope S_0x2ce2260;
+T_104 ;
+    %wait E_0x26bfb20;
+    %pushi/vec4 2594871464, 0, 121;
+    %concati/vec4 1229999193, 0, 31;
+    %dup/vec4;
+    %pushi/vec4 1297435732, 0, 32; draw_string_vec4
+    %pushi/vec4 1229999193, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1598112579, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1431131468, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 4281413, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_104.0, 6;
+    %jmp T_104.1;
+T_104.0 ;
+    %load/vec4 v0x26bf6b0_0;
+    %pad/u 32;
+    %cmpi/u 1, 0, 32;
+    %flag_or 5, 4; GT is !LE
+    %flag_inv 5;
+    %jmp/0xz  T_104.2, 5;
+    %vpi_call/w 5 308 "$fatal", 32'sb00000000000000000000000000000001, "\012ERROR: DSP38 instance %m has parameter DSP_MODE set to %s and FEEDBACK set to %0d. Valid values of FEEDBACK for this mode are 0,1 \012", P_0x2cdfc80, v0x26bf6b0_0 {0 0 0};
+T_104.2 ;
+    %jmp T_104.1;
+T_104.1 ;
+    %pop/vec4 1;
+    %jmp T_104;
+    .thread T_104, $push;
+    .scope S_0x2ce2260;
+T_105 ;
+    %pushi/vec4 2594871464, 0, 121;
+    %concati/vec4 1229999193, 0, 31;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 77, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1431065673, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5262425, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.0, 6;
+    %dup/vec4;
+    %pushi/vec4 77, 0, 32; draw_string_vec4
+    %pushi/vec4 1431065673, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1347180895, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1094992991, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5461314, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.1, 6;
+    %dup/vec4;
+    %pushi/vec4 1297435732, 0, 32; draw_string_vec4
+    %pushi/vec4 1229999193, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1598112579, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1431131468, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 4281413, 0, 24; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.2, 6;
+    %vpi_call/w 5 321 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: DSP38 instance %m has parameter DSP_MODE set to %s.  Valid values are MULTIPLY, MULTIPLY_ADD_SUB, MULTIPLY_ACCUMULATE\012", P_0x2cdfc80 {0 0 0};
+    %jmp T_105.4;
+T_105.0 ;
+    %jmp T_105.4;
+T_105.1 ;
+    %jmp T_105.4;
+T_105.2 ;
+    %jmp T_105.4;
+T_105.4 ;
+    %pop/vec4 1;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %dup/vec4;
+    %pushi/vec4 5526101, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.5, 6;
+    %dup/vec4;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.6, 6;
+    %vpi_call/w 5 328 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: DSP38 instance %m has parameter OUTPUT_REG_EN set to %s.  Valid values are TRUE, FALSE\012", P_0x2cdfd00 {0 0 0};
+    %jmp T_105.8;
+T_105.5 ;
+    %jmp T_105.8;
+T_105.6 ;
+    %jmp T_105.8;
+T_105.8 ;
+    %pop/vec4 1;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %dup/vec4;
+    %pushi/vec4 5526101, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.9, 6;
+    %dup/vec4;
+    %pushi/vec4 1178684499, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 8; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %cmp/u;
+    %jmp/1 T_105.10, 6;
+    %vpi_call/w 5 335 "$fatal", 32'sb00000000000000000000000000000001, "\012Error: DSP38 instance %m has parameter INPUT_REG_EN set to %s.  Valid values are TRUE, FALSE\012", P_0x2cdfcc0 {0 0 0};
+    %jmp T_105.12;
+T_105.9 ;
+    %jmp T_105.12;
+T_105.10 ;
+    %jmp T_105.12;
+T_105.12 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_105;
+    .scope S_0x2d0f4e0;
+T_106 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x2c52dd0_0, 0, 32;
+    %end;
+    .thread T_106, $init;
+    .scope S_0x2d0f4e0;
+T_107 ;
+    %pushi/vec4 0, 0, 43;
+    %split/vec4 1;
+    %assign/vec4 v0x2ce23f0_0, 0;
+    %split/vec4 1;
+    %assign/vec4 v0x2c50630_0, 0;
+    %split/vec4 18;
+    %assign/vec4 v0x272abf0_0, 0;
+    %split/vec4 3;
+    %assign/vec4 v0x2748860_0, 0;
+    %assign/vec4 v0x272d190_0, 0;
+    %delay 10000, 0;
+    %fork TD_co_sim_GJC4_updated.compare, S_0x2cf0ef0;
+    %join;
+    %fork t_1, S_0x2cf3600;
+    %jmp t_0;
+    .scope S_0x2cf3600;
+t_1 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x2c97340_0, 0, 32;
+T_107.0 ; Top of for-loop
+    %load/vec4 v0x2c97340_0;
+    %cmpi/s 100, 0, 32;
+    %jmp/0xz T_107.1, 5;
+    %vpi_func 3 26 "$urandom" 32 {0 0 0};
+    %pad/u 20;
+    %assign/vec4 v0x272d190_0, 0;
+    %vpi_func 3 27 "$urandom" 32 {0 0 0};
+    %pad/u 3;
+    %assign/vec4 v0x2748860_0, 0;
+    %vpi_func 3 28 "$urandom" 32 {0 0 0};
+    %pad/u 18;
+    %assign/vec4 v0x272abf0_0, 0;
+    %vpi_func 3 29 "$urandom" 32 {0 0 0};
+    %pad/u 1;
+    %assign/vec4 v0x2c50630_0, 0;
+    %vpi_func 3 30 "$urandom" 32 {0 0 0};
+    %pad/u 1;
+    %assign/vec4 v0x2ce23f0_0, 0;
+    %delay 10000, 0;
+    %fork TD_co_sim_GJC4_updated.compare, S_0x2cf0ef0;
+    %join;
+T_107.2 ; for-loop step statement
+    %load/vec4 v0x2c97340_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x2c97340_0, 0, 32;
+    %jmp T_107.0;
+T_107.1 ; for-loop exit label
+    %end;
+    .scope S_0x2d0f4e0;
+t_0 %join;
+    %pushi/vec4 1048575, 0, 20;
+    %assign/vec4 v0x272d190_0, 0;
+    %pushi/vec4 7, 0, 3;
+    %assign/vec4 v0x2748860_0, 0;
+    %pushi/vec4 262143, 0, 18;
+    %assign/vec4 v0x272abf0_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x2c50630_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x2ce23f0_0, 0;
+    %fork TD_co_sim_GJC4_updated.compare, S_0x2cf0ef0;
+    %join;
+    %delay 10000, 0;
+    %load/vec4 v0x2c52dd0_0;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_107.3, 4;
+    %vpi_call/w 3 44 "$display", "**** All Comparison Matched *** \012\011\011Simulation Passed\012" {0 0 0};
+    %jmp T_107.4;
+T_107.3 ;
+    %vpi_call/w 3 46 "$display", "%0d comparison(s) mismatched\012ERROR: SIM: Simulation Failed", v0x2c52dd0_0 {0 0 0};
+T_107.4 ;
+    %delay 200000, 0;
+    %vpi_call/w 3 48 "$finish" {0 0 0};
+    %end;
+    .thread T_107;
+    .scope S_0x2d0f4e0;
+T_108 ;
+    %vpi_call/w 3 61 "$dumpfile", "tb.vcd" {0 0 0};
+    %vpi_call/w 3 62 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_108;
+# The file index is used to find the file name in the following table.
+:file_names 9;
+    "N/A";
+    "<interactive>";
+    "-";
+    "/nfs_scratch/scratch/CompilerValidation/abdul_hameed/23july/EDA-3088/./sim/co_sim_tb/co_sim_GJC4_updated.v";
+    "/nfs_scratch/scratch/CompilerValidation/abdul_hameed/23july/EDA-3088/./rtl/GJC4_updated.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/DSP38.v";
+    "/nfs_scratch/scratch/CompilerValidation/abdul_hameed/23july/EDA-3088/GJC4_updated/run_1/synth_1_1/synthesis/GJC4_updated_post_synth.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/I_BUF.v";
+    "/nfs_eda_sw/softwares/Raptor/instl_dir/07_25_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/sim_models/verilog/O_BUFT.v";
