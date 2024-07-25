@@ -1,0 +1,117 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\a (index=0, width=1, offset=0)",
+    "    Detect output port \\b (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF $ibuf$test.$ibuf_a",
+    "      Cell port \\I is connected to input port \\a",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: 1",
+    "    Get important connection of cell \\O_BUFT $obuf$test.$obuf_b",
+    "      Cell port \\O is connected to output port \\b",
+    "        Data Width: 1",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "  Trace \\I_BUF_DS --> \\CLK_BUF",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace fabric clock buffer",
+    "  Trace gearbox clock source",
+    "  Trace Fabric Clock",
+    "  Summary",
+    "        |------------------------------------------------|",
+    "        |   ******************************************   |",
+    "    IN  | a * I_BUF                                  *   |",
+    "    OUT |   *                                 O_BUFT * b |",
+    "        |   ******************************************   |",
+    "        |------------------------------------------------|",
+    "  Final checking is good",
+    "  Assign location HR_1_2_1P (and properties) to Port a",
+    "  Assign location HR_1_3_1N (and properties) to Port b",
+    "  Cross-check instances vs wrapped-instances",
+    "  Generate SDC",
+    "    Determine data signals",
+    "      Pin object=a, location: HR_1_2_1P",
+    "        Data signal from object a",
+    "          Module=I_BUF Linked-object=a Port=O Net=$ibuf_a - Found",
+    "      Pin object=b, location: HR_1_3_1N",
+    "        Data signal from object b",
+    "          Module=O_BUFT Linked-object=b Port=I Net=$auto_396 - Found",
+    "    Determine internal control signals",
+    "      Module=I_BUF LinkedObject=a Location=HR_1_2_1P Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=O_BUFT LinkedObject=b Location=HR_1_3_1N Port=T Signal=in:f2g_tx_oe_{A|B}",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$test.$ibuf_a",
+      "linked_object" : "a",
+      "linked_objects" : {
+        "a" : {
+          "location" : "HR_1_2_1P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "a",
+        "O" : "$ibuf_a"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      }
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_BUFT",
+      "name" : "$obuf$test.$obuf_b",
+      "linked_object" : "b",
+      "linked_objects" : {
+        "b" : {
+          "location" : "HR_1_3_1N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$ibuf_a",
+        "O" : "b"
+      },
+      "parameters" : {
+      }
+      },
+      "errors" : [
+      ]
+    }
+  ]
+}
