@@ -47,7 +47,7 @@ simulate pnr icarus
 sta
 power
 bitstream enable_simulation
-add_simulation_file results_dir/bin2bcd/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_bin2bcd_formal_random_top_tb.v
+add_simulation_file bin2bcd/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_bin2bcd_formal_random_top_tb.v
 set_top_testbench fabric_bin2bcd_top_formal_verification_random_tb
 
 exec python3 scripts/bt_tb_io_update.py bin2bcd/run_1/synth_1_1/impl_1_1_1/bitstream/BIT_SIM/fabric_bin2bcd\_formal_random_top_tb.v bin2bcd
@@ -62,7 +62,7 @@ if {[file exists bin2bcd/run_1/synth_1_1/impl_1_1_1/bitstream/SRC/CustomModules]
 }
 
 # Bitstream Simulation
-exec /bin/bash ../sed.sh
+exec /bin/bash sed.sh
 add_library_path /nfs_project/castor/DV/fabric_release/v1.6.204/k6n8_TSMC16nm_7.5T/CommonFiles/task/CustomModules/
 
 
