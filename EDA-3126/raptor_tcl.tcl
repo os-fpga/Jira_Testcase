@@ -6,7 +6,6 @@ set_top_module dragonball_wbmaster_top
 add_constraint_file ./raptor_sdc.sdc
 analyze
 synthesize delay
-exec python3 /nfs_scratch/scratch/CompilerValidation/abdul_hameed/wbif_68k/../../../scripts/tb_generator.py dragonball_wbmaster_top /nfs_scratch/scratch/CompilerValidation/abdul_hameed/wbif_68k
 packing
 place
 route
