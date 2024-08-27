@@ -28,4 +28,5 @@ module top (
     .O_P(dout_p),
     .O_N(dout_n)
   );
-endmodulen
+
+endmodule
