@@ -1,3 +1,10 @@
+/////////////////////////////////////////
+//  Functionality: 1. Test PLL clocked by different source: pin and BOOT_CLOCK
+//                 2. Use PLL outputs to clock FF, each output for one FF
+//  Author: Chung Shien
+////////////////////////////////////////
+// `timescale 1ns / 1ps
+
 module top(
   input wire clk,
   input wire [7:0] din,

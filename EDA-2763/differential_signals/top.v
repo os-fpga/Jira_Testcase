@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-//  Functionality:
+//  Functionality: 1. Use differential siganls as input and ouput
 //  Author: Chung Shien
 ////////////////////////////////////////
 // `timescale 1ns / 1ps

@@ -1,5 +1,5 @@
 /////////////////////////////////////////
-//  Functionality:
+//  Functionality: 1. Test bidirectional signal
 //  Author: Chung Shien
 ////////////////////////////////////////
 // `timescale 1ns / 1ps
@@ -11,7 +11,7 @@ module top (
   output o
 );
 
-assign io = ioz ? 1'bz : i;
-assign o = ioz ? io : i;
+  assign io = ioz ? 1'bz : i;
+  assign o = ioz ? io : i;
 
 endmodule
