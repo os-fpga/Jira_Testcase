@@ -1,8 +1,58 @@
 {
+  "messages" : [
+    "Netlist PPDB: /home/cschai/github/Jira_Testcase/icb_bitstream/auto_run_results/o_buft_ds/top/run_1/synth_1_1/synthesis/io_config.json",
+    "Config Mapping: /home/cschai/github/Raptor/build/share/raptor/configuration/Virgo/config_attributes.mapping.json",
+    "Property JSON: model_config.property.json",
+    "Preparing Python file: /home/cschai/github/Jira_Testcase/icb_bitstream/auto_run_results/o_buft_ds/top/run_1/synth_1_1/impl_1_1_1/bitstream/config.py",
+    "Read resources",
+    "Validate Instances",
+    "Merge properties into instances",
+    "Re-location instances",
+    "Configure Mapping file initialization",
+    "Validation using '__primary_validation__' rule",
+    "Internal error validations",
+    "Assign instance-without-location",
+    "Allocate FCLK routing resource",
+    "Allocate ROOT BANK routing resource (and set configuration attributes)",
+    "Set CLKBUF remaining configuration attributes (FCLK)",
+    "Allocate PLL resource (and set PLLREF configuration attributes)",
+    "Set PLL remaining configuration attributes (FCLK)",
+    "Validation using '__secondary_validation__' rule",
+    "Set configuration attributes",
+    "  Module: I_BUF ($ibuf$top.$ibuf_din)",
+    "    Object: din",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: I_BUF ($ibuf$top.$ibuf_enable)",
+    "    Object: enable",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: O_BUFT_DS (o_buft_ds)",
+    "    Object: dout_n",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUFT_DS.IOSTANDARD",
+    "          Mismatch",
+    "    Object: dout_p",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUFT_DS.IOSTANDARD",
+    "          Mismatch"
+  ],
   "instances" : [
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.din",
+      "name" : "$ibuf$top.$ibuf_din",
+      "location_object" : "din",
+      "location" : "HP_1_0_0P",
       "linked_object" : "din",
       "linked_objects" : {
         "din" : {
@@ -21,17 +71,31 @@
       },
       "connectivity" : {
         "I" : "din",
-        "O" : "$iopadmap$din"
+        "O" : "$ibuf_din"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.enable",
+      "name" : "$ibuf$top.$ibuf_enable",
+      "location_object" : "enable",
+      "location" : "HP_1_3_1N",
       "linked_object" : "enable",
       "linked_objects" : {
         "enable" : {
@@ -50,17 +114,31 @@
       },
       "connectivity" : {
         "I" : "enable",
-        "O" : "$iopadmap$enable"
+        "O" : "$ibuf_enable"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
     },
     {
       "module" : "O_BUFT_DS",
       "name" : "o_buft_ds",
+      "location_object" : "dout_p",
+      "location" : "HP_1_6_3P",
       "linked_object" : "dout_n+dout_p",
       "linked_objects" : {
         "dout_n" : {
@@ -68,6 +146,9 @@
           "properties" : {
           },
           "config_attributes" : [
+            {
+              "O_BUFT_DS" : "IOSTANDARD==DEFAULT"
+            }
           ]
         },
         "dout_p" : {
@@ -75,18 +156,34 @@
           "properties" : {
           },
           "config_attributes" : [
+            {
+              "O_BUFT_DS" : "IOSTANDARD==DEFAULT"
+            }
           ]
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$din",
+        "I" : "$ibuf_din",
         "O_N" : "dout_n",
         "O_P" : "dout_p"
       },
       "parameters" : {
+        "WEAK_KEEPER" : "NONE"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__ds_pin_is_valid__,__pin_is_differential__,__check_ds_pin_resource__"
+      "flags" : [
+        "O_BUFT_DS"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__ds_pin_is_valid__,__pin_is_differential__,__check_ds_pin_resource__"
     }
   ]
 }

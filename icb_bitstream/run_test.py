@@ -22,6 +22,45 @@ class ProjectThread(threading.Thread):
     )
     print("  Run command: {cmd:s}".format(cmd=cmd))
     self.status = os.system(cmd) == 0
+    self.io_config_errors = []
+    self.sdc_errors = []
+    self.config_status = True
+    if self.status:
+      file = open(
+        "auto_run_results/{proj:s}/top/run_1/synth_1_1/synthesis/io_config.json".format(
+          proj=self.project
+        )
+      )
+      for line in file:
+        if line.find("Error: ") != -1:
+          line = line[line.find("Error: ") :]
+          line = line.strip()
+          if line[-1] == '"':
+            line = line[:-1]
+            self.io_config_errors.append(line)
+      file.close()
+    if self.status:
+      file = open(
+        "auto_run_results/{proj:s}/top/run_1/synth_1_1/synthesis/design_edit.sdc".format(
+          proj=self.project
+        )
+      )
+      for line in file:
+        if line.find("# Fail reason: ") != -1:
+          line = line.strip()
+          self.sdc_errors.append(line)
+      file.close()
+    if self.status:
+      file = open(
+        "auto_run_results/{proj:s}/top/run_1/synth_1_1/impl_1_1_1/bitstream/model_config.ppdb.json".format(
+          proj=self.project
+        )
+      )
+      for line in file:
+        if line.find("__validation__") != -1 and line.find("FALSE") != -1:
+          self.config_status = False
+          break
+      file.close()
 
 def get_all_projects():
   projects = []
@@ -53,8 +92,8 @@ def get_run_porjects(projects, exclude_projects):
       if proj in run_projects:
         print("Info: Exclude project {proj:s}".format(proj=proj))
         run_projects.remove(proj)
-    if len(run_projects) == 0:
-      print("Warning: No project to be run")
+  if len(run_projects) == 0:
+    print("Warning: No project to be run")
   return run_projects
 
 def get_thread_count(threads):
@@ -63,7 +102,11 @@ def get_thread_count(threads):
       print("Warning: Set threads count to 1")
       threads_count = 1
     elif threads > MAX_THREADS:
-      print("Warning: Reduce/set threads count to {max_thread:d}".format(max_thread=MAX_THREADS))
+      print(
+        "Warning: Reduce/set threads count to {max_thread:d}".format(
+          max_thread=MAX_THREADS
+        )
+      )
       threads_count = MAX_THREADS
     else:
       threads_count = threads
@@ -78,7 +121,7 @@ def get_tcl_controls(keyword, control):
     temp = control.split(",")
     for t in temp:
       controls.append("##__{k:s}__{c:s}__##".format(k=keyword, c=t.upper()))
-    print(controls[-1])
+      print(controls[-1])
   return controls
 
 def prepare_project(proj, device, add_controls, remove_controls):
@@ -114,7 +157,6 @@ def format_file():
       for file in all_files:
         lines = []
         ifile = open(file)
-        change = False
         for line in ifile:
           lines.append(line.rstrip())
         ifile.close()
@@ -157,10 +199,11 @@ def update_golden(project):
   for file in files:
     filename = os.path.basename(file)
     os.system("mkdir -p golden/{proj:s}".format(proj=project))
-    print("    Update {file:s}".format(file=filename))
+    print("  Update {file:s}".format(file=filename))
     os.system("cp -rf {file:s} golden/{proj:s}/.".format(file=file, proj=project))
-    
+
 def compare_golden(project):
+  print("    Golden files:")
   status = True
   files = glob.glob("golden/{proj:s}/*".format(proj=project))
   for file in files:
@@ -181,21 +224,21 @@ def compare_golden(project):
             break
         status = status and current_status
         if current_status:
-          print("    Compare golden {file:s} pass".format(file=filename))
+          print("      Compare golden {file:s} pass".format(file=filename))
         else:
           print(
-            "    Error: Compare golden {file:s} failed".format(
+            "      Error: Compare golden {file:s} failed".format(
               file=filename
             )
           )
       else:
-        print("    Error: Compare golden {file:s} failed".format(file=filename))
+        print("      Error: Compare golden {file:s} failed".format(file=filename))
         status = False
       g.close()
       r.close()
     else:
       print(
-        "  Error: Result summary file {file:s} does not exist".format(
+        "      Error: Result summary file {file:s} does not exist".format(
           file=result_file
         )
       )
@@ -209,14 +252,50 @@ def main():
   subparsers = parser.add_subparsers(dest="subparser_name")
   format_parser = subparsers.add_parser("format")
   clean_parser = subparsers.add_parser("clean")
-  parser.add_argument("-p", "--projects", default=None, help="A list of project(s) to run (seperated by ','). By default run all projects")
-  parser.add_argument("-e", "--exclude_projects", default=None, help="A list of project(s) to exclude (seperated by ','). By default exclude none")
-  parser.add_argument("-t", "--threads", type=int, default=1, help="Multi-threading count. By default is 1")
-  parser.add_argument("-d", "--device", default="GEMINI_COMPACT_62x44", help="Targeted device. By default is GEMINI_COMPACT_10x8")
-  parser.add_argument("-r", "--raptor_tool", default=None, help="Raptor tool path. Must be specified")
-  parser.add_argument("-u", "--update", action="store_true", help="Update result instead of compare result")
-  parser.add_argument("--add_tcl_control", default=None, help="Control feature(s) to add (seperated by ',') in Raptor TCL")
-  parser.add_argument("--remove_tcl_control", default=None, help="Control feature(s) to remove (seperated by ',') in Raptor TCL")
+  parser.add_argument(
+    "-p",
+    "--projects",
+    default=None,
+    help="A list of project(s) to run (seperated by ','). By default run all projects",
+  )
+  parser.add_argument(
+    "-e",
+    "--exclude_projects",
+    default=None,
+    help="A list of project(s) to exclude (seperated by ','). By default exclude none",
+  )
+  parser.add_argument(
+    "-t",
+    "--threads",
+    type=int,
+    default=1,
+    help="Multi-threading count. By default is 1",
+  )
+  parser.add_argument(
+    "-d",
+    "--device",
+    default="1VG28",
+    help="Targeted device. By default is GEMINI_COMPACT_10x8",
+  )
+  parser.add_argument(
+    "-r", "--raptor_tool", default=None, help="Raptor tool path. Must be specified"
+  )
+  parser.add_argument(
+    "-u",
+    "--update",
+    action="store_true",
+    help="Update result instead of compare result",
+  )
+  parser.add_argument(
+    "--add_tcl_control",
+    default=None,
+    help="Control feature(s) to add (seperated by ',') in Raptor TCL",
+  )
+  parser.add_argument(
+    "--remove_tcl_control",
+    default=None,
+    help="Control feature(s) to remove (seperated by ',') in Raptor TCL",
+  )
   args = parser.parse_args()
   if args.subparser_name == "format":
     format_file()
@@ -252,19 +331,33 @@ def main():
         os.system("rm -rf auto_run_results/summary")
         os.mkdir("auto_run_results/summary")
         summary_files = [
-          "run_1/synth_1_1/synthesis/config.json",
+          "run_1/synth_1_1/synthesis/io_config.json",
+          "run_1/synth_1_1/synthesis/design_edit.sdc",
           "run_1/synth_1_1/impl_1_1_1/bitstream/model_config.ppdb.json",
-          "run_1/synth_1_1/impl_1_1_1/bitstream/io_bitstream.detail.txt",
+          "run_1/synth_1_1/impl_1_1_1/bitstream/io_bitstream.detail.bit",
         ]
         print("Result/Status:")
         status = True
         for result in results:
           print(
-            "  Project {proj:s} raptor status: {status:s}".format(
+            "  Project {proj:s}. Raptor status: {status:s}".format(
               proj=result.project,
               status="TRUE" if result.status else "FALSE",
             )
           )
+          if len(result.io_config_errors):
+            print("    IO Config Error:")
+            for error in result.io_config_errors:
+              print("      {error:s}".format(error=error))
+            status = False
+          if len(result.sdc_errors):
+            print("    SDC Error:")
+            for error in result.sdc_errors:
+              print("      {error:s}".format(error=error))
+            status = False
+          if not result.config_status:
+            print("    Config Model status: FALSE")
+            status = False
           status = status and result.status
           if result.status:
             os.mkdir(
@@ -278,11 +371,15 @@ def main():
                   proj=result.project, file=file
                 )
               )
-            if args.update :
+            if args.update:
               update_golden(result.project)
-            else :
+            else:
               status = compare_golden(result.project) and status
-        print("\nOverall result: {status:s}\n".format(status="True" if status else "False"))
+        print(
+          "\nOverall result: {status:s}\n".format(
+            status="True" if status else "False"
+          )
+        )
 
     else:
       if isinstance(args.raptor_tool, str):

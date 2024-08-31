@@ -1,0 +1,191 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\din (index=0, width=1, offset=0)",
+    "    Detect output port \\dout_n (index=0, width=1, offset=0)",
+    "    Detect output port \\dout_p (index=0, width=1, offset=0)",
+    "    Detect input port \\enable (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF $ibuf$top.$ibuf_din",
+    "      Cell port \\I is connected to input port \\din",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\I_BUF $ibuf$top.$ibuf_enable",
+    "      Cell port \\I is connected to input port \\enable",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\O_BUFT_DS \\o_buft_ds",
+    "      Cell port \\O_N is connected to output port \\dout_n",
+    "      Cell port \\O_P is connected to output port \\dout_p",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "  Trace \\I_BUF_DS --> \\CLK_BUF",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace fabric clock buffer",
+    "  Trace gearbox fast clock source",
+    "  Trace Core/Fabric Clock",
+    "  Double check Core/Fabric Clock",
+    "  Summary",
+    "        |--------------------------------------------------------------------|",
+    "        |        *********************************************               |",
+    "    IN  |    din * I_BUF                                     *               |",
+    "    IN  | enable * I_BUF                                     *               |",
+    "    OUT |        *                                 O_BUFT_DS * dout_n+dout_p |",
+    "        |        *********************************************               |",
+    "        |--------------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Assign location HP_1_0_0P (and properties) to Port din",
+    "  Assign location HP_1_3_1N (and properties) to Port enable",
+    "  Assign location HP_1_6_3P (and properties) to Port dout_p",
+    "  Assign location HP_1_7_3N (and properties) to Port dout_n",
+    "  Cross-check instances vs wrapped-instances",
+    "  Generate SDC",
+    "    Determine data signals",
+    "      Pin object=din, location: HP_1_0_0P",
+    "        Data signal from object din",
+    "          Module=I_BUF Linked-object=din Port=O Net=$ibuf_din - Found",
+    "      Pin object=enable, location: HP_1_3_1N",
+    "        Data signal from object enable",
+    "          Module=I_BUF Linked-object=enable Port=O Net=$ibuf_enable - Found",
+    "      Pin object=dout_n, location: HP_1_7_3N",
+    "        Skip this because 'This is secondary pin. But IO bitstream generation will still make sure it is used in pair. Otherwise the IO bitstream will be invalid'",
+    "      Pin object=dout_p, location: HP_1_6_3P",
+    "        Data signal from object dout_p",
+    "          Module=O_BUFT_DS Linked-object=dout_n+dout_p Port=I Net=$auto_400 - Found",
+    "    Determine internal control signals",
+    "      Module=I_BUF LinkedObject=din Location=HP_1_0_0P Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=I_BUF LinkedObject=enable Location=HP_1_3_1N Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=O_BUFT_DS LinkedObject=dout_n+dout_p Location=HP_1_6_3P Port=T Signal=in:f2g_tx_oe_{A|B}",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$top.$ibuf_din",
+      "location_object" : "din",
+      "location" : "HP_1_0_0P",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "$ibuf_din"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$top.$ibuf_enable",
+      "location_object" : "enable",
+      "location" : "HP_1_3_1N",
+      "linked_object" : "enable",
+      "linked_objects" : {
+        "enable" : {
+          "location" : "HP_1_3_1N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "enable",
+        "O" : "$ibuf_enable"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_BUFT_DS",
+      "name" : "o_buft_ds",
+      "location_object" : "dout_p",
+      "location" : "HP_1_6_3P",
+      "linked_object" : "dout_n+dout_p",
+      "linked_objects" : {
+        "dout_n" : {
+          "location" : "HP_1_7_3N",
+          "properties" : {
+          }
+        },
+        "dout_p" : {
+          "location" : "HP_1_6_3P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "$ibuf_din",
+        "O_N" : "dout_n",
+        "O_P" : "dout_p"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "flags" : [
+        "O_BUFT_DS"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    }
+  ]
+}
