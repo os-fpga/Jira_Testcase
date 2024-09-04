@@ -1,8 +1,57 @@
 {
+  "messages" : [
+    "Netlist PPDB: /home/cschai/github/Jira_Testcase/icb_bitstream/auto_run_results/io_buf_ds/top/run_1/synth_1_1/synthesis/io_config.json",
+    "Config Mapping: /home/cschai/github/Raptor/build/share/raptor/configuration/Virgo/config_attributes.mapping.json",
+    "Property JSON: model_config.property.json",
+    "Preparing Python file: /home/cschai/github/Jira_Testcase/icb_bitstream/auto_run_results/io_buf_ds/top/run_1/synth_1_1/impl_1_1_1/bitstream/config.py",
+    "Read resources",
+    "Validate Instances",
+    "Merge properties into instances",
+    "Re-location instances",
+    "Configure Mapping file initialization",
+    "Validation using '__primary_validation__' rule",
+    "Internal error validations",
+    "Assign instance-without-location",
+    "Allocate FCLK routing resource",
+    "Allocate ROOT BANK routing resource (and set configuration attributes)",
+    "Set CLKBUF remaining configuration attributes (FCLK)",
+    "Allocate PLL resource (and set PLLREF configuration attributes)",
+    "Set PLL remaining configuration attributes (FCLK)",
+    "Validation using '__secondary_validation__' rule",
+    "Set configuration attributes",
+    "  Module: I_BUF_DS (i_buf_ds)",
+    "    Object: din_n",
+    "      Parameter",
+    "        Rule I_BUF_DS.DIFFERENTIAL_TERMINATION",
+    "          Mismatch",
+    "      Property",
+    "        Rule I_BUF_DS.IOSTANDARD",
+    "          Mismatch",
+    "    Object: din_p",
+    "      Parameter",
+    "        Rule I_BUF_DS.DIFFERENTIAL_TERMINATION",
+    "          Mismatch",
+    "      Property",
+    "        Rule I_BUF_DS.IOSTANDARD",
+    "          Mismatch",
+    "  Module: O_BUF_DS (o_buf_ds)",
+    "    Object: dout_n",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUF_DS.IOSTANDARD",
+    "          Mismatch",
+    "    Object: dout_p",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUF_DS.IOSTANDARD",
+    "          Mismatch"
+  ],
   "instances" : [
     {
       "module" : "I_BUF_DS",
       "name" : "i_buf_ds",
+      "location_object" : "din_p",
+      "location" : "HP_1_4_2P",
       "linked_object" : "din_n+din_p",
       "linked_objects" : {
         "din_n" : {
@@ -10,6 +59,12 @@
           "properties" : {
           },
           "config_attributes" : [
+            {
+              "DFODTEN" : "DF_odt_enable"
+            },
+            {
+              "I_BUF_DS" : "IOSTANDARD==DEFAULT"
+            }
           ]
         },
         "din_p" : {
@@ -17,6 +72,12 @@
           "properties" : {
           },
           "config_attributes" : [
+            {
+              "DFODTEN" : "DF_odt_enable"
+            },
+            {
+              "I_BUF_DS" : "IOSTANDARD==DEFAULT"
+            }
           ]
         }
       },
@@ -26,13 +87,30 @@
         "O" : "o_buf_ds_i"
       },
       "parameters" : {
+        "DIFFERENTIAL_TERMINATION" : "TRUE",
+        "IOSTANDARD" : "DEFAULT",
+        "WEAK_KEEPER" : "NONE"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__ds_pin_is_valid__,__pin_is_differential__,__check_ds_pin_resource__"
+      "flags" : [
+        "I_BUF_DS"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__ds_pin_is_valid__,__pin_is_differential__,__check_ds_pin_resource__"
     },
     {
       "module" : "O_BUF_DS",
       "name" : "o_buf_ds",
+      "location_object" : "dout_p",
+      "location" : "HP_1_6_3P",
       "linked_object" : "dout_n+dout_p",
       "linked_objects" : {
         "dout_n" : {
@@ -40,6 +118,9 @@
           "properties" : {
           },
           "config_attributes" : [
+            {
+              "O_BUF_DS" : "IOSTANDARD==DEFAULT"
+            }
           ]
         },
         "dout_p" : {
@@ -47,6 +128,9 @@
           "properties" : {
           },
           "config_attributes" : [
+            {
+              "O_BUF_DS" : "IOSTANDARD==DEFAULT"
+            }
           ]
         }
       },
@@ -56,9 +140,23 @@
         "O_P" : "dout_p"
       },
       "parameters" : {
+        "DIFFERENTIAL_TERMINATION" : "TRUE",
+        "IOSTANDARD" : "DEFAULT"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__ds_pin_is_valid__,__pin_is_differential__,__check_ds_pin_resource__"
+      "flags" : [
+        "O_BUF_DS"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__ds_pin_is_valid__,__pin_is_differential__,__check_ds_pin_resource__"
     }
   ]
 }

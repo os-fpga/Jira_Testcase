@@ -1,18 +1,25 @@
 /////////////////////////////////////////
-//  Functionality: 1. Use BOOT_CLOCK to clock FF
+//  Functionality: 1. Use diffential signal pin to clock FF
 //  Author: Chung Shien
 ////////////////////////////////////////
 // `timescale 1ns / 1ps
 
 module top(
   input wire din,
+  input wire clk_p,
+  input wire clk_n,
   output reg dout
 );
-  wire intosc;
-  BOOT_CLOCK boot_clock(
-    .O(intosc)
+
+  wire clk;
+  I_BUF_DS i_buf_ds
+  (
+    .I_P(clk_p),
+    .I_N(clk_n),
+    .O(clk)
   );
-  always @ (posedge intosc) begin
+
+  always @ (posedge clk) begin
     dout <= ~din;
   end
 

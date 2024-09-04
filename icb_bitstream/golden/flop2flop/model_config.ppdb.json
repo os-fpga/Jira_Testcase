@@ -1,12 +1,72 @@
 {
+  "messages" : [
+    "Netlist PPDB: /home/cschai/github/Jira_Testcase/icb_bitstream/auto_run_results/flop2flop/top/run_1/synth_1_1/synthesis/io_config.json",
+    "Config Mapping: /home/cschai/github/Raptor/build/share/raptor/configuration/Virgo/config_attributes.mapping.json",
+    "Property JSON: model_config.property.json",
+    "Preparing Python file: /home/cschai/github/Jira_Testcase/icb_bitstream/auto_run_results/flop2flop/top/run_1/synth_1_1/impl_1_1_1/bitstream/config.py",
+    "Read resources",
+    "Validate Instances",
+    "Merge properties into instances",
+    "Re-location instances",
+    "Configure Mapping file initialization",
+    "Validation using '__primary_validation__' rule",
+    "Internal error validations",
+    "Assign instance-without-location",
+    "Allocate FCLK routing resource",
+    "  CLKBUF $clkbuf$top.$ibuf_clk (location:HP_1_CC_18_9P)",
+    "Allocate ROOT BANK routing resource (and set configuration attributes)",
+    "    CLK_BUF $clkbuf$top.$ibuf_clk",
+    "      Resource: u_GBOX_HP_40X2.u_gbox_root_bank_clkmux_0 (Bank A)(CORE)",
+    "Set CLKBUF remaining configuration attributes (FCLK)",
+    "  Set FCLK configuration attributes",
+    "    Skip for HP_1_CC_18_9P",
+    "Allocate PLL resource (and set PLLREF configuration attributes)",
+    "Set PLL remaining configuration attributes (FCLK)",
+    "Validation using '__secondary_validation__' rule",
+    "Set configuration attributes",
+    "  Module: I_BUF ($ibuf$top.$ibuf_clk)",
+    "    Object: clk",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: CLK_BUF ($clkbuf$top.$ibuf_clk)",
+    "    Object: clk",
+    "      Parameter",
+    "      Property",
+    "        Rule CLK_BUF.GBOX_TOP",
+    "          Match",
+    "        Rule CLK_BUF.ROOT_BANK_CLKMUX",
+    "          Match",
+    "        Rule CLK_BUF.ROOT_MUX",
+    "          Match",
+    "  Module: I_BUF ($ibuf$top.$ibuf_din)",
+    "    Object: din",
+    "      Parameter",
+    "        Rule I_BUF.WEAK_KEEPER",
+    "          Match",
+    "      Property",
+    "        Rule I_BUF.IOSTANDARD",
+    "          Mismatch",
+    "  Module: O_BUFT ($obuf$top.$obuf_dout)",
+    "    Object: dout",
+    "      Parameter",
+    "      Property",
+    "        Rule O_BUFT.IOSTANDARD",
+    "          Mismatch"
+  ],
   "instances" : [
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.clk",
+      "name" : "$ibuf$top.$ibuf_clk",
+      "location_object" : "clk",
+      "location" : "HP_1_CC_18_9P",
       "linked_object" : "clk",
       "linked_objects" : {
         "clk" : {
-          "location" : "HP_1_CC_10_5P",
+          "location" : "HP_1_CC_18_9P",
           "properties" : {
           },
           "config_attributes" : [
@@ -21,41 +81,86 @@
       },
       "connectivity" : {
         "I" : "clk",
-        "O" : "$iopadmap$clk"
+        "O" : "$ibuf_clk"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
     },
     {
       "module" : "CLK_BUF",
-      "name" : "$auto$clkbufmap.cc:265:execute$428",
+      "name" : "$clkbuf$top.$ibuf_clk",
+      "location_object" : "clk",
+      "location" : "HP_1_CC_18_9P",
       "linked_object" : "clk",
       "linked_objects" : {
         "clk" : {
-          "location" : "HP_1_CC_10_5P",
+          "location" : "HP_1_CC_18_9P",
           "properties" : {
             "ROUTE_TO_FABRIC_CLK" : "0"
           },
           "config_attributes" : [
+            {
+              "CLK_BUF" : "GBOX_TOP_SRC==DEFAULT"
+            },
+            {
+              "CLK_BUF" : "ROOT_BANK_SRC==A --#MUX=18",
+              "__location__" : "u_GBOX_HP_40X2.u_gbox_root_bank_clkmux_0"
+            },
+            {
+              "ROOT_MUX_SEL" : "0",
+              "__location__" : "u_GBOX_HP_40X2.u_gbox_clkmux_52x1_left_0"
+            }
           ]
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$clk",
-        "O" : "$auto$clkbufmap.cc:298:execute$430"
+        "I" : "$ibuf_clk",
+        "O" : "$clk_buf_$ibuf_clk"
       },
       "parameters" : {
         "ROUTE_TO_FABRIC_CLK" : "0"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__clock_pin_is_valid__,__check_fabric_clock_resource__,__update_fabric_clock_resource__"
+      "flags" : [
+        "CLK_BUF",
+        "PIN_CLOCK_CORE_ONLY"
+      ],
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__AB__" : "A",
+      "__ROOT_BANK_MUX_LOCATION__" : "u_GBOX_HP_40X2.u_gbox_root_bank_clkmux_0",
+      "__ROOT_BANK_MUX__" : "18",
+      "__ROOT_MUX__" : "0",
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__clock_pin_is_valid__,__check_fabric_clock_resource__,__update_fabric_clock_resource__"
     },
     {
       "module" : "I_BUF",
-      "name" : "$iopadmap$top.din",
+      "name" : "$ibuf$top.$ibuf_din",
+      "location_object" : "din",
+      "location" : "HP_1_0_0P",
       "linked_object" : "din",
       "linked_objects" : {
         "din" : {
@@ -74,17 +179,31 @@
       },
       "connectivity" : {
         "I" : "din",
-        "O" : "$iopadmap$din"
+        "O" : "$ibuf_din"
       },
       "parameters" : {
         "WEAK_KEEPER" : "NONE"
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
     },
     {
-      "module" : "O_BUF",
-      "name" : "$iopadmap$top.dout",
+      "module" : "O_BUFT",
+      "name" : "$obuf$top.$obuf_dout",
+      "location_object" : "dout",
+      "location" : "HP_1_1_0N",
       "linked_object" : "dout",
       "linked_objects" : {
         "dout" : {
@@ -93,19 +212,31 @@
           },
           "config_attributes" : [
             {
-              "O_BUF" : "IOSTANDARD==DEFAULT"
+              "O_BUFT" : "IOSTANDARD==DEFAULT"
             }
           ]
         }
       },
       "connectivity" : {
-        "I" : "$iopadmap$dout",
+        "I" : "$obuf_dout",
         "O" : "dout"
       },
       "parameters" : {
       },
-      "__location_validation__" : "TRUE",
-      "__location_validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
+      "flags" : [
+        "O_BUFT"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "route_clock_result" : {
+      },
+      "errors" : [
+      ],
+      "__validation__" : "TRUE",
+      "__validation_msg__" : "Pass:__pin_is_valid__,__check_pin_resource__"
     }
   ]
 }

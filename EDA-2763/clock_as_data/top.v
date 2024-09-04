@@ -1,3 +1,9 @@
+/////////////////////////////////////////
+//  Functionality: 1. Use clock as data (manual instantiation of primitive) 
+//  Author: Chung Shien
+////////////////////////////////////////
+// `timescale 1ns / 1ps
+
 module top (
   input wire clk,
   input wire din,

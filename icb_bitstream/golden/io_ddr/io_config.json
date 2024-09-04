@@ -1,0 +1,388 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clk (index=0, width=1, offset=0)",
+    "    Detect input port \\din (index=0, width=1, offset=0)",
+    "    Detect output port \\dout (index=0, width=1, offset=0)",
+    "    Detect input port \\enable (index=0, width=1, offset=0)",
+    "    Detect input port \\reset (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF $ibuf$top.$ibuf_enable",
+    "      Cell port \\I is connected to input port \\enable",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\I_BUF $ibuf$top.$ibuf_reset",
+    "      Cell port \\I is connected to input port \\reset",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\I_BUF \\clk_i_buf",
+    "      Cell port \\I is connected to input port \\clk",
+    "        Data Width: -2",
+    "    Get important connection of cell \\I_BUF \\i_buf",
+    "      Cell port \\I is connected to input port \\din",
+    "        Data Width: -2",
+    "    Get important connection of cell \\O_BUFT \\o_buf",
+    "      Cell port \\O is connected to output port \\dout",
+    "        Data Width: -2",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF \\clk_i_buf out connection: \\clk_buf_i -> \\clk_buf",
+    "      Connected \\clk_buf",
+    "        Data Width: -2",
+    "  Trace \\I_BUF_DS --> \\CLK_BUF",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "    Try \\I_BUF \\i_buf out connection: \\i_ddr_d -> \\i_ddr",
+    "      Connected \\i_ddr",
+    "        Data Width: -2",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "    Try \\O_BUFT \\o_buf out connection: \\o_buf_i -> \\o_ddr",
+    "      Connected \\o_ddr",
+    "        Data Width: -2",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace fabric clock buffer",
+    "  Trace gearbox fast clock source",
+    "    \\I_DDR \\i_ddr port \\C: \\clk_clk_buf",
+    "      Connected to \\CLK_BUF \\clk_buf port \\O",
+    "  Trace Core/Fabric Clock",
+    "    Module \\CLK_BUF \\clk_buf: clock port \\O, net \\clk_clk_buf",
+    "      Connected to cell \\I_DDR \\i_ddr",
+    "        Which is a primitive",
+    "        Does not meet core_clk checking criteria. Not sending to fabric",
+    "      Connected to cell \\O_DDR \\o_ddr",
+    "        Which is a primitive",
+    "        This is gearbox core_clk. Send to fabric",
+    "      Use slot 0",
+    "  Double check Core/Fabric Clock",
+    "    \\O_DDR \\o_ddr port \\C",
+    "      Good. Found clocking",
+    "  Summary",
+    "        |------------------------------------------------------------------|",
+    "        |        ****************************************************      |",
+    "    IN  | enable * I_BUF                                            *      |",
+    "    IN  |  reset * I_BUF                                            *      |",
+    "    IN  |    clk * I_BUF |-> CLK_BUF                                *      |",
+    "    IN  |    din * I_BUF |-> I_DDR                                  *      |",
+    "    OUT |        *                                 O_DDR |-> O_BUFT * dout |",
+    "        |        ****************************************************      |",
+    "        |------------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Assign location HP_1_CC_18_9P (and properties) to Port clk",
+    "  Assign location HP_1_0_0P (and properties) to Port din",
+    "  Assign location HP_1_1_0N (and properties) to Port dout",
+    "  Assign location HP_1_2_1P (and properties) to Port reset",
+    "  Assign location HP_1_3_1N (and properties) to Port enable",
+    "  Cross-check instances vs wrapped-instances",
+    "  Generate SDC",
+    "    Determine data signals",
+    "      Pin object=enable, location: HP_1_3_1N",
+    "        Data signal from object enable",
+    "          Module=I_BUF Linked-object=enable Port=O Net=$ibuf_enable - Found",
+    "      Pin object=reset, location: HP_1_2_1P",
+    "        Data signal from object reset",
+    "          Module=I_BUF Linked-object=reset Port=O Net=$ibuf_reset - Found",
+    "      Pin object=clk, location: HP_1_CC_18_9P",
+    "        Data signal from object clk",
+    "          Module=I_BUF Linked-object=clk Port=O Net=$auto_409.clk_buf_i - Not found",
+    "          Fail reason: Clock data from object clk port O is not routed to fabric",
+    "      Pin object=din, location: HP_1_0_0P",
+    "        Data signal from object din",
+    "          Module=I_DDR Linked-object=din Port=Q Net=o_ddr_d - Found",
+    "          Module=I_DDR Linked-object=din Port=Q Net=$delete_wire$399 - Found",
+    "      Pin object=dout, location: HP_1_1_0N",
+    "        Data signal from object dout",
+    "          Module=O_DDR Linked-object=dout Port=D Net=$auto_405 - Found",
+    "          Module=O_DDR Linked-object=dout Port=D Net=__const_bit_0__ - Not found",
+    "    Determine internal control signals",
+    "      Module=I_BUF LinkedObject=enable Location=HP_1_3_1N Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=I_BUF LinkedObject=reset Location=HP_1_2_1P Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=I_BUF LinkedObject=clk Location=HP_1_CC_18_9P Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=I_BUF LinkedObject=din Location=HP_1_0_0P Port=EN Signal=in:f2g_in_en_{A|B}",
+    "      Module=I_DDR LinkedObject=din Location=HP_1_0_0P Port=E Signal=in:TO_BE_DETERMINED",
+    "        Skip reason: TO_BE_DETERMINED",
+    "      Module=I_DDR LinkedObject=din Location=HP_1_0_0P Port=R Signal=in:TO_BE_DETERMINED",
+    "        Skip reason: TO_BE_DETERMINED",
+    "      Module=O_BUFT LinkedObject=dout Location=HP_1_1_0N Port=T Signal=in:f2g_tx_oe_{A|B}",
+    "      Module=O_DDR LinkedObject=dout Location=HP_1_1_0N Port=E Signal=in:TO_BE_DETERMINED",
+    "        Skip reason: TO_BE_DETERMINED",
+    "      Module=O_DDR LinkedObject=dout Location=HP_1_1_0N Port=R Signal=in:TO_BE_DETERMINED",
+    "        Skip reason: TO_BE_DETERMINED",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$top.$ibuf_enable",
+      "location_object" : "enable",
+      "location" : "HP_1_3_1N",
+      "linked_object" : "enable",
+      "linked_objects" : {
+        "enable" : {
+          "location" : "HP_1_3_1N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "enable",
+        "O" : "$ibuf_enable"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "$ibuf$top.$ibuf_reset",
+      "location_object" : "reset",
+      "location" : "HP_1_2_1P",
+      "linked_object" : "reset",
+      "linked_objects" : {
+        "reset" : {
+          "location" : "HP_1_2_1P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "reset",
+        "O" : "$ibuf_reset"
+      },
+      "parameters" : {
+        "WEAK_KEEPER" : "NONE"
+      },
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "clk_i_buf",
+      "location_object" : "clk",
+      "location" : "HP_1_CC_18_9P",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_18_9P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk",
+        "O" : "clk_buf_i"
+      },
+      "parameters" : {
+      },
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "CLK_BUF"
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "CLK_BUF",
+      "name" : "clk_buf",
+      "location_object" : "clk",
+      "location" : "HP_1_CC_18_9P",
+      "linked_object" : "clk",
+      "linked_objects" : {
+        "clk" : {
+          "location" : "HP_1_CC_18_9P",
+          "properties" : {
+            "ROUTE_TO_FABRIC_CLK" : "0"
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "clk_buf_i",
+        "O" : "clk_clk_buf"
+      },
+      "parameters" : {
+        "ROUTE_TO_FABRIC_CLK" : "0"
+      },
+      "flags" : [
+        "CLK_BUF"
+      ],
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+        "O" : [
+          "i_ddr"
+        ]
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "I_BUF",
+      "name" : "i_buf",
+      "location_object" : "din",
+      "location" : "HP_1_0_0P",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "din",
+        "O" : "i_ddr_d"
+      },
+      "parameters" : {
+      },
+      "flags" : [
+        "I_BUF"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "I_DDR"
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "I_DDR",
+      "name" : "i_ddr",
+      "location_object" : "din",
+      "location" : "HP_1_0_0P",
+      "linked_object" : "din",
+      "linked_objects" : {
+        "din" : {
+          "location" : "HP_1_0_0P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "C" : "clk_clk_buf",
+        "D" : "i_ddr_d"
+      },
+      "parameters" : {
+      },
+      "flags" : [
+        "I_DDR"
+      ],
+      "pre_primitive" : "I_BUF",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_BUFT",
+      "name" : "o_buf",
+      "location_object" : "dout",
+      "location" : "HP_1_1_0N",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "o_buf_i",
+        "O" : "dout"
+      },
+      "parameters" : {
+      },
+      "flags" : [
+        "O_BUFT"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+        "O_DDR"
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_DDR",
+      "name" : "o_ddr",
+      "location_object" : "dout",
+      "location" : "HP_1_1_0N",
+      "linked_object" : "dout",
+      "linked_objects" : {
+        "dout" : {
+          "location" : "HP_1_1_0N",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "C" : "clk_clk_buf",
+        "Q" : "o_buf_i"
+      },
+      "parameters" : {
+      },
+      "flags" : [
+        "O_DDR"
+      ],
+      "pre_primitive" : "O_BUFT",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    }
+  ]
+}

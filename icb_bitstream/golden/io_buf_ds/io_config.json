@@ -1,0 +1,165 @@
+{
+  "messages" : [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\din_n (index=0, width=1, offset=0)",
+    "    Detect input port \\din_p (index=0, width=1, offset=0)",
+    "    Detect output port \\dout_n (index=0, width=1, offset=0)",
+    "    Detect output port \\dout_p (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF_DS \\i_buf_ds",
+    "      Cell port \\I_N is connected to input port \\din_n",
+    "      Cell port \\I_P is connected to input port \\din_p",
+    "        Parameter \\DIFFERENTIAL_TERMINATION: \"TRUE\"",
+    "        Parameter \\IOSTANDARD: \"DEFAULT\"",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\O_BUF_DS \\o_buf_ds",
+    "      Cell port \\O_N is connected to output port \\dout_n",
+    "      Cell port \\O_P is connected to output port \\dout_p",
+    "        Parameter \\DIFFERENTIAL_TERMINATION: \"TRUE\"",
+    "        Parameter \\IOSTANDARD: \"DEFAULT\"",
+    "        Data Width: -2",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "  Trace \\I_BUF_DS --> \\CLK_BUF",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace fabric clock buffer",
+    "  Trace gearbox fast clock source",
+    "  Trace Core/Fabric Clock",
+    "  Double check Core/Fabric Clock",
+    "  Summary",
+    "        |------------------------------------------------------------------------|",
+    "        |             ********************************************               |",
+    "    IN  | din_n+din_p * I_BUF_DS                                 *               |",
+    "    OUT |             *                                 O_BUF_DS * dout_n+dout_p |",
+    "        |             ********************************************               |",
+    "        |------------------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Assign location HP_1_4_2P (and properties) to Port din_p",
+    "  Assign location HP_1_5_2N (and properties) to Port din_n",
+    "  Assign location HP_1_6_3P (and properties) to Port dout_p",
+    "  Assign location HP_1_7_3N (and properties) to Port dout_n",
+    "  Cross-check instances vs wrapped-instances",
+    "  Generate SDC",
+    "    Determine data signals",
+    "      Pin object=din_n, location: HP_1_5_2N",
+    "        Skip this because 'This is secondary pin. But IO bitstream generation will still make sure it is used in pair. Otherwise the IO bitstream will be invalid'",
+    "      Pin object=din_p, location: HP_1_4_2P",
+    "        Data signal from object din_p",
+    "          Module=I_BUF_DS Linked-object=din_n+din_p Port=O Net=o_buf_ds_i - Found",
+    "      Pin object=dout_n, location: HP_1_7_3N",
+    "        Skip this because 'This is secondary pin. But IO bitstream generation will still make sure it is used in pair. Otherwise the IO bitstream will be invalid'",
+    "      Pin object=dout_p, location: HP_1_6_3P",
+    "        Data signal from object dout_p",
+    "          Module=O_BUF_DS Linked-object=dout_n+dout_p Port=I Net=$auto_397 - Found",
+    "    Determine internal control signals",
+    "      Module=I_BUF_DS LinkedObject=din_n+din_p Location=HP_1_4_2P Port=EN Signal=in:f2g_in_en_{A|B}",
+    "End of IO Analysis"
+  ],
+  "instances" : [
+    {
+      "module" : "I_BUF_DS",
+      "name" : "i_buf_ds",
+      "location_object" : "din_p",
+      "location" : "HP_1_4_2P",
+      "linked_object" : "din_n+din_p",
+      "linked_objects" : {
+        "din_n" : {
+          "location" : "HP_1_5_2N",
+          "properties" : {
+          }
+        },
+        "din_p" : {
+          "location" : "HP_1_4_2P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I_N" : "din_n",
+        "I_P" : "din_p",
+        "O" : "o_buf_ds_i"
+      },
+      "parameters" : {
+        "DIFFERENTIAL_TERMINATION" : "TRUE",
+        "IOSTANDARD" : "DEFAULT",
+        "WEAK_KEEPER" : "NONE"
+      },
+      "flags" : [
+        "I_BUF_DS"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    },
+    {
+      "module" : "O_BUF_DS",
+      "name" : "o_buf_ds",
+      "location_object" : "dout_p",
+      "location" : "HP_1_6_3P",
+      "linked_object" : "dout_n+dout_p",
+      "linked_objects" : {
+        "dout_n" : {
+          "location" : "HP_1_7_3N",
+          "properties" : {
+          }
+        },
+        "dout_p" : {
+          "location" : "HP_1_6_3P",
+          "properties" : {
+          }
+        }
+      },
+      "connectivity" : {
+        "I" : "o_buf_ds_i",
+        "O_N" : "dout_n",
+        "O_P" : "dout_p"
+      },
+      "parameters" : {
+        "DIFFERENTIAL_TERMINATION" : "TRUE",
+        "IOSTANDARD" : "DEFAULT"
+      },
+      "flags" : [
+        "O_BUF_DS"
+      ],
+      "pre_primitive" : "",
+      "post_primitives" : [
+      ],
+      "route_clock_to" : {
+      },
+      "errors" : [
+      ]
+    }
+  ]
+}
