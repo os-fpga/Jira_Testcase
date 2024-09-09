@@ -16,6 +16,7 @@ module top(
   (
     .I_P(clk_p),
     .I_N(clk_n),
+    .EN(1'b1),
     .O(clk)
   );
 
