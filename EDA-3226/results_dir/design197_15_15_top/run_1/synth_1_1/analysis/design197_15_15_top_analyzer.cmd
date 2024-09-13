@@ -1,0 +1,17 @@
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/09_12_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/paritygenerator_top.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/encoder.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/full_adder_top.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/memory_cntrl.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/large_adder.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/shift_reg_top.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/d_latch_top.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/invertion.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/large_mux.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/decoder_top.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/register.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl ../../../../.././rtl/mod_n_counter.v
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/verilog_random_designs/design197_15_15_top/results_dir/.././rtl/design197_15_15_top.v 
+
+analyze -top design197_15_15_top
