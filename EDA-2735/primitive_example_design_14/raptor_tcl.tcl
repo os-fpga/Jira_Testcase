@@ -1,0 +1,12 @@
+create_design primitive_example_design_14
+target_device 1VG28
+add_design_file ./rtl/primitive_example_design_14.v
+set_top_module primitive_example_design_14
+analyze
+synthesize delay
+packing
+place
+route
+sta
+power
+bitstream 

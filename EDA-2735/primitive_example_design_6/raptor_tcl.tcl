@@ -1,0 +1,13 @@
+create_design primitive_example_design_6
+target_device 1VG28
+add_design_file ./rtl/primitive_example_design_6.v
+set_top_module primitive_example_design_6
+add_constraint_file clk_constraint.sdc
+analyze
+synthesize delay
+packing
+place
+route
+sta
+power
+bitstream 
