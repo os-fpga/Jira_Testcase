@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run a multi-line script
+      - name: Try auto merge
         run: |
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" == "${{ github.repository }}" ]; then
           assigned_user=$(gh pr view  ${{ github.event.pull_request.head.ref }}    --json reviewRequests  --jq '.reviewRequests[0].login')
+          fi
           echo "Assigned user: $assigned_user"
           if [[ $assigned_user == "NadeemYaseen" ]]
           then
