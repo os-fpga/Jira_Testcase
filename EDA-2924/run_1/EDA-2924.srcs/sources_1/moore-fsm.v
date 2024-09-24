@@ -11,6 +11,7 @@
 // 
 // Press GO button to start counting. When max value (0xf) is reached, green
 // LED will flash once, and the state machine will return to the Idle state.
+//
 // Date: November 4, 2021
 // Author: Shawn Hymel
 // License: 0BSD
