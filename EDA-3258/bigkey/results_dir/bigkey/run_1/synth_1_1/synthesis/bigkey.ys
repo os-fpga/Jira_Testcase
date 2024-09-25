@@ -1,0 +1,27 @@
+ 
+# Yosys synthesis script for bigkey
+# Read source files
+read_verilog -sv /nfs_scratch/scratch/CompilerValidation/abdul_hameed/EDA-3258_VPR_FMAX_DROP/Raptor/build/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/.././rtl  /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/.././rtl/bigkey.v 
+
+
+# Technology mapping
+hierarchy -top bigkey
+
+setattr -set keep 1 w:\rscga_virt_clk
+
+
+plugin -i synth-rs
+
+synth_rs -post_cleanup 1 -legalize_ram_clk_ports -new_iobuf_map 3 -iofab_map 1 -tech genesis3 -de -goal delay   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v bigkey_post_synth.v
+write_blif -param bigkey_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_bigkey.sdc -json config.json -w wrapper_bigkey_post_synth.v wrapper_bigkey_post_synth.eblif -pr post_pnr_wrapper_bigkey_post_synth.v post_pnr_wrapper_bigkey_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_bigkey_post_synth.v
+write_blif -param fabric_bigkey_post_synth.eblif
+
+  

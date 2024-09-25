@@ -1,0 +1,1748 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.09
+Build    : 1.2.7
+Hash     : ceb4202
+Date     : Sep 25 2024
+Type     : Engineering
+Log Time   : Wed Sep 25 12:48:33 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_scratch/scratch/CompilerValidation/abdul_hameed/EDA-3258_VPR_FMAX_DROP/Raptor/build/bin/vpr /nfs_scratch/scratch/CompilerValidation/abdul_hameed/EDA-3258_VPR_FMAX_DROP/Raptor/build/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/synthesis/fabric_bigkey_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/packing/fabric_bigkey_openfpga.sdc --route_chan_width 160 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report bigkey_post_place_timing.rpt --device castor62x44_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top bigkey --net_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/packing/fabric_bigkey_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/placement/fabric_bigkey_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/routing/fabric_bigkey_post_synth.route --route
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/EDA-3258_VPR_FMAX_DROP/Raptor/build/share/raptor/etc/devices/gemini_compact_62x44/gemini_vpr.xml
+Circuit name: fabric_bigkey_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 22.3 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/packing/fabric_bigkey_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/placement/fabric_bigkey_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/routing/fabric_bigkey_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/packing/fabric_bigkey_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 160
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: bigkey_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 160
+RouterOpts.check_route: FULL
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_pres_fac: 1000.000000
+RouterOpts.max_router_iterations: 1500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: true
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: DETAILED_ROUTING
+AnalysisOpts.post_synth_netlist_unconn_input_handling: GND
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 22.3 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/synthesis/fabric_bigkey_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 0.05 seconds (max_rss 23.0 MiB, delta_rss +0.7 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred  460 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 2
+Swept block(s)      : 2
+Constant Pins Marked: 460
+# Clean circuit took 0.00 seconds (max_rss 23.0 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 0.00 seconds (max_rss 23.0 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.00 seconds (max_rss 23.0 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 2326
+    .input :     263
+    .output:     691
+    0-LUT  :       1
+    6-LUT  :    1147
+    dffre  :     224
+  Nets  : 1635
+    Avg Fanout:     2.8
+    Max Fanout:   908.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 6189
+  Timing Graph Edges: 8417
+  Timing Graph Levels: 8
+# Build Timing Graph took 0.01 seconds (max_rss 23.0 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'clock' Fanout: 224 pins (3.6%), 224 blocks (9.6%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$auto_92503'
+Warning 168: set_input_delay command matched but was not applied to primary output '$auto_92504'
+Warning 169: set_input_delay command matched but was not applied to primary output '$auto_92505'
+Warning 170: set_input_delay command matched but was not applied to primary output '$auto_92506'
+Warning 171: set_input_delay command matched but was not applied to primary output '$auto_92507'
+Warning 172: set_input_delay command matched but was not applied to primary output '$auto_92508'
+Warning 173: set_input_delay command matched but was not applied to primary output '$auto_92509'
+Warning 174: set_input_delay command matched but was not applied to primary output '$auto_92510'
+Warning 175: set_input_delay command matched but was not applied to primary output '$auto_92511'
+Warning 176: set_input_delay command matched but was not applied to primary output '$auto_92512'
+Warning 177: set_input_delay command matched but was not applied to primary output '$auto_92513'
+Warning 178: set_input_delay command matched but was not applied to primary output '$auto_92514'
+Warning 179: set_input_delay command matched but was not applied to primary output '$auto_92515'
+Warning 180: set_input_delay command matched but was not applied to primary output '$auto_92516'
+Warning 181: set_input_delay command matched but was not applied to primary output '$auto_92517'
+Warning 182: set_input_delay command matched but was not applied to primary output '$auto_92518'
+Warning 183: set_input_delay command matched but was not applied to primary output '$auto_92519'
+Warning 184: set_input_delay command matched but was not applied to primary output '$auto_92520'
+Warning 185: set_input_delay command matched but was not applied to primary output '$auto_92521'
+Warning 186: set_input_delay command matched but was not applied to primary output '$auto_92522'
+Warning 187: set_input_delay command matched but was not applied to primary output '$auto_92523'
+Warning 188: set_input_delay command matched but was not applied to primary output '$auto_92524'
+Warning 189: set_input_delay command matched but was not applied to primary output '$auto_92525'
+Warning 190: set_input_delay command matched but was not applied to primary output '$auto_92526'
+Warning 191: set_input_delay command matched but was not applied to primary output '$auto_92527'
+Warning 192: set_input_delay command matched but was not applied to primary output '$auto_92528'
+Warning 193: set_input_delay command matched but was not applied to primary output '$auto_92529'
+Warning 194: set_input_delay command matched but was not applied to primary output '$auto_92530'
+Warning 195: set_input_delay command matched but was not applied to primary output '$auto_92531'
+Warning 196: set_input_delay command matched but was not applied to primary output '$auto_92532'
+Warning 197: set_input_delay command matched but was not applied to primary output '$auto_92533'
+Warning 198: set_input_delay command matched but was not applied to primary output '$auto_92534'
+Warning 199: set_input_delay command matched but was not applied to primary output '$auto_92535'
+Warning 200: set_input_delay command matched but was not applied to primary output '$auto_92536'
+Warning 201: set_input_delay command matched but was not applied to primary output '$auto_92537'
+Warning 202: set_input_delay command matched but was not applied to primary output '$auto_92538'
+Warning 203: set_input_delay command matched but was not applied to primary output '$auto_92539'
+Warning 204: set_input_delay command matched but was not applied to primary output '$auto_92540'
+Warning 205: set_input_delay command matched but was not applied to primary output '$auto_92541'
+Warning 206: set_input_delay command matched but was not applied to primary output '$auto_92542'
+Warning 207: set_input_delay command matched but was not applied to primary output '$auto_92543'
+Warning 208: set_input_delay command matched but was not applied to primary output '$auto_92544'
+Warning 209: set_input_delay command matched but was not applied to primary output '$auto_92545'
+Warning 210: set_input_delay command matched but was not applied to primary output '$auto_92546'
+Warning 211: set_input_delay command matched but was not applied to primary output '$auto_92547'
+Warning 212: set_input_delay command matched but was not applied to primary output '$auto_92548'
+Warning 213: set_input_delay command matched but was not applied to primary output '$auto_92549'
+Warning 214: set_input_delay command matched but was not applied to primary output '$auto_92550'
+Warning 215: set_input_delay command matched but was not applied to primary output '$auto_92551'
+Warning 216: set_input_delay command matched but was not applied to primary output '$auto_92552'
+Warning 217: set_input_delay command matched but was not applied to primary output '$auto_92553'
+Warning 218: set_input_delay command matched but was not applied to primary output '$auto_92554'
+Warning 219: set_input_delay command matched but was not applied to primary output '$auto_92555'
+Warning 220: set_input_delay command matched but was not applied to primary output '$auto_92556'
+Warning 221: set_input_delay command matched but was not applied to primary output '$auto_92557'
+Warning 222: set_input_delay command matched but was not applied to primary output '$auto_92558'
+Warning 223: set_input_delay command matched but was not applied to primary output '$auto_92559'
+Warning 224: set_input_delay command matched but was not applied to primary output '$auto_92560'
+Warning 225: set_input_delay command matched but was not applied to primary output '$auto_92561'
+Warning 226: set_input_delay command matched but was not applied to primary output '$auto_92562'
+Warning 227: set_input_delay command matched but was not applied to primary output '$auto_92563'
+Warning 228: set_input_delay command matched but was not applied to primary output '$auto_92564'
+Warning 229: set_input_delay command matched but was not applied to primary output '$auto_92565'
+Warning 230: set_input_delay command matched but was not applied to primary output '$auto_92566'
+Warning 231: set_input_delay command matched but was not applied to primary output '$auto_92567'
+Warning 232: set_input_delay command matched but was not applied to primary output '$auto_92568'
+Warning 233: set_input_delay command matched but was not applied to primary output '$auto_92569'
+Warning 234: set_input_delay command matched but was not applied to primary output '$auto_92570'
+Warning 235: set_input_delay command matched but was not applied to primary output '$auto_92571'
+Warning 236: set_input_delay command matched but was not applied to primary output '$auto_92572'
+Warning 237: set_input_delay command matched but was not applied to primary output '$auto_92573'
+Warning 238: set_input_delay command matched but was not applied to primary output '$auto_92574'
+Warning 239: set_input_delay command matched but was not applied to primary output '$auto_92575'
+Warning 240: set_input_delay command matched but was not applied to primary output '$auto_92576'
+Warning 241: set_input_delay command matched but was not applied to primary output '$auto_92577'
+Warning 242: set_input_delay command matched but was not applied to primary output '$auto_92578'
+Warning 243: set_input_delay command matched but was not applied to primary output '$auto_92579'
+Warning 244: set_input_delay command matched but was not applied to primary output '$auto_92580'
+Warning 245: set_input_delay command matched but was not applied to primary output '$auto_92581'
+Warning 246: set_input_delay command matched but was not applied to primary output '$auto_92582'
+Warning 247: set_input_delay command matched but was not applied to primary output '$auto_92583'
+Warning 248: set_input_delay command matched but was not applied to primary output '$auto_92584'
+Warning 249: set_input_delay command matched but was not applied to primary output '$auto_92585'
+Warning 250: set_input_delay command matched but was not applied to primary output '$auto_92586'
+Warning 251: set_input_delay command matched but was not applied to primary output '$auto_92587'
+Warning 252: set_input_delay command matched but was not applied to primary output '$auto_92588'
+Warning 253: set_input_delay command matched but was not applied to primary output '$auto_92589'
+Warning 254: set_input_delay command matched but was not applied to primary output '$auto_92590'
+Warning 255: set_input_delay command matched but was not applied to primary output '$auto_92591'
+Warning 256: set_input_delay command matched but was not applied to primary output '$auto_92592'
+Warning 257: set_input_delay command matched but was not applied to primary output '$auto_92593'
+Warning 258: set_input_delay command matched but was not applied to primary output '$auto_92594'
+Warning 259: set_input_delay command matched but was not applied to primary output '$auto_92595'
+Warning 260: set_input_delay command matched but was not applied to primary output '$auto_92596'
+Warning 261: set_input_delay command matched but was not applied to primary output '$auto_92597'
+Warning 262: set_input_delay command matched but was not applied to primary output '$auto_92598'
+Warning 263: set_input_delay command matched but was not applied to primary output '$auto_92599'
+Warning 264: set_input_delay command matched but was not applied to primary output '$auto_92600'
+Warning 265: set_input_delay command matched but was not applied to primary output '$auto_92601'
+Warning 266: set_input_delay command matched but was not applied to primary output '$auto_92602'
+Warning 267: set_input_delay command matched but was not applied to primary output '$auto_92603'
+Warning 268: set_input_delay command matched but was not applied to primary output '$auto_92604'
+Warning 269: set_input_delay command matched but was not applied to primary output '$auto_92605'
+Warning 270: set_input_delay command matched but was not applied to primary output '$auto_92606'
+Warning 271: set_input_delay command matched but was not applied to primary output '$auto_92607'
+Warning 272: set_input_delay command matched but was not applied to primary output '$auto_92608'
+Warning 273: set_input_delay command matched but was not applied to primary output '$auto_92609'
+Warning 274: set_input_delay command matched but was not applied to primary output '$auto_92610'
+Warning 275: set_input_delay command matched but was not applied to primary output '$auto_92611'
+Warning 276: set_input_delay command matched but was not applied to primary output '$auto_92612'
+Warning 277: set_input_delay command matched but was not applied to primary output '$auto_92613'
+Warning 278: set_input_delay command matched but was not applied to primary output '$auto_92614'
+Warning 279: set_input_delay command matched but was not applied to primary output '$auto_92615'
+Warning 280: set_input_delay command matched but was not applied to primary output '$auto_92616'
+Warning 281: set_input_delay command matched but was not applied to primary output '$auto_92617'
+Warning 282: set_input_delay command matched but was not applied to primary output '$auto_92618'
+Warning 283: set_input_delay command matched but was not applied to primary output '$auto_92619'
+Warning 284: set_input_delay command matched but was not applied to primary output '$auto_92620'
+Warning 285: set_input_delay command matched but was not applied to primary output '$auto_92621'
+Warning 286: set_input_delay command matched but was not applied to primary output '$auto_92622'
+Warning 287: set_input_delay command matched but was not applied to primary output '$auto_92623'
+Warning 288: set_input_delay command matched but was not applied to primary output '$auto_92624'
+Warning 289: set_input_delay command matched but was not applied to primary output '$auto_92625'
+Warning 290: set_input_delay command matched but was not applied to primary output '$auto_92626'
+Warning 291: set_input_delay command matched but was not applied to primary output '$auto_92627'
+Warning 292: set_input_delay command matched but was not applied to primary output '$auto_92628'
+Warning 293: set_input_delay command matched but was not applied to primary output '$auto_92629'
+Warning 294: set_input_delay command matched but was not applied to primary output '$auto_92630'
+Warning 295: set_input_delay command matched but was not applied to primary output '$auto_92631'
+Warning 296: set_input_delay command matched but was not applied to primary output '$auto_92632'
+Warning 297: set_input_delay command matched but was not applied to primary output '$auto_92633'
+Warning 298: set_input_delay command matched but was not applied to primary output '$auto_92634'
+Warning 299: set_input_delay command matched but was not applied to primary output '$auto_92635'
+Warning 300: set_input_delay command matched but was not applied to primary output '$auto_92636'
+Warning 301: set_input_delay command matched but was not applied to primary output '$auto_92637'
+Warning 302: set_input_delay command matched but was not applied to primary output '$auto_92638'
+Warning 303: set_input_delay command matched but was not applied to primary output '$auto_92639'
+Warning 304: set_input_delay command matched but was not applied to primary output '$auto_92640'
+Warning 305: set_input_delay command matched but was not applied to primary output '$auto_92641'
+Warning 306: set_input_delay command matched but was not applied to primary output '$auto_92642'
+Warning 307: set_input_delay command matched but was not applied to primary output '$auto_92643'
+Warning 308: set_input_delay command matched but was not applied to primary output '$auto_92644'
+Warning 309: set_input_delay command matched but was not applied to primary output '$auto_92645'
+Warning 310: set_input_delay command matched but was not applied to primary output '$auto_92646'
+Warning 311: set_input_delay command matched but was not applied to primary output '$auto_92647'
+Warning 312: set_input_delay command matched but was not applied to primary output '$auto_92648'
+Warning 313: set_input_delay command matched but was not applied to primary output '$auto_92649'
+Warning 314: set_input_delay command matched but was not applied to primary output '$auto_92650'
+Warning 315: set_input_delay command matched but was not applied to primary output '$auto_92651'
+Warning 316: set_input_delay command matched but was not applied to primary output '$auto_92652'
+Warning 317: set_input_delay command matched but was not applied to primary output '$auto_92653'
+Warning 318: set_input_delay command matched but was not applied to primary output '$auto_92654'
+Warning 319: set_input_delay command matched but was not applied to primary output '$auto_92655'
+Warning 320: set_input_delay command matched but was not applied to primary output '$auto_92656'
+Warning 321: set_input_delay command matched but was not applied to primary output '$auto_92657'
+Warning 322: set_input_delay command matched but was not applied to primary output '$auto_92658'
+Warning 323: set_input_delay command matched but was not applied to primary output '$auto_92659'
+Warning 324: set_input_delay command matched but was not applied to primary output '$auto_92660'
+Warning 325: set_input_delay command matched but was not applied to primary output '$auto_92661'
+Warning 326: set_input_delay command matched but was not applied to primary output '$auto_92662'
+Warning 327: set_input_delay command matched but was not applied to primary output '$auto_92663'
+Warning 328: set_input_delay command matched but was not applied to primary output '$auto_92664'
+Warning 329: set_input_delay command matched but was not applied to primary output '$auto_92665'
+Warning 330: set_input_delay command matched but was not applied to primary output '$auto_92666'
+Warning 331: set_input_delay command matched but was not applied to primary output '$auto_92667'
+Warning 332: set_input_delay command matched but was not applied to primary output '$auto_92668'
+Warning 333: set_input_delay command matched but was not applied to primary output '$auto_92669'
+Warning 334: set_input_delay command matched but was not applied to primary output '$auto_92670'
+Warning 335: set_input_delay command matched but was not applied to primary output '$auto_92671'
+Warning 336: set_input_delay command matched but was not applied to primary output '$auto_92672'
+Warning 337: set_input_delay command matched but was not applied to primary output '$auto_92673'
+Warning 338: set_input_delay command matched but was not applied to primary output '$auto_92674'
+Warning 339: set_input_delay command matched but was not applied to primary output '$auto_92675'
+Warning 340: set_input_delay command matched but was not applied to primary output '$auto_92676'
+Warning 341: set_input_delay command matched but was not applied to primary output '$auto_92677'
+Warning 342: set_input_delay command matched but was not applied to primary output '$auto_92678'
+Warning 343: set_input_delay command matched but was not applied to primary output '$auto_92679'
+Warning 344: set_input_delay command matched but was not applied to primary output '$auto_92680'
+Warning 345: set_input_delay command matched but was not applied to primary output '$auto_92681'
+Warning 346: set_input_delay command matched but was not applied to primary output '$auto_92682'
+Warning 347: set_input_delay command matched but was not applied to primary output '$auto_92683'
+Warning 348: set_input_delay command matched but was not applied to primary output '$auto_92684'
+Warning 349: set_input_delay command matched but was not applied to primary output '$auto_92685'
+Warning 350: set_input_delay command matched but was not applied to primary output '$auto_92686'
+Warning 351: set_input_delay command matched but was not applied to primary output '$auto_92687'
+Warning 352: set_input_delay command matched but was not applied to primary output '$auto_92688'
+Warning 353: set_input_delay command matched but was not applied to primary output '$auto_92689'
+Warning 354: set_input_delay command matched but was not applied to primary output '$auto_92690'
+Warning 355: set_input_delay command matched but was not applied to primary output '$auto_92691'
+Warning 356: set_input_delay command matched but was not applied to primary output '$auto_92692'
+Warning 357: set_input_delay command matched but was not applied to primary output '$auto_92693'
+Warning 358: set_input_delay command matched but was not applied to primary output '$auto_92694'
+Warning 359: set_input_delay command matched but was not applied to primary output '$auto_92695'
+Warning 360: set_input_delay command matched but was not applied to primary output '$auto_92696'
+Warning 361: set_input_delay command matched but was not applied to primary output '$auto_92697'
+Warning 362: set_input_delay command matched but was not applied to primary output '$auto_92698'
+Warning 363: set_input_delay command matched but was not applied to primary output '$auto_92699'
+Warning 364: set_input_delay command matched but was not applied to primary output '$auto_92700'
+Warning 365: set_input_delay command matched but was not applied to primary output '$auto_92701'
+Warning 366: set_input_delay command matched but was not applied to primary output '$auto_92702'
+Warning 367: set_input_delay command matched but was not applied to primary output '$auto_92703'
+Warning 368: set_input_delay command matched but was not applied to primary output '$auto_92704'
+Warning 369: set_input_delay command matched but was not applied to primary output '$auto_92705'
+Warning 370: set_input_delay command matched but was not applied to primary output '$auto_92706'
+Warning 371: set_input_delay command matched but was not applied to primary output '$auto_92707'
+Warning 372: set_input_delay command matched but was not applied to primary output '$auto_92708'
+Warning 373: set_input_delay command matched but was not applied to primary output '$auto_92709'
+Warning 374: set_input_delay command matched but was not applied to primary output '$auto_92710'
+Warning 375: set_input_delay command matched but was not applied to primary output '$auto_92711'
+Warning 376: set_input_delay command matched but was not applied to primary output '$auto_92712'
+Warning 377: set_input_delay command matched but was not applied to primary output '$auto_92713'
+Warning 378: set_input_delay command matched but was not applied to primary output '$auto_92714'
+Warning 379: set_input_delay command matched but was not applied to primary output '$auto_92715'
+Warning 380: set_input_delay command matched but was not applied to primary output '$auto_92716'
+Warning 381: set_input_delay command matched but was not applied to primary output '$auto_92717'
+Warning 382: set_input_delay command matched but was not applied to primary output '$auto_92718'
+Warning 383: set_input_delay command matched but was not applied to primary output '$auto_92719'
+Warning 384: set_input_delay command matched but was not applied to primary output '$auto_92720'
+Warning 385: set_input_delay command matched but was not applied to primary output '$auto_92721'
+Warning 386: set_input_delay command matched but was not applied to primary output '$auto_92722'
+Warning 387: set_input_delay command matched but was not applied to primary output '$auto_92723'
+Warning 388: set_input_delay command matched but was not applied to primary output '$auto_92724'
+Warning 389: set_input_delay command matched but was not applied to primary output '$auto_92725'
+Warning 390: set_input_delay command matched but was not applied to primary output '$auto_92726'
+Warning 391: set_input_delay command matched but was not applied to primary output '$auto_92727'
+Warning 392: set_input_delay command matched but was not applied to primary output '$auto_92728'
+Warning 393: set_input_delay command matched but was not applied to primary output '$auto_92729'
+Warning 394: set_input_delay command matched but was not applied to primary output '$auto_92730'
+Warning 395: set_input_delay command matched but was not applied to primary output '$auto_92731'
+Warning 396: set_input_delay command matched but was not applied to primary output '$auto_92732'
+Warning 397: set_input_delay command matched but was not applied to primary output '$auto_92733'
+Warning 398: set_input_delay command matched but was not applied to primary output '$auto_92734'
+Warning 399: set_input_delay command matched but was not applied to primary output '$auto_92735'
+Warning 400: set_input_delay command matched but was not applied to primary output '$auto_92736'
+Warning 401: set_input_delay command matched but was not applied to primary output '$auto_92737'
+Warning 402: set_input_delay command matched but was not applied to primary output '$auto_92738'
+Warning 403: set_input_delay command matched but was not applied to primary output '$auto_92739'
+Warning 404: set_input_delay command matched but was not applied to primary output '$auto_92740'
+Warning 405: set_input_delay command matched but was not applied to primary output '$auto_92741'
+Warning 406: set_input_delay command matched but was not applied to primary output '$auto_92742'
+Warning 407: set_input_delay command matched but was not applied to primary output '$auto_92743'
+Warning 408: set_input_delay command matched but was not applied to primary output '$auto_92744'
+Warning 409: set_input_delay command matched but was not applied to primary output '$auto_92745'
+Warning 410: set_input_delay command matched but was not applied to primary output '$auto_92746'
+Warning 411: set_input_delay command matched but was not applied to primary output '$auto_92747'
+Warning 412: set_input_delay command matched but was not applied to primary output '$auto_92748'
+Warning 413: set_input_delay command matched but was not applied to primary output '$auto_92749'
+Warning 414: set_input_delay command matched but was not applied to primary output '$auto_92750'
+Warning 415: set_input_delay command matched but was not applied to primary output '$auto_92751'
+Warning 416: set_input_delay command matched but was not applied to primary output '$auto_92752'
+Warning 417: set_input_delay command matched but was not applied to primary output '$auto_92753'
+Warning 418: set_input_delay command matched but was not applied to primary output '$auto_92754'
+Warning 419: set_input_delay command matched but was not applied to primary output '$auto_92755'
+Warning 420: set_input_delay command matched but was not applied to primary output '$auto_92756'
+Warning 421: set_input_delay command matched but was not applied to primary output '$auto_92757'
+Warning 422: set_input_delay command matched but was not applied to primary output '$auto_92758'
+Warning 423: set_input_delay command matched but was not applied to primary output '$auto_92759'
+Warning 424: set_input_delay command matched but was not applied to primary output '$auto_92760'
+Warning 425: set_input_delay command matched but was not applied to primary output '$auto_92761'
+Warning 426: set_input_delay command matched but was not applied to primary output '$auto_92762'
+Warning 427: set_input_delay command matched but was not applied to primary output '$auto_92763'
+Warning 428: set_input_delay command matched but was not applied to primary output '$auto_92764'
+Warning 429: set_input_delay command matched but was not applied to primary output '$auto_92765'
+Warning 430: set_input_delay command matched but was not applied to primary output '$auto_92766'
+Warning 431: set_input_delay command matched but was not applied to primary output '$auto_92767'
+Warning 432: set_input_delay command matched but was not applied to primary output '$auto_92768'
+Warning 433: set_input_delay command matched but was not applied to primary output '$auto_92769'
+Warning 434: set_input_delay command matched but was not applied to primary output '$auto_92770'
+Warning 435: set_input_delay command matched but was not applied to primary output '$auto_92771'
+Warning 436: set_input_delay command matched but was not applied to primary output '$auto_92772'
+Warning 437: set_input_delay command matched but was not applied to primary output '$auto_92773'
+Warning 438: set_input_delay command matched but was not applied to primary output '$auto_92774'
+Warning 439: set_input_delay command matched but was not applied to primary output '$auto_92775'
+Warning 440: set_input_delay command matched but was not applied to primary output '$auto_92776'
+Warning 441: set_input_delay command matched but was not applied to primary output '$auto_92777'
+Warning 442: set_input_delay command matched but was not applied to primary output '$auto_92778'
+Warning 443: set_input_delay command matched but was not applied to primary output '$auto_92779'
+Warning 444: set_input_delay command matched but was not applied to primary output '$auto_92780'
+Warning 445: set_input_delay command matched but was not applied to primary output '$auto_92781'
+Warning 446: set_input_delay command matched but was not applied to primary output '$auto_92782'
+Warning 447: set_input_delay command matched but was not applied to primary output '$auto_92783'
+Warning 448: set_input_delay command matched but was not applied to primary output '$auto_92784'
+Warning 449: set_input_delay command matched but was not applied to primary output '$auto_92785'
+Warning 450: set_input_delay command matched but was not applied to primary output '$auto_92786'
+Warning 451: set_input_delay command matched but was not applied to primary output '$auto_92787'
+Warning 452: set_input_delay command matched but was not applied to primary output '$auto_92788'
+Warning 453: set_input_delay command matched but was not applied to primary output '$auto_92789'
+Warning 454: set_input_delay command matched but was not applied to primary output '$auto_92790'
+Warning 455: set_input_delay command matched but was not applied to primary output '$auto_92791'
+Warning 456: set_input_delay command matched but was not applied to primary output '$auto_92792'
+Warning 457: set_input_delay command matched but was not applied to primary output '$auto_92793'
+Warning 458: set_input_delay command matched but was not applied to primary output '$auto_92794'
+Warning 459: set_input_delay command matched but was not applied to primary output '$auto_92795'
+Warning 460: set_input_delay command matched but was not applied to primary output '$auto_92796'
+Warning 461: set_input_delay command matched but was not applied to primary output '$auto_92797'
+Warning 462: set_input_delay command matched but was not applied to primary output '$auto_92798'
+Warning 463: set_input_delay command matched but was not applied to primary output '$auto_92799'
+Warning 464: set_input_delay command matched but was not applied to primary output '$auto_92800'
+Warning 465: set_input_delay command matched but was not applied to primary output '$auto_92801'
+Warning 466: set_input_delay command matched but was not applied to primary output '$auto_92802'
+Warning 467: set_input_delay command matched but was not applied to primary output '$auto_92803'
+Warning 468: set_input_delay command matched but was not applied to primary output '$auto_92804'
+Warning 469: set_input_delay command matched but was not applied to primary output '$auto_92805'
+Warning 470: set_input_delay command matched but was not applied to primary output '$auto_92806'
+Warning 471: set_input_delay command matched but was not applied to primary output '$auto_92807'
+Warning 472: set_input_delay command matched but was not applied to primary output '$auto_92808'
+Warning 473: set_input_delay command matched but was not applied to primary output '$auto_92809'
+Warning 474: set_input_delay command matched but was not applied to primary output '$auto_92810'
+Warning 475: set_input_delay command matched but was not applied to primary output '$auto_92811'
+Warning 476: set_input_delay command matched but was not applied to primary output '$auto_92812'
+Warning 477: set_input_delay command matched but was not applied to primary output '$auto_92813'
+Warning 478: set_input_delay command matched but was not applied to primary output '$auto_92814'
+Warning 479: set_input_delay command matched but was not applied to primary output '$auto_92815'
+Warning 480: set_input_delay command matched but was not applied to primary output '$auto_92816'
+Warning 481: set_input_delay command matched but was not applied to primary output '$auto_92817'
+Warning 482: set_input_delay command matched but was not applied to primary output '$auto_92818'
+Warning 483: set_input_delay command matched but was not applied to primary output '$auto_92819'
+Warning 484: set_input_delay command matched but was not applied to primary output '$auto_92820'
+Warning 485: set_input_delay command matched but was not applied to primary output '$auto_92821'
+Warning 486: set_input_delay command matched but was not applied to primary output '$auto_92822'
+Warning 487: set_input_delay command matched but was not applied to primary output '$auto_92823'
+Warning 488: set_input_delay command matched but was not applied to primary output '$auto_92824'
+Warning 489: set_input_delay command matched but was not applied to primary output '$auto_92825'
+Warning 490: set_input_delay command matched but was not applied to primary output '$auto_92826'
+Warning 491: set_input_delay command matched but was not applied to primary output '$auto_92827'
+Warning 492: set_input_delay command matched but was not applied to primary output '$auto_92828'
+Warning 493: set_input_delay command matched but was not applied to primary output '$auto_92829'
+Warning 494: set_input_delay command matched but was not applied to primary output '$auto_92830'
+Warning 495: set_input_delay command matched but was not applied to primary output '$auto_92831'
+Warning 496: set_input_delay command matched but was not applied to primary output '$auto_92832'
+Warning 497: set_input_delay command matched but was not applied to primary output '$auto_92833'
+Warning 498: set_input_delay command matched but was not applied to primary output '$auto_92834'
+Warning 499: set_input_delay command matched but was not applied to primary output '$auto_92835'
+Warning 500: set_input_delay command matched but was not applied to primary output '$auto_92836'
+Warning 501: set_input_delay command matched but was not applied to primary output '$auto_92837'
+Warning 502: set_input_delay command matched but was not applied to primary output '$auto_92838'
+Warning 503: set_input_delay command matched but was not applied to primary output '$auto_92839'
+Warning 504: set_input_delay command matched but was not applied to primary output '$auto_92840'
+Warning 505: set_input_delay command matched but was not applied to primary output '$auto_92841'
+Warning 506: set_input_delay command matched but was not applied to primary output '$auto_92842'
+Warning 507: set_input_delay command matched but was not applied to primary output '$auto_92843'
+Warning 508: set_input_delay command matched but was not applied to primary output '$auto_92844'
+Warning 509: set_input_delay command matched but was not applied to primary output '$auto_92845'
+Warning 510: set_input_delay command matched but was not applied to primary output '$auto_92846'
+Warning 511: set_input_delay command matched but was not applied to primary output '$auto_92847'
+Warning 512: set_input_delay command matched but was not applied to primary output '$auto_92848'
+Warning 513: set_input_delay command matched but was not applied to primary output '$auto_92849'
+Warning 514: set_input_delay command matched but was not applied to primary output '$auto_92850'
+Warning 515: set_input_delay command matched but was not applied to primary output '$auto_92851'
+Warning 516: set_input_delay command matched but was not applied to primary output '$auto_92852'
+Warning 517: set_input_delay command matched but was not applied to primary output '$auto_92853'
+Warning 518: set_input_delay command matched but was not applied to primary output '$auto_92854'
+Warning 519: set_input_delay command matched but was not applied to primary output '$auto_92855'
+Warning 520: set_input_delay command matched but was not applied to primary output '$auto_92856'
+Warning 521: set_input_delay command matched but was not applied to primary output '$auto_92857'
+Warning 522: set_input_delay command matched but was not applied to primary output '$auto_92858'
+Warning 523: set_input_delay command matched but was not applied to primary output '$auto_92859'
+Warning 524: set_input_delay command matched but was not applied to primary output '$auto_92860'
+Warning 525: set_input_delay command matched but was not applied to primary output '$auto_92861'
+Warning 526: set_input_delay command matched but was not applied to primary output '$auto_92862'
+Warning 527: set_input_delay command matched but was not applied to primary output '$auto_92863'
+Warning 528: set_input_delay command matched but was not applied to primary output '$auto_92864'
+Warning 529: set_input_delay command matched but was not applied to primary output '$auto_92865'
+Warning 530: set_input_delay command matched but was not applied to primary output '$auto_92866'
+Warning 531: set_input_delay command matched but was not applied to primary output '$auto_92867'
+Warning 532: set_input_delay command matched but was not applied to primary output '$auto_92868'
+Warning 533: set_input_delay command matched but was not applied to primary output '$auto_92869'
+Warning 534: set_input_delay command matched but was not applied to primary output '$auto_92870'
+Warning 535: set_input_delay command matched but was not applied to primary output '$auto_92871'
+Warning 536: set_input_delay command matched but was not applied to primary output '$auto_92872'
+Warning 537: set_input_delay command matched but was not applied to primary output '$auto_92873'
+Warning 538: set_input_delay command matched but was not applied to primary output '$auto_92874'
+Warning 539: set_input_delay command matched but was not applied to primary output '$auto_92875'
+Warning 540: set_input_delay command matched but was not applied to primary output '$auto_92876'
+Warning 541: set_input_delay command matched but was not applied to primary output '$auto_92877'
+Warning 542: set_input_delay command matched but was not applied to primary output '$auto_92878'
+Warning 543: set_input_delay command matched but was not applied to primary output '$auto_92879'
+Warning 544: set_input_delay command matched but was not applied to primary output '$auto_92880'
+Warning 545: set_input_delay command matched but was not applied to primary output '$auto_92881'
+Warning 546: set_input_delay command matched but was not applied to primary output '$auto_92882'
+Warning 547: set_input_delay command matched but was not applied to primary output '$auto_92883'
+Warning 548: set_input_delay command matched but was not applied to primary output '$auto_92884'
+Warning 549: set_input_delay command matched but was not applied to primary output '$auto_92885'
+Warning 550: set_input_delay command matched but was not applied to primary output '$auto_92886'
+Warning 551: set_input_delay command matched but was not applied to primary output '$auto_92887'
+Warning 552: set_input_delay command matched but was not applied to primary output '$auto_92888'
+Warning 553: set_input_delay command matched but was not applied to primary output '$auto_92889'
+Warning 554: set_input_delay command matched but was not applied to primary output '$auto_92890'
+Warning 555: set_input_delay command matched but was not applied to primary output '$auto_92891'
+Warning 556: set_input_delay command matched but was not applied to primary output '$auto_92892'
+Warning 557: set_input_delay command matched but was not applied to primary output '$auto_92893'
+Warning 558: set_input_delay command matched but was not applied to primary output '$auto_92894'
+Warning 559: set_input_delay command matched but was not applied to primary output '$auto_92895'
+Warning 560: set_input_delay command matched but was not applied to primary output '$auto_92896'
+Warning 561: set_input_delay command matched but was not applied to primary output '$auto_92897'
+Warning 562: set_input_delay command matched but was not applied to primary output '$auto_92898'
+Warning 563: set_input_delay command matched but was not applied to primary output '$auto_92899'
+Warning 564: set_input_delay command matched but was not applied to primary output '$auto_92900'
+Warning 565: set_input_delay command matched but was not applied to primary output '$auto_92901'
+Warning 566: set_input_delay command matched but was not applied to primary output '$auto_92902'
+Warning 567: set_input_delay command matched but was not applied to primary output '$auto_92903'
+Warning 568: set_input_delay command matched but was not applied to primary output '$auto_92904'
+Warning 569: set_input_delay command matched but was not applied to primary output '$auto_92905'
+Warning 570: set_input_delay command matched but was not applied to primary output '$auto_92906'
+Warning 571: set_input_delay command matched but was not applied to primary output '$auto_92907'
+Warning 572: set_input_delay command matched but was not applied to primary output '$auto_92908'
+Warning 573: set_input_delay command matched but was not applied to primary output '$auto_92909'
+Warning 574: set_input_delay command matched but was not applied to primary output '$auto_92910'
+Warning 575: set_input_delay command matched but was not applied to primary output '$auto_92911'
+Warning 576: set_input_delay command matched but was not applied to primary output '$auto_92912'
+Warning 577: set_input_delay command matched but was not applied to primary output '$auto_92913'
+Warning 578: set_input_delay command matched but was not applied to primary output '$auto_92914'
+Warning 579: set_input_delay command matched but was not applied to primary output '$auto_92915'
+Warning 580: set_input_delay command matched but was not applied to primary output '$auto_92916'
+Warning 581: set_input_delay command matched but was not applied to primary output '$auto_92917'
+Warning 582: set_input_delay command matched but was not applied to primary output '$auto_92918'
+Warning 583: set_input_delay command matched but was not applied to primary output '$auto_92919'
+Warning 584: set_input_delay command matched but was not applied to primary output '$auto_92920'
+Warning 585: set_input_delay command matched but was not applied to primary output '$auto_92921'
+Warning 586: set_input_delay command matched but was not applied to primary output '$auto_92922'
+Warning 587: set_input_delay command matched but was not applied to primary output '$auto_92923'
+Warning 588: set_input_delay command matched but was not applied to primary output '$auto_92924'
+Warning 589: set_input_delay command matched but was not applied to primary output '$auto_92925'
+Warning 590: set_input_delay command matched but was not applied to primary output '$auto_92926'
+Warning 591: set_input_delay command matched but was not applied to primary output '$auto_92927'
+Warning 592: set_input_delay command matched but was not applied to primary output '$auto_92928'
+Warning 593: set_input_delay command matched but was not applied to primary output '$auto_92929'
+Warning 594: set_input_delay command matched but was not applied to primary output '$auto_92930'
+Warning 595: set_input_delay command matched but was not applied to primary output '$auto_92931'
+Warning 596: set_input_delay command matched but was not applied to primary output '$auto_92932'
+Warning 597: set_input_delay command matched but was not applied to primary output '$auto_92933'
+Warning 598: set_input_delay command matched but was not applied to primary output '$auto_92934'
+Warning 599: set_input_delay command matched but was not applied to primary output '$auto_92935'
+Warning 600: set_input_delay command matched but was not applied to primary output '$auto_92936'
+Warning 601: set_input_delay command matched but was not applied to primary output '$auto_92937'
+Warning 602: set_input_delay command matched but was not applied to primary output '$auto_92938'
+Warning 603: set_input_delay command matched but was not applied to primary output '$auto_92939'
+Warning 604: set_input_delay command matched but was not applied to primary output '$auto_92940'
+Warning 605: set_input_delay command matched but was not applied to primary output '$auto_92941'
+Warning 606: set_input_delay command matched but was not applied to primary output '$auto_92942'
+Warning 607: set_input_delay command matched but was not applied to primary output '$auto_92943'
+Warning 608: set_input_delay command matched but was not applied to primary output '$auto_92944'
+Warning 609: set_input_delay command matched but was not applied to primary output '$auto_92945'
+Warning 610: set_input_delay command matched but was not applied to primary output '$auto_92946'
+Warning 611: set_input_delay command matched but was not applied to primary output '$auto_92947'
+Warning 612: set_input_delay command matched but was not applied to primary output '$auto_92948'
+Warning 613: set_input_delay command matched but was not applied to primary output '$auto_92949'
+Warning 614: set_input_delay command matched but was not applied to primary output '$auto_92950'
+Warning 615: set_input_delay command matched but was not applied to primary output '$auto_92951'
+Warning 616: set_input_delay command matched but was not applied to primary output '$auto_92952'
+Warning 617: set_input_delay command matched but was not applied to primary output '$auto_92953'
+Warning 618: set_input_delay command matched but was not applied to primary output '$auto_92954'
+Warning 619: set_input_delay command matched but was not applied to primary output '$auto_92955'
+Warning 620: set_input_delay command matched but was not applied to primary output '$auto_92956'
+Warning 621: set_input_delay command matched but was not applied to primary output '$auto_92957'
+Warning 622: set_input_delay command matched but was not applied to primary output '$auto_92958'
+Warning 623: set_input_delay command matched but was not applied to primary output '$auto_92959'
+Warning 624: set_input_delay command matched but was not applied to primary output '$auto_92960'
+Warning 625: set_input_delay command matched but was not applied to primary output '$auto_92961'
+Warning 626: set_input_delay command matched but was not applied to primary output '$auto_92962'
+Warning 627: set_input_delay command matched but was not applied to primary output '$auto_92963'
+Warning 628: set_input_delay command matched but was not applied to primary output '$auto_92964'
+Warning 629: set_input_delay command matched but was not applied to primary output '$auto_92965'
+Warning 630: set_input_delay command matched but was not applied to primary output '$auto_92966'
+Warning 631: set_input_delay command matched but was not applied to primary output '$auto_92967'
+Warning 632: set_input_delay command matched but was not applied to primary output '$auto_92968'
+Warning 633: set_input_delay command matched but was not applied to primary output '$auto_92969'
+Warning 634: set_input_delay command matched but was not applied to primary output '$auto_92970'
+Warning 635: set_input_delay command matched but was not applied to primary output '$auto_92971'
+Warning 636: set_input_delay command matched but was not applied to primary output '$auto_92972'
+Warning 637: set_input_delay command matched but was not applied to primary output '$auto_92973'
+Warning 638: set_input_delay command matched but was not applied to primary output '$auto_92974'
+Warning 639: set_input_delay command matched but was not applied to primary output '$auto_92975'
+Warning 640: set_input_delay command matched but was not applied to primary output '$auto_92976'
+Warning 641: set_input_delay command matched but was not applied to primary output '$auto_92977'
+Warning 642: set_input_delay command matched but was not applied to primary output '$auto_92978'
+Warning 643: set_input_delay command matched but was not applied to primary output '$auto_92979'
+Warning 644: set_input_delay command matched but was not applied to primary output '$auto_92980'
+Warning 645: set_input_delay command matched but was not applied to primary output '$auto_92981'
+Warning 646: set_input_delay command matched but was not applied to primary output '$auto_92982'
+Warning 647: set_input_delay command matched but was not applied to primary output '$auto_92983'
+Warning 648: set_input_delay command matched but was not applied to primary output '$auto_92984'
+Warning 649: set_input_delay command matched but was not applied to primary output '$auto_92985'
+Warning 650: set_input_delay command matched but was not applied to primary output '$auto_92986'
+Warning 651: set_input_delay command matched but was not applied to primary output '$auto_92987'
+Warning 652: set_input_delay command matched but was not applied to primary output '$auto_92988'
+Warning 653: set_input_delay command matched but was not applied to primary output '$auto_92989'
+Warning 654: set_input_delay command matched but was not applied to primary output '$auto_92990'
+Warning 655: set_input_delay command matched but was not applied to primary output '$auto_92991'
+Warning 656: set_input_delay command matched but was not applied to primary output '$auto_92992'
+Warning 657: set_input_delay command matched but was not applied to primary output '$auto_92993'
+Warning 658: set_input_delay command matched but was not applied to primary output '$auto_92994'
+Warning 659: set_input_delay command matched but was not applied to primary output '$auto_92995'
+Warning 660: set_input_delay command matched but was not applied to primary output '$auto_92996'
+Warning 661: set_input_delay command matched but was not applied to primary output 'PKSi_0_'
+Warning 662: set_input_delay command matched but was not applied to primary output 'PKSi_100_'
+Warning 663: set_input_delay command matched but was not applied to primary output 'PKSi_101_'
+Warning 664: set_input_delay command matched but was not applied to primary output 'PKSi_102_'
+Warning 665: set_input_delay command matched but was not applied to primary output 'PKSi_103_'
+Warning 666: set_input_delay command matched but was not applied to primary output 'PKSi_104_'
+Warning 667: set_input_delay command matched but was not applied to primary output 'PKSi_105_'
+Warning 668: set_input_delay command matched but was not applied to primary output 'PKSi_106_'
+Warning 669: set_input_delay command matched but was not applied to primary output 'PKSi_107_'
+Warning 670: set_input_delay command matched but was not applied to primary output 'PKSi_108_'
+Warning 671: set_input_delay command matched but was not applied to primary output 'PKSi_109_'
+Warning 672: set_input_delay command matched but was not applied to primary output 'PKSi_10_'
+Warning 673: set_input_delay command matched but was not applied to primary output 'PKSi_110_'
+Warning 674: set_input_delay command matched but was not applied to primary output 'PKSi_111_'
+Warning 675: set_input_delay command matched but was not applied to primary output 'PKSi_112_'
+Warning 676: set_input_delay command matched but was not applied to primary output 'PKSi_113_'
+Warning 677: set_input_delay command matched but was not applied to primary output 'PKSi_114_'
+Warning 678: set_input_delay command matched but was not applied to primary output 'PKSi_115_'
+Warning 679: set_input_delay command matched but was not applied to primary output 'PKSi_116_'
+Warning 680: set_input_delay command matched but was not applied to primary output 'PKSi_117_'
+Warning 681: set_input_delay command matched but was not applied to primary output 'PKSi_118_'
+Warning 682: set_input_delay command matched but was not applied to primary output 'PKSi_119_'
+Warning 683: set_input_delay command matched but was not applied to primary output 'PKSi_11_'
+Warning 684: set_input_delay command matched but was not applied to primary output 'PKSi_120_'
+Warning 685: set_input_delay command matched but was not applied to primary output 'PKSi_121_'
+Warning 686: set_input_delay command matched but was not applied to primary output 'PKSi_122_'
+Warning 687: set_input_delay command matched but was not applied to primary output 'PKSi_123_'
+Warning 688: set_input_delay command matched but was not applied to primary output 'PKSi_124_'
+Warning 689: set_input_delay command matched but was not applied to primary output 'PKSi_125_'
+Warning 690: set_input_delay command matched but was not applied to primary output 'PKSi_126_'
+Warning 691: set_input_delay command matched but was not applied to primary output 'PKSi_127_'
+Warning 692: set_input_delay command matched but was not applied to primary output 'PKSi_128_'
+Warning 693: set_input_delay command matched but was not applied to primary output 'PKSi_129_'
+Warning 694: set_input_delay command matched but was not applied to primary output 'PKSi_12_'
+Warning 695: set_input_delay command matched but was not applied to primary output 'PKSi_130_'
+Warning 696: set_input_delay command matched but was not applied to primary output 'PKSi_131_'
+Warning 697: set_input_delay command matched but was not applied to primary output 'PKSi_132_'
+Warning 698: set_input_delay command matched but was not applied to primary output 'PKSi_133_'
+Warning 699: set_input_delay command matched but was not applied to primary output 'PKSi_134_'
+Warning 700: set_input_delay command matched but was not applied to primary output 'PKSi_135_'
+Warning 701: set_input_delay command matched but was not applied to primary output 'PKSi_136_'
+Warning 702: set_input_delay command matched but was not applied to primary output 'PKSi_137_'
+Warning 703: set_input_delay command matched but was not applied to primary output 'PKSi_138_'
+Warning 704: set_input_delay command matched but was not applied to primary output 'PKSi_139_'
+Warning 705: set_input_delay command matched but was not applied to primary output 'PKSi_139__2'
+Warning 706: set_input_delay command matched but was not applied to primary output 'PKSi_13_'
+Warning 707: set_input_delay command matched but was not applied to primary output 'PKSi_140_'
+Warning 708: set_input_delay command matched but was not applied to primary output 'PKSi_141_'
+Warning 709: set_input_delay command matched but was not applied to primary output 'PKSi_142_'
+Warning 710: set_input_delay command matched but was not applied to primary output 'PKSi_144_'
+Warning 711: set_input_delay command matched but was not applied to primary output 'PKSi_145_'
+Warning 712: set_input_delay command matched but was not applied to primary output 'PKSi_146_'
+Warning 713: set_input_delay command matched but was not applied to primary output 'PKSi_147_'
+Warning 714: set_input_delay command matched but was not applied to primary output 'PKSi_148_'
+Warning 715: set_input_delay command matched but was not applied to primary output 'PKSi_149_'
+Warning 716: set_input_delay command matched but was not applied to primary output 'PKSi_14_'
+Warning 717: set_input_delay command matched but was not applied to primary output 'PKSi_150_'
+Warning 718: set_input_delay command matched but was not applied to primary output 'PKSi_151_'
+Warning 719: set_input_delay command matched but was not applied to primary output 'PKSi_152_'
+Warning 720: set_input_delay command matched but was not applied to primary output 'PKSi_153_'
+Warning 721: set_input_delay command matched but was not applied to primary output 'PKSi_154_'
+Warning 722: set_input_delay command matched but was not applied to primary output 'PKSi_155_'
+Warning 723: set_input_delay command matched but was not applied to primary output 'PKSi_156_'
+Warning 724: set_input_delay command matched but was not applied to primary output 'PKSi_157_'
+Warning 725: set_input_delay command matched but was not applied to primary output 'PKSi_158_'
+Warning 726: set_input_delay command matched but was not applied to primary output 'PKSi_159_'
+Warning 727: set_input_delay command matched but was not applied to primary output 'PKSi_15_'
+Warning 728: set_input_delay command matched but was not applied to primary output 'PKSi_160_'
+Warning 729: set_input_delay command matched but was not applied to primary output 'PKSi_161_'
+Warning 730: set_input_delay command matched but was not applied to primary output 'PKSi_162_'
+Warning 731: set_input_delay command matched but was not applied to primary output 'PKSi_163_'
+Warning 732: set_input_delay command matched but was not applied to primary output 'PKSi_164_'
+Warning 733: set_input_delay command matched but was not applied to primary output 'PKSi_165_'
+Warning 734: set_input_delay command matched but was not applied to primary output 'PKSi_166_'
+Warning 735: set_input_delay command matched but was not applied to primary output 'PKSi_167_'
+Warning 736: set_input_delay command matched but was not applied to primary output 'PKSi_168_'
+Warning 737: set_input_delay command matched but was not applied to primary output 'PKSi_168__2'
+Warning 738: set_input_delay command matched but was not applied to primary output 'PKSi_169_'
+Warning 739: set_input_delay command matched but was not applied to primary output 'PKSi_16_'
+Warning 740: set_input_delay command matched but was not applied to primary output 'PKSi_170_'
+Warning 741: set_input_delay command matched but was not applied to primary output 'PKSi_171_'
+Warning 742: set_input_delay command matched but was not applied to primary output 'PKSi_172_'
+Warning 743: set_input_delay command matched but was not applied to primary output 'PKSi_173_'
+Warning 744: set_input_delay command matched but was not applied to primary output 'PKSi_174_'
+Warning 745: set_input_delay command matched but was not applied to primary output 'PKSi_175_'
+Warning 746: set_input_delay command matched but was not applied to primary output 'PKSi_176_'
+Warning 747: set_input_delay command matched but was not applied to primary output 'PKSi_177_'
+Warning 748: set_input_delay command matched but was not applied to primary output 'PKSi_178_'
+Warning 749: set_input_delay command matched but was not applied to primary output 'PKSi_179_'
+Warning 750: set_input_delay command matched but was not applied to primary output 'PKSi_17_'
+Warning 751: set_input_delay command matched but was not applied to primary output 'PKSi_180_'
+Warning 752: set_input_delay command matched but was not applied to primary output 'PKSi_182_'
+Warning 753: set_input_delay command matched but was not applied to primary output 'PKSi_183_'
+Warning 754: set_input_delay command matched but was not applied to primary output 'PKSi_184_'
+Warning 755: set_input_delay command matched but was not applied to primary output 'PKSi_185_'
+Warning 756: set_input_delay command matched but was not applied to primary output 'PKSi_186_'
+Warning 757: set_input_delay command matched but was not applied to primary output 'PKSi_187_'
+Warning 758: set_input_delay command matched but was not applied to primary output 'PKSi_187__2'
+Warning 759: set_input_delay command matched but was not applied to primary output 'PKSi_188_'
+Warning 760: set_input_delay command matched but was not applied to primary output 'PKSi_189_'
+Warning 761: set_input_delay command matched but was not applied to primary output 'PKSi_18_'
+Warning 762: set_input_delay command matched but was not applied to primary output 'PKSi_190_'
+Warning 763: set_input_delay command matched but was not applied to primary output 'PKSi_19_'
+Warning 764: set_input_delay command matched but was not applied to primary output 'PKSi_1_'
+Warning 765: set_input_delay command matched but was not applied to primary output 'PKSi_20_'
+Warning 766: set_input_delay command matched but was not applied to primary output 'PKSi_21_'
+Warning 767: set_input_delay command matched but was not applied to primary output 'PKSi_22_'
+Warning 768: set_input_delay command matched but was not applied to primary output 'PKSi_23_'
+Warning 769: set_input_delay command matched but was not applied to primary output 'PKSi_24_'
+Warning 770: set_input_delay command matched but was not applied to primary output 'PKSi_25_'
+Warning 771: set_input_delay command matched but was not applied to primary output 'PKSi_26_'
+Warning 772: set_input_delay command matched but was not applied to primary output 'PKSi_27_'
+Warning 773: set_input_delay command matched but was not applied to primary output 'PKSi_28_'
+Warning 774: set_input_delay command matched but was not applied to primary output 'PKSi_29_'
+Warning 775: set_input_delay command matched but was not applied to primary output 'PKSi_2_'
+Warning 776: set_input_delay command matched but was not applied to primary output 'PKSi_30_'
+Warning 777: set_input_delay command matched but was not applied to primary output 'PKSi_31_'
+Warning 778: set_input_delay command matched but was not applied to primary output 'PKSi_32_'
+Warning 779: set_input_delay command matched but was not applied to primary output 'PKSi_33_'
+Warning 780: set_input_delay command matched but was not applied to primary output 'PKSi_34_'
+Warning 781: set_input_delay command matched but was not applied to primary output 'PKSi_35_'
+Warning 782: set_input_delay command matched but was not applied to primary output 'PKSi_36_'
+Warning 783: set_input_delay command matched but was not applied to primary output 'PKSi_37_'
+Warning 784: set_input_delay command matched but was not applied to primary output 'PKSi_38_'
+Warning 785: set_input_delay command matched but was not applied to primary output 'PKSi_39_'
+Warning 786: set_input_delay command matched but was not applied to primary output 'PKSi_3_'
+Warning 787: set_input_delay command matched but was not applied to primary output 'PKSi_40_'
+Warning 788: set_input_delay command matched but was not applied to primary output 'PKSi_41_'
+Warning 789: set_input_delay command matched but was not applied to primary output 'PKSi_42_'
+Warning 790: set_input_delay command matched but was not applied to primary output 'PKSi_43_'
+Warning 791: set_input_delay command matched but was not applied to primary output 'PKSi_44_'
+Warning 792: set_input_delay command matched but was not applied to primary output 'PKSi_45_'
+Warning 793: set_input_delay command matched but was not applied to primary output 'PKSi_46_'
+Warning 794: set_input_delay command matched but was not applied to primary output 'PKSi_47_'
+Warning 795: set_input_delay command matched but was not applied to primary output 'PKSi_48_'
+Warning 796: set_input_delay command matched but was not applied to primary output 'PKSi_49_'
+Warning 797: set_input_delay command matched but was not applied to primary output 'PKSi_4_'
+Warning 798: set_input_delay command matched but was not applied to primary output 'PKSi_50_'
+Warning 799: set_input_delay command matched but was not applied to primary output 'PKSi_51_'
+Warning 800: set_input_delay command matched but was not applied to primary output 'PKSi_52_'
+Warning 801: set_input_delay command matched but was not applied to primary output 'PKSi_53_'
+Warning 802: set_input_delay command matched but was not applied to primary output 'PKSi_54_'
+Warning 803: set_input_delay command matched but was not applied to primary output 'PKSi_55_'
+Warning 804: set_input_delay command matched but was not applied to primary output 'PKSi_56_'
+Warning 805: set_input_delay command matched but was not applied to primary output 'PKSi_57_'
+Warning 806: set_input_delay command matched but was not applied to primary output 'PKSi_58_'
+Warning 807: set_input_delay command matched but was not applied to primary output 'PKSi_59_'
+Warning 808: set_input_delay command matched but was not applied to primary output 'PKSi_5_'
+Warning 809: set_input_delay command matched but was not applied to primary output 'PKSi_60_'
+Warning 810: set_input_delay command matched but was not applied to primary output 'PKSi_61_'
+Warning 811: set_input_delay command matched but was not applied to primary output 'PKSi_62_'
+Warning 812: set_input_delay command matched but was not applied to primary output 'PKSi_63_'
+Warning 813: set_input_delay command matched but was not applied to primary output 'PKSi_64_'
+Warning 814: set_input_delay command matched but was not applied to primary output 'PKSi_65_'
+Warning 815: set_input_delay command matched but was not applied to primary output 'PKSi_66_'
+Warning 816: set_input_delay command matched but was not applied to primary output 'PKSi_67_'
+Warning 817: set_input_delay command matched but was not applied to primary output 'PKSi_68_'
+Warning 818: set_input_delay command matched but was not applied to primary output 'PKSi_69_'
+Warning 819: set_input_delay command matched but was not applied to primary output 'PKSi_6_'
+Warning 820: set_input_delay command matched but was not applied to primary output 'PKSi_70_'
+Warning 821: set_input_delay command matched but was not applied to primary output 'PKSi_71_'
+Warning 822: set_input_delay command matched but was not applied to primary output 'PKSi_72_'
+Warning 823: set_input_delay command matched but was not applied to primary output 'PKSi_73_'
+Warning 824: set_input_delay command matched but was not applied to primary output 'PKSi_74_'
+Warning 825: set_input_delay command matched but was not applied to primary output 'PKSi_75_'
+Warning 826: set_input_delay command matched but was not applied to primary output 'PKSi_76_'
+Warning 827: set_input_delay command matched but was not applied to primary output 'PKSi_77_'
+Warning 828: set_input_delay command matched but was not applied to primary output 'PKSi_78_'
+Warning 829: set_input_delay command matched but was not applied to primary output 'PKSi_79_'
+Warning 830: set_input_delay command matched but was not applied to primary output 'PKSi_7_'
+Warning 831: set_input_delay command matched but was not applied to primary output 'PKSi_80_'
+Warning 832: set_input_delay command matched but was not applied to primary output 'PKSi_81_'
+Warning 833: set_input_delay command matched but was not applied to primary output 'PKSi_82_'
+Warning 834: set_input_delay command matched but was not applied to primary output 'PKSi_83_'
+Warning 835: set_input_delay command matched but was not applied to primary output 'PKSi_84_'
+Warning 836: set_input_delay command matched but was not applied to primary output 'PKSi_85_'
+Warning 837: set_input_delay command matched but was not applied to primary output 'PKSi_86_'
+Warning 838: set_input_delay command matched but was not applied to primary output 'PKSi_87_'
+Warning 839: set_input_delay command matched but was not applied to primary output 'PKSi_88_'
+Warning 840: set_input_delay command matched but was not applied to primary output 'PKSi_88__2'
+Warning 841: set_input_delay command matched but was not applied to primary output 'PKSi_89_'
+Warning 842: set_input_delay command matched but was not applied to primary output 'PKSi_8_'
+Warning 843: set_input_delay command matched but was not applied to primary output 'PKSi_91_'
+Warning 844: set_input_delay command matched but was not applied to primary output 'PKSi_92_'
+Warning 845: set_input_delay command matched but was not applied to primary output 'PKSi_93_'
+Warning 846: set_input_delay command matched but was not applied to primary output 'PKSi_94_'
+Warning 847: set_input_delay command matched but was not applied to primary output 'PKSi_95_'
+Warning 848: set_input_delay command matched but was not applied to primary output 'PKSi_96_'
+Warning 849: set_input_delay command matched but was not applied to primary output 'PKSi_97_'
+Warning 850: set_input_delay command matched but was not applied to primary output 'PKSi_98_'
+Warning 851: set_input_delay command matched but was not applied to primary output 'PKSi_99_'
+Warning 852: set_input_delay command matched but was not applied to primary output 'PKSi_9_'
+Warning 853: set_input_delay command matched but was not applied to primary output 'Pdata_ready_0_'
+Warning 854: set_input_delay command matched but was not applied to primary output 'Pnew_count_0_'
+Warning 855: set_input_delay command matched but was not applied to primary output 'Pnew_count_1_'
+Warning 856: set_input_delay command matched but was not applied to primary output 'Pnew_count_2_'
+Warning 857: set_input_delay command matched but was not applied to primary output 'Pnew_count_3_'
+Warning 858: set_output_delay command matched but was not applied to primary input 'clock'
+Warning 859: set_output_delay command matched but was not applied to primary input 'Pcount_0_'
+Warning 860: set_output_delay command matched but was not applied to primary input 'Pcount_1_'
+Warning 861: set_output_delay command matched but was not applied to primary input 'Pcount_2_'
+Warning 862: set_output_delay command matched but was not applied to primary input 'Pcount_3_'
+Warning 863: set_output_delay command matched but was not applied to primary input 'Pencrypt_0_'
+Warning 864: set_output_delay command matched but was not applied to primary input 'Pkey_0_'
+Warning 865: set_output_delay command matched but was not applied to primary input 'Pkey_100_'
+Warning 866: set_output_delay command matched but was not applied to primary input 'Pkey_101_'
+Warning 867: set_output_delay command matched but was not applied to primary input 'Pkey_102_'
+Warning 868: set_output_delay command matched but was not applied to primary input 'Pkey_103_'
+Warning 869: set_output_delay command matched but was not applied to primary input 'Pkey_104_'
+Warning 870: set_output_delay command matched but was not applied to primary input 'Pkey_105_'
+Warning 871: set_output_delay command matched but was not applied to primary input 'Pkey_106_'
+Warning 872: set_output_delay command matched but was not applied to primary input 'Pkey_107_'
+Warning 873: set_output_delay command matched but was not applied to primary input 'Pkey_108_'
+Warning 874: set_output_delay command matched but was not applied to primary input 'Pkey_109_'
+Warning 875: set_output_delay command matched but was not applied to primary input 'Pkey_10_'
+Warning 876: set_output_delay command matched but was not applied to primary input 'Pkey_110_'
+Warning 877: set_output_delay command matched but was not applied to primary input 'Pkey_111_'
+Warning 878: set_output_delay command matched but was not applied to primary input 'Pkey_112_'
+Warning 879: set_output_delay command matched but was not applied to primary input 'Pkey_113_'
+Warning 880: set_output_delay command matched but was not applied to primary input 'Pkey_114_'
+Warning 881: set_output_delay command matched but was not applied to primary input 'Pkey_115_'
+Warning 882: set_output_delay command matched but was not applied to primary input 'Pkey_116_'
+Warning 883: set_output_delay command matched but was not applied to primary input 'Pkey_117_'
+Warning 884: set_output_delay command matched but was not applied to primary input 'Pkey_118_'
+Warning 885: set_output_delay command matched but was not applied to primary input 'Pkey_119_'
+Warning 886: set_output_delay command matched but was not applied to primary input 'Pkey_11_'
+Warning 887: set_output_delay command matched but was not applied to primary input 'Pkey_120_'
+Warning 888: set_output_delay command matched but was not applied to primary input 'Pkey_121_'
+Warning 889: set_output_delay command matched but was not applied to primary input 'Pkey_122_'
+Warning 890: set_output_delay command matched but was not applied to primary input 'Pkey_123_'
+Warning 891: set_output_delay command matched but was not applied to primary input 'Pkey_124_'
+Warning 892: set_output_delay command matched but was not applied to primary input 'Pkey_125_'
+Warning 893: set_output_delay command matched but was not applied to primary input 'Pkey_126_'
+Warning 894: set_output_delay command matched but was not applied to primary input 'Pkey_127_'
+Warning 895: set_output_delay command matched but was not applied to primary input 'Pkey_128_'
+Warning 896: set_output_delay command matched but was not applied to primary input 'Pkey_129_'
+Warning 897: set_output_delay command matched but was not applied to primary input 'Pkey_12_'
+Warning 898: set_output_delay command matched but was not applied to primary input 'Pkey_130_'
+Warning 899: set_output_delay command matched but was not applied to primary input 'Pkey_131_'
+Warning 900: set_output_delay command matched but was not applied to primary input 'Pkey_132_'
+Warning 901: set_output_delay command matched but was not applied to primary input 'Pkey_133_'
+Warning 902: set_output_delay command matched but was not applied to primary input 'Pkey_134_'
+Warning 903: set_output_delay command matched but was not applied to primary input 'Pkey_135_'
+Warning 904: set_output_delay command matched but was not applied to primary input 'Pkey_136_'
+Warning 905: set_output_delay command matched but was not applied to primary input 'Pkey_137_'
+Warning 906: set_output_delay command matched but was not applied to primary input 'Pkey_138_'
+Warning 907: set_output_delay command matched but was not applied to primary input 'Pkey_139_'
+Warning 908: set_output_delay command matched but was not applied to primary input 'Pkey_13_'
+Warning 909: set_output_delay command matched but was not applied to primary input 'Pkey_140_'
+Warning 910: set_output_delay command matched but was not applied to primary input 'Pkey_141_'
+Warning 911: set_output_delay command matched but was not applied to primary input 'Pkey_142_'
+Warning 912: set_output_delay command matched but was not applied to primary input 'Pkey_143_'
+Warning 913: set_output_delay command matched but was not applied to primary input 'Pkey_144_'
+Warning 914: set_output_delay command matched but was not applied to primary input 'Pkey_145_'
+Warning 915: set_output_delay command matched but was not applied to primary input 'Pkey_146_'
+Warning 916: set_output_delay command matched but was not applied to primary input 'Pkey_147_'
+Warning 917: set_output_delay command matched but was not applied to primary input 'Pkey_148_'
+Warning 918: set_output_delay command matched but was not applied to primary input 'Pkey_149_'
+Warning 919: set_output_delay command matched but was not applied to primary input 'Pkey_14_'
+Warning 920: set_output_delay command matched but was not applied to primary input 'Pkey_150_'
+Warning 921: set_output_delay command matched but was not applied to primary input 'Pkey_151_'
+Warning 922: set_output_delay command matched but was not applied to primary input 'Pkey_152_'
+Warning 923: set_output_delay command matched but was not applied to primary input 'Pkey_153_'
+Warning 924: set_output_delay command matched but was not applied to primary input 'Pkey_154_'
+Warning 925: set_output_delay command matched but was not applied to primary input 'Pkey_155_'
+Warning 926: set_output_delay command matched but was not applied to primary input 'Pkey_156_'
+Warning 927: set_output_delay command matched but was not applied to primary input 'Pkey_157_'
+Warning 928: set_output_delay command matched but was not applied to primary input 'Pkey_158_'
+Warning 929: set_output_delay command matched but was not applied to primary input 'Pkey_159_'
+Warning 930: set_output_delay command matched but was not applied to primary input 'Pkey_15_'
+Warning 931: set_output_delay command matched but was not applied to primary input 'Pkey_160_'
+Warning 932: set_output_delay command matched but was not applied to primary input 'Pkey_161_'
+Warning 933: set_output_delay command matched but was not applied to primary input 'Pkey_162_'
+Warning 934: set_output_delay command matched but was not applied to primary input 'Pkey_163_'
+Warning 935: set_output_delay command matched but was not applied to primary input 'Pkey_164_'
+Warning 936: set_output_delay command matched but was not applied to primary input 'Pkey_165_'
+Warning 937: set_output_delay command matched but was not applied to primary input 'Pkey_166_'
+Warning 938: set_output_delay command matched but was not applied to primary input 'Pkey_167_'
+Warning 939: set_output_delay command matched but was not applied to primary input 'Pkey_168_'
+Warning 940: set_output_delay command matched but was not applied to primary input 'Pkey_169_'
+Warning 941: set_output_delay command matched but was not applied to primary input 'Pkey_16_'
+Warning 942: set_output_delay command matched but was not applied to primary input 'Pkey_170_'
+Warning 943: set_output_delay command matched but was not applied to primary input 'Pkey_171_'
+Warning 944: set_output_delay command matched but was not applied to primary input 'Pkey_172_'
+Warning 945: set_output_delay command matched but was not applied to primary input 'Pkey_173_'
+Warning 946: set_output_delay command matched but was not applied to primary input 'Pkey_174_'
+Warning 947: set_output_delay command matched but was not applied to primary input 'Pkey_175_'
+Warning 948: set_output_delay command matched but was not applied to primary input 'Pkey_176_'
+Warning 949: set_output_delay command matched but was not applied to primary input 'Pkey_177_'
+Warning 950: set_output_delay command matched but was not applied to primary input 'Pkey_178_'
+Warning 951: set_output_delay command matched but was not applied to primary input 'Pkey_179_'
+Warning 952: set_output_delay command matched but was not applied to primary input 'Pkey_17_'
+Warning 953: set_output_delay command matched but was not applied to primary input 'Pkey_180_'
+Warning 954: set_output_delay command matched but was not applied to primary input 'Pkey_181_'
+Warning 955: set_output_delay command matched but was not applied to primary input 'Pkey_182_'
+Warning 956: set_output_delay command matched but was not applied to primary input 'Pkey_183_'
+Warning 957: set_output_delay command matched but was not applied to primary input 'Pkey_184_'
+Warning 958: set_output_delay command matched but was not applied to primary input 'Pkey_185_'
+Warning 959: set_output_delay command matched but was not applied to primary input 'Pkey_186_'
+Warning 960: set_output_delay command matched but was not applied to primary input 'Pkey_187_'
+Warning 961: set_output_delay command matched but was not applied to primary input 'Pkey_188_'
+Warning 962: set_output_delay command matched but was not applied to primary input 'Pkey_189_'
+Warning 963: set_output_delay command matched but was not applied to primary input 'Pkey_18_'
+Warning 964: set_output_delay command matched but was not applied to primary input 'Pkey_190_'
+Warning 965: set_output_delay command matched but was not applied to primary input 'Pkey_191_'
+Warning 966: set_output_delay command matched but was not applied to primary input 'Pkey_192_'
+Warning 967: set_output_delay command matched but was not applied to primary input 'Pkey_193_'
+Warning 968: set_output_delay command matched but was not applied to primary input 'Pkey_194_'
+Warning 969: set_output_delay command matched but was not applied to primary input 'Pkey_195_'
+Warning 970: set_output_delay command matched but was not applied to primary input 'Pkey_196_'
+Warning 971: set_output_delay command matched but was not applied to primary input 'Pkey_197_'
+Warning 972: set_output_delay command matched but was not applied to primary input 'Pkey_198_'
+Warning 973: set_output_delay command matched but was not applied to primary input 'Pkey_199_'
+Warning 974: set_output_delay command matched but was not applied to primary input 'Pkey_19_'
+Warning 975: set_output_delay command matched but was not applied to primary input 'Pkey_1_'
+Warning 976: set_output_delay command matched but was not applied to primary input 'Pkey_200_'
+Warning 977: set_output_delay command matched but was not applied to primary input 'Pkey_201_'
+Warning 978: set_output_delay command matched but was not applied to primary input 'Pkey_202_'
+Warning 979: set_output_delay command matched but was not applied to primary input 'Pkey_203_'
+Warning 980: set_output_delay command matched but was not applied to primary input 'Pkey_204_'
+Warning 981: set_output_delay command matched but was not applied to primary input 'Pkey_205_'
+Warning 982: set_output_delay command matched but was not applied to primary input 'Pkey_206_'
+Warning 983: set_output_delay command matched but was not applied to primary input 'Pkey_207_'
+Warning 984: set_output_delay command matched but was not applied to primary input 'Pkey_208_'
+Warning 985: set_output_delay command matched but was not applied to primary input 'Pkey_209_'
+Warning 986: set_output_delay command matched but was not applied to primary input 'Pkey_20_'
+Warning 987: set_output_delay command matched but was not applied to primary input 'Pkey_210_'
+Warning 988: set_output_delay command matched but was not applied to primary input 'Pkey_211_'
+Warning 989: set_output_delay command matched but was not applied to primary input 'Pkey_212_'
+Warning 990: set_output_delay command matched but was not applied to primary input 'Pkey_213_'
+Warning 991: set_output_delay command matched but was not applied to primary input 'Pkey_214_'
+Warning 992: set_output_delay command matched but was not applied to primary input 'Pkey_215_'
+Warning 993: set_output_delay command matched but was not applied to primary input 'Pkey_216_'
+Warning 994: set_output_delay command matched but was not applied to primary input 'Pkey_217_'
+Warning 995: set_output_delay command matched but was not applied to primary input 'Pkey_218_'
+Warning 996: set_output_delay command matched but was not applied to primary input 'Pkey_219_'
+Warning 997: set_output_delay command matched but was not applied to primary input 'Pkey_21_'
+Warning 998: set_output_delay command matched but was not applied to primary input 'Pkey_220_'
+Warning 999: set_output_delay command matched but was not applied to primary input 'Pkey_221_'
+Warning 1000: set_output_delay command matched but was not applied to primary input 'Pkey_222_'
+Warning 1001: set_output_delay command matched but was not applied to primary input 'Pkey_223_'
+Warning 1002: set_output_delay command matched but was not applied to primary input 'Pkey_224_'
+Warning 1003: set_output_delay command matched but was not applied to primary input 'Pkey_225_'
+Warning 1004: set_output_delay command matched but was not applied to primary input 'Pkey_226_'
+Warning 1005: set_output_delay command matched but was not applied to primary input 'Pkey_227_'
+Warning 1006: set_output_delay command matched but was not applied to primary input 'Pkey_228_'
+Warning 1007: set_output_delay command matched but was not applied to primary input 'Pkey_229_'
+Warning 1008: set_output_delay command matched but was not applied to primary input 'Pkey_22_'
+Warning 1009: set_output_delay command matched but was not applied to primary input 'Pkey_230_'
+Warning 1010: set_output_delay command matched but was not applied to primary input 'Pkey_231_'
+Warning 1011: set_output_delay command matched but was not applied to primary input 'Pkey_232_'
+Warning 1012: set_output_delay command matched but was not applied to primary input 'Pkey_233_'
+Warning 1013: set_output_delay command matched but was not applied to primary input 'Pkey_234_'
+Warning 1014: set_output_delay command matched but was not applied to primary input 'Pkey_235_'
+Warning 1015: set_output_delay command matched but was not applied to primary input 'Pkey_236_'
+Warning 1016: set_output_delay command matched but was not applied to primary input 'Pkey_237_'
+Warning 1017: set_output_delay command matched but was not applied to primary input 'Pkey_238_'
+Warning 1018: set_output_delay command matched but was not applied to primary input 'Pkey_239_'
+Warning 1019: set_output_delay command matched but was not applied to primary input 'Pkey_23_'
+Warning 1020: set_output_delay command matched but was not applied to primary input 'Pkey_240_'
+Warning 1021: set_output_delay command matched but was not applied to primary input 'Pkey_241_'
+Warning 1022: set_output_delay command matched but was not applied to primary input 'Pkey_242_'
+Warning 1023: set_output_delay command matched but was not applied to primary input 'Pkey_243_'
+Warning 1024: set_output_delay command matched but was not applied to primary input 'Pkey_244_'
+Warning 1025: set_output_delay command matched but was not applied to primary input 'Pkey_245_'
+Warning 1026: set_output_delay command matched but was not applied to primary input 'Pkey_246_'
+Warning 1027: set_output_delay command matched but was not applied to primary input 'Pkey_247_'
+Warning 1028: set_output_delay command matched but was not applied to primary input 'Pkey_248_'
+Warning 1029: set_output_delay command matched but was not applied to primary input 'Pkey_249_'
+Warning 1030: set_output_delay command matched but was not applied to primary input 'Pkey_24_'
+Warning 1031: set_output_delay command matched but was not applied to primary input 'Pkey_250_'
+Warning 1032: set_output_delay command matched but was not applied to primary input 'Pkey_251_'
+Warning 1033: set_output_delay command matched but was not applied to primary input 'Pkey_252_'
+Warning 1034: set_output_delay command matched but was not applied to primary input 'Pkey_253_'
+Warning 1035: set_output_delay command matched but was not applied to primary input 'Pkey_254_'
+Warning 1036: set_output_delay command matched but was not applied to primary input 'Pkey_255_'
+Warning 1037: set_output_delay command matched but was not applied to primary input 'Pkey_25_'
+Warning 1038: set_output_delay command matched but was not applied to primary input 'Pkey_26_'
+Warning 1039: set_output_delay command matched but was not applied to primary input 'Pkey_27_'
+Warning 1040: set_output_delay command matched but was not applied to primary input 'Pkey_28_'
+Warning 1041: set_output_delay command matched but was not applied to primary input 'Pkey_29_'
+Warning 1042: set_output_delay command matched but was not applied to primary input 'Pkey_2_'
+Warning 1043: set_output_delay command matched but was not applied to primary input 'Pkey_30_'
+Warning 1044: set_output_delay command matched but was not applied to primary input 'Pkey_31_'
+Warning 1045: set_output_delay command matched but was not applied to primary input 'Pkey_32_'
+Warning 1046: set_output_delay command matched but was not applied to primary input 'Pkey_33_'
+Warning 1047: set_output_delay command matched but was not applied to primary input 'Pkey_34_'
+Warning 1048: set_output_delay command matched but was not applied to primary input 'Pkey_35_'
+Warning 1049: set_output_delay command matched but was not applied to primary input 'Pkey_36_'
+Warning 1050: set_output_delay command matched but was not applied to primary input 'Pkey_37_'
+Warning 1051: set_output_delay command matched but was not applied to primary input 'Pkey_38_'
+Warning 1052: set_output_delay command matched but was not applied to primary input 'Pkey_39_'
+Warning 1053: set_output_delay command matched but was not applied to primary input 'Pkey_3_'
+Warning 1054: set_output_delay command matched but was not applied to primary input 'Pkey_40_'
+Warning 1055: set_output_delay command matched but was not applied to primary input 'Pkey_41_'
+Warning 1056: set_output_delay command matched but was not applied to primary input 'Pkey_42_'
+Warning 1057: set_output_delay command matched but was not applied to primary input 'Pkey_43_'
+Warning 1058: set_output_delay command matched but was not applied to primary input 'Pkey_44_'
+Warning 1059: set_output_delay command matched but was not applied to primary input 'Pkey_45_'
+Warning 1060: set_output_delay command matched but was not applied to primary input 'Pkey_46_'
+Warning 1061: set_output_delay command matched but was not applied to primary input 'Pkey_47_'
+Warning 1062: set_output_delay command matched but was not applied to primary input 'Pkey_48_'
+Warning 1063: set_output_delay command matched but was not applied to primary input 'Pkey_49_'
+Warning 1064: set_output_delay command matched but was not applied to primary input 'Pkey_4_'
+Warning 1065: set_output_delay command matched but was not applied to primary input 'Pkey_50_'
+Warning 1066: set_output_delay command matched but was not applied to primary input 'Pkey_51_'
+Warning 1067: set_output_delay command matched but was not applied to primary input 'Pkey_52_'
+Warning 1068: set_output_delay command matched but was not applied to primary input 'Pkey_53_'
+Warning 1069: set_output_delay command matched but was not applied to primary input 'Pkey_54_'
+Warning 1070: set_output_delay command matched but was not applied to primary input 'Pkey_55_'
+Warning 1071: set_output_delay command matched but was not applied to primary input 'Pkey_56_'
+Warning 1072: set_output_delay command matched but was not applied to primary input 'Pkey_57_'
+Warning 1073: set_output_delay command matched but was not applied to primary input 'Pkey_58_'
+Warning 1074: set_output_delay command matched but was not applied to primary input 'Pkey_59_'
+Warning 1075: set_output_delay command matched but was not applied to primary input 'Pkey_5_'
+Warning 1076: set_output_delay command matched but was not applied to primary input 'Pkey_60_'
+Warning 1077: set_output_delay command matched but was not applied to primary input 'Pkey_61_'
+Warning 1078: set_output_delay command matched but was not applied to primary input 'Pkey_62_'
+Warning 1079: set_output_delay command matched but was not applied to primary input 'Pkey_63_'
+Warning 1080: set_output_delay command matched but was not applied to primary input 'Pkey_64_'
+Warning 1081: set_output_delay command matched but was not applied to primary input 'Pkey_65_'
+Warning 1082: set_output_delay command matched but was not applied to primary input 'Pkey_66_'
+Warning 1083: set_output_delay command matched but was not applied to primary input 'Pkey_67_'
+Warning 1084: set_output_delay command matched but was not applied to primary input 'Pkey_68_'
+Warning 1085: set_output_delay command matched but was not applied to primary input 'Pkey_69_'
+Warning 1086: set_output_delay command matched but was not applied to primary input 'Pkey_6_'
+Warning 1087: set_output_delay command matched but was not applied to primary input 'Pkey_70_'
+Warning 1088: set_output_delay command matched but was not applied to primary input 'Pkey_71_'
+Warning 1089: set_output_delay command matched but was not applied to primary input 'Pkey_72_'
+Warning 1090: set_output_delay command matched but was not applied to primary input 'Pkey_73_'
+Warning 1091: set_output_delay command matched but was not applied to primary input 'Pkey_74_'
+Warning 1092: set_output_delay command matched but was not applied to primary input 'Pkey_75_'
+Warning 1093: set_output_delay command matched but was not applied to primary input 'Pkey_76_'
+Warning 1094: set_output_delay command matched but was not applied to primary input 'Pkey_77_'
+Warning 1095: set_output_delay command matched but was not applied to primary input 'Pkey_78_'
+Warning 1096: set_output_delay command matched but was not applied to primary input 'Pkey_79_'
+Warning 1097: set_output_delay command matched but was not applied to primary input 'Pkey_7_'
+Warning 1098: set_output_delay command matched but was not applied to primary input 'Pkey_80_'
+Warning 1099: set_output_delay command matched but was not applied to primary input 'Pkey_81_'
+Warning 1100: set_output_delay command matched but was not applied to primary input 'Pkey_82_'
+Warning 1101: set_output_delay command matched but was not applied to primary input 'Pkey_83_'
+Warning 1102: set_output_delay command matched but was not applied to primary input 'Pkey_84_'
+Warning 1103: set_output_delay command matched but was not applied to primary input 'Pkey_85_'
+Warning 1104: set_output_delay command matched but was not applied to primary input 'Pkey_86_'
+Warning 1105: set_output_delay command matched but was not applied to primary input 'Pkey_87_'
+Warning 1106: set_output_delay command matched but was not applied to primary input 'Pkey_88_'
+Warning 1107: set_output_delay command matched but was not applied to primary input 'Pkey_89_'
+Warning 1108: set_output_delay command matched but was not applied to primary input 'Pkey_8_'
+Warning 1109: set_output_delay command matched but was not applied to primary input 'Pkey_90_'
+Warning 1110: set_output_delay command matched but was not applied to primary input 'Pkey_91_'
+Warning 1111: set_output_delay command matched but was not applied to primary input 'Pkey_92_'
+Warning 1112: set_output_delay command matched but was not applied to primary input 'Pkey_93_'
+Warning 1113: set_output_delay command matched but was not applied to primary input 'Pkey_94_'
+Warning 1114: set_output_delay command matched but was not applied to primary input 'Pkey_95_'
+Warning 1115: set_output_delay command matched but was not applied to primary input 'Pkey_96_'
+Warning 1116: set_output_delay command matched but was not applied to primary input 'Pkey_97_'
+Warning 1117: set_output_delay command matched but was not applied to primary input 'Pkey_98_'
+Warning 1118: set_output_delay command matched but was not applied to primary input 'Pkey_99_'
+Warning 1119: set_output_delay command matched but was not applied to primary input 'Pkey_9_'
+Warning 1120: set_output_delay command matched but was not applied to primary input 'Pstart_0_'
+
+Applied 4 SDC commands from '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/packing/fabric_bigkey_openfpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'rscga_virt_clk' (Virtual Clock)
+
+# Load Timing Constraints took 0.01 seconds (max_rss 23.3 MiB, delta_rss +0.3 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/packing/fabric_bigkey_post_synth.net'.
+Detected 1 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 0.24 seconds).
+# Load packing took 0.26 seconds (max_rss 77.5 MiB, delta_rss +54.0 MiB)
+Warning 1121: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io             : 954
+   io_output     : 691
+    outpad       : 691
+   io_input      : 263
+    inpad        : 263
+  clb            : 89
+   clb_lr        : 89
+    fle          : 705
+     fast6       : 1
+      lut6       : 1
+       lut       : 1
+     ble5        : 1147
+      lut5       : 1147
+       lut       : 1147
+      ff         : 224
+       DFFRE     : 224
+
+# Create Device
+## Build Device Grid
+FPGA sized to 64 x 46: 2944 grid tiles (castor62x44_heterogeneous)
+
+Resource usage...
+	Netlist
+		954	blocks of type: io
+	Architecture
+		4320	blocks of type: io_top
+		3168	blocks of type: io_right
+		4320	blocks of type: io_bottom
+		3168	blocks of type: io_left
+	Netlist
+		89	blocks of type: clb
+	Architecture
+		2184	blocks of type: clb
+	Netlist
+		0	blocks of type: dsp
+	Architecture
+		56	blocks of type: dsp
+	Netlist
+		0	blocks of type: bram
+	Architecture
+		56	blocks of type: bram
+
+Device Utilization: 0.03 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.22 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.30 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.22 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.30 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.04 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.00 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.00 Logical Block: bram
+
+## Build Device Grid took 0.00 seconds (max_rss 79.5 MiB, delta_rss +0.0 MiB)
+Warning 1122: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 160
+Y-direction routing channel width is 160
+Warning 1123: Sized nonsensical R=0 transistor to minimum width
+Warning 1124: Sized nonsensical R=0 transistor to minimum width
+Warning 1125: Sized nonsensical R=0 transistor to minimum width
+Warning 1126: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 19.68 seconds (max_rss 487.3 MiB, delta_rss +407.9 MiB)
+  RR Graph Nodes: 1365608
+  RR Graph Edges: 6033268
+# Create Device took 20.51 seconds (max_rss 487.3 MiB, delta_rss +407.9 MiB)
+
+# Load Placement
+Reading /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/placement/fabric_bigkey_post_synth.place.
+
+Successfully read /nfs_scratch/scratch/CompilerValidation/abdul_hameed/Validation/RTL_testcases/RTL_Benchmarks_Gap_Analysis/bigkey/results_dir/bigkey/run_1/synth_1_1/impl_1_1_1/placement/fabric_bigkey_post_synth.place.
+
+# Load Placement took 0.07 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 39.88 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+Warning 1127: Found no more ample locations for SOURCE in io_top
+Warning 1128: Found no more ample locations for OPIN in io_top
+Warning 1129: Found no more ample locations for SOURCE in io_right
+Warning 1130: Found no more ample locations for OPIN in io_right
+Warning 1131: Found no more ample locations for SOURCE in io_bottom
+Warning 1132: Found no more ample locations for OPIN in io_bottom
+Warning 1133: Found no more ample locations for SOURCE in io_left
+Warning 1134: Found no more ample locations for OPIN in io_left
+Warning 1135: Found no more ample locations for SOURCE in clb
+Warning 1136: Found no more ample locations for OPIN in clb
+Warning 1137: Found no more ample locations for SOURCE in dsp
+Warning 1138: Found no more ample locations for OPIN in dsp
+Warning 1139: Found no more ample locations for SOURCE in bram
+Warning 1140: Found no more ample locations for OPIN in bram
+## Computing src/opin lookahead took 0.18 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 40.27 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+## Initializing router criticalities
+Warning 1141: 864 timing endpoints were not constrained during timing analysis
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 1702 ( 95.4%) |**********************************************
+[      0.1:      0.2)    0 (  0.0%) |
+[      0.2:      0.3)    0 (  0.0%) |
+[      0.3:      0.4)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.6:      0.7)    0 (  0.0%) |
+[      0.7:      0.8)   58 (  3.2%) |**
+[      0.8:      0.9)   13 (  0.7%) |
+[      0.9:        1)   12 (  0.7%) |
+## Initializing router criticalities took 0.05 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Warning 1142: 864 timing endpoints were not constrained during timing analysis
+   1    0.2     0.0    0  338710    1024    1729     644 ( 0.047%)   11328 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   2    0.1     0.5   52  171163     455     928     311 ( 0.023%)   11422 ( 1.3%)    3.602     -20.33     -1.102      0.000      0.000      N/A
+   3    0.1     0.6   16  108335     266     548     156 ( 0.011%)   11562 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   4    0.1     0.8   12   41073     121     276      76 ( 0.006%)   11679 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   5    0.1     1.1    6   18570      61     142      32 ( 0.002%)   11740 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   6    0.1     1.4    1    7868      25      56       8 ( 0.001%)   11783 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   7    0.1     1.9    0    1876       9      16       3 ( 0.000%)   11797 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   8    0.1     2.4    0    1081       5       7       3 ( 0.000%)   11800 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+   9    0.1     3.1    0     493       1       3       0 ( 0.000%)   11809 ( 1.3%)    3.602     -20.39     -1.102      0.000      0.000      N/A
+Restoring best routing
+Critical path: 3.60173 ns
+Successfully routed after 9 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 1702 ( 95.4%) |**********************************************
+[      0.1:      0.2)    0 (  0.0%) |
+[      0.2:      0.3)    0 (  0.0%) |
+[      0.3:      0.4)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.6:      0.7)    0 (  0.0%) |
+[      0.7:      0.8)   24 (  1.3%) |*
+[      0.8:      0.9)   46 (  2.6%) |*
+[      0.9:        1)   13 (  0.7%) |
+Router Stats: total_nets_routed: 1967 total_connections_routed: 3705 total_heap_pushes: 689169 total_heap_pops: 254100 
+# Routing took 0.99 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 0.04 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: -1175407925
+Circuit successfully routed with a channel width factor of 160.
+# Synchronize the packed netlist to routing optimization
+OK: before pb_pin_fixup: pb_route connectivity is consistent in all 1043 blocks
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+Found 1503 mismatches between routing and packing results.
+Fixed 943 routing traces due to mismatch between routing and packing results.
+OK: after pb_pin_fixup: pb_route connectivity is consistent in all 1043 blocks
+# Synchronize the packed netlist to routing optimization took 0.03 seconds (max_rss 487.3 MiB, delta_rss +0.0 MiB)
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io        954                               0.724319                     0.275681   
+       clb         89                                12.2921                       8.5618   
+       dsp          0                                      0                            0   
+      bram          0                                      0                            0   
+Absorbed logical nets 610 out of 1635 nets, 1025 nets not absorbed.
+
+
+Average number of bends per net: 3.61133  Maximum # of bends: 110
+
+Number of global nets: 1
+Number of routed nets (nonglobal): 1024
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 11809, average net length: 11.5322
+	Maximum net length: 395
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 5415, average wire segments per net: 5.28809
+	Maximum segments used by a net: 163
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 0
+
+Routing channel utilization histogram:
+[        1:      inf)    0 (  0.0%) |
+[      0.9:        1)    0 (  0.0%) |
+[      0.8:      0.9)    0 (  0.0%) |
+[      0.7:      0.8)    0 (  0.0%) |
+[      0.5:      0.6)    0 (  0.0%) |
+[      0.4:      0.5)    0 (  0.0%) |
+[      0.3:      0.4)   28 (  0.5%) |
+[      0.2:      0.3)   84 (  1.5%) |*
+[      0.1:      0.2)  178 (  3.1%) |**
+[        0:      0.1) 5380 ( 94.9%) |**********************************************
+Maximum routing channel utilization:      0.39 at (19,1)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0      19   5.516      160
+                         1      62  26.469      160
+                         2      49  20.875      160
+                         3      40  12.891      160
+                         4      34   8.328      160
+                         5      16   1.359      160
+                         6       2   0.188      160
+                         7       3   0.156      160
+                         8       1   0.062      160
+                         9       2   0.172      160
+                        10       5   0.453      160
+                        11      19   0.812      160
+                        12       2   0.109      160
+                        13       1   0.047      160
+                        14       2   0.078      160
+                        15       1   0.016      160
+                        16       1   0.031      160
+                        17       1   0.047      160
+                        18       2   0.078      160
+                        19       1   0.047      160
+                        20       2   0.125      160
+                        21       2   0.109      160
+                        22       3   0.094      160
+                        23       1   0.078      160
+                        24       2   0.062      160
+                        25       1   0.031      160
+                        26       4   0.125      160
+                        27       2   0.078      160
+                        28       2   0.078      160
+                        29       1   0.047      160
+                        30       2   0.094      160
+                        31       2   0.156      160
+                        32       2   0.078      160
+                        33       2   0.219      160
+                        34      12   0.641      160
+                        35       4   0.203      160
+                        36       2   0.125      160
+                        37       2   0.094      160
+                        38       4   0.094      160
+                        39       2   0.047      160
+                        40       5   0.547      160
+                        41       5   0.891      160
+                        42      13   3.234      160
+                        43      26   9.312      160
+                        44      24   9.141      160
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       6   0.413      160
+                         1      14   1.239      160
+                         2      35   2.870      160
+                         3      34   3.304      160
+                         4      36   3.413      160
+                         5      39   3.326      160
+                         6      36   2.913      160
+                         7      32   2.587      160
+                         8      44   3.696      160
+                         9      35   2.804      160
+                        10      28   2.283      160
+                        11      18   1.391      160
+                        12      27   2.630      160
+                        13      28   2.957      160
+                        14      34   3.130      160
+                        15      24   3.130      160
+                        16      18   2.261      160
+                        17      28   3.457      160
+                        18      29   3.717      160
+                        19      44   5.630      160
+                        20      39   4.739      160
+                        21      41   3.913      160
+                        22      31   2.978      160
+                        23      16   2.609      160
+                        24      31   4.565      160
+                        25      27   3.804      160
+                        26      30   2.957      160
+                        27      27   2.022      160
+                        28      10   1.413      160
+                        29      17   1.804      160
+                        30      15   1.696      160
+                        31      21   2.283      160
+                        32      21   2.043      160
+                        33      11   0.783      160
+                        34      15   0.891      160
+                        35      12   0.739      160
+                        36      24   1.696      160
+                        37      23   1.804      160
+                        38      24   2.000      160
+                        39      19   1.196      160
+                        40      17   1.000      160
+                        41      14   0.804      160
+                        42       7   0.761      160
+                        43      11   0.522      160
+                        44       1   0.065      160
+                        45       1   0.022      160
+                        46       1   0.022      160
+                        47       1   0.043      160
+                        48       2   0.043      160
+                        49       3   0.109      160
+                        50       7   0.326      160
+                        51      14   0.674      160
+                        52       6   0.152      160
+                        53       5   0.261      160
+                        54       8   0.609      160
+                        55      15   1.391      160
+                        56       5   0.348      160
+                        57      11   0.565      160
+                        58       1   0.152      160
+                        59       4   0.217      160
+                        60       5   0.370      160
+                        61      10   0.696      160
+                        62      10   0.565      160
+
+Total tracks in x-direction: 7200, in y-direction: 10080
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 1.7908e+08
+	Total used logic block area: 4.79657e+06
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 3.68034e+07, per logic tile: 12501.2
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      1  89280
+                                                      Y      1  88704
+                                                      X      4  93600
+                                                      Y      4  94752
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0183
+                                             4      0.0135
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1      0.0147
+                                             4      0.0128
+
+Segment occupancy by length: Length utilization
+                             ------ -----------
+                             L1          0.0165
+                             L4          0.0132
+
+Segment occupancy by type: name type utilization
+                           ---- ---- -----------
+                             L1    0      0.0165
+                             L4    1      0.0132
+Warning 1143: 864 timing endpoints were not constrained during timing analysis
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  1.7e-09:  1.8e-09) 2 (  5.1%) |***********
+[  1.8e-09:  1.8e-09) 1 (  2.6%) |*****
+[  1.8e-09:  1.9e-09) 4 ( 10.3%) |**********************
+[  1.9e-09:    2e-09) 7 ( 17.9%) |**************************************
+[    2e-09:    2e-09) 6 ( 15.4%) |*********************************
+[    2e-09:  2.1e-09) 9 ( 23.1%) |*************************************************
+[  2.1e-09:  2.1e-09) 3 (  7.7%) |****************
+[  2.1e-09:  2.2e-09) 4 ( 10.3%) |**********************
+[  2.2e-09:  2.3e-09) 2 (  5.1%) |***********
+[  2.3e-09:  2.3e-09) 1 (  2.6%) |*****
+
+Final critical path delay (least slack): 3.60173 ns, Fmax: 277.644 MHz
+Final setup Worst Negative Slack (sWNS): -1.10173 ns
+Final setup Total Negative Slack (sTNS): -20.3858 ns
+
+Final setup slack histogram:
+[ -1.1e-09:   -1e-09)  2 (  5.1%) |*********
+[   -1e-09: -9.2e-10)  2 (  5.1%) |*********
+[ -9.2e-10: -8.3e-10)  0 (  0.0%) |
+[ -8.3e-10: -7.5e-10)  0 (  0.0%) |
+[ -7.5e-10: -6.6e-10)  2 (  5.1%) |*********
+[ -6.6e-10: -5.7e-10)  4 ( 10.3%) |*****************
+[ -5.7e-10: -4.8e-10) 11 ( 28.2%) |************************************************
+[ -4.8e-10: -3.9e-10)  6 ( 15.4%) |**************************
+[ -3.9e-10:   -3e-10) 10 ( 25.6%) |********************************************
+[   -3e-10: -2.1e-10)  2 (  5.1%) |*********
+
+Final geomean non-virtual intra-domain period: nan ns (nan MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: nan ns (nan MHz)
+
+Writing Implementation Netlist: fabric_bigkey_post_synthesis.v
+Writing Implementation Netlist: fabric_bigkey_post_synthesis.blif
+Writing Implementation SDF    : fabric_bigkey_post_synthesis.sdf
+Incr Slack updates 1 in 0.000175277 sec
+Full Max Req/Worst Slack updates 1 in 4.4102e-05 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 0.000228315 sec
+Flow timing analysis took 0.221597 seconds (0.214413 STA, 0.00718387 slack) (11 full updates: 0 setup, 0 hold, 11 combined).
+VPR succeeded
+The entire flow of VPR took 63.38 seconds (max_rss 487.3 MiB)
+Incr Slack updates 10 in 0.00126442 sec
+Full Max Req/Worst Slack updates 1 in 4.0149e-05 sec
+Incr Max Req/Worst Slack updates 9 in 0.000319056 sec
+Incr Criticality updates 8 in 0.00109019 sec
+Full Criticality updates 2 in 0.000473428 sec
