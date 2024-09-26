@@ -1,0 +1,26 @@
+ 
+# Yosys synthesis script for gbox_clk_as_data
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/09_18_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines -DRIGEL_22x4= 
+read_verilog  -I../../../../ -I/nfs_project/castor/DV/Azfar/Rigel/DV/subsystem_level/fabric_verif_env/src/fabric_designs/gbox/gbox_clk_as_data/.  /nfs_project/castor/DV/Azfar/Rigel/DV/subsystem_level/fabric_verif_env/src/fabric_designs/gbox/gbox_clk_as_data/./gbox_clk_as_data.v 
+
+
+# Technology mapping
+hierarchy -top gbox_clk_as_data
+
+
+
+plugin -i synth-rs
+
+synth_rs -post_cleanup 1 -legalize_ram_clk_ports -new_iobuf_map 3 -iofab_map 1 -tech genesis3 -de -goal mixed   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 320 -max_reg 640 -max_device_dsp 0 -max_device_bram 0 -max_device_carry_length 0 -max_dsp 0 -max_bram 0 -max_carry_length 0  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v gbox_clk_as_data_post_synth.v
+write_blif -param gbox_clk_as_data_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_gbox_clk_as_data.sdc -json config.json -w wrapper_gbox_clk_as_data_post_synth.v wrapper_gbox_clk_as_data_post_synth.eblif -pr post_pnr_wrapper_gbox_clk_as_data_post_synth.v post_pnr_wrapper_gbox_clk_as_data_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_gbox_clk_as_data_post_synth.v
+write_blif -param fabric_gbox_clk_as_data_post_synth.eblif
+
+  

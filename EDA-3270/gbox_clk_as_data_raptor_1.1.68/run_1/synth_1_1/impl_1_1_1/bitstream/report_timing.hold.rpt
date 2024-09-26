@@ -1,0 +1,89 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.09
+Build    : 1.1.68
+Hash     : bac150e
+Date     : Sep 16 2024
+Type     : Engineering
+Log Time   : Thu Sep 26 09:15:37 2024 GMT
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 4
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: din_ibuf.inpad[0] (.input clocked by clk_clk_buf)
+Endpoint  : temp.D[0] (dffre clocked by clk_clk_buf)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk_clk_buf (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+din_ibuf.inpad[0] (.input)                                       0.000     0.000
+temp.D[0] (dffre)                                                1.270     1.270
+data arrival time                                                          1.270
+
+clock clk_clk_buf (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+clk_clk_buf.inpad[0] (.input)                                    0.000     0.000
+temp.C[0] (dffre)                                                0.779     0.779
+clock uncertainty                                                0.000     0.779
+cell hold time                                                  -0.028     0.751
+data required time                                                         0.751
+--------------------------------------------------------------------------------
+data required time                                                        -0.751
+data arrival time                                                          1.270
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.519
+
+
+#Path 2
+Startpoint: temp.Q[0] (dffre clocked by clk_clk_buf)
+Endpoint  : out:dout_obuf.outpad[0] (.output clocked by clk_clk_buf)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk_clk_buf (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+clk_clk_buf.inpad[0] (.input)                                    0.000     0.000
+temp.C[0] (dffre)                                                0.779     0.779
+temp.Q[0] (dffre) [clock-to-output]                              0.029     0.808
+dout_obuf.in[0] (.names)                                         0.289     1.097
+dout_obuf.out[0] (.names)                                        0.101     1.198
+out:dout_obuf.outpad[0] (.output)                                0.735     1.933
+data arrival time                                                          1.933
+
+clock clk_clk_buf (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.933
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.933
+
+
+#End of timing report
