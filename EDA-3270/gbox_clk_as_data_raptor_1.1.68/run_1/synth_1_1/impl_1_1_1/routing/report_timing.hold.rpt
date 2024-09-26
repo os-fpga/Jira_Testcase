@@ -1,0 +1,114 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.09
+Build    : 1.1.68
+Hash     : bac150e
+Date     : Sep 16 2024
+Type     : Engineering
+Log Time   : Thu Sep 26 09:15:27 2024 GMT
+#Timing report of worst 2 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 4
+# Timing Graph Levels: 6
+
+#Path 1
+Startpoint: din.inpad[0] (.input at (3,1) clocked by clk)
+Endpoint  : temp.D[0] (dffre at (4,2) clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+input external delay                                             0.000     0.000
+din.inpad[0] (.input at (3,1))                              0.000     0.000
+| (intra 'io' routing)                                           0.779     0.779
+| (OPIN:7270 side: (RIGHT,) (3,1,0))                             0.000     0.779
+| (CHANY:153004 L4 length:2 (3,1,0-> (3,2,0))                    0.119     0.898
+| (CHANX:147576 L1 length:1 (4,2,0-> (4,2,0))                    0.061     0.959
+| (IPIN:66636 side: (TOP,) (4,2,0))                              0.101     1.060
+| (intra 'clb' routing)                                          0.210     1.270
+temp.D[0] (dffre at (4,2))                                       0.000     1.270
+data arrival time                                                          1.270
+
+clock clk (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                           0.000     0.000
+| (intra 'io' routing)                                           0.779     0.779
+| (inter-block routing:global net)                               0.000     0.779
+| (intra 'clb' routing)                                          0.000     0.779
+temp.C[0] (dffre at (4,2))                                       0.000     0.779
+clock uncertainty                                                0.000     0.779
+cell hold time                                                  -0.028     0.751
+data required time                                                         0.751
+--------------------------------------------------------------------------------
+data required time                                                        -0.751
+data arrival time                                                          1.270
+--------------------------------------------------------------------------------
+slack (MET)                                                                0.519
+
+
+#Path 2
+Startpoint: temp.Q[0] (dffre at (4,2) clocked by clk)
+Endpoint  : out:dout.outpad[0] (.output at (4,1) clocked by clk)
+Path Type : hold
+
+Point                                                             Incr      Path
+--------------------------------------------------------------------------------
+clock clk (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+clk.inpad[0] (.input at (4,1))                           0.000     0.000
+| (intra 'io' routing)                                           0.779     0.779
+| (inter-block routing:global net)                               0.000     0.779
+| (intra 'clb' routing)                                          0.000     0.779
+temp.C[0] (dffre at (4,2))                                       0.000     0.779
+| (primitive 'dffre' Tcq_min)                                    0.029     0.808
+temp.Q[0] (dffre at (4,2)) [clock-to-output]                     0.000     0.808
+| (intra 'clb' routing)                                          0.000     0.808
+| (OPIN:66614 side: (RIGHT,) (4,2,0))                            0.000     0.808
+| (CHANY:153386 L1 length:1 (4,2,0-> (4,2,0))                    0.061     0.869
+| (CHANX:147597 L1 length:1 (4,2,0-> (4,2,0))                    0.061     0.930
+| (IPIN:66630 side: (TOP,) (4,2,0))                              0.101     1.031
+| (intra 'clb' routing)                                          0.066     1.097
+dout.in[0] (.names at (4,2))                                0.000     1.097
+| (primitive '.names' combinational delay)                       0.101     1.198
+dout.out[0] (.names at (4,2))                               0.000     1.198
+| (intra 'clb' routing)                                          0.000     1.198
+| (OPIN:66615 side: (RIGHT,) (4,2,0))                            0.000     1.198
+| (CHANY:153259 L4 length:2 (4,2,0-> (4,1,0))                    0.119     1.317
+| (IPIN:10289 side: (RIGHT,) (4,1,0))                            0.101     1.418
+| (intra 'io' routing)                                           0.516     1.933
+out:dout.outpad[0] (.output at (4,1))                       0.000     1.933
+data arrival time                                                          1.933
+
+clock clk (rise edge)                                    0.000     0.000
+clock source latency                                             0.000     0.000
+clock uncertainty                                                0.000     0.000
+output external delay                                            0.000     0.000
+data required time                                                         0.000
+--------------------------------------------------------------------------------
+data required time                                                        -0.000
+data arrival time                                                          1.933
+--------------------------------------------------------------------------------
+slack (MET)                                                                1.933
+
+
+#End of timing report
