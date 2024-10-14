@@ -10,7 +10,11 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+             sparse-checkout: '.github'
+      
       - name: Try auto approve
+        if: github.actor == 'NadeemYaseen' || github.actor == 'zhergarvi' || github.actor == 'abdulhameed-akram'
         run: |
               urls=$(gh pr list --json url | jq -r '.[].url')
               for url in $urls; do
