@@ -12,7 +12,7 @@
 # re-use, archive beyond the period of the license agreement, transfer to a
 # sub-licensee, or re-implement any portion of the content covered by the license
 # and non-disclosure agreement without the prior written consent of the licensor.
-# *********************************************************************************/
+
 # Version  : 2024.10
 # Build    : 1.2.18
 # Hash     : 82370d4
