@@ -10,13 +10,12 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - name: Try auto merge
+      - name: Try auto approve
         run: |
               urls=$(gh pr list --json url | jq -r '.[].url')
               for url in $urls; do
-                  echo "Merging PR: $url"
-                  #gh pr merge --auto -m "$url" -A pu.engineerg@gmail.com
+                  echo "Approve PR: $url"
                   gh pr review --approve "$url"
               done
         env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           GITHUB_TOKEN: ${{ secrets.APPROVE_PR }}
