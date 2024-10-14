@@ -1,0 +1,267 @@
+{
+    "status": true,
+    "messages": [
+    "Start of IO Analysis",
+    "  Get Ports",
+    "    Detect input port \\clock_input (index=0, width=1, offset=0)",
+    "    Detect output port \\clock_output (index=0, width=1, offset=0)",
+    "    Detect input port \\ibuf_enable (index=0, width=1, offset=0)",
+    "  Get Port/Standalone Primitives",
+    "    Get important connection of cell \\I_BUF $ibuf$clk_buf_primitive_inst.$ibuf_clock_input",
+    "      Cell port \\I is connected to input port \\clock_input",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\I_BUF $ibuf$clk_buf_primitive_inst.$ibuf_ibuf_enable",
+    "      Cell port \\I is connected to input port \\ibuf_enable",
+    "        Parameter \\WEAK_KEEPER: \"NONE\"",
+    "        Data Width: -2",
+    "    Get important connection of cell \\O_BUFT $obuf$clk_buf_primitive_inst.$obuf_clock_output",
+    "      Cell port \\O is connected to output port \\clock_output",
+    "        Data Width: -2",
+    "  Trace \\I_BUF --> \\CLK_BUF",
+    "    Try \\I_BUF $ibuf$clk_buf_primitive_inst.$ibuf_clock_input out connection: \\wire2 -> \\clk_buf_inst",
+    "      Connected \\clk_buf_inst",
+    "        Data Width: -2",
+    "  Trace \\I_BUF_DS --> \\CLK_BUF",
+    "  Trace \\CLK_BUF --> \\PLL",
+    "  Trace \\BOOT_CLOCK --> \\PLL",
+    "  Trace \\I_BUF --> \\I_DELAY",
+    "  Trace \\I_BUF --> \\I_DDR",
+    "  Trace \\I_BUF --> \\I_SERDES",
+    "  Trace \\I_BUF_DS --> \\I_DELAY",
+    "  Trace \\I_BUF_DS --> \\I_DDR",
+    "  Trace \\I_BUF_DS --> \\I_SERDES",
+    "  Trace \\I_DELAY --> \\I_DDR",
+    "  Trace \\I_DELAY --> \\I_SERDES",
+    "  Trace \\O_BUF --> \\O_DELAY",
+    "  Trace \\O_BUF --> \\O_DDR",
+    "  Trace \\O_BUF --> \\O_SERDES",
+    "  Trace \\O_BUFT --> \\O_DELAY",
+    "  Trace \\O_BUFT --> \\O_DDR",
+    "  Trace \\O_BUFT --> \\O_SERDES",
+    "  Trace \\O_BUF_DS --> \\O_DELAY",
+    "  Trace \\O_BUF_DS --> \\O_DDR",
+    "  Trace \\O_BUF_DS --> \\O_SERDES",
+    "  Trace \\O_BUFT_DS --> \\O_DELAY",
+    "  Trace \\O_BUFT_DS --> \\O_DDR",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES",
+    "  Trace \\O_DELAY --> \\O_DDR",
+    "  Trace \\O_DELAY --> \\O_SERDES",
+    "  Trace \\O_BUF --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT --> \\O_SERDES_CLK",
+    "  Trace \\O_BUF_DS --> \\O_SERDES_CLK",
+    "  Trace \\O_BUFT_DS --> \\O_SERDES_CLK",
+    "  Trace fabric clock buffer",
+    "  Trace gearbox fast clock source",
+    "  Trace Core/Fabric Clock",
+    "    Module \\CLK_BUF \\clk_buf_inst: clock port \\O, net \\wire1",
+    "      Connected to cell \\DFFRE $abc$194$auto_195",
+    "        Which is not a IO primitive. Send to fabric",
+    "      Use slot 0",
+    "  Double check Core/Fabric Clock",
+    "  Summary",
+    "        |-------------------------------------------------------------------------------|",
+    "        |             ****************************************************              |",
+    "    IN  | clock_input * I_BUF |-> CLK_BUF                                *              |",
+    "    IN  | ibuf_enable * I_BUF                                            *              |",
+    "    OUT |             *                                           O_BUFT * clock_output |",
+    "        |             ****************************************************              |",
+    "        |-------------------------------------------------------------------------------|",
+    "  Final checking is good",
+    "  Cross-check instances vs wrapped-instances",
+    "  Finalize instance location",
+    "  Generate SDC",
+    "    Determine fabric clock",
+    "    Determine data pin mode and location",
+    "      Pin object=clock_input, location: ",
+    "        Pin location is not assigned",
+    "      Pin object=ibuf_enable, location: ",
+    "        Pin location is not assigned",
+    "      Pin object=clock_output, location: ",
+    "        Pin location is not assigned",
+    "    Determine internal control signals",
+    "      Group signals by location",
+    "        Process output fabric signal f2g_in_en",
+    "          Look for primitive \\I_SERDES port \\EN",
+    "          Look for primitive \\I_DDR port \\E",
+    "          Look for primitive \\O_SERDES port \\OE_IN",
+    "          Look for primitive \\I_BUF port \\EN",
+    "            Instance $ibuf$clk_buf_primitive_inst.$ibuf_clock_input location ",
+    "              Skip: Location is not assigned",
+    "            Instance $ibuf$clk_buf_primitive_inst.$ibuf_ibuf_enable location ",
+    "              Skip: Location is not assigned",
+    "          Look for primitive \\I_BUF_DS port \\EN",
+    "        Process output fabric signal f2g_tx_oe",
+    "          Look for primitive \\O_DDR port \\E",
+    "          Look for primitive \\O_BUFT port \\T",
+    "            Instance $obuf$clk_buf_primitive_inst.$obuf_clock_output location ",
+    "              Skip: Location is not assigned",
+    "          Look for primitive \\O_BUFT_DS port \\T",
+    "        Process output fabric signal f2g_trx_dly_ld",
+    "          Look for primitive \\I_DELAY port \\DLY_LOAD",
+    "          Look for primitive \\O_DELAY port \\DLY_LOAD",
+    "        Process output fabric signal f2g_trx_dly_adj",
+    "          Look for primitive \\I_DELAY port \\DLY_ADJ",
+    "          Look for primitive \\O_DELAY port \\DLY_ADJ",
+    "        Process output fabric signal f2g_trx_dly_inc",
+    "          Look for primitive \\I_DELAY port \\DLY_INCDEC",
+    "          Look for primitive \\O_DELAY port \\DLY_INCDEC",
+    "        Process input fabric signal g2f_trx_dly_tap",
+    "          Look for primitive \\I_DELAY port \\DLY_TAP_VALUE",
+    "          Look for primitive \\O_DELAY port \\DLY_TAP_VALUE",
+    "        Process output fabric signal f2g_trx_reset_n",
+    "          Look for primitive \\I_SERDES port \\RST",
+    "          Look for primitive \\O_SERDES port \\RST",
+    "          Look for primitive \\I_DDR port \\R",
+    "          Look for primitive \\O_DDR port \\R",
+    "        Process input fabric signal g2f_rx_dvalid",
+    "          Look for primitive \\I_SERDES port \\DATA_VALID",
+    "        Process output fabric signal f2g_rx_bitslip_adj",
+    "          Look for primitive \\I_SERDES port \\BITSLIP_ADJ",
+    "        Process input fabric signal g2f_rx_dpa_lock",
+    "          Look for primitive \\I_SERDES port \\DPA_LOCK",
+    "        Process input fabric signal g2f_rx_dpa_error",
+    "          Look for primitive \\I_SERDES port \\DPA_ERROR",
+    "        Process output fabric signal f2g_tx_dvalid",
+    "          Look for primitive \\O_SERDES port \\DATA_VALID",
+    "        Process output fabric signal f2g_tx_clk_en",
+    "          Look for primitive \\O_SERDES_CLK port \\CLK_EN",
+    "      Write out SDC",
+    "        Module=I_BUF LinkedObject=clock_input Location= Port=EN Signal=in:f2g_in_en_{A|B}",
+    "          Skip: Location is not assigned",
+    "        Module=I_BUF LinkedObject=ibuf_enable Location= Port=EN Signal=in:f2g_in_en_{A|B}",
+    "          Skip: Location is not assigned",
+    "        Module=O_BUFT LinkedObject=clock_output Location= Port=T Signal=in:f2g_tx_oe_{A|B}",
+    "          Skip: Location is not assigned",
+    "    Determine gearbox core clock",
+    "End of IO Analysis"
+  ],
+  "instances": [
+    {
+      "module": "I_BUF",
+      "name": "$ibuf$clk_buf_primitive_inst.$ibuf_clock_input",
+      "location_object": "clock_input",
+      "location": "",
+      "linked_object": "clock_input",
+      "linked_objects": {
+        "clock_input": {
+          "location": "",
+          "properties": {
+          }
+        }
+      },
+      "connectivity": {
+        "I": "clock_input",
+        "O": "wire2"
+      },
+      "parameters": {
+        "WEAK_KEEPER": "NONE"
+      },
+      "flags": [
+        "I_BUF"
+      ],
+      "pre_primitive": "",
+      "post_primitives": [
+        "CLK_BUF"
+      ],
+      "route_clock_to": {
+      },
+      "errors": [
+      ]
+    },
+    {
+      "module": "CLK_BUF",
+      "name": "clk_buf_inst",
+      "location_object": "clock_input",
+      "location": "",
+      "linked_object": "clock_input",
+      "linked_objects": {
+        "clock_input": {
+          "location": "",
+          "properties": {
+            "ROUTE_TO_FABRIC_CLK": "0"
+          }
+        }
+      },
+      "connectivity": {
+        "I": "wire2",
+        "O": "wire1"
+      },
+      "parameters": {
+        "ROUTE_TO_FABRIC_CLK": "0"
+      },
+      "flags": [
+        "CLK_BUF",
+        "PIN_CLOCK_CORE_ONLY"
+      ],
+      "pre_primitive": "I_BUF",
+      "post_primitives": [
+      ],
+      "route_clock_to": {
+      },
+      "errors": [
+      ]
+    },
+    {
+      "module": "I_BUF",
+      "name": "$ibuf$clk_buf_primitive_inst.$ibuf_ibuf_enable",
+      "location_object": "ibuf_enable",
+      "location": "",
+      "linked_object": "ibuf_enable",
+      "linked_objects": {
+        "ibuf_enable": {
+          "location": "",
+          "properties": {
+          }
+        }
+      },
+      "connectivity": {
+        "I": "ibuf_enable",
+        "O": "$ibuf_ibuf_enable"
+      },
+      "parameters": {
+        "WEAK_KEEPER": "NONE"
+      },
+      "flags": [
+        "I_BUF"
+      ],
+      "pre_primitive": "",
+      "post_primitives": [
+      ],
+      "route_clock_to": {
+      },
+      "errors": [
+      ]
+    },
+    {
+      "module": "O_BUFT",
+      "name": "$obuf$clk_buf_primitive_inst.$obuf_clock_output",
+      "location_object": "clock_output",
+      "location": "",
+      "linked_object": "clock_output",
+      "linked_objects": {
+        "clock_output": {
+          "location": "",
+          "properties": {
+          }
+        }
+      },
+      "connectivity": {
+        "I": "$f2g_tx_out_wire_out_clk",
+        "O": "clock_output"
+      },
+      "parameters": {
+      },
+      "flags": [
+        "O_BUFT"
+      ],
+      "pre_primitive": "",
+      "post_primitives": [
+      ],
+      "route_clock_to": {
+      },
+      "errors": [
+      ]
+    }
+  ]
+}
