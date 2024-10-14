@@ -10,6 +10,9 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
+      - name: Run step if actor is user_a, user_b, or user_c
+        if: github.actor == 'NadeemYaseen' || github.actor == 'user_b' || github.actor == 'user_c'
+        run: echo "Hello, the workflow was triggered by ${{ github.actor }}!
       - name: Try auto approve
         run: |
               urls=$(gh pr list --json url | jq -r '.[].url')
