@@ -1,6 +1,6 @@
 name: Auto PR Merge
 on:
-  pull_request:
+  #pull_request:
   workflow_dispatch:
 jobs:
   build:
@@ -12,13 +12,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Try auto merge
         run: |
-          if [ "${{ github.event.pull_request.head.repo.full_name }}" == "${{ github.repository }}" ]; then
-          assigned_user=$(gh pr view  ${{ github.event.pull_request.head.ref }}    --json reviewRequests  --jq '.reviewRequests[0].login')
-          fi
-          echo "Assigned user: $assigned_user"
-          if [[ $assigned_user == "NadeemYaseen" ]]
-          then
-              gh pr merge ${{ github.event.pull_request.head.ref }} --auto -m -d -t "Auto merge by $assigned_user"
-          fi
+              urls=$(gh pr list --json url | jq -r '.[].url')
+              for url in $urls; do
+                  echo "Merging PR: $url"
+                  gh pr merge --auto -m "$url"
+              done
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
