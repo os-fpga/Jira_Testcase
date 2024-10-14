@@ -15,8 +15,8 @@ jobs:
               urls=$(gh pr list --json url | jq -r '.[].url')
               for url in $urls; do
                   echo "Approve PR: $url"
-                  gh pr merge --auto -m "$url"
                   gh pr review --approve "$url"
+                  gh pr merge --auto -m "$url"
               done
         env:
            GITHUB_TOKEN: ${{ secrets.APPROVE_PR }}
