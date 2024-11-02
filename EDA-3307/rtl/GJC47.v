@@ -71,13 +71,13 @@ module GJC47 #(
 	genvar ii;
 	generate
 		for (ii =0; ii < DLY_SEL_WIDTH; ii = ii + 1) begin
-			I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf2_sel_dly (.I(sel_dly[ii]),.EN(const1),.O(sel_dly_buf[ii]));
+			I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf2_sel_dly (.I(sel_dly[ii]),.EN(1'b1),.O(sel_dly_buf[ii]));
 		end
 	endgenerate
 	genvar iii;
 	generate
 		for (iii =0; iii < DLY_TAP_WIDTH; iii = iii + 1) begin
-			I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_g2f_trx_dly_tap (.I(g2f_trx_dly_tap[iii]),.EN(const1),.O(g2f_trx_dly_tap_buf[iii]));
+			I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_g2f_trx_dly_tap (.I(g2f_trx_dly_tap[iii]),.EN(1'b1),.O(g2f_trx_dly_tap_buf[iii]));
 		end
 	endgenerate
 
@@ -85,21 +85,20 @@ module GJC47 #(
 	genvar iv;
 	generate
 		for (iv =0; iv < NUM_DLY; iv = iv + 1) begin
-			I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_usr_rd_dly_value (.I(usr_rd_dly_value[iv]),.EN(const1),.O(usr_rd_dly_value_buf[iv]));
+			I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_usr_rd_dly_value (.I(usr_rd_dly_value[iv]),.EN(1'b1),.O(usr_rd_dly_value_buf[iv]));
 		end
 	endgenerate
-    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf0_ (.I(clk_i_buf),.EN(const1),.O(clk_i));
-    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf1_idly_incdec (.I(dly_incdec_buf),.EN(const1),.O(dly_incdec));
-    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf2_idly_ld (.I(dly_ld_buf),.EN(const1),.O(dly_ld));
-    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_ldly_adj (.I(dly_adj_buf),.EN(const1),.O(dly_adj));
-	I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_reset (.I(reset),.EN(const1),.O(reset_buf));
-
-    O_BUF obuf0_ (.I(dly_tap_val[0]), .O(dly_tap_val_inv_buf[0]));
-    O_BUF obuf1_ (.I(dly_tap_val[1]), .O(dly_tap_val_inv_buf[1]));
-    O_BUF obuf2_ (.I(dly_tap_val[2]), .O(dly_tap_val_inv_buf[2]));
-    O_BUF obuf3_ (.I(dly_tap_val[3]), .O(dly_tap_val_inv_buf[3]));
-    O_BUF obuf4_ (.I(dly_tap_val[4]), .O(dly_tap_val_inv_buf[4]));
-    O_BUF obuf5_ (.I(dly_tap_val[5]), .O(dly_tap_val_inv_buf[5]));
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf0_ (.I(clk_i_buf),.EN(1'b1),.O(clk_i));
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf1_idly_incdec (.I(dly_incdec_buf),.EN(1'b1),.O(dly_incdec));
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf2_idly_ld (.I(dly_ld_buf),.EN(1'b1),.O(dly_ld));
+    I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_ldly_adj (.I(dly_adj_buf),.EN(1'b1),.O(dly_adj));
+	I_BUF #(.WEAK_KEEPER("PULLDOWN")) buf3_reset (.I(reset),.EN(1'b1),.O(reset_buf));
+	genvar v;
+	generate
+		for (v = 0; v < DLY_TAP_WIDTH; v = v + 1) begin
+			O_BUF obuf0_ (.I(dly_tap_val[v]), .O(dly_tap_val_inv_buf[v]));
+		end
+	endgenerate
 	
     assign const1 = 1;
     assign enable = const1;
@@ -406,8 +405,10 @@ module GJC47 #(
 
 	always @(reset_buf or usr_dly_ld_in)
     if (!reset_buf) begin
-        ACT_IDLY_CNT = act_dly_cnt(NUM_GB_SITES);
-    end 
+        ACT_IDLY_CNT <= act_dly_cnt(NUM_GB_SITES);
+    end else begin
+        ACT_IDLY_CNT <= 'h0;  // or some default value
+    end
 
 
     genvar i;

@@ -46,6 +46,11 @@ reg [ADDR_WIDTH-1:0]             dly_site_addr [NUM_DLY-1:0];
 wire [(ADDR_WIDTH*20)-1:0]  dly_site_addr_bus;
 wire [19:0]               usr_dly_ld_en;
 reg [5:0] last_dly_sly;
+wire [5:0] cntrl_dly_adj_wire, cntrl_dly_incdec_wire, cntrl_dly_ld_wire;
+
+assign cntrl_dly_adj = cntrl_dly_adj_wire[0];
+assign cntrl_dly_incdec = cntrl_dly_incdec_wire[0];
+assign cntrl_dly_ld = cntrl_dly_ld_wire[0];
 
 	// Count one to assign DELAY to each address
 	// Total number of GB_SITES are needed to asign address
@@ -84,7 +89,7 @@ reg [5:0] last_dly_sly;
     // end // function
     // endfunction    
 
-reg [19:0] usr_dly_adj_binary = 0, usr_dly_ld_binary = 0, usr_dly_ld_en_binary_or = 0;
+reg [4:0] usr_dly_adj_binary, usr_dly_ld_binary, usr_dly_ld_en_binary_or;
 wire [19:0] or_wire;
 integer i;
 always @(*) begin
@@ -107,106 +112,105 @@ end
 
 DLY_VALUE_MUX MUXP_INST_INCDEC (
     .DLY_ADDR(usr_dly_adj_binary),
-    .DLY_TAP_VALUE(cntrl_dly_incdec),
-    .DLY_TAP0_VAL(usr_dly_incdec[0]),
-    .DLY_TAP1_VAL(usr_dly_incdec[1]),
-    .DLY_TAP2_VAL(usr_dly_incdec[2]),
-    .DLY_TAP3_VAL(usr_dly_incdec[3]),
-    .DLY_TAP4_VAL(usr_dly_incdec[4]),
-    .DLY_TAP5_VAL(usr_dly_incdec[5]),
-    .DLY_TAP6_VAL(usr_dly_incdec[6]),
-    .DLY_TAP7_VAL(usr_dly_incdec[7]),
-    .DLY_TAP8_VAL(usr_dly_incdec[8]),
-    .DLY_TAP9_VAL(usr_dly_incdec[9]),
-    .DLY_TAP10_VAL(usr_dly_incdec[10]),
-    .DLY_TAP11_VAL(usr_dly_incdec[11]),
-    .DLY_TAP12_VAL(usr_dly_incdec[12]),
-    .DLY_TAP13_VAL(usr_dly_incdec[13]),
-    .DLY_TAP14_VAL(usr_dly_incdec[14]),
-    .DLY_TAP15_VAL(usr_dly_incdec[15]),
-    .DLY_TAP16_VAL(usr_dly_incdec[16]),
-    .DLY_TAP17_VAL(usr_dly_incdec[17]),
-    .DLY_TAP18_VAL(usr_dly_incdec[18]),
-    .DLY_TAP19_VAL(usr_dly_incdec[19])
+    .DLY_TAP_VALUE(cntrl_dly_incdec_wire),
+    .DLY_TAP0_VAL({5'b00000, usr_dly_incdec[0]}),
+    .DLY_TAP1_VAL({5'b00000, usr_dly_incdec[1]}),
+    .DLY_TAP2_VAL({5'b00000, usr_dly_incdec[2]}),
+    .DLY_TAP3_VAL({5'b00000, usr_dly_incdec[3]}),
+    .DLY_TAP4_VAL({5'b00000, usr_dly_incdec[4]}),
+    .DLY_TAP5_VAL({5'b00000, usr_dly_incdec[5]}),
+    .DLY_TAP6_VAL({5'b00000, usr_dly_incdec[6]}),
+    .DLY_TAP7_VAL({5'b00000, usr_dly_incdec[7]}),
+    .DLY_TAP8_VAL({5'b00000, usr_dly_incdec[8]}),
+    .DLY_TAP9_VAL({5'b00000, usr_dly_incdec[9]}),
+    .DLY_TAP10_VAL({5'b00000, usr_dly_incdec[10]}),
+    .DLY_TAP11_VAL({5'b00000, usr_dly_incdec[11]}),
+    .DLY_TAP12_VAL({5'b00000, usr_dly_incdec[12]}),
+    .DLY_TAP13_VAL({5'b00000, usr_dly_incdec[13]}),
+    .DLY_TAP14_VAL({5'b00000, usr_dly_incdec[14]}),
+    .DLY_TAP15_VAL({5'b00000, usr_dly_incdec[15]}),
+    .DLY_TAP16_VAL({5'b00000, usr_dly_incdec[16]}),
+    .DLY_TAP17_VAL({5'b00000, usr_dly_incdec[17]}),
+    .DLY_TAP18_VAL({5'b00000, usr_dly_incdec[18]}),
+    .DLY_TAP19_VAL({5'b00000, usr_dly_incdec[19]})
 );
 
 
 DLY_VALUE_MUX MUXP_INST_ADJ (
     .DLY_ADDR(usr_dly_adj_binary),
-    .DLY_TAP_VALUE(cntrl_dly_adj),
-    .DLY_TAP0_VAL(usr_dly_adj[0]),
-    .DLY_TAP1_VAL(usr_dly_adj[1]),
-    .DLY_TAP2_VAL(usr_dly_adj[2]),
-    .DLY_TAP3_VAL(usr_dly_adj[3]),
-    .DLY_TAP4_VAL(usr_dly_adj[4]),
-    .DLY_TAP5_VAL(usr_dly_adj[5]),
-    .DLY_TAP6_VAL(usr_dly_adj[6]),
-    .DLY_TAP7_VAL(usr_dly_adj[7]),
-    .DLY_TAP8_VAL(usr_dly_adj[8]),
-    .DLY_TAP9_VAL(usr_dly_adj[9]),
-    .DLY_TAP10_VAL(usr_dly_adj[10]),
-    .DLY_TAP11_VAL(usr_dly_adj[11]),
-    .DLY_TAP12_VAL(usr_dly_adj[12]),
-    .DLY_TAP13_VAL(usr_dly_adj[13]),
-    .DLY_TAP14_VAL(usr_dly_adj[14]),
-    .DLY_TAP15_VAL(usr_dly_adj[15]),
-    .DLY_TAP16_VAL(usr_dly_adj[16]),
-    .DLY_TAP17_VAL(usr_dly_adj[17]),
-    .DLY_TAP18_VAL(usr_dly_adj[18]),
-    .DLY_TAP19_VAL(usr_dly_adj[19])
+    .DLY_TAP_VALUE(cntrl_dly_adj_wire),
+    .DLY_TAP0_VAL({5'b00000, usr_dly_adj[0]}),
+    .DLY_TAP1_VAL({5'b00000, usr_dly_adj[1]}),
+    .DLY_TAP2_VAL({5'b00000, usr_dly_adj[2]}),
+    .DLY_TAP3_VAL({5'b00000, usr_dly_adj[3]}),
+    .DLY_TAP4_VAL({5'b00000, usr_dly_adj[4]}),
+    .DLY_TAP5_VAL({5'b00000, usr_dly_adj[5]}),
+    .DLY_TAP6_VAL({5'b00000, usr_dly_adj[6]}),
+    .DLY_TAP7_VAL({5'b00000, usr_dly_adj[7]}),
+    .DLY_TAP8_VAL({5'b00000, usr_dly_adj[8]}),
+    .DLY_TAP9_VAL({5'b00000, usr_dly_adj[9]}),
+    .DLY_TAP10_VAL({5'b00000, usr_dly_adj[10]}),
+    .DLY_TAP11_VAL({5'b00000, usr_dly_adj[11]}),
+    .DLY_TAP12_VAL({5'b00000, usr_dly_adj[12]}),
+    .DLY_TAP13_VAL({5'b00000, usr_dly_adj[13]}),
+    .DLY_TAP14_VAL({5'b00000, usr_dly_adj[14]}),
+    .DLY_TAP15_VAL({5'b00000, usr_dly_adj[15]}),
+    .DLY_TAP16_VAL({5'b00000, usr_dly_adj[16]}),
+    .DLY_TAP17_VAL({5'b00000, usr_dly_adj[17]}),
+    .DLY_TAP18_VAL({5'b00000, usr_dly_adj[18]}),
+    .DLY_TAP19_VAL({5'b00000, usr_dly_adj[19]})
 );
 
 DLY_VALUE_MUX MUXP_INST_LD (
     .DLY_ADDR(usr_dly_ld_binary),
-    .DLY_TAP_VALUE(cntrl_dly_ld),
-    .DLY_TAP0_VAL(usr_dly_ld[0]),
-    .DLY_TAP1_VAL(usr_dly_ld[1]),
-    .DLY_TAP2_VAL(usr_dly_ld[2]),
-    .DLY_TAP3_VAL(usr_dly_ld[3]),
-    .DLY_TAP4_VAL(usr_dly_ld[4]),
-    .DLY_TAP5_VAL(usr_dly_ld[5]),
-    .DLY_TAP6_VAL(usr_dly_ld[6]),
-    .DLY_TAP7_VAL(usr_dly_ld[7]),
-    .DLY_TAP8_VAL(usr_dly_ld[8]),
-    .DLY_TAP9_VAL(usr_dly_ld[9]),
-    .DLY_TAP10_VAL(usr_dly_ld[10]),
-    .DLY_TAP11_VAL(usr_dly_ld[11]),
-    .DLY_TAP12_VAL(usr_dly_ld[12]),
-    .DLY_TAP13_VAL(usr_dly_ld[13]),
-    .DLY_TAP14_VAL(usr_dly_ld[14]),
-    .DLY_TAP15_VAL(usr_dly_ld[15]),
-    .DLY_TAP16_VAL(usr_dly_ld[16]),
-    .DLY_TAP17_VAL(usr_dly_ld[17]),
-    .DLY_TAP18_VAL(usr_dly_ld[18]),
-    .DLY_TAP19_VAL(usr_dly_ld[19])
+    .DLY_TAP_VALUE(cntrl_dly_ld_wire),
+    .DLY_TAP0_VAL({5'b00000, usr_dly_ld[0]}),
+    .DLY_TAP1_VAL({5'b00000, usr_dly_ld[1]}),
+    .DLY_TAP2_VAL({5'b00000, usr_dly_ld[2]}),
+    .DLY_TAP3_VAL({5'b00000, usr_dly_ld[3]}),
+    .DLY_TAP4_VAL({5'b00000, usr_dly_ld[4]}),
+    .DLY_TAP5_VAL({5'b00000, usr_dly_ld[5]}),
+    .DLY_TAP6_VAL({5'b00000, usr_dly_ld[6]}),
+    .DLY_TAP7_VAL({5'b00000, usr_dly_ld[7]}),
+    .DLY_TAP8_VAL({5'b00000, usr_dly_ld[8]}),
+    .DLY_TAP9_VAL({5'b00000, usr_dly_ld[9]}),
+    .DLY_TAP10_VAL({5'b00000, usr_dly_ld[10]}),
+    .DLY_TAP11_VAL({5'b00000, usr_dly_ld[11]}),
+    .DLY_TAP12_VAL({5'b00000, usr_dly_ld[12]}),
+    .DLY_TAP13_VAL({5'b00000, usr_dly_ld[13]}),
+    .DLY_TAP14_VAL({5'b00000, usr_dly_ld[14]}),
+    .DLY_TAP15_VAL({5'b00000, usr_dly_ld[15]}),
+    .DLY_TAP16_VAL({5'b00000, usr_dly_ld[16]}),
+    .DLY_TAP17_VAL({5'b00000, usr_dly_ld[17]}),
+    .DLY_TAP18_VAL({5'b00000, usr_dly_ld[18]}),
+    .DLY_TAP19_VAL({5'b00000, usr_dly_ld[19]})
 );   
 
 DLY_VALUE_MUX MUXP_INST_ADDR (
     .DLY_ADDR(usr_dly_ld_binary | usr_dly_adj_binary),
     .DLY_TAP_VALUE(f2g_dly_addr),
-    .DLY_TAP0_VAL(dly_site_addr_bus[4:0]),
-    .DLY_TAP1_VAL(dly_site_addr_bus[9:5]),
-    .DLY_TAP2_VAL(dly_site_addr_bus[14:10]),
-    .DLY_TAP3_VAL(dly_site_addr_bus[19:15]),
-    .DLY_TAP4_VAL(dly_site_addr_bus[24:20]),
-    .DLY_TAP5_VAL(dly_site_addr_bus[29:25]),
-    .DLY_TAP6_VAL(dly_site_addr_bus[34:30]),
-    .DLY_TAP7_VAL(dly_site_addr_bus[39:35]),
-    .DLY_TAP8_VAL(dly_site_addr_bus[44:40]),
-    .DLY_TAP9_VAL(dly_site_addr_bus[49:45]),
-    .DLY_TAP10_VAL(dly_site_addr_bus[54:50]),
-    .DLY_TAP11_VAL(dly_site_addr_bus[59:55]),
-    .DLY_TAP12_VAL(dly_site_addr_bus[64:60]),
-    .DLY_TAP13_VAL(dly_site_addr_bus[69:65]),
-    .DLY_TAP14_VAL(dly_site_addr_bus[74:70]),
-    .DLY_TAP15_VAL(dly_site_addr_bus[79:75]),
-    .DLY_TAP16_VAL(dly_site_addr_bus[84:80]),
-    .DLY_TAP17_VAL(dly_site_addr_bus[89:85]),
-    .DLY_TAP18_VAL(dly_site_addr_bus[94:90]),
-    .DLY_TAP19_VAL(dly_site_addr_bus[99:95])
-    
-);  
-wire [(20*DLY_TAP_WIDTH)-1:0] usr_dly_tap_value_out_wire;
+    .DLY_TAP0_VAL(dly_site_addr_bus[(ADDR_WIDTH*1)-1 : ADDR_WIDTH*0]),
+    .DLY_TAP1_VAL(dly_site_addr_bus[(ADDR_WIDTH*2)-1 : ADDR_WIDTH*1]),
+    .DLY_TAP2_VAL(dly_site_addr_bus[(ADDR_WIDTH*3)-1 : ADDR_WIDTH*2]),
+    .DLY_TAP3_VAL(dly_site_addr_bus[(ADDR_WIDTH*4)-1 : ADDR_WIDTH*3]),
+    .DLY_TAP4_VAL(dly_site_addr_bus[(ADDR_WIDTH*5)-1 : ADDR_WIDTH*4]),
+    .DLY_TAP5_VAL(dly_site_addr_bus[(ADDR_WIDTH*6)-1 : ADDR_WIDTH*5]),
+    .DLY_TAP6_VAL(dly_site_addr_bus[(ADDR_WIDTH*7)-1 : ADDR_WIDTH*6]),
+    .DLY_TAP7_VAL(dly_site_addr_bus[(ADDR_WIDTH*8)-1 : ADDR_WIDTH*7]),
+    .DLY_TAP8_VAL(dly_site_addr_bus[(ADDR_WIDTH*9)-1 : ADDR_WIDTH*8]),
+    .DLY_TAP9_VAL(dly_site_addr_bus[(ADDR_WIDTH*10)-1 : ADDR_WIDTH*9]),
+    .DLY_TAP10_VAL(dly_site_addr_bus[(ADDR_WIDTH*11)-1 : ADDR_WIDTH*10]),
+    .DLY_TAP11_VAL(dly_site_addr_bus[(ADDR_WIDTH*12)-1 : ADDR_WIDTH*11]),
+    .DLY_TAP12_VAL(dly_site_addr_bus[(ADDR_WIDTH*13)-1 : ADDR_WIDTH*12]),
+    .DLY_TAP13_VAL(dly_site_addr_bus[(ADDR_WIDTH*14)-1 : ADDR_WIDTH*13]),
+    .DLY_TAP14_VAL(dly_site_addr_bus[(ADDR_WIDTH*15)-1 : ADDR_WIDTH*14]),
+    .DLY_TAP15_VAL(dly_site_addr_bus[(ADDR_WIDTH*16)-1 : ADDR_WIDTH*15]),
+    .DLY_TAP16_VAL(dly_site_addr_bus[(ADDR_WIDTH*17)-1 : ADDR_WIDTH*16]),
+    .DLY_TAP17_VAL(dly_site_addr_bus[(ADDR_WIDTH*18)-1 : ADDR_WIDTH*17]),
+    .DLY_TAP18_VAL(dly_site_addr_bus[(ADDR_WIDTH*19)-1 : ADDR_WIDTH*18]),
+    .DLY_TAP19_VAL(dly_site_addr_bus[(ADDR_WIDTH*20)-1 : ADDR_WIDTH*19])
+    );  
+
 DLY_SEL_DECODER DECODER_INST1(
     .DLY_ADDR(usr_dly_ld_en_binary_or),
     .DLY_LOAD(cntrl_dly_tap_value[2]),
@@ -276,9 +280,11 @@ endgenerate
                 
 always @(rst or usr_dly_ld)
     if (!rst) begin
-        ACT_IDLY_CNT = act_dly_cnt(NUM_GB_SITES);
+        ACT_IDLY_CNT <= act_dly_cnt(NUM_GB_SITES);
  //       dly_site_addr_reg = dly_site_addr_tmp;
-    end 
+    end else begin
+        ACT_IDLY_CNT <= 0;
+    end
     //else begin
     //    if (count_ones(usr_dly_ld) > 1) begin
     //        $error("More then one delay load signals are active: usr_dly_ld = %0x0h", usr_dly_ld);
@@ -289,4 +295,3 @@ always @(rst or usr_dly_ld)
     //end
     
 endmodule 
-
