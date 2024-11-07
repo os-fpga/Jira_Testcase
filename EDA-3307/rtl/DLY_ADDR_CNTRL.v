@@ -67,7 +67,7 @@ assign cntrl_dly_ld = cntrl_dly_ld_wire[0];
                 active_idelay_cnt = active_idelay_cnt + 1;
                 delay_location_index[i] = act_dly_cnt;
                 `ifdef SIM
-                $display("time=%t, act_dly_cnt=%0d, active_idelay_cnt=%d, delay_location_index[0x%h]=0x%h, dly_site_addr[%0d]=0x%h", $time, act_dly_cnt, active_idelay_cnt, i, delay_location_index[i], act_dly_cnt, dly_site_addr[act_dly_cnt]);
+                // $display("time=%t, act_dly_cnt=%0d, active_idelay_cnt=%d, delay_location_index[0x%h]=0x%h, dly_site_addr[%0d]=0x%h", $time, act_dly_cnt, active_idelay_cnt, i, delay_location_index[i], act_dly_cnt, dly_site_addr[act_dly_cnt]);
                 `endif
                 act_dly_cnt = act_dly_cnt+1;  // order is important for counting
             end
