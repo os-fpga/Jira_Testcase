@@ -1,0 +1,1536 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.10
+Build    : 1.2.24
+Hash     : efcef41
+Date     : Oct 31 2024
+Type     : Engineering
+Log Time   : Thu Oct 31 18:50:34 2024 GMT
+VPR FPGA Placement and Routing.
+Version: 
+Revision: 
+Compiled: 
+Compiler: GNU 11.2.1 on Linux-3.10.0-1160.90.1.el7.x86_64 x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+University of Toronto
+verilogtorouting.org
+vtr-users@googlegroups.com
+This is free open source code under MIT license.
+
+VPR was run with the following command-line:
+/nfs_eda_sw/softwares/Raptor/instl_dir/10_31_2024_09_15_01/bin/vpr /nfs_eda_sw/softwares/Raptor/instl_dir/10_31_2024_09_15_01/share/raptor/etc/devices/gemini_compact_320x218/gemini_vpr.xml /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/synthesis/fabric_bitonic_mesh_post_synth.eblif --sdc_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/packing/fabric_bitonic_mesh_openfpga.sdc --route_chan_width 300 --suppress_warnings check_rr_node_warnings.log,check_rr_node --clock_modeling ideal --absorb_buffer_luts off --skip_sync_clustering_and_routing_results off --constant_net_method route --post_place_timing_report bitonic_mesh_post_place_timing.rpt --device castor320x218_heterogeneous --allow_unrelated_clustering on --allow_dangling_combinational_nodes on --place_delta_delay_matrix_calculation_method dijkstra --gen_post_synthesis_netlist on --post_synth_netlist_unconn_inputs gnd --inner_loop_recompute_divider 1 --max_router_iterations 1500 --timing_report_detail detailed --timing_report_npaths 100 --top system100 --net_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/packing/fabric_bitonic_mesh_post_synth.net --place_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/placement/fabric_bitonic_mesh_post_synth.place --route_file /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/routing/fabric_bitonic_mesh_post_synth.route --route
+
+Using up to 1 parallel worker(s)
+
+Architecture file: /nfs_eda_sw/softwares/Raptor/instl_dir/10_31_2024_09_15_01/share/raptor/etc/devices/gemini_compact_320x218/gemini_vpr.xml
+Circuit name: fabric_bitonic_mesh_post_synth
+
+# Loading Architecture Description
+Warning 1: Model 'io' input port 'outpad' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 2: Model 'io' output port 'inpad' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 3: Model 'dsp_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 4: Model 'dsp_phy' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 5: Model 'dsp_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 6: Model 'RS_DSP_MULT' input port 'feedback' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 7: Model 'RS_DSP_MULT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 8: Model 'RS_DSP_MULT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 9: Model 'RS_DSP_MULT_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 10: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 11: Model 'RS_DSP_MULT_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 12: Model 'RS_DSP_MULT_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 13: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 14: Model 'RS_DSP_MULT_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 15: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 16: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 17: Model 'RS_DSP_MULT_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 18: Model 'RS_DSP_MULTADD' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 19: Model 'RS_DSP_MULTADD' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 20: Model 'RS_DSP_MULTADD' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 21: Model 'RS_DSP_MULTADD' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 22: Model 'RS_DSP_MULTADD' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 23: Model 'RS_DSP_MULTADD' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 24: Model 'RS_DSP_MULTADD_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 25: Model 'RS_DSP_MULTADD_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 26: Model 'RS_DSP_MULTADD_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 27: Model 'RS_DSP_MULTADD_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 28: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 29: Model 'RS_DSP_MULTADD_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 30: Model 'RS_DSP_MULTADD_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 31: Model 'RS_DSP_MULTADD_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 32: Model 'RS_DSP_MULTADD_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 33: Model 'RS_DSP_MULTADD_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 34: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 35: Model 'RS_DSP_MULTADD_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 36: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 37: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 38: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 39: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 40: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 41: Model 'RS_DSP_MULTADD_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 42: Model 'RS_DSP_MULTACC' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 43: Model 'RS_DSP_MULTACC' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 44: Model 'RS_DSP_MULTACC' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 45: Model 'RS_DSP_MULTACC' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 46: Model 'RS_DSP_MULTACC' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 47: Model 'RS_DSP_MULTACC' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 48: Model 'RS_DSP_MULTACC_REGIN' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 49: Model 'RS_DSP_MULTACC_REGIN' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 50: Model 'RS_DSP_MULTACC_REGIN' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 51: Model 'RS_DSP_MULTACC_REGIN' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 52: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 53: Model 'RS_DSP_MULTACC_REGIN' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 54: Model 'RS_DSP_MULTACC_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 55: Model 'RS_DSP_MULTACC_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 56: Model 'RS_DSP_MULTACC_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 57: Model 'RS_DSP_MULTACC_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 58: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 59: Model 'RS_DSP_MULTACC_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 60: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'round' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 61: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'shift_right' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 62: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'saturate_enable' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 63: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'lreset' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 64: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_b' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 65: Model 'RS_DSP_MULTACC_REGIN_REGOUT' input port 'unsigned_a' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 66: Model 'bram_phy' input port 'sc_in' has no timing specification (no clock specified to create a sequential input port, not combinationally connected to any outputs, not a clock input)
+Warning 67: Model 'bram_phy' output port 'sc_out' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 68: Model 'bram_phy' output port 'PL_DATA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 69: Model 'bram_phy' output port 'PL_ADDR_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 70: Model 'bram_phy' output port 'PL_WEN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 71: Model 'bram_phy' output port 'PL_CLK_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 72: Model 'bram_phy' output port 'PL_REN_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 73: Model 'bram_phy' output port 'PL_ENA_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+Warning 74: Model 'bram_phy' output port 'PL_INIT_o' has no timing specification (no clock specified to create a sequential output port, not combinationally connected to any inputs, not a clock output)
+mode 'io[physical]' is defined by user to be disabled in packing
+mode 'iopad[default]' is defined by user to be disabled in packing
+mode 'fle[physical]' is defined by user to be disabled in packing
+mode 'fabric[default]' is defined by user to be disabled in packing
+mode 'ff_bypass[default]' is defined by user to be disabled in packing
+mode 'dsp_lr[physical]' is defined by user to be disabled in packing
+mode 'bram_lr[physical]' is defined by user to be disabled in packing
+# Loading Architecture Description took 0.06 seconds (max_rss 107.9 MiB, delta_rss +0.0 MiB)
+
+Timing analysis: ON
+Circuit netlist file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/packing/fabric_bitonic_mesh_post_synth.net
+Circuit placement file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/placement/fabric_bitonic_mesh_post_synth.place
+Circuit routing file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/routing/fabric_bitonic_mesh_post_synth.route
+Circuit SDC file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/packing/fabric_bitonic_mesh_openfpga.sdc
+Vpr floorplanning constraints file: not specified
+
+Packer: ENABLED
+Placer: ENABLED
+Router: ENABLED
+Analysis: ENABLED
+
+VPR was run with the following options:
+
+NetlistOpts.abosrb_buffer_luts            : false
+NetlistOpts.sweep_dangling_primary_ios    : true
+NetlistOpts.sweep_dangling_nets           : true
+NetlistOpts.sweep_dangling_blocks         : true
+NetlistOpts.sweep_constant_primary_outputs: false
+NetlistOpts.netlist_verbosity             : 1
+NetlistOpts.const_gen_inference           : COMB_SEQ
+
+PackerOpts.allow_unrelated_clustering: true
+PackerOpts.alpha_clustering: 0.750000
+PackerOpts.beta_clustering: 0.900000
+PackerOpts.cluster_seed_type: BLEND2
+PackerOpts.connection_driven: true
+PackerOpts.global_clocks: true
+PackerOpts.hill_climbing_flag: false
+PackerOpts.inter_cluster_net_delay: 1.000000
+PackerOpts.timing_driven: true
+PackerOpts.target_external_pin_util: auto
+
+PlacerOpts.place_freq: PLACE_ONCE
+PlacerOpts.place_algorithm: CRITICALITY_TIMING_PLACE
+PlacerOpts.pad_loc_type: FREE
+PlacerOpts.constraints_file: No constraints file given
+PlacerOpts.place_cost_exp: 1.000000
+PlacerOpts.place_chan_width: 300
+PlacerOpts.inner_loop_recompute_divider: 1
+PlacerOpts.recompute_crit_iter: 1
+PlacerOpts.timing_tradeoff: 0.500000
+PlacerOpts.td_place_exp_first: 1.000000
+PlacerOpts.td_place_exp_last: 8.000000
+PlacerOpts.delay_offset: 0.000000
+PlacerOpts.delay_ramp_delta_threshold: -1
+PlacerOpts.delay_ramp_slope: 0.000000
+PlacerOpts.tsu_rel_margin: 1.000000
+PlacerOpts.tsu_abs_margin: 0.000000
+PlacerOpts.post_place_timing_report_file: bitonic_mesh_post_place_timing.rpt
+PlacerOpts.allowed_tiles_for_delay_model: 
+PlacerOpts.delay_model_reducer: MIN
+PlacerOpts.delay_model_type: DELTA
+PlacerOpts.rlim_escape_fraction: 0.000000
+PlacerOpts.move_stats_file: 
+PlacerOpts.placement_saves_per_temperature: 0
+PlacerOpts.effort_scaling: CIRCUIT
+PlacerOpts.place_delta_delay_matrix_calculation_method: DIJKSTRA_EXPANSION
+PlaceOpts.seed: 1
+AnnealSched.type: AUTO_SCHED
+AnnealSched.inner_num: 0.500000
+
+RouterOpts.route_type: DETAILED
+RouterOpts.flat_routing: false
+RouterOpts.has_choking_spot: false
+RouterOpts.router_algorithm: TIMING_DRIVEN
+RouterOpts.base_cost_type: DELAY_NORMALIZED_LENGTH
+RouterOpts.fixed_channel_width: 300
+RouterOpts.check_route: FULL
+RouterOpts.acc_fac: 1.000000
+RouterOpts.bb_factor: 3
+RouterOpts.bend_cost: 0.000000
+RouterOpts.first_iter_pres_fac: 0.000000
+RouterOpts.initial_pres_fac: 0.500000
+RouterOpts.pres_fac_mult: 1.300000
+RouterOpts.max_pres_fac: 1000.000000
+RouterOpts.max_router_iterations: 1500
+RouterOpts.min_incremental_reroute_fanout: 16
+RouterOpts.do_check_rr_graph: true
+RouterOpts.verify_binary_search: false
+RouterOpts.min_channel_width_hint: 0
+RouterOpts.read_rr_edge_metadata: false
+RouterOpts.exit_after_first_routing_iteration: false
+RouterOpts.astar_fac: 1.200000
+RouterOpts.router_profiler_astar_fac: 1.200000
+RouterOpts.criticality_exp: 1.000000
+RouterOpts.max_criticality: 0.990000
+RouterOpts.init_wirelength_abort_threshold: 0.850000
+RouterOpts.incr_reroute_delay_ripup: AUTO
+RouterOpts.save_routing_per_iteration: false
+RouterOpts.congested_routing_iteration_threshold_frac: 1.000000
+RouterOpts.high_fanout_threshold: 64
+RouterOpts.router_debug_net: -2
+RouterOpts.router_debug_sink_rr: -2
+RouterOpts.router_debug_iteration: -2
+RouterOpts.max_convergence_count: 1
+RouterOpts.reconvergence_cpd_threshold: 0.990000
+RouterOpts.update_lower_bound_delays: true
+RouterOpts.first_iteration_timing_report_file: 
+RouterOpts.route_bb_update: DYNAMIC
+RouterOpts.lookahead_type: MAP
+RouterOpts.initial_timing: LOOKAHEAD
+RouterOpts.router_heap: BINARY_HEAP
+RouterOpts.routing_failure_predictor = SAFE
+RouterOpts.routing_budgets_algorithm = DISABLE
+
+AnalysisOpts.gen_post_synthesis_netlist: true
+AnalysisOpts.timing_report_npaths: 100
+AnalysisOpts.timing_report_skew: false
+AnalysisOpts.echo_dot_timing_graph_node: -1
+AnalysisOpts.timing_report_detail: DETAILED_ROUTING
+AnalysisOpts.post_synth_netlist_unconn_input_handling: GND
+AnalysisOpts.post_synth_netlist_unconn_output_handling: UNCONNECTED
+
+# Building complex block graph
+Warning 75: clb[0].sr_in[0] unconnected pin in architecture.
+Warning 76: clb[0].sr_out[0] unconnected pin in architecture.
+Warning 77: dsp[0].sr_in[0] unconnected pin in architecture.
+Warning 78: dsp[0].sr_in[1] unconnected pin in architecture.
+Warning 79: dsp[0].sr_in[2] unconnected pin in architecture.
+Warning 80: dsp[0].sr_out[0] unconnected pin in architecture.
+Warning 81: dsp[0].sr_out[1] unconnected pin in architecture.
+Warning 82: dsp[0].sr_out[2] unconnected pin in architecture.
+Warning 83: bram[0].sr_in[0] unconnected pin in architecture.
+Warning 84: bram[0].sr_in[1] unconnected pin in architecture.
+Warning 85: bram[0].sr_in[2] unconnected pin in architecture.
+Warning 86: bram[0].sr_in[3] unconnected pin in architecture.
+Warning 87: bram[0].sr_in[4] unconnected pin in architecture.
+Warning 88: bram[0].sr_in[5] unconnected pin in architecture.
+Warning 89: bram[0].plr_i[0] unconnected pin in architecture.
+Warning 90: bram[0].plr_i[1] unconnected pin in architecture.
+Warning 91: bram[0].plr_i[2] unconnected pin in architecture.
+Warning 92: bram[0].plr_i[3] unconnected pin in architecture.
+Warning 93: bram[0].plr_i[4] unconnected pin in architecture.
+Warning 94: bram[0].plr_i[5] unconnected pin in architecture.
+Warning 95: bram[0].plr_i[6] unconnected pin in architecture.
+Warning 96: bram[0].plr_i[7] unconnected pin in architecture.
+Warning 97: bram[0].plr_i[8] unconnected pin in architecture.
+Warning 98: bram[0].plr_i[9] unconnected pin in architecture.
+Warning 99: bram[0].plr_i[10] unconnected pin in architecture.
+Warning 100: bram[0].plr_i[11] unconnected pin in architecture.
+Warning 101: bram[0].plr_i[12] unconnected pin in architecture.
+Warning 102: bram[0].plr_i[13] unconnected pin in architecture.
+Warning 103: bram[0].plr_i[14] unconnected pin in architecture.
+Warning 104: bram[0].plr_i[15] unconnected pin in architecture.
+Warning 105: bram[0].plr_i[16] unconnected pin in architecture.
+Warning 106: bram[0].plr_i[17] unconnected pin in architecture.
+Warning 107: bram[0].plr_i[18] unconnected pin in architecture.
+Warning 108: bram[0].plr_i[19] unconnected pin in architecture.
+Warning 109: bram[0].plr_i[20] unconnected pin in architecture.
+Warning 110: bram[0].plr_i[21] unconnected pin in architecture.
+Warning 111: bram[0].plr_i[22] unconnected pin in architecture.
+Warning 112: bram[0].plr_i[23] unconnected pin in architecture.
+Warning 113: bram[0].plr_i[24] unconnected pin in architecture.
+Warning 114: bram[0].plr_i[25] unconnected pin in architecture.
+Warning 115: bram[0].plr_i[26] unconnected pin in architecture.
+Warning 116: bram[0].plr_i[27] unconnected pin in architecture.
+Warning 117: bram[0].plr_i[28] unconnected pin in architecture.
+Warning 118: bram[0].plr_i[29] unconnected pin in architecture.
+Warning 119: bram[0].plr_i[30] unconnected pin in architecture.
+Warning 120: bram[0].plr_i[31] unconnected pin in architecture.
+Warning 121: bram[0].plr_i[32] unconnected pin in architecture.
+Warning 122: bram[0].plr_i[33] unconnected pin in architecture.
+Warning 123: bram[0].plr_i[34] unconnected pin in architecture.
+Warning 124: bram[0].plr_i[35] unconnected pin in architecture.
+Warning 125: bram[0].sr_out[0] unconnected pin in architecture.
+Warning 126: bram[0].sr_out[1] unconnected pin in architecture.
+Warning 127: bram[0].sr_out[2] unconnected pin in architecture.
+Warning 128: bram[0].sr_out[3] unconnected pin in architecture.
+Warning 129: bram[0].sr_out[4] unconnected pin in architecture.
+Warning 130: bram[0].sr_out[5] unconnected pin in architecture.
+Warning 131: bram[0].plr_o[0] unconnected pin in architecture.
+Warning 132: bram[0].plr_o[1] unconnected pin in architecture.
+Warning 133: bram[0].plr_o[2] unconnected pin in architecture.
+Warning 134: bram[0].plr_o[3] unconnected pin in architecture.
+Warning 135: bram[0].plr_o[4] unconnected pin in architecture.
+Warning 136: bram[0].plr_o[5] unconnected pin in architecture.
+Warning 137: bram[0].plr_o[6] unconnected pin in architecture.
+Warning 138: bram[0].plr_o[7] unconnected pin in architecture.
+Warning 139: bram[0].plr_o[8] unconnected pin in architecture.
+Warning 140: bram[0].plr_o[9] unconnected pin in architecture.
+Warning 141: bram[0].plr_o[10] unconnected pin in architecture.
+Warning 142: bram[0].plr_o[11] unconnected pin in architecture.
+Warning 143: bram[0].plr_o[12] unconnected pin in architecture.
+Warning 144: bram[0].plr_o[13] unconnected pin in architecture.
+Warning 145: bram[0].plr_o[14] unconnected pin in architecture.
+Warning 146: bram[0].plr_o[15] unconnected pin in architecture.
+Warning 147: bram[0].plr_o[16] unconnected pin in architecture.
+Warning 148: bram[0].plr_o[17] unconnected pin in architecture.
+Warning 149: bram[0].plr_o[18] unconnected pin in architecture.
+Warning 150: bram[0].plr_o[19] unconnected pin in architecture.
+Warning 151: bram[0].plr_o[20] unconnected pin in architecture.
+Warning 152: bram[0].plr_o[21] unconnected pin in architecture.
+Warning 153: bram[0].plr_o[22] unconnected pin in architecture.
+Warning 154: bram[0].plr_o[23] unconnected pin in architecture.
+Warning 155: bram[0].plr_o[24] unconnected pin in architecture.
+Warning 156: bram[0].plr_o[25] unconnected pin in architecture.
+Warning 157: bram[0].plr_o[26] unconnected pin in architecture.
+Warning 158: bram[0].plr_o[27] unconnected pin in architecture.
+Warning 159: bram[0].plr_o[28] unconnected pin in architecture.
+Warning 160: bram[0].plr_o[29] unconnected pin in architecture.
+Warning 161: bram[0].plr_o[30] unconnected pin in architecture.
+Warning 162: bram[0].plr_o[31] unconnected pin in architecture.
+Warning 163: bram[0].plr_o[32] unconnected pin in architecture.
+Warning 164: bram[0].plr_o[33] unconnected pin in architecture.
+Warning 165: bram[0].plr_o[34] unconnected pin in architecture.
+Warning 166: bram[0].plr_o[35] unconnected pin in architecture.
+# Building complex block graph took 0.04 seconds (max_rss 107.9 MiB, delta_rss +0.0 MiB)
+Circuit file: /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/synthesis/fabric_bitonic_mesh_post_synth.eblif
+# Load circuit
+Found constant-zero generator '$false'
+Found constant-one generator '$true'
+Found constant-zero generator '$undef'
+# Load circuit took 22.18 seconds (max_rss 1625.7 MiB, delta_rss +1517.8 MiB)
+# Clean circuit
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred  436 additional primitive pins as constant generators due to constant inputs
+Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
+Inferred    0 additional primitive pins as constant generators due to constant inputs
+Swept input(s)      : 0
+Swept output(s)     : 0 (0 dangling, 0 constant)
+Swept net(s)        : 10200
+Swept block(s)      : 0
+Constant Pins Marked: 436
+# Clean circuit took 0.57 seconds (max_rss 1625.7 MiB, delta_rss +0.0 MiB)
+# Compress circuit
+# Compress circuit took 2.46 seconds (max_rss 1625.7 MiB, delta_rss +0.0 MiB)
+# Verify circuit
+# Verify circuit took 0.71 seconds (max_rss 1625.7 MiB, delta_rss +0.0 MiB)
+Circuit Statistics:
+  Blocks: 359191
+    .input           :     102
+    .output          :     182
+    0-LUT            :       3
+    6-LUT            :  185702
+    RS_DSP_MULT      :     300
+    RS_DSP_MULT_REGIN:     100
+    RS_TDP36K        :     200
+    adder_carry      :    9600
+    dffre            :  163002
+  Nets  : 386809
+    Avg Fanout:     4.4
+    Max Fanout: 168210.0
+    Min Fanout:     1.0
+  Netlist Clocks: 1
+# Build Timing Graph
+  Timing Graph Nodes: 2081391
+  Timing Graph Edges: 3752382
+  Timing Graph Levels: 94
+# Build Timing Graph took 8.35 seconds (max_rss 1625.7 MiB, delta_rss +0.0 MiB)
+Netlist contains 1 clocks
+  Netlist Clock 'clk' Fanout: 163902 pins (7.9%), 163302 blocks (45.5%)
+# Load Timing Constraints
+Warning 167: set_input_delay command matched but was not applied to primary output '$auto_14028771'
+Warning 168: set_input_delay command matched but was not applied to primary output '$auto_14028772'
+Warning 169: set_input_delay command matched but was not applied to primary output '$auto_14028773'
+Warning 170: set_input_delay command matched but was not applied to primary output '$auto_14028774'
+Warning 171: set_input_delay command matched but was not applied to primary output '$auto_14028775'
+Warning 172: set_input_delay command matched but was not applied to primary output '$auto_14028776'
+Warning 173: set_input_delay command matched but was not applied to primary output '$auto_14028777'
+Warning 174: set_input_delay command matched but was not applied to primary output '$auto_14028778'
+Warning 175: set_input_delay command matched but was not applied to primary output '$auto_14028779'
+Warning 176: set_input_delay command matched but was not applied to primary output '$auto_14028780'
+Warning 177: set_input_delay command matched but was not applied to primary output '$auto_14028781'
+Warning 178: set_input_delay command matched but was not applied to primary output '$auto_14028782'
+Warning 179: set_input_delay command matched but was not applied to primary output '$auto_14028783'
+Warning 180: set_input_delay command matched but was not applied to primary output '$auto_14028784'
+Warning 181: set_input_delay command matched but was not applied to primary output '$auto_14028785'
+Warning 182: set_input_delay command matched but was not applied to primary output '$auto_14028786'
+Warning 183: set_input_delay command matched but was not applied to primary output '$auto_14028787'
+Warning 184: set_input_delay command matched but was not applied to primary output '$auto_14028788'
+Warning 185: set_input_delay command matched but was not applied to primary output '$auto_14028789'
+Warning 186: set_input_delay command matched but was not applied to primary output '$auto_14028790'
+Warning 187: set_input_delay command matched but was not applied to primary output '$auto_14028791'
+Warning 188: set_input_delay command matched but was not applied to primary output '$auto_14028792'
+Warning 189: set_input_delay command matched but was not applied to primary output '$auto_14028793'
+Warning 190: set_input_delay command matched but was not applied to primary output '$auto_14028794'
+Warning 191: set_input_delay command matched but was not applied to primary output '$auto_14028795'
+Warning 192: set_input_delay command matched but was not applied to primary output '$auto_14028796'
+Warning 193: set_input_delay command matched but was not applied to primary output '$auto_14028797'
+Warning 194: set_input_delay command matched but was not applied to primary output '$auto_14028798'
+Warning 195: set_input_delay command matched but was not applied to primary output '$auto_14028799'
+Warning 196: set_input_delay command matched but was not applied to primary output '$auto_14028800'
+Warning 197: set_input_delay command matched but was not applied to primary output '$auto_14028801'
+Warning 198: set_input_delay command matched but was not applied to primary output '$auto_14028802'
+Warning 199: set_input_delay command matched but was not applied to primary output '$auto_14028803'
+Warning 200: set_input_delay command matched but was not applied to primary output '$auto_14028804'
+Warning 201: set_input_delay command matched but was not applied to primary output '$auto_14028805'
+Warning 202: set_input_delay command matched but was not applied to primary output '$auto_14028806'
+Warning 203: set_input_delay command matched but was not applied to primary output '$auto_14028807'
+Warning 204: set_input_delay command matched but was not applied to primary output '$auto_14028808'
+Warning 205: set_input_delay command matched but was not applied to primary output '$auto_14028809'
+Warning 206: set_input_delay command matched but was not applied to primary output '$auto_14028810'
+Warning 207: set_input_delay command matched but was not applied to primary output '$auto_14028811'
+Warning 208: set_input_delay command matched but was not applied to primary output '$auto_14028812'
+Warning 209: set_input_delay command matched but was not applied to primary output '$auto_14028813'
+Warning 210: set_input_delay command matched but was not applied to primary output '$auto_14028814'
+Warning 211: set_input_delay command matched but was not applied to primary output '$auto_14028815'
+Warning 212: set_input_delay command matched but was not applied to primary output '$auto_14028816'
+Warning 213: set_input_delay command matched but was not applied to primary output '$auto_14028817'
+Warning 214: set_input_delay command matched but was not applied to primary output '$auto_14028818'
+Warning 215: set_input_delay command matched but was not applied to primary output '$auto_14028819'
+Warning 216: set_input_delay command matched but was not applied to primary output '$auto_14028820'
+Warning 217: set_input_delay command matched but was not applied to primary output '$auto_14028821'
+Warning 218: set_input_delay command matched but was not applied to primary output '$auto_14028822'
+Warning 219: set_input_delay command matched but was not applied to primary output '$auto_14028823'
+Warning 220: set_input_delay command matched but was not applied to primary output '$auto_14028824'
+Warning 221: set_input_delay command matched but was not applied to primary output '$auto_14028825'
+Warning 222: set_input_delay command matched but was not applied to primary output '$auto_14028826'
+Warning 223: set_input_delay command matched but was not applied to primary output '$auto_14028827'
+Warning 224: set_input_delay command matched but was not applied to primary output '$auto_14028828'
+Warning 225: set_input_delay command matched but was not applied to primary output '$auto_14028829'
+Warning 226: set_input_delay command matched but was not applied to primary output '$auto_14028830'
+Warning 227: set_input_delay command matched but was not applied to primary output '$auto_14028831'
+Warning 228: set_input_delay command matched but was not applied to primary output '$auto_14028832'
+Warning 229: set_input_delay command matched but was not applied to primary output '$auto_14028833'
+Warning 230: set_input_delay command matched but was not applied to primary output '$auto_14028834'
+Warning 231: set_input_delay command matched but was not applied to primary output '$auto_14028835'
+Warning 232: set_input_delay command matched but was not applied to primary output '$auto_14028836'
+Warning 233: set_input_delay command matched but was not applied to primary output '$auto_14028837'
+Warning 234: set_input_delay command matched but was not applied to primary output '$auto_14028838'
+Warning 235: set_input_delay command matched but was not applied to primary output '$auto_14028839'
+Warning 236: set_input_delay command matched but was not applied to primary output '$auto_14028840'
+Warning 237: set_input_delay command matched but was not applied to primary output '$auto_14028841'
+Warning 238: set_input_delay command matched but was not applied to primary output '$auto_14028842'
+Warning 239: set_input_delay command matched but was not applied to primary output '$auto_14028843'
+Warning 240: set_input_delay command matched but was not applied to primary output '$auto_14028844'
+Warning 241: set_input_delay command matched but was not applied to primary output '$auto_14028845'
+Warning 242: set_input_delay command matched but was not applied to primary output '$auto_14028846'
+Warning 243: set_input_delay command matched but was not applied to primary output '$auto_14028847'
+Warning 244: set_input_delay command matched but was not applied to primary output '$auto_14028848'
+Warning 245: set_input_delay command matched but was not applied to primary output '$auto_14028849'
+Warning 246: set_input_delay command matched but was not applied to primary output '$auto_14028850'
+Warning 247: set_input_delay command matched but was not applied to primary output '$auto_14028851'
+Warning 248: set_input_delay command matched but was not applied to primary output '$auto_14028852'
+Warning 249: set_input_delay command matched but was not applied to primary output '$auto_14028853'
+Warning 250: set_input_delay command matched but was not applied to primary output '$auto_14028854'
+Warning 251: set_input_delay command matched but was not applied to primary output '$auto_14028855'
+Warning 252: set_input_delay command matched but was not applied to primary output '$auto_14028856'
+Warning 253: set_input_delay command matched but was not applied to primary output '$auto_14028857'
+Warning 254: set_input_delay command matched but was not applied to primary output '$auto_14028858'
+Warning 255: set_input_delay command matched but was not applied to primary output '$auto_14028859'
+Warning 256: set_input_delay command matched but was not applied to primary output '$auto_14028860'
+Warning 257: set_input_delay command matched but was not applied to primary output '$auto_14028861'
+Warning 258: set_input_delay command matched but was not applied to primary output '$auto_14028862'
+Warning 259: set_input_delay command matched but was not applied to primary output '$auto_14028863'
+Warning 260: set_input_delay command matched but was not applied to primary output '$auto_14028864'
+Warning 261: set_input_delay command matched but was not applied to primary output '$auto_14028865'
+Warning 262: set_input_delay command matched but was not applied to primary output '$auto_14028866'
+Warning 263: set_input_delay command matched but was not applied to primary output '$auto_14028867'
+Warning 264: set_input_delay command matched but was not applied to primary output '$auto_14028868'
+Warning 265: set_input_delay command matched but was not applied to primary output '$auto_14028869'
+Warning 266: set_input_delay command matched but was not applied to primary output '$auto_14028870'
+Warning 267: set_input_delay command matched but was not applied to primary output '$auto_14028871'
+Warning 268: set_input_delay command matched but was not applied to primary output '$auto_14028872'
+Warning 269: set_input_delay command matched but was not applied to primary output '$auto_14028873'
+Warning 270: set_input_delay command matched but was not applied to primary output '$auto_14028874'
+Warning 271: set_input_delay command matched but was not applied to primary output '$auto_14028875'
+Warning 272: set_input_delay command matched but was not applied to primary output '$auto_14028876'
+Warning 273: set_input_delay command matched but was not applied to primary output '$auto_14028877'
+Warning 274: set_input_delay command matched but was not applied to primary output '$auto_14028878'
+Warning 275: set_input_delay command matched but was not applied to primary output '$auto_14028879'
+Warning 276: set_input_delay command matched but was not applied to primary output '$auto_14028880'
+Warning 277: set_input_delay command matched but was not applied to primary output '$auto_14028881'
+Warning 278: set_input_delay command matched but was not applied to primary output '$auto_14028882'
+Warning 279: set_input_delay command matched but was not applied to primary output '$auto_14028883'
+Warning 280: set_input_delay command matched but was not applied to primary output '$auto_14028884'
+Warning 281: set_input_delay command matched but was not applied to primary output '$auto_14028885'
+Warning 282: set_input_delay command matched but was not applied to primary output '$auto_14028886'
+Warning 283: set_input_delay command matched but was not applied to primary output '$auto_14028887'
+Warning 284: set_input_delay command matched but was not applied to primary output '$auto_14028888'
+Warning 285: set_input_delay command matched but was not applied to primary output '$auto_14028889'
+Warning 286: set_input_delay command matched but was not applied to primary output '$auto_14028890'
+Warning 287: set_input_delay command matched but was not applied to primary output '$auto_14028891'
+Warning 288: set_input_delay command matched but was not applied to primary output '$auto_14028892'
+Warning 289: set_input_delay command matched but was not applied to primary output '$auto_14028893'
+Warning 290: set_input_delay command matched but was not applied to primary output '$auto_14028894'
+Warning 291: set_input_delay command matched but was not applied to primary output '$auto_14028895'
+Warning 292: set_input_delay command matched but was not applied to primary output '$auto_14028896'
+Warning 293: set_input_delay command matched but was not applied to primary output '$auto_14028897'
+Warning 294: set_input_delay command matched but was not applied to primary output '$auto_14028898'
+Warning 295: set_input_delay command matched but was not applied to primary output '$auto_14028899'
+Warning 296: set_input_delay command matched but was not applied to primary output '$auto_14028900'
+Warning 297: set_input_delay command matched but was not applied to primary output '$auto_14028901'
+Warning 298: set_input_delay command matched but was not applied to primary output '$auto_14028902'
+Warning 299: set_input_delay command matched but was not applied to primary output '$auto_14028903'
+Warning 300: set_input_delay command matched but was not applied to primary output '$auto_14028904'
+Warning 301: set_input_delay command matched but was not applied to primary output '$auto_14028905'
+Warning 302: set_input_delay command matched but was not applied to primary output '$auto_14028906'
+Warning 303: set_input_delay command matched but was not applied to primary output '$auto_14028907'
+Warning 304: set_input_delay command matched but was not applied to primary output '$auto_14028908'
+Warning 305: set_input_delay command matched but was not applied to primary output '$auto_14028909'
+Warning 306: set_input_delay command matched but was not applied to primary output '$auto_14028910'
+Warning 307: set_input_delay command matched but was not applied to primary output '$auto_14028911'
+Warning 308: set_input_delay command matched but was not applied to primary output '$auto_14028912'
+Warning 309: set_input_delay command matched but was not applied to primary output '$auto_14028913'
+Warning 310: set_input_delay command matched but was not applied to primary output '$auto_14028914'
+Warning 311: set_input_delay command matched but was not applied to primary output '$auto_14028915'
+Warning 312: set_input_delay command matched but was not applied to primary output '$auto_14028916'
+Warning 313: set_input_delay command matched but was not applied to primary output '$auto_14028917'
+Warning 314: set_input_delay command matched but was not applied to primary output '$auto_14028918'
+Warning 315: set_input_delay command matched but was not applied to primary output '$auto_14028919'
+Warning 316: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[0]'
+Warning 317: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[1]'
+Warning 318: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[2]'
+Warning 319: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[3]'
+Warning 320: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[4]'
+Warning 321: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[5]'
+Warning 322: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[6]'
+Warning 323: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[7]'
+Warning 324: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[8]'
+Warning 325: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[9]'
+Warning 326: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[10]'
+Warning 327: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[11]'
+Warning 328: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[12]'
+Warning 329: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[13]'
+Warning 330: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[14]'
+Warning 331: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[15]'
+Warning 332: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[16]'
+Warning 333: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[17]'
+Warning 334: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[18]'
+Warning 335: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[19]'
+Warning 336: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[20]'
+Warning 337: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[21]'
+Warning 338: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[22]'
+Warning 339: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[23]'
+Warning 340: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[24]'
+Warning 341: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[25]'
+Warning 342: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[26]'
+Warning 343: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[27]'
+Warning 344: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[28]'
+Warning 345: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[29]'
+Warning 346: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[30]'
+Warning 347: set_input_delay command matched but was not applied to primary output 'reg_file_b_readdataout[31]'
+Warning 348: set_input_delay command matched but was not applied to primary output 'wrGeneric'
+Warning 349: set_output_delay command matched but was not applied to primary input 'clk'
+Warning 350: set_output_delay command matched but was not applied to primary input 'boot_daddr[0]'
+Warning 351: set_output_delay command matched but was not applied to primary input 'boot_daddr[1]'
+Warning 352: set_output_delay command matched but was not applied to primary input 'boot_daddr[2]'
+Warning 353: set_output_delay command matched but was not applied to primary input 'boot_daddr[3]'
+Warning 354: set_output_delay command matched but was not applied to primary input 'boot_daddr[4]'
+Warning 355: set_output_delay command matched but was not applied to primary input 'boot_daddr[5]'
+Warning 356: set_output_delay command matched but was not applied to primary input 'boot_daddr[6]'
+Warning 357: set_output_delay command matched but was not applied to primary input 'boot_daddr[7]'
+Warning 358: set_output_delay command matched but was not applied to primary input 'boot_daddr[8]'
+Warning 359: set_output_delay command matched but was not applied to primary input 'boot_daddr[9]'
+Warning 360: set_output_delay command matched but was not applied to primary input 'boot_daddr[10]'
+Warning 361: set_output_delay command matched but was not applied to primary input 'boot_daddr[11]'
+Warning 362: set_output_delay command matched but was not applied to primary input 'boot_daddr[12]'
+Warning 363: set_output_delay command matched but was not applied to primary input 'boot_daddr[13]'
+Warning 364: set_output_delay command matched but was not applied to primary input 'boot_ddata[0]'
+Warning 365: set_output_delay command matched but was not applied to primary input 'boot_ddata[1]'
+Warning 366: set_output_delay command matched but was not applied to primary input 'boot_ddata[2]'
+Warning 367: set_output_delay command matched but was not applied to primary input 'boot_ddata[3]'
+Warning 368: set_output_delay command matched but was not applied to primary input 'boot_ddata[4]'
+Warning 369: set_output_delay command matched but was not applied to primary input 'boot_ddata[5]'
+Warning 370: set_output_delay command matched but was not applied to primary input 'boot_ddata[6]'
+Warning 371: set_output_delay command matched but was not applied to primary input 'boot_ddata[7]'
+Warning 372: set_output_delay command matched but was not applied to primary input 'boot_ddata[8]'
+Warning 373: set_output_delay command matched but was not applied to primary input 'boot_ddata[9]'
+Warning 374: set_output_delay command matched but was not applied to primary input 'boot_ddata[10]'
+Warning 375: set_output_delay command matched but was not applied to primary input 'boot_ddata[11]'
+Warning 376: set_output_delay command matched but was not applied to primary input 'boot_ddata[12]'
+Warning 377: set_output_delay command matched but was not applied to primary input 'boot_ddata[13]'
+Warning 378: set_output_delay command matched but was not applied to primary input 'boot_ddata[14]'
+Warning 379: set_output_delay command matched but was not applied to primary input 'boot_ddata[15]'
+Warning 380: set_output_delay command matched but was not applied to primary input 'boot_ddata[16]'
+Warning 381: set_output_delay command matched but was not applied to primary input 'boot_ddata[17]'
+Warning 382: set_output_delay command matched but was not applied to primary input 'boot_ddata[18]'
+Warning 383: set_output_delay command matched but was not applied to primary input 'boot_ddata[19]'
+Warning 384: set_output_delay command matched but was not applied to primary input 'boot_ddata[20]'
+Warning 385: set_output_delay command matched but was not applied to primary input 'boot_ddata[21]'
+Warning 386: set_output_delay command matched but was not applied to primary input 'boot_ddata[22]'
+Warning 387: set_output_delay command matched but was not applied to primary input 'boot_ddata[23]'
+Warning 388: set_output_delay command matched but was not applied to primary input 'boot_ddata[24]'
+Warning 389: set_output_delay command matched but was not applied to primary input 'boot_ddata[25]'
+Warning 390: set_output_delay command matched but was not applied to primary input 'boot_ddata[26]'
+Warning 391: set_output_delay command matched but was not applied to primary input 'boot_ddata[27]'
+Warning 392: set_output_delay command matched but was not applied to primary input 'boot_ddata[28]'
+Warning 393: set_output_delay command matched but was not applied to primary input 'boot_ddata[29]'
+Warning 394: set_output_delay command matched but was not applied to primary input 'boot_ddata[30]'
+Warning 395: set_output_delay command matched but was not applied to primary input 'boot_ddata[31]'
+Warning 396: set_output_delay command matched but was not applied to primary input 'boot_iaddr[0]'
+Warning 397: set_output_delay command matched but was not applied to primary input 'boot_iaddr[1]'
+Warning 398: set_output_delay command matched but was not applied to primary input 'boot_iaddr[2]'
+Warning 399: set_output_delay command matched but was not applied to primary input 'boot_iaddr[3]'
+Warning 400: set_output_delay command matched but was not applied to primary input 'boot_iaddr[4]'
+Warning 401: set_output_delay command matched but was not applied to primary input 'boot_iaddr[5]'
+Warning 402: set_output_delay command matched but was not applied to primary input 'boot_iaddr[6]'
+Warning 403: set_output_delay command matched but was not applied to primary input 'boot_iaddr[7]'
+Warning 404: set_output_delay command matched but was not applied to primary input 'boot_iaddr[8]'
+Warning 405: set_output_delay command matched but was not applied to primary input 'boot_iaddr[9]'
+Warning 406: set_output_delay command matched but was not applied to primary input 'boot_iaddr[10]'
+Warning 407: set_output_delay command matched but was not applied to primary input 'boot_iaddr[11]'
+Warning 408: set_output_delay command matched but was not applied to primary input 'boot_iaddr[12]'
+Warning 409: set_output_delay command matched but was not applied to primary input 'boot_iaddr[13]'
+Warning 410: set_output_delay command matched but was not applied to primary input 'boot_idata[0]'
+Warning 411: set_output_delay command matched but was not applied to primary input 'boot_idata[1]'
+Warning 412: set_output_delay command matched but was not applied to primary input 'boot_idata[2]'
+Warning 413: set_output_delay command matched but was not applied to primary input 'boot_idata[3]'
+Warning 414: set_output_delay command matched but was not applied to primary input 'boot_idata[4]'
+Warning 415: set_output_delay command matched but was not applied to primary input 'boot_idata[5]'
+Warning 416: set_output_delay command matched but was not applied to primary input 'boot_idata[6]'
+Warning 417: set_output_delay command matched but was not applied to primary input 'boot_idata[7]'
+Warning 418: set_output_delay command matched but was not applied to primary input 'boot_idata[8]'
+Warning 419: set_output_delay command matched but was not applied to primary input 'boot_idata[9]'
+Warning 420: set_output_delay command matched but was not applied to primary input 'boot_idata[10]'
+Warning 421: set_output_delay command matched but was not applied to primary input 'boot_idata[11]'
+Warning 422: set_output_delay command matched but was not applied to primary input 'boot_idata[12]'
+Warning 423: set_output_delay command matched but was not applied to primary input 'boot_idata[13]'
+Warning 424: set_output_delay command matched but was not applied to primary input 'boot_idata[14]'
+Warning 425: set_output_delay command matched but was not applied to primary input 'boot_idata[15]'
+Warning 426: set_output_delay command matched but was not applied to primary input 'boot_idata[16]'
+Warning 427: set_output_delay command matched but was not applied to primary input 'boot_idata[17]'
+Warning 428: set_output_delay command matched but was not applied to primary input 'boot_idata[18]'
+Warning 429: set_output_delay command matched but was not applied to primary input 'boot_idata[19]'
+Warning 430: set_output_delay command matched but was not applied to primary input 'boot_idata[20]'
+Warning 431: set_output_delay command matched but was not applied to primary input 'boot_idata[21]'
+Warning 432: set_output_delay command matched but was not applied to primary input 'boot_idata[22]'
+Warning 433: set_output_delay command matched but was not applied to primary input 'boot_idata[23]'
+Warning 434: set_output_delay command matched but was not applied to primary input 'boot_idata[24]'
+Warning 435: set_output_delay command matched but was not applied to primary input 'boot_idata[25]'
+Warning 436: set_output_delay command matched but was not applied to primary input 'boot_idata[26]'
+Warning 437: set_output_delay command matched but was not applied to primary input 'boot_idata[27]'
+Warning 438: set_output_delay command matched but was not applied to primary input 'boot_idata[28]'
+Warning 439: set_output_delay command matched but was not applied to primary input 'boot_idata[29]'
+Warning 440: set_output_delay command matched but was not applied to primary input 'boot_idata[30]'
+Warning 441: set_output_delay command matched but was not applied to primary input 'boot_idata[31]'
+Warning 442: set_output_delay command matched but was not applied to primary input 'processor_select[0]'
+Warning 443: set_output_delay command matched but was not applied to primary input 'processor_select[1]'
+Warning 444: set_output_delay command matched but was not applied to primary input 'processor_select[2]'
+Warning 445: set_output_delay command matched but was not applied to primary input 'processor_select[3]'
+Warning 446: set_output_delay command matched but was not applied to primary input 'processor_select[4]'
+Warning 447: set_output_delay command matched but was not applied to primary input 'processor_select[5]'
+Warning 448: set_output_delay command matched but was not applied to primary input 'processor_select[6]'
+Warning 449: set_output_delay command matched but was not applied to primary input 'processor_select[7]'
+Warning 450: set_output_delay command matched but was not applied to primary input 'resetn'
+
+Applied 3 SDC commands from '/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/packing/fabric_bitonic_mesh_openfpga.sdc'
+Timing constraints created 1 clocks
+  Constrained Clock 'clk' Source: 'clk.inpad[0]'
+
+# Load Timing Constraints took 0.85 seconds (max_rss 1625.7 MiB, delta_rss +0.0 MiB)
+# Load packing
+Begin loading packed FPGA netlist file.
+Netlist generated from file '/nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/packing/fabric_bitonic_mesh_post_synth.net'.
+Detected 3 constant generators (to see names run with higher pack verbosity)
+Finished loading packed FPGA netlist file (took 58.59 seconds).
+# Load packing took 62.08 seconds (max_rss 4299.6 MiB, delta_rss +2673.9 MiB)
+Warning 451: Netlist contains 0 global net to non-global architecture pin connections
+
+Pb types usage...
+  io                     : 284
+   io_output             : 182
+    outpad               : 182
+   io_input              : 102
+    inpad                : 102
+  clb                    : 30351
+   clb_lr                : 30351
+    fle                  : 240967
+     fast6               : 98345
+      lut6               : 98345
+       lut               : 98345
+     ble6                : 11026
+      lut6               : 11021
+       lut               : 11021
+      ff                 : 11026
+       DFFRE             : 11026
+     ble5                : 207743
+      lut5               : 73039
+       lut               : 73039
+      ff                 : 151976
+       DFFRE             : 151976
+     adder               : 9600
+      lut5               : 3300
+       lut               : 3300
+      adder_carry        : 9600
+  dsp                    : 400
+   dsp_lr                : 400
+    RS_DSP_MULT          : 300
+    RS_DSP_MULT_REGIN    : 100
+  bram                   : 200
+   bram_lr               : 200
+    mem_36K              : 200
+
+# Create Device
+## Build Device Grid
+FPGA sized to 322 x 220: 70840 grid tiles (castor320x218_heterogeneous)
+
+Resource usage...
+	Netlist
+		284	blocks of type: io
+	Architecture
+		22896	blocks of type: io_top
+		15696	blocks of type: io_right
+		22896	blocks of type: io_bottom
+		15696	blocks of type: io_left
+	Netlist
+		30351	blocks of type: clb
+	Architecture
+		58320	blocks of type: clb
+	Netlist
+		400	blocks of type: dsp
+	Architecture
+		1584	blocks of type: dsp
+	Netlist
+		200	blocks of type: bram
+	Architecture
+		1872	blocks of type: bram
+
+Device Utilization: 0.45 (target 1.00)
+	Physical Tile io_top:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_right:
+	Block Utilization: 0.02 Logical Block: io
+	Physical Tile io_bottom:
+	Block Utilization: 0.01 Logical Block: io
+	Physical Tile io_left:
+	Block Utilization: 0.02 Logical Block: io
+	Physical Tile clb:
+	Block Utilization: 0.52 Logical Block: clb
+	Physical Tile dsp:
+	Block Utilization: 0.25 Logical Block: dsp
+	Physical Tile bram:
+	Block Utilization: 0.11 Logical Block: bram
+
+## Build Device Grid took 0.02 seconds (max_rss 4299.6 MiB, delta_rss +0.0 MiB)
+Warning 452: Tileable routing resource graph does not support clock modeling yet! Related options are ignored...
+## Build tileable routing resource graph
+X-direction routing channel width is 300
+Y-direction routing channel width is 300
+Warning 453: Sized nonsensical R=0 transistor to minimum width
+Warning 454: Sized nonsensical R=0 transistor to minimum width
+Warning 455: Sized nonsensical R=0 transistor to minimum width
+Warning 456: Sized nonsensical R=0 transistor to minimum width
+## Build tileable routing resource graph took 601.96 seconds (max_rss 16979.1 MiB, delta_rss +12679.5 MiB)
+  RR Graph Nodes: 31044240
+  RR Graph Edges: 259742010
+# Create Device took 619.76 seconds (max_rss 16979.1 MiB, delta_rss +12679.5 MiB)
+
+# Load Placement
+Reading /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/placement/fabric_bitonic_mesh_post_synth.place.
+
+Successfully read /nfs_scratch/scratch/CompilerValidation/zaheer_ahmad/os-fpga/Validation/RTL_testcases/titan_benchmarks/bitonic_mesh/bitonic_mesh/run_1/synth_1_1/impl_1_1_1/placement/fabric_bitonic_mesh_post_synth.place.
+
+# Load Placement took 5.07 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+
+# Computing router lookahead map
+## Computing wire lookahead
+## Computing wire lookahead took 2429.37 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead
+Warning 457: Found no more ample locations for SOURCE in io_top
+Warning 458: Found no more ample locations for OPIN in io_top
+Warning 459: Found no more ample locations for SOURCE in io_right
+Warning 460: Found no more ample locations for OPIN in io_right
+Warning 461: Found no more ample locations for SOURCE in io_bottom
+Warning 462: Found no more ample locations for OPIN in io_bottom
+Warning 463: Found no more ample locations for SOURCE in io_left
+Warning 464: Found no more ample locations for OPIN in io_left
+Warning 465: Found no more ample locations for SOURCE in clb
+Warning 466: Found no more ample locations for OPIN in clb
+Warning 467: Found no more ample locations for SOURCE in dsp
+Warning 468: Found no more ample locations for OPIN in dsp
+Warning 469: Found no more ample locations for SOURCE in bram
+Warning 470: Found no more ample locations for OPIN in bram
+## Computing src/opin lookahead took 4.73 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 2436.91 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+# Routing
+RR graph channel widths unchanged, skipping RR graph rebuild
+## Initializing router criticalities
+Initial Net Connection Criticality Histogram:
+[        0:      0.1) 118983 ( 14.1%) |***********************
+[      0.1:      0.2) 228618 ( 27.1%) |********************************************
+[      0.2:      0.3) 108823 ( 12.9%) |*********************
+[      0.3:      0.4) 120000 ( 14.2%) |***********************
+[      0.4:      0.5) 124127 ( 14.7%) |************************
+[      0.5:      0.6)  82284 (  9.8%) |****************
+[      0.6:      0.7)  42885 (  5.1%) |********
+[      0.7:      0.8)  14807 (  1.8%) |***
+[      0.8:      0.9)   1828 (  0.2%) |
+[      0.9:        1)   1121 (  0.1%) |
+## Initializing router criticalities took 17.28 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
+      (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
+---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
+   1   54.6     0.0    0 1.4e+08  266389  815079  596075 ( 1.920%) 7487024 (17.8%)   24.239 -1.809e+06    -21.739      0.000      0.000      N/A
+   2   70.8     0.5 3561 1.6e+08  208990  713304  292417 ( 0.942%) 7506241 (17.9%)   23.169 -1.812e+06    -20.669      0.000      0.000      N/A
+   3   70.2     0.6 2898 1.6e+08  169332  592445  232413 ( 0.749%) 7613618 (18.1%)   23.169 -1.805e+06    -20.669      0.000      0.000      N/A
+   4   74.6     0.8 2607 1.6e+08  142982  527565  176633 ( 0.569%) 7686559 (18.3%)   23.038 -1.804e+06    -20.538      0.000      0.000      N/A
+   5   77.1     1.1 2126 1.6e+08  117684  455824  126090 ( 0.406%) 7762181 (18.5%)   25.662 -1.822e+06    -23.162      0.000      0.000      N/A
+   6   79.9     1.4 1661 1.6e+08   90073  369024   82689 ( 0.266%) 7830259 (18.6%)   22.758 -1.843e+06    -20.258      0.000      0.000      N/A
+   7   62.6     1.9 1142 1.2e+08   67062  285743   55281 ( 0.178%) 7891685 (18.8%)   23.105 -1.842e+06    -20.605      0.000      0.000      N/A
+   8   57.6     2.4  746 9.1e+07   46296  207569   31522 ( 0.102%) 7942701 (18.9%)   23.105 -1.848e+06    -20.605      0.000      0.000      N/A
+   9   44.9     3.1  518 6.0e+07   27962  126315   14911 ( 0.048%) 7983085 (19.0%)   23.105 -1.847e+06    -20.605      0.000      0.000      N/A
+  10   28.9     4.1  319 3.1e+07   14167   63217    5726 ( 0.018%) 8009165 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       28
+  11   19.7     5.3  143 1.4e+07    5565   22685    1493 ( 0.005%) 8022935 (19.1%)   22.986 -1.854e+06    -20.486      0.000      0.000       23
+  12   11.1     6.9   59 4229437    1742    8706     342 ( 0.001%) 8027129 (19.1%)   22.986 -1.854e+06    -20.486      0.000      0.000       21
+  13    8.5     9.0   22  800319     459    1851      62 ( 0.000%) 8028442 (19.1%)   23.105 -1.855e+06    -20.605      0.000      0.000       18
+  14   10.4    11.6    0  272437     216     952      16 ( 0.000%) 8028630 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       17
+  15   10.2    15.1    0  205774     169     785       9 ( 0.000%) 8028651 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       16
+  16    9.7    19.7    0  140740     158     777       4 ( 0.000%) 8028659 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       17
+  17    9.6    25.6    0  112544     153     760       2 ( 0.000%) 8028677 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       17
+  18    9.9    33.3    0  112089     150     753       1 ( 0.000%) 8028680 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       17
+  19    9.8    43.3    0  112796     152     761       1 ( 0.000%) 8028665 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       17
+  20   10.0    56.2    0  113154     150     753       0 ( 0.000%) 8028688 (19.1%)   23.105 -1.854e+06    -20.605      0.000      0.000       18
+Restoring best routing
+Critical path: 23.1048 ns
+Successfully routed after 20 routing iterations.
+Final Net Connection Criticality Histogram:
+[        0:      0.1) 111911 ( 13.3%) |***********************
+[      0.1:      0.2) 214668 ( 25.5%) |********************************************
+[      0.2:      0.3) 108225 ( 12.8%) |**********************
+[      0.3:      0.4)  95397 ( 11.3%) |********************
+[      0.4:      0.5) 138478 ( 16.4%) |****************************
+[      0.5:      0.6)  92352 ( 10.9%) |*******************
+[      0.6:      0.7)  58374 (  6.9%) |************
+[      0.7:      0.8)  19100 (  2.3%) |****
+[      0.8:      0.9)   3593 (  0.4%) |*
+[      0.9:        1)   1378 (  0.2%) |
+Router Stats: total_nets_routed: 1159851 total_connections_routed: 4194868 total_heap_pushes: 1262933832 total_heap_pops: 299456740 
+# Routing took 770.11 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+
+Checking to ensure routing is legal...
+# Checking to ensure non-configurable edges are legal
+# Checking to ensure non-configurable edges are legal took 3.11 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+Completed routing consistency check successfully.
+
+Serial number (magic cookie) for the routing is: 252481509
+Circuit successfully routed with a channel width factor of 300.
+# Synchronize the packed netlist to routing optimization
+OK: before pb_pin_fixup: pb_route connectivity is consistent in all 31235 blocks
+## Annotating rr_node with routed nets
+## Annotating rr_node with routed nets took 0.89 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+Found 1047141 mismatches between routing and packing results.
+Fixed 737875 routing traces due to mismatch between routing and packing results.
+OK: after pb_pin_fixup: pb_route connectivity is consistent in all 31235 blocks
+# Synchronize the packed netlist to routing optimization took 18.67 seconds (max_rss 16979.1 MiB, delta_rss +0.0 MiB)
+Clustering Statistics: 
+----------   --------   ------------------------------------   --------------------------
+Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
+----------   --------   ------------------------------------   --------------------------
+     EMPTY          0                                      0                            0   
+        io        284                               0.640845                     0.359155   
+       clb      30351                                26.8361                      8.13443   
+       dsp        400                                39.7275                         32.5   
+      bram        200                                   64.5                           32   
+Absorbed logical nets 120419 out of 386809 nets, 266390 nets not absorbed.
+
+
+Average number of bends per net: 7.52832  Maximum # of bends: 21547
+
+Number of global nets: 1
+Number of routed nets (nonglobal): 266389
+Wire length results (in units of 1 clb segments)...
+	Total wirelength: 8028688, average net length: 30.1390
+	Maximum net length: 93946
+
+Wire length results in terms of physical segments...
+	Total wiring segments used: 2905655, average wire segments per net: 10.9076
+	Maximum segments used by a net: 39256
+	Total local nets with reserved CLB opins: 0
+Total number of nets absorbed: 1100
+
+Routing channel utilization histogram:
+[        1:      inf)     0 (  0.0%) |
+[      0.9:        1)     0 (  0.0%) |
+[      0.8:      0.9)     0 (  0.0%) |
+[      0.7:      0.8)   998 (  0.7%) |*
+[      0.5:      0.6) 13250 (  9.4%) |*********
+[      0.4:      0.5) 22316 ( 15.9%) |***************
+[      0.3:      0.4) 21952 ( 15.6%) |**************
+[      0.2:      0.3)  9924 (  7.1%) |******
+[      0.1:      0.2)  2962 (  2.1%) |**
+[        0:      0.1) 69196 ( 49.2%) |*********************************************
+Maximum routing channel utilization:      0.68 at (156,122)
+
+X - Directed channels:   j max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       3   0.208      300
+                         1      40   2.460      300
+                         2       9   0.472      300
+                         3      10   0.422      300
+                         4       8   0.674      300
+                         5      19   0.966      300
+                         6       2   0.230      300
+                         7       5   0.391      300
+                         8       8   1.016      300
+                         9      13   0.640      300
+                        10       3   0.270      300
+                        11       5   0.379      300
+                        12       6   0.745      300
+                        13      12   0.624      300
+                        14       4   0.248      300
+                        15       4   0.335      300
+                        16       7   0.646      300
+                        17      10   0.649      300
+                        18      15   0.811      300
+                        19      75   4.304      300
+                        20      81   7.916      300
+                        21      94  11.137      300
+                        22     110  13.807      300
+                        23     119  17.407      300
+                        24     134  20.981      300
+                        25     128  24.230      300
+                        26     131  28.304      300
+                        27     131  32.000      300
+                        28     146  34.860      300
+                        29     140  36.509      300
+                        30     163  38.382      300
+                        31     163  40.481      300
+                        32     172  42.130      300
+                        33     161  44.087      300
+                        34     167  46.609      300
+                        35     157  48.755      300
+                        36     146  50.708      300
+                        37     142  51.767      300
+                        38     137  52.851      300
+                        39     143  55.478      300
+                        40     156  57.314      300
+                        41     153  59.898      300
+                        42     155  60.494      300
+                        43     160  62.401      300
+                        44     157  63.938      300
+                        45     161  64.612      300
+                        46     160  63.584      300
+                        47     161  64.621      300
+                        48     161  64.447      300
+                        49     163  63.553      300
+                        50     164  64.696      300
+                        51     163  66.988      300
+                        52     165  69.146      300
+                        53     150  68.394      300
+                        54     163  69.102      300
+                        55     157  71.720      300
+                        56     169  74.422      300
+                        57     150  74.904      300
+                        58     146  78.009      300
+                        59     155  81.888      300
+                        60     158  84.453      300
+                        61     168  86.342      300
+                        62     167  88.174      300
+                        63     183  88.342      300
+                        64     181  89.056      300
+                        65     170  89.972      300
+                        66     168  88.298      300
+                        67     170  87.155      300
+                        68     170  86.028      300
+                        69     165  86.553      300
+                        70     166  85.863      300
+                        71     160  88.025      300
+                        72     171  90.112      300
+                        73     169  89.842      300
+                        74     178  91.708      300
+                        75     186  92.360      300
+                        76     185  93.748      300
+                        77     196  97.298      300
+                        78     182  96.177      300
+                        79     190  97.795      300
+                        80     187  98.854      300
+                        81     190  99.130      300
+                        82     185  97.795      300
+                        83     185  99.742      300
+                        84     189  99.363      300
+                        85     187 100.497      300
+                        86     189 100.062      300
+                        87     183 100.817      300
+                        88     195 102.276      300
+                        89     194 103.444      300
+                        90     184 103.696      300
+                        91     184 104.627      300
+                        92     189 104.733      300
+                        93     188 104.040      300
+                        94     189 105.391      300
+                        95     188 104.748      300
+                        96     186 105.714      300
+                        97     184 105.879      300
+                        98     186 106.450      300
+                        99     179 105.876      300
+                       100     193 105.000      300
+                       101     195 105.019      300
+                       102     196 104.388      300
+                       103     190 104.438      300
+                       104     198 103.317      300
+                       105     186 100.351      300
+                       106     188 100.165      300
+                       107     183  98.227      300
+                       108     180  95.693      300
+                       109     183  97.491      300
+                       110     180  97.724      300
+                       111     181  97.752      300
+                       112     181  96.854      300
+                       113     183  97.276      300
+                       114     183  98.137      300
+                       115     194  98.724      300
+                       116     199 100.832      300
+                       117     192  98.845      300
+                       118     196  99.606      300
+                       119     194 102.205      300
+                       120     196  99.621      300
+                       121     198 100.298      300
+                       122     203 101.699      300
+                       123     196 100.503      300
+                       124     186  99.910      300
+                       125     192 100.196      300
+                       126     184  99.034      300
+                       127     192  97.307      300
+                       128     196  97.211      300
+                       129     202  97.137      300
+                       130     195  96.606      300
+                       131     192  96.947      300
+                       132     195  97.798      300
+                       133     195  96.736      300
+                       134     188  97.009      300
+                       135     189  96.488      300
+                       136     188  93.975      300
+                       137     194  93.332      300
+                       138     181  92.854      300
+                       139     186  90.183      300
+                       140     182  90.031      300
+                       141     181  88.286      300
+                       142     193  87.497      300
+                       143     175  88.568      300
+                       144     188  88.115      300
+                       145     190  88.311      300
+                       146     191  88.217      300
+                       147     193  89.289      300
+                       148     185  90.040      300
+                       149     195  91.640      300
+                       150     198  90.677      300
+                       151     197  90.460      300
+                       152     201  89.885      300
+                       153     195  90.217      300
+                       154     194  88.140      300
+                       155     200  88.075      300
+                       156     188  85.537      300
+                       157     186  82.289      300
+                       158     185  81.140      300
+                       159     186  78.730      300
+                       160     188  77.071      300
+                       161     181  75.255      300
+                       162     177  74.230      300
+                       163     174  72.693      300
+                       164     175  72.031      300
+                       165     171  70.770      300
+                       166     163  68.873      300
+                       167     165  67.866      300
+                       168     165  65.283      300
+                       169     167  64.168      300
+                       170     171  62.407      300
+                       171     161  61.248      300
+                       172     162  57.898      300
+                       173     159  55.969      300
+                       174     158  54.295      300
+                       175     159  53.143      300
+                       176     173  52.733      300
+                       177     148  49.801      300
+                       178     134  47.674      300
+                       179     147  47.882      300
+                       180     142  45.705      300
+                       181     159  45.829      300
+                       182     157  44.627      300
+                       183     148  43.320      300
+                       184     138  40.506      300
+                       185     143  37.758      300
+                       186     124  36.705      300
+                       187     123  34.096      300
+                       188     121  32.789      300
+                       189     119  30.699      300
+                       190     119  27.671      300
+                       191     117  26.301      300
+                       192     114  23.947      300
+                       193     112  22.084      300
+                       194     110  19.071      300
+                       195     107  14.575      300
+                       196     102  11.826      300
+                       197     101   9.301      300
+                       198     109   7.519      300
+                       199      85   5.180      300
+                       200      85   3.298      300
+                       201      75   2.121      300
+                       202      55   1.155      300
+                       203       6   0.084      300
+                       204       1   0.006      300
+                       205       1   0.006      300
+                       206       2   0.047      300
+                       207       2   0.022      300
+                       208       1   0.016      300
+                       209       1   0.016      300
+                       210       4   0.047      300
+                       211       3   0.034      300
+                       212       1   0.003      300
+                       213       1   0.016      300
+                       214       3   0.034      300
+                       215       1   0.006      300
+                       216       1   0.009      300
+                       217       2   0.022      300
+                       218       2   0.031      300
+Y - Directed channels:   i max occ ave occ capacity
+                      ---- ------- ------- --------
+                         0       0   0.000      300
+                         1       0   0.000      300
+                         2       0   0.000      300
+                         3       0   0.000      300
+                         4       0   0.000      300
+                         5       0   0.000      300
+                         6       0   0.000      300
+                         7       0   0.000      300
+                         8       0   0.000      300
+                         9       0   0.000      300
+                        10       0   0.000      300
+                        11       0   0.000      300
+                        12       0   0.000      300
+                        13       0   0.000      300
+                        14       0   0.000      300
+                        15       0   0.000      300
+                        16       0   0.000      300
+                        17       0   0.000      300
+                        18       0   0.000      300
+                        19       0   0.000      300
+                        20       0   0.000      300
+                        21       0   0.000      300
+                        22       0   0.000      300
+                        23       0   0.000      300
+                        24       0   0.000      300
+                        25       0   0.000      300
+                        26       0   0.000      300
+                        27       0   0.000      300
+                        28       0   0.000      300
+                        29       0   0.000      300
+                        30       0   0.000      300
+                        31       0   0.000      300
+                        32       0   0.000      300
+                        33       2   0.027      300
+                        34       3   0.082      300
+                        35      18   1.077      300
+                        36      55   5.118      300
+                        37      83   8.818      300
+                        38      91  12.582      300
+                        39      90  16.150      300
+                        40      61   9.291      300
+                        41      93  21.236      300
+                        42     109  25.027      300
+                        43      97  26.736      300
+                        44     103  29.668      300
+                        45      95  27.818      300
+                        46      67  16.345      300
+                        47     109  32.532      300
+                        48     105  34.273      300
+                        49     104  33.232      300
+                        50     120  38.186      300
+                        51     128  40.950      300
+                        52     128  40.986      300
+                        53     135  31.527      300
+                        54     137  45.841      300
+                        55     118  45.427      300
+                        56     123  47.164      300
+                        57     131  49.032      300
+                        58     126  46.605      300
+                        59     128  36.909      300
+                        60     137  51.373      300
+                        61     137  51.095      300
+                        62     143  50.132      300
+                        63     135  50.764      300
+                        64     137  50.841      300
+                        65     139  48.364      300
+                        66     133  36.609      300
+                        67     129  49.645      300
+                        68     149  49.941      300
+                        69     132  50.145      300
+                        70     139  51.723      300
+                        71     131  50.141      300
+                        72     129  38.323      300
+                        73     145  57.141      300
+                        74     149  60.386      300
+                        75     147  62.818      300
+                        76     142  64.823      300
+                        77     147  68.405      300
+                        78     146  68.986      300
+                        79     142  59.082      300
+                        80     161  70.809      300
+                        81     152  68.064      300
+                        82     151  68.282      300
+                        83     152  70.255      300
+                        84     148  66.873      300
+                        85     129  49.836      300
+                        86     147  70.486      300
+                        87     155  71.845      300
+                        88     157  70.923      300
+                        89     160  74.755      300
+                        90     147  74.450      300
+                        91     157  70.964      300
+                        92     154  54.650      300
+                        93     154  74.745      300
+                        94     143  74.582      300
+                        95     145  74.136      300
+                        96     153  76.586      300
+                        97     158  73.214      300
+                        98     138  60.514      300
+                        99     156  78.368      300
+                       100     153  80.082      300
+                       101     166  79.723      300
+                       102     160  80.814      300
+                       103     150  82.091      300
+                       104     148  78.209      300
+                       105     132  63.400      300
+                       106     158  81.018      300
+                       107     162  82.750      300
+                       108     159  81.900      300
+                       109     157  81.477      300
+                       110     158  83.282      300
+                       111     164  69.614      300
+                       112     158  85.741      300
+                       113     171  87.418      300
+                       114     169  88.764      300
+                       115     171  90.005      300
+                       116     179  90.114      300
+                       117     169  86.818      300
+                       118     155  73.527      300
+                       119     165  91.736      300
+                       120     170  92.086      300
+                       121     172  91.082      300
+                       122     163  88.191      300
+                       123     165  87.945      300
+                       124     168  73.309      300
+                       125     170  90.568      300
+                       126     165  93.250      300
+                       127     163  93.986      300
+                       128     163  96.164      300
+                       129     170  97.995      300
+                       130     168  97.091      300
+                       131     157  79.300      300
+                       132     178  96.445      300
+                       133     170  96.764      300
+                       134     179  96.082      300
+                       135     185  98.523      300
+                       136     178  95.450      300
+                       137     169  83.205      300
+                       138     171  96.477      300
+                       139     177  94.336      300
+                       140     170  92.195      300
+                       141     173  91.750      300
+                       142     161  90.705      300
+                       143     167  88.386      300
+                       144     156  73.409      300
+                       145     174  90.936      300
+                       146     177  94.777      300
+                       147     180  95.427      300
+                       148     175  99.818      300
+                       149     173  99.245      300
+                       150     169  85.441      300
+                       151     182 103.782      300
+                       152     181 105.568      300
+                       153     185 102.005      300
+                       154     170 101.286      300
+                       155     180 100.423      300
+                       156     181  99.405      300
+                       157     160  80.445      300
+                       158     179 101.291      300
+                       159     178 100.314      300
+                       160     164  97.627      300
+                       161     175  99.750      300
+                       162     169  97.245      300
+                       163     174  94.505      300
+                       164     145  77.668      300
+                       165     190  98.773      300
+                       166     171 101.200      300
+                       167     174  99.459      300
+                       168     186 101.200      300
+                       169     173 100.527      300
+                       170     172 100.909      300
+                       171     172  88.564      300
+                       172     176 102.823      300
+                       173     175 104.341      300
+                       174     171 102.064      300
+                       175     170 103.264      300
+                       176     169  98.732      300
+                       177     150  82.823      300
+                       178     166  98.800      300
+                       179     170  99.914      300
+                       180     178  97.114      300
+                       181     168  96.764      300
+                       182     181  95.782      300
+                       183     170  93.114      300
+                       184     163  78.073      300
+                       185     171  95.368      300
+                       186     178  95.595      300
+                       187     170  96.827      300
+                       188     174  95.509      300
+                       189     159  92.445      300
+                       190     157  74.832      300
+                       191     159  93.341      300
+                       192     161  90.473      300
+                       193     163  93.668      300
+                       194     156  90.982      300
+                       195     152  91.073      300
+                       196     155  87.100      300
+                       197     156  75.041      300
+                       198     171  91.609      300
+                       199     174  91.141      300
+                       200     154  90.295      300
+                       201     165  92.005      300
+                       202     162  86.355      300
+                       203     132  66.918      300
+                       204     166  87.268      300
+                       205     163  88.668      300
+                       206     158  86.545      300
+                       207     176  86.764      300
+                       208     168  86.259      300
+                       209     160  81.873      300
+                       210     138  65.086      300
+                       211     141  78.255      300
+                       212     146  77.609      300
+                       213     154  78.814      300
+                       214     145  77.350      300
+                       215     154  72.259      300
+                       216     130  54.059      300
+                       217     138  73.568      300
+                       218     146  74.014      300
+                       219     138  71.373      300
+                       220     140  72.673      300
+                       221     138  70.736      300
+                       222     127  67.582      300
+                       223     111  50.991      300
+                       224     133  67.150      300
+                       225     132  64.614      300
+                       226     148  67.827      300
+                       227     155  68.586      300
+                       228     153  64.123      300
+                       229     121  49.805      300
+                       230     157  68.145      300
+                       231     149  68.500      300
+                       232     140  67.359      300
+                       233     162  66.982      300
+                       234     156  66.895      300
+                       235     146  61.055      300
+                       236     121  44.600      300
+                       237     143  59.032      300
+                       238     147  60.268      300
+                       239     132  60.273      300
+                       240     136  60.936      300
+                       241     150  61.118      300
+                       242     137  49.923      300
+                       243     162  62.873      300
+                       244     144  61.686      300
+                       245     145  59.923      300
+                       246     135  58.664      300
+                       247     161  58.636      300
+                       248     150  53.673      300
+                       249     113  36.495      300
+                       250     149  53.936      300
+                       251     151  52.173      300
+                       252     133  50.405      300
+                       253     124  51.545      300
+                       254     128  48.764      300
+                       255     113  37.786      300
+                       256     139  52.073      300
+                       257     140  49.732      300
+                       258     123  47.782      300
+                       259     136  46.995      300
+                       260     135  46.364      300
+                       261     140  43.941      300
+                       262     106  32.955      300
+                       263     139  44.841      300
+                       264     131  44.045      300
+                       265     125  41.473      300
+                       266     130  38.945      300
+                       267     111  36.886      300
+                       268     102  25.155      300
+                       269     112  37.468      300
+                       270     133  36.145      300
+                       271     113  31.905      300
+                       272     113  31.182      300
+                       273     110  27.432      300
+                       274     103  20.868      300
+                       275      61   8.909      300
+                       276     101  17.505      300
+                       277      90  13.391      300
+                       278      88  11.755      300
+                       279      92   9.250      300
+                       280      74   6.677      300
+                       281      26   1.591      300
+                       282      59   3.586      300
+                       283      36   1.418      300
+                       284       3   0.059      300
+                       285       0   0.000      300
+                       286       0   0.000      300
+                       287       0   0.000      300
+                       288       0   0.000      300
+                       289       0   0.000      300
+                       290       0   0.000      300
+                       291       0   0.000      300
+                       292       0   0.000      300
+                       293       0   0.000      300
+                       294       0   0.000      300
+                       295       0   0.000      300
+                       296       0   0.000      300
+                       297       0   0.000      300
+                       298       0   0.000      300
+                       299       0   0.000      300
+                       300       0   0.000      300
+                       301       0   0.000      300
+                       302       0   0.000      300
+                       303       0   0.000      300
+                       304       0   0.000      300
+                       305       0   0.000      300
+                       306       0   0.000      300
+                       307       0   0.000      300
+                       308       0   0.000      300
+                       309       0   0.000      300
+                       310       0   0.000      300
+                       311       0   0.000      300
+                       312       0   0.000      300
+                       313       0   0.000      300
+                       314       0   0.000      300
+                       315       0   0.000      300
+                       316       0   0.000      300
+                       317       0   0.000      300
+                       318       0   0.000      300
+                       319       0   0.000      300
+                       320       0   0.000      300
+
+Total tracks in x-direction: 65700, in y-direction: 96300
+
+Logic area (in minimum width transistor areas, excludes I/Os and empty grid tiles)...
+	Total logic block area (Warning, need to add pitch of routing to blocks with height > 3): 5.03873e+09
+	Total used logic block area: 1.96436e+09
+
+Routing area (in minimum width transistor areas)...
+	Total routing area: 1.61332e+09, per logic tile: 22774.2
+
+Total Number of Wiring Segments by Direction: direction length number
+                                              --------- ------ -------
+                                                      X      1 4204800
+                                                      Y      1 4198680
+                                                      X      4 4244220
+                                                      Y      4 4256460
+
+X - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1       0.138
+                                             4       0.221
+
+Y - Directed Wiring Segment usage by length: length utilization
+                                             ------ -----------
+                                             1       0.147
+                                             4       0.181
+
+Segment occupancy by length: Length utilization
+                             ------ -----------
+                             L1           0.143
+                             L4           0.201
+
+Segment occupancy by type: name type utilization
+                           ---- ---- -----------
+                             L1    0       0.143
+                             L4    1       0.201
+
+Final hold Worst Negative Slack (hWNS): 0 ns
+Final hold Total Negative Slack (hTNS): 0 ns
+
+Final hold slack histogram:
+[  1.4e-10:  1.9e-09) 244986 ( 70.7%) |********************************************
+[  1.9e-09:  3.7e-09)  64745 ( 18.7%) |************
+[  3.7e-09:  5.5e-09)  13672 (  3.9%) |**
+[  5.5e-09:  7.3e-09)   9239 (  2.7%) |**
+[  7.3e-09:  9.1e-09)   6301 (  1.8%) |*
+[  9.1e-09:  1.1e-08)   4860 (  1.4%) |*
+[  1.1e-08:  1.3e-08)   2168 (  0.6%) |
+[  1.3e-08:  1.4e-08)    413 (  0.1%) |
+[  1.4e-08:  1.6e-08)     75 (  0.0%) |
+[  1.6e-08:  1.8e-08)     19 (  0.0%) |
+
+Final critical path delay (least slack): 23.1048 ns, Fmax: 43.281 MHz
+Final setup Worst Negative Slack (sWNS): -20.6048 ns
+Final setup Total Negative Slack (sTNS): -1.85449e+06 ns
+
+Final setup slack histogram:
+[ -2.1e-08: -1.8e-08)   851 (  0.2%) |
+[ -1.8e-08: -1.6e-08)   927 (  0.3%) |
+[ -1.6e-08: -1.4e-08)  5246 (  1.5%) |***
+[ -1.4e-08: -1.2e-08) 21048 (  6.1%) |***********
+[ -1.2e-08: -9.2e-09) 42630 ( 12.3%) |**********************
+[ -9.2e-09:   -7e-09) 61418 ( 17.7%) |*******************************
+[   -7e-09: -4.7e-09) 38149 ( 11.0%) |********************
+[ -4.7e-09: -2.4e-09) 57910 ( 16.7%) |******************************
+[ -2.4e-09: -1.4e-10) 87762 ( 25.3%) |*********************************************
+[ -1.4e-10:  2.1e-09) 30537 (  8.8%) |****************
+
+Final geomean non-virtual intra-domain period: 23.1048 ns (43.281 MHz)
+Final fanout-weighted geomean non-virtual intra-domain period: 23.1048 ns (43.281 MHz)
+
+Writing Implementation Netlist: fabric_system100_post_synthesis.v
+Writing Implementation Netlist: fabric_system100_post_synthesis.blif
+Writing Implementation SDF    : fabric_system100_post_synthesis.sdf
+Incr Slack updates 1 in 0.157755 sec
+Full Max Req/Worst Slack updates 1 in 0.0564248 sec
+Incr Max Req/Worst Slack updates 0 in 0 sec
+Incr Criticality updates 0 in 0 sec
+Full Criticality updates 1 in 0.252734 sec
+Flow timing analysis took 151.648 seconds (126.173 STA, 25.4758 slack) (22 full updates: 0 setup, 0 hold, 22 combined).
+VPR succeeded
+The entire flow of VPR took 4124.72 seconds (max_rss 16979.1 MiB)
+Incr Slack updates 21 in 4.34503 sec
+Full Max Req/Worst Slack updates 5 in 0.416914 sec
+Incr Max Req/Worst Slack updates 16 in 1.48769 sec
+Incr Criticality updates 12 in 2.89561 sec
+Full Criticality updates 9 in 2.87786 sec
