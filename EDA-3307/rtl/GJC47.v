@@ -52,6 +52,7 @@ module GJC47 #(
     wire [(DLY_TAP_WIDTH*NUM_DLY)-1:0] 	usr_dly_tap_value_out;
     reg  [(DLY_TAP_WIDTH-1):0] 			dly_tap_val;
 	wire [(DLY_TAP_WIDTH*20)-1:0] 	dly_tap_value;
+	wire [(DLY_TAP_WIDTH*20)-1:0] 	dly_tap_value_2;
 	
     //reg [NUM_DLY-1:0] 		usr_dly_incdec_inv;
     //reg [NUM_DLY-1:0] 		usr_dly_adj_inv;
@@ -66,6 +67,7 @@ module GJC47 #(
 	wire f2g_trx_dly_adj;
 	reg [ADDR_WIDTH-1:0] 	 f2g_dly_addr;
 	wire [DLY_TAP_WIDTH-1:0] g2f_rx_dly_tap;
+	wire [(ADDR_WIDTH*20)-1:0]  dly_site_addr_bus;
 	
 	wire reset_buf;wire [DLY_SEL_WIDTH-1:0]  sel_dly_buf; wire [DLY_TAP_WIDTH-1:0]    g2f_trx_dly_tap_buf;
 	genvar ii;
@@ -395,7 +397,7 @@ module GJC47 #(
                 active_idelay_cnt = active_idelay_cnt + 1;
                 delay_location_index[i] = act_dly_cnt;
                 `ifdef SIM
-                $display("time=%t, act_dly_cnt=%0d, active_idelay_cnt=%d, delay_location_index[0x%h]=0x%h, dly_site_addr[%0d]=0x%h", $time, act_dly_cnt, active_idelay_cnt, i, delay_location_index[i], act_dly_cnt, dly_site_addr[act_dly_cnt]);
+                // $display("time=%t, act_dly_cnt=%0d, active_idelay_cnt=%d, delay_location_index[0x%h]=0x%h, dly_site_addr[%0d]=0x%h", $time, act_dly_cnt, active_idelay_cnt, i, delay_location_index[i], act_dly_cnt, dly_site_addr[act_dly_cnt]);
                 `endif
                 act_dly_cnt = act_dly_cnt+1;  // order is important for counting
             end
@@ -410,46 +412,83 @@ module GJC47 #(
         ACT_IDLY_CNT <= 'h0;  // or some default value
     end
 
+	generate
+	for (genvar i=0; i<NUM_DLY; i=i+1) begin : GEN_ADDR_CONCAT   
+	     assign dly_site_addr_bus[((ADDR_WIDTH*(i+1))-1):ADDR_WIDTH*i] = dly_site_addr[i]; 
+	end
+	endgenerate
 
     genvar i;
     generate
-        for (i = 0; i < NUM_DLY/2; i = i + 1) begin		
+        for (i = 0; i < NUM_DLY/2; i = i + 1) begin
+			
 			I_BUF idly_idata_ibuf (.I(din_idly[i]),.EN(enable),.O(din_idly_buf[i]));
-			I_DELAY #(
-                .DELAY(DELAY)
-            )
-            data_i_delay (  
-                .I(din_idly_buf[i]),
-                .DLY_LOAD(f2g_trx_dly_ld_out[dly_site_addr[i*2]]),
-                .DLY_ADJ(f2g_trx_dly_adj_out[dly_site_addr[i*2]]),
-                .DLY_INCDEC(f2g_trx_dly_inc_out[dly_site_addr[i*2]]),
-                // .DLY_TAP_VALUE(dly_tap_value[((DLY_TAP_WIDTH-1)+(i*2*DLY_TAP_WIDTH)):(i*2*DLY_TAP_WIDTH)]), 
-				.DLY_TAP_VALUE(dly_tap_value[dly_site_addr[i*2]*DLY_TAP_WIDTH +: DLY_TAP_WIDTH]),
-                .CLK_IN(clk_buf_i),
-                .O(dout_idly[i])
-                );
-			O_DELAY #(
-                .DELAY(DELAY)
-            )
-            data_o_delay (
-                .I(din_odly_buf[i]),
-                .DLY_LOAD(f2g_trx_dly_ld_out[dly_site_addr[(i*2)+1]]),
-                .DLY_ADJ(f2g_trx_dly_adj_out[dly_site_addr[(i*2)+1]]),
-                .DLY_INCDEC(f2g_trx_dly_inc_out[dly_site_addr[(i*2)+1]]),
-                // .DLY_TAP_VALUE(dly_tap_value[((DLY_TAP_WIDTH*2-1)+(i*2*DLY_TAP_WIDTH)):(i*2*DLY_TAP_WIDTH)+(DLY_TAP_WIDTH)]),
-				.DLY_TAP_VALUE(dly_tap_value[dly_site_addr[(i*2)+1]*DLY_TAP_WIDTH +: DLY_TAP_WIDTH]),
-                .CLK_IN(clk_buf_i),
-                .O(dout_odly[i])
-            );
             
 			O_BUF idly_odata_obuf (.I(dout_idly[i]),.O(data_delayed_buf[i*2]));       
 
 			I_BUF odly_idata_ibuf (.I(din_odly[i]),.EN(enable),.O(din_odly_buf[i]));
-		
             
 			O_BUF odly_odata_obuf (.I(dout_odly[i]),.O(data_delayed_buf[(i*2)+1]));
 			
         end
     endgenerate
+
+	I_DELAY #(
+        .DELAY(DELAY)
+    )
+    data_i_delay1 (  
+        .I(din_idly_buf[0]),
+        .DLY_LOAD(f2g_trx_dly_ld_out[4]),
+        .DLY_ADJ(f2g_trx_dly_adj_out[4]),
+        .DLY_INCDEC(f2g_trx_dly_inc_out[4]),
+        // .DLY_TAP_VALUE(dly_tap_value[((DLY_TAP_WIDTH-1)+(i*2*DLY_TAP_WIDTH)):(i*2*DLY_TAP_WIDTH)]), 
+		.DLY_TAP_VALUE(dly_tap_value[29 : 24]),
+		// .DLY_TAP_VALUE(dly_tap_value[(dly_site_addr_bus[(i * 10)+: 5] * DLY_TAP_WIDTH)  +: DLY_TAP_WIDTH]),
+        .CLK_IN(clk_buf_i),
+        .O(dout_idly[0])
+        );
+	O_DELAY #(
+        .DELAY(DELAY)
+    )
+    data_o_delay1 (
+        .I(din_odly_buf[0]),
+        .DLY_LOAD(f2g_trx_dly_ld_out[7]),
+        .DLY_ADJ(f2g_trx_dly_adj_out[7]),
+        .DLY_INCDEC(f2g_trx_dly_inc_out[7]),
+        // .DLY_TAP_VALUE(dly_tap_value[((DLY_TAP_WIDTH*2-1)+(i*2*DLY_TAP_WIDTH)):(i*2*DLY_TAP_WIDTH)+(DLY_TAP_WIDTH)]),
+		.DLY_TAP_VALUE(dly_tap_value[47 : 42]),
+		// .DLY_TAP_VALUE(dly_tap_value[(dly_site_addr_bus[(i * 10 + 9) -: 5] * DLY_TAP_WIDTH)  +: DLY_TAP_WIDTH]),
+        .CLK_IN(clk_buf_i),
+        .O(dout_odly[0])
+    );
+	I_DELAY #(
+        .DELAY(DELAY)
+    )
+    data_i_delay2 (  
+        .I(din_idly_buf[1]),
+        .DLY_LOAD(f2g_trx_dly_ld_out[14]),
+        .DLY_ADJ(f2g_trx_dly_adj_out[14]),
+        .DLY_INCDEC(f2g_trx_dly_inc_out[14]),
+        // .DLY_TAP_VALUE(dly_tap_value[((DLY_TAP_WIDTH-1)+(i*2*DLY_TAP_WIDTH)):(i*2*DLY_TAP_WIDTH)]), 
+		.DLY_TAP_VALUE(dly_tap_value[89 : 84]),
+		// .DLY_TAP_VALUE(dly_tap_value[(dly_site_addr_bus[(i * 10)+: 5] * DLY_TAP_WIDTH)  +: DLY_TAP_WIDTH]),
+        .CLK_IN(clk_buf_i),
+        .O(dout_idly[1])
+        );
+	O_DELAY #(
+        .DELAY(DELAY)
+    )
+    data_o_delay2 (
+        .I(din_odly_buf[1]),
+        .DLY_LOAD(f2g_trx_dly_ld_out[18]),
+        .DLY_ADJ(f2g_trx_dly_adj_out[18]),
+        .DLY_INCDEC(f2g_trx_dly_inc_out[18]),
+        // .DLY_TAP_VALUE(dly_tap_value[((DLY_TAP_WIDTH*2-1)+(i*2*DLY_TAP_WIDTH)):(i*2*DLY_TAP_WIDTH)+(DLY_TAP_WIDTH)]),
+		.DLY_TAP_VALUE(dly_tap_value[113 : 108]),
+		// .DLY_TAP_VALUE(dly_tap_value[(dly_site_addr_bus[(i * 10 + 9) -: 5] * DLY_TAP_WIDTH)  +: DLY_TAP_WIDTH]),
+        .CLK_IN(clk_buf_i),
+        .O(dout_odly[1])
+    );
+
 
 endmodule
