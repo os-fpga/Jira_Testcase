@@ -1,0 +1,64 @@
+[
+  {
+    "feature": "Core Clock: module CLK_BUF $clkbuf$and2.$ibuf_clock0 port O (location: HR_1_0_0P) -> core clock slot[0]",
+    "comments": [],
+    "source": "Virgo->HR_1_0_0P",
+    "destinations": [
+      "Virgo->fabric_clk[0]"
+    ],
+    "filters": [
+      "partial:_fclk_mux_",
+      "partial:pll_refmux"
+    ],
+    "flags": [],
+    "parameters": {
+      "CLK_BUF": {
+        "ROUTE_TO_FABRIC_CLK": "0"
+      }
+    },
+    "msgs": [],
+    "potential paths": [
+      [
+        "Virgo->HR_1_0_0P",
+        "Virgo.hvl_40x2->bank0_rx_in[0]",
+        "Virgo.hvl_40x2.bank0_hpio->rx_in[0]",
+        "Virgo.hvl_40x2.bank0_hpio.gearbox_P[0]->rx_in",
+        "Virgo.hvl_40x2.bank0_hpio.gearbox_P[0]->core_clk",
+        "Virgo.hvl_40x2.bank0_hpio->core_clk[0]",
+        "Virgo.hvl_40x2.bank0_root_bank_clkmux->core_clk_in[0]",
+        "Virgo.hvl_40x2.bank0_root_bank_clkmux->core_clk[0]",
+        "Virgo.hvl_40x2->bank0_root_core_clk[0]",
+        "Virgo.hp_40x2->hvl_bank0_root_core_clk[0]",
+        "Virgo.hp_40x2->fabric_clk[0]",
+        "Virgo->fabric_clk[0]"
+      ]
+    ],
+    "config mux": [
+      null,
+      null,
+      null,
+      null,
+      {
+        "HR_1_0_0P": {
+          "RX_CLOCK_IO": "1"
+        }
+      },
+      null,
+      null,
+      {
+        "u_GBOX_HV_40X2_VL.u_gbox_root_bank_clkmux_0": {
+          "CORE_CLK_ROOT_SEL_A": "0"
+        }
+      },
+      null,
+      null,
+      {
+        "u_GBOX_HP_40X2.u_gbox_clkmux_52x1_left_0": {
+          "ROOT_MUX_SEL": "8"
+        }
+      },
+      null
+    ],
+    "status": true
+  }
+]

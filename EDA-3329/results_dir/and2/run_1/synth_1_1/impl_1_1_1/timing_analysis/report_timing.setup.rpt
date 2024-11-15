@@ -1,0 +1,654 @@
+/*******************************************************************************
+Copyright (c) 2022-2024 Rapid Silicon
+This source code contains proprietary information belonging to Rapid Silicon
+(the "licensor") released under license and non-disclosure agreement to the
+recipient (the "licensee").
+
+The information shared and protected by the license and non-disclosure agreement
+includes but is not limited to the following:
+* operational algorithms of the product
+* logos, graphics, source code, and visual presentation of the product
+* confidential operational information of the licensor
+
+The recipient of this source code is NOT permitted to publicly disclose,
+re-use, archive beyond the period of the license agreement, transfer to a
+sub-licensee, or re-implement any portion of the content covered by the license
+and non-disclosure agreement without the prior written consent of the licensor.
+*********************************************************************************/
+
+Version  : 2024.11
+Build    : 1.2.29
+Hash     : 7d8208b
+Date     : Nov 15 2024
+Type     : Engineering
+Log Time   : Fri Nov 15 12:13:50 2024 GMT
+#Timing report of worst 9 path(s)
+# Unit scale: 1e-09 seconds
+# Output precision: 3
+
+# Logical Levels: 0
+# Timing Graph Levels: 8
+
+#Path 1
+Startpoint: id[0].inpad[0] (.input at (62,25) clocked by clock0)
+Endpoint  : out:c.outpad[0] (.output at (62,3) clocked by clock0)
+Path Type : setup
+
+Point                                                                        Incr      Path
+-------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                     0.000     0.000
+clock source latency                                                        0.000     0.000
+input external delay                                                        0.000     0.000
+id[0].inpad[0] (.input at (62,25))                                    0.000     0.000
+| (intra 'io' routing)                                                      0.894     0.894
+| (OPIN:544092 side: (RIGHT,) (62,25,0))                                    0.000     0.894
+| (CHANY:1364185 L4 length:4 (62,25,0-> (62,22,0))                          0.119     1.013
+| (CHANX:1100653 L4 length:4 (62,24,0-> (59,24,0))                          0.119     1.132
+| (CHANY:1355608 L1 length:1 (59,25,0-> (59,25,0))                          0.061     1.193
+| (CHANX:1104699 L1 length:1 (59,25,0-> (59,25,0))                          0.061     1.254
+| (IPIN:542258 side: (TOP,) (59,25,0))                                      0.101     1.355
+| (intra 'clb' routing)                                                     0.085     1.440
+$abc$1686$new_new_n25__.in[0] (.names at (59,25))                           0.000     1.440
+| (primitive '.names' combinational delay)                                  0.103     1.543
+$abc$1686$new_new_n25__.out[0] (.names at (59,25))                          0.000     1.543
+| (intra 'clb' routing)                                                     0.000     1.543
+| (OPIN:542242 side: (RIGHT,) (59,25,0))                                    0.000     1.543
+| (CHANY:1355609 L1 length:1 (59,25,0-> (59,25,0))                          0.061     1.603
+| (IPIN:542285 side: (RIGHT,) (59,25,0))                                    0.101     1.704
+| (intra 'clb' routing)                                                     0.085     1.789
+c.in[2] (.names at (59,25))                               0.000     1.789
+| (primitive '.names' combinational delay)                                  0.148     1.937
+c.out[0] (.names at (59,25))                              0.000     1.937
+| (intra 'clb' routing)                                                     0.000     1.937
+| (OPIN:542225 side: (TOP,) (59,25,0))                                      0.000     1.937
+| (CHANX:1104687 L1 length:1 (59,25,0-> (59,25,0))                          0.061     1.998
+| (CHANY:1352543 L4 length:4 (58,25,0-> (58,22,0))                          0.119     2.117
+| (CHANX:1088371 L1 length:1 (58,21,0-> (58,21,0))                          0.061     2.178
+| (CHANY:1349371 L4 length:4 (57,21,0-> (57,18,0))                          0.119     2.297
+| (CHANY:1349187 L4 length:4 (57,18,0-> (57,15,0))                          0.119     2.416
+| (CHANX:1059972 L4 length:4 (58,14,0-> (61,14,0))                          0.119     2.535
+| (CHANY:1360579 L4 length:4 (61,14,0-> (61,11,0))                          0.119     2.654
+| (CHANX:1043855 L1 length:1 (61,10,0-> (61,10,0))                          0.061     2.714
+| (CHANY:1357407 L4 length:4 (60,10,0-> (60,7,0))                           0.119     2.833
+| (CHANX:1031599 L1 length:1 (60,7,0-> (60,7,0))                            0.061     2.894
+| (CHANY:1354303 L4 length:4 (59,7,0-> (59,4,0))                            0.119     3.013
+| (CHANX:1015392 L4 length:3 (60,3,0-> (62,3,0))                            0.119     3.132
+| (CHANY:1362923 L1 length:1 (62,3,0-> (62,3,0))                            0.061     3.193
+| (IPIN:209585 side: (RIGHT,) (62,3,0))                                     0.101     3.294
+| (intra 'io' routing)                                                      0.733     4.027
+out:c.outpad[0] (.output at (62,3))                       0.000     4.027
+data arrival time                                                                     4.027
+
+clock clock0 (rise edge)                                     0.000     0.000
+clock source latency                                                        0.000     0.000
+clock uncertainty                                                           0.000     0.000
+output external delay                                                       0.000     0.000
+data required time                                                                    0.000
+-------------------------------------------------------------------------------------------
+data required time                                                                    0.000
+data arrival time                                                                    -4.027
+-------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                     -4.027
+
+
+#Path 2
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[0].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li0_li0.in[1] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.218     4.115
+$abc$1018$abc$970$li0_li0.out[0] (.names at (59,25))                       0.000     4.115
+| (intra 'clb' routing)                                                    0.000     4.115
+c_sub_out_reg[0].D[0] (dffre at (59,25))                                   0.000     4.115
+data arrival time                                                                    4.115
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[0].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -4.115
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.252
+
+
+#Path 3
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[3].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li3_li3.in[3] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.218     4.115
+$abc$1018$abc$970$li3_li3.out[0] (.names at (59,25))                       0.000     4.115
+| (intra 'clb' routing)                                                    0.000     4.115
+c_sub_out_reg[3].D[0] (dffre at (59,25))                                   0.000     4.115
+data arrival time                                                                    4.115
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[3].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -4.115
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.252
+
+
+#Path 4
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[2].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li2_li2.in[0] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.218     4.115
+$abc$1018$abc$970$li2_li2.out[0] (.names at (59,25))                       0.000     4.115
+| (intra 'clb' routing)                                                    0.000     4.115
+c_sub_out_reg[2].D[0] (dffre at (59,25))                                   0.000     4.115
+data arrival time                                                                    4.115
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[2].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -4.115
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.252
+
+
+#Path 5
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[1].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li1_li1.in[1] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.218     4.115
+$abc$1018$abc$970$li1_li1.out[0] (.names at (59,25))                       0.000     4.115
+| (intra 'clb' routing)                                                    0.000     4.115
+c_sub_out_reg[1].D[0] (dffre at (59,25))                                   0.000     4.115
+data arrival time                                                                    4.115
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[1].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -4.115
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.252
+
+
+#Path 6
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[5].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li5_li5.in[3] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.148     4.045
+$abc$1018$abc$970$li5_li5.out[0] (.names at (59,25))                       0.000     4.045
+| (intra 'clb' routing)                                                    0.000     4.045
+c_sub_out_reg[5].D[0] (dffre at (59,25))                                   0.000     4.045
+data arrival time                                                                    4.045
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[5].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -4.045
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.182
+
+
+#Path 7
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[4].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li4_li4.in[0] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.148     4.045
+$abc$1018$abc$970$li4_li4.out[0] (.names at (59,25))                       0.000     4.045
+| (intra 'clb' routing)                                                    0.000     4.045
+c_sub_out_reg[4].D[0] (dffre at (59,25))                                   0.000     4.045
+data arrival time                                                                    4.045
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[4].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -4.045
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.182
+
+
+#Path 8
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[7].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li7_li7.in[3] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.099     3.996
+$abc$1018$abc$970$li7_li7.out[0] (.names at (59,25))                       0.000     3.996
+| (intra 'clb' routing)                                                    0.000     3.996
+c_sub_out_reg[7].D[0] (dffre at (59,25))                                   0.000     3.996
+data arrival time                                                                    3.996
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[7].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -3.996
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.133
+
+
+#Path 9
+Startpoint: b.inpad[0] (.input at (1,11) clocked by clock0)
+Endpoint  : c_sub_out_reg[6].D[0] (dffre at (59,25) clocked by clock0)
+Path Type : setup
+
+Point                                                                       Incr      Path
+------------------------------------------------------------------------------------------
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+input external delay                                                       0.000     0.000
+b.inpad[0] (.input at (1,11))                                        0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (OPIN:317674 side: (RIGHT,) (1,11,0))                                    0.000     0.894
+| (CHANY:1185820 L1 length:1 (1,11,0-> (1,11,0))                           0.061     0.955
+| (CHANX:1044176 L4 length:4 (2,11,0-> (5,11,0))                           0.119     1.074
+| (CHANY:1197536 L1 length:1 (5,12,0-> (5,12,0))                           0.061     1.135
+| (CHANX:1048492 L4 length:4 (6,12,0-> (9,12,0))                           0.119     1.254
+| (CHANY:1209252 L1 length:1 (9,13,0-> (9,13,0))                           0.061     1.315
+| (CHANX:1052808 L4 length:4 (10,13,0-> (13,13,0))                         0.119     1.434
+| (CHANY:1218028 L1 length:1 (12,14,0-> (12,14,0))                         0.061     1.495
+| (CHANX:1057088 L4 length:4 (13,14,0-> (16,14,0))                         0.119     1.614
+| (CHANY:1229744 L1 length:1 (16,15,0-> (16,15,0))                         0.061     1.675
+| (CHANX:1061404 L4 length:4 (17,15,0-> (20,15,0))                         0.119     1.794
+| (CHANY:1241460 L1 length:1 (20,16,0-> (20,16,0))                         0.061     1.855
+| (CHANX:1065720 L4 length:4 (21,16,0-> (24,16,0))                         0.119     1.974
+| (CHANY:1253176 L1 length:1 (24,17,0-> (24,17,0))                         0.061     2.034
+| (CHANX:1070036 L4 length:4 (25,17,0-> (28,17,0))                         0.119     2.153
+| (CHANY:1264892 L1 length:1 (28,18,0-> (28,18,0))                         0.061     2.214
+| (CHANX:1074352 L4 length:4 (29,18,0-> (32,18,0))                         0.119     2.333
+| (CHANY:1276608 L1 length:1 (32,19,0-> (32,19,0))                         0.061     2.394
+| (CHANX:1078668 L4 length:4 (33,19,0-> (36,19,0))                         0.119     2.513
+| (CHANY:1288324 L1 length:1 (36,20,0-> (36,20,0))                         0.061     2.574
+| (CHANX:1082984 L4 length:4 (37,20,0-> (40,20,0))                         0.119     2.693
+| (CHANY:1299975 L1 length:1 (40,20,0-> (40,20,0))                         0.061     2.754
+| (CHANX:1079176 L4 length:4 (41,19,0-> (44,19,0))                         0.119     2.873
+| (CHANY:1311624 L4 length:4 (44,20,0-> (44,23,0))                         0.119     2.992
+| (CHANY:1311722 L1 length:1 (44,22,0-> (44,22,0))                         0.061     3.053
+| (CHANX:1091650 L4 length:4 (45,22,0-> (48,22,0))                         0.119     3.172
+| (CHANY:1323438 L1 length:1 (48,23,0-> (48,23,0))                         0.061     3.233
+| (CHANX:1095966 L4 length:4 (49,23,0-> (52,23,0))                         0.119     3.351
+| (CHANY:1335154 L1 length:1 (52,24,0-> (52,24,0))                         0.061     3.412
+| (CHANX:1100282 L4 length:4 (53,24,0-> (56,24,0))                         0.119     3.531
+| (CHANY:1346870 L1 length:1 (56,25,0-> (56,25,0))                         0.061     3.592
+| (CHANX:1104598 L4 length:4 (57,25,0-> (60,25,0))                         0.119     3.711
+| (IPIN:542255 side: (TOP,) (59,25,0))                                     0.101     3.812
+| (intra 'clb' routing)                                                    0.085     3.897
+$abc$1018$abc$970$li6_li6.in[3] (.names at (59,25))                       -0.000     3.897
+| (primitive '.names' combinational delay)                                 0.099     3.996
+$abc$1018$abc$970$li6_li6.out[0] (.names at (59,25))                       0.000     3.996
+| (intra 'clb' routing)                                                    0.000     3.996
+c_sub_out_reg[6].D[0] (dffre at (59,25))                                   0.000     3.996
+data arrival time                                                                    3.996
+
+clock clock0 (rise edge)                                    0.000     0.000
+clock source latency                                                       0.000     0.000
+clock0.inpad[0] (.input at (38,44))                         0.000     0.000
+| (intra 'io' routing)                                                     0.894     0.894
+| (inter-block routing:global net)                                         0.000     0.894
+| (intra 'clb' routing)                                                    0.000     0.894
+c_sub_out_reg[6].C[0] (dffre at (59,25))                                   0.000     0.894
+clock uncertainty                                                          0.000     0.894
+cell setup time                                                           -0.032     0.863
+data required time                                                                   0.863
+------------------------------------------------------------------------------------------
+data required time                                                                   0.863
+data arrival time                                                                   -3.996
+------------------------------------------------------------------------------------------
+slack (VIOLATED)                                                                    -3.133
+
+
+#End of timing report
