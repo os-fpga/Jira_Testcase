@@ -1,0 +1,51 @@
+ 
+# Yosys synthesis script for vex_soc
+# Read source files
+read_verilog -sv /nfs_eda_sw/softwares/Raptor/instl_dir/11_30_2024_09_15_01/share/raptor/sim_models/rapidsilicon/genesis3/FPGA_PRIMITIVES_MODELS/blackbox_models/cell_sim_blackbox.v
+verilog_defines 
+read_verilog  -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl  /nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl/vex_soc.v 
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi_interconnect_wrapper.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_debug_if.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/sfifo.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/VexRiscvAxi4.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_sync_flops.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi4lite_uart_top.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/priority_encoder.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axil_interconnect.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi_addr.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_transmitter.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi_ram.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi2axilite.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi4lite_slave.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/skidbuffer.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/raminfr.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi_ram_per.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi_interconnect.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/offset_remove_comb.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_rfifo.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axi_cdma.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_tfifo.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_regs.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/uart_receiver.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/axil_interconnect_1x2.v
+read_verilog -I../../../../.././rtl -I../../../../.. -I/nfs_scratch/scratch/CGA/repo/2024-11-30-22-25-48_T12694R122/Validation/RTL_testcases/litex_designs/vexriscv_axi_cdma/results_dir/.././rtl ../../../../.././rtl/arbiter.v
+
+
+# Technology mapping
+hierarchy -top vex_soc
+
+
+
+plugin -i synth-rs
+
+synth_rs -post_cleanup 1 -legalize_ram_clk_ports -new_iobuf_map 3 -iofab_map 1 -tech genesis3 -de -goal delay   -effort high -carry auto  -keep_tribuf -new_dsp19x2 -new_tdp36k -max_lut 17472 -max_reg 34944 -max_device_dsp 56 -max_device_bram 56 -max_device_carry_length 336 -max_dsp 56 -max_bram 56 -max_carry_length 336  -fsm_encoding onehot   -de_max_threads -1   
+
+write_verilog -noexpr -nodec -norename -v vex_soc_post_synth.v
+write_blif -param vex_soc_post_synth.eblif
+
+plugin -i design-edit
+design_edit -tech genesis3 -sdc pin_location_vex_soc.sdc -json config.json -w wrapper_vex_soc_post_synth.v wrapper_vex_soc_post_synth.eblif -pr post_pnr_wrapper_vex_soc_post_synth.v post_pnr_wrapper_vex_soc_post_synth.eblif
+write_verilog -noexpr -nodec -norename -v fabric_vex_soc_post_synth.v
+write_blif -param fabric_vex_soc_post_synth.eblif
+
+  
